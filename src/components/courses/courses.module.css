@@ -1,0 +1,35 @@
+.coursesWrapper{
+    padding: 9rem 0;
+    width:100%;
+}
+.coursesWrapper article{
+    box-shadow: 1px 2px 10px #0001;
+    height:100%;
+    padding: 1rem;
+}
+.coursesWrapper figure{
+    height:250px;
+    width:100%;
+}
+.coursesWrapper figure img{
+    height:100%;
+    object-fit: cover;
+    object-position: center;
+    width:100%;
+}
+.coursesGrid{
+    display:grid;
+    gap:1rem;
+    grid-template-columns: repeat(4, 1fr);
+}
+.courseDescription{
+    padding-top:1rem;
+    text-align: center;
+    width:100%
+}
+.monthBar{
+    display:grid;
+    gap:0.5rem;
+    grid-template-columns: repeat(4,1fr);
+    width:100%;
+}
