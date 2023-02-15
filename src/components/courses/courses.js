@@ -1,9 +1,9 @@
 import { useState, useMemo } from 'react'
 import Image from 'next/image'
 import { months } from './months'
+import { Loader } from '../../components'
 import styles from './courses.module.css'
 import { useGetCourses } from './useGetCourses'
-import { useFilterCourses } from './useFilterCourses'
 import himfgImage from '../../assets/banner-80.webp'
 
 export const Courses = ()=>{
@@ -23,9 +23,8 @@ export const Courses = ()=>{
                         </li>
                     ))}
                 </ul>
-            <div className={`${styles.coursesGrid} flexContainer`}>
+            {!isLoading?<div className={`${styles.coursesGrid} flexContainer`}>
                 {
-                    !isLoading?
                     filteredCourses.map((course, i)=>(
                         <article key={i}>
                             <figure>
@@ -42,10 +41,9 @@ export const Courses = ()=>{
                             </div>
                         </article>
                     ))
-                    :
-                    null
                 }
             </div>
+            :<Loader />}
         </section>
     )
 }
