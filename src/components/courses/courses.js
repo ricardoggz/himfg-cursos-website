@@ -8,9 +8,9 @@ import himfgImage from '../../assets/banner-80.webp'
 
 export const Courses = ()=>{
     const [selectedMonth, setSelectedMonth]= useState(months[0])
-    const [courses]= useGetCourses()
+    const [courses, isLoading]= useGetCourses()
     let filteredCourses;
-    if(courses) filteredCourses = courses.data.filter((course)=> course.month_id === selectedMonth.id)
+    if(courses) filteredCourses = courses.filter((course)=> course.month_id === selectedMonth.id)
     //const [filteredCourses, getFilteredCourses] = useFilterCourses(courses.data)
     return (
         <section className={styles.coursesWrapper}>
@@ -23,7 +23,7 @@ export const Courses = ()=>{
                 </ul>
             <div className={styles.coursesGrid}>
                 {
-                    !courses.loading?
+                    !isLoading?
                     filteredCourses.map((course, i)=>(
                         <article key={i}>
                             <figure>
