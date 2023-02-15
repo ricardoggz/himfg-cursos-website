@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect } from 'react'
 import { months } from "./months"
 
 export const useFilterCourses = (courses = [])=>{
@@ -6,5 +6,6 @@ export const useFilterCourses = (courses = [])=>{
     let filteredCourses = useMemo(()=>{
         return courses.filter(course=> course.month_id === selectedMonth.id)
     },[courses])
-    return [filteredCourses, setSelectedMonth]
+    const getFilteredCourses = (month)=> setSelectedMonth(month)
+    return [filteredCourses, getFilteredCourses]
 }
