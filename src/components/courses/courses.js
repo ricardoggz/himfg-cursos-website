@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useMemo } from 'react'
 import Image from 'next/image'
 import { months } from './months'
 import styles from './courses.module.css'
@@ -10,7 +10,9 @@ export const Courses = ()=>{
     const [selectedMonth, setSelectedMonth]= useState(months[0])
     const [courses, isLoading]= useGetCourses()
     let filteredCourses;
-    if(courses) filteredCourses = courses.filter((course)=> course.month_id === selectedMonth.id)
+    if(courses) filteredCourses = useMemo(()=>{
+        return courses.filter((course)=> course.month_id === selectedMonth.id)
+    })
     //const [filteredCourses, getFilteredCourses] = useFilterCourses(courses.data)
     return (
         <section className={styles.coursesWrapper}>
