@@ -16,14 +16,14 @@ export const Courses = ()=>{
     //const [filteredCourses, getFilteredCourses] = useFilterCourses(courses.data)
     return (
         <section className={styles.coursesWrapper}>
-                <ul className={styles.monthBar}>
+                <ul className={`${styles.monthBar} flexContainer`}>
                     {months.map((month, i)=>(
                         <li key={i} onClick={()=> setSelectedMonth(month)}>
                             {month.name}
                         </li>
                     ))}
                 </ul>
-            <div className={styles.coursesGrid}>
+            <div className={`${styles.coursesGrid} flexContainer`}>
                 {
                     !isLoading?
                     filteredCourses.map((course, i)=>(
@@ -31,7 +31,7 @@ export const Courses = ()=>{
                             <figure>
                                 <Image
                                 src={himfgImage}
-                                alt='HIMFG'
+                                alt='HIMFG-80 aniversario'
                                 loading='lazy'
                                 />
                             </figure>
