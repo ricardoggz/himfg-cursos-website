@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react'
 import Image from 'next/image'
 import { months } from './months'
-import { Loader } from '../../components'
+import { Loader, Title } from '../../components'
 import styles from './courses.module.css'
 import { useGetCourses } from './useGetCourses'
 import himfgImage from '../../assets/banner-80.webp'
@@ -19,11 +19,16 @@ export const Courses = ()=>{
                 <ul className={`${styles.monthBar} flexContainer`}>
                     {months.map((month, i)=>(
                         <li key={i} onClick={()=> setSelectedMonth(month)}>
-                            {month.name}
+                            <a href='#cursos-2023'>
+                                {month.name}
+                            </a>
                         </li>
                     ))}
                 </ul>
-            {!isLoading?<div className={`${styles.coursesGrid} flexContainer`}>
+            {!isLoading?
+            <div id='cursos-2023'>
+                <Title>{selectedMonth.name}</Title>
+                <div className={`${styles.coursesGrid} flexContainer`}>
                 {
                     filteredCourses.map((course, i)=>(
                         <article key={i}>
@@ -42,6 +47,7 @@ export const Courses = ()=>{
                         </article>
                     ))
                 }
+                </div>
             </div>
             :<Loader />}
         </section>
