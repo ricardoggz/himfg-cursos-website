@@ -6,6 +6,7 @@
     box-shadow: 1px 2px 10px #0001;
     height:100%;
     padding: 1rem;
+    width:100%;
 }
 .coursesWrapper figure{
     height:250px;
@@ -37,14 +38,20 @@
     width:100%;
 }
 .monthBar li{
-    padding: 1rem;
+    display:flex;
     text-align:center;
     width:100%;
 }
-.monthBar li:hover{
+.monthBar li a:hover{
     background: #ededed;
     cursor:pointer;
     transition: all 300ms ease;
+}
+.monthBar li a{
+    color:#000;
+    text-decoration:none;
+    padding:1rem;
+    width:100%;
 }
 
 @media(min-width:240px) and (max-width:900px){
