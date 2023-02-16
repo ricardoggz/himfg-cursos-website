@@ -19,14 +19,14 @@ export const Courses = ()=>{
                 <ul className={`${styles.monthBar} flexContainer`}>
                     {months.map((month, i)=>(
                         <li key={i} onClick={()=> setSelectedMonth(month)}>
-                            <a href='#cursos-2023'>
+                            <a href={`#cursos-2023-${selectedMonth.name}`}>
                                 {month.name}
                             </a>
                         </li>
                     ))}
                 </ul>
             {!isLoading?
-            <div id='cursos-2023'>
+            <div id={`cursos-2023-${selectedMonth.name}`}>
                 <Title>{selectedMonth.name}</Title>
                 <div className={`${styles.coursesGrid} flexContainer`}>
                 {
