@@ -3,6 +3,21 @@
   margin: 0;
   padding: 0;
 }
+html{
+  scroll-behavior: smooth;
+}
+body{
+  background: var(--white-primary);
+  color:var(--black-primary);
+}
+/*UI colors*/
+:root{
+  --red-primary:#9e1f47;
+  --black-primary:#1b1b1b;
+  --white-primary:#f4f4f4;
+  --green-primary:#0c231e;
+  --green-secondary:#13322b;
+}
 /*UI flex-container*/
 .flexContainer{
   margin: 0 auto;
