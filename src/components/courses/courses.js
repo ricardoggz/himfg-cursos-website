@@ -1,10 +1,9 @@
 import { useState, useMemo } from 'react'
-import Image from 'next/image'
 import { months } from './months'
-import { Loader, Title } from '../../components'
 import styles from './courses.module.css'
 import { useGetCourses } from './useGetCourses'
-import himfgImage from '../../assets/banner-80.webp'
+import { Loader, Title } from '../../components'
+import Card from '../../components/card/card'
 
 export const Courses = ()=>{
     const [selectedMonth, setSelectedMonth]= useState(months[0])
@@ -13,7 +12,6 @@ export const Courses = ()=>{
     if(courses) filteredCourses = useMemo(()=>{
         return courses.filter((course)=> course.month_id === selectedMonth.id)
     })
-    //const [filteredCourses, getFilteredCourses] = useFilterCourses(courses.data)
     return (
         <section className={styles.coursesWrapper}>
                 <ul className={`${styles.monthBar} flexContainer`}>
@@ -31,20 +29,11 @@ export const Courses = ()=>{
                 <div className={`${styles.coursesGrid} flexContainer`}>
                 {
                     filteredCourses.map((course, i)=>(
-                        <article key={i}>
-                            <figure>
-                                <Image
-                                src={himfgImage}
-                                alt='HIMFG-80 aniversario'
-                                loading='lazy'
-                                />
-                            </figure>
-                            <div className={styles.courseDescription}>
-                                <p>
-                                    {course.course_name}
-                                </p>
-                            </div>
-                        </article>
+                        <Card
+                            key={i}
+                            image={course.course_file}
+                            title={course.course_name}
+                        />
                     ))
                 }
                 </div>
