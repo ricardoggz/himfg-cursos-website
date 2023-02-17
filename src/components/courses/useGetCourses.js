@@ -11,7 +11,6 @@ export const useGetCourses = ()=>{
             if(response.status === 200){
                 setIsLoading(false)
             }
-            console.log(json)
             return setCourses(json)
         } catch (error) {
             throw new Error('Error alcargar la información')
