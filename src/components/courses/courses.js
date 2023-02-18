@@ -31,7 +31,7 @@ export const Courses = ()=>{
                     filteredCourses.map((course, i)=>(
                         <Card
                             key={i}
-                            image={course.course_file}
+                            image={course.course_image}
                             title={course.course_name}
                         />
                     ))
@@ -39,6 +39,6 @@ export const Courses = ()=>{
                 </div>
             </div>
             :<Loader />}
-        </section>
+            </section>   
     )
 }
