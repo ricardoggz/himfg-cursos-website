@@ -14,9 +14,12 @@ body{
 :root{
   --red-primary:#9e1f47;
   --black-primary:#1b1b1b;
+  --black-secondary:#515151;
   --white-primary:#f4f4f4;
   --green-primary:#0c231e;
   --green-secondary:#13322b;
+  --blue-primary:#165198;
+  --blue-secondary:#35A1C6;
 }
 /*UI flex-container*/
 .flexContainer{
