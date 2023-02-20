@@ -22,3 +22,20 @@
     padding:0.3rem;
     width:100%;
 }
+.formButtons{
+    display:flex;
+    gap:1rem;
+}
+.formButtons button{
+    border:none;
+    color:var(--white-primary);
+    cursor:pointer;
+    padding: 0.5rem;
+    width:100%;
+}
+.buttonSuccess{
+    background: var(--green-primary);
+}
+.buttonDanger{
+    background: var(--red-primary);
+}
