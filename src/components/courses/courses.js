@@ -1,11 +1,28 @@
 import { useState, useMemo } from 'react'
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
 import { months } from './months'
 import styles from './courses.module.css'
 import { useGetCourses } from './useGetCourses'
 import { Loader, Title } from '../../components'
 import Card from '../../components/card/card'
 
+const MySwal = withReactContent(Swal)
+
 export const Courses = ()=>{
+    const showModal = (content)=>{
+        MySwal.fire({
+            html:content,
+            width: 800,
+            showConfirmButton:false,
+            showClass: {
+                popup: 'animate__animated animate__fadeIn'
+              },
+              hideClass: {
+                popup: 'animate__animated animate__fadeOut'
+              }
+        })
+    }
     const [selectedMonth, setSelectedMonth]= useState(months[0])
     const [courses, isLoading]= useGetCourses()
     let filteredCourses;
@@ -28,13 +45,32 @@ export const Courses = ()=>{
                 <Title>{selectedMonth.name}</Title>
                 <div className={`${styles.coursesGrid} flexContainer`}>
                 {
-                    filteredCourses.map((course, i)=>(
-                        <Card
-                            key={i}
-                            image={course.course_image}
-                            title={course.course_name}
-                        />
-                    ))
+                    filteredCourses.map((course, i)=>{
+                        return (
+                            <Card
+                                key={i}
+                                image={course.course_image}
+                                title={course.course_name}
+                                showModal={()=> showModal(
+                                    <Card
+                                        key={i}
+                                        image={course.course_image}
+                                        title={course.course_name}
+                                    >
+                                        {
+                                        !course.course_pdf ?
+                                        <></>
+                                        :
+                                        <a href='#'>Ver programa</a>
+                                        }
+                                        <a href='#'>
+                                            Inscripción en línea
+                                        </a>
+                                    </Card>
+                                )}
+                            />
+                        )
+                    })
                 }
                 </div>
             </div>
