@@ -8,7 +8,14 @@ const nextConfig = {
         hostname: 'res.cloudinary.com',
       },
     ],
+    unoptimized : true
   },
+  exportPathMap(){
+    return {
+      '/': { page : '/'},
+      '/register': {page: '/register'}
+    }
+  }
 }
 
 module.exports = nextConfig
