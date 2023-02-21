@@ -61,7 +61,12 @@ export const Courses = ()=>{
                                         !course.course_pdf ?
                                         <></>
                                         :
-                                        <a href='#'>Ver programa</a>
+                                        <a
+                                            href={course.course_pdf}
+                                            target={'_blank'}
+                                        >
+                                            Ver programa
+                                        </a>
                                         }
                                         <a href='#'>
                                             Inscripción en línea
