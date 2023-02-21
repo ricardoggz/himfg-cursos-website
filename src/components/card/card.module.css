@@ -24,3 +24,21 @@
     text-align: center;
     width:100%
 }
+.cardButtons{
+    display:flex;
+    gap:0.5rem;
+}
+.cardButtons a {
+    background: var(--blue-secondary);
+    color:var(--white-primary);
+    font-family:sans-serif;
+    padding:0.5rem;
+    text-decoration: none;
+    width:100%;
+}
+
+@media (min-width:240px) and (max-width:900px){
+    .cardButtons{
+        flex-direction: column;
+    }
+}
