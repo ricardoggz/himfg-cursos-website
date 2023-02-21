@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import axios from 'axios'
 import styles from './form.module.css'
 
 export const RegisterForm = ()=>{
@@ -9,8 +10,18 @@ export const RegisterForm = ()=>{
             [evt.target.name] : evt.target.value
         })
     }
+    const onSubmit = async(evt) =>{
+        evt.preventDefault()
+        try {
+            await axios.post('http://localhost:3030/api/auth/create-user', student)
+        } catch (error) {
+            throw new Error(error)
+        }
+        evt.target.reset()
+        setStudent(null)
+    }
     return (
-        <form className={`flexContainer ${styles.formWrapper}`}>
+        <form className={`flexContainer ${styles.formWrapper}`} onSubmit={onSubmit}>
             <label>Nombre completo empezando por apellidos:</label>
             <input type='text' name='student_name' required onChange={onChange}/>
             <label>¿Cuál es su título profesional?:</label>
