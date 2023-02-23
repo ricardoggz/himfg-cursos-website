@@ -13,7 +13,6 @@ const nextConfig = {
   exportPathMap(){
     return {
       '/': { page : '/'},
-      '/register': {page: '/register'}
     }
   }
 }
