@@ -2,7 +2,7 @@ import axios from 'axios'
 import { useState, useEffect } from 'react'
 
 export const useGetCourses = ()=>{
-    const baseUrl = 'http://localhost:3030/api/courses/all-courses'
+    const baseUrl =`${process.env.NEXT_PUBLIC_BASE_API}api/courses/all-courses`
     const [courses, setCourses]= useState([])
     const [isLoading, setIsLoading] = useState(true)
     const getCourses= async()=>{
