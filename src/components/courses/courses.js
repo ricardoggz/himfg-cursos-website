@@ -68,9 +68,6 @@ export const Courses = ()=>{
                                             Ver programa
                                         </a>
                                         }
-                                        <a href='#'>
-                                            Inscripción en línea
-                                        </a>
                                     </Card>
                                 )}
                             />
