@@ -56,17 +56,21 @@ export const Courses = ()=>{
                                         key={i}
                                         image={course.course_image}
                                         title={course.course_name}
+                                        startDate={course.course_start_date}
+                                        finishDate={course.course_finish_date}
                                     >
                                         {
                                         !course.course_pdf ?
                                         <></>
                                         :
+                                        <>
                                         <a
                                             href={course.course_pdf}
                                             target={'_blank'}
                                         >
                                             Ver programa
                                         </a>
+                                        </>
                                         }
                                     </Card>
                                 )}
