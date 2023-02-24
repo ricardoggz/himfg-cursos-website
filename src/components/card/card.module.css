@@ -5,7 +5,7 @@
     display:flex;
     flex-direction: column;
     height:100%;
-    padding:0.5rem;
+    text-align:center;
     width:100%;
 }
 .cardImage{
@@ -18,11 +18,14 @@
     width:100%;
 }
 .cardTitles{
-    color:var(--black-secondary);
-    line-height: 1.5rem;
-    padding-top:0.5rem;
-    text-align: center;
+    height:100%;
+    padding:1rem;
     width:100%
+}
+.courseTitle{
+    color:var(--black-secondary);
+    font-size:1.1rem;
+    font-weight:400;
 }
 .cardButtons{
     display:flex;

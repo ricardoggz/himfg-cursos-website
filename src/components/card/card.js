@@ -3,7 +3,7 @@ import 'animate.css';
 import Image from 'next/image'
 import styles from './card.module.css'
 
-const Card = ({image, title, showModal, children})=>{
+const Card = ({image, title, showModal, children, startDate, finishDate})=>{
    return (
         <article className={styles.cardWrapper} onClick={showModal}>
             <figure className={styles.cardImage}>
@@ -22,7 +22,15 @@ const Card = ({image, title, showModal, children})=>{
                 />
             </figure>
             <div className={styles.cardTitles}>
-                <p>{title}</p>
+                <h2 className={styles.courseTitle}>{title}</h2>
+                {!startDate?
+                    <></>
+                    :
+                    <>
+                    <span>Inicia: {new Date(startDate).toLocaleDateString('es')}</span>
+                    <span>Termina: {new Date(finishDate).toLocaleDateString('es')}</span>
+                    </>
+                }
             </div>
             <div className={styles.cardButtons}>
                 {children}
