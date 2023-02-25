@@ -3,7 +3,8 @@ import Image from 'next/image'
 import styles from './card.module.css'
 
 const Card = ({image, title, showModal, children, startDate, finishDate})=>{
-   return (
+   const optionDate = {day:"2-digit", month:'long', year:'numeric'}
+    return (
         <article className={styles.cardWrapper} onClick={showModal}>
             <figure className={styles.cardImage}>
             <Image
@@ -26,8 +27,8 @@ const Card = ({image, title, showModal, children, startDate, finishDate})=>{
                     <></>
                     :
                     <>
-                    <span>Inicia: {new Date(startDate).toLocaleDateString('es')}</span>
-                    <span>Termina: {new Date(finishDate).toLocaleDateString('es')}</span>
+                    <span>Inicia: {new Date(startDate).toLocaleDateString('es-MX', optionDate)}</span>
+                    <span>Termina: {new Date(finishDate).toLocaleDateString('es-MX', optionDate)}</span>
                     </>
                 }
             </div>
