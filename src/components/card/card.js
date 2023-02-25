@@ -1,5 +1,4 @@
 import { memo } from 'react'
-import 'animate.css';
 import Image from 'next/image'
 import styles from './card.module.css'
 
