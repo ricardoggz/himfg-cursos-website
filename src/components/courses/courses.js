@@ -1,4 +1,5 @@
 import { useState, useMemo } from 'react'
+import 'animate.css'
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 import { months } from './months'
@@ -7,22 +8,9 @@ import { useGetCourses } from './useGetCourses'
 import { Loader, Title } from '../../components'
 import Card from '../../components/card/card'
 
-const MySwal = withReactContent(Swal)
+const CardModal = withReactContent(Swal)
 
 export const Courses = ()=>{
-    const showModal = (content)=>{
-        MySwal.fire({
-            html:content,
-            width: 800,
-            showConfirmButton:false,
-            showClass: {
-                popup: 'animate__animated animate__fadeIn'
-              },
-              hideClass: {
-                popup: 'animate__animated animate__fadeOut'
-              }
-        })
-    }
     const [selectedMonth, setSelectedMonth]= useState(months[0])
     const [courses, isLoading]= useGetCourses()
     let filteredCourses;
@@ -83,4 +71,19 @@ export const Courses = ()=>{
             :<Loader />}
             </section>   
     )
+}
+
+const showModal = (content)=>{
+    CardModal.fire({
+        html:content,
+        width: 800,
+        showCloseButton:true,
+        showConfirmButton:false,
+        showClass: {
+            popup: 'animate__animated animate__fadeIn'
+          },
+          hideClass: {
+            popup: 'animate__animated animate__fadeOut'
+          }
+    })
 }
