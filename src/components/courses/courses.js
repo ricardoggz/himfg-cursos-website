@@ -1,4 +1,5 @@
 import { useState, useMemo } from 'react'
+import Link from 'next/link'
 import 'animate.css'
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
@@ -58,6 +59,9 @@ export const Courses = ()=>{
                                         >
                                             Ver programa
                                         </a>
+                                        <Link href='/register'>
+                                            Inscripción online
+                                        </Link>
                                         </>
                                         }
                                     </Card>
