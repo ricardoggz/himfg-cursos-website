@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { Courses, Header, Container, Title } from '../components'
+import { Courses, Container, Title } from '../components'
 
 export default function Home() {
   return (
@@ -10,7 +10,6 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="https://res.cloudinary.com/diuxbqmn5/image/upload/v1677114497/himfg-logo_ewzx59.webp" />
       </Head>
-      <Header />
       <Container>
         <Title>Oferta académica</Title>
         <Courses />
