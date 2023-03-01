@@ -13,13 +13,14 @@ export const RegisterForm = ()=>{
     const onSubmit = async(evt) =>{
         evt.preventDefault()
         try {
-            await axios.post('http://localhost:3030/api/auth/create-user', student)
+            await axios.post(`${process.env.BASE_URL_API}api/auth/create-user`, student)
         } catch (error) {
             throw new Error(error)
         }
         evt.target.reset()
         setStudent(null)
     }
+    const onReset = ()=> setStudent(null)
     return (
         <form className={`flexContainer ${styles.formWrapper}`} onSubmit={onSubmit}>
             <label>Nombre completo empezando por apellidos:</label>
@@ -268,7 +269,13 @@ export const RegisterForm = ()=>{
             />
             <div className={styles.formButtons}>
                 <button className={styles.buttonSuccess}>Enviar</button>
-                <button className={styles.buttonDanger}>Cancelar</button>
+                <button
+                className={styles.buttonDanger}
+                type='reset'
+                onClick={onReset}
+                >
+                    Cancelar
+                </button>
             </div>
         </form>
     )
