@@ -34,15 +34,15 @@ export const Courses = ()=>{
                 <Title>{selectedMonth.name}</Title>
                 <div className={`${styles.coursesGrid} flexContainer`}>
                 {
-                    filteredCourses.map((course, i)=>{
+                    filteredCourses.map((course)=>{
                         return (
                             <Card
-                                key={i}
+                                key={course.course_id}
                                 image={course.course_image}
                                 title={course.course_name}
                                 showModal={()=> showModal(
                                     <Card
-                                        key={i}
+                                        key={course.course_id}
                                         image={course.course_image}
                                         title={course.course_name}
                                         startDate={course.course_start_date}
@@ -61,6 +61,9 @@ export const Courses = ()=>{
                                         </a>
                                         <Link href='/register'>
                                             Inscripción online
+                                        </Link>
+                                        <Link href={`/${course.course_id}`}>
+                                            Ver video
                                         </Link>
                                         </>
                                         }
