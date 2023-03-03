@@ -18,6 +18,7 @@ export const Courses = ()=>{
     if(courses) filteredCourses = useMemo(()=>{
         return courses.filter((course)=> course.month_id === selectedMonth.id)
     })
+    console.log(courses)
     return (
         <section className={styles.coursesWrapper}>
                 <ul className={`${styles.monthBar} flexContainer`}>
@@ -62,9 +63,11 @@ export const Courses = ()=>{
                                         <Link href='/register'>
                                             Inscripción online
                                         </Link>
-                                        <Link href={`/${course.course_id}`}>
+                                        {!course.course_vimeo_folder
+                                        ? <></>
+                                        :<Link href={`/${course.course_vimeo_folder}`}>
                                             Ver video
-                                        </Link>
+                                        </Link>}
                                         </>
                                         }
                                     </Card>
