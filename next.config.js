@@ -16,7 +16,7 @@ const nextConfig = {
     }
   },
   env:{
-    BASE_URL_API: 'https://courses-rest-api-hospital.vercel.app/'
+    BASE_URL_API: process.env.BASE_URL_API
   }
 }
 
