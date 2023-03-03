@@ -18,7 +18,6 @@ export const Courses = ()=>{
     if(courses) filteredCourses = useMemo(()=>{
         return courses.filter((course)=> course.month_id === selectedMonth.id)
     })
-    console.log(courses)
     return (
         <section className={styles.coursesWrapper}>
                 <ul className={`${styles.monthBar} flexContainer`}>
