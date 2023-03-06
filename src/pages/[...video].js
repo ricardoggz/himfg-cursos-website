@@ -56,7 +56,7 @@ const Video = ()=>{
                     liveVideo={router.query.video? router.query.video[2] : ''}
                 />
             </div>
-        </Container>
-    )
+            </Container>
+        )
 }
 export default Video

@@ -62,9 +62,14 @@ export const Courses = ()=>{
                                         <Link href='/register'>
                                             Inscripción online
                                         </Link>
-                                        {!course.course_vimeo_folder
+                                        {
+                                        !course.course_vimeo_folder && course.course_live_video
                                         ? <></>
-                                        :<Link href={`/${course.course_vimeo_folder}`}>
+                                        :<Link
+                                            href={
+                                                `/${course.course_name}/${course.course_vimeo_folder}/${course.course_live_video}`
+                                                }
+                                        >
                                             Ver video
                                         </Link>}
                                         </>
