@@ -1,6 +1,8 @@
+import { useState } from "react"
 import { useRouter } from "next/router"
 import { useFetch } from "../hooks"
 import { Container, Title } from '../components'
+import styles from './video.module.css'
 
 const Videos = ({folderNumber, liveVideo})=>{
     const config = {
@@ -12,21 +14,35 @@ const Videos = ({folderNumber, liveVideo})=>{
     })
     if(folderNumber && data){
         return (
-            <div>
+            <>
+                <div className={`flexContainer ${styles.liveVideo}`}>
                 {folderNumber?
                     <iframe
                     src={`https://vimeo.com/event/${liveVideo}/embed`}
+                    className={`${styles.iframeVideo}`}
+                    frameBorder="0"
+                    allow="autoplay; fullscreen; picture-in-picture"
+                    allowFullScreen
                     />
                     :
                     <></>
                 }
-                {data.data.data.map((video, i)=>(
-                    <iframe
-                        key={i}
-                        src={video.player_embed_url}
-                    />
-                ))}
-            </div>
+                </div>
+                <div className={`flexContainer ${styles.gridVideos}`}>
+                    {
+                        data.data.data.map((video, i)=>(
+                            <iframe
+                                key={i}
+                                src={video.player_embed_url}
+                                className={`${styles.iframeVideo}`}
+                                frameBorder="0"
+                                allow="autoplay; fullscreen; picture-in-picture"
+                                allowFullScreen
+                            />
+                        ))
+                    }
+                </div>
+            </>
         )
     }else{
         return (
@@ -35,7 +51,19 @@ const Videos = ({folderNumber, liveVideo})=>{
     }
 }
 const Video = ()=>{
+    const [password, setPassword] = useState(null)
+    const [isEqual, setIsEqual] = useState(false)
     const router = useRouter()
+    const coursePassword = 'contra123'
+    const onSubmit = (evt)=>{
+        evt.preventDefault()
+        evt.target.reset()
+        if(password === coursePassword){
+            setIsEqual(true)
+        }
+        setPassword(null)
+    }
+    const onChange = (evt)=> setPassword(evt.target.value)
     return (
         <Container>
             <Title>
@@ -45,16 +73,20 @@ const Video = ()=>{
                 null 
                 }
             </Title>
-            <form>
-                <label>Contraseña</label>
-                <input type='password' required/>
-                <button>Entrar</button>
-            </form>
             <div>
-                <Videos
+                {
+                   isEqual?
+                    <Videos
                     folderNumber={router.query.video? router.query.video[1] : ''}
                     liveVideo={router.query.video? router.query.video[2] : ''}
-                />
+                    />
+                    :
+                    <form className={`${styles.formPassword}`} onSubmit={onSubmit}>
+                        <label>Contraseña</label>
+                        <input type='password' required onChange={onChange}/>
+                        <button>Entrar</button>
+                    </form>
+                }
             </div>
             </Container>
         )
