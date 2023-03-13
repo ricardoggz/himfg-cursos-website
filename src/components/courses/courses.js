@@ -5,31 +5,31 @@ import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 import { months } from './months'
 import styles from './courses.module.css'
-import { useGetCourses } from './useGetCourses'
 import { Loader, Title } from '../../components'
 import Card from '../../components/card/card'
+import { useFetch } from '../../hooks'
 
 const CardModal = withReactContent(Swal)
 
 export const Courses = ()=>{
     const [selectedMonth, setSelectedMonth]= useState(months[0])
-    const [courses, isLoading]= useGetCourses()
-    let filteredCourses;
-    if(courses) filteredCourses = useMemo(()=>{
-        return courses.filter((course)=> course.month_id === selectedMonth.id)
+    const [loading, data]= useFetch({
+        url: `${process.env.BASE_URL_API}api/courses/all-courses`
     })
+    let filteredCourses;
+    if(data) filteredCourses = data.data.filter((course)=> course.month_id === selectedMonth.id)
     return (
         <section className={styles.coursesWrapper}>
                 <ul className={`${styles.monthBar} flexContainer`}>
-                    {months.map((month, i)=>(
-                        <li key={i} onClick={()=> setSelectedMonth(month)}>
+                    {months.map((month)=>(
+                        <li key={month.id} onClick={()=> setSelectedMonth(month)}>
                             <a href={`#cursos-2023-${selectedMonth.name}`}>
                                 {month.name}
                             </a>
                         </li>
                     ))}
                 </ul>
-            {!isLoading?
+            {!loading?
             <div id={`cursos-2023-${selectedMonth.name}`}>
                 <Title>{selectedMonth.name}</Title>
                 <div className={`${styles.coursesGrid} flexContainer`}>
