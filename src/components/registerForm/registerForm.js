@@ -1,26 +1,22 @@
-import { useState } from 'react'
 import axios from 'axios'
+import { useOnChange } from '../../hooks'
 import styles from './form.module.css'
 
 export const RegisterForm = ()=>{
-    const [student, setStudent] = useState(null)
-    const onChange = (evt)=>{
-        setStudent({
-            ...student,
-            [evt.target.name] : evt.target.value
-        })
-    }
+    const [inputData, onChange, onReset] = useOnChange()
     const onSubmit = async(evt) =>{
         evt.preventDefault()
         try {
-            await axios.post(`${process.env.BASE_URL_API}api/auth/create-user`, student)
+            await axios.post(
+                `${process.env.BASE_URL_API}api/auth/create-user`,
+                inputData
+            )
         } catch (error) {
             throw new Error(error)
         }
         evt.target.reset()
-        setStudent(null)
+        onReset()
     }
-    const onReset = ()=> setStudent(null)
     return (
         <form className={`flexContainer ${styles.formWrapper}`} onSubmit={onSubmit}>
             <label>Nombre completo empezando por apellidos:</label>
