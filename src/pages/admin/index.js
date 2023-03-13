@@ -1,21 +1,36 @@
 import axios from "axios"
+import Swal from "sweetalert2"
+import { useRouter } from "next/router"
 import { Login, Container } from "../../components"
 import { useOnChange } from "../../hooks"
 
 const Admin = ()=> {
+    const router = useRouter()
     const [inputData, onChange, onReset]= useOnChange()
     const login = async(evt)=>{
         evt.preventDefault()
         try {
-            await axios.post(
+            const response = await axios.post(
                 `${process.env.BASE_URL_API}api/auth/login-admin`,
                 inputData
                 )
+            if(!response.data.rows){
+                evt.target.reset()
+                onReset()
+                return Swal.fire({
+                    title: 'Datos incorrectos',
+                    icon:'error',
+                    showCloseButton:true,
+                    showConfirmButton:false,
+                    position:'center'
+                })
+                 
+            }
+            onReset()
+            return router.push('/admin/dashboard')
         } catch (error) {
             throw new Error(error)
         }
-        evt.target.reset()
-        onReset()
     }
     return (
         <Container>
