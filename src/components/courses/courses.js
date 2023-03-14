@@ -5,7 +5,7 @@ import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 import { months } from './consts'
 import styles from './courses.module.css'
-import { Loader, Title } from '../../components'
+import { Loader, Title, GridContainer } from '../../components'
 import Card from '../../components/card/card'
 import { useFetch } from '../../hooks'
 
@@ -32,7 +32,7 @@ export const Courses = ()=>{
             {!loading?
             <div id={`cursos-2023-${selectedMonth.name}`}>
                 <Title>{selectedMonth.name}</Title>
-                <div className={`${styles.coursesGrid} flexContainer`}>
+                <GridContainer>
                 {
                     filteredCourses.map((course)=>{
                         return (
@@ -80,7 +80,7 @@ export const Courses = ()=>{
                         )
                     })
                 }
-                </div>
+                </GridContainer>
             </div>
             :<Loader />}
             </section>   
