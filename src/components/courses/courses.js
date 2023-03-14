@@ -82,7 +82,7 @@ export const Courses = ()=>{
                 }
                 </GridContainer>
             </div>
-            :<Loader />}
+            :<Loader message='Cargando oferta académica'/>}
             </section>   
     )
 }
