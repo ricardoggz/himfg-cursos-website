@@ -16,7 +16,7 @@ export const Header =()=>{
                 </Link>
             </nav>
             </header>
-            <div className={`${styles.imageContainer}`}>
+            <div className={`${styles.imageContainer} boxShadow`}>
                 <img
                     src={'https://res.cloudinary.com/diuxbqmn5/image/upload/v1677008422/secretaria-salud_tqz45u.webp'}
                     alt='Gobierno de México'
