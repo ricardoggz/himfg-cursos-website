@@ -1,4 +1,11 @@
+import { AdminMenu, Container, Title } from "../../components"
+
 const Dashboard = ()=>{
-    return (<p>Dashboard</p>)
+    return (
+        <Container>
+            <Title>Menú</Title>
+            <AdminMenu />
+        </Container>
+    )
 }
 export default Dashboard
