@@ -10,7 +10,7 @@ const Card = ({image, title, showModal, children, startDate, finishDate})=>{
     return lastDate.toLocaleDateString('es-MX', optionDate)
    }
     return (
-        <article className={styles.cardWrapper} onClick={showModal}>
+        <article className={`${styles.cardWrapper} boxShadow`} onClick={showModal}>
             <figure className={styles.cardImage}>
             <Image
                     src={
