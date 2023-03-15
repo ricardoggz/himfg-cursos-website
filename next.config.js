@@ -13,7 +13,7 @@ const nextConfig = {
   exportPathMap(){
     return {
       '/': { page : '/'},
-      '/video/[index]': { page : '/video/[index]'}
+      '/video/[...index]': { page : '/video/[...index]'}
     }
   },
   env:{
