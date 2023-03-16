@@ -9,7 +9,6 @@ import { useOnChange } from "../../hooks"
 const Admin = ()=> {
     const {admin, saveAdmin} = useContext(AdminContext)
     const router = useRouter()
-    if(admin) return router.push('/admin/dashboard')
     const [inputData, onChange, onReset]= useOnChange()
     const login = async(evt)=>{
         evt.preventDefault()
