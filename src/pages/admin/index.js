@@ -1,11 +1,15 @@
+import { useContext } from "react"
 import axios from "axios"
 import Swal from "sweetalert2"
 import { useRouter } from "next/router"
+import { AdminContext } from "../../contexts"
 import { Login, Container } from "../../components"
 import { useOnChange } from "../../hooks"
 
 const Admin = ()=> {
+    const {admin, saveAdmin} = useContext(AdminContext)
     const router = useRouter()
+    if(admin) return router.push('/admin/dashboard')
     const [inputData, onChange, onReset]= useOnChange()
     const login = async(evt)=>{
         evt.preventDefault()
@@ -26,6 +30,7 @@ const Admin = ()=> {
                 })
                  
             }
+            saveAdmin(inputData)
             onReset()
             return router.push('/admin/dashboard')
         } catch (error) {
