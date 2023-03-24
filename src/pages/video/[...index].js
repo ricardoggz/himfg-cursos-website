@@ -35,16 +35,44 @@ const Videos = ({folderNumber, liveVideo})=>{
         </>
     )
 }
-const Video = ()=>{
+const Video = ({data})=>{
     const router = useRouter()
+    console.log(data)
     return (
         <Container>
-            {
-            !router.query.index? <></>
-            :
-            <Videos folderNumber={router.query.index[0]}/>
-            }
+            <h1>Video</h1>
         </Container>
     )
+}
+export const getStaticPaths = async()=>{
+    const response = await fetch(`${process.env.BASE_URL_API}api/courses/all-courses`)
+    const json = await response.json()
+    const paths = json.map((course)=>{
+        return{
+            params:{
+                course_vimeo_folder : [course.course_vimeo_folder]
+            }
+        }
+    })
+    return {
+        paths,
+        fallback: false
+    }
+}
+export const getStaticProps=async({params})=>{
+    const config = {
+        headers: { Authorization: `Bearer 586637bf90ea7727edc8c90c95b056c3` }
+    }
+    const response = await fetch(
+        `https://api.vimeo.com/me/folders/${params.course_vimeo_folder}/videos`,
+        config
+    )
+    const json = response.json()
+
+    return {
+        props:{
+            data: json
+        }
+    }
 }
 export default Video
