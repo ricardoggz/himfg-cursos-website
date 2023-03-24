@@ -66,7 +66,7 @@ export const Courses = ()=>{
                                         <></>
                                         :
                                         <Link
-                                            href={`/video/[...index]`}
+                                            href={`/video/[id]`}
                                             as ={`/video/${course.course_vimeo_folder}`}
                                         >
                                             Ingresar
