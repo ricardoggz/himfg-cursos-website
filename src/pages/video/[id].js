@@ -35,12 +35,23 @@ const Videos = ({folderNumber, liveVideo})=>{
         </>
     )
 }
-const Video = ({data})=>{
+const Video = ({data, title})=>{
     const router = useRouter()
-    console.log(data)
+    //const videos = data.map((video)=>video.player_embed_url)
+    console.log(data.data)
     return (
         <Container>
-            <h1>Video</h1>
+            <h1>{title}</h1>
+            <GridContainer>
+               {
+                data.data.map((video, i)=>(
+                    <iframe
+                        src={video.player_embed_url}
+                        key={i}
+                    />
+                ))
+               }
+            </GridContainer>
         </Container>
     )
 }
@@ -50,13 +61,13 @@ export const getStaticPaths = async()=>{
     const paths = json.map((course)=>{
         return{
             params:{
-                course_vimeo_folder : [course.course_vimeo_folder]
+                id : `${course.course_vimeo_folder}`.toString()
             }
         }
     })
     return {
         paths,
-        fallback: false
+        fallback: true
     }
 }
 export const getStaticProps=async({params})=>{
@@ -64,14 +75,15 @@ export const getStaticProps=async({params})=>{
         headers: { Authorization: `Bearer 586637bf90ea7727edc8c90c95b056c3` }
     }
     const response = await fetch(
-        `https://api.vimeo.com/me/folders/${params.course_vimeo_folder}/videos`,
+        `https://api.vimeo.com/me/folders/${params.id}/videos`,
         config
     )
-    const json = response.json()
+    const data = await response.json()
 
     return {
         props:{
-            data: json
+            title: 'Hello World',
+            data: data
         }
     }
 }
