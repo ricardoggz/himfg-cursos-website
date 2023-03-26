@@ -67,7 +67,7 @@ export const Courses = ()=>{
                                         :
                                         <Link
                                             href={`/video/[...id]`}
-                                            as ={`/video/${course.course_vimeo_folder}/${course.course_name}`}
+                                            as ={`/video/${course.course_name}/${course.course_vimeo_folder}`}
                                         >
                                             Ingresar
                                         </Link>
