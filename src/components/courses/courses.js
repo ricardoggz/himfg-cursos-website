@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react'
+import { useState } from 'react'
 import Link from 'next/link'
 import 'animate.css'
 import Swal from 'sweetalert2'
@@ -67,7 +67,7 @@ export const Courses = ()=>{
                                         :
                                         <Link
                                             href={`/video/[...id]`}
-                                            as ={`/video/${course.course_name}/${course.course_vimeo_folder}`}
+                                            as ={`/video/${course.course_name}/${course.course_vimeo_folder}/${course.course_live_video}`}
                                         >
                                             Ingresar
                                         </Link>
