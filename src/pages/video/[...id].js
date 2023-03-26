@@ -1,14 +1,58 @@
+import { useState } from "react"
 import { useRouter } from "next/router"
+import axios from "axios"
+import Swal from "sweetalert2"
 import styles from './video.module.css'
-import { Container, GridContainer } from '../../components'
+import { useOnChange } from "../../hooks"
+import { Container, GridContainer, Login } from '../../components'
 
 const Video = (props)=>{
     useRouter()
+    const [password, setPassword] = useState(null)
+    const [inputData, onChange, onReset]= useOnChange()
+    const login = async(evt)=>{
+        evt.preventDefault()
+        try {
+            const resp = await axios.post(
+                `${process.env.BASE_URL_API}api/courses/course-login`,
+                inputData
+            )
+            if(!resp.data.rows){
+                evt.target.reset()
+                onReset()
+                return Swal.fire({
+                    title: 'Datos incorrectos',
+                    icon:'error',
+                    showCloseButton:true,
+                    showConfirmButton:false,
+                    position:'center'
+                })
+            }
+            setPassword(inputData)
+            onReset()
+        } catch (error) {
+            throw new Error(error)
+        }
+    }
     return (
         <Container>
             <h3 className={styles.videoTitle}>
                {props.title}
             </h3>
+            {
+                !password ?
+                <Login onSubmit={login}>
+                <label>Contraseña:</label>
+                <input
+                type='password'
+                required
+                onChange={onChange}
+                name='course_password'
+                />
+                <button>Ingresar</button>
+            </Login>
+            :
+            <>
             {
                 props.liveVideoId === 'null'
                 ? null
@@ -64,6 +108,8 @@ const Video = (props)=>{
                 </>
                 :
                 null
+            }
+            </>
             }
         </Container>
     )
