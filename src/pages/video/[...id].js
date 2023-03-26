@@ -9,26 +9,62 @@ const Video = (props)=>{
             <h3 className={styles.videoTitle}>
                {props.title}
             </h3>
-            <GridContainer>
-               {
-                props.data?.data?.map((video, i)=>(
-                    <div className={`${styles.iframeVideo} boxShadow`}>
-                        <iframe
-                        src={video.player_embed_url}
-                        key={i}
-                        frameBorder='0'
-                        allow="
-                        autoplay;
-                        fullscreen;
-                        picture-in-picture
-                        "
-                        allowFullScreen
-                        />
-                        <span>{video.name}</span>
-                    </div>
-                ))
-               }
-            </GridContainer>
+            {
+                props.liveVideoId === 'null'
+                ? null
+                :
+                <div className={`${styles.liveVideo} flexContainer boxShadow`}>
+                    <iframe
+                    src={`https://vimeo.com/event/${props.liveVideoId}/embed`}
+                    frameBorder='0'
+                    allow="
+                    autoplay;
+                    fullscreen;
+                    picture-in-picture
+                    "
+                    allowFullScreen
+                    />
+                    <iframe
+                    src={`https://vimeo.com/event/${props.liveVideoId}/chat`}
+                    frameBorder='0'
+                    allow="
+                    autoplay;
+                    fullscreen;
+                    picture-in-picture
+                    "
+                    />
+                </div>
+            }
+            {
+                props.data.data.length !== 0
+                ?
+                <>
+                <h3 className={styles.videoTitle}>
+                    Transmisiones anteriores
+                </h3>
+                <GridContainer>
+                {
+                    props.data?.data?.map((video, i)=>(
+                        <div className={`${styles.iframeVideo} boxShadow`} key={i}>
+                            <iframe
+                            src={video.player_embed_url}
+                            frameBorder='0'
+                            allow="
+                            autoplay;
+                            fullscreen;
+                            picture-in-picture
+                            "
+                            allowFullScreen
+                            />
+                            <span>{video.name}</span>
+                        </div>
+                    ))
+                }
+                </GridContainer>
+                </>
+                :
+                null
+            }
         </Container>
     )
 }
@@ -39,7 +75,11 @@ export const getStaticPaths = async()=>{
     .map((course)=>{
         return{
             params:{
-                 id: [`${course.course_name}`, `${course.course_vimeo_folder}`],
+                 id: [
+                    `${course.course_name}`,
+                    `${course.course_vimeo_folder}`,
+                    `${!course.course_live_video ? null : course.course_live_video}`
+                ],
             }
         }
     })
@@ -61,7 +101,8 @@ export const getStaticProps=async({params})=>{
     return {
         props:{
             data: data,
-            title: videoId[0] || null
+            title: videoId[0] || null,
+            liveVideoId: videoId[2] ? videoId[2] : null
         }
     }
 }
