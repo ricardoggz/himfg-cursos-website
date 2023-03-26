@@ -39,7 +39,7 @@ export const getStaticPaths = async()=>{
     .map((course)=>{
         return{
             params:{
-                 id: [`${course.course_vimeo_folder}`, `${course.course_name}`],
+                 id: [`${course.course_name}`, `${course.course_vimeo_folder}`],
             }
         }
     })
@@ -54,14 +54,14 @@ export const getStaticProps=async({params})=>{
         headers: { Authorization: `Bearer 586637bf90ea7727edc8c90c95b056c3` }
     }
     const response = await fetch(
-        `https://api.vimeo.com/me/folders/${videoId[0]}/videos`,
+        `https://api.vimeo.com/me/folders/${videoId[1]}/videos`,
         config
     )
     const data = await response.json()
     return {
         props:{
             data: data,
-            title: videoId[1] || null
+            title: videoId[0] || null
         }
     }
 }
