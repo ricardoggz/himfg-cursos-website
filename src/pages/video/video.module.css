@@ -17,6 +17,24 @@
     color: var(--black-secondary);
     font-size: 1.1rem;
     font-weight: 600;
-    padding-bottom:4rem;
+    margin-bottom:4rem;
     text-align:center;
+}
+.liveVideo{
+    display:flex;
+    height:100%;
+    justify-content: center;
+    margin-bottom:4rem;
+    padding:1rem;
+    width:100%;
+}
+.liveVideo iframe {
+    height:400px;
+    width:100%;
+}
+
+@media(min-width:240px) and (max-width: 880px){
+    .liveVideo{
+        flex-direction: column;
+    }
 }
