@@ -36,7 +36,7 @@ const Video = (props)=>{
                 </div>
             }
             {
-                props.data.data.length !== 0
+                props.data?.data?.length !== 0
                 ?
                 <>
                 <h3 className={styles.videoTitle}>
