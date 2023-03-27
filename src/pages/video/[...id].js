@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { useRouter } from "next/router"
+import Head from "next/head"
 import axios from "axios"
 import Swal from "sweetalert2"
 import styles from './video.module.css'
@@ -9,6 +10,7 @@ import { Container, GridContainer, Login } from '../../components'
 const Video = (props)=>{
     useRouter()
     const [password, setPassword] = useState(null)
+    const [course, setCourse] = useState(null)
     const [inputData, onChange, onReset]= useOnChange()
     const login = async(evt)=>{
         evt.preventDefault()
@@ -29,15 +31,32 @@ const Video = (props)=>{
                 })
             }
             setPassword(inputData)
+            setCourse(resp.data.rows)
             onReset()
         } catch (error) {
             throw new Error(error)
         }
     }
     return (
-        <Container>
+        <>
+            <Head>
+                <title>
+                {
+                !course ? 
+                'Ingresar al curso'
+                :
+                course[0].course_name
+               }
+                </title>
+            </Head>
+            <Container>
             <h3 className={styles.videoTitle}>
-               {props.title}
+               {
+                !course ? 
+                'Ingrese la contraseña para acceder al curso'
+                :
+                course[0].course_name
+               }
             </h3>
             {
                 !password ?
@@ -54,12 +73,16 @@ const Video = (props)=>{
             :
             <>
             {
-                props.liveVideoId === 'null'
+                !course
                 ? null
                 :
-                <div className={`${styles.liveVideo} flexContainer boxShadow`}>
+                course.map(({course_live_video, course_id})=>(
+                    <div
+                    className={`${styles.liveVideo} flexContainer boxShadow`}
+                    key={course_id}
+                    >
                     <iframe
-                    src={`https://vimeo.com/event/${props.liveVideoId}/embed`}
+                    src={`https://vimeo.com/event/${course_live_video}/embed`}
                     frameBorder='0'
                     allow="
                     autoplay;
@@ -69,7 +92,7 @@ const Video = (props)=>{
                     allowFullScreen
                     />
                     <iframe
-                    src={`https://vimeo.com/event/${props.liveVideoId}/chat`}
+                    src={`https://vimeo.com/event/${course_live_video}/chat`}
                     frameBorder='0'
                     allow="
                     autoplay;
@@ -78,6 +101,7 @@ const Video = (props)=>{
                     "
                     />
                 </div>
+                ))
             }
             {
                 props.data?.data?.length !== 0
@@ -112,6 +136,7 @@ const Video = (props)=>{
             </>
             }
         </Container>
+        </>
     )
 }
 export const getStaticPaths = async()=>{
