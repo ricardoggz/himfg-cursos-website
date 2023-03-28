@@ -16,7 +16,7 @@ export const Footer = ()=>{
                     </li>
                     <li>
                         <a
-                        href='https://www.facebook.com/HospitalInfantilDeMexicoFG/?locale=es_LA'
+                        href='https://twitter.com/T_HIMFG'
                         target={'_blank'}
                         >
                             <BsTwitter />
