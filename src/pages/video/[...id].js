@@ -11,6 +11,7 @@ const Video = (props)=>{
     useRouter()
     const [password, setPassword] = useState(null)
     const [course, setCourse] = useState(null)
+    const [ vimeoData, setVimeoData ] = useState(null)
     const [inputData, onChange, onReset]= useOnChange()
     const login = async(evt)=>{
         evt.preventDefault()
@@ -32,7 +33,25 @@ const Video = (props)=>{
             }
             setPassword(inputData)
             setCourse(resp.data.rows)
+            getVimeoData({
+                id: resp.data.rows[0].course_vimeo_folder
+            })
             onReset()
+        } catch (error) {
+            throw new Error(error)
+        }
+    }
+    const getVimeoData = async({id})=>{
+        try {
+            const resp = await axios.get(
+                `https://api.vimeo.com/me/folders/${id}/videos`,
+                {
+                    headers: { Authorization: `Bearer 586637bf90ea7727edc8c90c95b056c3` }
+                }
+            )
+            if(resp.status === 200){
+                setVimeoData(resp.data.data)
+            }
         } catch (error) {
             throw new Error(error)
         }
@@ -104,8 +123,10 @@ const Video = (props)=>{
                 ))
             }
             {
-                props.data?.data?.length !== 0
+                !vimeoData
                 ?
+                null
+                :
                 <>
                 <h3 className={styles.videoTitle}>
                     Transmisiones anteriores
@@ -130,8 +151,6 @@ const Video = (props)=>{
                 }
                 </GridContainer>
                 </>
-                :
-                null
             }
             </>
             }
