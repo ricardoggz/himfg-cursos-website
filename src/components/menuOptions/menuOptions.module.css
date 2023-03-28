@@ -1,0 +1,23 @@
+.menuOption{
+    align-items: center;
+    border:1px solid var(--golden-primary);
+    border-radius: 10px;
+    color:var(--black-secondary);
+    display: flex;
+    flex-direction: column;
+    gap:0.5rem;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 1rem;
+    text-decoration: none;
+    width:100%;
+}
+.menuOption:hover{
+    background: var(--white-secondary);
+    transition: all 500ms ease;
+}
+.menuOption svg{
+    color:var(--golden-primary);
+    font-size: 2rem;
+    font-weight: 900;
+}
