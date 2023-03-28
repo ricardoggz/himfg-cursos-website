@@ -133,7 +133,7 @@ const Video = (props)=>{
                 </h3>
                 <GridContainer>
                 {
-                    props.data?.data?.map((video, i)=>(
+                    vimeoData.map((video, i)=>(
                         <div className={`${styles.iframeVideo} boxShadow`} key={i}>
                             <iframe
                             src={video.player_embed_url}
