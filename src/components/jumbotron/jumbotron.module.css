@@ -7,10 +7,6 @@
     padding:2rem 0;
     width:100%;
 }
-.jumbotronTitles hr {
-    color:var(--blue-primary);
-    width:20%;
-}
 .jumbotronImage{
     display:flex;
     justify-content: center;

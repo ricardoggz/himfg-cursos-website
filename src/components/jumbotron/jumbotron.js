@@ -10,9 +10,8 @@ export const Jumbotron =()=>{
                         src='https://res.cloudinary.com/diuxbqmn5/image/upload/v1679079932/logo_him-removebg-preview-min_baosmy.png'
                     />
                 </figure>
-                <h1>Hospital Infantil de México Federico Goméz</h1>
+                <h1>Hospital Infantil de México Federico Gómez</h1>
                 <span>80 años de ciencia, excelencia y humanismo</span>
-                <hr />
             </div>
         </section>
     )
