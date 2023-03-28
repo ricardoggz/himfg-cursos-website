@@ -21,6 +21,7 @@ body{
   --green-secondary:#13322b;
   --blue-primary:#165198;
   --blue-secondary:#35A1C6;
+  --golden-primary:#dac5a0;
 }
 /*UI flex-container*/
 .flexContainer{
