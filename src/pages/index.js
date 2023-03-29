@@ -1,10 +1,9 @@
 import Head from 'next/head'
 import {
-  Directory,
+  Courses,
   Container,
   Title,
-  Jumbotron,
-  MenuOptions
+  Jumbotron
 } from '../components'
 
 export default function Home() {
@@ -18,11 +17,8 @@ export default function Home() {
       </Head>
       <Jumbotron />
       <Container>
-        <Title>Direcciones del HIMFG</Title>
-        <MenuOptions />
-      </Container>
-      <Container>
-        <Directory />
+        <Title>Oferta educativa del HIMFG</Title>
+        <Courses />
       </Container>
     </>
   )
