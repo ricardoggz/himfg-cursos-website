@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import {
-  Courses,
+  Directory,
   Container,
   Title,
   Jumbotron,
@@ -20,6 +20,9 @@ export default function Home() {
       <Container>
         <Title>Direcciones del HIMFG</Title>
         <MenuOptions />
+      </Container>
+      <Container>
+        <Directory />
       </Container>
     </>
   )
