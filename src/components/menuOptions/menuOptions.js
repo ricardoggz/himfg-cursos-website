@@ -16,7 +16,7 @@ export const MenuOptions = ()=>{
             <TbRibbonHealth />
             <span>Dirección médica</span>
         </Link>
-        <Link href='/' className={`${styles.menuOption}`}>
+        <Link href='/ensenanza' className={`${styles.menuOption}`}>
             <BsPencilFill />
             <span>Dirección de enseñanza</span>
         </Link>
