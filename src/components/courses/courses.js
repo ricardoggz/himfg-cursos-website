@@ -12,7 +12,7 @@ import { useFetch } from '../../hooks'
 const CardModal = withReactContent(Swal)
 
 export const Courses = ()=>{
-    const [selectedMonth, setSelectedMonth]= useState(months[0])
+    const [selectedMonth, setSelectedMonth]= useState(months[new Date().getMonth()])
     const [loading, data]= useFetch({
         url: `${process.env.BASE_URL_API}api/courses/all-courses`
     })
