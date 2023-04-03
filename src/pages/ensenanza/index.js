@@ -1,13 +1,16 @@
+import { useState } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
+import { IoIosArrowDown } from 'react-icons/io'
 import {
-  Courses,
   Container,
   Title,
 } from '../../components'
 import styles from './page.module.css'
 
 const EducativeOfer = ()=>{
+  const [isOpen, setIsOpen]= useState(false)
+  const showMenu = ()=> setIsOpen(!isOpen)
   return(
     <>
       <Head>
@@ -16,19 +19,24 @@ const EducativeOfer = ()=>{
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="https://res.cloudinary.com/diuxbqmn5/image/upload/v1677114497/himfg-logo_ewzx59.webp" />
       </Head>
-      <div className='boxShadow'>
-        <ul className={`${styles.pageNavigation} flexContainer`}>
-          <li>
-            <Link href='/'>Educación médica continua</Link>
-          </li>
-          <li>
-            <Link href='/'>Subdirección</Link>
-          </li>
-          <li>
-            <Link href='/'>Comuncación social</Link>
-          </li>
-        </ul>
-      </div>
+        <div className='flexContainer'>
+          <button onClick={showMenu} className={styles.buttonOptions}>
+            <span>Menú</span>
+            <IoIosArrowDown />
+          </button>
+          <ul className={`${!isOpen ? styles.navigationOut : styles.pageNavigation}`}>
+            <li>
+              <Link href='/'>
+                Educación médica continua
+              </Link>
+            </li>
+            <li>
+              <Link href='/'>
+               Comunicación social
+              </Link>
+            </li>
+          </ul>
+        </div>
       <Container>
         <Title>Dirección de enseñanza</Title>
         <div className={`${styles.pagePharagraphs} flexContainer`}>
