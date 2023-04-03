@@ -92,7 +92,7 @@ const Video = (props)=>{
             :
             <>
             {
-                !course
+                !course[0].course_live_video
                 ? null
                 :
                 course.map(({course_live_video, course_id})=>(
@@ -119,8 +119,14 @@ const Video = (props)=>{
                     picture-in-picture
                     "
                     />
-                </div>
+                    </div>
                 ))
+            }
+            {
+                !course[0].course_zoom_video
+                ? null
+                : 
+                <a href='/'>Enlace de Zoom</a>
             }
             {
                 !vimeoData
@@ -166,9 +172,7 @@ export const getStaticPaths = async()=>{
         return{
             params:{
                  id: [
-                    `${course.course_name}`,
-                    `${course.course_vimeo_folder}`,
-                    `${!course.course_live_video ? null : course.course_live_video}`
+                    `${course.course_url}`,
                 ],
             }
         }
