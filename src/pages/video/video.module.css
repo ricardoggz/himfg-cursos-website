@@ -32,7 +32,19 @@
     height:400px;
     width:100%;
 }
-
+.liveVideoZoom{
+    align-items: center;
+    display:flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    margin:0 auto;
+    margin-bottom: 4rem;
+    padding: 1rem;
+}
+.liveVideoZoom a{
+    color:var(--blue-secondary);
+}
 @media(min-width:240px) and (max-width: 880px){
     .liveVideo{
         flex-direction: column;

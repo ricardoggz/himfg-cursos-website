@@ -126,7 +126,16 @@ const Video = (props)=>{
                 !course[0].course_zoom_video
                 ? null
                 : 
-                <a href='/'>Enlace de Zoom</a>
+                <div className={`${styles.liveVideoZoom} flexContainer`}>
+                    <a
+                    href={course[0].course_zoom_video}
+                    target='_blank'
+                    >
+                        Enlace de Zoom
+                    </a>
+                    <span>{`ID de reunión: ${course[0].course_zoom_id}`}</span>
+                    <span>{`Código de acceso: ${course[0].course_zoom_password}`}</span>
+                </div>
             }
             {
                 !vimeoData
