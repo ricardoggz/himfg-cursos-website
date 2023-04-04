@@ -13,10 +13,11 @@
     width:30%;
 }
 .imageContainer{
+    align-items: center;
     display:flex;
-    justify-content: center;
+    justify-content: space-between;
     padding:1rem 0;
 }
 .imageContainer img{
-    width:8rem;
+    width:6rem;
 }

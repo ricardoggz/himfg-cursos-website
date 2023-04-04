@@ -1,7 +1,5 @@
-import Image from 'next'
 import Link from 'next/link'
 import styles from './header.module.css'
-import gob_logo from '../../assets/gob-logo.svg'
 
 export const Header =()=>{
     return (
@@ -16,10 +14,14 @@ export const Header =()=>{
                 </Link>
             </nav>
             </header>
-            <div className={`${styles.imageContainer} boxShadow`}>
+            <div className={`${styles.imageContainer} flexContainer`}>
                 <img
                     src={'https://res.cloudinary.com/diuxbqmn5/image/upload/v1677008422/secretaria-salud_tqz45u.webp'}
                     alt='Gobierno de México'
+                />
+                <img
+                    src={'https://res.cloudinary.com/diuxbqmn5/image/upload/v1679079932/logo_him-removebg-preview-min_baosmy.png'}
+                    alt='HIMFG'
                 />
             </div>
         </>
