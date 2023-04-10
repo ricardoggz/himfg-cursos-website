@@ -19,6 +19,10 @@ export const RegisterForm = ()=>{
     }
     return (
         <>
+            <div className={styles.anchorLogin}>
+                <span>¿Ya te has registrado?</span>
+                <a href="/">Inicia sesión para acceder a este curso</a>
+            </div>
             <form className={`flexContainer ${styles.formWrapper}`} onSubmit={onSubmit}>
             <label>Nombre completo empezando por apellidos:</label>
             <input type='text' name='student_name' required onChange={onChange}/>
@@ -283,10 +287,6 @@ export const RegisterForm = ()=>{
                 </button>
             </div>
             </form>
-            <div className={styles.anchorLogin}>
-                <span>¿Ya te has registrado?</span>
-                <a href="/">Inicia sesión para acceder a este curso</a>
-            </div>
         </>
     )
 }

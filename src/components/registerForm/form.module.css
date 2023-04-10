@@ -45,7 +45,7 @@
     flex-direction: column;
     gap:0.5rem;
     justify-content: center;
-    margin-top:3rem;
+    margin-bottom:3rem;
 }
 .anchorLogin a{
     color:var(--blue-secondary);
