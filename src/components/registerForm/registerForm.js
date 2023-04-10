@@ -227,6 +227,13 @@ export const RegisterForm = ()=>{
                 name='student_email'
                 onChange={onChange}
             />
+            <label>Genere una contraseña:</label>
+            <input
+                type='text'
+                required
+                name='student_password'
+                onChange={onChange}
+            />
             <label>Edad:</label>
             <input
                 type='number'
@@ -270,6 +277,7 @@ export const RegisterForm = ()=>{
                 className={styles.buttonDanger}
                 type='reset'
                 onClick={onReset}
+                id='click'
                 >
                     Cancelar
                 </button>
