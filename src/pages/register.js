@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Script from 'next/script'
 import { RegisterForm, Container, Title } from '../components'
 
 const Register = ()=>{
@@ -14,6 +15,14 @@ const Register = ()=>{
                 <Title>Inscripción online</Title>
                 <RegisterForm />
             </Container>
+            <Script
+                src='https://multicobros.banorte.com/orquestador/lightbox/checkoutV2.js'
+                strategy='beforeInteractive'
+                />
+            <Script
+                src='https://multicobros.banorte.com/orquestador/resources/js/jquery-3.3.1.js'
+                strategy='beforeInteractive'
+            />
         </>
     )
 }
