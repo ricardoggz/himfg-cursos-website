@@ -18,7 +18,8 @@ export const RegisterForm = ()=>{
         onReset()
     }
     return (
-        <form className={`flexContainer ${styles.formWrapper}`} onSubmit={onSubmit}>
+        <>
+            <form className={`flexContainer ${styles.formWrapper}`} onSubmit={onSubmit}>
             <label>Nombre completo empezando por apellidos:</label>
             <input type='text' name='student_name' required onChange={onChange}/>
             <label>¿Cuál es su título profesional?:</label>
@@ -273,6 +274,11 @@ export const RegisterForm = ()=>{
                     Cancelar
                 </button>
             </div>
-        </form>
+            </form>
+            <div className={styles.anchorLogin}>
+                <span>¿Ya te has registrado?</span>
+                <a href="/">Inicia sesión para acceder a este curso</a>
+            </div>
+        </>
     )
 }

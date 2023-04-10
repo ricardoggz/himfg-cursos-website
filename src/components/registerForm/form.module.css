@@ -39,3 +39,14 @@
 .buttonDanger{
     background: var(--red-primary);
 }
+.anchorLogin{
+    align-items: center;
+    display:flex;
+    flex-direction: column;
+    gap:0.5rem;
+    justify-content: center;
+    margin-top:3rem;
+}
+.anchorLogin a{
+    color:var(--blue-secondary);
+}
