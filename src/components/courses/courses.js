@@ -72,7 +72,16 @@ export const Courses = ()=>{
                                             >
                                             Ingresar
                                             </Link>
-                                            <Link href={'/register'}>Inscripción online</Link>
+                                            <Link
+                                                href={'/register'}
+                                                onClick={()=>{
+                                                    localStorage.setItem('course', JSON.stringify({
+                                                        course: course.course_name,
+                                                    }))
+                                                }}
+                                            >
+                                                Inscripción online
+                                            </Link>
                                         </>
                                         }
                                     </Card>
