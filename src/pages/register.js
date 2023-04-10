@@ -1,8 +1,14 @@
+import { useState, useEffect } from 'react'
 import Head from 'next/head'
 import Script from 'next/script'
 import { RegisterForm, Container, Title } from '../components'
 
 const Register = ()=>{
+    const [course, setIsCourse] = useState(null)
+    useEffect(()=>{
+        setIsCourse(JSON.parse(localStorage.getItem('course')))
+    },[])
+    console.log(course)
     return (
         <>
             <Head>
@@ -12,7 +18,12 @@ const Register = ()=>{
                 <link rel="icon" href="https://res.cloudinary.com/diuxbqmn5/image/upload/v1677114497/himfg-logo_ewzx59.webp" />
             </Head>
             <Container>
-                <Title>Inscripción online</Title>
+                {
+                    !course ?
+                    <Title>Inscripción</Title>
+                    :
+                    <Title>Inscripción al curso : {course.course}</Title>
+                }
                 <RegisterForm />
             </Container>
             <Script
