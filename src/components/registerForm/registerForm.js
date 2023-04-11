@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router'
 import axios from 'axios'
+import Swal from 'sweetalert2'
 import { useOnChange } from '../../hooks'
 import styles from './form.module.css'
 
@@ -14,6 +15,12 @@ export const RegisterForm = ()=>{
                 inputData
             )
             if(response.status === 200){
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Registro exitoso',
+                    showCloseButton: true,
+                    showConfirmButton: false
+                })
                 router.push('/userlogin')
             }
         } catch (error) {
