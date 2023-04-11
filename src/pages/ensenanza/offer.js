@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { Courses, Container, Title } from '../../components'
 const CoursesList = ()=>{
     useEffect(()=>{
-        localStorage.clear()
+        localStorage.removeItem('course')
     },[])
     return (
         <Container>
