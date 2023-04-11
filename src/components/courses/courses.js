@@ -53,35 +53,42 @@ export const Courses = ()=>{
                                         <></>
                                         :
                                         <>
-                                        <a
-                                            href={course.course_pdf}
-                                            target={'_blank'}
-                                        >
-                                            Ver programa
-                                        </a>
-                                        </>
-                                        }
-                                        {
-                                        !course.course_vimeo_folder?
-                                        <></>
-                                        :
-                                        <>
-                                            <Link
-                                            href={`/video/[...id]`}
-                                            as ={`/video/${course.course_name}/${course.course_vimeo_folder}/${course.course_live_video}`}
-                                            >
-                                            Ingresar
-                                            </Link>
-                                            <Link
-                                                href={'/register'}
+                                            <button
                                                 onClick={()=>{
-                                                    localStorage.setItem('course', JSON.stringify({
-                                                        course: course.course_name,
-                                                    }))
-                                                }}
+                                                    showModal(
+                                                        <>
+                                                        {
+                                                        !course.course_vimeo_folder?
+                                                        <></>
+                                                        :
+                                                        <div className={styles.modalOptions}>
+                                                            <iframe 
+                                                                src={course.course_pdf}
+                                                            />
+                                                            <Link
+                                                            href={`/video/[...id]`}
+                                                            as ={`/video/${course.course_name}/${course.course_vimeo_folder}/${course.course_live_video}`}
+                                                            >
+                                                            Ingresar con contraseña
+                                                            </Link>
+                                                            <Link
+                                                                href={'/register'}
+                                                                onClick={()=>{
+                                                                    localStorage.setItem('course', JSON.stringify({
+                                                                        course: course.course_name,
+                                                                    }))
+                                                                }}
+                                                            >
+                                                            Inscripción online
+                                                            </Link>
+                                                        </div>
+                                                    }
+                                                </>
+                                                )
+                                            }}
                                             >
-                                                Inscripción online
-                                            </Link>
+                                            Ver programa
+                                            </button>
                                         </>
                                         }
                                     </Card>
