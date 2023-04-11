@@ -12,7 +12,7 @@ import { useFetch } from '../../hooks'
 const CardModal = withReactContent(Swal)
 
 export const Courses = ()=>{
-    const [selectedMonth, setSelectedMonth]= useState(months[0])
+    const [selectedMonth, setSelectedMonth]= useState(months[new Date().getMonth()])
     const [loading, data]= useFetch({
         url: `${process.env.BASE_URL_API}api/courses/all-courses`
     })
@@ -76,6 +76,9 @@ export const Courses = ()=>{
                                                                 onClick={()=>{
                                                                     localStorage.setItem('course', JSON.stringify({
                                                                         course: course.course_name,
+                                                                        price: course.course_price,
+                                                                        folder: course.course_vimeo_folder,
+                                                                        liveVideo: course.course_live_video
                                                                     }))
                                                                 }}
                                                             >
