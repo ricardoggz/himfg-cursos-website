@@ -1,7 +1,10 @@
+import { useContext} from 'react'
 import Link from 'next/link'
 import styles from './header.module.css'
+import { UserContext } from '../../contexts'
 
 export const Header =()=>{
+    const { user, signOutUser } = useContext(UserContext)
     return (
         <>
             <header className={styles.headerWrapper}>
@@ -12,6 +15,12 @@ export const Header =()=>{
                         alt='Gobierno de México'
                     />
                 </Link>
+                {
+                    !user ?
+                    <></>
+                    :
+                    <button onClick={signOutUser}>Cerrar sesión</button>
+                }
             </nav>
             </header>
             <div className={`${styles.imageContainer} flexContainer`}>
