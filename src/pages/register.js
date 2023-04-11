@@ -8,7 +8,6 @@ const Register = ()=>{
     useEffect(()=>{
         setIsCourse(JSON.parse(localStorage.getItem('course')))
     },[])
-    console.log(course)
     return (
         <>
             <Head>
