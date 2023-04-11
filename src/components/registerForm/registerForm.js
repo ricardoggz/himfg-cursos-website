@@ -1,16 +1,21 @@
+import { useRouter } from 'next/router'
 import axios from 'axios'
 import { useOnChange } from '../../hooks'
 import styles from './form.module.css'
 
 export const RegisterForm = ()=>{
+    const router = useRouter()
     const [inputData, onChange, onReset] = useOnChange()
     const onSubmit = async(evt) =>{
         evt.preventDefault()
         try {
-            await axios.post(
+            const response = await axios.post(
                 `${process.env.BASE_URL_API}api/auth/create-user`,
                 inputData
             )
+            if(response.status === 200){
+                router.push('/userlogin')
+            }
         } catch (error) {
             throw new Error(error)
         }
@@ -35,7 +40,7 @@ export const RegisterForm = ()=>{
                         value='MÉDICO'
                         name='student_grade'
                         onChange={onChange}
-                        required
+                        
                     />
                 </div>
                 <div>
@@ -45,7 +50,7 @@ export const RegisterForm = ()=>{
                         value='PASANTE'
                         name='student_grade'
                         onChange={onChange}
-                        required
+                        
                     />
                 </div>
                 <div>
@@ -55,7 +60,7 @@ export const RegisterForm = ()=>{
                         value='EST. MED.'
                         name='student_grade'
                         onChange={onChange}
-                        required
+                        
                     />
                 </div>
                 <div>
@@ -65,7 +70,7 @@ export const RegisterForm = ()=>{
                         value='LIC. ENF.'
                         name='student_grade'
                         onChange={onChange}
-                        required
+                        
                     />
                 </div>
                 <div>
@@ -75,7 +80,7 @@ export const RegisterForm = ()=>{
                         value='ENF. ESP.'
                         name='student_grade'
                         onChange={onChange}
-                        required                        
+                                                
                     />
                 </div>
                 <div>
@@ -85,7 +90,7 @@ export const RegisterForm = ()=>{
                         value='EST. ENF.'
                         name='student_grade'
                         onChange={onChange}
-                        required
+                        
                     />
                 </div>
                 <div>
@@ -95,7 +100,7 @@ export const RegisterForm = ()=>{
                         value='QUÍMICO'
                         name='student_grade'
                         onChange={onChange}
-                        required
+                        
                     />
                 </div>
                 <div>
@@ -105,7 +110,7 @@ export const RegisterForm = ()=>{
                         value='BIÓLOGO'
                         name='student_grade'
                         onChange={onChange}
-                        required
+                        
                     />
                 </div>
                 <div>
@@ -115,7 +120,7 @@ export const RegisterForm = ()=>{
                         value='M. EN C.'
                         name='student_grade'
                         onChange={onChange}
-                        required
+                        
                     />
                 </div>
                 <div>
@@ -125,7 +130,7 @@ export const RegisterForm = ()=>{
                         value='PSICÓLOGO'
                         name='student_grade'
                         onChange={onChange}
-                        required
+                        
                     />
                 </div>
                 <div>
@@ -135,7 +140,7 @@ export const RegisterForm = ()=>{
                         value='PEDAGOGO'
                         name='student_grade'
                         onChange={onChange}
-                        required
+                        
                     />
                 </div>
                 <div>
@@ -145,7 +150,7 @@ export const RegisterForm = ()=>{
                         value='TRABAJADOR SOCIAL'
                         name='student_grade'
                         onChange={onChange}
-                        required
+                        
                     />
                 </div>
                 <div>
@@ -162,7 +167,7 @@ export const RegisterForm = ()=>{
                         value='IMSS'
                         name='student_institution'
                         onChange={onChange}
-                        required
+                        
                     />
                 </div>
                 <div>
@@ -172,7 +177,7 @@ export const RegisterForm = ()=>{
                         value='SSA'
                         name='student_institution'
                         onChange={onChange}
-                        required
+                        
                     />
                 </div>
                 <div>
@@ -182,7 +187,7 @@ export const RegisterForm = ()=>{
                         value='ISSTE'
                         name='student_institution'
                         onChange={onChange}
-                        required
+                        
                     />
                 </div>
                 <div>
@@ -192,7 +197,7 @@ export const RegisterForm = ()=>{
                         value='GDF'
                         name='student_institution'
                         onChange={onChange}
-                        required
+                        
                     />
                 </div>
                 <div>
@@ -202,7 +207,7 @@ export const RegisterForm = ()=>{
                         value='HIMFG'
                         name='student_institution'
                         onChange={onChange}
-                        required
+                        
                     />
                 </div>
                 <div>
