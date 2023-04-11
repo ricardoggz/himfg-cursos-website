@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import Link from 'next/link'
 import 'animate.css'
 import Swal from 'sweetalert2'
@@ -8,10 +8,12 @@ import styles from './courses.module.css'
 import { Loader, Title, GridContainer } from '../../components'
 import Card from '../../components/card/card'
 import { useFetch } from '../../hooks'
+import { UserContext } from '../../contexts'
 
 const CardModal = withReactContent(Swal)
 
 export const Courses = ()=>{
+    const {user} = useContext(UserContext)
     const [selectedMonth, setSelectedMonth]= useState(months[new Date().getMonth()])
     const [loading, data]= useFetch({
         url: `${process.env.BASE_URL_API}api/courses/all-courses`
@@ -71,6 +73,11 @@ export const Courses = ()=>{
                                                             >
                                                             Ingresar con contraseña
                                                             </Link>
+                                                            {
+                                                            user
+                                                            ?
+                                                            <></>
+                                                            :
                                                             <Link
                                                                 href={'/register'}
                                                                 onClick={()=>{
@@ -82,8 +89,9 @@ export const Courses = ()=>{
                                                                     }))
                                                                 }}
                                                             >
-                                                            Inscripción online
+                                                                Inscripción online
                                                             </Link>
+                                                            }
                                                         </div>
                                                     }
                                                 </>
