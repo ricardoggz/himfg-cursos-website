@@ -33,8 +33,9 @@
     display:flex;
     gap:0.5rem;
 }
-.cardButtons a {
+.cardButtons button{
     background: var(--blue-secondary);
+    border:none;
     color:var(--white-primary);
     font-family:sans-serif;
     padding:0.5rem;
