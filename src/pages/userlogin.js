@@ -10,9 +10,11 @@ const UserLogin = ()=>{
     useEffect(()=>{
         setCourse(JSON.parse(localStorage.getItem('course')))
     },[])
-    console.log(course)
     const router = useRouter()
     const { loginUser, user } = useContext(UserContext)
+    if(user){
+        router.push('/ensenanza/offer')
+    }
     const [inputData, onChange, onReset] = useOnChange()
     const login = async(evt)=>{
         evt.preventDefault()
