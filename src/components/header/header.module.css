@@ -12,6 +12,22 @@
 .headerNav img {
     width:30%;
 }
+.headerNav ul {
+    display:flex;
+    gap:1rem;
+    list-style: none;
+}
+.headerNav a {
+    color:var(--white-primary);
+    text-decoration: none;
+}
+.headerNav button{
+    background: none;
+    border:1px solid var(--white-primary);
+    color:var(--white-primary);
+    cursor:pointer;
+    padding:0.5rem;
+}
 .imageContainer{
     align-items: center;
     display:flex;
@@ -20,4 +36,11 @@
 }
 .imageContainer img{
     width:6rem;
+}
+
+@media (min-width:240px) and (max-width:880px){
+    .headerNav{
+        flex-direction: column;
+        justify-content: center;
+    }
 }

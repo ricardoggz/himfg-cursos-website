@@ -15,12 +15,27 @@ export const Header =()=>{
                         alt='Gobierno de México'
                     />
                 </Link>
+                <ul>
                 {
                     !user ?
-                    <></>
+                    <>
+                        <li>
+                            <Link href='/register'>
+                                Registro
+                            </Link>
+                        </li>
+                        <li>
+                            <Link href='/userlogin'>
+                                Iniciar sesión
+                            </Link>
+                        </li>
+                    </>
                     :
-                    <button onClick={signOutUser}>Cerrar sesión</button>
+                    <li>
+                        <button onClick={signOutUser}>Cerrar sesión</button>
+                    </li>
                 }
+                </ul>
             </nav>
             </header>
             <div className={`${styles.imageContainer} flexContainer`}>
