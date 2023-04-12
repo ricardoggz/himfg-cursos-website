@@ -32,7 +32,15 @@
     height:400px;
     width:100%;
 }
-
+.coursePayment{
+    align-items: center;
+    display:flex;
+    justify-content: center;
+    margin-top:2rem;
+}
+.coursePayment a{
+    color:var(--blue-secondary);
+}
 @media(min-width:240px) and (max-width: 880px){
     .liveVideo{
         flex-direction: column;

@@ -1,11 +1,12 @@
 import { useState } from "react"
 import { useRouter } from "next/router"
 import Head from "next/head"
+import Script from "next/script"
 import axios from "axios"
 import Swal from "sweetalert2"
 import styles from './video.module.css'
 import { useOnChange } from "../../hooks"
-import { Container, GridContainer, Login } from '../../components'
+import { Container, GridContainer, Login, Payment } from '../../components'
 
 const Video = (props)=>{
     useRouter()
@@ -79,16 +80,23 @@ const Video = (props)=>{
             </h3>
             {
                 !password ?
-                <Login onSubmit={login}>
-                <label>Contraseña:</label>
-                <input
-                type='password'
-                required
-                onChange={onChange}
-                name='course_password'
-                />
-                <button>Ingresar</button>
-            </Login>
+                <>
+                    <Login onSubmit={login}>
+                        <label>Contraseña:</label>
+                        <input
+                        type='password'
+                        required
+                        onChange={onChange}
+                        name='course_password'
+                        />
+                        <button>Ingresar</button>
+                    </Login>
+                    <div className={styles.coursePayment}>
+                        <a href="">
+                            Obtener contraseña
+                        </a>
+                    </div>
+                </>
             :
             <>
             {
