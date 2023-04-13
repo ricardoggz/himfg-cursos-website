@@ -50,3 +50,12 @@
 .anchorLogin a{
     color:var(--blue-secondary);
 }
+
+@media (min-width:240px) and (max-width:880px){
+    .formRatioInputs{
+        grid-template-columns: 1fr;
+    }
+    .formButtons{
+        flex-direction: column;
+    }
+}

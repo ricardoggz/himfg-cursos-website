@@ -37,7 +37,7 @@ export const RegisterForm = ()=>{
                 <Link href="/userlogin">Inicia sesión para acceder</Link>
             </div>
             <form className={`flexContainer ${styles.formWrapper}`} onSubmit={onSubmit}>
-            <label>Nombre completo empezando por apellidos:</label>
+            <label>Nombre completo:</label>
             <input type='text' name='student_name' required onChange={onChange}/>
             <label>¿Cuál es su título profesional?:</label>
             <div className={styles.formRatioInputs}>
