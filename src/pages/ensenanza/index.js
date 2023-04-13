@@ -26,7 +26,7 @@ const EducativeOfer = ()=>{
           </button>
           <ul className={`${!isOpen ? styles.navigationOut : styles.pageNavigation}`}>
             <li>
-              <Link href='/'>
+              <Link href='/ensenanza/offer'>
                 Educación médica continua
               </Link>
             </li>
