@@ -1,4 +1,5 @@
 import { useRouter } from 'next/router'
+import Link from 'next/Link'
 import axios from 'axios'
 import Swal from 'sweetalert2'
 import { useOnChange } from '../../hooks'
@@ -33,7 +34,7 @@ export const RegisterForm = ()=>{
         <>
             <div className={styles.anchorLogin}>
                 <span>¿Ya te has registrado?</span>
-                <a href="/">Inicia sesión para acceder a este curso</a>
+                <Link href="/userlogin">Inicia sesión para acceder</Link>
             </div>
             <form className={`flexContainer ${styles.formWrapper}`} onSubmit={onSubmit}>
             <label>Nombre completo empezando por apellidos:</label>
