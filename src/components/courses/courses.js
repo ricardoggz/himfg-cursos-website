@@ -1,4 +1,5 @@
 import { useState, useContext } from 'react'
+import { useRouter } from 'next/router'
 import Link from 'next/link'
 import 'animate.css'
 import Swal from 'sweetalert2'
@@ -14,6 +15,7 @@ const CardModal = withReactContent(Swal)
 
 export const Courses = ()=>{
     const {user} = useContext(UserContext)
+    const router = useRouter()
     const [selectedMonth, setSelectedMonth]= useState(months[new Date().getMonth()])
     const [loading, data]= useFetch({
         url: `${process.env.BASE_URL_API}api/courses/all-courses`
@@ -68,30 +70,32 @@ export const Courses = ()=>{
                                                                 src={course.course_pdf}
                                                             />
                                                             <Link
-                                                            href={`/video/[...id]`}
-                                                            as ={`/video/${course.course_name}/${course.course_vimeo_folder}/${course.course_live_video}`}
+                                                            href={
+                                                                !user ?
+                                                                `/register`
+                                                                :
+                                                                `/video/[...id]`                                
+                                                            }
+                                                            as ={
+                                                                !user?
+                                                                `/userlogin`
+                                                                :
+                                                                `/video/${course.course_url}`
+                                                            }
                                                             >
                                                             Ingresar con contraseña
                                                             </Link>
                                                             {
-                                                            user
-                                                            ?
-                                                            <></>
-                                                            :
-                                                            <Link
-                                                                href={'/register'}
-                                                                onClick={()=>{
-                                                                    localStorage.setItem('course', JSON.stringify({
-                                                                        course: course.course_name,
-                                                                        price: course.course_price,
-                                                                        folder: course.course_vimeo_folder,
-                                                                        liveVideo: course.course_live_video
-                                                                    }))
-                                                                }}
-                                                            >
-                                                                Inscripción online
-                                                            </Link>
-                                                            }
+                                                                !user ?
+                                                                <></>
+                                                                :
+                                                                <Link
+                                                                    href={'/payment'}
+                                                                    as ={'/payment'}
+                                                                    >
+                                                                    Pagar curso
+                                                                </Link> 
+                                                            }                                                      
                                                         </div>
                                                     }
                                                 </>
