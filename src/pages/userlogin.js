@@ -1,15 +1,14 @@
-import { useContext, useEffect, useState } from 'react'
+import { useContext } from 'react'
 import { useRouter } from 'next/router'
+import Link from 'next/link'
 import axios from 'axios'
 import Swal from 'sweetalert2'
 import { useOnChange } from '../hooks'
 import { UserContext } from '../contexts'
 import { Container, Login, Title } from '../components'
+import styles from './userlogin.module.css'
+
 const UserLogin = ()=>{
-    const [course, setCourse] = useState(null)
-    useEffect(()=>{
-        setCourse(JSON.parse(localStorage.getItem('course')))
-    },[])
     const router = useRouter()
     const { loginUser, user } = useContext(UserContext)
     if(user){
@@ -35,11 +34,6 @@ const UserLogin = ()=>{
                 })
             }
             loginUser(response.data.rows[0])
-            if(!course){
-                router.push('/ensenanza/offer')
-            }else{
-                router.push(`/video/${course.course}/${course.folder}/${course.liveVideo}`)
-            }
         } catch (error) {
             throw new Error(error)
         }
@@ -67,6 +61,11 @@ const UserLogin = ()=>{
                 />
                 <button>Iniciar sesión</button>
             </Login>
+            <div className={styles.registerLink}>
+                <Link href='/register'>
+                    Registrarse
+                </Link>
+            </div>
         </Container>
     )
 }
