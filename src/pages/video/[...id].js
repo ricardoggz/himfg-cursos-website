@@ -1,15 +1,12 @@
 import { useState } from "react"
-import { useRouter } from "next/router"
 import Head from "next/head"
-import Script from "next/script"
 import axios from "axios"
 import Swal from "sweetalert2"
 import styles from './video.module.css'
 import { useOnChange } from "../../hooks"
-import { Container, GridContainer, Login, Payment } from '../../components'
+import { Container, GridContainer, Login } from '../../components'
 
-const Video = (props)=>{
-    useRouter()
+const Video = ()=>{
     const [password, setPassword] = useState(null)
     const [course, setCourse] = useState(null)
     const [ vimeoData, setVimeoData ] = useState(null)
@@ -174,9 +171,7 @@ export const getStaticPaths = async()=>{
         return{
             params:{
                  id: [
-                    `${course.course_name}`,
-                    `${course.course_vimeo_folder}`,
-                    `${!course.course_live_video ? null : course.course_live_video}`
+                    `${course.course_url}`,                    
                 ],
             }
         }
