@@ -62,48 +62,79 @@ export const Courses = ()=>{
                                                     showModal(
                                                         <>
                                                         {
-                                                        !course.course_vimeo_folder?
+                                                        !course.course_pdf?
                                                         <></>
                                                         :
                                                         <div className={styles.modalOptions}>
                                                             <iframe 
                                                                 src={course.course_pdf}
                                                             />
-                                                            <Link
-                                                            href={
-                                                                !user ?
-                                                                `/register`
-                                                                :
-                                                                `/video/[...id]`                                
-                                                            }
-                                                            as ={
-                                                                !user?
-                                                                `/userlogin`
-                                                                :
-                                                                `/video/${course.course_url}`
-                                                            }
-                                                            >
-                                                            Ingresar con contraseña
-                                                            </Link>
+                                                            <span>
+                                                                Para inscribirse debe seguir los siguientes pasos:
+                                                            </span>
+                                                            <span>
+                                                                1._ Ver programa
+                                                            </span>
+                                                            <span>
+                                                                2._ Inscripción online
+                                                            </span>
+                                                            <span>
+                                                                3._ Ingresar una vez inscrito
+                                                            </span>
                                                             {
                                                                 !user ?
-                                                                <></>
-                                                                :
-                                                                <Link
-                                                                    href={'/payment'}
-                                                                    as ={'/payment'}
+                                                                <>
+                                                                    <Link
+                                                                    href='/register'
                                                                     onClick={()=>{
-                                                                        localStorage.setItem(
-                                                                            'course',
-                                                                            JSON.stringify({
+                                                                        localStorage.setItem('course', JSON.stringify({
+                                                                            course_name: course.course_name,
+                                                                            course_price: course.course_price,
+                                                                        }))
+                                                                    }}
+                                                                    >
+                                                                        Inscripción online
+                                                                    </Link>
+                                                                    <Link
+                                                                        href={
+                                                                            `/video/[...id]`                                
+                                                                        }
+                                                                        as ={
+                                                                            !user?
+                                                                            `/userlogin`
+                                                                            :
+                                                                            `/video/${course.course_url}`
+                                                                        }
+                                                                        onClick={()=>{
+                                                                            localStorage.setItem('course', JSON.stringify({
                                                                                 course_name: course.course_name,
                                                                                 course_price: course.course_price,
                                                                                 course_url: course.course_url
-                                                                            })
-                                                                        )
+                                                                            }))
+                                                                        }}
+                                                                        >
+                                                                        Ingresar si estás inscrito
+                                                                    </Link>
+                                                                </>
+                                                                :
+                                                                <Link
+                                                                    href={
+                                                                        `/video/[...id]`                                
+                                                                    }
+                                                                    as ={
+                                                                        !user?
+                                                                        `/userlogin`
+                                                                        :
+                                                                        `/video/${course.course_url}`
+                                                                    }
+                                                                    onClick={()=>{
+                                                                        localStorage.setItem('course', JSON.stringify({
+                                                                            course_name: course.course_name,
+                                                                            course_price: course.course_price,
+                                                                        }))
                                                                     }}
                                                                 >
-                                                                    Pagar curso
+                                                                    Ingresar al curso
                                                                 </Link> 
                                                             }                                                      
                                                         </div>

@@ -9,6 +9,7 @@ html{
 body{
   background: var(--white-primary);
   color:var(--black-primary);
+  font-size:1.3rem;
 }
 /*UI colors*/
 :root{

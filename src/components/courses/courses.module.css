@@ -33,6 +33,7 @@
 .modalOptions{
     display:flex;
     flex-direction: column;
+    font-size: 1.4rem;
     gap:1rem;
 }
 .modalOptions a{

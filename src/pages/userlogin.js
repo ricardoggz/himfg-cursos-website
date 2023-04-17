@@ -1,4 +1,4 @@
-import { useContext } from 'react'
+import { useContext, useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 import axios from 'axios'
@@ -9,11 +9,17 @@ import { Container, Login, Title } from '../components'
 import styles from './userlogin.module.css'
 
 const UserLogin = ()=>{
+    const [course, setCourse] = useState(null)
     const router = useRouter()
     const { loginUser, user } = useContext(UserContext)
-    if(user){
-        router.push('/ensenanza/offer')
-    }
+    useEffect(()=>{
+        if(user){
+            router.push('/ensenanza/offer')
+        }
+    },[])
+    useEffect(()=>{
+        setCourse(JSON.parse(localStorage.getItem('course')))
+    },[])
     const [inputData, onChange, onReset] = useOnChange()
     const login = async(evt)=>{
         evt.preventDefault()
@@ -34,6 +40,11 @@ const UserLogin = ()=>{
                 })
             }
             loginUser(response.data.rows[0])
+            if(course){
+                router.push(`/payment`)
+            }else{
+                router.push('/ensenanza/offer')
+            }
         } catch (error) {
             throw new Error(error)
         }

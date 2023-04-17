@@ -6,14 +6,14 @@ export const PaymentForm = ()=>{
     const [ course, setCourse ] = useState(null)
     useEffect(()=>{
         setCourse(JSON.parse(localStorage.getItem('course')))
-    },[])
-    useEffect(()=>{
-        Payment.setEnv('pro')
+        setTimeout(()=>{
+            Payment.setEnv('pro')
+        },1000)
     },[])
     const startPayment = (evt)=>{
         evt.preventDefault()
         if(Payment){
-            //Payment.setEnv('pro')
+            Payment.setEnv('pro')
             let xOBJ
             xOBJ=Payment.encrypt({
                 params: data

@@ -1,8 +1,18 @@
+import {useState, useEffect} from 'react'
 import Script from "next/script";
 import Head from "next/head";
+import { useRouter } from 'next/router';
 import { PaymentForm, Container, Title } from "../components";
 
 const PaymentCourse = ()=>{
+  const [course, setCourse] = useState(null)
+  const router = useRouter()
+  /*useEffect(()=>{
+    setCourse(JSON.parse(localStorage.getItem('course')))
+    if(!course){
+      router.push('/ensenanza/offer')
+    }
+  },[])*/
   return (
     <>
       <Head>
