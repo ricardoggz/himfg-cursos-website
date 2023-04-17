@@ -5,7 +5,7 @@ import Swal from 'sweetalert2'
 import { useOnChange } from '../../hooks'
 import styles from './form.module.css'
 
-export const RegisterForm = ()=>{
+export const RegisterForm = ({path})=>{
     const router = useRouter()
     const [inputData, onChange, onReset] = useOnChange()
     const onSubmit = async(evt) =>{
@@ -22,7 +22,8 @@ export const RegisterForm = ()=>{
                     showCloseButton: true,
                     showConfirmButton: false
                 })
-                router.push('/userlogin')
+                if(path === '/userlogin') router.push('/userlogin')
+                if(path === '/payment') router.push('/payment')
             }
         } catch (error) {
             throw new Error(error)

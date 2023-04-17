@@ -6,12 +6,12 @@ import { RegisterForm, Container, Title } from '../components'
 import { UserContext } from '../contexts'
 
 const Register = ()=>{
+    const [course, setIsCourse] = useState(null)
     const router = useRouter()
     const { user }= useContext(UserContext)
     if(user){
         router.push('/ensenanza/offer')
     }
-    const [course, setIsCourse] = useState(null)
     useEffect(()=>{
         setIsCourse(JSON.parse(localStorage.getItem('course')))
     },[])
@@ -28,18 +28,12 @@ const Register = ()=>{
                     !course ?
                     <Title>Inscripción</Title>
                     :
-                    <Title>Inscripción al curso : {course.course}</Title>
+                    <Title>Inscripción al curso : {course.course_name}</Title>
                 }
-                <RegisterForm />
-            </Container>
-            <Script
-                src='https://multicobros.banorte.com/orquestador/lightbox/checkoutV2.js'
-                strategy='beforeInteractive'
+                <RegisterForm
+                    path={!course ? '/userlogin' : '/payment'}
                 />
-            <Script
-                src='https://multicobros.banorte.com/orquestador/resources/js/jquery-3.3.1.js'
-                strategy='beforeInteractive'
-            />
+            </Container>
         </>
     )
 }
