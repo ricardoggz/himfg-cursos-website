@@ -37,9 +37,9 @@ export const RegisterForm = ()=>{
                 <Link href="/userlogin">Inicia sesión para acceder</Link>
             </div>
             <form className={`flexContainer ${styles.formWrapper}`} onSubmit={onSubmit}>
-            <label>Nombre completo:</label>
+            <label>Nombre como aparecerá en su constancia(s):</label>
             <input type='text' name='student_name' required onChange={onChange}/>
-            <label>¿Cuál es su título profesional?:</label>
+            <label>Perfil profesional como aparecerá en su constancia(s):</label>
             <div className={styles.formRatioInputs}>
                 <div>
                     <label>MÉDICO</label>
@@ -52,7 +52,7 @@ export const RegisterForm = ()=>{
                     />
                 </div>
                 <div>
-                    <label>PASANTE</label>
+                    <label>PASANTE/ESTUDIANTE</label>
                     <input
                         type='radio'
                         value='PASANTE'
@@ -189,7 +189,7 @@ export const RegisterForm = ()=>{
                     />
                 </div>
                 <div>
-                    <label>ISSTE</label>
+                    <label>ISSSTE</label>
                     <input
                         type='radio'
                         value='ISSTE'
