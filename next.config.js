@@ -16,7 +16,9 @@ const nextConfig = {
       '/video/[...id]': { page : '/video/[...id]'},
       '/ensenanza' : { page: '/ensenanza'},
       '/ensenanza/offer' : { page : '/ensenanza/offer'},
-      '/register': { page: '/register'}
+      '/register': { page: '/register'},
+      '/payment': { page : '/payment'},
+      '/userlogin': { page: '/userlogin'}
     }
   },
   env:{
