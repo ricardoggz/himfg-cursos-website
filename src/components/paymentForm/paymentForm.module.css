@@ -1,0 +1,26 @@
+.paymentForm{
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+    gap:1rem;
+    margin: 0 auto;
+    padding: 1rem;
+    width:50%;
+}
+.paymentForm input{
+    width:100%;
+}
+.paymentForm button{
+    background: var(--green-secondary);
+    border:none;
+    color:var(--white-primary);
+    cursor:pointer;
+    padding:0.5rem;
+    width:100%;
+}
+
+@media (min-width:240px) and (max-width:880px){
+    .paymentForm{
+        grid-template-columns: 1fr;
+        width:90%;
+    }
+}

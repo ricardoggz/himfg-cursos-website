@@ -1,6 +1,6 @@
 import Script from "next/script";
 import Head from "next/head";
-import { PaymentForm } from "../components";
+import { PaymentForm, Container, Title } from "../components";
 
 const PaymentCourse = ()=>{
   return (
@@ -16,7 +16,10 @@ const PaymentCourse = ()=>{
           src='https://multicobros.banorte.com/orquestador/resources/js/jquery-3.3.1.js'
           strategy="beforeInteractive"
         />
-      <PaymentForm />
+      <Container>
+        <Title>Datos para pagar curso</Title>
+        <PaymentForm />
+      </Container>
     </>
   )
 }
