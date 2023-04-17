@@ -69,18 +69,6 @@ export const Courses = ()=>{
                                                             <iframe 
                                                                 src={course.course_pdf}
                                                             />
-                                                            <span>
-                                                                Para inscribirse debe seguir los siguientes pasos:
-                                                            </span>
-                                                            <span>
-                                                                1._ Ver programa
-                                                            </span>
-                                                            <span>
-                                                                2._ Inscripción online
-                                                            </span>
-                                                            <span>
-                                                                3._ Ingresar una vez inscrito
-                                                            </span>
                                                             {
                                                                 !user ?
                                                                 <>
