@@ -92,7 +92,17 @@ export const Courses = ()=>{
                                                                 <Link
                                                                     href={'/payment'}
                                                                     as ={'/payment'}
-                                                                    >
+                                                                    onClick={()=>{
+                                                                        localStorage.setItem(
+                                                                            'course',
+                                                                            JSON.stringify({
+                                                                                course_name: course.course_name,
+                                                                                course_price: course.course_price,
+                                                                                course_url: course.course_url
+                                                                            })
+                                                                        )
+                                                                    }}
+                                                                >
                                                                     Pagar curso
                                                                 </Link> 
                                                             }                                                      
