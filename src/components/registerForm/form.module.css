@@ -50,7 +50,10 @@
 .anchorLogin a{
     color:var(--blue-secondary);
 }
-
+.labelTitle{
+    color:var(--green-secondary);
+    font-weight: 600;
+}
 @media (min-width:240px) and (max-width:880px){
     .formRatioInputs{
         grid-template-columns: 1fr;

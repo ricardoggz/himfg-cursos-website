@@ -38,12 +38,16 @@ export const RegisterForm = ({path})=>{
                 <Link href="/userlogin">Inicia sesión para acceder</Link>
             </div>
             <form className={`flexContainer ${styles.formWrapper}`} onSubmit={onSubmit}>
-            <label>Nombre como aparecerá en su constancia(s):</label>
+            <label className={styles.labelTitle}>
+                Nombre como aparecerá en su constancia:
+            </label>
             <input type='text' name='student_name' required onChange={onChange}/>
-            <label>Perfil profesional como aparecerá en su constancia(s):</label>
+            <label className={styles.labelTitle}>
+                Perfil profesional como aparecerá en su constancia:
+            </label>
             <div className={styles.formRatioInputs}>
                 <div>
-                    <label>MÉDICO</label>
+                    <label>Médico</label>
                     <input
                         type='radio'
                         value='MÉDICO'
@@ -53,7 +57,7 @@ export const RegisterForm = ({path})=>{
                     />
                 </div>
                 <div>
-                    <label>PASANTE/ESTUDIANTE</label>
+                    <label>Pasante/Estudiante</label>
                     <input
                         type='radio'
                         value='PASANTE'
@@ -63,7 +67,7 @@ export const RegisterForm = ({path})=>{
                     />
                 </div>
                 <div>
-                    <label>EST. MED.</label>
+                    <label>Est. Med.</label>
                     <input
                         type='radio'
                         value='EST. MED.'
@@ -73,7 +77,7 @@ export const RegisterForm = ({path})=>{
                     />
                 </div>
                 <div>
-                    <label>LIC. ENF.</label>
+                    <label>Lic. Enf.</label>
                     <input
                         type='radio'
                         value='LIC. ENF.'
@@ -83,7 +87,7 @@ export const RegisterForm = ({path})=>{
                     />
                 </div>
                 <div>
-                    <label>ENF. ESP.</label>
+                    <label>Enf. Esp.</label>
                     <input
                         type='radio'
                         value='ENF. ESP.'
@@ -93,7 +97,7 @@ export const RegisterForm = ({path})=>{
                     />
                 </div>
                 <div>
-                    <label>EST. ENF.</label>
+                    <label>Est. Enf.</label>
                     <input
                         type='radio'
                         value='EST. ENF.'
@@ -103,7 +107,7 @@ export const RegisterForm = ({path})=>{
                     />
                 </div>
                 <div>
-                    <label>QUÍMICO</label>
+                    <label>Químico</label>
                     <input
                         type='radio'
                         value='QUÍMICO'
@@ -113,7 +117,7 @@ export const RegisterForm = ({path})=>{
                     />
                 </div>
                 <div>
-                    <label>BIÓLOGO</label>
+                    <label>Biólogo</label>
                     <input
                         type='radio'
                         value='BIÓLOGO'
@@ -123,7 +127,7 @@ export const RegisterForm = ({path})=>{
                     />
                 </div>
                 <div>
-                    <label>M. En C.</label>
+                    <label>M. en C.</label>
                     <input
                         type='radio'
                         value='M. EN C.'
@@ -133,7 +137,7 @@ export const RegisterForm = ({path})=>{
                     />
                 </div>
                 <div>
-                    <label>PSICÓLOGO</label>
+                    <label>Psicólogo</label>
                     <input
                         type='radio'
                         value='PSICÓLOGO'
@@ -143,7 +147,7 @@ export const RegisterForm = ({path})=>{
                     />
                 </div>
                 <div>
-                    <label>PEDAGOGO</label>
+                    <label>Pedagogo</label>
                     <input
                         type='radio'
                         value='PEDAGOGO'
@@ -153,7 +157,7 @@ export const RegisterForm = ({path})=>{
                     />
                 </div>
                 <div>
-                    <label>TRABAJADOR SOCIAL</label>
+                    <label>Trabajador(a) social</label>
                     <input
                         type='radio'
                         value='TRABAJADOR SOCIAL'
@@ -167,7 +171,9 @@ export const RegisterForm = ({path})=>{
                     <input type='text' name='student_grade' onChange={onChange}/>
                 </div>
             </div>
-            <label>Institución de procedencia:</label>
+            <label className={styles.labelTitle}>
+                Institución de procedencia:
+            </label>
             <div className={styles.formRatioInputs}>
                 <div>
                     <label>IMSS</label>
@@ -224,42 +230,54 @@ export const RegisterForm = ({path})=>{
                     <input type='text' name='student_institution' onChange={onChange}/>
                 </div>
             </div>
-            <label>Cargo:</label>
+            <label className={styles.labelTitle}>
+                Cargo:
+            </label>
             <input
                 type='text'
                 required
                 name='student_work_position'
                 onChange={onChange}
             />
-            <label>Teléfono:</label>
+            <label className={styles.labelTitle}>
+                Teléfono:
+            </label>
             <input
                 type='number'
                 required
                 name='student_phone'
                 onChange={onChange}
             />
-            <label>Correo electrónico:</label>
+            <label className={styles.labelTitle}>
+                Correo electrónico:
+            </label>
             <input
                 type='email'
                 required
                 name='student_email'
                 onChange={onChange}
             />
-            <label>Genere una contraseña:</label>
+            <label className={styles.labelTitle}>
+                Genere una contraseña:
+            </label>
             <input
                 type='text'
                 required
                 name='student_password'
                 onChange={onChange}
             />
-            <label>Edad:</label>
+            <label className={styles.labelTitle}>
+                Edad:
+            </label>
             <input
                 type='number'
                 name='student_age'
                 onChange={onChange}
                 required
             />
-            <label>Eres egresado de algún programa del HIMFG:</label>
+            <label className={styles.labelTitle}>
+                Eres egresado de algún programa del HIMFG:
+            </label>
             <div className={styles.formRatioInputs}>
                 <div>
                     <label>SÍ</label>
@@ -282,7 +300,9 @@ export const RegisterForm = ({path})=>{
                     />
                 </div>
             </div>
-            <label>Nacionalidad:</label>
+            <label className={styles.labelTitle}>
+                Nacionalidad:
+            </label>
             <input
                 type='text'
                 required
