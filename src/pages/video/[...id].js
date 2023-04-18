@@ -1,5 +1,6 @@
 import { useState } from "react"
 import Head from "next/head"
+import Link from "next/link"
 import axios from "axios"
 import Swal from "sweetalert2"
 import styles from './video.module.css'
@@ -89,9 +90,9 @@ const Video = ()=>{
                         <button>Ingresar</button>
                     </Login>
                     <div className={styles.coursePayment}>
-                        <a href="">
+                        <Link href="/payment">
                             Obtener contraseña
-                        </a>
+                        </Link>
                     </div>
                 </>
             :
