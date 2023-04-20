@@ -19,7 +19,15 @@ export const Page = ({children, title, listMenu}) => {
             !isOpen ? styles.navigationOut : styles.pageNavigation
           }`}
         >
+          <li>
+            <Link href='/'>
+              Inicio
+            </Link>
+          </li>
           {
+            !listMenu ?
+            <></>
+            :
             listMenu.map((option, i)=>(
               <li key={i}>
                 <Link href={option.path}>
