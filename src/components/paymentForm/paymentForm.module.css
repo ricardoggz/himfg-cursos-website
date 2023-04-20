@@ -1,10 +1,18 @@
+.paymentWrapper{
+    display:flex;
+    gap:1rem;
+}
+.paymentWrapper h3{
+    color:var(--blue-secondary);
+    text-align: center;
+}
 .paymentForm{
     display:grid;
     grid-template-columns: repeat(2,1fr);
     gap:1rem;
     margin: 0 auto;
     padding: 1rem;
-    width:50%;
+    width:100%;
 }
 .paymentForm input{
     width:100%;
@@ -15,6 +23,29 @@
     color:var(--white-primary);
     cursor:pointer;
     padding:0.5rem;
+    width:100%;
+}
+.paymentDetails{
+    color:var(--black-secondary);
+    display:flex;
+    flex-direction: column;
+    font-weight: 600;
+    line-height: 1.5rem;
+    gap:1rem;
+    padding:1rem;
+    width:100%;
+}
+.paymentDetails p{
+    color:var(--blue-secondary);
+    font-weight: 600;
+    text-align: center;
+}
+.paymentDetails figure{
+    height:200px;
+    width:100%;
+}
+.paymentDetails img{
+    height:100%;
     width:100%;
 }
 .debitCards{
@@ -38,5 +69,8 @@
     .paymentForm{
         grid-template-columns: 1fr;
         width:90%;
+    }
+    .paymentWrapper{
+        flex-direction: column;
     }
 }

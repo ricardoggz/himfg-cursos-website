@@ -27,7 +27,6 @@ const PaymentCourse = ()=>{
           strategy="beforeInteractive"
         />
       <Container>
-        <Title>Datos para pagar curso</Title>
         <PaymentForm />
       </Container>
     </>

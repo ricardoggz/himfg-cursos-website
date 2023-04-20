@@ -97,7 +97,7 @@ export const Courses = ()=>{
                                                                             localStorage.setItem('course', JSON.stringify({
                                                                                 course_name: course.course_name,
                                                                                 course_price: course.course_price,
-                                                                                course_url: course.course_url
+                                                                                course_url: course.course_url,
                                                                             }))
                                                                         }}
                                                                         >
@@ -119,6 +119,7 @@ export const Courses = ()=>{
                                                                         localStorage.setItem('course', JSON.stringify({
                                                                             course_name: course.course_name,
                                                                             course_price: course.course_price,
+                                                                            course_image: course.course_image
                                                                         }))
                                                                     }}
                                                                 >
