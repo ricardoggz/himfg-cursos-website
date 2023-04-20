@@ -9,7 +9,6 @@ html{
 body{
   background: var(--white-primary);
   color:var(--black-primary);
-  font-size:1.5rem;
 }
 /*UI colors*/
 :root{
@@ -40,5 +39,11 @@ body{
   }
   .flexContainer{
     width:95%;
+  }
+}
+
+@media (min-width:1500px) and (max-width:1900px){
+  body{
+    font-size:1.5rem;
   }
 }
