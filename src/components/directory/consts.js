@@ -8,31 +8,31 @@ export const doctors = [
     {
         image: direccion_general,
         name: 'Dr. Jaime Nieto Zermeño',
-        description: 'Direccion general'
+        description: 'Direccion General'
     },
     {
         image: direccion_medica,
         name: 'Dra. Mónica Villa Guillén',
-        description: 'Dirección médica'
+        description: 'Dirección Médica'
     },
     {
         image: direccion_ensenanza,
         name: 'Dr. Sarbelio Moreno Espinosa',
-        description: 'Dirección de enseñanza y desarrollo académico'
+        description: 'Dirección de Enseñanza y Desarrollo Académico'
     },
     {
         image: direccion_investigacion,
         name: 'Dr. Juan Garduño Espinosa',
-        description: 'Dirección de investigación'
+        description: 'Dirección de Investigación'
     },
     {
         image: null,
         name: 'C.P. Cipriano Solis Badillo',
-        description: 'Dirección de administración'
+        description: 'Dirección de Administración'
     },
     {
         image: direccion_planeacion,
         name: 'Dra. Miriam Guadalupe Herrera Segura',
-        description: 'Dirección de planeación'
+        description: 'Dirección de Planeación'
     },
 ]
