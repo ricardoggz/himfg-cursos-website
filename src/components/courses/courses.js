@@ -53,22 +53,23 @@ export const Courses = ()=>{
                                         finishDate={course.course_finish_date}
                                     >
                                         {
-                                        !course.course_pdf ?
+                                        !course.course_vimeo_folder ?
                                         <></>
                                         :
                                         <>
                                             <button
                                                 onClick={()=>{
                                                     showModal(
-                                                        <>
-                                                        {
-                                                        !course.course_pdf?
-                                                        <></>
-                                                        :
+                                                        <>                                                      
                                                         <div className={styles.modalOptions}>
-                                                            <iframe 
+                                                            {
+                                                                !course.course_pdf?
+                                                                <span>Programa no disponible</span>
+                                                                :
+                                                                <iframe 
                                                                 src={course.course_pdf}
                                                             />
+                                                            }
                                                             {
                                                                 !user ?
                                                                 <>
@@ -127,7 +128,7 @@ export const Courses = ()=>{
                                                                 </Link> 
                                                             }                                                      
                                                         </div>
-                                                    }
+                                                    
                                                 </>
                                                 )
                                             }}
