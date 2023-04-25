@@ -8,29 +8,29 @@ import styles from './menuOptions.module.css'
 export const MenuOptions = ()=>{
     return (
        <GridContainer>
-        <Link href='/' className={`${styles.menuOption}`}>
+        <Link href='/general' className={`${styles.menuOption}`}>
             <BsBook />
-            <span>Dirección general</span>
+            <span>Dirección General</span>
         </Link>
-        <Link href='/' className={`${styles.menuOption}`}>
+        <Link href='/medica' className={`${styles.menuOption}`}>
             <TbRibbonHealth />
-            <span>Dirección médica</span>
+            <span>Dirección Médica</span>
         </Link>
         <Link href='/ensenanza' className={`${styles.menuOption}`}>
             <BsPencilFill />
-            <span>Dirección de enseñanza</span>
+            <span>Dirección de Enseñanza</span>
         </Link>
         <Link href='/' className={`${styles.menuOption}`}>
             <RiMicroscopeFill />
-            <span>Dirección de investigación</span>
+            <span>Dirección de Investigación</span>
         </Link>
         <Link href='/' className={`${styles.menuOption}`}>
             <RiAdminLine />
-            <span>Dirección de administración</span>
+            <span>Dirección de Administración</span>
         </Link>
         <Link href='/' className={`${styles.menuOption}`}>
             <BsSearch />
-            <span>Dirección de planeación</span>
+            <span>Dirección de Planeación</span>
         </Link>
        </GridContainer>
     )
