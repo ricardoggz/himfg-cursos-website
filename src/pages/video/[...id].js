@@ -183,20 +183,13 @@ export const getStaticPaths = async()=>{
     }
 }
 export const getStaticProps=async({params})=>{
-    const videoId = params.id ?? ''
-    const config = {
-        headers: { Authorization: `Bearer 586637bf90ea7727edc8c90c95b056c3` }
-    }
     const response = await fetch(
-        `https://api.vimeo.com/me/folders/${videoId[1]}/videos`,
-        config
+        `${process.env.BASE_URL_API}api/courses/all-courses`,
     )
     const data = await response.json()
     return {
         props:{
             data: data,
-            title: videoId[0] || null,
-            liveVideoId: videoId[2] ? videoId[2] : null
         }
     }
 }
