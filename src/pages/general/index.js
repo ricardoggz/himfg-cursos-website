@@ -1,15 +1,9 @@
 import { Container, Page } from '../../components'
 
 const General = ()=>{
-    const paths = [
-        {
-            path: '/',
-            name: 'Inicio'
-        }
-    ]
     return (
         <Container>
-            <Page title='Dirección general' listMenu={paths}>
+            <Page title='Dirección general'>
                 <p>
                     El Hospital Infantil de México tiene 78 años brindando atención pediátrica especializada a la niñez más desprotegida de nuestro país,
                     su modelo de atención,
