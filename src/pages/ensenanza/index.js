@@ -10,10 +10,6 @@ const EducativeOfer = ()=>{
       path: '/ensenanza/offer',
       name: 'Educación médica continua'
     },
-    {
-      path:'/',
-      name: 'Comunicación social'
-    }
   ]
   return(
     <>
