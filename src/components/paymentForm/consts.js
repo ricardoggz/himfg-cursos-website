@@ -1,13 +1,13 @@
 export const data = {
   MerchantID: "8878254",
-  User: "a8878254",
-  Password: "C0M51him$%",
-  Mode: "AUT",
+  User: "prueba8878254",
+  Password: "C0M52him$%",
+  Mode: "PRD",
   ControlNumber: "HIM001",
   TerminalID: "8878254",
   Amount: "1.00",
   MerchantName: "HIMFG CURSOS",
-  MerchantCity: "CDMX",
+  MerchantCity: "CIUDAD DE MEXICO CDMX",
   Language: "ES",
   // Merchant Cyb Params
   FirstName:'Ricardo Jose',
