@@ -17,7 +17,8 @@ const nextConfig = {
     }
   },
   env:{
-    BASE_URL_API: 'https://courses-rest-api-hospital.vercel.app/'
+    BASE_URL_API: 'https://courses-rest-api-hospital.vercel.app/',
+    ID_ANALYTICS: 'G-QP35VQZP0G'
   }
 }
 
