@@ -10,7 +10,7 @@ export const data = {
   MerchantCity: "CIUDAD DE MEXICO CDMX",
   Language: "ES",
   // Merchant Cyb Params
-  FirstName:'Ricardo Jose',
+  /*FirstName:'Ricardo Jose',
   LastName: 'Guevara Guzman',
   Street: 'Cerro Arenal',
   StreetNumberInt: '27 B',
@@ -31,7 +31,7 @@ export const data = {
   IpAddress: '',
   Comments: '',
 
-  /* Merchant Ship Params
+  Merchant Ship Params
   ShipFirstName: '',
   ShipToLastName: '',
   ShipStreetNumberInt: '',

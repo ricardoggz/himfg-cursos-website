@@ -33,7 +33,8 @@
     line-height: 1.5rem;
     gap:1rem;
     padding:1rem;
-    width:100%;
+    width:50%;
+    margin:0 auto;
 }
 .paymentDetails p{
     color:var(--blue-secondary);
@@ -41,12 +42,19 @@
     text-align: center;
 }
 .paymentDetails figure{
-    height:200px;
+    height:250px;
     width:100%;
 }
 .paymentDetails img{
     height:100%;
     width:100%;
+}
+.paymentDetails button{
+    background: var(--green-secondary);
+    color: var(--white-primary);
+    border:none;
+    cursor:pointer;
+    padding: 0.5rem;
 }
 .debitCards{
     align-items: center;
