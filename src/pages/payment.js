@@ -19,7 +19,7 @@ const PaymentCourse = ()=>{
         <title>Pago</title>
       </Head>
         <Script
-          src='https://multicobros.banorte.com/orquestador/lightbox/checkout.js'
+          src='https://multicobros.banorte.com/orquestador/lightbox/checkoutV2.js'
           strategy="beforeInteractive"
         />
         <Script
