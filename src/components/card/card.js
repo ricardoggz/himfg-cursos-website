@@ -1,46 +1,45 @@
 import { memo } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
+import { formatDate } from '@/helpers'
 import styles from './card.module.css'
+import { openModal } from './openModal'
 
-const Card = ({image, title, showModal, children, startDate, finishDate})=>{
-   const formatDate = (initDate)=> {
-    const optionDate = {day:"2-digit", month:'long', year:'numeric'}
-    let lastDate = new Date(initDate)
-    lastDate.setMinutes(lastDate.getMinutes() + lastDate.getTimezoneOffset())
-    return lastDate.toLocaleDateString('es-MX', optionDate)
-   }
+const Card = ({course})=>{
     return (
-        <article className={`${styles.cardWrapper} boxShadow`} onClick={showModal}>
+        <article className={`${styles.cardWrapper} boxShadow`}>
             <figure className={styles.cardImage}>
             <Image
-                    src={
-                    !image ?
+                src={
+                    !course.course_image ?
                     'https://res.cloudinary.com/diuxbqmn5/image/upload/v1676678760/banner-80_zhlxd1.webp'
                     :
-                    image
-                    }
-                    loading='lazy'
-                    alt='No se pudo cargar la imágen'
-                    width={1000}
-                    height={150}
-                    quality
-                />
-            </figure>
-            <div className={styles.cardTitles}>
-                <h2 className={styles.courseTitle}>{title}</h2>
-                {!startDate?
-                    <></>
-                    :
-                    <>
-                    <span>Inicia: {formatDate(startDate)}</span>
-                    <span>Termina: {formatDate(finishDate)}</span>
-                    </>
+                    course.course_image
                 }
-            </div>
+                loading='lazy'
+                alt='No se pudo cargar la imágen'
+                width={1000}
+                height={150}
+                quality
+            />
+            </figure>
+            <h3 className={styles.courseTitle}>{course.course_name}</h3>
+            <span>Inicia: {formatDate(course.course_start_date)}</span>
+            <span>Termina: {formatDate(course.course_start_date)}</span>
             <div className={styles.cardButtons}>
-                {children}
+                <button
+                    onClick={()=>openModal({course})}
+                    className={styles.cardButton}
+                >
+                    Consultar detalles
+                </button>
+                <Link
+                    href='/'
+                    className={styles.cardButton}
+                >
+                    Inscripción
+                </Link>
             </div>
-           
         </article>
     )
 }
