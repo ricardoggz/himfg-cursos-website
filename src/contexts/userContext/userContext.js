@@ -1,4 +1,5 @@
 import { createContext, useEffect, useState } from "react"
+import { setItem, getItem, removeItem } from "@/helpers"
 
 export const UserContext = createContext()
 
@@ -7,16 +8,16 @@ export const UserProvider = ({children})=>{
     useEffect(()=>{
         setUser(JSON.parse(localStorage.getItem('user')))
     },[])
-    const loginUser = (user)=>{
-        localStorage.setItem('user', JSON.stringify(user))
-        setUser(JSON.parse(localStorage.getItem('user')))
+    const login = (user)=>{
+        setItem('user', user)
+        setUser(getItem('user'))
     }
-    const signOutUser = ()=>{
+    const logout = ()=>{
+        removeItem('user')
         setUser(null)
-        localStorage.removeItem('user')
     }
     return (
-        <UserContext.Provider value={{user, loginUser, signOutUser}}>
+        <UserContext.Provider value={{user, login, logout}}>
             {children}
         </UserContext.Provider>
     )

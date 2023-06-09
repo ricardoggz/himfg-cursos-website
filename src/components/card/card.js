@@ -1,11 +1,13 @@
-import { memo } from 'react'
+import { useContext, memo } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { formatDate } from '@/helpers'
 import styles from './card.module.css'
 import { openModal } from './openModal'
+import { UserContext } from '@/contexts'
 
 const Card = ({course})=>{
+    const { user }= useContext(UserContext)
     return (
         <article className={`${styles.cardWrapper} boxShadow`}>
             <figure className={styles.cardImage}>
@@ -33,12 +35,17 @@ const Card = ({course})=>{
                 >
                     Consultar detalles
                 </button>
-                <Link
-                    href='/'
-                    className={styles.cardButton}
-                >
-                    Inscripción
-                </Link>
+                {
+                    !user ?
+                    <Link
+                        href='/register'
+                        className={styles.cardButton}
+                    >
+                        Inscripción
+                    </Link>
+                    :
+                    null
+                }
             </div>
         </article>
     )

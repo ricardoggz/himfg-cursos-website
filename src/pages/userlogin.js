@@ -9,19 +9,15 @@ import { Container, Login, Title } from '../components'
 import styles from './userlogin.module.css'
 
 const UserLogin = ()=>{
-    const [course, setCourse] = useState(null)
     const router = useRouter()
-    const { loginUser, user } = useContext(UserContext)
+    const { login, user } = useContext(UserContext)
+    const [inputData, onChange, onReset] = useOnChange()
     useEffect(()=>{
         if(user){
             router.push('/ensenanza/offer')
         }
     },[])
-    useEffect(()=>{
-        setCourse(JSON.parse(localStorage.getItem('course')))
-    },[])
-    const [inputData, onChange, onReset] = useOnChange()
-    const login = async(evt)=>{
+    const handleLogin = async(evt)=>{
         evt.preventDefault()
         try {
             const response = await axios.post(
@@ -39,12 +35,13 @@ const UserLogin = ()=>{
                     position:'center'
                 })
             }
-            loginUser(response.data.rows[0])
-            if(course){
+            login(response.data.rows[0])
+            return router.push('/ensenanza/offer')
+            /*if(course){
                 router.push(`/payment`)
             }else{
                 router.push('/ensenanza/offer')
-            }
+            }*/
         } catch (error) {
             throw new Error(error)
         }
@@ -55,7 +52,7 @@ const UserLogin = ()=>{
             <Title>
                 Iniciar sesión
             </Title>
-            <Login onSubmit={login}>
+            <Login onSubmit={handleLogin}>
                 <label>Correo:</label>
                 <input
                     type='email'
