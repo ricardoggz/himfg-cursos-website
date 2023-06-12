@@ -1,19 +1,17 @@
-import { useState, useEffect, useContext } from 'react'
+import { useEffect, useContext } from 'react'
 import { useRouter } from 'next/router'
 import Head from 'next/head'
-import Script from 'next/script'
 import { RegisterForm, Container, Title } from '../components'
-import { UserContext } from '../contexts'
+import { UserContext, CourseContext } from '../contexts'
 
 const Register = ()=>{
-    const [course, setIsCourse] = useState(null)
+    const { course } = useContext(CourseContext)
     const router = useRouter()
     const { user }= useContext(UserContext)
-    if(user){
-        router.push('/ensenanza/offer')
-    }
     useEffect(()=>{
-        setIsCourse(JSON.parse(localStorage.getItem('course')))
+        if(user){
+            router.push('/ensenanza/offer')
+        }
     },[])
     return (
         <>

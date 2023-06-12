@@ -1,8 +1,10 @@
-import { useEffect } from 'react'
+import { useContext, useEffect } from 'react'
+import {CourseContext} from '@/contexts'
 import { Courses, Container, Title } from '../../components'
 const CoursesList = ()=>{
+    const {logout} = useContext(CourseContext)
     useEffect(()=>{
-        localStorage.removeItem('course')
+        logout()
     },[])
     return (
         <Container>

@@ -4,10 +4,11 @@ import Link from 'next/link'
 import { formatDate } from '@/helpers'
 import styles from './card.module.css'
 import { openModal } from './openModal'
-import { UserContext } from '@/contexts'
+import { UserContext, CourseContext } from '@/contexts'
 
 const Card = ({course})=>{
     const { user }= useContext(UserContext)
+    const { login } = useContext(CourseContext)
     return (
         <article className={`${styles.cardWrapper} boxShadow`}>
             <figure className={styles.cardImage}>
@@ -40,6 +41,7 @@ const Card = ({course})=>{
                     <Link
                         href='/register'
                         className={styles.cardButton}
+                        onClick={()=> login(course)}
                     >
                         Inscripción
                     </Link>
