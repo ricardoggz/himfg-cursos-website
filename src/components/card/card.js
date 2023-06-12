@@ -46,7 +46,13 @@ const Card = ({course})=>{
                         Inscripción
                     </Link>
                     :
-                    null
+                    <Link
+                        href='/payment'
+                        className={styles.cardButton}
+                        onClick={()=> login(course)}
+                    >
+                        Adquirir curso
+                    </Link>
                 }
             </div>
         </article>

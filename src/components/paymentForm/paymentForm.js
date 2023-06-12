@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useEffect, useContext } from "react";
+import { useRouter } from "next/router";
 import Image from "next/image";
 import Swal from "sweetalert2";
 import styles from "./paymentForm.module.css";
@@ -6,11 +7,15 @@ import { data, cerKey } from "./consts";
 import visa from "../../assets/visaLogo.png";
 import mastercard from "../../assets/mastercard.png";
 import { cypherData } from "./cyperData";
+import { CourseContext } from '@/contexts'
 
 export const PaymentForm = () => {
-  const [course, setCourse] = useState(null);
+  const router = useRouter()
+  const { course } = useContext(CourseContext)
   useEffect(() => {
-    setCourse(JSON.parse(localStorage.getItem("course")));
+    if(!course){
+      router.push('/ensenanza/offer')
+    }
     setTimeout(() => {
       Payment.setEnv("pro");
     }, 1000);
