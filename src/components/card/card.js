@@ -46,6 +46,12 @@ const Card = ({course})=>{
                         Inscripción
                     </Link>
                     :
+                    null
+                }
+                {
+                    !course.course_price 
+                    ? null
+                    :
                     <Link
                         href='/payment'
                         className={styles.cardButton}
