@@ -8,6 +8,7 @@ import visa from "../../assets/visaLogo.png";
 import mastercard from "../../assets/mastercard.png";
 import { cypherData } from "./cyperData";
 import { CourseContext } from '@/contexts'
+import { reference } from "./reference";
 
 export const PaymentForm = () => {
   const [paymentData, setPaymentData] = useState(null)
@@ -20,7 +21,8 @@ export const PaymentForm = () => {
     if(course){
       setPaymentData({
         ...data,
-        Amount: `${course.course_price}.00`
+        Amount: `${course.course_price}.00`,
+        ControlNumber: `${reference(course.course_id)}`
       })
     }
     setTimeout(() => {

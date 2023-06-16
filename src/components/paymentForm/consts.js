@@ -3,7 +3,6 @@ export const data = {
   User:"prueba8878254",
   Password:"C0M52him$%",
   Mode:"AUT",
-  ControlNumber:"HIM001",
   TerminalID:"88782541",
   CustomerRef1:"",
   CustomerRef2:"",
