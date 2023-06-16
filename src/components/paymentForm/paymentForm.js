@@ -1,4 +1,4 @@
-import { useEffect, useContext } from "react";
+import { useEffect, useContext, useState } from "react";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import Swal from "sweetalert2";
@@ -10,22 +10,30 @@ import { cypherData } from "./cyperData";
 import { CourseContext } from '@/contexts'
 
 export const PaymentForm = () => {
+  const [paymentData, setPaymentData] = useState(null)
   const router = useRouter()
   const { course } = useContext(CourseContext)
   useEffect(() => {
     if(!course){
       router.push('/ensenanza/offer')
     }
+    if(course){
+      setPaymentData({
+        ...data,
+        Amount: `${course.course_price}.00`
+      })
+    }
     setTimeout(() => {
       Payment.setEnv("pro");
     }, 1000);
   }, []);
+  console.log(paymentData)
   const startPayment = (evt) => {
     evt.preventDefault();
     if (Payment) {
       Payment.setEnv("pro");
       let xOBJ;
-      xOBJ = cypherData(data, cerKey);
+      xOBJ = cypherData(paymentData, cerKey);
       Payment.startPayment({
         Params: xOBJ,
         onClosed: function (res) {

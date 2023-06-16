@@ -5,7 +5,6 @@ export const data = {
   Mode:"AUT",
   ControlNumber:"HIM001",
   TerminalID:"88782541",
-  Amount:"1.00",
   CustomerRef1:"",
   CustomerRef2:"",
   CustomerRef3:"",
