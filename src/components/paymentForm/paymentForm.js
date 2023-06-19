@@ -29,9 +29,7 @@ export const PaymentForm = () => {
       Payment.setEnv("pro");
     }, 1000);
   }, []);
-  console.log(paymentData)
-  const startPayment = (evt) => {
-    evt.preventDefault();
+  const startPayment = () => {
     if (Payment) {
       Payment.setEnv("pro");
       let xOBJ;
@@ -46,6 +44,7 @@ export const PaymentForm = () => {
         },
         onSuccess: function (res) {
           var resp = JSON.stringify(res, undefined, 4);
+          router.push('/pdf')
           console.log(resp);
         },
         onCancel: function (res) {
@@ -71,6 +70,7 @@ export const PaymentForm = () => {
                 {!course.course_image ? (
                   <Image
                     src="https://res.cloudinary.com/diuxbqmn5/image/upload/v1676678760/banner-80_zhlxd1.webp"
+                    alt='Imágen no disponible'
                     width={100}
                     height={100}
                   />
@@ -87,10 +87,16 @@ export const PaymentForm = () => {
       </div>
       <div className={`${styles.debitCards} flexContainer`}>
         <figure>
-          <Image src={visa} />
+          <Image
+            src={visa}
+            alt='VISA'
+          />
         </figure>
         <figure>
-          <Image src={mastercard} />
+          <Image
+            src={mastercard}
+            alt='Mastercard'
+          />
         </figure>
       </div>
     </>
