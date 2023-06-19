@@ -4,7 +4,7 @@ import styles from './header.module.css'
 import { UserContext } from '../../contexts'
 
 export const Header =()=>{
-    const { user, signOutUser } = useContext(UserContext)
+    const { user, logout } = useContext(UserContext)
     return (
         <>
             <header className={styles.headerWrapper}>
@@ -32,7 +32,7 @@ export const Header =()=>{
                     </>
                     :
                     <li>
-                        <button onClick={signOutUser}>Cerrar sesión</button>
+                        <button onClick={logout}>Cerrar sesión</button>
                     </li>
                 }
                 </ul>
