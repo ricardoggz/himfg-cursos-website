@@ -49,9 +49,8 @@ const Card = ({course})=>{
                     null
                 }
                 {
-                    !course.course_price 
-                    ? null
-                    :
+                    course.course_price && user
+                    ?
                     <Link
                         href='/payment'
                         className={styles.cardButton}
@@ -59,6 +58,8 @@ const Card = ({course})=>{
                     >
                         Adquirir curso
                     </Link>
+                    :
+                    null
                 }
             </div>
         </article>
