@@ -18,7 +18,8 @@ const nextConfig = {
       '/ensenanza/offer' : { page : '/ensenanza/offer'},
       '/register': { page: '/register'},
       '/payment': { page : '/payment'},
-      '/userlogin': { page: '/userlogin'}
+      '/userlogin': { page: '/userlogin'},
+      '/pdf' : { page: '/pdf' }
     }
   },
   env:{
