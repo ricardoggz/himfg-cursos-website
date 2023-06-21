@@ -37,7 +37,7 @@ const Card = ({course})=>{
                     Consultar detalles
                 </button>
                 {
-                    !user ?
+                    course.course_price && !user?
                     <Link
                         href='/register'
                         className={styles.cardButton}

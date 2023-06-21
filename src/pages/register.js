@@ -22,15 +22,8 @@ const Register = ()=>{
                 <link rel="icon" href="https://res.cloudinary.com/diuxbqmn5/image/upload/v1677114497/himfg-logo_ewzx59.webp" />
             </Head>
             <Container>
-                {
-                    !course ?
-                    <Title>Inscripción</Title>
-                    :
-                    <Title>Inscripción al curso : {course.course_name}</Title>
-                }
-                <RegisterForm
-                    path={!course ? '/userlogin' : '/payment'}
-                />
+                <Title>Inscripción</Title>
+                <RegisterForm />
             </Container>
         </>
     )

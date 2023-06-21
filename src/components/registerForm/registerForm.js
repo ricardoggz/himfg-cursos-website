@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router'
 import Link from 'next/link'
+import jsPDF from 'jspdf'
 import axios from 'axios'
 import Swal from 'sweetalert2'
 import { useOnChange } from '../../hooks'
@@ -8,13 +9,20 @@ import styles from './form.module.css'
 export const RegisterForm = ({path})=>{
     const router = useRouter()
     const [inputData, onChange, onReset] = useOnChange()
+    const pdf = new jsPDF({
+        orientation: "landscape",
+        unit: "in",
+        format: [12, 12]
+    })
     const onSubmit = async(evt) =>{
         evt.preventDefault()
+        let student
         try {
             const response = await axios.post(
                 `${process.env.BASE_URL_API}api/auth/create-user`,
                 inputData
             )
+            console.log(response.config.data)
             if(response.status === 200){
                 Swal.fire({
                     icon: 'success',
@@ -22,8 +30,16 @@ export const RegisterForm = ({path})=>{
                     showCloseButton: true,
                     showConfirmButton: false
                 })
-                if(path === '/userlogin') router.push('/userlogin')
-                if(path === '/payment') router.push('/payment')
+                student = JSON.parse(response.config.data)
+                pdf.text(`
+                    Felicidades, te has regisrado satisfactoriamente, tus datos de acceso son:
+                    
+                    correo : ${student.student_email}
+                    
+                    contraseña: ${student.student_password}
+                `,1,1)
+                pdf.save('datos-acceso.pdf')
+                router.push('/userlogin')
             }
         } catch (error) {
             throw new Error(error)
