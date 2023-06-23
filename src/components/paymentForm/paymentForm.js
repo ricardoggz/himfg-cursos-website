@@ -1,6 +1,7 @@
 import { useEffect, useContext, useState } from "react";
 import { useRouter } from "next/router";
 import Image from "next/image";
+import jsPDF from "jspdf";
 import Swal from "sweetalert2";
 import styles from "./paymentForm.module.css";
 import { data, cerKey } from "./consts";
@@ -9,11 +10,17 @@ import mastercard from "../../assets/mastercard.png";
 import { cypherData } from "./cyperData";
 import { CourseContext } from '@/contexts'
 import { reference } from "./reference";
+import { formatDate } from "@/helpers";
 
 export const PaymentForm = () => {
   const [paymentData, setPaymentData] = useState(null)
   const router = useRouter()
   const { course } = useContext(CourseContext)
+  const doc = new jsPDF({
+    orientation: "landscape",
+    unit: "in",
+    format: [12, 12]
+  })
   useEffect(() => {
     if(!course){
       router.push('/ensenanza/offer')
@@ -21,7 +28,7 @@ export const PaymentForm = () => {
     if(course){
       setPaymentData({
         ...data,
-        Amount: `${course.course_price}.00`,
+        Amount: `1.00`,
         ControlNumber: `${reference(course.course_id)}`
       })
     }
@@ -43,9 +50,21 @@ export const PaymentForm = () => {
           console.log(res);
         },
         onSuccess: function (res) {
-          var resp = JSON.stringify(res, undefined, 4);
-          router.push('/pdf')
-          console.log(resp);
+          doc.text(`
+            Felicidades, has comprado satisfactoriamente el curso:
+            ${course.course_name}
+
+            Datos de curso:
+            Costo: $ ${course.course_price} mxn
+            Fecha de inicio: ${formatDate(course.course_start_date)}
+            Fecha de término: ${formatDate(course.course_finish_date)}
+            URL de curso:
+            https://www.test.him.edu.mx/video/${course.course_url}.html
+            Contraseña: ${course.course_password}
+          `,1, 1);
+          if(res.status3D === 200){
+            doc.save(`${course.course_name}.pdf`)
+          }
         },
         onCancel: function (res) {
           Swal.fire({
