@@ -40,7 +40,7 @@ const Card = ({course})=>{
                     course.course_price && !user?
                     <Link
                         href='/register'
-                        className={styles.cardButton}
+                        className={styles.cardButtonInscription}
                         onClick={()=> login(course)}
                     >
                         Inscripción

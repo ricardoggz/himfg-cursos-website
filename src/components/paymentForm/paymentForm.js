@@ -11,6 +11,7 @@ import { cypherData } from "./cyperData";
 import { CourseContext, UserContext } from '@/contexts'
 import { reference } from "./reference";
 import { formatDate } from "@/helpers";
+import { addPayment } from "@/services";
 
 export const PaymentForm = () => {
   const [paymentData, setPaymentData] = useState(null)
@@ -86,6 +87,13 @@ export const PaymentForm = () => {
             doc.text(`Tu contraseña: ${user.user_password}`, 10, docHeight - 20);
             if(res.status3D === 200){
               doc.save(`${course.course_name}.pdf`)
+              addPayment({
+                data:{
+                  course_id: course.course_id,
+                  student_id: user.student_id,
+                  payment_successfull: 1
+                }
+              })
             }
         },
         onCancel: function (res) {

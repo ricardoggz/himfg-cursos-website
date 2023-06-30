@@ -38,6 +38,16 @@
     text-decoration: none;
     width:100%;
 }
+.cardButtonInscription{
+    background: var(--blue-primary);
+    border:none;
+    color:var(--white-primary);
+    cursor:pointer;
+    font-family:sans-serif;
+    padding:0.5rem;
+    text-decoration: none;
+    width:100%;
+}
 .cardIframe{
     height:400px;
     width:100%;

@@ -23,6 +23,8 @@ const EducativeOfer = ()=>{
         <Page
           title='Dirección de enseñanza'
           listMenu={paths}
+          textMenu='Consulta AQUÍ nuestros cursos'
+          route='ensenanza/offer'
         >
           <p>
             La Dirección de Enseñanza y Desarrollo Académico es el área encargada
