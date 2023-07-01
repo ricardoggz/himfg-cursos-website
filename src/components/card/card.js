@@ -53,7 +53,7 @@ const Card = ({course})=>{
                     ?
                     <Link
                         href='/payment'
-                        className={styles.cardButton}
+                        className={styles.cardButtonInscription}
                         onClick={()=> login(course)}
                     >
                         Adquirir curso
