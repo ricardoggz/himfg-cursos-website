@@ -10,12 +10,16 @@ export const Page = ({children, title, listMenu, textMenu, route}) => {
   return (
     <>
       <div className="flexContainer">
-          <Link
-            href={route}
-            className={styles.anchor}
-          >
-            {textMenu}
-          </Link>
+          {
+            !route ? null
+            :
+            <Link
+              href={route}
+              className={styles.anchor}
+            >
+              {textMenu}
+            </Link>
+          }
       </div>
       <br/>
       <Title>{title}</Title>
