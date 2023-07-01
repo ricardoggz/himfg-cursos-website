@@ -10,10 +10,11 @@
 .jumbotronImage{
     display:flex;
     justify-content: center;
+    height:250px;
 }
 .jumbotronImage img{
-    border-radius:50%;
-    width:50%;
+    height:100%;
+    width:100%;
 }
 .jumbotronTitles{
     align-items: center;

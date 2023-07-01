@@ -7,11 +7,10 @@ export const Jumbotron =()=>{
             <div className={`${styles.jumbotronTitles} flexContainer`}>
                 <figure className={`${styles.jumbotronImage}`}>
                     <img
-                        src='https://res.cloudinary.com/diuxbqmn5/image/upload/v1676678760/banner-80_zhlxd1.webp'
+                        src='https://res.cloudinary.com/diuxbqmn5/image/upload/v1688238324/80_Logo_oxwpvb.png'
                     />
                 </figure>
                 <h1>Hospital Infantil de México Federico Gómez</h1>
-                <span>80 años de ciencia, excelencia y humanismo</span>
             </div>
         </section>
     )
