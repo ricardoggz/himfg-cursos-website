@@ -6,6 +6,9 @@
     gap:1rem;
     padding:1rem;
 }
+.formWrapper input{
+    font-size:1.5rem;
+}
 .formRatioInputs{
     display: grid;
     gap:0.5rem;

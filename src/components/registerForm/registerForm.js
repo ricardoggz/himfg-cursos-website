@@ -294,7 +294,7 @@ export const RegisterForm = ({path})=>{
                 onChange={onChange}
             />
             <label className={styles.labelTitle}>
-                Genere una contraseña:
+                Genere una contraseña para nuestra plataforma:
             </label>
             <input
                 type='text'
