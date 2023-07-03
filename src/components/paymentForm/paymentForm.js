@@ -51,14 +51,14 @@ export const PaymentForm = () => {
             doc.setFontSize(40);
             doc.setFont("helvetica", "bold");
             doc.text(`Registro exitoso`, 30, 30);
-            doc.setFontSize(20);
+            doc.setFontSize(15);
             const docWidth = doc.internal.pageSize.getWidth();
             const docHeight = doc.internal.pageSize.getHeight();
             doc.line(0, 60, docWidth, 60);
             doc.setFont("helvetica", "italic");
             const splitDescription = doc.splitTextToSize(
             `
-            Felicidades, has adquirido correctamente el curso:
+            Felicidades, ha adquirido correctamente el curso:
             ${course.course_name}
             
             Inicia: ${formatDate(course.course_start_date)}
@@ -67,12 +67,14 @@ export const PaymentForm = () => {
         
             ${
               !course.course_url ? ''
-              :'Pueder verlo en: ' + course.course_url
+              :
+              `Puede verlo en:
+              'https://him.edu.mx/video/'+ course.course_url + '.html`
             }
         
             ${
               !course.course_password ? ''
-              :'Contraseña: ' + course.course_password
+              :'Contraseña de acceso: ' + course.course_password
             }
             `,
               docWidth - 20
@@ -82,10 +84,10 @@ export const PaymentForm = () => {
             doc.setFont("helvetica");
             //doc.text('characterData.type.name', docWidth - 20, 45, { align: "right" });
             doc.line(0, docHeight - 60, docWidth, docHeight - 60);
-            doc.text(`Tu Nombre: ${user.user_name}`, 10, docHeight - 40);
-            doc.text(`Tu email: ${user.user_email}`, 10, docHeight - 30);
-            doc.text(`Tu contraseña: ${user.user_password}`, 10, docHeight - 20);
-            if(res.status3D === 200){
+            doc.text(`Tu Nombre: ${user.student_name}`, 10, docHeight - 40);
+            doc.text(`Tu email: ${user.student_email}`, 10, docHeight - 30);
+            doc.text(`Tu contraseña: ${user.student_password}`, 10, docHeight - 20);
+            if(res.status3D === "200"){
               doc.save(`${course.course_name}.pdf`)
               addPayment({
                 data:{

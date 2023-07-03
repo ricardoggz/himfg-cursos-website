@@ -9,11 +9,7 @@ import styles from './form.module.css'
 export const RegisterForm = ({path})=>{
     const router = useRouter()
     const [inputData, onChange, onReset] = useOnChange()
-    const pdf = new jsPDF({
-        orientation: "landscape",
-        unit: "in",
-        format: [12, 12]
-    })
+    const doc = new jsPDF();
     const onSubmit = async(evt) =>{
         evt.preventDefault()
         let student
@@ -22,7 +18,6 @@ export const RegisterForm = ({path})=>{
                 `${process.env.BASE_URL_API}api/auth/create-user`,
                 inputData
             )
-            console.log(response.config.data)
             if(response.status === 200){
                 Swal.fire({
                     icon: 'success',
@@ -31,14 +26,35 @@ export const RegisterForm = ({path})=>{
                     showConfirmButton: false
                 })
                 student = JSON.parse(response.config.data)
-                pdf.text(`
-                    Felicidades, te has regisrado satisfactoriamente, tus datos de acceso son:
-                    
-                    correo : ${student.student_email}
-                    
-                    contraseña: ${student.student_password}
-                `,1,1)
-                pdf.save('datos-acceso.pdf')
+                doc.setFontSize(40);
+                doc.setFont("helvetica", "bold");
+                doc.text(`Registro exitoso`, 30, 30);
+                doc.setFontSize(15);
+                const docWidth = doc.internal.pageSize.getWidth();
+                const docHeight = doc.internal.pageSize.getHeight();
+                doc.line(0, 60, docWidth, 60);
+                doc.setFont("helvetica", "italic");
+                const splitDescription = doc.splitTextToSize(
+                    `
+                    Felicidades,  ${student.student_name}
+
+                    se ha registrado satisfactioriamente,
+
+                    ahora puedes acceder a nuestra oferta académica
+
+                    y solicitar tu constancia              
+                    `,
+                    docWidth - 20
+                );
+                doc.text(splitDescription, 10, 80);
+                doc.setFontSize(20);
+                doc.setFont("helvetica");
+                    //doc.text('characterData.type.name', docWidth - 20, 45, { align: "right" });
+                doc.line(0, docHeight - 60, docWidth, docHeight - 60);
+                doc.text(`Tu Nombre: ${student.student_name}`, 10, docHeight - 40);
+                doc.text(`Tu email: ${student.student_email}`, 10, docHeight - 30);
+                doc.text(`Tu contraseña: ${student.student_password}`, 10, docHeight - 20);
+                doc.save(`datos-acceso${student.student_name}.pdf`)
                 router.push('/userlogin')
             }
         } catch (error) {
