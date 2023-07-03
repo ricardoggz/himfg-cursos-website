@@ -54,12 +54,16 @@ export const RegisterForm = ({path})=>{
                 doc.setFont("helvetica");
                     //doc.text('characterData.type.name', docWidth - 20, 45, { align: "right" });
                 doc.line(0, docHeight - 60, docWidth, docHeight - 60);
-                doc.text(`Tu Nombre: ${student.student_name}`, 10, docHeight - 40);
+                doc.text(`Tu nombre: ${student.student_name}`, 10, docHeight - 40);
                 doc.text(`Tu email: ${student.student_email}`, 10, docHeight - 30);
                 doc.text(`Tu contraseña: ${student.student_password}`, 10, docHeight - 20);
-                doc.save(`datos-acceso${student.student_name}.pdf`)
-                if(course) router.push('/payment')
-                if(!course) router.push('/userlogin')
+                if(course){
+                    router.push('/payment')
+                }
+                if(!course){
+                    router.push('/userlogin')
+                    doc.save(`datos-acceso${student.student_name}.pdf`)
+                }
             }
         } catch (error) {
             throw new Error(error)

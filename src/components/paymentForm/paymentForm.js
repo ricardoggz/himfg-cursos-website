@@ -84,9 +84,11 @@ export const PaymentForm = () => {
             doc.setFont("helvetica");
             //doc.text('characterData.type.name', docWidth - 20, 45, { align: "right" });
             doc.line(0, docHeight - 60, docWidth, docHeight - 60);
-            doc.text(`Tu Nombre: ${user.student_name}`, 10, docHeight - 40);
-            doc.text(`Tu email: ${user.student_email}`, 10, docHeight - 30);
-            doc.text(`Tu contraseña: ${user.student_password}`, 10, docHeight - 20);
+            if(user){
+              doc.text(`Tu Nombre: ${user.student_name}`, 10, docHeight - 40);
+              doc.text(`Tu email: ${user.student_email}`, 10, docHeight - 30);
+              doc.text(`Tu contraseña: ${user.student_password}`, 10, docHeight - 20);
+            }
             if(res.status3D === "200"){
               doc.save(`${course.course_name}.pdf`)
               addPayment({
