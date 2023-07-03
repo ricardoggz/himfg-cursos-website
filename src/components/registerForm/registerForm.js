@@ -1,13 +1,16 @@
+import { useContext } from 'react'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 import jsPDF from 'jspdf'
 import axios from 'axios'
 import Swal from 'sweetalert2'
+import { CourseContext } from '@/contexts'
 import { useOnChange } from '../../hooks'
 import styles from './form.module.css'
 
 export const RegisterForm = ({path})=>{
     const router = useRouter()
+    const { course }= useContext(CourseContext)
     const [inputData, onChange, onReset] = useOnChange()
     const doc = new jsPDF();
     const onSubmit = async(evt) =>{
@@ -55,7 +58,8 @@ export const RegisterForm = ({path})=>{
                 doc.text(`Tu email: ${student.student_email}`, 10, docHeight - 30);
                 doc.text(`Tu contraseña: ${student.student_password}`, 10, docHeight - 20);
                 doc.save(`datos-acceso${student.student_name}.pdf`)
-                router.push('/userlogin')
+                if(course) router.push('/payment')
+                if(!course) router.push('/userlogin')
             }
         } catch (error) {
             throw new Error(error)
