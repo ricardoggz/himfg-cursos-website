@@ -93,9 +93,11 @@ export const PaymentForm = () => {
                 data:{
                   course_id: course.course_id,
                   student_id: user.student_id,
-                  payment_successfull: 1
+                  payment_successfull: 1,
+                  payment_reference: paymentData.ControlNumber
                 }
               })
+              router.push('/ensenanza/offer')
             }
         },
         onCancel: function (res) {
