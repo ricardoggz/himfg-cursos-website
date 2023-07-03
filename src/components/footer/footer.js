@@ -1,5 +1,5 @@
 import styles from './footer.module.css'
-import { BsFacebook, BsTwitter } from 'react-icons/bs'
+import { BsFacebook, BsTwitter, BsInstagram, BsYoutube } from 'react-icons/bs'
 export const Footer = ()=>{
     return (
         <footer className={styles.footerWrapper}>
@@ -22,17 +22,33 @@ export const Footer = ()=>{
                             <BsTwitter />
                         </a>
                     </li>
+                    <li>
+                        <a
+                        href='https://www.instagram.com/him_fg/'
+                        target={'_blank'}
+                        >
+                            <BsInstagram />
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                        href='https://www.youtube.com/c/CEMESATELHIMFG/videos'
+                        target={'_blank'}
+                        >
+                            <BsYoutube />
+                        </a>
+                    </li>
                 </div>
                 <div>
                     <li>Dirección:</li>
                     <li>
-                        Dr.Márquez No.162, Col. Doctores, Delegación Cuauhtémoc; Mexico D.F. C.P 06720
+                        Dr. Márquez No.162, Col. Doctores, Delegación Cuauhtémoc; México D.F. C.P 06720
                     </li>
                 </div>
                 <div>
                     <li>Teléfono:</li>
                     <li>
-                        5228 9917
+                        55-52-28-99-17
                     </li>
                 </div>
             </ul>
