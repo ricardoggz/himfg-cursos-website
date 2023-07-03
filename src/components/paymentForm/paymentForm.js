@@ -69,7 +69,7 @@ export const PaymentForm = () => {
               !course.course_url ? ''
               :
               `Puede verlo en:
-              'https://him.edu.mx/video/'+ course.course_url + '.html`
+              https://him.edu.mx/video/${course.course_url}.html`
             }
         
             ${
