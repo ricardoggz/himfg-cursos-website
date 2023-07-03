@@ -42,11 +42,13 @@
     text-align: center;
 }
 .paymentDetails figure{
-    height:250px;
+    height:300px;
     width:100%;
 }
 .paymentDetails img{
     height:100%;
+    object-fit: cover;
+    object-position: top;
     width:100%;
 }
 .paymentDetails button{
@@ -73,7 +75,15 @@
     object-fit: contain;
     width:100%;
 }
+.coursePrice{
+    color:var(--blue-secondary);
+    font-size:1.5rem;
+    font-weight:800;
+}
 @media (min-width:240px) and (max-width:880px){
+    .paymentDetails{
+        width:90%;
+    }
     .paymentForm{
         grid-template-columns: 1fr;
         width:90%;

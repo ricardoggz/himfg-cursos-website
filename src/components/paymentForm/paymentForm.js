@@ -132,7 +132,12 @@ export const PaymentForm = () => {
                 )}
               </figure>
               <span>Curso: {course.course_name}</span>
-              <span>Precio: ${course.course_price} MXN</span>
+              <span>
+                Precio: 
+                <span className={styles.coursePrice}>
+                   ${course.course_price} MXN
+                </span>
+              </span>
               <button onClick={startPayment}>Pagar curso</button>
             </>
           )}
