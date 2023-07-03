@@ -10,12 +10,12 @@
     width:100%;
 }
 .cardImage{
-    height:200px;
+    height:250px;
     width:100%;
 }
 .cardImage img{
     height:100%;
-    object-fit:contain;
+    object-fit:cover;
     object-position: center;
     width:100%;
 }
