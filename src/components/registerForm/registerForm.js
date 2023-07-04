@@ -102,7 +102,7 @@ export const RegisterForm = ({path})=>{
                     />
                 </div>
                 <div>
-                    <label>Pasante/Estudiante</label>
+                    <label>Estudiante</label>
                     <input
                         type='radio'
                         value='PASANTE'
@@ -112,40 +112,10 @@ export const RegisterForm = ({path})=>{
                     />
                 </div>
                 <div>
-                    <label>Est. Med.</label>
-                    <input
-                        type='radio'
-                        value='EST. MED.'
-                        name='student_grade'
-                        onChange={onChange}
-                        
-                    />
-                </div>
-                <div>
-                    <label>Lic. Enf.</label>
+                    <label>Enfermero(a)</label>
                     <input
                         type='radio'
                         value='LIC. ENF.'
-                        name='student_grade'
-                        onChange={onChange}
-                        
-                    />
-                </div>
-                <div>
-                    <label>Enf. Esp.</label>
-                    <input
-                        type='radio'
-                        value='ENF. ESP.'
-                        name='student_grade'
-                        onChange={onChange}
-                                                
-                    />
-                </div>
-                <div>
-                    <label>Est. Enf.</label>
-                    <input
-                        type='radio'
-                        value='EST. ENF.'
                         name='student_grade'
                         onChange={onChange}
                         
@@ -172,40 +142,10 @@ export const RegisterForm = ({path})=>{
                     />
                 </div>
                 <div>
-                    <label>M. en C.</label>
+                    <label>Maestro</label>
                     <input
                         type='radio'
                         value='M. EN C.'
-                        name='student_grade'
-                        onChange={onChange}
-                        
-                    />
-                </div>
-                <div>
-                    <label>Psicólogo</label>
-                    <input
-                        type='radio'
-                        value='PSICÓLOGO'
-                        name='student_grade'
-                        onChange={onChange}
-                        
-                    />
-                </div>
-                <div>
-                    <label>Pedagogo</label>
-                    <input
-                        type='radio'
-                        value='PEDAGOGO'
-                        name='student_grade'
-                        onChange={onChange}
-                        
-                    />
-                </div>
-                <div>
-                    <label>Trabajador(a) social</label>
-                    <input
-                        type='radio'
-                        value='TRABAJADOR SOCIAL'
                         name='student_grade'
                         onChange={onChange}
                         
@@ -276,15 +216,6 @@ export const RegisterForm = ({path})=>{
                 </div>
             </div>
             <label className={styles.labelTitle}>
-                Cargo:
-            </label>
-            <input
-                type='text'
-                required
-                name='student_work_position'
-                onChange={onChange}
-            />
-            <label className={styles.labelTitle}>
                 Teléfono:
             </label>
             <input
@@ -294,7 +225,7 @@ export const RegisterForm = ({path})=>{
                 onChange={onChange}
             />
             <label className={styles.labelTitle}>
-                Correo electrónico:
+                Correo electrónico para nuestra plataforma y a donde le llegará su constancia:
             </label>
             <input
                 type='email'
@@ -306,7 +237,7 @@ export const RegisterForm = ({path})=>{
                 Genere una contraseña para nuestra plataforma:
             </label>
             <input
-                type='text'
+                type='password'
                 required
                 name='student_password'
                 onChange={onChange}
