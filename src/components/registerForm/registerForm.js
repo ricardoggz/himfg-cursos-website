@@ -4,24 +4,29 @@ import Link from 'next/link'
 import jsPDF from 'jspdf'
 import axios from 'axios'
 import Swal from 'sweetalert2'
-import { CourseContext } from '@/contexts'
+import { CourseContext, UserContext } from '@/contexts'
 import { useOnChange } from '../../hooks'
 import styles from './form.module.css'
 
 export const RegisterForm = ({path})=>{
     const router = useRouter()
     const { course }= useContext(CourseContext)
+    const { login }= useContext(UserContext)
     const [inputData, onChange, onReset] = useOnChange()
     const doc = new jsPDF();
+    let studentCreated = {
+        student_id: Math.floor((Math.random() * 450000) + 450000),
+        ...inputData
+    }
     const onSubmit = async(evt) =>{
         evt.preventDefault()
         let student
         try {
             const response = await axios.post(
-                `${process.env.BASE_URL_API}api/auth/create-user`,
-                inputData
+                `${process.env.BASE_URL_API}api/auth/create-user`,studentCreated               
             )
             if(response.status === 200){
+                login(studentCreated)
                 Swal.fire({
                     icon: 'success',
                     title: 'Registro exitoso',
