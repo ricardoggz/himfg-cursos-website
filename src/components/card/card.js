@@ -29,6 +29,7 @@ const Card = ({course})=>{
             <h3 className={styles.courseTitle}>{course.course_name}</h3>
             <span>Inicia: {formatDate(course.course_start_date)}</span>
             <span>Termina: {formatDate(course.course_finish_date)}</span>
+            { !course.course_price ? null : `Costo: $${course.course_price}mxn`}
             <div className={styles.cardButtons}>
                 <button
                     onClick={()=>openModal({course})}
