@@ -7,7 +7,7 @@ import Swal from 'sweetalert2'
 import { CourseContext, UserContext } from '@/contexts'
 import { useOnChange } from '../../hooks'
 import styles from './form.module.css'
-
+import { states } from './states'
 export const RegisterForm = ({path})=>{
     const router = useRouter()
     const { course }= useContext(CourseContext)
@@ -88,7 +88,7 @@ export const RegisterForm = ({path})=>{
             </label>
             <input type='text' name='student_name' required onChange={onChange}/>
             <label className={styles.labelTitle}>
-                Perfil profesional como aparecerá en su constancia:
+                Perfil profesional:
             </label>
             <div className={styles.formRatioInputs}>
                 <div>
@@ -156,6 +156,20 @@ export const RegisterForm = ({path})=>{
                     <input type='text' name='student_grade' onChange={onChange}/>
                 </div>
             </div>
+                <label className={styles.labelTitle}>
+                    Lugar de procedencia:
+                </label>
+                <select>
+                {
+                    states.map((state, index)=>(
+                        
+                            <option key={index}>
+                                {state}
+                            </option>
+                        
+                    ))
+                }
+                </select>
             <label className={styles.labelTitle}>
                 Institución de procedencia:
             </label>
@@ -216,7 +230,7 @@ export const RegisterForm = ({path})=>{
                 </div>
             </div>
             <label className={styles.labelTitle}>
-                Teléfono:
+                Teléfono (celular de contacto):
             </label>
             <input
                 type='number'
@@ -225,7 +239,7 @@ export const RegisterForm = ({path})=>{
                 onChange={onChange}
             />
             <label className={styles.labelTitle}>
-                Correo electrónico para nuestra plataforma y a donde le llegará su constancia:
+                Correo electrónico para acceder a la plataforma y para enviar su constancia:
             </label>
             <input
                 type='email'
@@ -234,7 +248,7 @@ export const RegisterForm = ({path})=>{
                 onChange={onChange}
             />
             <label className={styles.labelTitle}>
-                Genere una contraseña para nuestra plataforma:
+                Genere una contraseña para ingresar a la plataforma:
             </label>
             <input
                 type='password'
