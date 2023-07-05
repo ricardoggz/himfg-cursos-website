@@ -37,38 +37,39 @@ export const RegisterForm = ({path})=>{
                 doc.setFontSize(40);
                 doc.setFont("helvetica", "bold");
                 doc.text(`Registro exitoso`, 30, 30);
-                doc.setFontSize(15);
+                doc.setFontSize(13);
                 const docWidth = doc.internal.pageSize.getWidth();
                 const docHeight = doc.internal.pageSize.getHeight();
                 doc.line(0, 60, docWidth, 60);
                 doc.setFont("helvetica", "italic");
                 const splitDescription = doc.splitTextToSize(
                     `
-                    Felicidades,  ${student.student_name}
+                    Felicidades, ${student.student_name} se ha registrado satisfactioriamente,
+                    ahora puede acceder a nuestra oferta académica y solicitar su constancia,
+                    sus datos de acceso a la plataforma son:
 
-                    se ha registrado satisfactioriamente,
+                    email: ${student.student_email}
 
-                    ahora puedes acceder a nuestra oferta académica
-
-                    y solicitar tu constancia              
+                    constraseña: ${student.student_password}
                     `,
                     docWidth - 20
                 );
                 doc.text(splitDescription, 10, 80);
+                /*
                 doc.setFontSize(20);
                 doc.setFont("helvetica");
-                    //doc.text('characterData.type.name', docWidth - 20, 45, { align: "right" });
                 doc.line(0, docHeight - 60, docWidth, docHeight - 60);
                 doc.text(`Tu nombre: ${student.student_name}`, 10, docHeight - 40);
                 doc.text(`Tu email: ${student.student_email}`, 10, docHeight - 30);
                 doc.text(`Tu contraseña: ${student.student_password}`, 10, docHeight - 20);
+                */
                 if(course){
                     router.push('/payment')
                 }
                 if(!course){
                     router.push('/userlogin')
-                    doc.save(`datos-acceso${student.student_name}.pdf`)
                 }
+                doc.save(`datos-acceso${student.student_name}.pdf`)
             }
         } catch (error) {
             throw new Error(error)
@@ -87,6 +88,44 @@ export const RegisterForm = ({path})=>{
                 Nombre como aparecerá en su constancia:
             </label>
             <input type='text' name='student_name' required onChange={onChange}/>
+            <label className={styles.labelTitle}>
+                Edad:
+            </label>
+            <input
+                type='number'
+                name='student_age'
+                onChange={onChange}
+                required
+            />
+            <label className={styles.labelTitle}>
+                Nacionalidad:
+            </label>
+            <input
+                type='text'
+                required
+                onChange={onChange}
+                name='student_nationality'
+            />
+            <label className={styles.labelTitle}>
+                Lugar de procedencia:
+            </label>
+            <select
+                name='student_state'
+                onChange={onChange}
+                className={`${styles.stateOptions}`}>
+                {
+                    states.map((state, index)=>(
+                        
+                            <option
+                                key={index}
+                                value={state}
+                            >
+                                {state}
+                            </option>
+                        
+                    ))
+                }
+            </select>
             <label className={styles.labelTitle}>
                 Perfil profesional:
             </label>
@@ -156,31 +195,8 @@ export const RegisterForm = ({path})=>{
                     <input type='text' name='student_grade' onChange={onChange}/>
                 </div>
             </div>
-                <label className={styles.labelTitle}>
-                    Lugar de procedencia:
-                </label>
-                <select>
-                {
-                    states.map((state, index)=>(
-                        
-                            <option key={index}>
-                                {state}
-                            </option>
-                        
-                    ))
-                }
-                </select>
             <label className={styles.labelTitle}>
-                Nacionalidad:
-            </label>
-            <input
-                type='text'
-                required
-                onChange={onChange}
-                name='student_nationality'
-            />
-            <label className={styles.labelTitle}>
-                Institución de procedencia:
+                Institución de procedencia donde trabaja actualmente:
             </label>
             <div className={styles.formRatioInputs}>
                 <div>
@@ -266,16 +282,7 @@ export const RegisterForm = ({path})=>{
                 onChange={onChange}
             />
             <label className={styles.labelTitle}>
-                Edad:
-            </label>
-            <input
-                type='number'
-                name='student_age'
-                onChange={onChange}
-                required
-            />
-            <label className={styles.labelTitle}>
-                Eres egresado de algún programa del HIMFG:
+                Es usted egresado de algún programa del HIMFG:
             </label>
             <div className={styles.formRatioInputs}>
                 <div>
@@ -299,6 +306,9 @@ export const RegisterForm = ({path})=>{
                     />
                 </div>
             </div>
+            <span className={styles.message}>
+                Una vez concluido su registro se descargará un PDF con tus datos de acceso. Te recomendamos guardarlo
+            </span>
             <div className={styles.formButtons}>
                 <button className={styles.buttonSuccess}>Enviar</button>
                 <button

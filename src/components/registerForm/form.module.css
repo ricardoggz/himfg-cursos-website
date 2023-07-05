@@ -57,6 +57,20 @@
     color:var(--green-secondary);
     font-weight: 600;
 }
+.message{
+    color:var(--blue-primary);
+    font-style:italic;
+    padding:1rem 0;
+}
+.stateOptions{
+    background:none;
+    border:1px solid var(--black-secondary);
+    border-radius:8px;
+    font-size:1.3rem;
+    padding:0.5rem;
+    text-align:center;
+    width:50%;
+}
 @media (min-width:240px) and (max-width:880px){
     .formRatioInputs{
         grid-template-columns: 1fr;
