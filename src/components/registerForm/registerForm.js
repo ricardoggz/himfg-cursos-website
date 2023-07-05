@@ -171,6 +171,15 @@ export const RegisterForm = ({path})=>{
                 }
                 </select>
             <label className={styles.labelTitle}>
+                Nacionalidad:
+            </label>
+            <input
+                type='text'
+                required
+                onChange={onChange}
+                name='student_nationality'
+            />
+            <label className={styles.labelTitle}>
                 Institución de procedencia:
             </label>
             <div className={styles.formRatioInputs}>
@@ -290,15 +299,6 @@ export const RegisterForm = ({path})=>{
                     />
                 </div>
             </div>
-            <label className={styles.labelTitle}>
-                Nacionalidad:
-            </label>
-            <input
-                type='text'
-                required
-                onChange={onChange}
-                name='student_nationality'
-            />
             <div className={styles.formButtons}>
                 <button className={styles.buttonSuccess}>Enviar</button>
                 <button
