@@ -20,11 +20,6 @@ export const Header =()=>{
                     !user ?
                     <>
                         <li>
-                            <Link href='/register'>
-                                Registro
-                            </Link>
-                        </li>
-                        <li>
                             <Link href='/userlogin'>
                                 Iniciar sesión
                             </Link>

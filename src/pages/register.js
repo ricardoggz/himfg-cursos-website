@@ -12,6 +12,9 @@ const Register = ()=>{
         if(user){
             router.push('/ensenanza/offer')
         }
+        if(!course){
+            router.push('/ensenanza/offer')
+        }
     },[])
     return (
         <>
@@ -23,10 +26,7 @@ const Register = ()=>{
             </Head>
             <Container>
                 <Title>
-                    {
-                        !course ? 'Inscripción a nuestra plataforma'
-                        : 'Inscripción al curso: ' + course.course_name
-                    }
+                    Inscripción
                 </Title>
                 <RegisterForm />
             </Container>
