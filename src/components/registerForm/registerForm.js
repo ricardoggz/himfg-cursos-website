@@ -274,9 +274,13 @@ export const RegisterForm = ({path})=>{
                     />
                 </div>
             </div>
-            <span className={styles.message}>
-                Una vez concluido su registro se descargará un PDF con tus datos de acceso. Te recomendamos guardarlo
-            </span>
+            {
+                !course ? null
+                :
+                <span className={styles.message}>
+                    Una vez concluido su registro se descargará un PDF con tus datos de acceso. Te recomendamos guardarlo
+                </span>
+            }
             <div className={styles.formButtons}>
                 <button className={styles.buttonSuccess}>Enviar</button>
                 <button
