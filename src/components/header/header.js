@@ -24,6 +24,11 @@ export const Header =()=>{
                                 Iniciar sesión
                             </Link>
                         </li>
+                        <li>
+                            <Link href='/ensenanza/offer'>
+                                Oferta académica
+                            </Link>
+                        </li>
                     </>
                     :
                     <li>
