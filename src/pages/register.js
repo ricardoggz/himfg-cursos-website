@@ -12,9 +12,6 @@ const Register = ()=>{
         if(user){
             router.push('/ensenanza/offer')
         }
-        if(!course){
-            router.push('/ensenanza/offer')
-        }
     },[])
     return (
         <>

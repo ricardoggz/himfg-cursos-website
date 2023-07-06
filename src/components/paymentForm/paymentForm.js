@@ -50,45 +50,52 @@ export const PaymentForm = () => {
         onSuccess: function (res) {
             doc.setFontSize(40);
             doc.setFont("helvetica", "bold");
-            doc.text(`Registro exitoso`, 30, 30);
-            doc.setFontSize(15);
+            doc.text(`Pago exitoso`, 30, 30);
+            doc.setFontSize(13);
             const docWidth = doc.internal.pageSize.getWidth();
             const docHeight = doc.internal.pageSize.getHeight();
             doc.line(0, 60, docWidth, 60);
             doc.setFont("helvetica", "italic");
             const splitDescription = doc.splitTextToSize(
             `
-            Felicidades, ha adquirido correctamente el curso:
+            Felicidades, ${user.student_name},ha adquirido correctamente el curso:
             ${course.course_name}
             
             Inicia: ${formatDate(course.course_start_date)}
             
             Termina: ${formatDate(course.course_finish_date)}
-        
+            ${
+              !course.course_password ? ''
+              :
+              `
+              
+              Contraseña de acceso al curso: ${course.course_password}
+              `
+            }
+
             ${
               !course.course_url ? ''
               :
-              `Puede verlo en:
-              https://him.edu.mx/video/${course.course_url}.html`
+              `
+              
+              Liga activa:
+              https://him.edu.mx/video/${course.course_url}.html
+              
+              `
             }
-        
-            ${
-              !course.course_password ? ''
-              :'Contraseña de acceso: ' + course.course_password
-            }
+              Para solicitar su constancia escriba al siguiente correo:
+              cursoshimfg@gmail.com
+
+              Sus datos de acceso a la plataforma:
+              email: ${user.student_email}
+              constraseña: ${user.student_password}
+
+              Su referencia de pago:
+              ${paymentData.ControlNumber}
             `,
               docWidth - 20
             );
             doc.text(splitDescription, 10, 80);
-            doc.setFontSize(20);
-            doc.setFont("helvetica");
-            //doc.text('characterData.type.name', docWidth - 20, 45, { align: "right" });
-            doc.line(0, docHeight - 60, docWidth, docHeight - 60);
-            if(user){
-              doc.text(`Tu Nombre: ${user.student_name}`, 10, docHeight - 40);
-              doc.text(`Tu email: ${user.student_email}`, 10, docHeight - 30);
-              doc.text(`Tu contraseña: ${user.student_password}`, 10, docHeight - 20);
-            }
             if(res.status3D === "200"){
               doc.save(`${course.course_name}.pdf`)
               addPayment({

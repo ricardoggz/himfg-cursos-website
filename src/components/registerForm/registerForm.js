@@ -1,7 +1,6 @@
 import { useContext } from 'react'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
-import jsPDF from 'jspdf'
 import axios from 'axios'
 import Swal from 'sweetalert2'
 import { CourseContext, UserContext } from '@/contexts'
@@ -13,7 +12,6 @@ export const RegisterForm = ({path})=>{
     const { course }= useContext(CourseContext)
     const { login }= useContext(UserContext)
     const [inputData, onChange, onReset] = useOnChange()
-    const doc = new jsPDF();
     let studentCreated = {
         student_id: Math.floor((Math.random() * 450000) + 450000),
         ...inputData
@@ -34,42 +32,12 @@ export const RegisterForm = ({path})=>{
                     showConfirmButton: false
                 })
                 student = JSON.parse(response.config.data)
-                doc.setFontSize(40);
-                doc.setFont("helvetica", "bold");
-                doc.text(`Registro exitoso`, 30, 30);
-                doc.setFontSize(13);
-                const docWidth = doc.internal.pageSize.getWidth();
-                const docHeight = doc.internal.pageSize.getHeight();
-                doc.line(0, 60, docWidth, 60);
-                doc.setFont("helvetica", "italic");
-                const splitDescription = doc.splitTextToSize(
-                    `
-                    Felicidades, ${student.student_name} se ha registrado satisfactioriamente,
-                    ahora puede acceder a nuestra oferta académica y solicitar su constancia,
-                    sus datos de acceso a la plataforma son:
-
-                    email: ${student.student_email}
-
-                    constraseña: ${student.student_password}
-                    `,
-                    docWidth - 20
-                );
-                doc.text(splitDescription, 10, 80);
-                /*
-                doc.setFontSize(20);
-                doc.setFont("helvetica");
-                doc.line(0, docHeight - 60, docWidth, docHeight - 60);
-                doc.text(`Tu nombre: ${student.student_name}`, 10, docHeight - 40);
-                doc.text(`Tu email: ${student.student_email}`, 10, docHeight - 30);
-                doc.text(`Tu contraseña: ${student.student_password}`, 10, docHeight - 20);
-                */
                 if(course){
                     router.push('/payment')
                 }
                 if(!course){
                     router.push('/userlogin')
                 }
-                doc.save(`datos-acceso${student.student_name}.pdf`)
             }
         } catch (error) {
             throw new Error(error)

@@ -1,5 +1,6 @@
 import { useContext} from 'react'
 import Link from 'next/link'
+import { AiOutlineUser } from 'react-icons/ai'
 import styles from './header.module.css'
 import { UserContext } from '../../contexts'
 
@@ -20,13 +21,13 @@ export const Header =()=>{
                     !user ?
                     <>
                         <li>
-                            <Link href='/userlogin'>
-                                Iniciar sesión
+                            <Link href='/register'>
+                                Registro
                             </Link>
                         </li>
                         <li>
-                            <Link href='/ensenanza/offer'>
-                                Oferta académica
+                            <Link href='/userlogin'>
+                                <AiOutlineUser className={styles.userLoginIcon}/>
                             </Link>
                         </li>
                     </>

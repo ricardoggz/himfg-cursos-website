@@ -37,7 +37,12 @@
 .imageContainer img{
     width:6rem;
 }
-
+.userLoginIcon{
+    background:var(--white-primary);
+    border-radius:50%;
+    color:var(--green-primary);
+    font-size:2rem;
+}
 @media (min-width:240px) and (max-width:880px){
     .headerNav{
         flex-direction: column;
