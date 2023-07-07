@@ -32,9 +32,16 @@ export const Header =()=>{
                         </li>
                     </>
                     :
-                    <li>
-                        <button onClick={logout}>Cerrar sesión</button>
-                    </li>
+                    <>
+                        <li>
+                            <Link href='/profile'>
+                                <AiOutlineUser className={styles.userLoginIcon}/>
+                            </Link>
+                        </li>
+                        <li>
+                            <button onClick={logout}>Cerrar sesión</button>
+                        </li>
+                    </>
                 }
                 </ul>
             </nav>
