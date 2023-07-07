@@ -102,7 +102,7 @@ export const RegisterForm = ({path})=>{
                     <label>Médico</label>
                     <input
                         type='radio'
-                        value='MÉDICO'
+                        value='Médico'
                         name='student_grade'
                         onChange={onChange}
                         
@@ -112,7 +112,7 @@ export const RegisterForm = ({path})=>{
                     <label>Estudiante</label>
                     <input
                         type='radio'
-                        value='PASANTE'
+                        value='Estudiante'
                         name='student_grade'
                         onChange={onChange}
                         
@@ -122,7 +122,7 @@ export const RegisterForm = ({path})=>{
                     <label>Enfermero(a)</label>
                     <input
                         type='radio'
-                        value='LIC. ENF.'
+                        value='Enfermero'
                         name='student_grade'
                         onChange={onChange}
                         
@@ -132,7 +132,7 @@ export const RegisterForm = ({path})=>{
                     <label>Químico</label>
                     <input
                         type='radio'
-                        value='QUÍMICO'
+                        value='Químico'
                         name='student_grade'
                         onChange={onChange}
                         
@@ -142,7 +142,7 @@ export const RegisterForm = ({path})=>{
                     <label>Biólogo</label>
                     <input
                         type='radio'
-                        value='BIÓLOGO'
+                        value='Biólogo'
                         name='student_grade'
                         onChange={onChange}
                         
@@ -152,7 +152,7 @@ export const RegisterForm = ({path})=>{
                     <label>Maestro</label>
                     <input
                         type='radio'
-                        value='M. EN C.'
+                        value='Maestro'
                         name='student_grade'
                         onChange={onChange}
                         
