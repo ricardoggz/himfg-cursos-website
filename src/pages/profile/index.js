@@ -67,11 +67,9 @@ const Profile = ()=>{
                                                 <option>{user.student_state}</option>
                                             </select>
                                             <label>Perfil profesional:</label>
-                                            <select>
-                                                <option>{user.student_state}</option>
-                                            </select>
+                                            <input type='text' defaultValue={user.student_grade}/>
                                             <label>Institución de procedencia donde trabaja actualmente</label>
-                                            <input type='text' defaultValue={user.student_institution}/>                                 
+                                            <input type='text' defaultValue={user.student_institution}/>                                
                                             <label>Teléfono</label>
                                             <input type='number' defaultValue={user.student_phone}/>
                                             <label>Correo electrónico:</label>
