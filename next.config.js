@@ -19,7 +19,8 @@ const nextConfig = {
       '/register': { page: '/register'},
       '/payment': { page : '/payment'},
       '/userlogin': { page: '/userlogin'},
-      '/pdf' : { page: '/pdf' }
+      '/pdf' : { page: '/pdf' },
+      '/profile': { page: '/profile'}
     }
   },
   env:{
