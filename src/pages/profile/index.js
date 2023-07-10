@@ -1,6 +1,6 @@
-import { useState, useContext } from 'react'
+import { useState, useContext, useEffect } from 'react'
+import axios from 'axios'
 import Swal from 'sweetalert2'
-import withReactContent from 'sweetalert2-react-content'
 import { BiUserCircle } from 'react-icons/bi'
 import { UserContext } from '@/contexts'
 import { Container, Title } from '@/components'
@@ -16,9 +16,62 @@ import {
 
 
 const Profile = ()=>{
+    const { user, login } = useContext(UserContext)
     const [editProfile, setEditProfile] = useState(false)
-    const { user } = useContext(UserContext)
-    console.log(user)
+    const [ formData, setFormData ] = useState(null)
+    useEffect(()=>{
+        if(user){
+            setFormData({
+                student_id: user.student_id,
+                student_name: user.student_name,
+                student_age: user.student_age,
+                student_nationality: user.student_nationality,
+                student_state: user.student_state,
+                student_grade: user.student_grade,
+                student_institution: user.student_institution,
+                student_phone: user.student_phone,
+                student_email: user.student_email,
+                student_password: user.student_password
+            })
+        }
+    },[user])
+    const handleChange = (evt)=>setFormData({
+        ...formData,
+        [evt.target.name]: evt.target.value
+    })
+    const handleReset = ()=>setFormData({
+        student_name: user.student_name,
+        student_age: user.student_age,
+        student_nationality: user.student_nationality,
+        student_state: user.student_state,
+        student_grade: user.student_grade,
+        student_institution: user.student_institution,
+        student_phone: user.student_phone,
+        student_email: user.student_email,
+        student_password: user.student_password
+    })
+    const updateProfile = async(evt)=>{
+        evt.preventDefault()
+        try {
+            const response = await axios.put(
+                `${process.env.BASE_URL_API}api/auth/update-user/${user.student_id}`,
+                formData
+            )
+            if(response.status === 200){
+                login(formData)
+                Swal.fire({
+                    title: `${response.data.message}`,
+                    icon: 'success',
+                    showCloseButton: true,
+                    showCancelButton: false,
+                    showConfirmButton:false,
+                    focusConfirm: false,
+                  })
+            }
+        } catch (error) {
+            throw new Error(error)
+        }
+    }
     return(
         <>
             {
@@ -55,27 +108,70 @@ const Profile = ()=>{
                                         }
                                     {
                                         !editProfile ? null:
-                                        <form className={editProfileForm}>
+                                        <form className={editProfileForm} onSubmit={updateProfile}>
                                             <label>Nombre:</label>
-                                            <input type='text' defaultValue={user.student_name}/>
+                                            <input
+                                            type='text'
+                                            defaultValue={user.student_name}
+                                            name='student_name'
+                                            onChange={handleChange}                                            />
                                             <label>Edad:</label>
-                                            <input type='number' defaultValue={user.student_age}/>
+                                            <input
+                                            type='number'
+                                            defaultValue={user.student_age}
+                                            name='student_age'
+                                            onChange={handleChange}
+                                            />
                                             <label>Nacionalidad:</label>
-                                            <input type='text' defaultValue={user.student_nationality}/>
+                                            <input
+                                            type='text'
+                                            defaultValue={user.student_nationality}
+                                            name='student_nationality'
+                                            onChange={handleChange}
+                                            />
                                             <label>Lugar de procedencia:</label>
-                                            <select>
-                                                <option>{user.student_state}</option>
+                                            <select name='student_state'>
+                                                <option
+                                                defaultValue={user.student_state}
+                                                >
+                                                    {user.student_state}
+                                                </option>
                                             </select>
                                             <label>Perfil profesional:</label>
-                                            <input type='text' defaultValue={user.student_grade}/>
+                                            <input
+                                            type='text'
+                                            defaultValue={user.student_grade}
+                                            name='student_grade'
+                                            onChange={handleChange}
+                                            />
                                             <label>Institución de procedencia donde trabaja actualmente</label>
-                                            <input type='text' defaultValue={user.student_institution}/>                                
+                                            <input
+                                            type='text'
+                                            defaultValue={user.student_institution}
+                                            name='student_institution'
+                                            onChange={handleChange}
+                                            />                                
                                             <label>Teléfono</label>
-                                            <input type='number' defaultValue={user.student_phone}/>
+                                            <input
+                                            type='number'
+                                            defaultValue={user.student_phone}
+                                            name='student_phone'
+                                            onChange={handleChange}
+                                            />
                                             <label>Correo electrónico:</label>
-                                            <input type='text' defaultValue={user.student_email}/>
+                                            <input
+                                            type='text'
+                                            defaultValue={user.student_email}
+                                            name='student_email'
+                                            onChange={handleChange}
+                                            />
                                             <label>Contraseña:</label>
-                                            <input type='password' defaultValue={user.student_password}/>    
+                                            <input
+                                            type='password'
+                                            defaultValue={user.student_password}
+                                            name='student_password'
+                                            onChange={handleChange}
+                                            />    
                                             <div>
                                             <button
                                                 className={editProfileButton}
@@ -83,7 +179,10 @@ const Profile = ()=>{
                                                 Actualizar
                                             </button>
                                             <button
-                                                onClick={()=>setEditProfile(!editProfile)}
+                                                onClick={()=>{
+                                                    setEditProfile(!editProfile)
+                                                    handleReset()
+                                                }}
                                                 className={closeEditProfile}
                                             >
                                                 Cancelar
