@@ -13,6 +13,7 @@
     width:30%;
 }
 .headerNav ul {
+    align-items: center;
     display:flex;
     gap:1rem;
     list-style: none;
