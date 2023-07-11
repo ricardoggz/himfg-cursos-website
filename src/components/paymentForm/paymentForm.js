@@ -147,7 +147,7 @@ export const PaymentForm = () => {
                    ${course.course_price} MXN
                 </span>
               </span>
-              <button onClick={startPayment}>Pagar curso</button>
+              <button onClick={startPayment}>Comprar</button>
             </>
           )}
         </div>

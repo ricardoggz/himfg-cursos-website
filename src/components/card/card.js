@@ -31,12 +31,19 @@ const Card = ({course})=>{
             <span>Termina: {formatDate(course.course_finish_date)}</span>
             { !course.course_price ? null : `Costo: $${course.course_price}mxn`}
             <div className={styles.cardButtons}>
-                <button
+                {
+                    !course.course_pdf ?
+                    <span className={styles.disabledLink}>
+                        Programa no disponible
+                    </span>
+                    :
+                    <button
                     onClick={()=>openModal({course})}
                     className={styles.cardButton}
-                >
-                    Consultar detalles
-                </button>
+                    >
+                        Programa
+                    </button>
+                }
                 {
                     course.course_price && !user?
                     <Link
@@ -57,7 +64,7 @@ const Card = ({course})=>{
                         className={styles.cardButtonInscription}
                         onClick={()=> login(course)}
                     >
-                        Adquirir curso
+                        Comprar
                     </Link>
                     :
                     null
