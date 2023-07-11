@@ -6,7 +6,7 @@ import Swal from 'sweetalert2'
 import { CourseContext, UserContext } from '@/contexts'
 import { useOnChange } from '../../hooks'
 import styles from './form.module.css'
-import { states } from './states'
+import { states } from '@/consts'
 export const RegisterForm = ({path})=>{
     const router = useRouter()
     const { course }= useContext(CourseContext)

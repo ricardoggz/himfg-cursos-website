@@ -2,6 +2,7 @@ import { useState, useContext, useEffect } from 'react'
 import axios from 'axios'
 import Swal from 'sweetalert2'
 import { BiUserCircle } from 'react-icons/bi'
+import { states } from '@/consts'
 import { UserContext } from '@/contexts'
 import { Container, Title } from '@/components'
 import {
@@ -130,12 +131,20 @@ const Profile = ()=>{
                                             onChange={handleChange}
                                             />
                                             <label>Lugar de procedencia:</label>
-                                            <select name='student_state'>
-                                                <option
-                                                defaultValue={user.student_state}
-                                                >
-                                                    {user.student_state}
-                                                </option>
+                                            <select
+                                                name='student_state'
+                                                onChange={handleChange}
+                                            >
+                                                {
+                                                    states.map((state)=>(
+                                                    <option
+                                                        defaultValue={user.student_state}                                                        
+                                                        key={state}
+                                                    >
+                                                        {state}
+                                                    </option>
+                                                    ))
+                                                }
                                             </select>
                                             <label>Perfil profesional:</label>
                                             <input
