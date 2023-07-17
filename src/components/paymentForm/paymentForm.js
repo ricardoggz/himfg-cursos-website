@@ -1,24 +1,22 @@
-import { useEffect, useContext, useState } from "react";
-import { useRouter } from "next/router";
-import Image from "next/image";
-import jsPDF from "jspdf";
-import Swal from "sweetalert2";
-import styles from "./paymentForm.module.css";
-import { data, cerKey } from "./consts";
-import visa from "../../assets/visaLogo.png";
-import mastercard from "../../assets/mastercard.png";
-import { cypherData } from "./cyperData";
+import { useEffect, useContext, useState } from "react"
+import { useRouter } from "next/router"
+import Image from "next/image"
+import Swal from "sweetalert2"
+import styles from "./paymentForm.module.css"
+import { data, cerKey } from "./consts"
+import visa from "../../assets/visaLogo.png"
+import mastercard from "../../assets/mastercard.png"
+import { cypherData } from "./cyperData"
 import { CourseContext, UserContext } from '@/contexts'
-import { reference } from "./reference";
-import { formatDate } from "@/helpers";
-import { addPayment } from "@/services";
+import { reference } from "./reference"
+import { addPayment } from "@/services"
+import { generatePDF } from "./generatePDF"
 
 export const PaymentForm = () => {
   const [paymentData, setPaymentData] = useState(null)
   const router = useRouter()
   const { course } = useContext(CourseContext)
   const { user } = useContext(UserContext)
-  const doc = new jsPDF();
   useEffect(() => {
     if(!course){
       router.push('/ensenanza/offer')
@@ -48,56 +46,7 @@ export const PaymentForm = () => {
           console.log(res);
         },
         onSuccess: function (res) {
-            doc.setFontSize(40);
-            doc.setFont("helvetica", "bold");
-            doc.text(`Pago exitoso`, 30, 30);
-            doc.setFontSize(13);
-            const docWidth = doc.internal.pageSize.getWidth();
-            const docHeight = doc.internal.pageSize.getHeight();
-            doc.line(0, 60, docWidth, 60);
-            doc.setFont("helvetica", "italic");
-            const splitDescription = doc.splitTextToSize(
-            `
-            Felicidades, ${user.student_name},ha adquirido correctamente el curso:
-            ${course.course_name}
-            
-            Inicia: ${formatDate(course.course_start_date)}
-            
-            Termina: ${formatDate(course.course_finish_date)}
-            ${
-              !course.course_password ? ''
-              :
-              `
-              
-              Contraseña de acceso al curso: ${course.course_password}
-              `
-            }
-
-            ${
-              !course.course_url ? ''
-              :
-              `
-              
-              Liga activa:
-              https://him.edu.mx/video/${course.course_url}.html
-              
-              `
-            }
-              Para solicitar su constancia escriba al siguiente correo:
-              cursoshimfg@gmail.com
-
-              Sus datos de acceso a la plataforma:
-              email: ${user.student_email}
-              constraseña: ${user.student_password}
-
-              Su referencia de pago:
-              ${paymentData.ControlNumber}
-            `,
-              docWidth - 20
-            );
-            doc.text(splitDescription, 10, 80);
             if(res.status3D === "200"){
-              doc.save(`${course.course_name}.pdf`)
               addPayment({
                 data:{
                   course_id: course.course_id,
@@ -105,6 +54,11 @@ export const PaymentForm = () => {
                   payment_successfull: 1,
                   payment_reference: paymentData.ControlNumber
                 }
+              })
+              generatePDF({
+                course: course,
+                student: user,
+                reference: paymentData.ControlNumber
               })
               router.push('/ensenanza/offer')
             }
