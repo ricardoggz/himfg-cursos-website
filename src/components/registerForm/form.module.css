@@ -71,6 +71,17 @@
     text-align:center;
     width:50%;
 }
+.inputFile{
+    border: 10px solid var(--white-secondary);
+    display:flex;
+    flex-direction: column;
+    gap:1rem;
+    padding:1rem;
+}
+.inputFile span{
+    color:var(--red-primary);
+    line-height: 1.5rem;
+}
 @media (min-width:240px) and (max-width:880px){
     .formRatioInputs{
         grid-template-columns: 1fr;

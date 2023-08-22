@@ -163,6 +163,40 @@ export const RegisterForm = ({path})=>{
                     <input type='text' name='student_grade' onChange={onChange}/>
                 </div>
             </div>
+            {
+                !inputData ? null
+                :
+                <div className={styles.inputFile}>
+                    {
+                    inputData.student_grade === 'Estudiante'
+                    ?
+                    <>
+                        <label className={styles.labelTitle}>Inserte una fotografía de su credencial de estudiante</label>
+                        <input type='file'/>
+                        <span>
+                            Asegúrese de enviar un documento válido y con vigencia, de lo contrario
+                            no se emitirá su constancia y tampoco tendrá la devolución de su dinero.
+                        </span>
+                    </>
+                    :
+                    null
+                    }
+                    {
+                        inputData.student_grade === 'Médico' || inputData.student_grade === 'Enfermero'
+                        ?
+                        <>
+                            <label className={styles.labelTitle}>Inserte una fotografía de su cédula profesional</label>
+                            <input type='file'/>
+                            <span>
+                                Asegúrese de enviar un documento válido y con vigencia, de lo contrario
+                                no se emitirá su constancia y tampoco tendrá la devolución de su dinero.
+                            </span>
+                        </>
+                        :
+                        null
+                    }
+                </div>
+            }
             <label className={styles.labelTitle}>
                 Institución de procedencia donde trabaja actualmente:
             </label>
