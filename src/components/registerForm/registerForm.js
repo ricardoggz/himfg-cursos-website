@@ -1,4 +1,4 @@
-import { useContext } from 'react'
+import { useState, useContext, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 import axios from 'axios'
@@ -7,6 +7,7 @@ import { CourseContext, UserContext } from '@/contexts'
 import { useOnChange } from '../../hooks'
 import styles from './form.module.css'
 import { states } from '@/consts'
+import { uploadFile } from '@/services'
 export const RegisterForm = ({path})=>{
     const router = useRouter()
     const { course }= useContext(CourseContext)
@@ -25,6 +26,9 @@ export const RegisterForm = ({path})=>{
             )
             if(response.status === 200){
                 login(studentCreated)
+                uploadFile({
+                    file: inputData.student_license
+                })
                 Swal.fire({
                     icon: 'success',
                     title: 'Registro exitoso',
@@ -160,7 +164,7 @@ export const RegisterForm = ({path})=>{
                     ?
                     <>
                         <label className={styles.labelTitle}>Inserte una fotografía de su credencial de estudiante</label>
-                        <input type='file' name='student_license' onChange={onChange}/>
+                        <input type='file' name='student_license' onChange={onChange} id='file'/>
                         <span>
                             Asegúrese de enviar un documento válido y con vigencia, de lo contrario
                             no se emitirá su constancia y tampoco tendrá la devolución de su dinero.
@@ -174,7 +178,7 @@ export const RegisterForm = ({path})=>{
                         ?
                         <>
                             <label className={styles.labelTitle}>Inserte una fotografía de su cédula profesional</label>
-                            <input type='file' name='student_license' onChange={onChange}/>
+                            <input type='file' name='student_license' onChange={onChange} id='file'/>
                             <span>
                                 Asegúrese de enviar un documento válido y con vigencia, de lo contrario
                                 no se emitirá su constancia y tampoco tendrá la devolución de su dinero.
