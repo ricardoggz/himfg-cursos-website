@@ -77,23 +77,11 @@ export const RegisterForm = ({path})=>{
             <label className={styles.labelTitle}>
                 Lugar de procedencia:
             </label>
-            <select
+            <input
                 name='student_state'
                 onChange={onChange}
-                className={`${styles.stateOptions}`}>
-                {
-                    states.map((state, index)=>(
-                        
-                            <option
-                                key={index}
-                                value={state}
-                            >
-                                {state}
-                            </option>
-                        
-                    ))
-                }
-            </select>
+                type='text'
+            />
             <label className={styles.labelTitle}>
                 Perfil profesional:
             </label>
