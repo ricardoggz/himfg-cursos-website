@@ -160,7 +160,7 @@ export const RegisterForm = ({path})=>{
                     ?
                     <>
                         <label className={styles.labelTitle}>Inserte una fotografía de su credencial de estudiante</label>
-                        <input type='file'/>
+                        <input type='file' name='student_license' onChange={onChange}/>
                         <span>
                             Asegúrese de enviar un documento válido y con vigencia, de lo contrario
                             no se emitirá su constancia y tampoco tendrá la devolución de su dinero.
@@ -174,7 +174,7 @@ export const RegisterForm = ({path})=>{
                         ?
                         <>
                             <label className={styles.labelTitle}>Inserte una fotografía de su cédula profesional</label>
-                            <input type='file'/>
+                            <input type='file' name='student_license' onChange={onChange}/>
                             <span>
                                 Asegúrese de enviar un documento válido y con vigencia, de lo contrario
                                 no se emitirá su constancia y tampoco tendrá la devolución de su dinero.
