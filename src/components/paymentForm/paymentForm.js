@@ -28,6 +28,7 @@ export const PaymentForm = () => {
         ControlNumber: `${reference(course.course_id)}`
       })
     }
+    console.log(course)
     setTimeout(() => {
       Payment.setEnv("pro");
     }, 1000);

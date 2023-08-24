@@ -33,17 +33,30 @@ export const generatePDF = ({course, student, reference}) => {
         , 10, 160,
         {url: `https://him.edu.mx/video/${course.course_url}/`}
         )
+        doc.setFont("helvetica", "bold")
+        doc.text('Sus datos de acceso a la plataforma:', 10, 175)
+        doc.setFont('helvetica', 'italic')
+        doc.text(`Correo: ${student.student_email}`, 10, 185)
+        doc.text(`Contraseña: ${student.student_password}`, 10, 195)
     }
-    doc.setTextColor('#2f3542')
+    if(course.modality_id == 1){
+        doc.setFont("helvetica", "bold")
+        doc.text('Este curso se impartirá de manera presencial',10, 125)
+        doc.setFont("helvetica", "bold")
+        doc.text('SEDE:',10, 140)
+        doc.setFont("helvetica", "italic")
+        doc.text(`${course.course_place}`,10, 150)
+        doc.setFont("helvetica", "bold")
+        doc.text('Sus datos de acceso a la plataforma:', 10, 165)
+        doc.setFont('helvetica', 'italic')
+        doc.text(`Correo: ${student.student_email}`, 10, 175)
+        doc.text(`Contraseña: ${student.student_password}`, 10, 185)
+    }
+    /*doc.setTextColor('#2f3542')
     doc.setFont("helvetica", "bold")
     doc.text(`Correo de contacto para solicitar su constancia y emitir su factura:`,10, 175)
     doc.setFont('helvetica', 'italic')
-    doc.text('cursoshimfg@gmail.com', 10, 185)
-    doc.setFont("helvetica", "bold")
-    doc.text('Sus datos de acceso a la plataforma:', 10, 200)
-    doc.setFont('helvetica', 'italic')
-    doc.text(`Correo: ${student.student_email}`, 10, 210)
-    doc.text(`Contraseña: ${student.student_password}`, 10, 220)
+    doc.text('cursoshimfg@gmail.com', 10, 185)*/
     if(reference){
         doc.setFont("helvetica", "bold")
         doc.text('Su referencia de pago', 10, 235)
