@@ -34,10 +34,22 @@ export const RegisterForm = ({path})=>{
     }
     const onSubmit = async(evt) =>{
         evt.preventDefault()
-        let student
+        const data = new FormData()
+        data.append('student_id', formData.student_id)
+        data.append('student_name', formData.student_name)
+        data.append('student_age', formData.student_age)
+        data.append('student_nationality', formData.student_nationality)
+        data.append('student_state', formData.student_state)
+        data.append('student_grade', formData.student_grade)
+        data.append('student_license', formData.student_license)
+        data.append('student_institution', formData.student_institution)
+        data.append('student_phone', formData.student_phone)
+        data.append('student_email', formData.student_email)
+        data.append('student_password', formData.student_password)
+        data.append('student_graduated', formData.student_graduated)
         try {
             const response = await axios.post(
-                `${process.env.BASE_URL_API}api/auth/create-user`,formData               
+                `${process.env.BASE_URL_API}api/auth/create-user`, data               
             )
             if(response.status === 200){
                 login(formData)
