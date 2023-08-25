@@ -62,7 +62,6 @@ export const RegisterForm = ({path})=>{
                     showCloseButton: true,
                     showConfirmButton: false
                 })
-                student = JSON.parse(response.config.data)
                 if(course){
                     router.push('/payment')
                 }

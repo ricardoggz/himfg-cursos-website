@@ -14,6 +14,7 @@ import { generatePDF } from "./generatePDF"
 
 export const PaymentForm = () => {
   const [paymentData, setPaymentData] = useState(null)
+  const [amount, setAmount] = useState(null)
   const router = useRouter()
   const { course } = useContext(CourseContext)
   const { user } = useContext(UserContext)
@@ -24,11 +25,24 @@ export const PaymentForm = () => {
     if(course){
       setPaymentData({
         ...data,
-        Amount: `${course.course_price}.00`,
+        Amount: `${course._course_price}.00`,
         ControlNumber: `${reference(course.course_id)}`
       })
     }
-    console.log(course)
+    if(user && user.student_license && user.student_grade === 'Médico'){
+      setPaymentData({
+        ...data,
+        Amount: `${course.course_employee_price}.00`,
+        ControlNumber: `${reference(course.course_id)}`
+      })
+    }
+    if(user && user.student_license && user.student_grade === 'Estudiante'){
+      setPaymentData({
+        ...data,
+        Amount: `${course.course_student_price}.00`,
+        ControlNumber: `${reference(course.course_id)}`
+      })
+    }
     setTimeout(() => {
       Payment.setEnv("pro");
     }, 1000);
