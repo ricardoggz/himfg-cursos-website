@@ -22,24 +22,22 @@ export const PaymentForm = () => {
     if(!course){
       router.push('/ensenanza/offer')
     }
-    if(course){
-      setPaymentData({
-        ...data,
-        Amount: `${course._course_price}.00`,
-        ControlNumber: `${reference(course.course_id)}`
-      })
-    }
-    if(user && user.student_license && user.student_grade === 'Médico'){
+    if(course && user && user.student_grade === 'Médico' && user.student_license && course.course_employee_price){
       setPaymentData({
         ...data,
         Amount: `${course.course_employee_price}.00`,
         ControlNumber: `${reference(course.course_id)}`
       })
-    }
-    if(user && user.student_license && user.student_grade === 'Estudiante'){
+    }else if(course && user && user.student_grade === 'Estudiante' && user.student_license && course.course_student_price){
       setPaymentData({
         ...data,
         Amount: `${course.course_student_price}.00`,
+        ControlNumber: `${reference(course.course_id)}`
+      })
+    }else if(course){
+      setPaymentData({
+        ...data,
+        Amount: `${course.course_price}.00`,
         ControlNumber: `${reference(course.course_id)}`
       })
     }
@@ -47,6 +45,7 @@ export const PaymentForm = () => {
       Payment.setEnv("pro");
     }, 1000);
   }, []);
+  console.log(paymentData)
   const startPayment = () => {
     if (Payment) {
       Payment.setEnv("pro");
@@ -113,7 +112,27 @@ export const PaymentForm = () => {
               <span>
                 Precio: 
                 <span className={styles.coursePrice}>
-                   ${course.course_price} MXN
+                   {
+                    user.student_license && user.student_grade === 'Estudiante' && course.course_student_price 
+                    ?
+                    `$${course.course_student_price}`
+                    :
+                    null
+                   }
+                   {
+                    user.student_license && user.student_grade === 'Médico' && course.course_employee_price
+                    ?
+                    `$${course.course_employee_price}`
+                    :
+                    null
+                   }
+                   {
+                    course 
+                    ?
+                    `$${course.course_price}`
+                    :
+                    null
+                   }
                 </span>
               </span>
               <button onClick={startPayment}>Comprar</button>
