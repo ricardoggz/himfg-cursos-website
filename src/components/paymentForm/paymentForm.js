@@ -45,7 +45,6 @@ export const PaymentForm = () => {
       Payment.setEnv("pro");
     }, 1000);
   }, []);
-  console.log(paymentData)
   const startPayment = () => {
     if (Payment) {
       Payment.setEnv("pro");
@@ -127,7 +126,7 @@ export const PaymentForm = () => {
                     null
                    }
                    {
-                    course 
+                    course.course_employee_price===null || !course.course_student_price===null
                     ?
                     `$${course.course_price}`
                     :
