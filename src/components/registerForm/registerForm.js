@@ -15,6 +15,7 @@ export const RegisterForm = ({path})=>{
     const [inputData, onChange, onReset] = useOnChange()
     const [formData, setFormData] = useState({
         student_id: Math.floor((Math.random() * 450000) + 450000),
+        student_license: ""
     })
     const handleChange = (evt)=>{
         setFormData({
