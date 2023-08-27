@@ -26,7 +26,7 @@ export const RegisterForm = ({path})=>{
     const handleimageChange = (evt)=>{
         setFormData({
             ...formData,
-            [evt.target.name]: evt.target.files[0]
+            [evt.target.name]: evt.target.value.slice(12)
         })
     }
     let studentCreated = {
