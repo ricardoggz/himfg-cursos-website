@@ -17,6 +17,7 @@ export const RegisterForm = ({path})=>{
         student_id: Math.floor((Math.random() * 450000) + 450000),
         student_license: ""
     })
+    const [image, setImage] = useState(null)
     const handleChange = (evt)=>{
         setFormData({
             ...formData,
@@ -27,6 +28,9 @@ export const RegisterForm = ({path})=>{
         setFormData({
             ...formData,
             [evt.target.name]: evt.target.value.slice(12)
+        })
+        setImage({
+            [evt.target.name] :evt.target.files[0]
         })
     }
     let studentCreated = {
@@ -55,7 +59,7 @@ export const RegisterForm = ({path})=>{
             if(response.status === 200){
                 login(formData)
                 uploadFile({
-                    file: formData.student_license
+                    file: image.student_license
                 })
                 Swal.fire({
                     icon: 'success',
