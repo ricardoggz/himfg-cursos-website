@@ -58,9 +58,11 @@ export const RegisterForm = ({path})=>{
             )
             if(response.status === 200){
                 login(formData)
-                uploadFile({
-                    file: image.student_license
-                })
+                if(image){
+                    uploadFile({
+                        file: image.student_license
+                    })
+                }
                 Swal.fire({
                     icon: 'success',
                     title: 'Registro exitoso',
