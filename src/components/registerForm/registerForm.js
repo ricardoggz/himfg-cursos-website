@@ -24,18 +24,19 @@ export const RegisterForm = ({path})=>{
             [evt.target.name]: evt.target.value
         })
     }
-    const handleimageChange = (evt)=>{
-        setFormData({
-            ...formData,
-            [evt.target.name]: evt.target.value.slice(12)
-        })
-        setImage({
-            [evt.target.name] :evt.target.files[0]
-        })
-    }
-    let studentCreated = {
-        student_id: Math.floor((Math.random() * 450000) + 450000),
-        ...inputData
+    const handleimageChange = async(evt)=>{
+        try {
+            const resp = await uploadFile({file: evt.target.files[0]})
+            setFormData({
+                ...formData,
+                [evt.target.name]:resp
+            })
+            setImage({
+                [evt.target.name] :evt.target.files[0]
+            })
+        } catch (error) {
+            console.log(error)
+        }
     }
     const onSubmit = async(evt) =>{
         evt.preventDefault()
@@ -54,15 +55,10 @@ export const RegisterForm = ({path})=>{
         data.append('student_graduated', formData.student_graduated)
         try {
             const response = await axios.post(
-                `${process.env.BASE_URL_API}api/auth/create-user`, data               
+                `${process.env.BASE_URL_API}api/auth/create-user`, data            
             )
             if(response.status === 200){
                 login(formData)
-                if(image){
-                    uploadFile({
-                        file: image.student_license
-                    })
-                }
                 Swal.fire({
                     icon: 'success',
                     title: 'Registro exitoso',
