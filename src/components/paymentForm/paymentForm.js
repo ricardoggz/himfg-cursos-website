@@ -126,7 +126,7 @@ export const PaymentForm = () => {
                     null
                    }
                    {
-                    course.course_employee_price===null || !course.course_student_price===null
+                    course.course_employee_price===null || course.course_student_price===null
                     ?
                     `$${course.course_price}`
                     :
