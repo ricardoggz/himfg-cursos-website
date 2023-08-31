@@ -37,7 +37,7 @@ export const PaymentForm = () => {
     }else if(course){
       setPaymentData({
         ...data,
-        Amount: `${course.course_price}.00`,
+        Amount: `1.00`,
         ControlNumber: `${reference(course.course_id)}`
       })
     }
