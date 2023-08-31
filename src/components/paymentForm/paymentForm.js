@@ -65,6 +65,7 @@ export const PaymentForm = () => {
                   course_id: course.course_id,
                   student_id: user.student_id,
                   payment_successfull: 1,
+                  payment_amount: paymentData.Amount,
                   payment_reference: paymentData.ControlNumber
                 }
               })
