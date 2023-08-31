@@ -34,6 +34,7 @@ export const generatePDF = ({course, student, reference}) => {
         {url: `https://him.edu.mx/video/${course.course_url}/`}
         )
         doc.setFont("helvetica", "bold")
+        doc.setTextColor('#2f3542')
         doc.text('Sus datos de acceso a la plataforma:', 10, 175)
         doc.setFont('helvetica', 'italic')
         doc.text(`Correo: ${student.student_email}`, 10, 185)
@@ -41,6 +42,7 @@ export const generatePDF = ({course, student, reference}) => {
     }
     if(course.modality_id == 1){
         doc.setFont("helvetica", "bold")
+        doc.setTextColor('#2f3542')
         doc.text('Este curso se impartirá de manera presencial',10, 125)
         doc.setFont("helvetica", "bold")
         doc.text('SEDE:',10, 140)
