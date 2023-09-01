@@ -22,27 +22,27 @@ export const PaymentForm = () => {
     if(!course){
       router.push('/ensenanza/offer')
     }
-    if(course && user && user.student_grade === 'Médico' && user.student_license && course.course_employee_price){
+    if(course && user && user.student_role === 'PERSONAL_HIMFG'){
       setPaymentData({
         ...data,
-        Amount: `${course.course_employee_price}.00`,
+        Amount: `${parseInt(course.course_price /2)}.00`,
         ControlNumber: `${reference(course.course_id)}`
       })
-    }else if(course && user && user.student_grade === 'Estudiante' && user.student_license && course.course_student_price){
+    }else if(course && user && user.student_role === 'ESTUDIANTE'){
       setPaymentData({
         ...data,
-        Amount: `${course.course_student_price}.00`,
+        Amount: `${parseInt(course.course_price /2)}.00`,
         ControlNumber: `${reference(course.course_id)}`
       })
-    }else if(course){
+    }else if(course && user && user.student_role === 'EXTERNO'){
       setPaymentData({
         ...data,
-        Amount: `1.00`,
+        Amount: `${course.course_price}.00`,
         ControlNumber: `${reference(course.course_id)}`
       })
     }
     setTimeout(() => {
-      Payment.setEnv("pro");
+      Payment.setEnv("pro")
     }, 1000);
   }, []);
   const startPayment = () => {
@@ -113,23 +113,23 @@ export const PaymentForm = () => {
                 Precio: 
                 <span className={styles.coursePrice}>
                    {
-                    user.student_license && user.student_grade === 'Estudiante' && course.course_student_price 
+                    user.student_role === 'ESTUDIANTE'
                     ?
-                    `$${course.course_student_price}`
+                    `$${parseInt(course.course_price / 2)} mxn`
                     :
                     null
                    }
                    {
-                    user.student_license && user.student_grade === 'Médico' && course.course_employee_price
+                    user.student_role === 'PERSONAL_HIMFG'
                     ?
-                    `$${course.course_employee_price}`
+                    `$${parseInt(course.course_price / 2)} mxn`
                     :
                     null
                    }
                    {
-                    course.course_employee_price===null && course.course_student_price===null
+                    user.student_role === 'EXTERNO'
                     ?
-                    `$${course.course_price}`
+                    `$${course.course_price} mxn`
                     :
                     null
                    }

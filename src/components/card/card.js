@@ -29,7 +29,16 @@ const Card = ({course})=>{
             <h3 className={styles.courseTitle}>{course.course_name}</h3>
             <span>Inicia: {formatDate(course.course_start_date)}</span>
             <span>Termina: {formatDate(course.course_finish_date)}</span>
-            { !course.course_price ? null : `Costo: $${course.course_price}mxn`}
+            { !course.course_price ? null : 
+              <>
+                <span>
+                    Costo para externos al HIMFG: ${course.course_price}mxn
+                </span>
+                <span>
+                    Costo para personal del HIMFG y estudiantes: ${parseInt(course.course_price / 2)}mxn
+                </span>
+              </>
+            }
             <div className={styles.cardButtons}>
                 {
                     !course.course_pdf ?
