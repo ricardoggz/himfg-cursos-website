@@ -13,6 +13,7 @@ export const RegisterForm = ({path})=>{
     const { course }= useContext(CourseContext)
     const { login }= useContext(UserContext)
     const [inputData, onChange, onReset] = useOnChange()
+    const [isSelected, setIsSelected] = useState(false)
     const [formData, setFormData] = useState({
         student_id: Math.floor((Math.random() * 450000) + 450000),
         student_license: ""
@@ -29,7 +30,7 @@ export const RegisterForm = ({path})=>{
             const resp = await uploadFile({file: evt.target.files[0]})
             setFormData({
                 ...formData,
-                [evt.target.name]:resp
+                [evt.target.name]:resp,
             })
             setImage({
                 [evt.target.name] :evt.target.files[0]
@@ -120,79 +121,128 @@ export const RegisterForm = ({path})=>{
             </label>
             <div className={styles.formRatioInputs}>
                 <div>
-                    <label>Médico</label>
+                    <label>Personal del HIMFG</label>
                     <input
                         type='radio'
-                        value='Médico'
-                        name='student_grade'
+                        value='PERSONAL_HIMFG'
+                        name='student_role'
                         onChange={handleChange}
                         
                     />
+                    {
+                        formData.student_role && formData.student_role === 'PERSONAL_HIMFG' ?
+                        <div>
+                            <select onChange={handleChange} name='student_grade'>
+                                <option value='' onClick={()=> setIsSelected(false)}>Seleccionar</option>
+                                <option value='Médico' onClick={()=> setIsSelected(false)}>Médico</option>
+                                <option value='Enfermero(a)' onClick={()=> setIsSelected(false)}>
+                                    Enfermero(a)
+                                </option>
+                                <option value='Biólogo' onClick={()=> setIsSelected(false)}>Biólogo</option>
+                                <option value='Químico' onClick={()=> setIsSelected(false)}>Químico</option>
+                                <option value='Odontólogo' onClick={()=> setIsSelected(false)}>Odontólogo</option>
+                                <option value='Trabajador(a) social' onClick={()=> setIsSelected(false)}>
+                                    Trabajador(a) social
+                                </option>
+                                <option value='Otro' onClick={()=> setIsSelected(true)}>Otro</option>
+                            </select>
+                            {
+                                isSelected ?
+                                <input type='text' name='student_grade' onChange={handleChange}/>
+                                :
+                                null
+                            }
+                        </div>
+                        :
+                        null
+                    }
                 </div>
                 <div>
                     <label>Estudiante</label>
                     <input
                         type='radio'
-                        value='Estudiante'
-                        name='student_grade'
+                        value='ESTUDIANTE'
+                        name='student_role'
                         onChange={handleChange}
                         
                     />
                 </div>
                 <div>
-                    <label>Enfermero(a)</label>
+                    <label>Externo</label>
                     <input
                         type='radio'
-                        value='Enfermero'
-                        name='student_grade'
+                        value='EXTERNO'
+                        name='student_role'
                         onChange={handleChange}
                         
                     />
+                    {
+                        formData.student_role && formData.student_role === 'EXTERNO' ?
+                        <div>
+                            <select onChange={handleChange} name='student_grade'>
+                                <option value='' onClick={()=> setIsSelected(false)}>Seleccionar</option>
+                                <option value='Médico' onClick={()=> setIsSelected(false)}>Médico</option>
+                                <option value='Enfermero(a)' onClick={()=> setIsSelected(false)}>
+                                    Enfermero(a)
+                                </option>
+                                <option value='Biólogo' onClick={()=> setIsSelected(false)}>Biólogo</option>
+                                <option value='Químico' onClick={()=> setIsSelected(false)}>Químico</option>
+                                <option value='Odontólogo' onClick={()=> setIsSelected(false)}>Odontólogo</option>
+                                <option value='Trabajador(a) social' onClick={()=> setIsSelected(false)}>
+                                    Trabajador(a) social
+                                </option>
+                                <option value='Otro' onClick={()=> setIsSelected(true)}>Otro</option>
+                            </select>
+                            {
+                                isSelected ?
+                                <input type='text' name='student_grade' onChange={handleChange}/>
+                                :
+                                null
+                            }
+                        </div>
+                        :
+                        null
+                    }
                 </div>
-                <div>
-                    <label>Químico</label>
-                    <input
-                        type='radio'
-                        value='Químico'
-                        name='student_grade'
-                        onChange={handleChange}
-                        
-                    />
-                </div>
-                <div>
-                    <label>Biólogo</label>
-                    <input
-                        type='radio'
-                        value='Biólogo'
-                        name='student_grade'
-                        onChange={handleChange}
-                        
-                    />
-                </div>
-                <div>
-                    <label>Maestro</label>
-                    <input
-                        type='radio'
-                        value='Maestro'
-                        name='student_grade'
-                        onChange={handleChange}
-                        
-                    />
-                </div>
-                <div>
+                {/*<div>
                     <label>Otro (especifique):</label>
                     <input type='text' name='student_grade' onChange={handleChange}/>
-                </div>
+                </div>*/}
             </div>
             {
                 !formData ? null
                 :
                 <div className={styles.inputFile}>
                     {
-                    formData.student_grade === 'Estudiante'
+                    formData.student_role
                     ?
                     <>
-                        <label className={styles.labelTitle}>Inserte una fotografía de su credencial de estudiante</label>
+                        <label className={styles.labelTitle}>
+                           {
+                            formData.student_role === 'PERSONAL_HIMFG' ?
+                            <>
+                                Inserte una fotografía de su credencial de personal del Hospital Infantil de México
+                            </>
+                            :
+                            null
+                           }
+                           {
+                            formData.student_role === 'ESTUDIANTE' ?
+                            <>
+                                Inserte una fotografía de su credencial vigente de estudiante
+                            </>
+                            :
+                            null
+                           }
+                           {
+                            formData.student_role === 'EXTERNO' ?
+                            <>
+                                Inserte una fotografía de su cédula profesional
+                            </>
+                            :
+                            null
+                           }
+                        </label>
                         <input type='file' name='student_license' onChange={handleimageChange} id='file'/>
                         <span>
                             Asegúrese de enviar un documento válido y con vigencia, de lo contrario
@@ -203,7 +253,7 @@ export const RegisterForm = ({path})=>{
                     null
                     }
                     {
-                        formData.student_grade === 'Médico' || formData.student_grade === 'Enfermero'
+                        /*formData.student_grade === 'Médico' || formData.student_grade === 'Enfermero'
                         ?
                         <>
                             <label className={styles.labelTitle}>Inserte una fotografía de su cédula profesional</label>
@@ -214,7 +264,7 @@ export const RegisterForm = ({path})=>{
                             </span>
                         </>
                         :
-                        null
+                        null*/
                     }
                 </div>
             }
