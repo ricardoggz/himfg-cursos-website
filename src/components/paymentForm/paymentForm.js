@@ -11,10 +11,12 @@ import { CourseContext, UserContext } from '@/contexts'
 import { reference } from "./reference"
 import { addPayment } from "@/services"
 import { generatePDF } from "./generatePDF"
+import { uploadFile } from '@/services'
 
 export const PaymentForm = () => {
   const [paymentData, setPaymentData] = useState(null)
-  const [amount, setAmount] = useState(null)
+  const [isSelected, setIsSelected] = useState(false)
+  const [formData, setFormData] = useState(null)
   const router = useRouter()
   const { course } = useContext(CourseContext)
   const { user } = useContext(UserContext)
@@ -88,7 +90,7 @@ export const PaymentForm = () => {
         },
       });
     }
-  };
+  }
   return (
     <>
       <div className={`${styles.paymentWrapper} flexContainer`}>
@@ -135,6 +137,21 @@ export const PaymentForm = () => {
                    }
                 </span>
               </span>
+              <form className={styles.invoiceSelectedForm}>
+                <div>
+                  <input type='checkbox' onChange={()=>setIsSelected(!isSelected)}/>
+                  <label>Facturación</label>
+                </div>
+                {
+                  isSelected ?
+                  <>
+                    <label>Inserte una fotografía de su constancia de situación fiscal</label>
+                    <input type='file' name='student_tax_data'/>
+                  </>
+                  :
+                  null
+                }
+              </form>
               <button onClick={startPayment}>Comprar</button>
             </>
           )}
