@@ -27,19 +27,19 @@ export const PaymentForm = () => {
     if(course && user && user.student_role === 'PERSONAL_HIMFG'){
       setPaymentData({
         ...data,
-        Amount: `${parseInt(course.course_price /2)}.00`,
+        Amount: `1.00`,
         ControlNumber: `${reference(course.course_id)}`
       })
     }else if(course && user && user.student_role === 'ESTUDIANTE'){
       setPaymentData({
         ...data,
-        Amount: `${parseInt(course.course_price /2)}.00`,
+        Amount: `1.00`,
         ControlNumber: `${reference(course.course_id)}`
       })
     }else if(course && user && user.student_role === 'EXTERNO'){
       setPaymentData({
         ...data,
-        Amount: `${course.course_price}.00`,
+        Amount: `1.00`,
         ControlNumber: `${reference(course.course_id)}`
       })
     }
@@ -62,6 +62,10 @@ export const PaymentForm = () => {
         },
         onSuccess: function (res) {
             if(res.status3D === "200"){
+              updateTaxData({
+                data: formData.student_tax_data,
+                user_id: user.student_id
+              })
               addPayment({
                 data:{
                   course_id: course.course_id,
@@ -96,10 +100,6 @@ export const PaymentForm = () => {
       const response = await uploadFile({file: evt.target.files[0]})
       setFormData({
         [evt.target.name]: response
-      })
-      await updateTaxData({
-        data: formData.student_tax_data,
-        user_id: user.student_id
       })
       return response
     } catch (error) {
