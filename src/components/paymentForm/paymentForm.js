@@ -11,7 +11,7 @@ import { CourseContext, UserContext } from '@/contexts'
 import { reference } from "./reference"
 import { addPayment } from "@/services"
 import { generatePDF } from "./generatePDF"
-import { uploadFile } from '@/services'
+import { uploadFile, updateTaxData } from '@/services'
 
 export const PaymentForm = () => {
   const [paymentData, setPaymentData] = useState(null)
@@ -94,6 +94,13 @@ export const PaymentForm = () => {
   const handleImageChange = async(evt)=>{
     try {
       const response = await uploadFile({file: evt.target.files[0]})
+      setFormData({
+        [evt.target.name]: response
+      })
+      await updateTaxData({
+        data: formData.student_tax_data,
+        user_id: user.student_id
+      })
       return response
     } catch (error) {
       console.log(error)
