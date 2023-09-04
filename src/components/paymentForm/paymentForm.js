@@ -91,6 +91,14 @@ export const PaymentForm = () => {
       });
     }
   }
+  const handleImageChange = async(evt)=>{
+    try {
+      const response = await uploadFile({file: evt.target.files[0]})
+      return response
+    } catch (error) {
+      console.log(error)
+    }
+  }
   return (
     <>
       <div className={`${styles.paymentWrapper} flexContainer`}>
@@ -146,7 +154,7 @@ export const PaymentForm = () => {
                   isSelected ?
                   <>
                     <label>Inserte una fotografía de su constancia de situación fiscal</label>
-                    <input type='file' name='student_tax_data'/>
+                    <input type='file' name='student_tax_data' onChange={handleImageChange}/>
                   </>
                   :
                   null
