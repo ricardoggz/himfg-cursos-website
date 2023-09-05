@@ -45,8 +45,9 @@ export const PaymentForm = () => {
     }
     setTimeout(() => {
       Payment.setEnv("pro")
-    }, 1000);
-  }, []);
+    }, 1000)
+  }, [])
+  console.log(formData)
   const startPayment = () => {
     if (Payment && user.student_role === 'EXTERNO') {
       Payment.setEnv("pro");
@@ -62,19 +63,34 @@ export const PaymentForm = () => {
         },
         onSuccess: function (res) {
             if(res.status3D === "200"){
-              updateTaxData({
-                data: formData.student_tax_data,
-                user_id: user.student_id
-              })
-              addPayment({
-                data:{
-                  course_id: course.course_id,
-                  student_id: user.student_id,
-                  payment_successfull: 1,
-                  payment_amount: paymentData.Amount,
-                  payment_reference: paymentData.ControlNumber
-                }
-              })
+              if(formData!==null){
+                updateTaxData({
+                  data: formData.student_tax_data,
+                  user_id: user.student_id
+                })
+                addPayment({
+                  data:{
+                    course_id: course.course_id,
+                    student_id: user.student_id,
+                    payment_successfull: 1,
+                    payment_amount: paymentData.Amount,
+                    payment_reference: paymentData.ControlNumber,
+                    payment_invoice: "FACTURACION"
+                  }
+                })
+              }
+              else{
+                addPayment({
+                  data:{
+                    course_id: course.course_id,
+                    student_id: user.student_id,
+                    payment_successfull: 1,
+                    payment_amount: paymentData.Amount,
+                    payment_reference: paymentData.ControlNumber,
+                    payment_invoice: "SIN_FACTURACION"
+                  }
+                })
+              }
               generatePDF({
                 course: course,
                 student: user,
@@ -172,15 +188,20 @@ export const PaymentForm = () => {
                 </span>
               </span>
               <form className={styles.invoiceSelectedForm}>
-                <div>
-                  <input type='checkbox' onChange={()=>setIsSelected(!isSelected)}/>
-                  <label>Facturación</label>
-                </div>
+                {
+                  user.student_role === 'EXTERNO' ?
+                  <div>
+                    <input type='checkbox' onChange={()=>setIsSelected(!isSelected)}/>
+                    <label>Facturación</label>
+                  </div>
+                  :
+                  null
+                }
                 {
                   isSelected ?
                   <>
                     <label>Inserte una fotografía de su constancia de situación fiscal</label>
-                    <input type='file' name='student_tax_data' onChange={handleImageChange}/>
+                    <input type='file' required name='student_tax_data' onChange={handleImageChange}/>
                   </>
                   :
                   null
