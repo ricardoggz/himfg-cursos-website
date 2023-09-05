@@ -48,7 +48,7 @@ export const PaymentForm = () => {
     }, 1000);
   }, []);
   const startPayment = () => {
-    if (Payment) {
+    if (Payment && user.student_role === 'EXTERNO') {
       Payment.setEnv("pro");
       let xOBJ;
       xOBJ = cypherData(paymentData, cerKey);
@@ -95,6 +95,28 @@ export const PaymentForm = () => {
       });
     }
   }
+  const startFreePayment = ()=>{
+    if(user.student_role === 'PERSONAL_HIMFG' || user.student_role === 'ESTUDIANTE'){
+      addPayment({
+        data:{
+          course_id: course.course_id,
+          student_id: user.student_id,
+          payment_successfull: 1,
+          payment_amount: 0,
+          payment_reference: paymentData.ControlNumber
+        }
+      })
+      Swal.fire({
+        title: "Documentación enviada a revisión",
+        text:'Una vez revisada, se te hará llegar la confirmación de acceso al curso via email',
+        icon: "success",
+        showCloseButton: true,
+        showConfirmButton: false,
+        position: "center",
+      })
+      router.push('/ensenanza/offer')
+    }
+  }
   const handleImageChange = async(evt)=>{
     try {
       const response = await uploadFile({file: evt.target.files[0]})
@@ -122,7 +144,11 @@ export const PaymentForm = () => {
                     height={100}
                   />
                 ) : (
-                  <Image src={course.course_image} width={100} height={100} />
+                  <Image
+                  src={course.course_image}
+                  width={100} height={100}
+                  alt='Imágen no disponible'
+                  />
                 )}
               </figure>
               <span>Curso: {course.course_name}</span>
@@ -130,25 +156,18 @@ export const PaymentForm = () => {
                 Precio: 
                 <span className={styles.coursePrice}>
                    {
-                    user.student_role === 'ESTUDIANTE'
+                    user.student_role === 'PERSONAL_HIMFG' || user.student_role === 'ESTUDIANTE'
                     ?
-                    `$${parseInt(course.course_price / 2)} mxn`
+                    `Gratuito`
                     :
-                    null
+                    `$${course.course_price} mxn`
                    }
                    {
-                    user.student_role === 'PERSONAL_HIMFG'
-                    ?
-                    `$${parseInt(course.course_price / 2)} mxn`
-                    :
-                    null
-                   }
-                   {
-                    user.student_role === 'EXTERNO'
+                    /*user.student_role === 'EXTERNO'
                     ?
                     `$${course.course_price} mxn`
                     :
-                    null
+                    null*/
                    }
                 </span>
               </span>
@@ -167,7 +186,13 @@ export const PaymentForm = () => {
                   null
                 }
               </form>
-              <button onClick={startPayment}>Comprar</button>
+              {
+                user.student_role === 'PERSONAL_HIMFG' || user.student_role === 'ESTUDIANTE'
+                ?
+                <button onClick={startFreePayment}>Mandar documentación a revisión</button>
+                :
+                <button onClick={startPayment}>Comprar</button>
+              }
             </>
           )}
         </div>

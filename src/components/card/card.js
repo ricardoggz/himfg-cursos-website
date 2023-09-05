@@ -35,7 +35,7 @@ const Card = ({course})=>{
                     Costo para externos al HIMFG: ${course.course_price}mxn
                 </span>
                 <span>
-                    Costo para personal del HIMFG y estudiantes: ${parseInt(course.course_price / 2)}mxn
+                    Gratuito para personal del HIMFG y estudiantes
                 </span>
               </>
             }
