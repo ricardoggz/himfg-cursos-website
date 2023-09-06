@@ -119,20 +119,26 @@ export const RegisterForm = ({path})=>{
                     {
                         formData.student_role && formData.student_role === 'PERSONAL_HIMFG' ?
                         <div>
-                            <select onChange={handleChange} name='student_grade'>
-                                <option value='' onClick={()=> setIsSelected(false)}>Seleccionar</option>
-                                <option value='Médico' onClick={()=> setIsSelected(false)}>Médico</option>
-                                <option value='Enfermero(a)' onClick={()=> setIsSelected(false)}>
-                                    Enfermero(a)
-                                </option>
-                                <option value='Biólogo' onClick={()=> setIsSelected(false)}>Biólogo</option>
-                                <option value='Químico' onClick={()=> setIsSelected(false)}>Químico</option>
-                                <option value='Odontólogo' onClick={()=> setIsSelected(false)}>Odontólogo</option>
-                                <option value='Trabajador(a) social' onClick={()=> setIsSelected(false)}>
-                                    Trabajador(a) social
-                                </option>
-                                <option value='Otro' onClick={()=> setIsSelected(true)}>Otro</option>
-                            </select>
+                            {
+                                !isSelected ? 
+                                    <select onChange={handleChange} name='student_grade'>
+                                    <option value=''>Seleccionar</option>
+                                    <option value='Médico'>Médico</option>
+                                    <option value='Enfermero(a)'>
+                                        Enfermero(a)
+                                    </option>
+                                    <option value='Biólogo'>Biólogo</option>
+                                    <option value='Químico'>Químico</option>
+                                    <option value='Odontólogo'>Odontólogo</option>
+                                    <option value='Trabajador(a) social'>
+                                        Trabajador(a) social
+                                    </option>
+                                </select>
+                                :
+                                null
+                            }
+                            <label>Otro (especifique):</label>
+                            <input type='checkbox' onChange={()=> setIsSelected(!isSelected)}/>
                             {
                                 isSelected ?
                                 <input type='text' name='student_grade' onChange={handleChange}/>
@@ -166,20 +172,26 @@ export const RegisterForm = ({path})=>{
                     {
                         formData.student_role && formData.student_role === 'EXTERNO' ?
                         <div>
-                            <select onChange={handleChange} name='student_grade'>
-                                <option value='' onClick={()=> setIsSelected(false)}>Seleccionar</option>
-                                <option value='Médico' onClick={()=> setIsSelected(false)}>Médico</option>
-                                <option value='Enfermero(a)' onClick={()=> setIsSelected(false)}>
-                                    Enfermero(a)
-                                </option>
-                                <option value='Biólogo' onClick={()=> setIsSelected(false)}>Biólogo</option>
-                                <option value='Químico' onClick={()=> setIsSelected(false)}>Químico</option>
-                                <option value='Odontólogo' onClick={()=> setIsSelected(false)}>Odontólogo</option>
-                                <option value='Trabajador(a) social' onClick={()=> setIsSelected(false)}>
-                                    Trabajador(a) social
-                                </option>
-                                <option value='Otro' onClick={()=> setIsSelected(true)}>Otro</option>
-                            </select>
+                            {
+                                !isSelected ? 
+                                    <select onChange={handleChange} name='student_grade'>
+                                    <option value=''>Seleccionar</option>
+                                    <option value='Médico'>Médico</option>
+                                    <option value='Enfermero(a)'>
+                                        Enfermero(a)
+                                    </option>
+                                    <option value='Biólogo'>Biólogo</option>
+                                    <option value='Químico'>Químico</option>
+                                    <option value='Odontólogo'>Odontólogo</option>
+                                    <option value='Trabajador(a) social'>
+                                        Trabajador(a) social
+                                    </option>
+                                </select>
+                                :
+                                null
+                            }
+                            <label>Otro (especifique):</label>
+                            <input type='checkbox' onChange={()=> setIsSelected(!isSelected)}/>
                             {
                                 isSelected ?
                                 <input type='text' name='student_grade' onChange={handleChange}/>
