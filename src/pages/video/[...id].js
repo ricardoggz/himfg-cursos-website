@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { useRouter } from "next/router"
 import Head from "next/head"
 import axios from "axios"
@@ -9,6 +9,7 @@ import { Container, GridContainer, Login } from '../../components'
 
 const Video = (props)=>{
     useRouter()
+    const [count, setCount] = useState(1)
     const [password, setPassword] = useState(null)
     const [course, setCourse] = useState(null)
     const [ vimeoData, setVimeoData ] = useState(null)
@@ -44,18 +45,25 @@ const Video = (props)=>{
     const getVimeoData = async({id})=>{
         try {
             const resp = await axios.get(
-                `https://api.vimeo.com/me/folders/${id}/videos`,
+                `https://api.vimeo.com/me/folders/${id}/videos?page=${count}`,
                 {
                     headers: { Authorization: `Bearer 586637bf90ea7727edc8c90c95b056c3` }
                 }
             )
             if(resp.status === 200){
-                setVimeoData(resp.data.data)
+                setVimeoData(resp.data)
             }
         } catch (error) {
             throw new Error(error)
         }
     }
+    const increment = ()=>setCount(count + 1)
+    const decrement = ()=> setCount(count - 1)
+    useEffect(()=>{
+        if(course){
+            getVimeoData({id: course[0].course_vimeo_folder})
+        }
+    },[count])
     return (
         <>
             <Head>
@@ -148,7 +156,7 @@ const Video = (props)=>{
                 </h3>
                 <GridContainer>
                 {
-                    vimeoData.map((video, i)=>(
+                    vimeoData.data.map((video, i)=>(
                         <div className={`${styles.iframeVideo} boxShadow`} key={i}>
                             <iframe
                             src={video.player_embed_url}
@@ -165,6 +173,49 @@ const Video = (props)=>{
                     ))
                 }
                 </GridContainer>
+                <div className="flexContainer">
+                    {
+                        vimeoData.paging.next ?
+                        <button
+                        className={styles.viewMoreButton}
+                        onClick={increment}
+                        >
+                            Siguiente
+                        </button>
+                        :
+                        null
+                    }
+                    {
+                        vimeoData.paging.previous ?
+                        <button
+                        className={styles.viewMoreButton}
+                        onClick={decrement}
+                        >
+                            Anterior
+                        </button>
+                        :
+                        null
+                    }
+                    {
+                        vimeoData.paging.previous  && vimeoData.paging.next ?
+                        <>
+                            <button
+                            className={styles.viewMoreButton}
+                            onClick={decrement}
+                            >
+                            Anterior
+                            </button>
+                            <button
+                            className={styles.viewMoreButton}
+                            onClick={increment}
+                            >
+                            Siguiente
+                            </button>
+                        </>
+                        :
+                        null
+                    }
+                </div>
                 </>
             }
             </>
