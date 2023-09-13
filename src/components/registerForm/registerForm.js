@@ -220,7 +220,7 @@ export const RegisterForm = ({path})=>{
                            {
                             formData.student_role === 'PERSONAL_HIMFG' ?
                             <>
-                                Inserte una fotografía de su credencial de personal del Hospital Infantil de México
+                                Inserte una fotografía de su credencial de personal del Hospital Infantil de México por ambos lados
                             </>
                             :
                             null
@@ -228,7 +228,7 @@ export const RegisterForm = ({path})=>{
                            {
                             formData.student_role === 'ESTUDIANTE' ?
                             <>
-                                Inserte una fotografía de su credencial vigente de estudiante
+                                Inserte una fotografía de su credencial vigente de estudiante por ambos lados
                             </>
                             :
                             null
@@ -242,7 +242,52 @@ export const RegisterForm = ({path})=>{
                             null
                            }
                         </label>
-                        <input type='file' name='student_license' onChange={handleimageChange} id='file'/>
+                        {
+                            formData.student_role === 'PERSONAL_HIMFG' ?
+                            <>
+                                <input
+                                type='file'
+                                name='student_license'
+                                onChange={handleimageChange}
+                                id='file'/>
+                                <input
+                                type='file'
+                                name='student_license'
+                                onChange={handleimageChange}
+                                id='file'/>
+                            </>
+                            :
+                            null
+                           }
+                           {
+                            formData.student_role === 'ESTUDIANTE' ?
+                            <>
+                               <input
+                                type='file'
+                                name='student_license'
+                                onChange={handleimageChange}
+                                id='file'/>
+                                <input
+                                type='file'
+                                name='student_license'
+                                onChange={handleimageChange}
+                                id='file'/>
+                            </>
+                            :
+                            null
+                           }
+                           {
+                            formData.student_role === 'EXTERNO' ?
+                            <>
+                                <input
+                                type='file'
+                                name='student_license'
+                                onChange={handleimageChange}
+                                id='file'/>
+                            </>
+                            :
+                            null
+                           }
                         <span>
                             Asegúrese de enviar un documento válido y con vigencia, de lo contrario
                             no se emitirá su constancia y tampoco tendrá la devolución de su dinero.
