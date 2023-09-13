@@ -39,6 +39,20 @@ export const RegisterForm = ({path})=>{
             console.log(error)
         }
     }
+    const handleSecondImageChange = async(evt)=>{
+        try {
+            const resp = await uploadFile({file: evt.target.files[0]})
+            setFormData({
+                ...formData,
+                [evt.target.name]:resp,
+            })
+            setImage({
+                [evt.target.name] :evt.target.files[0]
+            })
+        } catch (error) {
+            console.log(error)
+        }
+    }
     const onSubmit = async(evt) =>{
         evt.preventDefault()
         try {
@@ -252,8 +266,8 @@ export const RegisterForm = ({path})=>{
                                 id='file'/>
                                 <input
                                 type='file'
-                                name='student_license'
-                                onChange={handleimageChange}
+                                name='student_license_second_part'
+                                onChange={handleSecondImageChange}
                                 id='file'/>
                             </>
                             :
@@ -269,8 +283,8 @@ export const RegisterForm = ({path})=>{
                                 id='file'/>
                                 <input
                                 type='file'
-                                name='student_license'
-                                onChange={handleimageChange}
+                                name='student_license_second_part'
+                                onChange={handleSecondImageChange}
                                 id='file'/>
                             </>
                             :
