@@ -16,7 +16,8 @@ export const RegisterForm = ({path})=>{
     const [isSelected, setIsSelected] = useState(false)
     const [formData, setFormData] = useState({
         student_id: Math.floor((Math.random() * 450000) + 450000),
-        student_license: ""
+        student_license: "",
+        student_license_part_2: ""
     })
     const [image, setImage] = useState(null)
     const handleChange = (evt)=>{
@@ -116,6 +117,7 @@ export const RegisterForm = ({path})=>{
                 name='student_state'
                 onChange={handleChange}
                 type='text'
+                required
             />
             <label className={styles.labelTitle}>
                 Perfil profesional:
@@ -128,6 +130,7 @@ export const RegisterForm = ({path})=>{
                         value='PERSONAL_HIMFG'
                         name='student_role'
                         onChange={handleChange}
+                        required
                         
                     />
                     {
@@ -171,6 +174,7 @@ export const RegisterForm = ({path})=>{
                         value='ESTUDIANTE'
                         name='student_role'
                         onChange={handleChange}
+                        required
                         
                     />
                 </div>
@@ -181,6 +185,7 @@ export const RegisterForm = ({path})=>{
                         value='EXTERNO'
                         name='student_role'
                         onChange={handleChange}
+                        required
                         
                     />
                     {
@@ -263,11 +268,13 @@ export const RegisterForm = ({path})=>{
                                 type='file'
                                 name='student_license'
                                 onChange={handleimageChange}
+                                required
                                 id='file'/>
                                 <input
                                 type='file'
-                                name='student_license_second_part'
+                                name='student_license_part_2'
                                 onChange={handleSecondImageChange}
+                                required
                                 id='file'/>
                             </>
                             :
@@ -280,11 +287,13 @@ export const RegisterForm = ({path})=>{
                                 type='file'
                                 name='student_license'
                                 onChange={handleimageChange}
+                                required
                                 id='file'/>
                                 <input
                                 type='file'
-                                name='student_license_second_part'
+                                name='student_license_part_2'
                                 onChange={handleSecondImageChange}
+                                required
                                 id='file'/>
                             </>
                             :
@@ -297,6 +306,7 @@ export const RegisterForm = ({path})=>{
                                 type='file'
                                 name='student_license'
                                 onChange={handleimageChange}
+                                required
                                 id='file'/>
                             </>
                             :
@@ -336,8 +346,7 @@ export const RegisterForm = ({path})=>{
                         type='radio'
                         value='IMSS'
                         name='student_institution'
-                        onChange={handleChange}
-                        
+                        onChange={handleChange} 
                     />
                 </div>
                 <div>
@@ -346,8 +355,7 @@ export const RegisterForm = ({path})=>{
                         type='radio'
                         value='SSA'
                         name='student_institution'
-                        onChange={handleChange}
-                        
+                        onChange={handleChange}                        
                     />
                 </div>
                 <div>
@@ -357,7 +365,6 @@ export const RegisterForm = ({path})=>{
                         value='ISSTE'
                         name='student_institution'
                         onChange={handleChange}
-                        
                     />
                 </div>
                 <div>
@@ -367,7 +374,6 @@ export const RegisterForm = ({path})=>{
                         value='GDF'
                         name='student_institution'
                         onChange={handleChange}
-                        
                     />
                 </div>
                 <div>
@@ -377,7 +383,6 @@ export const RegisterForm = ({path})=>{
                         value='HIMFG'
                         name='student_institution'
                         onChange={handleChange}
-                        
                     />
                 </div>
                 <div>
@@ -423,7 +428,6 @@ export const RegisterForm = ({path})=>{
                         value='SÍ'
                         name='student_graduated'
                         onChange={handleChange}
-                        required
                     />
                 </div>
                 <div>
@@ -433,7 +437,6 @@ export const RegisterForm = ({path})=>{
                         value='NO'
                         name='student_graduated'
                         onChange={handleChange}
-                        required
                     />
                 </div>
             </div>
