@@ -64,9 +64,18 @@ const Video = (props)=>{
             getVimeoData({id: course[0].course_vimeo_folder})
         }
     },[count])
+    useEffect(()=>{
+        if(window.dataLayer){
+          window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-1YHJW3W0J0');
+        }
+      }, [])
     return (
         <>
             <Head>
+                <script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.ID_ANALYTICS}`}></script>
                 <title>
                 {
                 !course ? 

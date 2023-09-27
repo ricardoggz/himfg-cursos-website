@@ -5,15 +5,15 @@ export default function Document() {
   useEffect(()=>{
     if(window.dataLayer){
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', process.env.ID_ANALYTICS);
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-1YHJW3W0J0');
     }
   }, [])
   return (
     <Html lang="en">
       <Head>
-      <script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.ID_ANALYTICS}`}></script>
+      <script async src={`https://www.googletagmanager.com/gtag/js?id=G-1YHJW3W0J0`}></script>
       </Head>
       <body>
         <Main />
