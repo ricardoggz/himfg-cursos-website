@@ -137,6 +137,11 @@ const Video = ()=>{
                 <h3 className={styles.videoTitle}>
                     Transmisiones anteriores
                 </h3>
+                <div className={`flexContainer ${styles.testLink}`}>
+                    <a href='#'>
+                        Realizar test de conocimientos
+                    </a>
+                </div>
                 <GridContainer>
                 {
                     vimeoData.map((video, i)=>(
