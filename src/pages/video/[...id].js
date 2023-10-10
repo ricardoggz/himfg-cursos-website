@@ -55,6 +55,7 @@ const Video = ()=>{
             throw new Error(error)
         }
     }
+    console.log(course)
     return (
         <>
             <Head>
@@ -138,9 +139,13 @@ const Video = ()=>{
                     Transmisiones anteriores
                 </h3>
                 <div className={`flexContainer ${styles.testLink}`}>
-                    <a href='#'>
-                        Realizar test de conocimientos
-                    </a>
+                <Link
+                  href={`/test/[...id]`}
+                  as ={`/test/${course[0].course_id}`}
+                  target="_blank"
+                >
+                    Realizar cuestionario
+                </Link>
                 </div>
                 <GridContainer>
                 {
