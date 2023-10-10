@@ -1,9 +1,26 @@
 import { useRouter } from 'next/router'
+import { Page } from '@/components'
+import styles from './test.module.css'
 
 export default function Test({data}){
     const router = useRouter()
+    console.log(data)
     return (
-        <p>{JSON.stringify(data)}</p>
+        <Page title={`Cuestionario: ${data[0].course_name}`}>
+            <form className={styles.formTest}>
+                {
+                    data.map((question, i)=>(
+                        <div key={i}>
+                            <label className={styles.questionName}>{question.question_name}</label>
+                            <div className={styles.questionOptions}>
+                            <input type='radio' value={question.option_value}/>
+                            <label>{question.option_name}</label>
+                            </div>
+                        </div>
+                    ))
+                }
+            </form>
+        </Page>
     )
 }
 
