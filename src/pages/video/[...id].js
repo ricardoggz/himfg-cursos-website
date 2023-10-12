@@ -139,13 +139,17 @@ const Video = ()=>{
                     Transmisiones anteriores
                 </h3>
                 <div className={`flexContainer ${styles.testLink}`}>
-                <Link
-                  href={`/test/[...id]`}
-                  as ={`/test/${course[0].course_id}`}
-                  target="_blank"
-                >
-                    Realizar cuestionario
-                </Link>
+                {
+                    !course[0].test_id ? null
+                    :
+                    <Link
+                    href={`/test/[...id]`}
+                    as ={`/test/${course[0].course_id}`}
+                    target="_blank"
+                    >
+                        Realizar cuestionario
+                    </Link>
+                }
                 </div>
                 <GridContainer>
                 {
