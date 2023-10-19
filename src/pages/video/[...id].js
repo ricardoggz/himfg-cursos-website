@@ -112,7 +112,8 @@ const Video = (props)=>{
                 !course[0].course_live_video
                 ? null
                 :
-                course.map(({course_live_video, course_id})=>(
+                course.map(({course_live_video, course_id, course_name})=>(
+                    <>
                     <div
                     className={`${styles.liveVideo} flexContainer boxShadow`}
                     key={course_id}
@@ -137,6 +138,42 @@ const Video = (props)=>{
                     "
                     />
                     </div>
+                    {
+                        course_name === 'XXVI Curso de actualización en anestesiología pediátrica'
+                        ?
+                    <>
+                    <center><h1>Aula 2</h1></center>
+                    <br />
+                    <br/>
+                    <div
+                    className={`${styles.liveVideo} flexContainer boxShadow`}
+                    key={course_id}
+                    >
+                    <iframe
+                    src={`https://vimeo.com/event/3792638/embed`}
+                    frameBorder='0'
+                    allow="
+                    autoplay;
+                    fullscreen;
+                    picture-in-picture
+                    "
+                    allowFullScreen
+                    />
+                    <iframe
+                    src={`https://vimeo.com/event/3792638/chat`}
+                    frameBorder='0'
+                    allow="
+                    autoplay;
+                    fullscreen;
+                    picture-in-picture
+                    "
+                    />
+                    </div>
+                    </>
+                    :
+                    null
+                    }
+                    </>
                 ))
             }
             {
