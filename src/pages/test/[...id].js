@@ -1,12 +1,27 @@
+import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
+import axios from 'axios'
 import { Page } from '@/components'
 import styles from './test.module.css'
 
-export default function Test({data}){
+export default function Test(){
+    const [test, setTest] = useState(null)
     const router = useRouter()
+    let id = parseInt(router.query.id[0])
+    const getTest=async()=>{
+        const response = await axios.get(
+            `${process.env.BASE_URL_API}api/courses/get-test-course/${id}`,
+        )
+        if(response.data){
+            setTest(response.data)
+        }
+    }
+    useEffect(()=>{
+        getTest()
+    },[])
     let filteredData = []
-    if(data){
-        data.forEach((item, i) => {
+    if(test){
+        test.forEach((item, i) => {
             const question_id = item.question_id;
           
             // Buscamos una relación existente con el mismo identificador
@@ -32,7 +47,7 @@ export default function Test({data}){
           });
     }
     return (
-        <Page title={`Cuestionario: ${data[0].course_name}`}>
+        <Page title={`${!test ? 'Cuestionario' : test[0].course_name}`}>
             <form className={styles.formTest}>
                 {
                     !filteredData ? null

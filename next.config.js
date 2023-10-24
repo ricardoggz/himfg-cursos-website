@@ -20,7 +20,8 @@ const nextConfig = {
       '/payment': { page : '/payment'},
       '/userlogin': { page: '/userlogin'},
       '/pdf' : { page: '/pdf' },
-      '/profile': { page: '/profile'}
+      '/profile': { page: '/profile'},
+      '/test/[...id]' : { page: '/test/[...id]'}
     }
   },
   env:{
