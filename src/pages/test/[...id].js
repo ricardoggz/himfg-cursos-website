@@ -20,6 +20,8 @@ export default function Test(){
         getTest()
     },[])
     let filteredData = []
+    let values = []
+    let suma
     if(test){
         test.forEach((item, i) => {
             const question_id = item.question_id;
@@ -45,7 +47,16 @@ export default function Test(){
               });
             }
           });
+          if(filteredData){
+            for (const objeto of filteredData) {
+                for (const elementoAnidado of objeto.options) {
+                values.push(elementoAnidado.option_value)
+                }
+              }
+            suma = values.reduce((prev,next)=> prev + next, 0)
+          }
     }
+    console.log(suma)
     return (
         <Page title={`${!test ? 'Cuestionario' : test[0].course_name}`}>
             <form className={styles.formTest}>
