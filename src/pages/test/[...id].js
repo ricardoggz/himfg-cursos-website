@@ -6,6 +6,8 @@ import styles from './test.module.css'
 
 export default function Test(){
     const [test, setTest] = useState(null)
+    const [selectedValues, setselectedValues] = useState()
+    let filteredData = []
     const router = useRouter()
     let id = parseInt(router.query.id[0])
     const getTest=async()=>{
@@ -16,10 +18,26 @@ export default function Test(){
             setTest(response.data)
         }
     }
+    const manejarRespuestaSeleccionada = (index, respuestaSeleccionada) => {
+        const nuevasRespuestas = [...selectedValues];
+        nuevasRespuestas[index] = respuestaSeleccionada;
+        setselectedValues(nuevasRespuestas);
+    };
+    const calcularPuntuacion = () => {
+        let puntuacion = 0;
+        for (let i = 0; i < filteredData.length; i++) {
+          if (setselectedValues[i] === filteredData[i].option_value) {
+            puntuacion++;
+          }
+        }
+        return puntuacion;
+      };
     useEffect(()=>{
         getTest()
     },[])
-    let filteredData = []
+    useEffect(()=>{
+        setselectedValues([filteredData.length].fill(null))
+    },[test])
     let values = []
     let suma
     if(test){
@@ -41,22 +59,23 @@ export default function Test(){
                 question_id: item.question_id,
                 options:[{
                     option_name : item.option_name,
-                    option_value: item.option_value,
-                    option_name_input:i
+                    option_name_input:i,
+                    option_value: item.option_value
                 }],
+                option_value: item.option_value
               });
             }
           });
-          if(filteredData){
+          /*if(filteredData){
             for (const objeto of filteredData) {
                 for (const elementoAnidado of objeto.options) {
                 values.push(elementoAnidado.option_value)
                 }
               }
             suma = values.reduce((prev,next)=> prev + next, 0)
-          }
+          }*/
     }
-    console.log(suma)
+    console.log(selectedValues)
     return (
         <Page title={`${!test ? 'Cuestionario' : test[0].course_name}`}>
             <form className={styles.formTest}>
@@ -72,7 +91,11 @@ export default function Test(){
                                 {
                                     question.options.map((option, index)=>(
                                         <div key={index}>
-                                            <input type='checkbox' value={option.option_value} name='option_name'/> <label>{option.option_name}</label>
+                                            <input
+                                            type='radio'
+                                            value={option.option_value}
+                                            name={`option_${i}`}
+                                            onChange={() => manejarRespuestaSeleccionada(i, index)}/> <label>{option.option_name}</label>
                                         </div>
                                     ))
                                 }
@@ -80,6 +103,8 @@ export default function Test(){
                         </div>
                     ))
                 }
+                <button>Mandar respuestas</button>
+                <span>Puntuaión {calcularPuntuacion()} de {filteredData.length} preguntas</span>
             </form>
         </Page>
     )
