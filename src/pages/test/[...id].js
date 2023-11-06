@@ -6,7 +6,9 @@ import styles from './test.module.css'
 
 export default function Test(){
     const [test, setTest] = useState(null)
-    const [selectedValues, setselectedValues] = useState()
+    const [selectedValues, setselectedValues] = useState({})
+    const [answers, setAnswers] = useState({});
+    const [score, setScore] = useState(null);
     let filteredData = []
     const router = useRouter()
     let id = parseInt(router.query.id[0])
@@ -18,25 +20,29 @@ export default function Test(){
             setTest(response.data)
         }
     }
-    const manejarRespuestaSeleccionada = (index, respuestaSeleccionada) => {
-        const nuevasRespuestas = [...selectedValues];
-        nuevasRespuestas[index] = respuestaSeleccionada;
-        setselectedValues(nuevasRespuestas);
+    
+    const handleAnswer = (questionIndex, selectedAnswerIndex) => {
+        const updatedUserAnswers = [...selectedValues];
+        updatedUserAnswers[questionIndex] = selectedAnswerIndex;
+        setselectedValues(updatedUserAnswers);
     };
-    const calcularPuntuacion = () => {
-        let puntuacion = 0;
-        for (let i = 0; i < filteredData.length; i++) {
-          if (setselectedValues[i] === filteredData[i].option_value) {
-            puntuacion++;
+    
+      const handleSubmit = (evt) => {
+        evt.preventDefault()
+        let calculatedScore = 0;
+        filteredData.forEach((question, index) => {
+        const correctAnswerIndex = question.options.findIndex(answer => answer.option_value === 1)
+        if(selectedValues[index] === correctAnswerIndex) {
+            calculatedScore += 1;
           }
-        }
-        return puntuacion;
+        });
+        setScore(calculatedScore);
       };
     useEffect(()=>{
         getTest()
     },[])
     useEffect(()=>{
-        setselectedValues([filteredData.length].fill(null))
+        setselectedValues([filteredData.length].fill(-1))
     },[test])
     let values = []
     let suma
@@ -62,7 +68,6 @@ export default function Test(){
                     option_name_input:i,
                     option_value: item.option_value
                 }],
-                option_value: item.option_value
               });
             }
           });
@@ -75,10 +80,9 @@ export default function Test(){
             suma = values.reduce((prev,next)=> prev + next, 0)
           }*/
     }
-    console.log(selectedValues)
     return (
         <Page title={`${!test ? 'Cuestionario' : test[0].course_name}`}>
-            <form className={styles.formTest}>
+            <form className={styles.formTest} onSubmit={handleSubmit}>
                 {
                     !filteredData ? null
                     :
@@ -95,7 +99,7 @@ export default function Test(){
                                             type='radio'
                                             value={option.option_value}
                                             name={`option_${i}`}
-                                            onChange={() => manejarRespuestaSeleccionada(i, index)}/> <label>{option.option_name}</label>
+                                            onChange={() => handleAnswer(i, index)}/> <label>{option.option_name}</label>
                                         </div>
                                     ))
                                 }
@@ -104,7 +108,7 @@ export default function Test(){
                     ))
                 }
                 <button>Mandar respuestas</button>
-                <span>Puntuaión {calcularPuntuacion()} de {filteredData.length} preguntas</span>
+                <span>{score !== null && <p>Tu puntuación: {score} de {filteredData.length}</p>}</span>
             </form>
         </Page>
     )
