@@ -7,7 +7,7 @@ import styles from './test.module.css'
 export default function Test(){
     const [test, setTest] = useState(null)
     const [selectedValues, setselectedValues] = useState({})
-    const [answers, setAnswers] = useState({});
+    const [passed, setPassed] = useState(false);
     const [score, setScore] = useState(null);
     let filteredData = []
     const router = useRouter()
@@ -36,7 +36,8 @@ export default function Test(){
             calculatedScore += 1;
           }
         });
-        setScore(calculatedScore);
+        setScore(calculatedScore)
+        setPassed(calculatedScore > 2)
       };
     useEffect(()=>{
         getTest()
@@ -109,6 +110,7 @@ export default function Test(){
                 }
                 <button>Mandar respuestas</button>
                 <span>{score !== null && <p>Tu puntuación: {score} de {filteredData.length}</p>}</span>
+                {passed && <p>Felicidades, has aprobado el examen.</p>}
             </form>
         </Page>
     )
