@@ -1,13 +1,15 @@
-import { useState } from "react"
+import { useState, useContext } from "react"
 import Head from "next/head"
 import Link from "next/link"
 import axios from "axios"
 import Swal from "sweetalert2"
 import styles from './video.module.css'
 import { useOnChange } from "../../hooks"
+import { UserContext } from "@/contexts"
 import { Container, GridContainer, Login } from '../../components'
 
 const Video = ()=>{
+    const { user }= useContext(UserContext)
     const [password, setPassword] = useState(null)
     const [course, setCourse] = useState(null)
     const [ vimeoData, setVimeoData ] = useState(null)
@@ -55,7 +57,6 @@ const Video = ()=>{
             throw new Error(error)
         }
     }
-    console.log(course)
     return (
         <>
             <Head>
@@ -140,8 +141,7 @@ const Video = ()=>{
                 </h3>
                 <div className={`flexContainer ${styles.testLink}`}>
                 {
-                    !course[0].test_id ? null
-                    :
+                    course[0].test_id && user ?
                     <Link
                     href={`/test/[...id]`}
                     as ={`/test/${course[0].course_id}`}
@@ -149,6 +149,8 @@ const Video = ()=>{
                     >
                         Realizar cuestionario
                     </Link>
+                    :
+                    null
                 }
                 </div>
                 <GridContainer>
