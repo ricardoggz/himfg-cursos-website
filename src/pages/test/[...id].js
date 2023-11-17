@@ -1,10 +1,13 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
 import { useRouter } from 'next/router'
 import axios from 'axios'
 import { Page } from '@/components'
 import styles from './test.module.css'
+import { UserContext } from '@/contexts'
 
 export default function Test(){
+    const { user }= useContext(UserContext)
+    const [degrees, setDegrees] = useState(null)
     const [test, setTest] = useState(null)
     const [selectedValues, setselectedValues] = useState({})
     const [passed, setPassed] = useState(false);
@@ -12,6 +15,18 @@ export default function Test(){
     let filteredData = []
     const router = useRouter()
     let id = parseInt(router.query.id[0])
+    const getDegrees=async()=>{
+        try {
+            const response = await axios.get(
+                `${process.env.BASE_URL_API}api/payments/all-payments`
+            )
+            if(response.data){
+                setDegrees(response.data)
+            }
+        } catch (error) {
+            
+        }
+    }
     const getTest=async()=>{
         const response = await axios.get(
             `${process.env.BASE_URL_API}api/courses/get-test-course/${id}`,
@@ -41,6 +56,7 @@ export default function Test(){
       };
     useEffect(()=>{
         getTest()
+        getDegrees()
     },[])
     useEffect(()=>{
         setselectedValues([filteredData.length].fill(-1))
@@ -80,6 +96,11 @@ export default function Test(){
               }
             suma = values.reduce((prev,next)=> prev + next, 0)
           }*/
+    }
+    let filteredDegrees
+    if(degrees && user){
+        filteredDegrees = degrees.filter((degree)=> degree.course_id === id && degree.student_id === user.student_id)
+        .map(degree=>degree)
     }
     return (
         <Page title={`${!test ? 'Cuestionario' : test[0].course_name}`}>
