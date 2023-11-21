@@ -131,7 +131,13 @@ export default function Test(){
                 }
                 <button>Mandar respuestas</button>
                 <span>{score !== null && <p>Tu puntuación: {score} de {filteredData.length}</p>}</span>
-                {passed && <p>Felicidades, has aprobado el examen.</p>}
+                {
+                passed &&
+                <>
+                    <p>Felicidades, has aprobado el examen.</p>
+                    <p>Descargar constancia</p>
+                </>
+                }
             </form>
         </Page>
     )
