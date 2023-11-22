@@ -135,7 +135,17 @@ export default function Test(){
                 passed &&
                 <>
                     <p>Felicidades, has aprobado el examen.</p>
-                    <p>Descargar constancia</p>
+                    {
+                        filteredDegrees.map((degree,i)=>(
+                            <a
+                            href={degree.payment_degree}
+                            key={i}
+                            target='_blank'
+                            >
+                                Descargar constancia
+                            </a>
+                        ))
+                    }
                 </>
                 }
             </form>
