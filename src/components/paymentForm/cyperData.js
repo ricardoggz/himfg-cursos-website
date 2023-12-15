@@ -25,7 +25,7 @@ function cypherData(p, key) {
   jQuery.ajax({
     //url: "https://localhost:7080/aes/cifradoconllave", // Desde Visual Studio 2022
     //url : 'http://localhost:5080/aes/cifradoconllave',  // Desde Ejecutable Cifrador.exe
-    url: "https://ricardoguevarag-001-site1.gtempurl.com/aes/cifradoconllave",
+    url: "http://carolinamagos-001-site1.anytempurl.com/aes/cifradoconllave",
     type: "POST",
     async: false,
     headers: {
