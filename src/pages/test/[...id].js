@@ -161,7 +161,7 @@ export const getStaticPaths = async()=>{
         return{
             params:{
                  id: [
-                    `${course.course_url}`,
+                    `${course.course_id}`,                 
                 ],
             }
         }
