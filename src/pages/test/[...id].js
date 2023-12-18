@@ -174,7 +174,7 @@ export const getStaticPaths = async()=>{
 
 export const getStaticProps=async({params})=>{
     const response = await fetch(
-        `${process.env.BASE_URL_API}api/courses/get-test-course/${params.id}`,
+        `${process.env.BASE_URL_API}api/courses/all-courses`,
     )
     const data = await response.json()
     return {

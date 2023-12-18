@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-export const QualityTest = ({onSubmit})=>{
+const QualityTest = ({onSubmit})=>{
     const [satisfaction, setSatisfaction] = useState(null)
     const handleSatisfaction = (response) => {
         setSatisfaction(response)
@@ -23,3 +23,5 @@ export const QualityTest = ({onSubmit})=>{
     </div>
   );
 }
+
+export default QualityTest
