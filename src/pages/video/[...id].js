@@ -1,4 +1,5 @@
-import { useState, useContext } from "react"
+import { useState, useEffect, useContext } from "react"
+import { useRouter } from "next/router"
 import Head from "next/head"
 import Link from "next/link"
 import axios from "axios"
@@ -8,8 +9,10 @@ import { useOnChange } from "../../hooks"
 import { UserContext } from "@/contexts"
 import { Container, GridContainer, Login } from '../../components'
 
-const Video = ()=>{
+const Video = (props)=>{
+    useRouter()
     const { user }= useContext(UserContext)
+    const [count, setCount] = useState(1)
     const [password, setPassword] = useState(null)
     const [course, setCourse] = useState(null)
     const [ vimeoData, setVimeoData ] = useState(null)
@@ -45,21 +48,37 @@ const Video = ()=>{
     const getVimeoData = async({id})=>{
         try {
             const resp = await axios.get(
-                `https://api.vimeo.com/me/folders/${id}/videos`,
+                `https://api.vimeo.com/me/folders/${id}/videos?page=${count}`,
                 {
                     headers: { Authorization: `Bearer 586637bf90ea7727edc8c90c95b056c3` }
                 }
             )
             if(resp.status === 200){
-                setVimeoData(resp.data.data)
+                setVimeoData(resp.data)
             }
         } catch (error) {
             throw new Error(error)
         }
     }
+    const increment = ()=>setCount(count + 1)
+    const decrement = ()=> setCount(count - 1)
+    useEffect(()=>{
+        if(course){
+            getVimeoData({id: course[0].course_vimeo_folder})
+        }
+    },[count])
+    useEffect(()=>{
+        if(window.dataLayer){
+          window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-1YHJW3W0J0');
+        }
+      }, [])
     return (
         <>
             <Head>
+                <script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.ID_ANALYTICS}`}></script>
                 <title>
                 {
                 !course ? 
@@ -80,30 +99,24 @@ const Video = ()=>{
             </h3>
             {
                 !password ?
-                <>
-                    <Login onSubmit={login}>
-                        <label>Contraseña:</label>
-                        <input
-                        type='password'
-                        required
-                        onChange={onChange}
-                        name='course_password'
-                        />
-                        <button>Ingresar</button>
-                    </Login>
-                    <div className={styles.coursePayment}>
-                        <Link href="/payment">
-                            Obtener contraseña
-                        </Link>
-                    </div>
-                </>
+                <Login onSubmit={login}>
+                <label>Contraseña:</label>
+                <input
+                type='password'
+                required
+                onChange={onChange}
+                name='course_password'
+                />
+                <button>Ingresar</button>
+            </Login>
             :
             <>
             {
-                !course
+                !course[0].course_live_video
                 ? null
                 :
-                course.map(({course_live_video, course_id})=>(
+                course.map(({course_live_video, course_id, course_name})=>(
+                    <>
                     <div
                     className={`${styles.liveVideo} flexContainer boxShadow`}
                     key={course_id}
@@ -127,8 +140,59 @@ const Video = ()=>{
                     picture-in-picture
                     "
                     />
-                </div>
+                    </div>
+                    {
+                        course_name === 'XXVI Curso de actualización en anestesiología pediátrica'
+                        ?
+                    <>
+                    <center><h1>Aula 2</h1></center>
+                    <br />
+                    <br/>
+                    <div
+                    className={`${styles.liveVideo} flexContainer boxShadow`}
+                    key={course_id}
+                    >
+                    <iframe
+                    src={`https://vimeo.com/event/3792638/embed`}
+                    frameBorder='0'
+                    allow="
+                    autoplay;
+                    fullscreen;
+                    picture-in-picture
+                    "
+                    allowFullScreen
+                    />
+                    <iframe
+                    src={`https://vimeo.com/event/3792638/chat`}
+                    frameBorder='0'
+                    allow="
+                    autoplay;
+                    fullscreen;
+                    picture-in-picture
+                    "
+                    />
+                    </div>
+                    </>
+                    :
+                    null
+                    }
+                    </>
                 ))
+            }
+            {
+                !course[0].course_zoom_video
+                ? null
+                : 
+                <div className={`${styles.liveVideoZoom} flexContainer`}>
+                    <a
+                    href={course[0].course_zoom_video}
+                    target='_blank'
+                    >
+                        Enlace de Zoom
+                    </a>
+                    <span>{`ID de reunión: ${course[0].course_zoom_id}`}</span>
+                    <span>{`Código de acceso: ${course[0].course_zoom_password}`}</span>
+                </div>
             }
             {
                 !vimeoData
@@ -155,7 +219,7 @@ const Video = ()=>{
                 </div>
                 <GridContainer>
                 {
-                    vimeoData.map((video, i)=>(
+                    vimeoData.data.map((video, i)=>(
                         <div className={`${styles.iframeVideo} boxShadow`} key={i}>
                             <iframe
                             src={video.player_embed_url}
@@ -172,6 +236,49 @@ const Video = ()=>{
                     ))
                 }
                 </GridContainer>
+                <div className="flexContainer">
+                    {
+                        vimeoData.paging.next ?
+                        <button
+                        className={styles.viewMoreButton}
+                        onClick={increment}
+                        >
+                            Siguiente
+                        </button>
+                        :
+                        null
+                    }
+                    {
+                        vimeoData.paging.previous ?
+                        <button
+                        className={styles.viewMoreButton}
+                        onClick={decrement}
+                        >
+                            Anterior
+                        </button>
+                        :
+                        null
+                    }
+                    {
+                        vimeoData.paging.previous  && vimeoData.paging.next ?
+                        <>
+                            <button
+                            className={styles.viewMoreButton}
+                            onClick={decrement}
+                            >
+                            Anterior
+                            </button>
+                            <button
+                            className={styles.viewMoreButton}
+                            onClick={increment}
+                            >
+                            Siguiente
+                            </button>
+                        </>
+                        :
+                        null
+                    }
+                </div>
                 </>
             }
             </>
@@ -188,7 +295,7 @@ export const getStaticPaths = async()=>{
         return{
             params:{
                  id: [
-                    `${course.course_url}`,                    
+                    `${course.course_url}`,
                 ],
             }
         }
@@ -199,13 +306,20 @@ export const getStaticPaths = async()=>{
     }
 }
 export const getStaticProps=async({params})=>{
+    const videoId = params.id ?? ''
+    const config = {
+        headers: { Authorization: `Bearer 586637bf90ea7727edc8c90c95b056c3` }
+    }
     const response = await fetch(
-        `${process.env.BASE_URL_API}api/courses/all-courses`,
+        `https://api.vimeo.com/me/folders/${videoId[1]}/videos`,
+        config
     )
     const data = await response.json()
     return {
         props:{
             data: data,
+            title: videoId[0] || null,
+            liveVideoId: videoId[2] ? videoId[2] : null
         }
     }
 }

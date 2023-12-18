@@ -161,7 +161,7 @@ export const getStaticPaths = async()=>{
         return{
             params:{
                  id: [
-                    `${course.course_id}`,                    
+                    `${course.course_url}`,
                 ],
             }
         }
@@ -171,15 +171,21 @@ export const getStaticPaths = async()=>{
         fallback: false
     }
 }
-
 export const getStaticProps=async({params})=>{
+    const videoId = params.id ?? ''
+    const config = {
+        headers: { Authorization: `Bearer 586637bf90ea7727edc8c90c95b056c3` }
+    }
     const response = await fetch(
-        `${process.env.BASE_URL_API}api/courses/all-courses`,
+        `https://api.vimeo.com/me/folders/${videoId[1]}/videos`,
+        config
     )
     const data = await response.json()
     return {
         props:{
             data: data,
+            title: videoId[0] || null,
+            liveVideoId: videoId[2] ? videoId[2] : null
         }
     }
 }
