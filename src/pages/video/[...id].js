@@ -181,6 +181,9 @@ const Video = (props)=>{
                 ? null
                 : 
                 <div className={`${styles.liveVideoZoom} flexContainer`}>
+                    <figure>
+                        <img src="https://res.cloudinary.com/diuxbqmn5/image/upload/v1704817341/b3x17pdocciixfcgktki.png" />
+                    </figure>
                     <a
                     href={course[0].course_zoom_video}
                     target='_blank'

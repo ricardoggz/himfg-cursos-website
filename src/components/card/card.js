@@ -15,7 +15,7 @@ const Card = ({image, title, showModal, children, startDate, finishDate})=>{
             <Image
                     src={
                     !image ?
-                    'https://res.cloudinary.com/diuxbqmn5/image/upload/v1676678760/banner-80_zhlxd1.webp'
+                    'https://res.cloudinary.com/diuxbqmn5/image/upload/v1677114497/himfg-logo_ewzx59.webp'
                     :
                     image
                     }
