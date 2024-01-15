@@ -20,6 +20,9 @@ export const PaymentForm = () => {
   const router = useRouter()
   const { course } = useContext(CourseContext)
   const { user } = useContext(UserContext)
+  const fecha = new Date(); // Obtén la fecha actual
+  // Utiliza la función `toISOString()` para obtener una cadena en formato 'YYYY-MM-DDTHH:mm:ss.sssZ'
+  const fechaFormateada = fecha.toISOString().slice(0, 19).replace('T', ' ');
   useEffect(() => {
     if(!course){
       router.push('/ensenanza/offer')
@@ -75,7 +78,8 @@ export const PaymentForm = () => {
                     payment_successfull: 1,
                     payment_amount: paymentData.Amount,
                     payment_reference: paymentData.ControlNumber,
-                    payment_invoice: "FACTURACION"
+                    payment_invoice: "FACTURACION",
+                    payment_date: fechaFormateada
                   }
                 })
               }
@@ -87,7 +91,8 @@ export const PaymentForm = () => {
                     payment_successfull: 1,
                     payment_amount: paymentData.Amount,
                     payment_reference: paymentData.ControlNumber,
-                    payment_invoice: "SIN_FACTURACION"
+                    payment_invoice: "SIN_FACTURACION",
+                    payment_date: fechaFormateada
                   }
                 })
               }
