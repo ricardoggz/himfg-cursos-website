@@ -7,6 +7,7 @@ import { UserContext } from '@/contexts'
 
 export default function Test(){
     const { user }= useContext(UserContext)
+    const [count, setCount] = useState(0)
     const [degrees, setDegrees] = useState(null)
     const [test, setTest] = useState(null)
     const [selectedValues, setselectedValues] = useState({})
@@ -42,7 +43,22 @@ export default function Test(){
         setselectedValues(updatedUserAnswers);
     };
     
-      const handleSubmit = (evt) => {
+    const handleTest = async({grade})=>{
+        try {
+            const response = await axios.put(
+                `${process.env.BASE_URL_API}api/payments/edit-grade/${user.student_id}`,
+                {
+                    payment_grade: grade
+                }          
+            )
+            if(response.status === 200){
+                setCount(count + 1)
+            }
+        } catch (error) {
+            console.log(error)
+        }
+    }
+    const handleSubmit = (evt) => {
         evt.preventDefault()
         let calculatedScore = 0;
         filteredData.forEach((question, index) => {
@@ -52,8 +68,11 @@ export default function Test(){
           }
         });
         setScore(calculatedScore)
+        handleTest({
+            grade: calculatedScore
+        })
         setPassed(calculatedScore > 2)
-      };
+    };
     useEffect(()=>{
         getTest()
         getDegrees()
@@ -129,10 +148,15 @@ export default function Test(){
                         </div>
                     ))
                 }
-                <button>Mandar respuestas</button>
+                {
+                    count === 2 ?
+                    <span>No tiene más intentos</span>
+                    :
+                    <button>Mandar respuestas</button>
+                }
                 <span>{score !== null && <p>Tu puntuación: {score} de {filteredData.length}</p>}</span>
                 {
-                passed &&
+                score >= 2 ?
                 <>
                     <p>Felicidades, has aprobado el examen.</p>
                     {
@@ -147,6 +171,8 @@ export default function Test(){
                         ))
                     }
                 </>
+                : 
+                null
                 }
             </form>
         </Page>
