@@ -65,7 +65,7 @@ export const PaymentForm = () => {
           console.log(res);
         },
         onSuccess: function (res) {
-            if(res.status3D === "200"){
+            if(res.resultadoPayw === "A"){
               if(formData!==null){
                 updateTaxData({
                   data: formData.student_tax_data,
