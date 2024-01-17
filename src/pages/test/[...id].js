@@ -4,8 +4,10 @@ import axios from 'axios'
 import { Page } from '@/components'
 import styles from './test.module.css'
 import { UserContext } from '@/contexts'
+import QualityTest from './qualityTest'
 
 export default function Test(){
+    const [isQualityTest, setIsQualityTest] = useState(false)
     const { user }= useContext(UserContext)
     const [count, setCount] = useState(0)
     const [degrees, setDegrees] = useState(null)
@@ -122,7 +124,14 @@ export default function Test(){
         .map(degree=>degree)
     }
     return (
-        <Page title={`${!test ? 'Cuestionario' : test[0].course_name}`}>
+        <>
+            {
+            !isQualityTest ?
+            <QualityTest
+                title={`${!test ? 'Cuestionario de calidad' : test[0].course_name}`}
+            />
+            :
+            <Page title={`${!test ? 'Cuestionario' : test[0].course_name}`}>
             <form className={styles.formTest} onSubmit={handleSubmit}>
                 {
                     !filteredData ? null
@@ -175,7 +184,9 @@ export default function Test(){
                 null
                 }
             </form>
-        </Page>
+            </Page>
+        }
+        </>
     )
 }
 
