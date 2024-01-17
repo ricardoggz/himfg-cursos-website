@@ -1,4 +1,5 @@
 import { useEffect, useContext, useState } from "react"
+import axios from "axios"
 import { useRouter } from "next/router"
 import Image from "next/image"
 import Swal from "sweetalert2"
@@ -50,7 +51,17 @@ export const PaymentForm = () => {
       Payment.setEnv("pro")
     }, 1000)
   }, [])
-  console.log(formData)
+  const getCypherData = async(data)=>{
+    try {
+      const resp = await axios.post(
+        'https://carolinamagos-001-site1.anytempurl.com/aes/decrypt',
+        data
+      )
+      return resp
+    } catch (error) {
+      console.log(error)
+    }
+  }
   const startPayment = () => {
     if (Payment && user.student_role === 'EXTERNO') {
       Payment.setEnv("pro");
@@ -59,12 +70,28 @@ export const PaymentForm = () => {
       Payment.startPayment({
         Params: xOBJ,
         onClosed: function (res) {
+          localStorage.removeItem('cyperData')
           console.log(res);
         },
         onError: function (res) {
+          localStorage.removeItem('cyperData')
           console.log(res);
         },
         onSuccess: function (res) {
+          let dataToObject = JSON.parse(localStorage.getItem('cyperData'))
+          let cypherMessage
+          console.log('data cifrada', dataToObject)
+          console.log('respuesta', res)
+          if(res.data){
+            let datatoValue = {
+              vi: dataToObject.vi,
+              salt: dataToObject.salt,
+              passPhrase: dataToObject.passPhrase,
+              cypherData: res.data[0]
+            }
+            cypherMessage = getCypherData(datatoValue)
+          }
+          console.log(cypherMessage)
             if(res.resultadoPayw === "A"){
               if(formData!==null){
                 updateTaxData({
@@ -105,6 +132,7 @@ export const PaymentForm = () => {
             }
         },
         onCancel: function (res) {
+          localStorage.removeItem('cyperData')
           Swal.fire({
             title: "Operación cancelada",
             icon: "error",

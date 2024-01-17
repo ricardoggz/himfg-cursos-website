@@ -41,8 +41,10 @@ function cypherData(p, key) {
     dataType: "json",
     success: function (response) {
       ret = response;
+      console.log(ret)
+      localStorage.setItem('cyperData', JSON.stringify(ret))
     },
   });
-  return ret["data"]["0"]
+  return ret.data[0]
 }
 export { cypherData };
