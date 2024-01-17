@@ -123,12 +123,17 @@ export default function Test(){
         filteredDegrees = degrees.filter((degree)=> degree.course_id === id && degree.student_id === user.student_id)
         .map(degree=>degree)
     }
+    const handleQualityTest = async(evt)=>{
+        evt.preventDefault()
+        setIsQualityTest(true)
+    }
     return (
         <>
             {
-            !isQualityTest ?
+            !isQualityTest && test?
             <QualityTest
                 title={`${!test ? 'Cuestionario de calidad' : test[0].course_name}`}
+                onSubmit={handleQualityTest}
             />
             :
             <Page title={`${!test ? 'Cuestionario' : test[0].course_name}`}>
