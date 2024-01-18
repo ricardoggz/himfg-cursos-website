@@ -13,10 +13,23 @@ const Video = (props)=>{
     useRouter()
     const { user }= useContext(UserContext)
     const [count, setCount] = useState(1)
+    const [degrees, setDegrees] = useState(null)
     const [password, setPassword] = useState(null)
     const [course, setCourse] = useState(null)
     const [ vimeoData, setVimeoData ] = useState(null)
     const [inputData, onChange, onReset]= useOnChange()
+    const getDegrees=async()=>{
+        try {
+            const response = await axios.get(
+                `${process.env.BASE_URL_API}api/payments/all-payments`
+            )
+            if(response.data){
+                setDegrees(response.data)
+            }
+        } catch (error) {
+            
+        }
+    }
     const login = async(evt)=>{
         evt.preventDefault()
         try {
@@ -75,6 +88,14 @@ const Video = (props)=>{
         gtag('config', 'G-1YHJW3W0J0');
         }
       }, [])
+      let filteredDegrees
+        if(degrees && user){
+        filteredDegrees = degrees.filter((degree)=> degree.student_id === user.student_id)
+        .map(degree=>degree)
+    }
+    useEffect(()=>{
+        getDegrees()
+    },[password])
     return (
         <>
             <Head>
@@ -213,6 +234,17 @@ const Video = (props)=>{
                     >
                         Realizar cuestionario
                     </Link>
+                    :
+                    null
+                }
+                {
+                    filteredDegrees[0].payment_degree && user ?
+                    <a
+                        href={filteredDegrees[0].payment_degree}
+                        target='_blank'
+                    >
+                        Descargar constancia
+                    </a>
                     :
                     null
                 }

@@ -172,9 +172,13 @@ export default function Test(){
                 {
                 score >= 2 ?
                 <>
-                    <p>Felicidades, has aprobado el examen.</p>
+                    <p>
+                        Felicidades,
+                        ha aprobado el examen, pronto podrá descargar su constancia
+                        de acreditación y de asistencia
+                    </p>
                     {
-                        filteredDegrees.map((degree,i)=>(
+                        /*filteredDegrees.map((degree,i)=>(
                             <a
                             href={degree.payment_degree}
                             key={i}
@@ -182,11 +186,14 @@ export default function Test(){
                             >
                                 Descargar constancia
                             </a>
-                        ))
+                        ))*/
                     }
                 </>
                 : 
-                null
+                <p>
+                    No ha acreditado el exámen de conocimientos, pronto podrá descargar
+                    su constancia de asistencia
+                </p>
                 }
             </form>
             </Page>
