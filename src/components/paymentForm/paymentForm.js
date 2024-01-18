@@ -57,7 +57,7 @@ export const PaymentForm = () => {
         'https://carolinamagos-001-site1.anytempurl.com/aes/decrypt',
         data
       )
-      return resp
+      return resp.data
     } catch (error) {
       console.log(error)
     }
@@ -77,22 +77,27 @@ export const PaymentForm = () => {
           localStorage.removeItem('cyperData')
           console.log(res);
         },
-        onSuccess: function (res) {
+        onSuccess: async function (res) {
           let dataToObject = JSON.parse(localStorage.getItem('cyperData'))
           let cypherMessage
-          console.log('data cifrada', dataToObject)
-          console.log('respuesta', res)
+          let cyperMessageToObject
+          /*console.log('data cifrada', dataToObject)
+          console.log('respuesta', res)*/
           if(res.data){
             let datatoValue = {
               vi: dataToObject.vi,
               salt: dataToObject.salt,
               passPhrase: dataToObject.passPhrase,
-              cypherData: res.data[0]
+              cypherData: res.data
             }
-            cypherMessage = getCypherData(datatoValue)
+            cypherMessage = await getCypherData(datatoValue)
           }
-          console.log(cypherMessage)
-            if(res.resultadoPayw === "A"){
+          if(cypherMessage !== undefined){
+            console.log(cypherMessage)
+            cyperMessageToObject = JSON.parse(cypherMessage.plainText)
+            console.log('Objeto a evaluar', cyperMessageToObject)
+          }
+            if(cyperMessageToObject !== undefined && cyperMessageToObject.resultadoPayw === 'A'){
               if(formData!==null){
                 updateTaxData({
                   data: formData.student_tax_data,
