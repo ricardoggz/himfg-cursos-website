@@ -170,7 +170,7 @@ export default function Test(){
                 }
                 <span>{score !== null && <p>Tu puntuación: {score} de {filteredData.length}</p>}</span>
                 {
-                score >= 2 ?
+                score && score >= 2 ?
                 <>
                     <p>
                         Felicidades,
@@ -190,10 +190,16 @@ export default function Test(){
                     }
                 </>
                 : 
-                <p>
+                null
+                }
+                {
+                    score <2 && count === 2?
+                    <p>
                     No ha acreditado el exámen de conocimientos, pronto podrá descargar
                     su constancia de asistencia
-                </p>
+                    </p>
+                    :
+                    null
                 }
             </form>
             </Page>
