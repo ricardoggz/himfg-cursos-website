@@ -1,5 +1,6 @@
 import styles from './footer.module.css'
-import { BsFacebook, BsTwitter, BsInstagram, BsYoutube } from 'react-icons/bs'
+import { BsFacebook, BsInstagram, BsYoutube } from 'react-icons/bs'
+import { RiTwitterXLine } from "react-icons/ri";
 export const Footer = ()=>{
     return (
         <footer className={styles.footerWrapper}>
@@ -19,7 +20,7 @@ export const Footer = ()=>{
                         href='https://twitter.com/T_HIMFG'
                         target={'_blank'}
                         >
-                            <BsTwitter />
+                            <RiTwitterXLine />
                         </a>
                     </li>
                     <li>
@@ -42,7 +43,7 @@ export const Footer = ()=>{
                 <div>
                     <li>Dirección:</li>
                     <li>
-                        Dr. Márquez No.162, Col. Doctores, Delegación Cuauhtémoc; México D.F. C.P 06720
+                        Dr. Márquez No.162, Col. Doctores, Delegación Cuauhtémoc; CDMX C.P 06720
                     </li>
                 </div>
                 <div>

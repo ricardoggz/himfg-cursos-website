@@ -28,7 +28,7 @@ export const doctors = [
     },
     {
         image: direccion_administracion,
-        name: 'C.P. Cipriano Solis Badillo',
+        name: 'C.P. Cipriano Solís Badillo',
         description: 'Dirección de Administración'
     },
     {
