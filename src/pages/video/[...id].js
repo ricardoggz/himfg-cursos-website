@@ -238,7 +238,7 @@ const Video = (props)=>{
                     null
                 }
                 {
-                    filteredDegrees[0].payment_degree && user ?
+                    /*filteredDegrees[0].payment_degree && user ?
                     <a
                         href={filteredDegrees[0].payment_degree}
                         target='_blank'
@@ -246,7 +246,7 @@ const Video = (props)=>{
                         Descargar constancia
                     </a>
                     :
-                    null
+                    null*/
                 }
                 </div>
                 <GridContainer>
