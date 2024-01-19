@@ -3,11 +3,12 @@ import direccion_medica from '../../assets/direccion-medica.png'
 import direccion_ensenanza from '../../assets/direccion-ensenanza.png'
 import direccion_investigacion from '../../assets/direccion-investigacion.png'
 import direccion_planeacion from '../../assets/direccion-planeacion.png'
+import direccion_administracion from '../../assets/direccion-administracion.png'
 
 export const doctors = [
     {
         image: direccion_general,
-        name: 'Dr. Jaime Nieto Zermeño',
+        name: 'Dr. Adrián Chávez López',
         description: 'Direccion General'
     },
     {
@@ -26,7 +27,7 @@ export const doctors = [
         description: 'Dirección de Investigación'
     },
     {
-        image: null,
+        image: direccion_administracion,
         name: 'C.P. Cipriano Solis Badillo',
         description: 'Dirección de Administración'
     },
