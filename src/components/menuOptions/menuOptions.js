@@ -20,15 +20,15 @@ export const MenuOptions = ()=>{
             <BsPencilFill />
             <span>Dirección de Enseñanza</span>
         </Link>
-        <Link href='/' className={`${styles.menuOption}`}>
+        <Link href='/investigacion' className={`${styles.menuOption}`}>
             <RiMicroscopeFill />
             <span>Dirección de Investigación</span>
         </Link>
-        <Link href='/' className={`${styles.menuOption}`}>
+        <Link href='/administracion' className={`${styles.menuOption}`}>
             <RiAdminLine />
             <span>Dirección de Administración</span>
         </Link>
-        <Link href='/' className={`${styles.menuOption}`}>
+        <Link href='/planeacion' className={`${styles.menuOption}`}>
             <BsSearch />
             <span>Dirección de Planeación</span>
         </Link>

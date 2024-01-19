@@ -15,7 +15,7 @@ const Card = ({course})=>{
             <Image
                 src={
                     !course.course_image ?
-                    'https://res.cloudinary.com/diuxbqmn5/image/upload/v1676678760/banner-80_zhlxd1.webp'
+                    'https://res.cloudinary.com/diuxbqmn5/image/upload/v1677114497/himfg-logo_ewzx59.webp'
                     :
                     course.course_image
                 }
