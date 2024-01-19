@@ -43,7 +43,7 @@ export const Footer = ()=>{
                 <div>
                     <li>Dirección:</li>
                     <li>
-                        Dr. Márquez No.162, Col. Doctores, Delegación Cuauhtémoc; CDMX C.P 06720
+                        Dr. Márquez No.162, Col. Doctores, Alcaldía Cuauhtémoc; CDMX C.P 06720
                     </li>
                 </div>
                 <div>

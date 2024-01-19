@@ -21,7 +21,7 @@ const EducativeOfer = ()=>{
       </Head>
       <Container>
         <Page
-          title='Dirección de enseñanza'
+          title='Dirección de Enseñanza'
           listMenu={paths}
           textMenu='Consulta AQUÍ nuestros cursos'
           route='ensenanza/offer'

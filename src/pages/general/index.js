@@ -3,7 +3,7 @@ import { Container, Page } from '../../components'
 const General = ()=>{
     return (
         <Container>
-            <Page title='Dirección general'>
+            <Page title='Dirección General'>
                 <p>
                     El Hospital Infantil de México tiene 78 años brindando atención pediátrica especializada a la niñez más desprotegida de nuestro país,
                     su modelo de atención,
@@ -23,7 +23,7 @@ const General = ()=>{
                     hemos publicado más de 300 libros;
                     múltiples artículos científicos,
                     capítulos de libros desde hace más de 17 años tenemos el "Programa Sigamos Aprendiendo en el Hospital" que apoya a los pacientes a continuar con sus estudios estando hospitalizados tenemos una historia larga en la formación de alumnos de todas las especialidades pediátricas,
-                    cuenta con 349 camas, 158 consultorios, 12 quirófanos y 3 terapias intensivas y el desarrollo de la investigación tanto clínica como básica forma parte de nuestra esencia
+                    cuenta con 349 camas, 158 consultorios, 12 quirófanos y 3 terapias intensivas y el desarrollo de la investigación tanto clínica como básica forma parte de nuestra esencia.
                 </p>
             </Page>
         </Container>
