@@ -20,6 +20,7 @@ const nextConfig = {
       '/general' : { page : '/general'},
       '/medica' : { page : '/medica'},
       '/administracion' : { page : '/administracion'},
+      '/planeacion' : { page : '/planeacion'},
       '/register': { page: '/register'},
       '/payment': { page : '/payment'},
       '/userlogin': { page: '/userlogin'},
