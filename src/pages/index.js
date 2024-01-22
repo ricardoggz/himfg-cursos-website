@@ -18,11 +18,7 @@ export default function Home() {
       </Head>
       <Jumbotron />
       <Container>
-        <Title>Direcciones del HIMFG</Title>
         <MenuOptions />
-      </Container>
-      <Container>
-        <Directory />
       </Container>
     </>
   )

@@ -1,17 +1,34 @@
-import styles from './jumbotron.module.css'
-import { Container } from '../../components'
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import Slider from 'react-slick'
 
 export const Jumbotron =()=>{
-    return (
-        <section className={`${styles.jumbotronWrapper}`}>
-            <div className={`${styles.jumbotronTitles} flexContainer`}>
-                <figure className={`${styles.jumbotronImage}`}>
-                    <img
-                        src='https://res.cloudinary.com/diuxbqmn5/image/upload/v1679079932/logo_him-removebg-preview-min_baosmy.png'
-                    />
-                </figure>
-                <h1>Hospital Infantil de México Federico Gómez</h1>
-            </div>
-        </section>
-    )
+        const settings = {
+            dots: true,
+            infinite: true,
+            speed: 1000,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: true,
+        }
+        const images = [
+            'https://framework-gb.cdn.gob.mx/landing/img/1362X312.png',
+            'https://framework-gb.cdn.gob.mx/landing/img/clanding2.png',
+            'https://framework-gb.cdn.gob.mx/landing/img/clanding3.png'
+        ]
+          return (
+            <Slider {...settings}>
+                {
+                    images.map((image, index)=>(
+                        <div key={index}>
+                            <img
+                            src={image}
+                            alt={`Imagen`}
+                            width="100%" height="100%"
+                            />
+                        </div>
+                    ))
+                }
+            </Slider>
+          );
 }

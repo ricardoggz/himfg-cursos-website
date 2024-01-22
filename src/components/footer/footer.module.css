@@ -10,13 +10,12 @@
     list-style: none;
     margin-bottom:1rem;
     padding: 1rem 0;
+    text-align: center;
 }
-.footerList div{
-    align-items: center;
+
+.footerList .socialmedia{
     display:flex;
-    flex-direction: column;
     gap:1rem;
-    text-align:center;
 }
 .footerList a {
     color: var(--white-secondary);

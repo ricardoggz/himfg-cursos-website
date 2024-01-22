@@ -3,6 +3,7 @@
     color:var(--white-primary);
     padding:1rem 0;
     width:100%;
+    font-family: Arial, Helvetica, sans-serif;
 }
 .headerNav{
     align-items: center;
@@ -34,15 +35,25 @@
     display:flex;
     justify-content: space-between;
     padding:0.2rem 0;
+    font-family: Arial, Helvetica, sans-serif;
 }
-.imageContainer img{
-    width:6rem;
+
+.imgSecretary{
+    width:8rem;
+}
+.logo{
+    width:4rem;
 }
 .userLoginIcon{
     background:var(--white-primary);
     border-radius:50%;
     color:var(--green-primary);
     font-size:2rem;
+}
+.headerIconNav{
+    color:#0e3200b6;
+    display:flex;
+    align-items: center;
 }
 @media (min-width:240px) and (max-width:880px){
     .headerNav{

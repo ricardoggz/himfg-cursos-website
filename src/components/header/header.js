@@ -50,11 +50,16 @@ export const Header =()=>{
                 <img
                     src={'https://res.cloudinary.com/diuxbqmn5/image/upload/v1677008422/secretaria-salud_tqz45u.webp'}
                     alt='Gobierno de México'
+                    className={styles.imgSecretary}
                 />
-                <img
-                    src={'https://res.cloudinary.com/diuxbqmn5/image/upload/v1679079932/logo_him-removebg-preview-min_baosmy.png'}
+                <div className={styles.headerIconNav}>
+                    <span>Hospital Infantil de México Federico Gómez</span>
+                    <img
+                    src={'https://res.cloudinary.com/diuxbqmn5/image/upload/v1677114497/himfg-logo_ewzx59.webp'}
                     alt='HIMFG'
-                />
+                    className={styles.logo}
+                    />
+                </div>
             </div>
         </>
     )
