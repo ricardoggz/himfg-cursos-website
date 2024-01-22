@@ -88,7 +88,8 @@ export const Courses = ()=>{
 const showModal = (content)=>{
     CardModal.fire({
         html:content,
-        width: 500,
+        width: 400,
+        heightAuto:true,
         showCloseButton:true,
         showConfirmButton:false,
         showClass: {
