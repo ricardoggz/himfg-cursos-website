@@ -49,6 +49,18 @@ const Card = ({course})=>{
               :
               null
             }
+            {
+                course.modality_id === 3 && course.course_max_range ?
+                <span>Cupo límite: {course.course_max_range} personas (presencial)</span>
+                :
+                null
+            }
+            {
+                course.modality_id !== 3 && course.course_max_range ?
+                <span>Cupo límite: {course.course_max_range} personas</span>
+                :
+                null
+            }
             <div className={styles.cardButtons}>
                 {
                     !course.course_pdf ?
