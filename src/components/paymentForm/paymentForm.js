@@ -176,6 +176,25 @@ export const PaymentForm = () => {
       })
       router.push('/ensenanza/offer')
     }
+    if((user.student_role === 'PERSONAL_HIMFG' || user.student_role === 'ESTUDIANTE') && course.course_price === 0){
+      addPayment({
+        data:{
+          course_id: course.course_id,
+          student_id: user.student_id,
+          payment_successfull: 1,
+          payment_amount: 0.00,
+          payment_reference: paymentData.ControlNumber,
+          payment_invoice: "SIN_FACTURACION",
+          payment_date: fechaFormateada,
+          payment_modality: modality
+        }
+      })
+      generatePDF({
+        course: course,
+        student: user,
+        reference: paymentData.ControlNumber
+      })
+    }
     if(user.student_role === 'EXTERNO'){
       addPayment({
         data:{
@@ -282,7 +301,14 @@ export const PaymentForm = () => {
                 ?
                 <button onClick={startFreePayment}>Inscripción gratuita</button>
                 :
-                <button onClick={startPayment}>Comprar</button>
+                null
+              }
+              {
+                user.student_role === 'EXTERNO' && course.course_price !== 0
+                ?
+                <button onClick={startFreePayment}>Inscripción gratuita</button>
+                :
+                null
               }
             </>
           )}
