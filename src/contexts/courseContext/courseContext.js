@@ -13,6 +13,7 @@ export const CourseProvider = ({children})=>{
         setCourse(getItem('course'))
     }
     const logout = ()=>{
+        removeItem('modality')
         removeItem('course')
         setCourse(null)
     }

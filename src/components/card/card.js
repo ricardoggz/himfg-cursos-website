@@ -5,6 +5,7 @@ import { formatDate } from '@/helpers'
 import styles from './card.module.css'
 import { openModal } from './openModal'
 import { UserContext, CourseContext } from '@/contexts'
+import { setItem, getItem, removeItem } from "@/helpers"
 
 const Card = ({course})=>{
     const { user }= useContext(UserContext)
@@ -71,7 +72,18 @@ const Card = ({course})=>{
                     <Link
                         href='/payment'
                         className={styles.cardButtonInscription}
-                        onClick={()=> login(course)}
+                        onClick={()=>{
+                            if(course.modality_id === 1){
+                                setItem('modality', 'presencial')
+                            }
+                            if(course.modality_id === 2){
+                                setItem('modality', 'en_linea')
+                            }
+                            if(course.modality_id === 3){
+                                setItem('modality', 'en_linea')
+                            }
+                            return login(course)
+                        }}
                     >
                         Comprar
                     </Link>
