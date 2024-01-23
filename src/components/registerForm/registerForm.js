@@ -8,6 +8,9 @@ import { useOnChange } from '../../hooks'
 import styles from './form.module.css'
 import { states } from '@/consts'
 import { uploadFile } from '@/services'
+import { setItem, getItem, removeItem } from "@/helpers"
+
+
 export const RegisterForm = ({path})=>{
     const router = useRouter()
     const { course }= useContext(CourseContext)
@@ -81,6 +84,7 @@ export const RegisterForm = ({path})=>{
         evt.target.reset()
         onReset()
     }
+
     return (
         <>
             <div className={styles.anchorLogin}>
@@ -440,6 +444,40 @@ export const RegisterForm = ({path})=>{
                     />
                 </div>
             </div>
+            {
+                course && course.modality_id === 3 ?
+                <>
+                    <label className={styles.labelTitle}>
+                        ¿Usted toma el curso de manera presencial o en línea?
+                    </label>
+                    <div className={styles.formRatioInputs}>
+                        <div>
+                            <label>Presencial</label>
+                            <input
+                                type='radio'
+                                value='presencial'
+                                name='modality'
+                                onChange={
+                                    ()=> setItem('modality', 'presencial')
+                                }
+                            />
+                        </div>
+                        <div>
+                            <label>En línea</label>
+                            <input
+                                type='radio'
+                                value='en_linea'
+                                name='modality'
+                                onChange={                                
+                                    ()=> setItem('modality', 'en_linea')
+                                }
+                            />
+                        </div>
+                    </div>
+                </>
+                :
+                null
+            }
             {
                 !course ? null
                 :
