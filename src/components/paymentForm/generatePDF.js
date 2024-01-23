@@ -46,7 +46,7 @@ export const generatePDF = ({course, student, reference}) => {
     }else{
         doc.setFont("helvetica", "bold")
         doc.setTextColor('#2f3542')
-        doc.text('Este curso solo se impartirá de manera presencial',10, 125)
+        doc.text('Este curso solo se impartirá de manera presencial o en línea',10, 125)
         doc.setFont("helvetica", "bold")
         doc.text('SEDE:',10, 140)
         doc.setFont("helvetica", "italic")
