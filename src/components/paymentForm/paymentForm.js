@@ -233,7 +233,7 @@ export const PaymentForm = () => {
               </span>
               <form className={styles.invoiceSelectedForm}>
                 {
-                  user.student_role === 'EXTERNO' ?
+                  user.student_role === 'EXTERNO' && course.course_price !== 0?
                   <div>
                     <input type='checkbox' onChange={()=>setIsSelected(!isSelected)}/>
                     <label>Facturación</label>
@@ -242,7 +242,7 @@ export const PaymentForm = () => {
                   null
                 }
                 {
-                  isSelected ?
+                  isSelected && course.course_price !== 0?
                   <>
                     <label>Inserte una fotografía de su constancia de situación fiscal</label>
                     <input type='file' required name='student_tax_data' onChange={handleImageChange}/>
@@ -255,6 +255,13 @@ export const PaymentForm = () => {
                 user.student_role === 'PERSONAL_HIMFG' || user.student_role === 'ESTUDIANTE'
                 ?
                 <button onClick={startFreePayment}>Mandar documentación a revisión</button>
+                :
+                null
+              }
+              {
+                user.student_role === 'EXTERNO' && course.course_price === 0
+                ?
+                <button onClick={startFreePayment}>Inscripción gratuita</button>
                 :
                 <button onClick={startPayment}>Comprar</button>
               }
