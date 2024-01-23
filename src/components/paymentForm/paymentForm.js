@@ -176,6 +176,25 @@ export const PaymentForm = () => {
       })
       router.push('/ensenanza/offer')
     }
+    if(user.student_role === 'EXTERNO'){
+      addPayment({
+        data:{
+          course_id: course.course_id,
+          student_id: user.student_id,
+          payment_successfull: 1,
+          payment_amount: 0.00,
+          payment_reference: paymentData.ControlNumber,
+          payment_invoice: "SIN_FACTURACION",
+          payment_date: fechaFormateada,
+          payment_modality: modality
+        }
+      })
+      generatePDF({
+        course: course,
+        student: user,
+        reference: paymentData.ControlNumber
+      })
+    }
   }
   const handleImageChange = async(evt)=>{
     try {
