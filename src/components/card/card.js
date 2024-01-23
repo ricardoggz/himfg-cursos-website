@@ -40,6 +40,15 @@ const Card = ({course})=>{
                 </span>
               </>
             }
+            { course.course_price === 0 ? 
+              <>
+                <span>
+                    Gratuito
+                </span>
+              </>
+              :
+              null
+            }
             <div className={styles.cardButtons}>
                 {
                     !course.course_pdf ?
@@ -55,7 +64,7 @@ const Card = ({course})=>{
                     </button>
                 }
                 {
-                    course.course_price && !user?
+                    course.course_price && course.course_able && !user?
                     <Link
                         href='/register'
                         className={styles.cardButtonInscription}
@@ -67,7 +76,7 @@ const Card = ({course})=>{
                     null
                 }
                 {
-                    course.course_price && user
+                    course.course_price && course.course_able && user
                     ?
                     <Link
                         href='/payment'
@@ -86,6 +95,54 @@ const Card = ({course})=>{
                         }}
                     >
                         Comprar
+                    </Link>
+                    :
+                    null
+                }
+                {
+                    course.course_price === 0 && course.course_able && user
+                    ?
+                    <Link
+                        href='/payment'
+                        className={styles.cardButtonInscription}
+                        onClick={()=>{
+                            if(course.modality_id === 1){
+                                setItem('modality', 'presencial')
+                            }
+                            if(course.modality_id === 2){
+                                setItem('modality', 'en_linea')
+                            }
+                            if(course.modality_id === 3){
+                                setItem('modality', 'en_linea')
+                            }
+                            return login(course)
+                        }}
+                    >
+                        Gratuito
+                    </Link>
+                    :
+                    null
+                }
+                {
+                    course.course_price === 0 && course.course_able && !user
+                    ?
+                    <Link
+                        href='/payment'
+                        className={styles.cardButtonInscription}
+                        onClick={()=>{
+                            if(course.modality_id === 1){
+                                setItem('modality', 'presencial')
+                            }
+                            if(course.modality_id === 2){
+                                setItem('modality', 'en_linea')
+                            }
+                            if(course.modality_id === 3){
+                                setItem('modality', 'en_linea')
+                            }
+                            return login(course)
+                        }}
+                    >
+                        Gratuito
                     </Link>
                     :
                     null
