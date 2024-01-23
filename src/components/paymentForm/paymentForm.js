@@ -13,6 +13,7 @@ import { reference } from "./reference"
 import { addPayment } from "@/services"
 import { generatePDF } from "./generatePDF"
 import { uploadFile, updateTaxData } from '@/services'
+import { setItem, getItem, removeItem } from "@/helpers"
 
 export const PaymentForm = () => {
   const [paymentData, setPaymentData] = useState(null)
@@ -24,6 +25,8 @@ export const PaymentForm = () => {
   const fecha = new Date(); // Obtén la fecha actual
   // Utiliza la función `toISOString()` para obtener una cadena en formato 'YYYY-MM-DDTHH:mm:ss.sssZ'
   const fechaFormateada = fecha.toISOString().slice(0, 19).replace('T', ' ');
+  const modality = getItem('modality')
+  console.log(modality)
   useEffect(() => {
     if(!course){
       router.push('/ensenanza/offer')
@@ -81,6 +84,7 @@ export const PaymentForm = () => {
           let dataToObject = JSON.parse(localStorage.getItem('cyperData'))
           let cypherMessage
           let cyperMessageToObject
+          //let modality = 
           /*console.log('data cifrada', dataToObject)
           console.log('respuesta', res)*/
           if(res.data){
@@ -111,7 +115,8 @@ export const PaymentForm = () => {
                     payment_amount: paymentData.Amount,
                     payment_reference: paymentData.ControlNumber,
                     payment_invoice: "FACTURACION",
-                    payment_date: fechaFormateada
+                    payment_date: fechaFormateada,
+                    payment_modality: modality
                   }
                 })
               }
@@ -124,7 +129,8 @@ export const PaymentForm = () => {
                     payment_amount: paymentData.Amount,
                     payment_reference: paymentData.ControlNumber,
                     payment_invoice: "SIN_FACTURACION",
-                    payment_date: fechaFormateada
+                    payment_date: fechaFormateada,
+                    payment_modality: modality
                   }
                 })
               }

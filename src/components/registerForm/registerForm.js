@@ -84,7 +84,12 @@ export const RegisterForm = ({path})=>{
         evt.target.reset()
         onReset()
     }
-
+    if(course && course.modality_id === 1){
+        setItem('modality', 'presencial')
+    }
+    if(course && course.modality_id === 2){
+        setItem('modality', 'en_linea')
+    }
     return (
         <>
             <div className={styles.anchorLogin}>
