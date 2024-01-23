@@ -139,7 +139,7 @@ const Card = ({course})=>{
                     course.course_price === 0 && course.course_able && !user
                     ?
                     <Link
-                        href='/payment'
+                        href='/register'
                         className={styles.cardButtonInscription}
                         onClick={()=>{
                             if(course.modality_id === 1){
