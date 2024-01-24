@@ -156,14 +156,17 @@ export const PaymentForm = () => {
     }
   }
   const startFreePayment = ()=>{
-    if(user.student_role === 'PERSONAL_HIMFG' || user.student_role === 'ESTUDIANTE'){
+    if(user.student_role === 'PERSONAL_HIMFG' && course.course_price !== 0){
       addPayment({
         data:{
           course_id: course.course_id,
           student_id: user.student_id,
           payment_successfull: 1,
           payment_amount: 0,
-          payment_reference: paymentData.ControlNumber
+          payment_reference: paymentData.ControlNumber,
+          payment_invoice: "SIN_FACTURACION",
+          payment_date: fechaFormateada,
+          payment_modality: modality
         }
       })
       Swal.fire({
@@ -174,9 +177,8 @@ export const PaymentForm = () => {
         showConfirmButton: false,
         position: "center",
       })
-      router.push('/ensenanza/offer')
     }
-    if((user.student_role === 'PERSONAL_HIMFG' || user.student_role === 'ESTUDIANTE') && course.course_price === 0){
+    if((user.student_role === 'PERSONAL_HIMFG') && course.course_price === 0){
       addPayment({
         data:{
           course_id: course.course_id,
@@ -188,6 +190,63 @@ export const PaymentForm = () => {
           payment_date: fechaFormateada,
           payment_modality: modality
         }
+      })
+      Swal.fire({
+        title: "Inscripción exitosa",
+        text:'Se descargará un PDF con los datos del curso',
+        icon: "success",
+        showCloseButton: true,
+        showConfirmButton: false,
+        position: "center",
+      })
+      generatePDF({
+        course: course,
+        student: user,
+        reference: paymentData.ControlNumber
+      })
+    }
+    if(user.student_role === 'ESTUDIANTE' && course.course_price !== 0){
+      addPayment({
+        data:{
+          course_id: course.course_id,
+          student_id: user.student_id,
+          payment_successfull: 1,
+          payment_amount: 0,
+          payment_reference: paymentData.ControlNumber,
+          payment_invoice: "SIN_FACTURACION",
+          payment_date: fechaFormateada,
+          payment_modality: modality
+        }
+      })
+      Swal.fire({
+        title: "Documentación enviada a revisión",
+        text:'Una vez revisada, se te hará llegar la confirmación de acceso al curso via email',
+        icon: "success",
+        showCloseButton: true,
+        showConfirmButton: false,
+        position: "center",
+      })
+    }
+    if((user.student_role === 'ESTUDIANTE') && course.course_price === 0){
+      addPayment({
+        data:{
+          course_id: course.course_id,
+          student_id: user.student_id,
+          payment_successfull: 1,
+          payment_amount: 0.00,
+          payment_reference: paymentData.ControlNumber,
+          payment_invoice: "SIN_FACTURACION",
+          payment_date: fechaFormateada,
+          payment_modality: modality
+        }
+      })
+      Swal.fire({
+        title: "Inscripción exitosa",
+        text:'Se descargará un PDF con los datos del curso',
+        icon: "success",
+        showCloseButton: true,
+        showConfirmButton: false,
+        position: "center",
       })
       generatePDF({
         course: course,
@@ -208,12 +267,21 @@ export const PaymentForm = () => {
           payment_modality: modality
         }
       })
+      Swal.fire({
+        title: "Inscripción exitosa",
+        text:'Se descargará un PDF con los datos del curso',
+        icon: "success",
+        showCloseButton: true,
+        showConfirmButton: false,
+        position: "center",
+      })
       generatePDF({
         course: course,
         student: user,
         reference: paymentData.ControlNumber
       })
     }
+    router.push('/ensenanza/offer')
   }
   const handleImageChange = async(evt)=>{
     try {
@@ -290,9 +358,30 @@ export const PaymentForm = () => {
                 }
               </form>
               {
-                user.student_role === 'PERSONAL_HIMFG' || user.student_role === 'ESTUDIANTE'
+                user.student_role === 'ESTUDIANTE' && course.course_price !== 0
                 ?
                 <button onClick={startFreePayment}>Mandar documentación a revisión</button>
+                :
+                null
+              }
+              {
+                user.student_role === 'ESTUDIANTE' && course.course_price == 0
+                ?
+                <button onClick={startFreePayment}>Inscripción gratuita</button>
+                :
+                null
+              }
+              {
+                user.student_role === 'PERSONAL_HIMFG' && course.course_price !== 0
+                ?
+                <button onClick={startFreePayment}>Mandar documentación a revisión</button>
+                :
+                null
+              }
+              {
+                (user.student_role === 'PERSONAL_HIMFG') && course.course_price === 0
+                ?
+                <button onClick={startFreePayment}>Inscripción gratuita</button>
                 :
                 null
               }
@@ -306,7 +395,7 @@ export const PaymentForm = () => {
               {
                 user.student_role === 'EXTERNO' && course.course_price !== 0
                 ?
-                <button onClick={startFreePayment}>Inscripción gratuita</button>
+                <button onClick={startPayment}>Pagar</button>
                 :
                 null
               }

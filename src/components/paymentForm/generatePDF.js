@@ -4,11 +4,11 @@ export const generatePDF = ({course, student, reference}) => {
     const doc = new jsPDF()
     doc.setFontSize(30)
     doc.setFont("helvetica", "bold")
-    doc.text('Pago exitoso', 60, 30)
+    doc.text('Inscripción exitosa', 60, 30)
     doc.setFontSize(14)
     doc.setTextColor('#2f3542')
     doc.setFont("helvetica", "bold")
-    doc.text('Felicidades, ha adquirido correctamente el curso:', 10, 50)
+    doc.text('Felicidades, se ha inscrito correctamente al curso:', 10, 50)
     doc.setFont('helvetica', 'italic')
     doc.text(`${course.course_name}`, 10, 60)
     doc.setFont("helvetica", "bold")
@@ -64,7 +64,7 @@ export const generatePDF = ({course, student, reference}) => {
     doc.text('cursoshimfg@gmail.com', 10, 185)*/
     if(reference){
         doc.setFont("helvetica", "bold")
-        doc.text('Su referencia de pago', 10, 235)
+        doc.text('Referencia', 10, 235)
         doc.setFont('helvetica', 'italic')
         doc.text(`${reference}`, 10, 245)
     }
