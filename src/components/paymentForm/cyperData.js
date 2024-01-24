@@ -41,7 +41,6 @@ function cypherData(p, key) {
     dataType: "json",
     success: function (response) {
       ret = response;
-      console.log(ret)
       localStorage.setItem('cyperData', JSON.stringify(ret))
     },
   });

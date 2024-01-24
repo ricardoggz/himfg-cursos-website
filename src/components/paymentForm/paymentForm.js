@@ -19,14 +19,24 @@ export const PaymentForm = () => {
   const [paymentData, setPaymentData] = useState(null)
   const [isSelected, setIsSelected] = useState(false)
   const [formData, setFormData] = useState(null)
+  const [modality, setModality] = useState(null)
+  const [isModalOpen, setIsModalOpen] = useState(false)
   const router = useRouter()
   const { course } = useContext(CourseContext)
   const { user } = useContext(UserContext)
   const fecha = new Date(); // Obtén la fecha actual
   // Utiliza la función `toISOString()` para obtener una cadena en formato 'YYYY-MM-DDTHH:mm:ss.sssZ'
   const fechaFormateada = fecha.toISOString().slice(0, 19).replace('T', ' ');
-  const modality = getItem('modality')
   console.log(modality)
+  let dataToObject
+  useEffect(()=>{
+    if (typeof window !== 'undefined') {
+      setModality(getItem('modality'))
+      dataToObject = JSON.parse(localStorage.getItem('cyperData'))
+      console.log('dataToObject', dataToObject)
+      console.log(modality)
+    }
+  },[isModalOpen])
   useEffect(() => {
     if(!course){
       router.push('/ensenanza/offer')
@@ -66,6 +76,7 @@ export const PaymentForm = () => {
     }
   }
   const startPayment = () => {
+    setIsModalOpen(!isModalOpen)
     if (Payment && user.student_role === 'EXTERNO') {
       Payment.setEnv("pro");
       let xOBJ;
@@ -81,7 +92,6 @@ export const PaymentForm = () => {
           console.log(res);
         },
         onSuccess: async function (res) {
-          let dataToObject = JSON.parse(localStorage.getItem('cyperData'))
           let cypherMessage
           let cyperMessageToObject
           //let modality = 
