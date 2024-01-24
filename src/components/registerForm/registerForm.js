@@ -456,7 +456,9 @@ export const RegisterForm = ({path})=>{
                         ¿Usted toma el curso de manera presencial o en línea?
                     </label>
                     <div className={styles.formRatioInputs}>
-                        <div>
+                        {
+                            course.course_max_range ?
+                            <div>
                             <label>Presencial</label>
                             <input
                                 type='radio'
@@ -466,7 +468,10 @@ export const RegisterForm = ({path})=>{
                                     ()=> setItem('modality', 'presencial')
                                 }
                             />
-                        </div>
+                            </div>
+                            :
+                            null
+                        }
                         <div>
                             <label>En línea</label>
                             <input
