@@ -20,6 +20,7 @@ export const PaymentForm = () => {
   const [isSelected, setIsSelected] = useState(false)
   const [formData, setFormData] = useState(null)
   const [modality, setModality] = useState(null)
+  const [range, setRange] = useState(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
   const router = useRouter()
   const { course } = useContext(CourseContext)
@@ -27,17 +28,18 @@ export const PaymentForm = () => {
   const fecha = new Date(); // Obtén la fecha actual
   // Utiliza la función `toISOString()` para obtener una cadena en formato 'YYYY-MM-DDTHH:mm:ss.sssZ'
   const fechaFormateada = fecha.toISOString().slice(0, 19).replace('T', ' ');
-  console.log(modality)
   let dataToObject
   useEffect(()=>{
     if (typeof window !== 'undefined') {
       setModality(getItem('modality'))
       dataToObject = JSON.parse(localStorage.getItem('cyperData'))
-      console.log('dataToObject', dataToObject)
-      console.log(modality)
+      console.log(dataToObject)
     }
   },[isModalOpen])
   useEffect(() => {
+    if(course && course.course_max_range){
+      setRange(course.course_max_range - 1)
+    }
     if(!course){
       router.push('/ensenanza/offer')
     }
@@ -71,6 +73,19 @@ export const PaymentForm = () => {
         data
       )
       return resp.data
+    } catch (error) {
+      console.log(error)
+    }
+  }
+  const updateMaxRange = async()=>{
+    try {
+      const resp = await axios.put(
+        `${process.env.BASE_URL_API}api/courses/edit-max-range/${course.course_id}`,
+      {
+          course_max_range: range
+      })
+      return resp
+      
     } catch (error) {
       console.log(error)
     }
@@ -165,7 +180,7 @@ export const PaymentForm = () => {
       });
     }
   }
-  const startFreePayment = ()=>{
+  const startFreePayment = async()=>{
     if(user.student_role === 'PERSONAL_HIMFG' && course.course_price !== 0){
       addPayment({
         data:{
@@ -291,6 +306,7 @@ export const PaymentForm = () => {
         reference: paymentData.ControlNumber
       })
     }
+    await updateMaxRange()
     router.push('/ensenanza/offer')
   }
   const handleImageChange = async(evt)=>{
