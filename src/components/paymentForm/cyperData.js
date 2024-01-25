@@ -1,5 +1,6 @@
 import { setItem } from "@/helpers"
 
+let dataToObject
 function cypherData(p, key) {
   var paramsE = {};
   if (paramsE !== undefined)
@@ -41,9 +42,13 @@ function cypherData(p, key) {
     dataType: "json",
     success: function (response) {
       ret = response;
+      if(ret.code === "200"){
+        dataToObject = ret
+        console.log('ret', dataToObject)
+      }
       localStorage.setItem('cyperData', JSON.stringify(ret))
     },
   });
   return ret.data[0]
 }
-export { cypherData };
+export { cypherData, dataToObject };

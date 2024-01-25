@@ -1,5 +1,6 @@
 import { useEffect, useContext, useState } from "react"
 import axios from "axios"
+import { v4 as uuidv4 } from 'uuid'
 import { useRouter } from "next/router"
 import Image from "next/image"
 import Swal from "sweetalert2"
@@ -7,17 +8,19 @@ import styles from "./paymentForm.module.css"
 import { data, cerKey } from "./consts"
 import visa from "../../assets/visaLogo.png"
 import mastercard from "../../assets/mastercard.png"
-import { cypherData } from "./cyperData"
+import { cypherData, dataToObject } from "./cyperData"
 import { CourseContext, UserContext } from '@/contexts'
 import { reference } from "./reference"
 import { addPayment } from "@/services"
 import { generatePDF } from "./generatePDF"
-import { uploadFile, updateTaxData } from '@/services'
+import { uploadFile, updateTaxData, uploadTaxCard } from '@/services'
 import { setItem, getItem, removeItem } from "@/helpers"
 
 export const PaymentForm = () => {
+  const [fileName, setFileName] = useState('')
   const [paymentData, setPaymentData] = useState(null)
   const [isSelected, setIsSelected] = useState(false)
+  //const [dataToObject, setDataToObject] = useState(null)
   const [formData, setFormData] = useState(null)
   const [modality, setModality] = useState(null)
   const [range, setRange] = useState(null)
@@ -25,15 +28,22 @@ export const PaymentForm = () => {
   const router = useRouter()
   const { course } = useContext(CourseContext)
   const { user } = useContext(UserContext)
-  const fecha = new Date(); // Obtén la fecha actual
-  // Utiliza la función `toISOString()` para obtener una cadena en formato 'YYYY-MM-DDTHH:mm:ss.sssZ'
+  const fecha = new Date();
   const fechaFormateada = fecha.toISOString().slice(0, 19).replace('T', ' ');
-  let dataToObject
+  const randomFileName = ()=> {
+    return `${uuidv4()}.pdf`
+  }
+  /*let dataToObject*/
+  const showModal = ()=>{
+    setIsModalOpen(!isModalOpen)
+    return localStorage.getItem('cyperData')
+  }
+  console.log('fuera de onSuccess', dataToObject)
   useEffect(()=>{
     if (typeof window !== 'undefined') {
       setModality(getItem('modality'))
-      dataToObject = JSON.parse(localStorage.getItem('cyperData'))
-      console.log(dataToObject)
+      /*dataToObject = JSON.parse(localStorage.getItem('cyperData'))
+      console.log('dataToObject',dataToObject)*/
     }
   },[isModalOpen])
   useEffect(() => {
@@ -65,7 +75,7 @@ export const PaymentForm = () => {
     setTimeout(() => {
       Payment.setEnv("pro")
     }, 1000)
-  }, [])
+  },[])
   const getCypherData = async(data)=>{
     try {
       const resp = await axios.post(
@@ -91,7 +101,10 @@ export const PaymentForm = () => {
     }
   }
   const startPayment = () => {
-    setIsModalOpen(!isModalOpen)
+    showModal()
+    setTimeout(()=>{
+      console.log(dataToObject)
+    },1000)
     if (Payment && user.student_role === 'EXTERNO') {
       Payment.setEnv("pro");
       let xOBJ;
@@ -128,6 +141,10 @@ export const PaymentForm = () => {
           }
             if(cyperMessageToObject !== undefined && cyperMessageToObject.resultadoPayw === 'A'){
               if(formData!==null){
+                uploadTaxCard({
+                  file: formData.pdfFile,
+                  fileName:fileName
+                })
                 updateTaxData({
                   data: formData.student_tax_data,
                   user_id: user.student_id
@@ -159,6 +176,7 @@ export const PaymentForm = () => {
                   }
                 })
               }
+              await updateMaxRange()
               generatePDF({
                 course: course,
                 student: user,
@@ -309,16 +327,19 @@ export const PaymentForm = () => {
     await updateMaxRange()
     router.push('/ensenanza/offer')
   }
-  const handleImageChange = async(evt)=>{
-    try {
-      const response = await uploadFile({file: evt.target.files[0]})
-      setFormData({
-        [evt.target.name]: response
-      })
+  const handleImageChange =(evt)=>{
+    const newFileName = randomFileName()
+    setFileName(newFileName)
+    setFormData({
+      [evt.target.name]: evt.target.files[0],
+      student_tax_data:`https://archivos.him.edu.mx/constancias-cursos/${newFileName}`
+    })
+    /*try {
+      const response = await uploadTaxCard({file: formData.pdfFile, fileName:fileName})
       return response
     } catch (error) {
       console.log(error)
-    }
+    }*/
   }
   return (
     <>
