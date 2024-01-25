@@ -334,12 +334,6 @@ export const PaymentForm = () => {
       [evt.target.name]: evt.target.files[0],
       student_tax_data:`https://archivos.him.edu.mx/constancias-cursos/${newFileName}`
     })
-    /*try {
-      const response = await uploadTaxCard({file: formData.pdfFile, fileName:fileName})
-      return response
-    } catch (error) {
-      console.log(error)
-    }*/
   }
   return (
     <>
@@ -398,7 +392,12 @@ export const PaymentForm = () => {
                   isSelected && course.course_price !== 0?
                   <>
                     <label>Inserte una fotografía de su constancia de situación fiscal</label>
-                    <input type='file' required name='student_tax_data' onChange={handleImageChange}/>
+                    <input
+                    type='file'
+                    required
+                    name='pdfFile'
+                    onChange={handleImageChange}
+                    />
                   </>
                   :
                   null
