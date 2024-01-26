@@ -391,7 +391,7 @@ export const PaymentForm = () => {
                 {
                   isSelected && course.course_price !== 0?
                   <>
-                    <label>Inserte una fotografía de su constancia de situación fiscal</label>
+                    <label>Inserte su constancia de situación fiscal en formato PDF</label>
                     <input
                     type='file'
                     required

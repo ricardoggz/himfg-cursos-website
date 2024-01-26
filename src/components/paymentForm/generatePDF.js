@@ -43,10 +43,25 @@ export const generatePDF = ({course, student, reference}) => {
         doc.setFont('helvetica', 'italic')
         doc.text(`Correo: ${student.student_email}`, 10, 210)
         doc.text(`Contraseña: ${student.student_password}`, 10, 220)
-    }else{
+    }
+    if(course.modality_id === 1){
         doc.setFont("helvetica", "bold")
         doc.setTextColor('#2f3542')
-        doc.text('Este curso solo se impartirá de manera presencial o en línea',10, 125)
+        doc.text('Este curso solo se impartirá de manera presencial',10, 125)
+        doc.setFont("helvetica", "bold")
+        doc.text('SEDE:',10, 140)
+        doc.setFont("helvetica", "italic")
+        doc.text(`${course.course_place}`,10, 150)
+        doc.setFont("helvetica", "bold")
+        doc.text('Sus datos de acceso a la plataforma:', 10, 165)
+        doc.setFont('helvetica', 'italic')
+        doc.text(`Correo: ${student.student_email}`, 10, 175)
+        doc.text(`Contraseña: ${student.student_password}`, 10, 185)
+    }
+    if(course.modality_id === 2){
+        doc.setFont("helvetica", "bold")
+        doc.setTextColor('#2f3542')
+        doc.text('Este curso solo se impartirá de manera online',10, 125)
         doc.setFont("helvetica", "bold")
         doc.text('SEDE:',10, 140)
         doc.setFont("helvetica", "italic")
