@@ -13,6 +13,14 @@ const QualityTest = ({onSubmit, title})=>{
       </center>
       <br/>
       <br/>
+      <br/>
+      <center>
+      <h4>
+        Evaluación de calidad
+      </h4>
+      </center>
+      <br/>
+      <br/>
       <p>
         Esta evaluación tiene como objetivo detectar los factores que favorecen o limitan la calidad y desarrollo del curso en el que participó, con el propósito de mejorarlo y optimizar las actividades de Educación Médica Continua de este Instituto. Por tal motivo le pedimos responda de forma completa y clara el siguiente cuestionario.
       </p>

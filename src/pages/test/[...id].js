@@ -137,6 +137,13 @@ export default function Test(){
             />
             :
             <Page title={`${!test ? 'Cuestionario' : test[0].course_name}`}>
+                <br/>
+                <br/>
+                <center>
+                    <h4>
+                        Evaluación de conocimientos
+                    </h4>
+                </center>
             <form className={styles.formTest} onSubmit={handleSubmit}>
                 {
                     !filteredData ? null
