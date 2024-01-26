@@ -97,10 +97,16 @@ export const RegisterForm = ({path})=>{
                 <Link href="/userlogin">Inicia sesión para acceder</Link>
             </div>
             <form className={`flexContainer ${styles.formWrapper}`} onSubmit={onSubmit}>
-            <label className={styles.labelTitle}>
+            <label className={`${styles.labelTitle}`}>
                 Nombre como aparecerá en su constancia:
             </label>
-            <input type='text' name='student_name' required onChange={handleChange}/>
+            <input 
+                ype='text'
+                name='student_name'
+                required
+                onChange={handleChange}
+                className={`${styles.toUpperCase}`}
+            />
             <label className={styles.labelTitle}>
                 Edad:
             </label>
@@ -120,7 +126,7 @@ export const RegisterForm = ({path})=>{
                 name='student_nationality'
             />
             <label className={styles.labelTitle}>
-                Lugar de procedencia:
+                Lugar de residencia:
             </label>
             <input
                 name='student_state'
@@ -248,7 +254,7 @@ export const RegisterForm = ({path})=>{
                            {
                             formData.student_role === 'PERSONAL_HIMFG' ?
                             <>
-                                Inserte una fotografía de su credencial de personal del Hospital Infantil de México por ambos lados
+                                Inserte una fotografía de su credencial vigente de personal del Hospital Infantil de México por ambos lados (en archivo .JPG y 1MB como máximo)
                             </>
                             :
                             null
@@ -256,7 +262,7 @@ export const RegisterForm = ({path})=>{
                            {
                             formData.student_role === 'ESTUDIANTE' ?
                             <>
-                                Inserte una fotografía de su credencial vigente de estudiante por ambos lados
+                                Inserte una fotografía de su credencial vigente de estudiante por ambos lados (en archivo .JPG y 1MB como máximo)
                             </>
                             :
                             null
@@ -264,7 +270,7 @@ export const RegisterForm = ({path})=>{
                            {
                             formData.student_role === 'EXTERNO' ?
                             <>
-                                Inserte una fotografía de su cédula profesional
+                                Inserte una fotografía de su cédula profesional (en archivo .JPG y 1MB como máximo)
                             </>
                             :
                             null
@@ -371,7 +377,7 @@ export const RegisterForm = ({path})=>{
                     <label>ISSSTE</label>
                     <input
                         type='radio'
-                        value='ISSTE'
+                        value='ISSSTE'
                         name='student_institution'
                         onChange={handleChange}
                     />

@@ -232,7 +232,7 @@ const Video = (props)=>{
                     as ={`/test/${course[0].course_id}`}
                     target="_blank"
                     >
-                        Realizar cuestionario
+                        Evaluación
                     </Link>
                     :
                     null

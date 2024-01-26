@@ -174,8 +174,8 @@ export default function Test(){
                 <>
                     <p>
                         Felicidades,
-                        ha aprobado el examen, pronto podrá descargar su constancia
-                        de acreditación y de asistencia
+                        ha aprobado el examen, pronto recibirá su constancia
+                        de acreditación y de asistencia a su correo.
                     </p>
                     {
                         /*filteredDegrees.map((degree,i)=>(
