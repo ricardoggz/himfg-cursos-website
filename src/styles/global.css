@@ -7,9 +7,9 @@ html{
   scroll-behavior: smooth;
 }
 body{
-  background: url('../assets/fondo-body.jpg') no-repeat;
-  background-size: contain;
-  background-position: center;
+  background: url('../assets/fondo-banner.jpg') no-repeat;
+  background-size: cover;
+  background-position: top;
   color:var(--black-primary);
 }
 /*UI colors*/
