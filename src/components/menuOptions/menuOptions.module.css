@@ -1,7 +1,28 @@
+.menuOptions{
+    display:flex;
+    flex-direction: column;
+    gap:1.5rem;
+}
+.doctors{
+    display:grid;
+    gap:2rem;
+    grid-template-columns: repeat(5, 1fr);
+    max-width:70%;
+    margin: 0 auto;
+}
+.displayNone{
+    display:none;
+}
 .menuOption{
     align-items: center;
+    background: url('../../assets/fondo-card.jpg');
+    background-size: cover;
+    background-position:bottom;
     border:1px solid var(--golden-primary);
     border-radius: 10px;
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.516);
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.516);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.516);
     color:var(--black-secondary);
     display: flex;
     flex-direction: column;
@@ -43,4 +64,11 @@
 .menuOptionIcon{
     width:6rem;
     height:6rem;
+}
+.principalContainer{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    width:40%;
+    margin:0 auto;
 }

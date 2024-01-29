@@ -5,11 +5,34 @@ import { RiAdminLine, RiMicroscopeFill } from 'react-icons/ri'
 import { TbRibbonHealth } from 'react-icons/tb'
 import { GridContainer } from '../../components'
 import styles from './menuOptions.module.css'
-import { doctors } from './consts'
+import { doctors, principal } from './consts'
 
 export const MenuOptions = ()=>{
     return (
-       <GridContainer>
+       <>
+       <div className={styles.menuOptions}>
+        <div className={styles.principalContainer}>
+        <div></div>
+        <Link
+            href={`${principal.link}`}
+            className={`${styles.menuOption}`}
+            >
+            <figure className={styles.photo}>
+                <Image src ={principal.image}/>
+            </figure>
+            <span className={styles.menuOptionTitle}>
+                {principal.name}
+            </span>
+            <span>{principal.description}</span>
+            <figure>
+                <Image src ={principal.icon}
+                className={styles.menuOptionIcon}
+                />
+            </figure>
+        </Link>
+        <div></div>
+        </div>
+        <div className={`${styles.doctors}`}>
         {
             doctors.map((doctor, index)=>(
             <Link
@@ -32,6 +55,8 @@ export const MenuOptions = ()=>{
             </Link>
             ))
         }
-       </GridContainer>
+        </div>
+       </div>
+       </>
     )
 }

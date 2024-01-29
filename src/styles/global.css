@@ -7,7 +7,9 @@ html{
   scroll-behavior: smooth;
 }
 body{
-  background: var(--white-primary);
+  background: url('../assets/fondo-body.jpg') no-repeat;
+  background-size: contain;
+  background-position: center;
   color:var(--black-primary);
 }
 /*UI colors*/

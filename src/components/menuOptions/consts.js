@@ -12,14 +12,14 @@ import icon_4 from '../../assets/4.png'
 import icon_5 from '../../assets/5.png'
 import icon_6 from '../../assets/6.png'
 
+export const principal = {
+    image: direccion_general,
+    name: 'Dr. Adrián Chávez López',
+    description: 'Direccion General',
+    icon:icon_6,
+    link:'/general'
+}
 export const doctors = [
-    {
-        image: direccion_general,
-        name: 'Dr. Adrián Chávez López',
-        description: 'Direccion General',
-        icon:icon_6,
-        link:'/general'
-    },
     {
         image: direccion_medica,
         name: 'Dra. Mónica Villa Guillén',
