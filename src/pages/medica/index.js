@@ -1,24 +1,72 @@
 import { Page, Container } from '../../components'
+import styles from './medica.module.css'
+import Image from "next/image"
+import direccion_general from '../../assets/direccion-medica.png'
+import cirugia from '../../assets/cirugía.JPG'
+import consulta from '../../assets/consulta.jpg'
 
 const Medica = ()=>{
     return (
-        <Container>
-            <Page title='Dirección Médica'>
+        <>
+        <section className={styles.pageBanner}>
+        <div className={styles.pageBannerBackground}>
+          <div className={styles.pageTitleBanner}>
+            <h1>
+              Semblanza Dirección Médica
+            </h1>
+            <p>
+              El Hospital Infantil de México tiene 78 años brindando atención pediátrica especializada a la niñez más desprotegida de nuestro país,
+              su modelo de atención,
+              enseñanza e investigación,
+              han sido repetidos en los actuales Institutos Nacionales de Salud y otros hospitales del país y de América Latina.
+            </p>
+            <p>
+              Sus recursos provienen en su mayoría de las arcas federales y atenciones subrogadas, sin embargo, no es suficiente.
+            </p>
+            <p>
+              Nuestro Instituto es pionero de pediatría en el país en una gran cantidad de temas del desarrollo y de vanguardia como: vacunas, bacteriología, infectología, nutrición, nefrología, endocrinología, cirugía de corazón, trasplantes de corazón, riñón, etc.
+            </p>
+            <p>
+              Ha sido siempre un icono de la Pediatría Nacional, hemos publicado más de 300 libros; múltiples artículos científicos, capítulos de libros desde hace más de 17 años tenemos el "Programa Sigamos Aprendiendo en el Hospital" que apoya a los pacientes a continuar con sus estudios estando hospitalizados tenemos una historia larga en la formación de alumnos de todas las especialidades pediátricas, cuenta con 349 camas, 158 consultorios, 12 quirófanos y 3 terapias intensivas y el desarrollo de la investigación tanto clínica como básica forma parte de nuestra esencia.
+            </p>
+          </div>
+        </div>
+        </section>
+        <section className={styles.textsWrapper}>
+            <div className={styles.texts}>
+                <div>
+                    <Image src={consulta} />
+                </div>
+                <div className={styles.text}>
                 <p>
-                    La Dirección Médica coordina el trabajo de 5 subdirecciones: Asistencia Médica, Asistencia Quirúrgica, Recursos Auxiliares y de Diagnóstico, Atención Integral al Paciente y Pediatría Ambulatoria,
-                    cada una con sus departamentos y servicios.
-                    Nuestra misión es proporcionar atención médica de alta especialidad con los más altos estándares de seguridad y calidad.
-                    Para ello contamos con 225 médicos, 790 enfermeras, 63 trabajadoras sociales y 45 trabajadores de relaciones públicas.
-                    En cuanto a infraestructura tenemos 349 camas, 158 consultorios, 12 quirófanos.
-                    El Hospital cuenta con equipo sofisticado de alta tecnología entre los que destacan el tomógrafo de 3 teslas, resonancia magnética, gamacámara, acelerador lineal y el microscopio electrónico de transmisión de 120 kv.
+                    El Hospital Infantil de México tiene 78 años brindando atención pediátrica especializada a la niñez más desprotegida de nuestro país, su modelo de atención, enseñanza e investigación, han sido repetidos en los actuales Institutos Nacionales de Salud y otros hospitales del país y de América Latina.
+
+                    Sus recursos provienen en su mayoría de las arcas federales y atenciones subrogadas, sin embargo, no es suficiente.
+
+                    Nuestro Instituto es pionero de pediatría en el país en una gran cantidad de temas del desarrollo y de vanguardia como: vacunas, bacteriología, infectología, nutrición, nefrología, endocrinología, cirugía de corazón, trasplantes de corazón, riñón, etc.
+
+                    Ha sido siempre un icono de la Pediatría Nacional, hemos publicado más de 300 libros; múltiples artículos científicos, capítulos de libros desde hace más de 17 años tenemos el "Programa Sigamos Aprendiendo en el Hospital" que apoya a los pacientes a continuar con sus estudios estando hospitalizados tenemos una historia larga en la formación de alumnos de todas las especialidades pediátricas, cuenta con 349 camas, 158 consultorios, 12 quirófanos y 3 terapias intensivas y el desarrollo de la investigación tanto clínica como básica forma parte de nuestra esencia.
                 </p>
-                <p>
-                    Cada año otorgamos más de 200,000 consultas, 16,000 atenciones en urgencias, se realizan más de 5000 procedimientos quirúrgicos de alta especialidad, más de 11,000 anestesias, 1,000,000 de estudios de laboratorio y gabinete.
-                    Egresan anualmente de hospitalización alrededor de 7500 pacientes, uno de cada tres con padecimiento oncológico y uno de cada 5 con malformaciones congénitas.
-                    A pesar de lo grave y complejo de las enfermedades que se atienden, la mortalidad es solo de 2.3/100 egresos, la tasa de sobrevida por leucemia es del 85%, cuando en 2012 era del 64%. La percepción de satisfacción en calidad de atención se ubica en 95%.
-                </p>
-            </Page>
-        </Container>
+                </div>
+            </div>
+            <div className={styles.texts}>
+                <div className={styles.text}>
+                    <p>
+                    El Hospital Infantil de México tiene 78 años brindando atención pediátrica especializada a la niñez más desprotegida de nuestro país, su modelo de atención, enseñanza e investigación, han sido repetidos en los actuales Institutos Nacionales de Salud y otros hospitales del país y de América Latina.
+
+                    Sus recursos provienen en su mayoría de las arcas federales y atenciones subrogadas, sin embargo, no es suficiente.
+
+                    Nuestro Instituto es pionero de pediatría en el país en una gran cantidad de temas del desarrollo y de vanguardia como: vacunas, bacteriología, infectología, nutrición, nefrología, endocrinología, cirugía de corazón, trasplantes de corazón, riñón, etc.
+
+                    Ha sido siempre un icono de la Pediatría Nacional, hemos publicado más de 300 libros; múltiples artículos científicos, capítulos de libros desde hace más de 17 años tenemos el "Programa Sigamos Aprendiendo en el Hospital" que apoya a los pacientes a continuar con sus estudios estando hospitalizados tenemos una historia larga en la formación de alumnos de todas las especialidades pediátricas, cuenta con 349 camas, 158 consultorios, 12 quirófanos y 3 terapias intensivas y el desarrollo de la investigación tanto clínica como básica forma parte de nuestra esencia.
+                    </p>
+                </div>
+                <div>
+                    <Image src={cirugia} />
+                </div>
+            </div>
+        </section>
+        </>
     )
 }
 
