@@ -138,4 +138,19 @@
     .menu li{
         display:none;
     }
+    .text{
+        padding: 3rem;
+    }
+    .texts{
+        display:flex;
+        flex-direction: column-reverse;
+    }
+    .text p{
+        width:100%;
+        text-align: justify;
+        line-height: 2rem;
+    }
+    .texts img{
+        padding-bottom:1rem;
+    }
 }
