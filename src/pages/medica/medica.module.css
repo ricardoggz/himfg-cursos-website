@@ -81,8 +81,10 @@
     padding:3rem;
 }
 .texts{
+    align-items: center;
     display:grid;
     grid-template-columns: 1fr 1.8fr;
+    place-content: center;
     width:100%;
     margin: 0 auto;
 }
@@ -187,16 +189,21 @@
 
 @media (min-width:1200px) and (max-width:1400px){
     .text{
-        grid-template-columns: 1fr;
+        
         padding: 2rem;
     }
     .text p{
-        width:95%;
+        width:100%;
         margin: 0 auto;
         text-align: justify;
     }
     .pageTitleBanner{
-        width:80%;
-        margin-left:15%;
+        width:50%;
+        margin-left:48%;
+    }
+    .text_image img{
+        width:100%;
+        height:100%;
+        object-fit: cover;
     }
 }
