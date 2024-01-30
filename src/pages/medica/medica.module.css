@@ -62,9 +62,10 @@
 }
 .pageBannerBackground{
     width:100%;
-    height:70vh;
+    height:100%;
     background: rgb(152,152,152);
-    background: linear-gradient(90deg, rgba(152,152,152,0) 0%, rgba(255,255,255,0) 38%, rgba(7,46,0,0.999019676229867) 92%); 
+    background: linear-gradient(90deg, rgba(152,152,152,0) 0%, rgba(255,255,255,0) 38%, rgba(7,46,0,0.999019676229867) 92%);
+    padding: 6rem 0; 
 }
 .pageTitleBanner{
     text-align: justify;
@@ -123,4 +124,12 @@
     width:100%;
     color:var(--white-primary);
     padding:1rem 0;
+}
+
+@media (min-width:240px) and (max-width:880px){
+    .pageTitleBanner{
+        width:100%;
+        justify-content: center;
+        margin:0;
+    }
 }
