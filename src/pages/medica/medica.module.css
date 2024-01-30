@@ -111,3 +111,16 @@
 .textsWrapper{
     width:100%;
 }
+.menu{
+    width:100%;
+    background: #7f8c8d;
+    display:flex;
+    justify-content:space-between;
+    list-style: none;
+}
+.menu li{
+    text-align:center;
+    width:100%;
+    color:var(--white-primary);
+    padding:1rem 0;
+}

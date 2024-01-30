@@ -4,6 +4,7 @@ import Image from "next/image"
 import direccion_general from '../../assets/direccion-medica.png'
 import cirugia from '../../assets/cirugía.JPG'
 import consulta from '../../assets/consulta.jpg'
+import Link from 'next/link'
 
 const Medica = ()=>{
     return (
@@ -32,6 +33,13 @@ const Medica = ()=>{
           </div>
         </div>
         </section>
+        <ul className={styles.menu}>
+          <li>General</li>
+          <li>Enseñanza</li>
+          <li>Administración</li>
+          <li>Planeación</li>
+          <li>Investigación</li>
+        </ul>
         <section className={styles.textsWrapper}>
             <div className={styles.texts}>
                 <div>
