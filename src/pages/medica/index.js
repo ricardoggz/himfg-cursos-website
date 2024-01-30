@@ -2,7 +2,7 @@ import { Page, Container } from '../../components'
 import styles from './medica.module.css'
 import Image from "next/image"
 import direccion_general from '../../assets/direccion-medica.png'
-import cirugia from '../../assets/cirugía.JPG'
+import cirugia from '../../assets/cirugia.jpg'
 import consulta from '../../assets/consulta.jpg'
 import Link from 'next/link'
 import { IoIosArrowDropdown } from "react-icons/io";
