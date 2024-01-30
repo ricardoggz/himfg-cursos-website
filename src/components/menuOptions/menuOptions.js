@@ -12,7 +12,7 @@ export const MenuOptions = ()=>{
        <>
        <div className={styles.menuOptions}>
         <div className={styles.principalContainer}>
-        <div></div>
+        <div className={styles.display_none}></div>
         <Link
             href={`${principal.link}`}
             className={`${styles.menuOption}`}
@@ -30,7 +30,7 @@ export const MenuOptions = ()=>{
                 />
             </figure>
         </Link>
-        <div></div>
+        <div className={styles.display_none}></div>
         </div>
         <div className={`${styles.doctors}`}>
         {
