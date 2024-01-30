@@ -132,4 +132,10 @@
         justify-content: center;
         margin:0;
     }
+    .menu{
+        padding:1rem 0;
+    }
+    .menu li{
+        display:none;
+    }
 }
