@@ -125,17 +125,35 @@
     color:var(--white-primary);
     padding:1rem 0;
 }
-
+.menu_mobile{
+    display:none;
+}
 @media (min-width:240px) and (max-width:880px){
     .pageTitleBanner{
         width:100%;
         justify-content: center;
         margin:0;
     }
-    .menu{
-        padding:1rem 0;
+    .menu_mobile{
+        align-items: center;
+        width:100%;
+        background: #7f8c8d;
+        display:flex;
+        justify-content:flex-start;
+        padding:0.5rem;
     }
-    .menu li{
+    .menu_mobile button{
+        align-items: center;
+        display:flex;
+        justify-content: center;
+        gap:1rem;
+        background:none;
+        border:1px solid var(--white-primary);
+        color: var(--white-primary);
+        padding:0.5rem;
+        width:20%;
+    }
+    .menu{
         display:none;
     }
     .text{

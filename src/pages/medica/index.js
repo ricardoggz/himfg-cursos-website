@@ -5,6 +5,8 @@ import direccion_general from '../../assets/direccion-medica.png'
 import cirugia from '../../assets/cirugía.JPG'
 import consulta from '../../assets/consulta.jpg'
 import Link from 'next/link'
+import { IoIosArrowDropdown } from "react-icons/io";
+import { FaArrowAltCircleRight } from "react-icons/fa";
 
 const Medica = ()=>{
     return (
@@ -33,6 +35,13 @@ const Medica = ()=>{
           </div>
         </div>
         </section>
+        <div className={styles.menu_mobile}>
+          <button>
+            <span>
+              Menú
+            </span>
+          </button>
+        </div>
         <ul className={styles.menu}>
           <li>General</li>
           <li>Enseñanza</li>
