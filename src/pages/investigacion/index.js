@@ -7,6 +7,7 @@ const Investigacion = ()=>{
         <>
             <PageBanner
                 title='Semblanza Dirección Investigación'
+                banner='https://archivos.him.edu.mx/graficos/investigacion/2do-grafico.jpg'
             >
             <p>
                 El Hospital Infantil de México tiene 78 años brindando atención pediátrica especializada a la niñez más desprotegida de nuestro país, su modelo de atención, enseñanza e investigación, han sido repetidos en los actuales Institutos Nacionales de Salud y otros hospitales del país y de América Latina.
