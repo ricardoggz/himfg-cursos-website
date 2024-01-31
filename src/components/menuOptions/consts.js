@@ -14,7 +14,7 @@ import icon_6 from '../../assets/6.png'
 
 export const principal = {
     image: direccion_general,
-    name: 'Dr. Adrián Chávez López',
+    name: 'Adrián Chávez López',
     description: 'Direccion General',
     icon:icon_6,
     link:'/general'
@@ -22,35 +22,35 @@ export const principal = {
 export const doctors = [
     {
         image: direccion_medica,
-        name: 'Dra. Mónica Villa Guillén',
+        name: 'Mónica Villa Guillén',
         description: 'Dirección Médica',
         icon:icon_5,
         link:'/medica'
     },
     {
         image: direccion_ensenanza,
-        name: 'Dr. Sarbelio Moreno Espinosa',
+        name: 'Sarbelio Moreno Espinosa',
         description: 'Dirección de Enseñanza y Desarrollo Académico',
         icon:icon_2,
         link:'/ensenanza'
     },
     {
         image: direccion_investigacion,
-        name: 'Dr. Juan Garduño Espinosa',
+        name: 'Juan Garduño Espinosa',
         description: 'Dirección de Investigación',
         icon:icon_1,
         link:'/investigacion'
     },
     {
         image: direccion_administracion,
-        name: 'C.P. Cipriano Solís Badillo',
+        name: 'Cipriano Solís Badillo',
         description: 'Dirección de Administración',
         icon:icon_3,
         link:'/administracion'
     },
     {
         image: direccion_planeacion,
-        name: 'Dra. Miriam Guadalupe Herrera Segura',
+        name: 'Miriam Guadalupe Herrera Segura',
         description: 'Dirección de Planeación',
         icon:icon_4,
         link:'/planeacion'

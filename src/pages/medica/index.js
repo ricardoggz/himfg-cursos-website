@@ -85,7 +85,7 @@ const Medica = ()=>{
                     </div>
                 </div>
                 <div className={styles.text_image}>
-                    <Image src={consulta} />
+                    <Image src={cirugia} />
                 </div>
             </div>
         </section>

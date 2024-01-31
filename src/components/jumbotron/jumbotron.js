@@ -1,6 +1,7 @@
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick'
+import styles from './jumbotron.module.css'
 
 export const Jumbotron =()=>{
         const settings = {
@@ -12,7 +13,8 @@ export const Jumbotron =()=>{
             arrows: true,
         }
         const images = [
-            'https://framework-gb.cdn.gob.mx/landing/img/1362X312.png',
+            'https://archivos.him.edu.mx/Carrusel_01-okjpg.jpg',
+            'https://archivos.him.edu.mx/Carrusel-02-ok2.jpg',
             'https://framework-gb.cdn.gob.mx/landing/img/clanding2.png',
             'https://framework-gb.cdn.gob.mx/landing/img/clanding3.png'
         ]
@@ -20,11 +22,14 @@ export const Jumbotron =()=>{
             <Slider {...settings}>
                 {
                     images.map((image, index)=>(
-                        <div key={index}>
+                        <div
+                        key={index}
+                        className={styles.jumbotronWrapper}
+                        >
                             <img
                             src={image}
                             alt={`Imagen`}
-                            width="100%" height="100%"
+                            className={styles.jumbotronImage}
                             />
                         </div>
                     ))

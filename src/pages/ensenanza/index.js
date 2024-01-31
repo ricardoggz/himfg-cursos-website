@@ -1,8 +1,14 @@
 import Head from 'next/head'
+import Link from 'next/link'
+import Image from 'next/image'
 import {
   Container,
-  Page
+  Page,
+  Courses
 } from '../../components'
+import consulta from '../../assets/auditorio.jpg'
+import alumno from '../../assets/alumno.jpg'
+import styles from './ensenanza.module.css'
 
 const EducativeOfer = ()=>{
   const paths = [
@@ -11,61 +17,96 @@ const EducativeOfer = ()=>{
       name: 'Educación médica continua'
     },
   ]
-  return(
+  return (
     <>
-      <Head>
-        <title>HIMFG - Enseñanza</title>
-        <meta name="description" content="Departamento de enseñanza" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="https://res.cloudinary.com/diuxbqmn5/image/upload/v1677114497/himfg-logo_ewzx59.webp" />
-      </Head>
-      <Container>
-        <Page
-          title='Dirección de Enseñanza'
-          listMenu={paths}
-          textMenu='Consulta AQUÍ nuestros cursos'
-          route='ensenanza/offer'
-        >
-          <p>
-            La Dirección de Enseñanza y Desarrollo Académico es el área encargada
-            de establecer y supervisar la aplicación de programas académicos de
-            Pre y Posgrado avalados por la Universidad Nacional Autónoma de México
-            para la óptima formación académica de nuestros médicos en el área de
-            pediatría.
-          </p>
-          <p>
-            Tiene también la encomienda de instruir la selección de aspirantes a
-            las residencias médicas de las especialidades pediátricas, con la
-            finalidad de promover el intercambio académico con diversas
-            instituciones nacionales y extranjeras.
-          </p>
-          <p>
-            Una de las tareas sustantivas es evaluar los estudios de pregrado,
-            especialidades, subespecialidades, diplomados, cursos de educación
-            continua, con el fin de fomentar la actualización entre el personal de
-            salud.
-          </p>
-          <p>
-            Esta dirección tiene la facultad de emitir los reconocimientos,
-            diplomas, certificados, títulos con validez oficial por la UNAM, así
-            como otras instituciones educativas para titulación de los
-            profesionales de salud.
-          </p>
-          <p>
-            En Enseñanza y Desarrollo Académico se realizan los mecanismos que
-            permiten evaluar la calidad de los programas educativos y precisar su
-            impacto en la prestación de los servicios en el Hospital.
-          </p>
-          <p>
-            La dirección tiene la labor de vigilar la participación en la docencia
-            de los médicos, investigadores, enfermeras y otros profesionistas del
-            hospital, así como facilitar la información bibliográfica actualizada
-            durante el desarrollo de protocolos de investigación en el proceso de
-            enseñanza-aprendizaje de médicos residentes, médicos adscritos e
-            investigadores del hospital.
-          </p>
-        </Page>
-      </Container>
+    <section className={styles.pageBanner}>
+    <div className={styles.pageBannerBackground}>
+      <div className={styles.pageTitleBanner}>
+        <h1>
+          Semblanza Dirección Enseñanza
+        </h1>
+        <p>
+          El Hospital Infantil de México tiene 78 años brindando atención pediátrica especializada a la niñez más desprotegida de nuestro país,
+          su modelo de atención,
+          enseñanza e investigación,
+          han sido repetidos en los actuales Institutos Nacionales de Salud y otros hospitales del país y de América Latina.
+        </p>
+        <p>
+          Sus recursos provienen en su mayoría de las arcas federales y atenciones subrogadas, sin embargo, no es suficiente.
+        </p>
+        <p>
+          Nuestro Instituto es pionero de pediatría en el país en una gran cantidad de temas del desarrollo y de vanguardia como: vacunas, bacteriología, infectología, nutrición, nefrología, endocrinología, cirugía de corazón, trasplantes de corazón, riñón, etc.
+        </p>
+        <p>
+          Ha sido siempre un icono de la Pediatría Nacional, hemos publicado más de 300 libros; múltiples artículos científicos, capítulos de libros desde hace más de 17 años tenemos el "Programa Sigamos Aprendiendo en el Hospital" que apoya a los pacientes a continuar con sus estudios estando hospitalizados tenemos una historia larga en la formación de alumnos de todas las especialidades pediátricas, cuenta con 349 camas, 158 consultorios, 12 quirófanos y 3 terapias intensivas y el desarrollo de la investigación tanto clínica como básica forma parte de nuestra esencia.
+        </p>
+      </div>
+    </div>
+    </section>
+    <div className={styles.menu_mobile}>
+      <button>
+        <span>
+          Menú
+        </span>
+      </button>
+    </div>
+    <ul className={styles.menu}>
+      <li>General</li>
+      <li>
+        <select>
+          <option value='/ensenanza/offer'>
+            Enseñanza
+          </option>
+          <option>Pre y posgrado</option>
+          <option>Educación médica continua</option>
+          <option>Comunicación social y CEMESATEL</option>
+          <option>Hemerobiblioteca</option>
+        </select>
+      </li>
+      <li>Administración</li>
+      <li>Planeación</li>
+      <li>Investigación</li>
+    </ul>
+    <section className={styles.textsWrapper}>
+        <div className={styles.texts}>
+            <div className={styles.text_image}>
+                <Image src={consulta} />
+            </div>
+            <div className={styles.text}>
+              <div>
+              <p>
+                El Hospital Infantil de México tiene 78 años brindando atención pediátrica especializada a la niñez más desprotegida de nuestro país, su modelo de atención, enseñanza e investigación, han sido repetidos en los actuales Institutos Nacionales de Salud y otros hospitales del país y de América Latina.
+
+                Sus recursos provienen en su mayoría de las arcas federales y atenciones subrogadas, sin embargo, no es suficiente.
+
+                Nuestro Instituto es pionero de pediatría en el país en una gran cantidad de temas del desarrollo y de vanguardia como: vacunas, bacteriología, infectología, nutrición, nefrología, endocrinología, cirugía de corazón, trasplantes de corazón, riñón, etc.
+
+                Ha sido siempre un icono de la Pediatría Nacional, hemos publicado más de 300 libros; múltiples artículos científicos, capítulos de libros desde hace más de 17 años tenemos el "Programa Sigamos Aprendiendo en el Hospital" que apoya a los pacientes a continuar con sus estudios estando hospitalizados tenemos una historia larga en la formación de alumnos de todas las especialidades pediátricas, cuenta con 349 camas, 158 consultorios, 12 quirófanos y 3 terapias intensivas y el desarrollo de la investigación tanto clínica como básica forma parte de nuestra esencia.
+              </p>
+              </div>
+              <div></div>
+            </div>
+        </div>
+        <div className={styles.texts}>
+            <div className={styles.text}>
+            <div></div>
+                <div>
+                <p>
+                El Hospital Infantil de México tiene 78 años brindando atención pediátrica especializada a la niñez más desprotegida de nuestro país, su modelo de atención, enseñanza e investigación, han sido repetidos en los actuales Institutos Nacionales de Salud y otros hospitales del país y de América Latina.
+
+                Sus recursos provienen en su mayoría de las arcas federales y atenciones subrogadas, sin embargo, no es suficiente.
+
+                Nuestro Instituto es pionero de pediatría en el país en una gran cantidad de temas del desarrollo y de vanguardia como: vacunas, bacteriología, infectología, nutrición, nefrología, endocrinología, cirugía de corazón, trasplantes de corazón, riñón, etc.
+
+                Ha sido siempre un icono de la Pediatría Nacional, hemos publicado más de 300 libros; múltiples artículos científicos, capítulos de libros desde hace más de 17 años tenemos el "Programa Sigamos Aprendiendo en el Hospital" que apoya a los pacientes a continuar con sus estudios estando hospitalizados tenemos una historia larga en la formación de alumnos de todas las especialidades pediátricas, cuenta con 349 camas, 158 consultorios, 12 quirófanos y 3 terapias intensivas y el desarrollo de la investigación tanto clínica como básica forma parte de nuestra esencia.
+                </p>
+                </div>
+            </div>
+            <div className={styles.text_image}>
+                <Image src={alumno} />
+            </div>
+        </div>
+    </section>
     </>
   )
 }

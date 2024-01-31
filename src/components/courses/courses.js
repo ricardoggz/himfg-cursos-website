@@ -14,10 +14,10 @@ export const Courses = ()=>{
         url: `${process.env.BASE_URL_API}api/courses/all-courses`
     })
     let filteredCourses;
-    if(data) filteredCourses = data.data.filter((course)=> course.month_id === selectedMonth.id)
+    if(data) filteredCourses = data.data.filter((course)=> course.month_id === 1)
     return (
         <section className={styles.coursesWrapper}>
-                <ul className={`${styles.monthBar} flexContainer boxShadow`}>
+                {/*<ul className={`${styles.monthBar} flexContainer boxShadow`}>
                     {months.map((month)=>(
                         <li key={month.id} onClick={()=> setSelectedMonth(month)}>
                             <a href={`#cursos-2023-${selectedMonth.name}`}>
@@ -25,10 +25,17 @@ export const Courses = ()=>{
                             </a>
                         </li>
                     ))}
-                </ul>
+                    </ul>*/}
             {!loading?
             <div id={`cursos-2023-${selectedMonth.name}`}>
-                <Title>{selectedMonth.name}</Title>
+                <center>
+                    <h3>Oferta educativa</h3>
+                </center>
+                <center>
+                    <h4>(Febrero)</h4>
+                </center>
+                <br />
+                <br />
                 <GridContainer>
                 {
                     filteredCourses.map((course)=>{

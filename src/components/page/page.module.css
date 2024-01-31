@@ -62,9 +62,10 @@
 }
 .pageBannerBackground{
     width:100%;
-    height:50vh;
+    height:100%;
     background: rgb(152,152,152);
-    background: linear-gradient(90deg, rgba(152,152,152,0) 0%, rgba(255,255,255,0) 38%, rgba(7,46,0,0.999019676229867) 92%); 
+    background: linear-gradient(90deg, rgba(152,152,152,0) 0%, rgba(255,255,255,0) 38%, rgba(7,46,0,0.999019676229867) 92%);
+    padding: 6rem 0; 
 }
 .pageTitleBanner{
     text-align: justify;
