@@ -13,7 +13,7 @@ export const TextsPage = ({
         <section className={styles.textsWrapper}>
             <div className={styles.texts}>
                 <div className={styles.text_image}>
-                    <Image src={firstImage} />
+                    <img src={firstImage} />
                 </div>
                 <div className={styles.text}>
                   <div>
@@ -34,7 +34,7 @@ export const TextsPage = ({
                     </div>
                 </div>
                 <div className={styles.text_image}>
-                    <Image src={secondImage} />
+                    <img src={secondImage} />
                 </div>
             </div>
         </section>
