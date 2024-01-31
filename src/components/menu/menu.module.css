@@ -1,0 +1,41 @@
+.menu {
+    display: flex;
+    justify-content: space-between;
+    background-color: #7f8c8d;
+    color: white;
+  }
+  
+  .menu_item {
+    width:100%;
+    position: relative;
+    cursor: pointer;
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  .submenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #7f8c8d;;
+    padding: 10px;
+    display: none;
+    width:100%;
+    text-align: start;
+  }
+  
+  .menu_item:hover .submenu {
+    display: block;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .sub_menu_item {
+    color: white;
+    padding: 5px 0;
+  }
+  
+  .sub_menu_item:hover {
+    background-color: #697576;
+  }
+  

@@ -4,7 +4,8 @@ import Image from 'next/image'
 import {
   Container,
   Page,
-  Courses
+  Courses, 
+  Menu
 } from '../../components'
 import consulta from '../../assets/auditorio.jpg'
 import alumno from '../../assets/alumno.jpg'
@@ -50,23 +51,7 @@ const EducativeOfer = ()=>{
         </span>
       </button>
     </div>
-    <ul className={styles.menu}>
-      <li>General</li>
-      <li>
-        <select>
-          <option value='/ensenanza/offer'>
-            Enseñanza
-          </option>
-          <option>Pre y posgrado</option>
-          <option>Educación médica continua</option>
-          <option>Comunicación social y CEMESATEL</option>
-          <option>Hemerobiblioteca</option>
-        </select>
-      </li>
-      <li>Administración</li>
-      <li>Planeación</li>
-      <li>Investigación</li>
-    </ul>
+    <Menu />
     <section className={styles.textsWrapper}>
         <div className={styles.texts}>
             <div className={styles.text_image}>

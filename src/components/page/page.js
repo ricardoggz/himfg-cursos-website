@@ -2,7 +2,7 @@ import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { IoIosArrowDown } from "react-icons/io"
-import { Title } from '../../components'
+import { Title, Menu } from '../../components'
 import direccion_general from '../../assets/direccion-general.png'
 import styles from "./page.module.css"
 
@@ -35,6 +35,7 @@ export const Page = ({children, title, listMenu, textMenu, route}) => {
           </div>
         </div>
       </section>
+      <Menu />
       <div className={styles.texts}>
         <figure>
           <Image src={direccion_general} />

@@ -1,4 +1,4 @@
-import { Page, Container } from '../../components'
+import { Page, Container, Menu } from '../../components'
 import styles from './medica.module.css'
 import Image from "next/image"
 import direccion_general from '../../assets/direccion-medica.png'
@@ -42,13 +42,14 @@ const Medica = ()=>{
             </span>
           </button>
         </div>
-        <ul className={styles.menu}>
+        <Menu />
+        {/*<ul className={styles.menu}>
           <li>General</li>
           <li>Enseñanza</li>
           <li>Administración</li>
           <li>Planeación</li>
           <li>Investigación</li>
-        </ul>
+          </ul>*/}
         <section className={styles.textsWrapper}>
             <div className={styles.texts}>
                 <div className={styles.text_image}>

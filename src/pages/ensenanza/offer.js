@@ -1,6 +1,6 @@
 import { useContext, useEffect } from 'react'
 import {CourseContext} from '@/contexts'
-import { Courses, Container, Title } from '../../components'
+import { Courses, Container, Title, Menu } from '../../components'
 import styles from './offer.module.css'
 
 const CoursesList = ()=>{
@@ -34,28 +34,7 @@ const CoursesList = ()=>{
           </div>
         </div>
         </section>
-        <div className={styles.menu_mobile}>
-          <button>
-            <span>
-              Menú
-            </span>
-          </button>
-        </div>
-        <ul className={styles.menu}>
-          <li>General</li>
-          <li>
-            <select>
-              <option>Enseñanza</option>
-              <option>Pre y posgrado</option>
-              <option>Educación médica continua</option>
-              <option>Comunicación social y CEMESATEL</option>
-              <option>Hemerobiblioteca</option>
-            </select>
-          </li>
-          <li>Administración</li>
-          <li>Planeación</li>
-          <li>Investigación</li>
-        </ul>
+        <Menu />
         <Container>
           <Courses />
         </Container>
