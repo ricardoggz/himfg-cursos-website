@@ -55,7 +55,7 @@ function Menu() {
       />
       <MenuItem
       title="Investigación"
-      href={`/investigacion`}
+      href='/direccion/investigacion'
       />
     </div>
   );
