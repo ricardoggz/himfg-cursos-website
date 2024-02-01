@@ -61,6 +61,10 @@ function Menu() {
                 title="Departamento de urgencias"
                 href='/ensenanza'
               />
+              <SubMenuItem
+                title="Departamento de infectología"
+                href='/ensenanza'
+              />
             </SubMenu>
           </SubMenuItemWithSubMenu>
         </SubMenu>
