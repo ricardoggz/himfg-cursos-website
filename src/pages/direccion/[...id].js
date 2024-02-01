@@ -1,12 +1,62 @@
+import { useState, useEffect } from "react"
+import { useRouter } from "next/router"
+import axios from "axios"
+import { PageBanner, TextsPage } from "@/components"
+
+export default function Direction(){
+    const id = useRouter()
+    console.log(id)
+    let filteredPage
+    const [page, setPage] = useState(null)
+    const getLinks = async()=>{
+        try {
+        const pages = await axios.get(`${process.env.BASE_URL_API}api/directions/all-directions`)
+        if(pages.data){
+            filteredPage = pages.data.filter((page)=> page.page_url === id.query.id[0])
+            setPage(filteredPage)
+        }
+        } catch (error) {
+            console.log(error)
+        }
+    }
+    console.log(page)
+    useEffect(()=>{
+        getLinks()
+    },[])
+    return (
+        <>
+            {
+                !page ? null
+                :
+                page.map((page)=>(
+                    <>
+                        <PageBanner
+                        title={page.page_title}
+                        banner={page.page_banner_image}
+                        >
+                        <p>{page.page_banner_content}</p>
+                        </PageBanner>
+                        <TextsPage
+                            firstText={page.page_first_content}
+                            secondText={page.page_second_content}
+                            firstImage={page.page_first_image}
+                            secondImage={page.page_second_image}
+                        />
+                    </>
+                ))
+            }
+        </>
+    )
+}
+
 export const getStaticPaths = async()=>{
-    const response = await fetch(`${process.env.BASE_URL_API}api/courses/all-courses`)
+    const response = await fetch(`${process.env.BASE_URL_API}api/directions/all-directions`)
     const json = await response.json()
-    const paths = json.filter((course)=>course.course_vimeo_folder)
-    .map((course)=>{
+    const paths = json.map((direction)=>{
         return{
             params:{
                  id: [
-                    `${course.course_url}`,
+                    `${direction.page_url}`,
                 ],
             }
         }

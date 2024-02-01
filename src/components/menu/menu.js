@@ -1,8 +1,21 @@
-import React, { useState } from 'react'
-import Link from 'next/link';
+import { useEffect, useState } from 'react'
+import axios from 'axios'
+import Link from 'next/link'
 import styles from './menu.module.css'
 
 function Menu() {
+  const [links, setLinks] = useState(null)
+  const getLinks = async()=>{
+    try {
+      const links = await axios.get(`${process.env.BASE_URL_API}api/directions/all-directions`)
+      setLinks(links.data[0])
+    } catch (error) {
+      console.log(error)
+    }
+  }
+  useEffect(()=>{
+    getLinks()
+  },[])
   return (
     <div className={styles.menu}>
       <MenuItem
@@ -42,7 +55,7 @@ function Menu() {
       />
       <MenuItem
       title="Investigación"
-      href='/investigacion'
+      href={`/investigacion`}
       />
     </div>
   );
