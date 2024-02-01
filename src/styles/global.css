@@ -24,6 +24,7 @@ body{
   --blue-primary:#165198;
   --blue-secondary:#35A1C6;
   --golden-primary:#dac5a0;
+  --banner-responsive:#0000003f;
 }
 /*UI flex-container*/
 .flexContainer{
