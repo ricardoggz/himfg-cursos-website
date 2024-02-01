@@ -22,6 +22,10 @@ function Menu() {
         title="General"
         href='/general'
       />
+      <MenuItem
+        title="Medica"
+        href='/direccion/medica'
+      />
       <MenuItemWithSubMenu
         title="Enseñanza"
         href='/ensenanza'

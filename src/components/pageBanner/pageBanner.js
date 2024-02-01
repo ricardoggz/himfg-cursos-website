@@ -7,14 +7,14 @@ export const PageBanner = ({title, children, banner}) => {
       backgroundRepeat: 'no-repeat',
       backgroundSize: 'cover',
       backgroundPosition: 'center',
-      height: '100%',
+      height: '50vh',
       width: '100%'
     }
     const pageBannerBackground = {
       width:'100%',
       height:'100%',
       background: 'rgb(152,152,152)',
-      background: 'linear-gradient(90deg, rgba(152,152,152,0) 0%, rgba(255,255,255,0) 38%, rgba(7,46,0,0.999019676229867) 92%)',
+      background: 'linear-gradient(90deg, rgba(254,254,254,0) 0%, rgba(255,255,255,0) 38%, rgba(7,46,0,0.999019676229867) 92%)',
       padding: '3rem 0', 
     }
     const pageTitleBanner={
@@ -31,6 +31,10 @@ export const PageBanner = ({title, children, banner}) => {
       padding:'3rem',
       lineHeight:'2rem',
     }
+    const pageBannerText={
+      overflowX: 'hidden',
+      overflowY: 'scroll',
+    }
     return (
       <>
         <section
@@ -44,7 +48,9 @@ export const PageBanner = ({title, children, banner}) => {
               style={pageTitleBanner}
             >
               <h1>{title}</h1>
-              {children}
+              <p style={pageBannerText}>
+                {children}
+              </p>
             </div>
           </div>
         </section>
