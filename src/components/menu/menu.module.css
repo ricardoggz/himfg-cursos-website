@@ -37,4 +37,10 @@
   .sub_menu_item:hover {
     background-color: #697576;
   }
+  .submenu .submenu {
+    top: 0;
+    left: 100%; /* Aparecen a la derecha del elemento del submenú principal */
+    background-color: #7f8c8d;
+    padding: 10px;
+  }
   
