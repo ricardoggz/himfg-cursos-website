@@ -38,13 +38,19 @@ export const PageBanner = ({title, children, banner}) => {
         margin:0;
         padding:1rem;
       }
+      @media (min-width:1200px) and (max-width:1400px){
+        width:50%;
+        align-items:center;
+        margin-left:40%;
+        padding:1rem;
+      }
     `
     const pageBannerText=css`
       text-align:justify;
       overflow-x: hidden;
       overflow-y: scroll;
       
-      @media (min-width:240px) and (max-width:880px){
+      @media (min-width:240px) and (max-width:1400px){
         padding:1rem;
         background:var(--banner-responsive);
       }
