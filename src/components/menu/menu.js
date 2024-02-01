@@ -18,14 +18,54 @@ function Menu() {
   },[])
   return (
     <div className={styles.menu}>
+      {/*general*/}
       <MenuItem
         title="General"
         href='/general'
       />
-      <MenuItem
+      {/*médica*/}
+      <MenuItemWithSubMenu
         title="Medica"
         href='/direccion/medica'
-      />
+      >
+        <SubMenu>
+          {/*Subdirección de pediatría ambulatoria*/}
+          <SubMenuItemWithSubMenu
+            title='Subdirección de pediatría ambulatoria'
+          >
+            <SubMenu>
+            <SubMenuItem
+              title="Departamento de genética"
+              href='/ensenanza'
+            />
+            <SubMenuItem
+              title="Departamento de psiquiatríay medicina del adolescente"
+              href='/ensenanza'
+            />
+            <SubMenuItem
+              title="Departamento de rehabilitación"
+              href='/ensenanza'
+            />
+            <SubMenuItem
+              title="Departamento de audiología y foniatría"
+              href='/ensenanza'
+            />
+            </SubMenu>
+          </SubMenuItemWithSubMenu>
+          {/*Subdirección de asistencia medica*/}
+          <SubMenuItemWithSubMenu
+            title='Subdirección de asistencia medica'
+          >
+            <SubMenu>
+              <SubMenuItem
+                title="Departamento de urgencias"
+                href='/ensenanza'
+              />
+            </SubMenu>
+          </SubMenuItemWithSubMenu>
+        </SubMenu>
+      </MenuItemWithSubMenu>
+      {/**/}
       <MenuItemWithSubMenu
         title="Enseñanza"
         href='/ensenanza'
@@ -49,14 +89,17 @@ function Menu() {
           />
         </SubMenu>
       </MenuItemWithSubMenu>
+      {/**/}
       <MenuItem
         title="Administración"
         href='/administracion'
       />
+      {/**/}
       <MenuItem
         title="Planeación"
         href='/planeacion'
       />
+      {/**/}
       <MenuItem
       title="Investigación"
       href='/direccion/investigacion'
@@ -117,6 +160,29 @@ function SubMenuItem({ title, href }) {
       </Link>
     </>
   )
+}
+
+function SubMenuItemWithSubMenu({ title, children }) {
+  const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
+
+  const handleMouseEnter = () => {
+    setIsSubMenuOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsSubMenuOpen(false);
+  };
+
+  return (
+    <div
+      className={styles.sub_menu_item}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+      <span>{title}</span>
+      {isSubMenuOpen && children}
+    </div>
+  );
 }
 
 export {Menu};
