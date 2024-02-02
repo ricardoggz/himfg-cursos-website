@@ -1,18 +1,28 @@
-import { Page, Container } from '../../components'
-
+import { PageBanner, TextsPage } from "@/components"
+import { medica } from "./consts"
 const Planeacion = ()=>{
     return (
-        <Container>
-            <Page title='Dirección de Planeación'>
-                <p>
-                    La Dirección de Planeación está integrada por la Subdirección de Seguimiento Programático y Diseño
-                    Organizacional de quien dependen:
-                    el Departamento de Desempeño y Organización Institucional,
-                    el Departamento de Sistemas Informáticos y el Departamento de Bioestadística y Archivo Clínico.
-                    Dependen directamente de la Dirección, la Unidad de Transparencia y el Servicio de Calidad. 
-                </p>
-            </Page>
-        </Container>
+      <>
+        {
+          medica.map((page)=>(
+            <>
+              <PageBanner
+              title={page.page_title}
+              banner={page.page_banner_image}
+              bannerResponsive={page.banner_image_responsive}
+              >
+              <p>{page.page_banner_content}</p>
+              </PageBanner>
+              <TextsPage
+                  firstText={page.page_first_content}
+                  secondText={page.page_second_content}
+                  firstImage={page.page_first_image}
+                  secondImage={page.page_second_image}
+              />
+            </>
+          ))
+        }
+      </>
     )
 }
 
