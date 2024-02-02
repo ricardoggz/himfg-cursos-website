@@ -20,35 +20,35 @@ function Menu() {
     <div className={styles.menu}>
       {/*general*/}
       <MenuItem
-        title="Dicrección General"
+        title="Dirección General"
         href='/general'
       />
       {/*médica*/}
       <MenuItemWithSubMenu
-        title="Dirección Medica"
+        title="Dirección Médica"
         href='/medica'
       >
         <SubMenu>
           {/*Subdirección de pediatría ambulatoria*/}
           <SubMenuItemWithSubMenu
-            title='Subdirección de pediatría ambulatoria'
+            title='Subdirección de Pediatría Ambulatoria'
             href='/medica'
           >
             <SubMenu>
             <SubMenuItem
-              title="Departamento de genética"
+              title="Departamento de Genética"
               href='/medica'
             />
             <SubMenuItem
-              title="Departamento de psiquiatríay medicina del adolescente"
+              title="Departamento de Psiquiatría y Medicina del Adolescente"
               href='/medica'
             />
             <SubMenuItem
-              title="Departamento de rehabilitación"
+              title="Departamento de Rehabilitación"
               href='/medica'
             />
             <SubMenuItem
-              title="Departamento de audiología y foniatría"
+              title="Departamento de Audiología y Foniatría"
               href='/medica'
             />
             </SubMenu>
@@ -115,7 +115,7 @@ function Menu() {
           </SubMenuItemWithSubMenu>
           {/*Subdirección de asistencia quirúrgica*/}
           <SubMenuItemWithSubMenu
-            title='Subdirección de Asistencia Médica'
+            title='Subdirección de Asistencia Quirúrgica'
             href='/medica'
           >
             <SubMenu>
@@ -136,7 +136,7 @@ function Menu() {
                 href='/medica'
               />
               <SubMenuItem
-                title="Departamento de Cirgugía Cardiovascular, Tórax y Endoscopía"
+                title="Departamento de Cirugía Cardiovascular, Tórax y Endoscopía"
                 href='/medica'
               />
               <SubMenuItem
@@ -151,7 +151,7 @@ function Menu() {
           </SubMenuItemWithSubMenu>
           {/*Subdirección de servicios auxiliares y diagnostico*/}
           <SubMenuItemWithSubMenu
-            title='Subdirección de Servicios Auxiliares de Diagnostico'
+            title='Subdirección de Servicios Auxiliares de Diagnóstico'
             href='/medica'
           >
             <SubMenu>
@@ -234,11 +234,11 @@ function Menu() {
           >
           <SubMenu>
           <SubMenuItem
-            title="Departmamento de Administración de Control y Gestión a la Investigación"
+            title="Departamento de Administración de Control y Gestión a la Investigación"
             href='/investigacion'
           />
           <SubMenuItem
-            title="Departamento Auxiliar Adminisrativo de Proyectos de Investigación"
+            title="Departamento Auxiliar Administrativo de Proyectos de Investigación"
             href='/investigacion'
           />
           </SubMenu>
@@ -246,15 +246,140 @@ function Menu() {
         </SubMenu>
       </MenuItemWithSubMenu>
       {/*Administración*/}
-      <MenuItem
+      <MenuItemWithSubMenu
         title="Dirección de Administración"
         href='/administracion'
-      />
+      >
+        <SubMenu>
+          {/*Subdirección de recursos humanos*/}
+          <SubMenuItemWithSubMenu
+            title="Subdirección de Recursos Humanos"
+            href='/administracion'
+          >
+          <SubMenu>
+          <SubMenuItem
+            title="Departamento de Selección, Contratación y Seguimiento de Capital Humano"
+            href='/administracion'
+          />
+          <SubMenuItem
+            title="Departamento de Sueldos"
+            href='/administracion'
+          />
+          <SubMenuItem
+            title="Departamento de Atención y Desarrollo de Capital Humano"
+            href='/administracion'
+          />
+          </SubMenu>
+          </SubMenuItemWithSubMenu>
+          {/*Subdirección de recursos materiales*/}
+          <SubMenuItemWithSubMenu
+            title="Subdirección de Recursos Materiales"
+            href='/administracion'
+          >
+          <SubMenu>
+          <SubMenuItem
+            title="Departamento de Compras Gubernamentales Materiales"
+            href='/administracion'
+          />
+          <SubMenuItem
+            title="Departamento de Compras Gubernamentales Farmacéuticas"
+            href='/administracion'
+          />
+          <SubMenuItem
+            title="Departamento de Almacenes"
+            href='/administracion'
+          />
+          <SubMenuItem
+            title="Departamento de Inventario y Activo Fijo"
+            href='/administracion'
+          />
+          </SubMenu>
+          </SubMenuItemWithSubMenu>
+          {/*Subdirección de mantenimiento*/}
+          <SubMenuItemWithSubMenu
+            title="Subdirección de Mantenimiento"
+            href='/administracion'
+          >
+          <SubMenu>
+          <SubMenuItem
+            title="Departamento de Servicios Generales"
+            href='/administracion'
+          />
+          <SubMenuItem
+            title="Departamento de Mantenimiento"
+            href='/administracion'
+          />
+          <SubMenuItem
+            title="Departamento de Ingeniería Biomédica"
+            href='/administracion'
+          />
+          <SubMenuItem
+            title="Departamento de Obra Pública"
+            href='/administracion'
+          />
+          <SubMenuItem
+            title="Departamento de Protección Civil"
+            href='/administracion'
+          />
+          </SubMenu>
+          </SubMenuItemWithSubMenu>
+          {/*Subdirección de recursos financieros*/}
+          <SubMenuItemWithSubMenu
+            title="Subdirección de Recursos Financieros"
+            href='/administracion'
+          >
+          <SubMenu>
+          <SubMenuItem
+            title="Departamento de Tesorería"
+            href='/administracion'
+          />
+          <SubMenuItem
+            title="Departamento de Contabilidad"
+            href='/administracion'
+          />
+          <SubMenuItem
+            title="Departamento de Presupuesto"
+            href='/administracion'
+          />
+          <SubMenuItem
+            title="Departamento de Control y Análisis Económico"
+            href='/administracion'
+          />
+          </SubMenu>
+          </SubMenuItemWithSubMenu>
+        </SubMenu>
+      </MenuItemWithSubMenu>
       {/*Planeación*/}
-      <MenuItem
+      <MenuItemWithSubMenu
         title="Dirección de Planeación"
         href='/planeacion'
-      />
+      >
+        <SubMenu>
+          <SubMenuItemWithSubMenu
+            title="Subdirección de Seguimiento Programático y Diseño Organizacional"
+            href='/ensenanza'
+          >
+          <SubMenu>
+          <SubMenuItem
+            title="Departmamento de Seguimiento Programático y Organización Institucional"
+            href='/ensenanza'
+          />
+          <SubMenuItem
+            title="Departamento de Tecnologías de la Información y Comunicaciones"
+            href='/ensenanza/ofer'
+          />
+          <SubMenuItem
+            title="Departamento de Comunicación Social y CEMESATEL"
+            href='/ensenanza'
+          />
+          <SubMenuItem
+            title="Departamento de Bioestadística y Archivo Clínico"
+            href='/ensenanza'
+          />
+          </SubMenu>
+          </SubMenuItemWithSubMenu>
+        </SubMenu>
+      </MenuItemWithSubMenu>
     </div>
   );
 }
