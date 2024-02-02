@@ -133,7 +133,15 @@ function Menu() {
                 href='/ensenanza'
               />
               <SubMenuItem
-                title="Departamento de Cirgugía Cardiovascular"
+                title="Departamento de Cirgugía Cardiovascular, Tórax y Endoscopía"
+                href='/ensenanza'
+              />
+              <SubMenuItem
+                title="Departamento de Anestesia y Algología"
+                href='/ensenanza'
+              />
+              <SubMenuItem
+                title="Departamento de Estomatología"
                 href='/ensenanza'
               />
             </SubMenu>
