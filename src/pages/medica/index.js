@@ -1,5 +1,5 @@
 import { PageBanner, TextsPage } from "@/components"
-import { medica } from "./consts"
+import { medica } from '../../consts'
 const Medica = ()=>{
     return (
       <>
