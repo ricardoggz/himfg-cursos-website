@@ -2,14 +2,17 @@ import { css } from '@emotion/css'
 import { Menu } from '../../components'
 
 
-export const PageBanner = ({title, children, banner}) => {
+export const PageBanner = ({title, children, banner, banner_responsive}) => {
     const pageBanner=css`
       background:url(${banner});
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
-      height: 50vh;
+      height: 100vh;
       width: 100%;
+      @media (max-width:600px){
+        background: url(${banner_responsive});
+      }
     `
     const pageBannerBackground=css`
       width:100%;

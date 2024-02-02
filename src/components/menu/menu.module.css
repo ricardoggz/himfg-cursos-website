@@ -6,6 +6,7 @@
   }
   
   .menu_item {
+    color: white;
     width:100%;
     position: relative;
     cursor: pointer;

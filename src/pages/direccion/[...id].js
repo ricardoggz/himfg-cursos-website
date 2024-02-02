@@ -33,6 +33,7 @@ export default function Direction(){
                         <PageBanner
                         title={page.page_title}
                         banner={page.page_banner_image}
+                        banner_responsive={page.banner_image_responsive}
                         >
                         <p>{page.page_banner_content}</p>
                         </PageBanner>

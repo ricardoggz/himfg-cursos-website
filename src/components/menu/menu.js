@@ -146,6 +146,44 @@ function Menu() {
               />
             </SubMenu>
           </SubMenuItemWithSubMenu>
+          {/*Subdirección de servicios auxiliares y diagnostico*/}
+          <SubMenuItemWithSubMenu
+            title='Subdirección de Servicios Auxiliares de Diagnostico'
+          >
+            <SubMenu>
+              <SubMenuItem
+                title="Departamento de Imagenología"
+                href='/ensenanza'
+              />
+              <SubMenuItem
+                title="Departamento de Laboratorio Clínico"
+                href='/ensenanza'
+              />
+              <SubMenuItem
+                title="Departamento de Patología Clínica y Experimental"
+                href='/ensenanza'
+              />
+            </SubMenu>
+          </SubMenuItemWithSubMenu>
+          {/*Subdirección de atención integral al paciente*/}
+          <SubMenuItemWithSubMenu
+            title='Subdirección de Atención Integral al Paciente'
+          >
+            <SubMenu>
+              <SubMenuItem
+                title="Departamento de Enfermería"
+                href='/ensenanza'
+              />
+              <SubMenuItem
+                title="Departamento de Trabajo Social"
+                href='/ensenanza'
+              />
+              <SubMenuItem
+                title="Departamento de Relaciones Públicas"
+                href='/ensenanza'
+              />
+            </SubMenu>
+          </SubMenuItemWithSubMenu>
         </SubMenu>
       </MenuItemWithSubMenu>
       {/*Enseñanza*/}
@@ -180,10 +218,28 @@ function Menu() {
         </SubMenu>
       </MenuItemWithSubMenu>
       {/*Investigación*/}
-      <MenuItem
-      title="Dirección de Investigación"
-      href='/direccion/investigacion'
-      />
+      <MenuItemWithSubMenu
+        title="Dirección de Investigación"
+        href='/direccion/investigacion'
+      >
+        <SubMenu>
+          <SubMenuItemWithSubMenu
+            title="Subdirección de Gestión de la Investigación"
+            href='/ensenanza'
+          >
+          <SubMenu>
+          <SubMenuItem
+            title="Departmamento de Administración de Control y Gestión a la Investigación"
+            href='/ensenanza/offer'
+          />
+          <SubMenuItem
+            title="Departamento Auxiliar Adminisrativo de Proyectos de Investigación"
+            href='/ensenanza'
+          />
+          </SubMenu>
+          </SubMenuItemWithSubMenu>
+        </SubMenu>
+      </MenuItemWithSubMenu>
       {/*Administración*/}
       <MenuItem
         title="Dirección de Administración"
