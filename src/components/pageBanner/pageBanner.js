@@ -2,7 +2,13 @@ import { css } from '@emotion/css'
 import { Menu } from '../../components'
 
 
-export const PageBanner = ({title, children, banner, bannerResponsive}) => {
+export const PageBanner = ({
+  title,
+  children,
+  banner,
+  bannerResponsive,
+  textLeft
+}) => {
     const pageBanner=css`
       background:url(${banner});
       background-repeat: no-repeat;
@@ -19,7 +25,11 @@ export const PageBanner = ({title, children, banner, bannerResponsive}) => {
       width:100%;
       height:100%;
       background: rgb(152,152,152);
-      background: linear-gradient(90deg, rgba(254,254,254,0) 0%, rgba(255,255,255,0) 38%, rgba(7,46,0,0.999019676229867) 92%);
+      background: ${
+        !textLeft ? 'linear-gradient(90deg, rgba(254,254,254,0) 0%, rgba(255,255,255,0) 38%, rgba(7,46,0,0.999019676229867) 92%)'
+        :
+        'linear-gradient(90deg, rgba(3,37,0,0.9878151944371498) 0%, rgba(6,79,0,0.7161065109637605) 29%, rgba(0,212,255,0) 100%)'
+      };
       padding: 3rem 0;
     `
     const pageTitleBanner=css`
@@ -32,7 +42,7 @@ export const PageBanner = ({title, children, banner, bannerResponsive}) => {
       justify-content: center;
       width:30%;
       height:100%;
-      margin-left:60%;
+      margin-left: ${!textLeft ? '60%' : '10%'};
       padding:3rem;
       line-height:2rem;
       text-align:center;

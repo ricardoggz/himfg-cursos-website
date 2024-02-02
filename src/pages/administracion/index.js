@@ -10,6 +10,7 @@ const Administracion = ()=>{
               title={page.page_title}
               banner={page.page_banner_image}
               bannerResponsive={page.banner_image_responsive}
+              textLeft
               >
               <p>{page.page_banner_content}</p>
               </PageBanner>
