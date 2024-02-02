@@ -26,161 +26,166 @@ function Menu() {
       {/*médica*/}
       <MenuItemWithSubMenu
         title="Dirección Medica"
-        href='/direccion/medica'
+        href='/medica'
       >
         <SubMenu>
           {/*Subdirección de pediatría ambulatoria*/}
           <SubMenuItemWithSubMenu
             title='Subdirección de pediatría ambulatoria'
+            href='/medica'
           >
             <SubMenu>
             <SubMenuItem
               title="Departamento de genética"
-              href='/ensenanza'
+              href='/medica'
             />
             <SubMenuItem
               title="Departamento de psiquiatríay medicina del adolescente"
-              href='/ensenanza'
+              href='/medica'
             />
             <SubMenuItem
               title="Departamento de rehabilitación"
-              href='/ensenanza'
+              href='/medica'
             />
             <SubMenuItem
               title="Departamento de audiología y foniatría"
-              href='/ensenanza'
+              href='/medica'
             />
             </SubMenu>
           </SubMenuItemWithSubMenu>
           {/*Subdirección de asistencia medica*/}
           <SubMenuItemWithSubMenu
             title='Subdirección de Asistencia Médica'
+            href='/medica'
           >
             <SubMenu>
               <SubMenuItem
                 title="Departamento de Urgencias"
-                href='/ensenanza'
+                href='/medica'
               />
               <SubMenuItem
                 title="Departamento de Infectología"
-                href='/ensenanza'
+                href='/medica'
               />
               <SubMenuItem
                 title="Departamento de Terapia Intensiva"
-                href='/ensenanza'
+                href='/medica'
               />
               <SubMenuItem
                 title="Departamento de Cardiología"
-                href='/ensenanza'
+                href='/medica'
               />
               <SubMenuItem
                 title="Departamento de Nefrología"
-                href='/ensenanza'
+                href='/medica'
               />
               <SubMenuItem
                 title="Departamento de Neonatología"
-                href='/ensenanza'
+                href='/medica'
               />
               <SubMenuItem
                 title="Departamento de Hemato-Oncología"
-                href='/ensenanza'
+                href='/medica'
               />
               <SubMenuItem
                 title="Departamento de Gastroenterología y Nutrición"
-                href='/ensenanza'
+                href='/medica'
               />
               <SubMenuItem
                 title="Departamento de Neurología"
-                href='/ensenanza'
+                href='/medica'
               />
               <SubMenuItem
                 title="Departamento de Medicina Interna"
-                href='/ensenanza'
+                href='/medica'
               />
               <SubMenuItem
                 title="Departamento de Endocrinología"
-                href='/ensenanza'
+                href='/medica'
               />
               <SubMenuItem
                 title="Departamento de Epidemiología Hospitalaria"
-                href='/ensenanza'
+                href='/medica'
               />
               <SubMenuItem
                 title="Departamento de Cuidados Paliativos y Calidad de Vida"
-                href='/ensenanza'
+                href='/medica'
               />
             </SubMenu>
           </SubMenuItemWithSubMenu>
           {/*Subdirección de asistencia quirúrgica*/}
           <SubMenuItemWithSubMenu
             title='Subdirección de Asistencia Médica'
+            href='/medica'
           >
             <SubMenu>
               <SubMenuItem
                 title="Departamento de Trasplantes"
-                href='/ensenanza'
+                href='/medica'
               />
               <SubMenuItem
                 title="Departamento de Ortopedia"
-                href='/ensenanza'
+                href='/medica'
               />
               <SubMenuItem
                 title="Departamento de Neurocirugía"
-                href='/ensenanza'
+                href='/medica'
               />
               <SubMenuItem
                 title="Departamento de Urología"
-                href='/ensenanza'
+                href='/medica'
               />
               <SubMenuItem
                 title="Departamento de Cirgugía Cardiovascular, Tórax y Endoscopía"
-                href='/ensenanza'
+                href='/medica'
               />
               <SubMenuItem
                 title="Departamento de Anestesia y Algología"
-                href='/ensenanza'
+                href='/medica'
               />
               <SubMenuItem
                 title="Departamento de Estomatología"
-                href='/ensenanza'
+                href='/medica'
               />
             </SubMenu>
           </SubMenuItemWithSubMenu>
           {/*Subdirección de servicios auxiliares y diagnostico*/}
           <SubMenuItemWithSubMenu
             title='Subdirección de Servicios Auxiliares de Diagnostico'
+            href='/medica'
           >
             <SubMenu>
               <SubMenuItem
                 title="Departamento de Imagenología"
-                href='/ensenanza'
+                href='/medica'
               />
               <SubMenuItem
                 title="Departamento de Laboratorio Clínico"
-                href='/ensenanza'
+                href='/medica'
               />
               <SubMenuItem
                 title="Departamento de Patología Clínica y Experimental"
-                href='/ensenanza'
+                href='/medica'
               />
             </SubMenu>
           </SubMenuItemWithSubMenu>
           {/*Subdirección de atención integral al paciente*/}
           <SubMenuItemWithSubMenu
             title='Subdirección de Atención Integral al Paciente'
+            href='/medica'
           >
             <SubMenu>
               <SubMenuItem
                 title="Departamento de Enfermería"
-                href='/ensenanza'
+                href='/medica'
               />
               <SubMenuItem
                 title="Departamento de Trabajo Social"
-                href='/ensenanza'
+                href='/medica'
               />
               <SubMenuItem
                 title="Departamento de Relaciones Públicas"
-                href='/ensenanza'
+                href='/medica'
               />
             </SubMenu>
           </SubMenuItemWithSubMenu>
@@ -199,11 +204,11 @@ function Menu() {
           <SubMenu>
           <SubMenuItem
             title="Departmamento de Educación de Pre y Posgrado"
-            href='/ensenanza/offer'
+            href='/ensenanza'
           />
           <SubMenuItem
             title="Departamento de Educación Médica Contínua"
-            href='/ensenanza'
+            href='/ensenanza/ofer'
           />
           <SubMenuItem
             title="Departamento de Comunicación Social y CEMESATEL"
@@ -220,21 +225,21 @@ function Menu() {
       {/*Investigación*/}
       <MenuItemWithSubMenu
         title="Dirección de Investigación"
-        href='/direccion/investigacion'
+        href='/investigacion'
       >
         <SubMenu>
           <SubMenuItemWithSubMenu
             title="Subdirección de Gestión de la Investigación"
-            href='/ensenanza'
+            href='/investigacion'
           >
           <SubMenu>
           <SubMenuItem
             title="Departmamento de Administración de Control y Gestión a la Investigación"
-            href='/ensenanza/offer'
+            href='/investigacion'
           />
           <SubMenuItem
             title="Departamento Auxiliar Adminisrativo de Proyectos de Investigación"
-            href='/ensenanza'
+            href='/investigacion'
           />
           </SubMenu>
           </SubMenuItemWithSubMenu>
