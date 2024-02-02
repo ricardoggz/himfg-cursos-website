@@ -8,9 +8,13 @@ export default function Direction(){
     console.log(id)
     let filteredPage
     const [page, setPage] = useState(null)
+    const [loading, setLoading] = useState(true)
     const getLinks = async()=>{
         try {
         const pages = await axios.get(`${process.env.BASE_URL_API}api/directions/all-directions`)
+        if(pages.status === 200){
+            setLoading(false)
+        }
         if(pages.data){
             filteredPage = pages.data.filter((page)=> page.page_url === id.query.id[0])
             setPage(filteredPage)
@@ -26,6 +30,9 @@ export default function Direction(){
     return (
         <>
             {
+                !loading ?
+                <>
+                    {
                 !page ? null
                 :
                 page.map((page)=>(
@@ -33,7 +40,7 @@ export default function Direction(){
                         <PageBanner
                         title={page.page_title}
                         banner={page.page_banner_image}
-                        banner_responsive={page.banner_image_responsive}
+                        bannerResponsive={page.banner_image_responsive}
                         >
                         <p>{page.page_banner_content}</p>
                         </PageBanner>
@@ -45,6 +52,10 @@ export default function Direction(){
                         />
                     </>
                 ))
+            }
+                </>
+                :
+                <>Cargando...</>
             }
         </>
     )
