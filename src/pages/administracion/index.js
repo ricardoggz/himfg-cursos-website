@@ -1,10 +1,10 @@
 import { PageBanner, TextsPage } from "@/components"
-import { medica } from '../../consts'
+import { administracion } from '../../consts'
 const Administracion = ()=>{
     return (
       <>
         {
-          medica.map((page)=>(
+          administracion.map((page)=>(
             <>
               <PageBanner
               title={page.page_title}

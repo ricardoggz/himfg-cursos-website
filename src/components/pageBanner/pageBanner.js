@@ -12,7 +12,7 @@ export const PageBanner = ({title, children, banner, bannerResponsive}) => {
       width: 100%;
       @media (min-width:240px) and (max-width:500px){
         background: url(${bannerResponsive}) no-repeat;
-        background-size: contain;
+        background-size: cover;
       }
     `
     const pageBannerBackground=css`
