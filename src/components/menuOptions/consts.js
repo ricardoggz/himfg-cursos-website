@@ -25,28 +25,28 @@ export const doctors = [
         name: 'Mónica Villa Guillén',
         description: 'Dirección Médica',
         icon:icon_5,
-        link:'/medica'
+        link:'/direccion/medica'
     },
     {
         image: direccion_ensenanza,
         name: 'Sarbelio Moreno Espinosa',
         description: 'Dirección de Enseñanza y Desarrollo Académico',
         icon:icon_2,
-        link:'/ensenanza'
+        link:'/direccion/ensenanza'
     },
     {
         image: direccion_investigacion,
         name: 'Juan Garduño Espinosa',
         description: 'Dirección de Investigación',
         icon:icon_1,
-        link:'/investigacion'
+        link:'/direccion/investigacion'
     },
     {
         image: direccion_administracion,
         name: 'Cipriano Solís Badillo',
         description: 'Dirección de Administración',
         icon:icon_3,
-        link:'/administracion'
+        link:'/direccion/administracion'
     },
     {
         image: direccion_planeacion,
