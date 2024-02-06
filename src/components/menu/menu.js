@@ -359,7 +359,7 @@ function Menu() {
             title="Subdirección de Seguimiento Programático y Diseño Organizacional"
             href='/ensenanza'
           >
-          <SubMenu>
+          <SubMenuRight>
           <SubMenuItem
             title="Departmamento de Seguimiento Programático y Organización Institucional"
             href='/ensenanza'
@@ -376,7 +376,7 @@ function Menu() {
             title="Departamento de Bioestadística y Archivo Clínico"
             href='/ensenanza'
           />
-          </SubMenu>
+          </SubMenuRight>
           </SubMenuItemWithSubMenu>
         </SubMenu>
       </MenuItemWithSubMenu>
@@ -449,6 +449,8 @@ function SubMenuItemWithSubMenu({ title, children }) {
     setIsSubMenuOpen(false);
   };
 
+  
+
   return (
     <div
       className={styles.sub_menu_item}
@@ -459,6 +461,10 @@ function SubMenuItemWithSubMenu({ title, children }) {
       {isSubMenuOpen && children}
     </div>
   );
+}
+
+function SubMenuRight({ children }) {
+  return <div className={styles.submenu_right}>{children}</div>;
 }
 
 export {Menu};

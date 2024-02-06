@@ -24,12 +24,16 @@
     text-align: start;
   }
   
-  .menu_item:hover .submenu {
+  .menu_item:hover .submenu{
     display: block;
     display: flex;
     flex-direction: column;
   }
-  
+  .submenu_right:hover{
+    display: block;
+    display: flex;
+    flex-direction: column;
+  }
   .sub_menu_item {
     color: white;
     padding: 1rem;
@@ -45,6 +49,9 @@
     padding: 10px;
   }
   .submenu_right{
+    display: block;
+    display: flex;
+    flex-direction: column;
     top: 0;
     left: -100%;
     background-color: #7f8c8d;
