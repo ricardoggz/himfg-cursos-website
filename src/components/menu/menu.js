@@ -26,7 +26,7 @@ function Menu() {
       {/*médica*/}
       <MenuItemWithSubMenu
         title="Dirección Médica"
-        href='/medica'
+        href='/direccion/medica'
       >
         <SubMenu>
           {/*Subdirección de pediatría ambulatoria*/}
@@ -225,7 +225,7 @@ function Menu() {
       {/*Investigación*/}
       <MenuItemWithSubMenu
         title="Dirección de Investigación"
-        href='/investigacion'
+        href='/direccion/investigacion'
       >
         <SubMenu>
           <SubMenuItemWithSubMenu

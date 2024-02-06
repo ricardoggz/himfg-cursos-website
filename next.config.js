@@ -26,7 +26,8 @@ const nextConfig = {
       '/userlogin': { page: '/userlogin'},
       '/pdf' : { page: '/pdf' },
       '/profile': { page: '/profile'},
-      '/test/[...id]' : { page: '/test/[...id]'}
+      '/test/[...id]' : { page: '/test/[...id]'},
+      '/direccion/[...id]': { page : '/direccion/[...id]'}
     }
   },
   env:{
