@@ -248,7 +248,7 @@ function Menu() {
       {/*Administración*/}
       <MenuItemWithSubMenu
         title="Dirección de Administración"
-        href='/administracion'
+        href='/direccion/administracion'
       >
         <SubMenu>
           {/*Subdirección de recursos humanos*/}
@@ -259,7 +259,7 @@ function Menu() {
           <SubMenu>
           <SubMenuItem
             title="Departamento de Selección, Contratación y Seguimiento de Capital Humano"
-            href='/administracion'
+            href='/direccion/seleccion-capital-humano'
           />
           <SubMenuItem
             title="Departamento de Sueldos"
@@ -287,7 +287,7 @@ function Menu() {
           />
           <SubMenuItem
             title="Departamento de Almacenes"
-            href='/administracion'
+            href='/direccion/departamento-almacenes'
           />
           <SubMenuItem
             title="Departamento de Inventario y Activo Fijo"
