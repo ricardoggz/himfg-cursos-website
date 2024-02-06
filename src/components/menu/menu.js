@@ -194,7 +194,7 @@ function Menu() {
       {/*Enseñanza*/}
       <MenuItemWithSubMenu
         title="Dirección de Enseñanza y Desarrollo Académico"
-        href='/ensenanza'
+        href='/direccion/ensenanza'
       >
         <SubMenu>
           <SubMenuItemWithSubMenu

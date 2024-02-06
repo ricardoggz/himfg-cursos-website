@@ -26,6 +26,11 @@ export const Header =()=>{
                             </Link>
                         </li>
                         <li>
+                            <a href='http://himfg.com.mx/interna/transparencia/transparencia.php' target='_blank'>
+                                Transparencia
+                            </a>
+                        </li>
+                        <li>
                             <Link href='/userlogin'>
                                 <AiOutlineUser className={styles.userLoginIcon}/>
                             </Link>
@@ -37,6 +42,11 @@ export const Header =()=>{
                             <Link href='/profile'>
                                 <AiOutlineUser className={styles.userLoginIcon}/>
                             </Link>
+                        </li>
+                        <li>
+                            <a href='http://himfg.com.mx/interna/transparencia/transparencia.php' target='_blank'>
+                                Transparencia
+                            </a>
                         </li>
                         <li>
                             <button onClick={logout}>Cerrar sesión</button>
