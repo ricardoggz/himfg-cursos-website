@@ -22,10 +22,18 @@ export default function Direction(){
             console.log(error)
         }
     }
-    console.log(page)
     useEffect(()=>{
         getLinks()
     },[])
+    useEffect(() => {
+        const handleRouteChange = () => {
+          id.reload(document.location.reload())
+        }
+        id.events.on('routeChangeComplete', handleRouteChange)
+        return () => {
+          id.events.off('routeChangeComplete', handleRouteChange)
+        }
+      },[id])
     return (
         <>
             {
