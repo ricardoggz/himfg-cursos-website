@@ -278,12 +278,12 @@ function Menu() {
           >
           <SubMenu>
           <SubMenuItem
-            title="Departamento de Compras Gubernamentales Materiales"
+            title="Departamento de Compras Gubernamentales Generales"
             href='/administracion'
           />
           <SubMenuItem
             title="Departamento de Compras Gubernamentales Farmacéuticas"
-            href='/administracion'
+            href='/direccion/compras-gubernamentales-farmaceuticas'
           />
           <SubMenuItem
             title="Departamento de Almacenes"
@@ -335,7 +335,7 @@ function Menu() {
           />
           <SubMenuItem
             title="Departamento de Contabilidad"
-            href='/administracion'
+            href='/direccion/departamento-contabilidad'
           />
           <SubMenuItem
             title="Departamento de Presupuesto"
