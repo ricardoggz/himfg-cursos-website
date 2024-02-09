@@ -291,7 +291,7 @@ function Menu() {
           />
           <SubMenuItem
             title="Departamento de Inventario y Activo Fijo"
-            href='/administracion'
+            href='/direccion/inventario-y-activo-fijo'
           />
           </SubMenu>
           </SubMenuItemWithSubMenu>
@@ -331,7 +331,7 @@ function Menu() {
           <SubMenu>
           <SubMenuItem
             title="Departamento de Tesorería"
-            href='/administracion'
+            href='/direccion/departamento-tesoreria'
           />
           <SubMenuItem
             title="Departamento de Contabilidad"
@@ -343,7 +343,7 @@ function Menu() {
           />
           <SubMenuItem
             title="Departamento de Control y Análisis Económico"
-            href='/administracion'
+            href='/direccion/departamento-control-analisis-economico'
           />
           </SubMenu>
           </SubMenuItemWithSubMenu>
