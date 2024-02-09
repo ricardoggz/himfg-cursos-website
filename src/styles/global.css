@@ -40,6 +40,9 @@ body{
   .flexContainer{
     width:95%;
   }
+  body{
+    background: var(--white-secondary);
+  }
   /*body{
     font-size:1rem;
   }*/
