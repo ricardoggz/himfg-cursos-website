@@ -1,11 +1,10 @@
 import { useState, useEffect } from "react"
 import { useRouter } from "next/router"
 import axios from "axios"
-import { PageBanner, TextsPage } from "@/components"
+import { PageBanner, TextsPage, Loader } from "@/components"
 
 export default function Direction(){
     const id = useRouter()
-    console.log(id)
     let filteredPage
     const [page, setPage] = useState(null)
     const [loading, setLoading] = useState(true)
@@ -55,7 +54,9 @@ export default function Direction(){
             }
                 </>
                 :
-                <>Cargando...</>
+                <Loader
+                    message='Cargando...'
+                />
             }
         </>
     )
