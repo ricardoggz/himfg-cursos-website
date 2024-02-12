@@ -208,7 +208,7 @@ function Menu() {
           />
           <SubMenuItem
             title="Departamento de Educación Médica Contínua"
-            href='/ensenanza/ofer'
+            href='/ensenanza/offer'
           />
           <SubMenuItem
             title="Departamento de Comunicación Social y CEMESATEL"
@@ -254,7 +254,7 @@ function Menu() {
           {/*Subdirección de recursos humanos*/}
           <SubMenuItemWithSubMenu
             title="Subdirección de Recursos Humanos"
-            href='/administracion'
+            href='/direccion/subdireccion-recursos-humanos'
           >
           <SubMenu>
           <SubMenuItem
@@ -274,7 +274,7 @@ function Menu() {
           {/*Subdirección de recursos materiales*/}
           <SubMenuItemWithSubMenu
             title="Subdirección de Recursos Materiales"
-            href='/administracion'
+            href='/direccion/subdireccion-recursos-materiales'
           >
           <SubMenu>
           <SubMenuItem
@@ -339,7 +339,7 @@ function Menu() {
           />
           <SubMenuItem
             title="Departamento de Presupuesto"
-            href='/administracion'
+            href='/direccion/departamento-presupuesto'
           />
           <SubMenuItem
             title="Departamento de Control y Análisis Económico"
