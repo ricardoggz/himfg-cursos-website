@@ -241,6 +241,142 @@ function Menu() {
             title="Departamento Auxiliar Administrativo de Proyectos de Investigación"
             href='/investigacion'
           />
+          <SubMenuItem
+            title="Departamento de Ediciones Médicas"
+            href='/investigacion'
+          />
+          <SubMenuItem
+            title="Departamento de Evaluación de Medicamentos y Farmacovigilancia"
+            href='/investigacion'
+          />
+          {/*Departamento de Investigación Clínica*/}
+          <SubMenuItemWithSubMenu
+            title="Departamento de Investigación Clínica"
+            href='/investigacion'
+          >
+            <SubMenu>
+              <SubMenuItem
+              title="Departamento de Investigación Epidemiológica en Endocrinología y Nutrición"
+              href='/investigacion'
+              />
+              <SubMenuItem
+              title="Unidad de Investigación en Enfermedades Neurológicas"
+              href='/investigacion'
+              />
+              <SubMenuItem
+              title="Unidad de Investigación en Medicina Basada en Evidencias"
+              href='/investigacion'
+              />
+              <SubMenuItem
+                title="Unidad de Investigación en Epidemiología Clínica"
+                href='/investigacion'
+              />
+              <SubMenuItem
+                title='Unidad de Investigación y Diagnóstico en Nefrología y Metabolismo Mineral Óseo'
+                href='/investigacion'
+              />
+              <SubMenuItem
+                title='Unidad de Investigación en Enfermedades Emergentes'
+                href='/investigacion'
+              />
+              <SubMenuItem
+                title='Unidad de Investigación en Enfermedades Infecciosas'
+                href='/investigacion'
+              />
+              <SubMenuItem
+                title='Laboratorio de Investigación en Parasitología'
+                href='/investigacion'
+              />
+              <SubMenuItem
+                title='Laboratorio de Investigación en Bacteriología Intestinal'
+                href='/investigacion'
+              />
+              <SubMenuItem
+                title='Laboratorio de Investigación en Patogenicidad Bacteriana'
+                href='/investigacion'
+              />
+              <SubMenuItem
+                title='Laboratorio de Investigación en Cardiopatías Congénitas'
+                href='/investigacion'
+              />
+              <SubMenuItem
+                title='Laboratorio de Investigación en Ingeniería de Tejidos'
+                href='/investigacion'
+              />
+              <SubMenuItem
+                title=' Laboratorio de Investigación en Inmunoquímica'
+                href='/investigacion'
+              />
+              <SubMenuItem
+                title='Centro de Estudios Económicos y Sociales en Salud (CEESES)'
+                href='/investigacion'
+              />
+            </SubMenu>
+          </SubMenuItemWithSubMenu>
+          {/*Departamento de Investigación Biomédica*/}
+          <SubMenuItemWithSubMenu
+            title="Departamento de Investigación Biomédica"
+            href='/investigacion'
+          >
+            <SubMenu>
+              <SubMenuItem
+              title="Servicio de Investigación Biomédica"
+              href='/investigacion'
+              />
+              <SubMenuItem
+              title="Unidad Habilitada de Apoyo al Predictamen (UHAP)"
+              href='/investigacion'
+              />
+              <SubMenuItem
+              title="Unidad de Investigación en Enfermedades Oncológicas"
+              href='/investigacion'
+              />
+              <SubMenuItem
+                title="Unidad de Investigación en Virología y Cáncer"
+                href='/investigacion'
+              />
+              <SubMenuItem
+                title='Unidad de Investigación en Inmunología y Proteómica'
+                href='/investigacion'
+              />
+              <SubMenuItem
+                title='Unidad de Investigación en Biología Computacional y Diseño de Fármacos'
+                href='/investigacion'
+              />
+              <SubMenuItem
+                title='Laboratorio de Investigación en Biología del Desarrollo y Teratogénesis Experimental'
+                href='/investigacion'
+              />
+              <SubMenuItem
+                title='Laboratorio de Investigación en Patología Experimental'
+                href='/investigacion'
+              />
+              <SubMenuItem
+                title='Laboratorio de Investigación en Genómica, Genética y Bioinformática'
+                href='/investigacion'
+              />
+              <SubMenuItem
+                title='Laboratorio de Investigación en Enfermedades Metabólicas: Obesidad y Diabetes'
+                href='/investigacion'
+              />
+              <SubMenuItem
+                title='Laboratorio de Investigación en Farmacología'
+                href='/investigacion'
+              />
+              <SubMenuItem
+                title='Laboratorio de Investigación en Neurociencias'
+                href='/investigacion'
+              />
+              <SubMenuItem
+                title='Biobanco de Investigación en Células Leucémicas'
+                href='/investigacion'
+              />
+              <SubMenuItem
+                title='Servicio de Bioterio'
+                href='/investigacion'
+              />
+            </SubMenu>
+          </SubMenuItemWithSubMenu>
           </SubMenu>
           </SubMenuItemWithSubMenu>
         </SubMenu>
