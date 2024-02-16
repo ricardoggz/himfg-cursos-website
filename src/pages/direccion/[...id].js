@@ -58,6 +58,7 @@ export default function Direction(){
                             firstImage={page.page_first_image}
                             secondImage={page.page_second_image}
                         />
+                        <PagePortrait />
                     </>
                 ))
             }
@@ -67,7 +68,6 @@ export default function Direction(){
                     message='Cargando...'
                 />
             }
-            <PagePortrait />
         </>
     )
 }

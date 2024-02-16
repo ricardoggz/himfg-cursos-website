@@ -1,35 +1,36 @@
 .pagePortraitWrapper{
-    align-items: center;
     background:url('https://archivos.him.edu.mx/graficos/bg-page-banner.jpg') no-repeat;
     background-position: center;
     background-size: cover;
     color:var(--white-primary);
-    display:flex;
-    justify-content: space-evenly;
     margin-top:6rem;
-    text-align: justify;
+    text-align: start;
     width:100%;
 }
-.pagePortraitWrapper figure{
+.pagePortraitContent{
+    align-items: center;
     display:flex;
-    justify-content: flex-end;
-    width:25%;
+    justify-content: space-evenly;
+    margin:0 auto;
+    width:80%;
 }
-.pagePortraitWrapper img{
+.pagePortraitWrapper figure{
+    width:50%;
+    height:400px;
+}
+.pagePortraitContent img{
     height:100%;
-    object-fit: cover;
+    object-fit: contain;
     width: 100%;
 }
-.pagePortraitWrapper div{
+.pagePortraitContent div{
     align-items: flex-start;
     display:flex;
     flex-direction: column;
-    justify-content: flex-start;
-    margin-top:10rem;
     width:100%;
-    width:65%;
 }
 .title{
+    margin-top:10rem;
     font-size:5rem;
 }
 .subtitle{

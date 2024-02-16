@@ -4,6 +4,7 @@ export const PagePortrait=()=>{
     const imageUrl='https://archivos.him.edu.mx/graficos/direccion-medica.png'
     return (
         <section className={styles.pagePortraitWrapper}>
+            <div className={styles.pagePortraitContent}>
             <figure>
                 <img src={imageUrl}/>
             </figure>
@@ -14,6 +15,7 @@ export const PagePortrait=()=>{
                 <span className={styles.subtitle}>
                     Dirección Médica
                 </span>
+            </div>
             </div>
         </section>
     )
