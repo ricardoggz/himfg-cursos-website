@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import { useRouter } from "next/router"
 import axios from "axios"
-import { PageBanner, TextsPage, Loader } from "@/components"
+import { PageBanner, TextsPage, Loader, PagePortrait } from "@/components"
 
 export default function Direction(){
     const id = useRouter()
@@ -67,6 +67,7 @@ export default function Direction(){
                     message='Cargando...'
                 />
             }
+            <PagePortrait />
         </>
     )
 }
