@@ -28,8 +28,8 @@ export const doctors = [
         link:'/direccion/medica'
     },
     {
-        image: direccion_ensenanza,
-        name: 'Sarbelio Moreno Espinosa',
+        image: 'https://archivos.him.edu.mx/graficos/direccion-ensenanza.png',
+        name: 'Caludia Gutierrez Camacho',
         description: 'Dirección de Enseñanza y Desarrollo Académico',
         icon:icon_2,
         link:'/direccion/ensenanza'

@@ -18,7 +18,10 @@ export const MenuOptions = ()=>{
             className={`${styles.menuOption}`}
             >
             <figure className={styles.photo}>
-                <Image src ={principal.image}/>
+                <Image
+                src ={principal.image}
+                width='100'
+                />
             </figure>
             <span className={styles.menuOptionTitle}>
                 {principal.name}
@@ -27,6 +30,7 @@ export const MenuOptions = ()=>{
             <figure>
                 <Image src ={principal.icon}
                 className={styles.menuOptionIcon}
+                width='100'
                 />
             </figure>
         </Link>
@@ -41,7 +45,11 @@ export const MenuOptions = ()=>{
                 key={index}
             >
                 <figure className={styles.photo}>
-                    <Image src ={doctor.image}/>
+                    <Image
+                    src ={doctor.image}
+                    width={100}
+                    height={100}
+                    />
                 </figure>
                 <span className={styles.menuOptionTitle}>
                     {doctor.name}
