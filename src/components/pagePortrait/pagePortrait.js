@@ -1,19 +1,18 @@
 import styles from './pagePortrait.module.css'
 
-export const PagePortrait=()=>{
-    const imageUrl='https://archivos.him.edu.mx/graficos/direccion-medica.png'
+export const PagePortrait=({image, titular, titularGrade})=>{
     return (
         <section className={styles.pagePortraitWrapper}>
             <div className={styles.pagePortraitContent}>
             <figure>
-                <img src={imageUrl}/>
+                <img src={image}/>
             </figure>
             <div>
                 <span className={styles.title}>
-                    Dra.  Mónica Villa Guillén
+                    {titular}
                 </span>
                 <span className={styles.subtitle}>
-                    Dirección Médica
+                    {titularGrade}
                 </span>
             </div>
             </div>

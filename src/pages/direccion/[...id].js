@@ -58,7 +58,15 @@ export default function Direction(){
                             firstImage={page.page_first_image}
                             secondImage={page.page_second_image}
                         />
-                        <PagePortrait />
+                        {
+                            !page.page_titular ? null
+                            :
+                            <PagePortrait
+                                image={page.page_titular_photo}
+                                titular={page.page_titular}
+                                titularGrade={page.page_titular_grade}
+                            />
+                        }
                     </>
                 ))
             }
