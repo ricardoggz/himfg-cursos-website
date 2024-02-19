@@ -21,8 +21,8 @@ export const principal = {
 }
 export const doctors = [
     {
-        image: direccion_medica,
-        name: 'Mónica Villa Guillén',
+        image: 'https://archivos.him.edu.mx/graficos/direccion-medica.png',
+        name: 'Víctor Olivar López',
         description: 'Dirección Médica',
         icon:icon_5,
         link:'/direccion/medica'
