@@ -62,6 +62,7 @@
     }
     .headerNav ul{
         align-items: flex-start;
+        display: none;
         flex-direction: column;
         justify-content: flex-start;
         padding:1rem;
