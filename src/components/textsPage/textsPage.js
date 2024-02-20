@@ -1,3 +1,5 @@
+import { LazyLoadImage } from 'react-lazy-load-image-component'
+import 'react-lazy-load-image-component/src/effects/blur.css'
 import styles from './textsPage.module.css'
 
 export const TextsPage = ({
@@ -10,7 +12,13 @@ export const TextsPage = ({
         <section className={styles.textsWrapper}>
             <div className={styles.texts}>
                 <div className={styles.text_image}>
-                    <img src={firstImage} />
+                    <LazyLoadImage
+                        src={firstImage}
+                        effect='black-and-white'
+                        loading='lazy'
+                        width={'100%'}
+                        height={'100%'}
+                    />
                 </div>
                 <div className={styles.text}>
                   <div>
@@ -31,7 +39,13 @@ export const TextsPage = ({
                     </div>
                 </div>
                 <div className={styles.text_image}>
-                    <img src={secondImage} />
+                    <LazyLoadImage
+                        src={secondImage}
+                        effect='blur'
+                        loading='lazy'
+                        width={'100%'}
+                        height={'100%'}
+                    />
                 </div>
             </div>
         </section>
