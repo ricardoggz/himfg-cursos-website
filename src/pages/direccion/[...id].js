@@ -3,6 +3,7 @@ import { useRouter } from "next/router"
 import dynamic from "next/dynamic"
 import axios from "axios"
 import { PageBanner, TextsPage, Loader, PagePortrait, LoaderPageContent } from "@/components"
+import Head from "next/head"
 
 const PageBannerLazy = dynamic(
     ()=>import('../../components/pageBanner/pageBanner').then(module=>module.PageBanner),{
@@ -51,6 +52,13 @@ export default function Direction(){
                 :
                 page.map((page)=>(
                     <>
+                        <Head>
+                            <title>HIMFG - {page.page_title}</title>
+                            <link
+                                rel="icon"
+                                href='https://res.cloudinary.com/diuxbqmn5/image/upload/v1677114497/himfg-logo_ewzx59.webp'
+                                sizes="any" />
+                        </Head>
                         <PageBannerLazy
                         title={page.page_title}
                         banner={page.page_banner_image}
