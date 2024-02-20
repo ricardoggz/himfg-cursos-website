@@ -1,7 +1,4 @@
-import Image from 'next/image'
 import styles from './textsPage.module.css'
-import cirugia from '../../assets/cirugia.jpg'
-import consulta from '../../assets/consulta.jpg'
 
 export const TextsPage = ({
     firstText,
@@ -21,12 +18,12 @@ export const TextsPage = ({
                     {firstText}
                   </p>
                   </div>
-                  <div></div>
+                  <div/>
                 </div>
             </div>
             <div className={styles.texts}>
                 <div className={styles.text}>
-                <div></div>
+                    <div></div>
                     <div>
                     <p>
                         {secondText}

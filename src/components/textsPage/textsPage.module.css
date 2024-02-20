@@ -2,8 +2,7 @@
     width:100%;
 }
 .texts{
-    display:grid;
-    grid-template-columns: 1fr 1.8fr;
+    display:flex;
     width:100%;
     margin: 0 auto;
 }
@@ -17,11 +16,12 @@
 .text{
     display:grid;
     grid-template-columns: repeat(2, 1fr);
-    padding: 3rem;
+    height:100%;
 }
 .text p{
-    line-height: 2rem;
-    text-align:end;
+    line-height: 2.5rem;
+    padding:1.5rem;
+    text-align:justify;
     width:100%;
 }
 .text div{
@@ -29,7 +29,7 @@
 }
 .text_image{
     width:100%;
-    height: auto;
+    height: 100%;
 }
 .text_image img{
     width:100%;
@@ -41,8 +41,7 @@
         padding: 1rem;
     }
     .texts{
-        display:flex;
-        flex-direction: column-reverse;
+        flex-direction: column;
     }
     .text p{
         width:100%;
@@ -55,8 +54,10 @@
 }
 
 @media (min-width:1200px) and (max-width:1400px){
+    .texts{
+        flex-direction: column;
+    }
     .text{
-        
         padding: 2rem;
     }
     .text p{
