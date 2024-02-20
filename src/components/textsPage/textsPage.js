@@ -14,7 +14,7 @@ export const TextsPage = ({
                 <div className={styles.text_image}>
                     <LazyLoadImage
                         src={firstImage}
-                        effect='black-and-white'
+                        effect='blur'
                         loading='lazy'
                         width={'100%'}
                         height={'100%'}

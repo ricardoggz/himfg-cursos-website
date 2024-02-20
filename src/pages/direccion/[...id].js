@@ -1,7 +1,14 @@
 import { useState, useEffect } from "react"
 import { useRouter } from "next/router"
+import dynamic from "next/dynamic"
 import axios from "axios"
 import { PageBanner, TextsPage, Loader, PagePortrait } from "@/components"
+
+const PageBannerLazy = dynamic(
+    ()=>import('../../components/pageBanner/pageBanner').then(module=>module.PageBanner),{
+        loading: ()=> <Loader message='Cargando semblanza'/>
+    }
+)
 
 export default function Direction(){
     const id = useRouter()
@@ -44,14 +51,14 @@ export default function Direction(){
                 :
                 page.map((page)=>(
                     <>
-                        <PageBanner
+                        <PageBannerLazy
                         title={page.page_title}
                         banner={page.page_banner_image}
                         bannerResponsive={page.banner_image_responsive}
                         textLeft={!page.page_left_text ? false : true}
                         >
                         <p>{page.page_banner_content}</p>
-                        </PageBanner>
+                        </PageBannerLazy>
                         <TextsPage
                             firstText={page.page_first_content}
                             secondText={page.page_second_content}
