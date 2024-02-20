@@ -1,7 +1,6 @@
 .loaderPageContentWrapper{
     align-items: center;
-    background:var(--green-secondary);
-    color:var(--white-primary);
+    color:var(--green-primary);
     display:flex;
     flex-direction: column;
     gap:3.5rem;
@@ -20,20 +19,23 @@
   
   @keyframes wave {
    0% {  box-shadow:
-    0 0 0 0px rgba(255, 255,255, 1),
-    0 0 0 20px rgba(255, 255,255, 0.2),
-    0 0 0 40px rgba(255, 255,255, 0.6),
-    0 0 0 60px rgba(255, 255,255, 0.4),
-    0 0 0 80px rgba(255, 255,255, 0.2)
+    0 0 0 0px var(--green-primary),
+    0 0 0 20px rgba(0, 54, 11, 0.2),
+    0 0 0 40px rgba(0, 129, 26, 0.2),
+    0 0 0 60px rgba(0, 54, 11, 0.2),
+    0 0 0 80px rgba(0, 129, 26, 0.2),
     }
     100% {  box-shadow:
-      0 0 0 80px rgba(255, 255,255, 0),
-      0 0 0 60px rgba(255, 255,255, 0.2),
-      0 0 0 40px rgba(255, 255,255, 0.4),
-      0 0 0 20px rgba(255, 255,255, 0.6),
-      0 0 0 0px rgba(255, 255,255, 1)
+      0 0 0 80px rgba(0, 54, 11, 0.2),
+      0 0 0 60px rgba(0, 129, 26, 0.2),
+      0 0 0 40px rgba(0, 54, 11, 0.2),
+      0 0 0 20px rgba(0, 129, 26, 0.2),
+      0 0 0 0px var(--green-primary)
     }
   }
-  
-  
+@media(min-width:240px) and (max-width:880px){
+  .loaderPageContentWrapper{
+    height:50vh;
+  }
+}
     
