@@ -1,4 +1,4 @@
-import { useContext} from 'react'
+import { useState, useContext } from 'react'
 import Link from 'next/link'
 import { AiOutlineUser } from 'react-icons/ai'
 import styles from './header.module.css'
@@ -6,6 +6,8 @@ import { UserContext } from '../../contexts'
 
 export const Header =()=>{
     const { user, logout } = useContext(UserContext)
+    const [isOpen, setIsOpen] = useState(false)
+    const open = ()=> setIsOpen(!isOpen)
     return (
         <>
             <header className={styles.headerWrapper}>
@@ -16,7 +18,10 @@ export const Header =()=>{
                         alt='Gobierno de México'
                     />
                 </Link>
-                <ul>
+                <button className={styles.buttonMenu} onClick={open}>
+                    Menú
+                </button>
+                <ul className={`${styles.headerNavList} ${!isOpen ? '' : styles.active}`}>
                 {
                     !user ?
                     <>
@@ -32,7 +37,7 @@ export const Header =()=>{
                         </li>
                         <li>
                             <Link href='/userlogin'>
-                                <AiOutlineUser className={styles.userLoginIcon}/>
+                                Iniciar sesión
                             </Link>
                         </li>
                     </>
