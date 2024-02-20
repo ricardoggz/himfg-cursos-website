@@ -67,6 +67,7 @@ export const PageBanner = ({
       @media (min-width:240px) and (max-width:1400px){
         padding:1rem;
         background:var(--banner-responsive);
+        display:none;
       }
       `
     return (

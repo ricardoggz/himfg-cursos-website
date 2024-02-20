@@ -60,4 +60,23 @@
         flex-direction: column;
         justify-content: center;
     }
+    .headerNav ul{
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding:1rem;
+        width:90%;
+    }
+    .imageContainer{
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        padding:1rem;
+    }
+    .headerIconNav{
+        align-items: center;
+        flex-direction: column-reverse;
+        justify-content: center;
+        width:100%;
+    }
 }
