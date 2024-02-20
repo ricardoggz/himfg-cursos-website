@@ -26,7 +26,12 @@ export const Header =()=>{
                     !user ?
                     <>
                         <li>
-                            <Link href='/register'>
+                            <Link href='/' onClick={open}>
+                                Inicio
+                            </Link>
+                        </li>
+                        <li>
+                            <Link href='/register' onClick={open}>
                                 Registro
                             </Link>
                         </li>
@@ -36,7 +41,7 @@ export const Header =()=>{
                             </a>
                         </li>
                         <li>
-                            <Link href='/userlogin'>
+                            <Link href='/userlogin' onClick={open}>
                                 Iniciar sesión
                             </Link>
                         </li>
@@ -44,8 +49,13 @@ export const Header =()=>{
                     :
                     <>
                         <li>
-                            <Link href='/profile'>
-                                <AiOutlineUser className={styles.userLoginIcon}/>
+                            <Link href='/' onClick={open}>
+                                Inicio
+                            </Link>
+                        </li>
+                        <li>
+                            <Link href='/profile' onClick={open}>
+                                Perfil
                             </Link>
                         </li>
                         <li>
