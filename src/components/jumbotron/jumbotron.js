@@ -10,7 +10,10 @@ export const Jumbotron =()=>{
             speed: 1000,
             slidesToShow: 1,
             slidesToScroll: 1,
-            arrows: true,
+            arrows:false,
+            autoplay:true,
+            speed: 2000,
+            autoplaySpeed: 3000,
         }
         const images = [
             'https://archivos.him.edu.mx/Carrusel_01-okjpg.jpg',
