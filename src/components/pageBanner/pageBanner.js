@@ -22,6 +22,8 @@ export const PageBanner = ({
       }
     `
     const pageBannerBackground=css`
+      align-items:center;
+      display:flex;
       width:100%;
       height:100%;
       background: rgb(152,152,152);
@@ -30,34 +32,35 @@ export const PageBanner = ({
         :
         'linear-gradient(90deg, rgba(3,37,0,0.9878151944371498) 0%, rgba(6,79,0,0.7161065109637605) 29%, rgba(0,212,255,0) 100%)'
       };
+      justify-content:center;
       padding: 3rem 0;
     `
     const pageTitleBanner=css`
-      text-align: justify;
-      align-items: end;
+      text-align: center;
+      align-items: center;
       color:var(--white-primary);
       display:flex;
       flex-direction: column;
+      font-size:1.5rem;
       gap:2rem;
       justify-content: center;
-      width:30%;
+      width:80%;
       height:100%;
-      margin-left: ${!textLeft ? '60%' : '10%'};
-      padding:3rem;
-      line-height:2rem;
+      margin: 0 auto;
+      /*margin-left: ${!textLeft ? '60%' : '10%'};*/
+      /*padding:3rem;*/
+      line-height:2.5rem;
       text-align:center;
       @media (min-width:240px) and (max-width:1024px){
+        font-size:1.5rem;
         width:100%;
-        align-items:center;
-        margin:0;
-        padding:1rem;
       }
-      @media (min-width:1200px) and (max-width:1400px){
+      /*@media (min-width:1200px) and (max-width:1400px){
         width:50%;
         align-items:center;
         margin-left:40%;
         padding:1rem;
-      }
+      }*/
     `
     const pageBannerText=css`
       text-align:justify;
@@ -83,9 +86,9 @@ export const PageBanner = ({
               className={pageTitleBanner}
             >
               <h1>{title}</h1>
-              <p className={pageBannerText}>
+              {/*<p className={pageBannerText}>
                 {children}
-              </p>
+              </p>*/}
             </div>
           </div>
         </section>
