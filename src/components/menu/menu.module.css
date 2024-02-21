@@ -57,7 +57,7 @@
     background-color: #7f8c8d;
     padding: 10px;
   }
-  @media (min-width: 240px) and (max-width:1000px){
+  @media (min-width: 240px) and (max-width:1024px){
     .menu {
       flex-direction: column;
     }

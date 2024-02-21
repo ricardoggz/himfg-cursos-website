@@ -76,7 +76,7 @@
     display:flex;
 }
 
-@media (min-width:240px) and (max-width:1000px){
+@media (min-width:240px) and (max-width:1024px){
     .display_none{
         display:none;
     }
