@@ -76,7 +76,7 @@
     display:flex;
 }
 
-@media (min-width:240px) and (max-width:1024px){
+@media (min-width:240px) and (max-width:1199px){
     .display_none{
         display:none;
     }
@@ -89,7 +89,7 @@
         width:90%;
     }
 }
-@media (min-width:1200px) and (max-width:1400px){
+@media (min-width:1200px) and (max-width:1800px){
     .principalContainer{
         width:90%;
     }
