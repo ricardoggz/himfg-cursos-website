@@ -39,7 +39,7 @@
 .displayNone{
     display:block;
 }
-@media (min-width:240px) and (max-width:880px){
+@media (min-width:240px) and (max-width:1000px){
     .displayNone{
         display:none;
     }

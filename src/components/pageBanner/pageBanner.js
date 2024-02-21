@@ -46,7 +46,7 @@ export const PageBanner = ({
       padding:3rem;
       line-height:2rem;
       text-align:center;
-      @media (min-width:240px) and (max-width:880px){
+      @media (min-width:240px) and (max-width:1000px){
         width:100%;
         align-items:center;
         margin:0;

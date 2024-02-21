@@ -37,7 +37,7 @@
     font-size:2.5rem;
 }
 
-@media (min-width:240px) and (max-width:880px){
+@media (min-width:240px) and (max-width:1000px){
     .pagePortraitContent{
         flex-direction: column;
     }
@@ -59,7 +59,7 @@
     }
     .pagePortraitContent img{
         height:100%;
-        object-fit: cover;
+        object-fit: contain;
         width: 100%;
     }
 }
