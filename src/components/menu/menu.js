@@ -1,3 +1,5 @@
+import { BiXCircle } from "react-icons/bi"
+import { MdArrowForwardIos, MdOutlineArrowBackIos } from "react-icons/md"
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 import Link from 'next/link'
@@ -603,4 +605,46 @@ function SubMenuRight({ children }) {
   return <div className={styles.submenu_right}>{children}</div>;
 }
 
-export {Menu};
+function MenuMobile(){
+  const [isOpen, setIsOpen] = useState(false)
+    const open = ()=> setIsOpen(!isOpen)
+  return (
+    <div className={styles.menuMobileWrapper}>
+      <button
+        onClick={open}
+        className={styles.buttonMenu}
+      >
+        <span>Submenú</span>
+        <MdArrowForwardIos />
+      </button>
+      <ul
+        className={`${styles.menuMobileList} ${!isOpen ? '' : styles.active}`}>
+          <div>
+            <button
+              onClick={open}
+              className={styles.closeButton}
+            >
+              <MdOutlineArrowBackIos/>
+              <span>Regresar</span>
+            </button>
+          </div>
+        <li>
+          <Link href='/general'>
+            Dirección General
+          </Link>
+        </li>
+        <li>
+          <Link href='/direccion/medica'>
+            Dirección Médica
+          </Link>
+        </li>
+        <li>
+          <Link href='/direccion/medica'>
+            Dirección de Enseñanza y Desarrollo Académico
+          </Link>
+        </li>
+      </ul>
+    </div>
+  )
+}
+export {Menu, MenuMobile};

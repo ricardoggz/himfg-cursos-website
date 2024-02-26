@@ -1,5 +1,5 @@
 import { css } from '@emotion/css'
-import { Menu } from '../../components'
+import { Menu, MenuMobile } from '../../components'
 
 
 export const PageBanner = ({
@@ -93,6 +93,7 @@ export const PageBanner = ({
           </div>
         </section>
         <Menu />
+        <MenuMobile />
       </>
     );
 };
