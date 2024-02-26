@@ -53,6 +53,6 @@ export const doctors = [
         name: 'Miriam Guadalupe Herrera Segura',
         description: 'Dirección de Planeación',
         icon:icon_4,
-        link:'/planeacion'
+        link:'/direccion/planeacion'
     },
 ]
