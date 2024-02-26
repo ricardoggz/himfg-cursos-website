@@ -15,6 +15,7 @@ export const Page = ({children, title, listMenu, textMenu, route}) => {
       <PageBanner
         title='Dirección General'
         banner='https://res.cloudinary.com/diuxbqmn5/image/upload/v1708969418/vlqtlfkcmrayfg7rmrsu.png'
+        bannerResponsive='https://res.cloudinary.com/diuxbqmn5/image/upload/v1708969418/vlqtlfkcmrayfg7rmrsu.png'
       />
       <div className={styles.texts}>
         <figure>
