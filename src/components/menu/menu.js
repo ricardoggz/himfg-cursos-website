@@ -488,7 +488,7 @@ function Menu() {
       {/*Planeación*/}
       <MenuItemWithSubMenu
         title="Dirección de Planeación"
-        href='/planeacion'
+        href='/direccion/planeacion'
       >
         <SubMenu>
           <SubMenuItemWithSubMenu
