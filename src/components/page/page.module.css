@@ -104,3 +104,10 @@
     margin: 0 auto;
     max-width: 100%;
 }
+
+@media (min-width:240px) and (max-width:880px){
+    .texts{
+        flex-direction: column;
+        width:90%;
+    }
+}
