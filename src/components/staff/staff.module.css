@@ -1,0 +1,11 @@
+.staffWrapper{
+    align-items: center;
+    align-content: stretch;
+    color:var(--blue-primary);
+    display:flex;
+    flex-direction: column;
+    font-weight: bold;
+    gap:1.5rem;
+    justify-content: flex-start;
+    list-style: none;
+}

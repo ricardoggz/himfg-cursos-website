@@ -2,7 +2,15 @@ import { useState, useEffect } from "react"
 import { useRouter } from "next/router"
 import dynamic from "next/dynamic"
 import axios from "axios"
-import { PageBanner, TextsPage, Loader, PagePortrait, LoaderPageContent } from "@/components"
+import {
+    TextsPage,
+    Loader,
+    PagePortrait,
+    LoaderPageContent,
+    Title,
+    Container,
+    Staff
+} from "@/components"
 import Head from "next/head"
 
 const PageBannerLazy = dynamic(
@@ -81,6 +89,15 @@ export default function Direction(){
                                 titular={page.page_titular}
                                 titularGrade={page.page_titular_grade}
                             />
+                        }
+                        {
+                            !page.page_staff ? null:
+                            <Container>
+                                <Title>Staff</Title>
+                                <Staff
+                                    list={JSON.parse(page.page_staff)}
+                                />
+                            </Container>
                         }
                     </>
                 ))
