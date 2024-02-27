@@ -36,7 +36,7 @@ export const doctors = [
     },
     {
         image: direccion_investigacion,
-        name: 'Juan Garduño Espinosa',
+        name: 'Mara Medeiros Domingo',
         description: 'Dirección de Investigación',
         icon:icon_1,
         link:'/direccion/investigacion'
