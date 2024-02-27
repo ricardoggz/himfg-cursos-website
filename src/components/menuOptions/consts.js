@@ -29,7 +29,7 @@ export const doctors = [
     },
     {
         image: 'https://archivos.him.edu.mx/graficos/direccion-ensenanza.png',
-        name: 'Caludia Gutierrez Camacho',
+        name: 'Caludia Gutiérrez Camacho',
         description: 'Dirección de Enseñanza y Desarrollo Académico',
         icon:icon_2,
         link:'/direccion/ensenanza'
