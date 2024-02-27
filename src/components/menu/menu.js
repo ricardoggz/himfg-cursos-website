@@ -576,7 +576,7 @@ function SubMenuItem({ title, href }) {
   )
 }
 
-function SubMenuItemWithSubMenu({ title, children }) {
+function SubMenuItemWithSubMenu({ title, children, href }) {
   const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
 
   const handleMouseEnter = () => {
@@ -590,14 +590,15 @@ function SubMenuItemWithSubMenu({ title, children }) {
   
 
   return (
-    <div
+    <Link
       className={styles.sub_menu_item}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
+      href={href}
     >
       <span>{title}</span>
       {isSubMenuOpen && children}
-    </div>
+    </Link>
   );
 }
 
