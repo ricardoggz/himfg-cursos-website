@@ -1,10 +1,9 @@
 import Head from 'next/head'
 import {
-  Directory,
   Container,
-  Title,
   Jumbotron,
-  MenuOptions
+  MenuOptions,
+  PrincipalAds
 } from '../components'
 
 export default function Home() {
@@ -20,6 +19,7 @@ export default function Home() {
       <Container>
         <MenuOptions />
       </Container>
+      <PrincipalAds />
     </>
   )
 }

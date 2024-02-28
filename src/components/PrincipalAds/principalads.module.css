@@ -1,0 +1,43 @@
+.principalAdsWrapper{
+    display: grid;
+    gap:0.5rem;
+    grid-template-columns: repeat(2,1fr);
+    margin: 0 auto;
+    padding: 4rem 0;
+    width:70%;
+}
+.adWrapper{
+    background:
+    url('https://res.cloudinary.com/diuxbqmn5/image/upload/v1709148675/bpnsrl4anzx4siut8anr.webp')
+    no-repeat;
+    background-size: cover;
+    background-position: center;
+    height:400px;
+    width:100%;
+}
+.adMask{
+    align-items: flex-end;
+    background: rgb(36,0,16);
+    background: linear-gradient(0deg, rgba(36,0,16,1) 0%, rgba(121,9,40,1) 43%, rgba(255,0,0,0.08865553057160369) 100%); 
+    display: flex;
+    height:100%;
+    justify-content: flex-end;
+    padding:2rem;
+    width:100%;
+}
+.adTitle{
+    color:var(--white-primary);
+    font-size:3rem;
+    text-align: end;
+}
+@media (min-width:240px) and (max-width:900px){
+    .adTitle{
+        color:var(--white-primary);
+        font-size:1.5rem;
+        text-align: end;
+    }
+    .principalAdsWrapper{
+        grid-template-columns: 1fr;
+        width:100%;
+    }
+}
