@@ -19,6 +19,7 @@ export const PageBanner = ({
       @media (min-width:240px) and (max-width:500px){
         background: url(${bannerResponsive}) no-repeat;
         background-size: cover;
+        height:50vh;
       }
     `
     const pageBannerBackground=css`

@@ -31,6 +31,11 @@
 }
 
 @media (min-width:240px) and (max-width:880px){
+    .footerList .socialmedia{
+        display:flex;
+        gap:1rem;
+        justify-content: center;
+    }
     .footerList{
         flex-direction: column;
     }

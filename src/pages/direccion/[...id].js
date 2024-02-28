@@ -92,12 +92,11 @@ export default function Direction(){
                         }
                         {
                             !page.page_staff ? null:
-                            <Container>
-                                <Title>Staff</Title>
-                                <Staff
-                                    list={JSON.parse(page.page_staff)}
-                                />
-                            </Container>
+                                <>
+                                    <Staff
+                                        list={JSON.parse(page.page_staff)}
+                                    />
+                                </>
                         }
                     </>
                 ))

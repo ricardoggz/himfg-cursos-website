@@ -47,7 +47,7 @@
         grid-template-columns: 1fr;
     }
     .texts{
-        flex-direction: column;
+        flex-direction: column-reverse;
     }
     .text p{
         width:100%;

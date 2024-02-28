@@ -1,11 +1,42 @@
 .staffWrapper{
     align-items: center;
-    align-content: stretch;
-    color:var(--blue-primary);
+    background:var(--golden-primary);
+    color:var(--red-primary);
     display:flex;
     flex-direction: column;
-    font-weight: bold;
+    gap:1rem;
+    padding:4rem 0;
+}
+.staffWrapper h6{
+    font-size: 4rem;
+}
+.staffList{
+    align-items: center;
+    display:flex;
     gap:1.5rem;
     justify-content: flex-start;
+    line-height: 1.5rem;
     list-style: none;
+    margin: 0 auto;
+    max-width: 90%;
+    text-align:center;
+}
+.staffLink li{
+    width:100%;
+}
+.staffLink{
+    color:var(--red-primary);
+    text-decoration: none;
+    width:100%;
+}
+@media(min-width:240px) and (max-width:880px){
+    .staffWrapper{
+        flex-direction: column;
+    }
+    .staffList{
+        flex-direction: column;
+    }
+    .staffList li{
+        width:100%;
+    }
 }
