@@ -15,7 +15,7 @@ import icon_6 from '../../assets/6.png'
 export const principal = {
     image: direccion_general,
     name: 'Adrián Chávez López',
-    description: 'Direccion General',
+    description: 'Dirección General',
     icon:icon_6,
     link:'/general'
 }

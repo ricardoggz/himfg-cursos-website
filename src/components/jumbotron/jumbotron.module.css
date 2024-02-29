@@ -5,12 +5,12 @@
     flex-direction: column;
     justify-content: center;
     width:100%;
-    height:55vh;
+    height:50vh;
 }
 .jumbotronImage{
     width:100%;
     height:100%;
-    object-fit: cover;
+    object-fit: fill;
     object-position: top;
 }
 .jumbotronImage img{
@@ -31,4 +31,10 @@
 }
 .jumbotronTitles span{
     font-style: italic;
+}
+
+@media(min-width:240px) and (max-width:880px){
+    .jumbotronImage{
+        object-fit: cover;
+    }
 }
