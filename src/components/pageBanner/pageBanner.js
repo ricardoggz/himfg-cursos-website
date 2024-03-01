@@ -27,12 +27,8 @@ export const PageBanner = ({
       display:flex;
       width:100%;
       height:100%;
-      background: rgb(152,152,152);
-      background: ${
-        !textLeft ? 'linear-gradient(90deg, rgba(254,254,254,0) 0%, rgba(255,255,255,0) 38%, rgba(7,46,0,0.999019676229867) 92%)'
-        :
-        'linear-gradient(90deg, rgba(3,37,0,0.9878151944371498) 0%, rgba(6,79,0,0.7161065109637605) 29%, rgba(0,212,255,0) 100%)'
-      };
+      background: rgb(23,42,14);
+      background: linear-gradient(90deg, rgba(23,42,14,1) 0%, rgba(61,106,40,0.45840342973126746) 50%, rgba(22,41,13,1) 100%);  
       justify-content:center;
       padding: 3rem 0;
     `
