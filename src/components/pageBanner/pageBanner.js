@@ -28,7 +28,7 @@ export const PageBanner = ({
       width:100%;
       height:100%;
       background: rgb(23,42,14);
-      background: linear-gradient(90deg, rgba(23,42,14,1) 0%, rgba(61,106,40,0.45840342973126746) 50%, rgba(22,41,13,1) 100%);  
+      background: linear-gradient(90deg, rgba(23,42,14,0.875770376509979) 0%, rgba(61,106,40,0.22591043253238796) 50%, rgba(22,41,13,0.7945378835127801) 100%); 
       justify-content:center;
       padding: 3rem 0;
     `
