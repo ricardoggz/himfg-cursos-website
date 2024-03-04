@@ -9,6 +9,7 @@ import {
     LoaderPageContent,
     Title,
     Container,
+    Courses,
     Staff
 } from "@/components"
 import Head from "next/head"
@@ -89,6 +90,14 @@ export default function Direction(){
                                 titular={page.page_titular}
                                 titularGrade={page.page_titular_grade}
                             />
+                        }
+                        {
+                            page.page_url==='educacion-medica-continua' ?
+                            <Container>
+                                <Courses/>
+                            </Container>
+                            :
+                            null
                         }
                         {
                             !page.page_staff ? null:

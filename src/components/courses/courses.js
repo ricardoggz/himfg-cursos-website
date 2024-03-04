@@ -29,10 +29,10 @@ export const Courses = ()=>{
             {!loading?
             <div id={`cursos-2023-${selectedMonth.name}`}>
                 <center>
-                    <h3>Oferta educativa</h3>
+                    <Title className='title'>Oferta educativa</Title>
                 </center>
                 <center>
-                    <h4>(Febrero)</h4>
+                    <h3>(Febrero)</h3>
                 </center>
                 <br />
                 <br />
