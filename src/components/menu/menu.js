@@ -210,7 +210,7 @@ function Menu() {
           />
           <SubMenuItem
             title="Departamento de Educación Médica Contínua"
-            href='/ensenanza/offer'
+            href='/direccion/educacion-medica-continua'
           />
           <SubMenuItem
             title="Departamento de Comunicación Social y CEMESATEL"
