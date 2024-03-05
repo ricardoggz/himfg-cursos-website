@@ -464,7 +464,7 @@ function Menu() {
           {/*Subdirección de recursos financieros*/}
           <SubMenuItemWithSubMenu
             title="Subdirección de Recursos Financieros"
-            href='/administracion'
+            href='/direccion/subdireccion-recursos-financieros'
           >
           <SubMenu>
           <SubMenuItem
