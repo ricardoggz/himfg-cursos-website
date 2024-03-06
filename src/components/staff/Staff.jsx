@@ -11,10 +11,10 @@ export const Staff = ({list})=>{
                     list.map((colaborator, i)=>(
                         <li key={i}>
                                 <Link
-                                    href='/'
+                                    href={colaborator.link}
                                     className={styles.staffLink}
                                 >
-                                    {colaborator}
+                                    {colaborator.name}
                                 </Link>
                         </li>
                     ))

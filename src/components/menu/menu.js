@@ -401,7 +401,7 @@ function Menu() {
           />
           <SubMenuItem
             title="Departamento de Sueldos"
-            href='/administracion'
+            href='/direccion/departamento-de-sueldos'
           />
           <SubMenuItem
             title="Departamento de Atención y Desarrollo de Capital Humano"
@@ -417,7 +417,7 @@ function Menu() {
           <SubMenu>
           <SubMenuItem
             title="Departamento de Compras Gubernamentales Generales"
-            href='/administracion'
+            href='/direccion'
           />
           <SubMenuItem
             title="Departamento de Compras Gubernamentales Farmacéuticas"
@@ -436,7 +436,7 @@ function Menu() {
           {/*Subdirección de mantenimiento*/}
           <SubMenuItemWithSubMenu
             title="Subdirección de Mantenimiento"
-            href='/administracion'
+            href='/direccion/subdireccion-de-mantenimiento'
           >
           <SubMenu>
           <SubMenuItem
@@ -495,20 +495,16 @@ function Menu() {
         <SubMenu>
           <SubMenuItemWithSubMenu
             title="Subdirección de Seguimiento Programático y Diseño Organizacional"
-            href='/ensenanza'
+            href='/direccion/seguimiento-programatico-y-diseno-organizacional'
           >
           <SubMenuRight>
           <SubMenuItem
             title="Departmamento de Seguimiento Programático y Organización Institucional"
-            href='/ensenanza'
+            href='/direccion/desempeno-y-organizacion-institucional'
           />
           <SubMenuItem
             title="Departamento de Tecnologías de la Información y Comunicaciones"
-            href='/ensenanza/ofer'
-          />
-          <SubMenuItem
-            title="Departamento de Comunicación Social y CEMESATEL"
-            href='/ensenanza'
+            href='/direccion/ecnologias-de-la-informacion-y-comunicaciones'
           />
           <SubMenuItem
             title="Departamento de Bioestadística y Archivo Clínico"
