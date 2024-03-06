@@ -504,7 +504,7 @@ function Menu() {
           />
           <SubMenuItem
             title="Departamento de Tecnologías de la Información y Comunicaciones"
-            href='/direccion/ecnologias-de-la-informacion-y-comunicaciones'
+            href='/direccion/tecnologias-de-la-informacion-y-comunicaciones'
           />
           <SubMenuItem
             title="Departamento de Bioestadística y Archivo Clínico"
