@@ -417,7 +417,7 @@ function Menu() {
           <SubMenu>
           <SubMenuItem
             title="Departamento de Compras Gubernamentales Generales"
-            href='/direccion'
+            href='/direccion/compras-gubernamentales-generales'
           />
           <SubMenuItem
             title="Departamento de Compras Gubernamentales Farmacéuticas"
@@ -445,19 +445,19 @@ function Menu() {
           />
           <SubMenuItem
             title="Departamento de Mantenimiento"
-            href='/administracion'
+            href='/direccion/departamento-de-mantenimiento'
           />
           <SubMenuItem
             title="Departamento de Ingeniería Biomédica"
-            href='/administracion'
+            href='/direccion/ingenieria-biomedica'
           />
           <SubMenuItem
             title="Departamento de Obra Pública"
-            href='/administracion'
+            href='/direccion/departamento-obra-publica'
           />
           <SubMenuItem
             title="Departamento de Protección Civil"
-            href='/administracion'
+            href='/direccion/departamento-proteccion-civil'
           />
           </SubMenu>
           </SubMenuItemWithSubMenu>
@@ -508,7 +508,7 @@ function Menu() {
           />
           <SubMenuItem
             title="Departamento de Bioestadística y Archivo Clínico"
-            href='/ensenanza'
+            href='/direccion/bioestadistica-y-archivo-clinico'
           />
           </SubMenuRight>
           </SubMenuItemWithSubMenu>
