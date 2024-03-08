@@ -405,7 +405,7 @@ function Menu() {
           />
           <SubMenuItem
             title="Departamento de Atención y Desarrollo de Capital Humano"
-            href='/administracion'
+            href='/direccion/atencion-y-desarrollo-del-capital-humano'
           />
           </SubMenu>
           </SubMenuItemWithSubMenu>
