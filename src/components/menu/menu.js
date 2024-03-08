@@ -201,12 +201,12 @@ function Menu() {
         <SubMenu>
           <SubMenuItemWithSubMenu
             title="Subdirección de Enseñanza"
-            href='/ensenanza'
+            href='/direccion/subdireccion-de-ensenanza'
           >
           <SubMenu>
           <SubMenuItem
             title="Departmamento de Educación de Pre y Posgrado"
-            href='/ensenanza'
+            href='/direccion/pre-y-posgrado'
           />
           <SubMenuItem
             title="Departamento de Educación Médica Contínua"
