@@ -218,7 +218,7 @@ function Menu() {
           />
           <SubMenuItem
             title="Departamento de Hemerobiblioteca"
-            href='/ensenanza'
+            href='/direccion/hemerobiblioteca'
           />
           </SubMenu>
           </SubMenuItemWithSubMenu>
