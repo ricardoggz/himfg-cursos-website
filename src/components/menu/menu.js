@@ -39,7 +39,7 @@ function Menu() {
             <SubMenu>
             <SubMenuItem
               title="Departamento de Genética"
-              href='/medica'
+              href='/direccion/genetica-y-genomica'
             />
             <SubMenuItem
               title="Departamento de Psiquiatría y Medicina del Adolescente"
@@ -47,7 +47,7 @@ function Menu() {
             />
             <SubMenuItem
               title="Departamento de Rehabilitación"
-              href='/medica'
+              href='/direccion/departamento-de-rehabilitacion'
             />
             <SubMenuItem
               title="Departamento de Audiología y Foniatría"
@@ -83,7 +83,7 @@ function Menu() {
               />
               <SubMenuItem
                 title="Departamento de Neonatología"
-                href='/medica'
+                href='/direccion/departamento-de-neonatologia'
               />
               <SubMenuItem
                 title="Departamento de Hemato-Oncología"
@@ -123,7 +123,7 @@ function Menu() {
             <SubMenu>
               <SubMenuItem
                 title="Departamento de Trasplantes"
-                href='/medica'
+                href='/direccion/departamento-de-trasplantes'
               />
               <SubMenuItem
                 title="Departamento de Ortopedia"
