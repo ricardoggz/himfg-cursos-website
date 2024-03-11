@@ -8,7 +8,8 @@ import { useOnChange } from "../../hooks"
 import { Container, GridContainer, Login } from '../../components'
 
 const Video = (props)=>{
-    useRouter()
+    const id = useRouter()
+    console.log(id.asPath)
     const [count, setCount] = useState(1)
     const [password, setPassword] = useState(null)
     const [course, setCourse] = useState(null)
@@ -96,7 +97,8 @@ const Video = (props)=>{
             </h3>
             {
                 !password ?
-                <Login onSubmit={login}>
+                <>
+                    <Login onSubmit={login}>
                 <label>Contraseña:</label>
                 <input
                 type='password'
@@ -105,7 +107,23 @@ const Video = (props)=>{
                 name='course_password'
                 />
                 <button>Ingresar</button>
-            </Login>
+                </Login>
+                {
+                    id.asPath === '/video/scp-2024/' ?
+                    <center>
+                        <br/>
+                        <a
+                            href='https://docs.google.com/forms/d/e/1FAIpQLSdQrVXZ6rNwvGHnsCsQubgJTsevrb9JFdzTjHOHSy7xWBiQww/viewform'
+                            className={styles.formLink}
+                            target='_blank'
+                        >
+                            Formulario de registro a la Sesión Clínico Patológica
+                        </a>
+                    </center>
+                    :
+                    null
+                }
+                </>
             :
             <>
             {

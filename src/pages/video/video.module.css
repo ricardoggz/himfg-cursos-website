@@ -55,6 +55,9 @@
     padding:0.5rem;
     width:40%;
 }
+.formLink{
+    color:var(--blue-secondary);
+}
 @media(min-width:240px) and (max-width: 880px){
     .liveVideo{
         flex-direction: column;
