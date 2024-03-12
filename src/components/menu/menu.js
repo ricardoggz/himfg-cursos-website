@@ -441,7 +441,7 @@ function Menu() {
           <SubMenu>
           <SubMenuItem
             title="Departamento de Servicios Generales"
-            href='/administracion'
+            href='/direccion/servicios-generales'
           />
           <SubMenuItem
             title="Departamento de Mantenimiento"
