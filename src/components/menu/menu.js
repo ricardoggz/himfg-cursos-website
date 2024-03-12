@@ -43,7 +43,7 @@ function Menu() {
             />
             <SubMenuItem
               title="Departamento de Psiquiatría y Medicina del Adolescente"
-              href='/medica'
+              href='/direccion/psiquiatria-y-medicina-del-adolescente'
             />
             <SubMenuItem
               title="Departamento de Rehabilitación"
@@ -67,7 +67,7 @@ function Menu() {
               />
               <SubMenuItem
                 title="Departamento de Infectología"
-                href='/medica'
+                href='/direccion/departamento-de-infectologia'
               />
               <SubMenuItem
                 title="Departamento de Terapia Intensiva"
@@ -75,7 +75,7 @@ function Menu() {
               />
               <SubMenuItem
                 title="Departamento de Cardiología"
-                href='/medica'
+                href='/direccion/departamento-de-cardiologia'
               />
               <SubMenuItem
                 title="Departamento de Nefrología"
@@ -127,7 +127,7 @@ function Menu() {
               />
               <SubMenuItem
                 title="Departamento de Ortopedia"
-                href='/medica'
+                href='/direccion/departamento-de-ortopedia'
               />
               <SubMenuItem
                 title="Departamento de Neurocirugía"
@@ -143,7 +143,7 @@ function Menu() {
               />
               <SubMenuItem
                 title="Departamento de Anestesia y Algología"
-                href='/medica'
+                href='/direccion/anestesia-y-algologia'
               />
               <SubMenuItem
                 title="Departamento de Estomatología"
@@ -163,7 +163,7 @@ function Menu() {
               />
               <SubMenuItem
                 title="Departamento de Laboratorio Clínico"
-                href='/medica'
+                href='/direccion/laboratorio-clinico'
               />
               <SubMenuItem
                 title="Departamento de Patología Clínica y Experimental"
