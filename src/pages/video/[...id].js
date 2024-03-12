@@ -109,8 +109,9 @@ const Video = (props)=>{
                 <button>Ingresar</button>
                 </Login>
                 {
-                    id.asPath === '/video/scp-2024/' ?
-                    <center>
+                    id.asPath === '/video/scp-2024' ?
+                    <>
+                        <center>
                         <br/>
                         <a
                             href='https://docs.google.com/forms/d/e/1FAIpQLSdQrVXZ6rNwvGHnsCsQubgJTsevrb9JFdzTjHOHSy7xWBiQww/viewform'
@@ -119,7 +120,17 @@ const Video = (props)=>{
                         >
                             Formulario de registro a la Sesión Clínico Patológica
                         </a>
-                    </center>
+                        </center>
+                        <br/>                    
+                        <center>
+                        <br/>
+                        <p className={styles.formMessage}>
+                            <b>ATENTO AVISO</b> este registro será habilitado hasta las 11:00 am
+                            del 13 de marzo de 2024, razón por la cual te sugerimos hacer tu registro
+                            con tiempo para que se te pueda enviar sin contratiempos tu clave de acceso.
+                        </p>
+                        </center>
+                    </>
                     :
                     null
                 }

@@ -58,8 +58,16 @@
 .formLink{
     color:var(--blue-secondary);
 }
+.formMessage{
+    font-size:1.3rem;
+    margin:0 auto;
+    width:50%;
+}
 @media(min-width:240px) and (max-width: 880px){
     .liveVideo{
         flex-direction: column;
+    }
+    .formMessage{
+        width:90%;
     }
 }
