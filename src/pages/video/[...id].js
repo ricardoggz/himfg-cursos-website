@@ -109,7 +109,7 @@ const Video = (props)=>{
                 <button>Ingresar</button>
                 </Login>
                 {
-                    id.asPath === '/video/scp-2024' ?
+                    id.asPath === '/video/scp-2024/' ?
                     <>
                         <center>
                         <br/>
