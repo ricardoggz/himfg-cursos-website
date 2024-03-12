@@ -14,6 +14,13 @@ export const Header =()=>{
                         alt='Gobierno de México'
                     />
                 </Link>
+                <ul className={styles.headerNavList}>
+                    <li>
+                        <Link href='/video/scp-2024'>
+                            Sesión Clínico Patológica
+                        </Link>
+                    </li>
+                </ul>
             </nav>
             </header>
             <div className={`${styles.imageContainer} boxShadow`}>

@@ -20,3 +20,10 @@
 .imageContainer img{
     width:8rem;
 }
+.headerNavList{
+    list-style: none;
+}
+.headerNavList a{
+    color:var(--white-primary);
+    text-decoration: none;
+}
