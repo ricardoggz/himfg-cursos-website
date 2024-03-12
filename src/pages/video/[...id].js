@@ -157,6 +157,23 @@ const Video = (props)=>{
                     />
                     </div>
                     {
+                       id.asPath === '/video/scp-2024/' ?
+                       <center>
+                        <br/>
+                        <a
+                            href='https://scp.him.edu.mx/resumen-del-caso-clinico.pdf'
+                            className={styles.formLink}
+                            target='_blank'
+                        >
+                            Resumen del caso clínico
+                        </a>
+                        <br/>
+                        <br/>
+                        </center>
+                        :
+                        null
+                    }
+                    {
                         course_name === 'XXVI Curso de actualización en anestesiología pediátrica'
                         ?
                     <>
