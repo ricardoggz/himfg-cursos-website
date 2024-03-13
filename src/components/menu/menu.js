@@ -51,7 +51,7 @@ function Menu() {
             />
             <SubMenuItem
               title="Departamento de Audiología y Foniatría"
-              href='/medica'
+              href='/direccion/departamento-de-audiologia-y-foniatria'
             />
             </SubMenu>
           </SubMenuItemWithSubMenu>
@@ -107,7 +107,7 @@ function Menu() {
               />
               <SubMenuItem
                 title="Departamento de Epidemiología Hospitalaria"
-                href='/medica'
+                href='/direccion/departamento-de-epidemiologia-hospitalaria'
               />
               <SubMenuItem
                 title="Departamento de Cuidados Paliativos y Calidad de Vida"
@@ -147,7 +147,7 @@ function Menu() {
               />
               <SubMenuItem
                 title="Departamento de Estomatología"
-                href='/medica'
+                href='/direccion/departamento-de-estomatologia'
               />
             </SubMenu>
           </SubMenuItemWithSubMenu>
