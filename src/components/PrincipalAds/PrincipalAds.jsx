@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import styles from './principalads.module.css'
 
 export const PrincipalAds = ()=>{
@@ -10,13 +11,16 @@ export const PrincipalAds = ()=>{
                     </span>
                 </div>
             </div>
-            <div className={styles.adWrapper}>
+            <Link
+                className={styles.adWrapper}
+                href='/requisitos'
+            >
                 <div className={styles.adMask}>
                 <span className={styles.adTitle}>
                         Requisitos para ingresar al hospital
                     </span>
                 </div>
-            </div>
+            </Link>
             <div className={styles.adWrapper}>
                 <div className={styles.adMask}>
                     <span className={styles.adTitle}>
@@ -24,13 +28,16 @@ export const PrincipalAds = ()=>{
                     </span>
                 </div>
             </div>
-            <div className={styles.adWrapper}>
+            <Link
+                className={styles.adWrapper}
+                href='/voluntariado'
+            >
                 <div className={styles.adMask}>
                     <span className={styles.adTitle}>
                         Voluntariado
                     </span>
                 </div>
-            </div>
+            </Link>
             <div className={styles.adWrapper}>
                 <div className={styles.adMask}>
                     <span className={styles.adTitle}>

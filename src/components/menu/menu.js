@@ -214,7 +214,7 @@ function Menu() {
           />
           <SubMenuItem
             title="Departamento de Comunicación Social y CEMESATEL"
-            href='/ensenanza'
+            href='/direccion/comunicacion-social-y-cemesatel'
           />
           <SubMenuItem
             title="Departamento de Hemerobiblioteca"

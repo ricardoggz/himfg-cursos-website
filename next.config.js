@@ -27,7 +27,8 @@ const nextConfig = {
       '/pdf' : { page: '/pdf' },
       '/profile': { page: '/profile'},
       '/test/[...id]' : { page: '/test/[...id]'},
-      '/direccion/[...id]': { page : '/direccion/[...id]'}
+      '/direccion/[...id]': { page : '/direccion/[...id]'},
+      '/voluntariado' : { page: '/voluntariado'}
     }
   },
   env:{
