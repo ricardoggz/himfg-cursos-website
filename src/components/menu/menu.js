@@ -63,7 +63,7 @@ function Menu() {
             <SubMenu>
               <SubMenuItem
                 title="Departamento de Urgencias"
-                href='/medica'
+                href='/direccion/departamento-de-urgencias'
               />
               <SubMenuItem
                 title="Departamento de Infectología"
@@ -87,7 +87,7 @@ function Menu() {
               />
               <SubMenuItem
                 title="Departamento de Hemato-Oncología"
-                href='/medica'
+                href='/direccion/departamento-de-hemato-oncologia'
               />
               <SubMenuItem
                 title="Departamento de Gastroenterología y Nutrición"
