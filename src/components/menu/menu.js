@@ -99,7 +99,7 @@ function Menu() {
               />
               <SubMenuItem
                 title="Departamento de Medicina Interna"
-                href='/medica'
+                href='/direccion/departamento-de-medicina-interna'
               />
               <SubMenuItem
                 title="Departamento de Endocrinología"
@@ -131,7 +131,7 @@ function Menu() {
               />
               <SubMenuItem
                 title="Departamento de Neurocirugía"
-                href='/medica'
+                href='/direccion/departamento-de-neurocirugia'
               />
               <SubMenuItem
                 title="Departamento de Urología"
@@ -154,7 +154,7 @@ function Menu() {
           {/*Subdirección de servicios auxiliares y diagnostico*/}
           <SubMenuItemWithSubMenu
             title='Subdirección de Servicios Auxiliares de Diagnóstico'
-            href='/medica'
+            href='/direccion/servicios-auxiliares-de-diagnostico'
           >
             <SubMenu>
               <SubMenuItem
@@ -179,7 +179,7 @@ function Menu() {
             <SubMenu>
               <SubMenuItem
                 title="Departamento de Enfermería"
-                href='/medica'
+                href='/direccion/departamento-de-enfermeria'
               />
               <SubMenuItem
                 title="Departamento de Trabajo Social"
@@ -187,7 +187,7 @@ function Menu() {
               />
               <SubMenuItem
                 title="Departamento de Relaciones Públicas"
-                href='/medica'
+                href='/direccion/departamento-de-relaciones-publicas'
               />
             </SubMenu>
           </SubMenuItemWithSubMenu>
