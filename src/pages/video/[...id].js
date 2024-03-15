@@ -172,7 +172,7 @@ const Video = (props)=>{
                        <center>
                         <br/>
                         <a
-                            href='https://scp.him.edu.mx/7-resumen-del-caso-clinico.pdf'
+                            href='https://scp.him.edu.mx/resumen-del-caso-clinico.pdf'
                             className={styles.formLink}
                             target='_blank'
                         >
