@@ -6,3 +6,8 @@
     margin: 0 auto;
     width:50%;
 }
+@media(min-width:240px) and (max-width:900px){
+    .voluntierWrapper{
+        width:90%;
+    }
+}

@@ -1,0 +1,13 @@
+.privacityWrapper{
+    align-items: center;
+    display:flex;
+    justify-content: center;
+}
+.privacityButton{
+    background: var(--golden-primary);
+    color:var(--white-primary);
+    padding:1rem;
+    text-align: center;
+    text-decoration: none;
+    width:50%;
+}

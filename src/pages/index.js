@@ -3,7 +3,8 @@ import {
   Container,
   Jumbotron,
   MenuOptions,
-  PrincipalAds
+  PrincipalAds,
+  Privacity
 } from '../components'
 
 export default function Home() {
@@ -19,7 +20,12 @@ export default function Home() {
       <Container>
         <MenuOptions />
       </Container>
-      <PrincipalAds />
+      <Container>
+        <PrincipalAds />
+      </Container>
+      <Container>
+        <Privacity />
+      </Container>
     </>
   )
 }
