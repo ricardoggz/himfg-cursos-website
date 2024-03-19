@@ -7,7 +7,7 @@ html{
   scroll-behavior: smooth;
 }
 body{
-  background: url('../assets/fondo-banner.jpg') no-repeat;
+  background: url('https://archivos.him.edu.mx/graficos/fondo-body.webp') no-repeat;
   background-size: cover;
   background-position: top;
   color:var(--black-primary);

@@ -34,7 +34,7 @@ function Menu() {
           {/*Subdirección de pediatría ambulatoria*/}
           <SubMenuItemWithSubMenu
             title='Subdirección de Pediatría Ambulatoria'
-            href='/medica'
+            href='/direccion/subdireccion-de-pediatria-ambulatoria'
           >
             <SubMenu>
             <SubMenuItem
@@ -58,7 +58,7 @@ function Menu() {
           {/*Subdirección de asistencia medica*/}
           <SubMenuItemWithSubMenu
             title='Subdirección de Asistencia Médica'
-            href='/medica'
+            href='/direccion/subdireccion-de-asistenca-medica'
           >
             <SubMenu>
               <SubMenuItem
@@ -95,7 +95,7 @@ function Menu() {
               />
               <SubMenuItem
                 title="Departamento de Neurología"
-                href='/medica'
+                href='/direccion/departamento-de-neurologia'
               />
               <SubMenuItem
                 title="Departamento de Medicina Interna"
@@ -135,7 +135,7 @@ function Menu() {
               />
               <SubMenuItem
                 title="Departamento de Urología"
-                href='/medica'
+                href='/direccion/departamento-de-urologia'
               />
               <SubMenuItem
                 title="Departamento de Cirugía Cardiovascular, Tórax y Endoscopía"
@@ -159,7 +159,7 @@ function Menu() {
             <SubMenu>
               <SubMenuItem
                 title="Departamento de Imagenología"
-                href='/medica'
+                href='/direccion/departamento-de-imagenologia'
               />
               <SubMenuItem
                 title="Departamento de Laboratorio Clínico"
@@ -590,7 +590,7 @@ function SubMenuItemWithSubMenu({ title, children, href }) {
       className={styles.sub_menu_item}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      href={href}
+      href={`${href}`}
     >
       <span>{title}</span>
       {isSubMenuOpen && children}
@@ -626,17 +626,26 @@ function MenuMobile(){
             </button>
           </div>
         <li>
-          <Link href='/general'>
+          <Link
+          href='/general'
+          onClick={open}
+          >
             Dirección General
           </Link>
         </li>
         <li>
-          <Link href='/direccion/medica'>
+          <Link
+          href='/direccion/medica'
+          onClick={open}
+          >
             Dirección Médica
           </Link>
         </li>
         <li>
-          <Link href='/direccion/medica'>
+          <Link
+            href='/direccion/medica'
+            onClick={open}
+          >
             Dirección de Enseñanza y Desarrollo Académico
           </Link>
         </li>

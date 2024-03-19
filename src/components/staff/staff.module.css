@@ -12,7 +12,8 @@
 }
 .staffList{
     align-items: center;
-    display:flex;
+    display:grid;
+    grid-template-columns: repeat(4,1fr);
     gap:1.5rem;
     justify-content: flex-start;
     line-height: 1.5rem;
@@ -34,7 +35,7 @@
         flex-direction: column;
     }
     .staffList{
-        flex-direction: column;
+        grid-template-columns: 1fr;
     }
     .staffList li{
         width:100%;

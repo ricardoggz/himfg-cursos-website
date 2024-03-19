@@ -7,23 +7,18 @@ import {
     Loader,
     PagePortrait,
     LoaderPageContent,
-    Title,
     Container,
     Courses,
-    Staff
+    Staff,
+    PageBanner
 } from "@/components"
 import Head from "next/head"
-
-const PageBannerLazy = dynamic(
-    ()=>import('../../components/pageBanner/pageBanner').then(module=>module.PageBanner),{
-        loading: ()=> <Loader message='Cargando semblanza'/>
-    }
-)
 
 export default function Direction(){
     const id = useRouter()
     let filteredPage
     const [page, setPage] = useState(null)
+    const [allPages, setAllPages] = useState([])
     const [loading, setLoading] = useState(true)
     const getLinks = async()=>{
         try {
@@ -32,6 +27,7 @@ export default function Direction(){
             setLoading(false)
         }
         if(pages.data){
+            setAllPages(pages.data)
             filteredPage = pages.data.filter((page)=> page.page_url === id.query.id[0])
             setPage(filteredPage)
         }
@@ -42,7 +38,7 @@ export default function Direction(){
     useEffect(()=>{
         getLinks()
     },[])
-    useEffect(() => {
+    /*useEffect(() => {
         const handleRouteChange = () => {
           id.reload(document.location.reload())
         }
@@ -50,7 +46,7 @@ export default function Direction(){
         return () => {
           id.events.off('routeChangeComplete', handleRouteChange)
         }
-      },[id])
+      },[id])*/
     return (
         <>
             {
@@ -59,7 +55,8 @@ export default function Direction(){
                     {
                 !page ? null
                 :
-                page.map((page)=>(
+                allPages.filter((page)=> page.page_url === id.query.id[0])
+                .map((page)=>(
                     <>
                         <Head>
                             <title>HIMFG - {page.page_title}</title>
@@ -68,14 +65,14 @@ export default function Direction(){
                                 href='https://res.cloudinary.com/diuxbqmn5/image/upload/v1677114497/himfg-logo_ewzx59.webp'
                                 sizes="any" />
                         </Head>
-                        <PageBannerLazy
+                        <PageBanner
                         title={page.page_title}
                         banner={page.page_banner_image}
                         bannerResponsive={page.banner_image_responsive}
                         textLeft={!page.page_left_text ? false : true}
                         >
                         <p>{page.page_banner_content}</p>
-                        </PageBannerLazy>
+                        </PageBanner>
                         <TextsPage
                             firstText={page.page_first_content}
                             secondText={page.page_second_content}
