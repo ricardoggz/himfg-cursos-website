@@ -2,6 +2,7 @@
     width:100%;
 }
 .texts{
+    align-items: center;
     display:flex;
     width:100%;
     margin: 0 auto;
@@ -14,15 +15,19 @@
     height:100%;
 }
 .text{
-    display:grid;
-    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    /*grid-template-columns: repeat(2, 1fr);*/
     height:100%;
 }
 .text p{
     line-height: 2.5rem;
+    margin:0 auto;
     padding:1.5rem;
     text-align:justify;
-    width:100%;
+    width:70%;
 }
 .text div{
     width:100%;
@@ -37,7 +42,7 @@
     object-fit: cover;
 }
 .displayNone{
-    display:block;
+    display:none;
 }
 @media (min-width:240px) and (max-width:1024px){
     .displayNone{

@@ -6,7 +6,7 @@ export const Footer = ()=>{
         <footer className={styles.footerWrapper}>
             <ul className={`${styles.footerList} flexContainer`}>
                 <div>
-                    <li>Redes sociales:</li>
+                    <li>Redes sociales</li>
                     <br />
                     <div className={styles.socialmedia}>
                     <li>
@@ -44,14 +44,14 @@ export const Footer = ()=>{
                     </div>
                 </div>
                 <div>
-                    <li>Dirección:</li>
+                    <li>Dirección</li>
                     <br />
                     <li>
-                        Dr. Márquez No.162, Col. Doctores, Alcaldía Cuauhtémoc; CDMX C.P 06720
+                        Dr. Márquez No. 162, Col. Doctores, Alcaldía Cuauhtémoc; CDMX C.P 06720
                     </li>
                 </div>
                 <div>
-                    <li>Teléfono:</li>
+                    <li>Teléfono</li>
                     <br />
                     <li>
                         55-52-28-99-17

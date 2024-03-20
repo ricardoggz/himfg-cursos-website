@@ -26,12 +26,10 @@ export const TextsPage = ({
                     {firstText}
                   </p>
                   </div>
-                  <div className={styles.displayNone}/>
                 </div>
             </div>
             <div className={styles.texts}>
                 <div className={styles.text}>
-                    <div className={styles.displayNone}/>
                     <div>
                     <p>
                         {secondText}

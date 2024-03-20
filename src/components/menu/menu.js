@@ -91,7 +91,7 @@ function Menu() {
               />
               <SubMenuItem
                 title="Departamento de Gastroenterología y Nutrición"
-                href='/medica'
+                href='/direccion/gastroenterologia-y-nutricion'
               />
               <SubMenuItem
                 title="Departamento de Neurología"
@@ -139,7 +139,7 @@ function Menu() {
               />
               <SubMenuItem
                 title="Departamento de Cirugía Cardiovascular, Tórax y Endoscopía"
-                href='/medica'
+                href='/direccion/cirugia-cardiovascular-torax-y-endoscopia'
               />
               <SubMenuItem
                 title="Departamento de Anestesia y Algología"
@@ -232,16 +232,16 @@ function Menu() {
         <SubMenu>
           <SubMenuItemWithSubMenu
             title="Subdirección de Gestión de la Investigación"
-            href='/investigacion'
+            href='/direccion/subdireccion-de-gestion-de-la-investigacion'
           >
           <SubMenu>
           <SubMenuItem
             title="Departamento de Administración de Control y Gestión a la Investigación"
-            href='/investigacion'
+            href='/direccion/departamento-administrativo-de-control-y-gestion'
           />
           <SubMenuItem
             title="Departamento Auxiliar Administrativo de Proyectos de Investigación"
-            href='/investigacion'
+            href='/direccion/departamento-auxiliar-de-proyectos-de-investigacion'
           />
           <SubMenuItem
             title="Departamento de Ediciones Médicas"
@@ -249,7 +249,7 @@ function Menu() {
           />
           <SubMenuItem
             title="Departamento de Evaluación de Medicamentos y Farmacovigilancia"
-            href='/investigacion'
+            href='/direccion/departamento-de-infrmacion-estrategica-en-investigacion'
           />
           {/*Departamento de Investigación Clínica*/}
           <SubMenuItemWithSubMenu
