@@ -71,7 +71,7 @@ function Menu() {
               />
               <SubMenuItem
                 title="Departamento de Terapia Intensiva"
-                href='/medica'
+                href='/direccion/departamento-de-terapia-intensiva'
               />
               <SubMenuItem
                 title="Departamento de Cardiología"
@@ -79,7 +79,7 @@ function Menu() {
               />
               <SubMenuItem
                 title="Departamento de Nefrología"
-                href='/medica'
+                href='/direccion/departamento-de-nefrologia'
               />
               <SubMenuItem
                 title="Departamento de Neonatología"
@@ -103,7 +103,7 @@ function Menu() {
               />
               <SubMenuItem
                 title="Departamento de Endocrinología"
-                href='/medica'
+                href='/direccion/departamento-de-endocrinologia'
               />
               <SubMenuItem
                 title="Departamento de Epidemiología Hospitalaria"
@@ -111,14 +111,14 @@ function Menu() {
               />
               <SubMenuItem
                 title="Departamento de Cuidados Paliativos y Calidad de Vida"
-                href='/medica'
+                href='/direccion/cuidados-paleativos-y-calidad-de-vida'
               />
             </SubMenu>
           </SubMenuItemWithSubMenu>
           {/*Subdirección de asistencia quirúrgica*/}
           <SubMenuItemWithSubMenu
             title='Subdirección de Asistencia Quirúrgica'
-            href='/medica'
+            href='/direccion/subdireccion-de-asistencia-quirurgica'
           >
             <SubMenu>
               <SubMenuItem
