@@ -17,7 +17,7 @@
 .adMask{
     align-items: flex-end;
     background: rgb(36,0,16);
-    background: linear-gradient(0deg, rgba(36,0,16,1) 0%, rgba(121,9,40,1) 43%, rgba(255,0,0,0.08865553057160369) 100%); 
+    background: linear-gradient(0deg, rgba(36,0,16,1) 0%, rgba(121, 9, 41, 0.647) 43%, rgba(255,0,0,0.08865553057160369) 100%); 
     display: flex;
     height:100%;
     justify-content: flex-end;

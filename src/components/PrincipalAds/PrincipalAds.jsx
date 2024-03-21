@@ -12,7 +12,17 @@ export const PrincipalAds = ()=>{
                 </div>
             </div>
             <Link
-                className={styles.adWrapper}
+                style={
+                    {
+                        background:`
+                        url('https://res.cloudinary.com/diuxbqmn5/image/upload/v1709148675/bpnsrl4anzx4siut8anr.webp')
+                        no-repeat;`,
+                        backgroundSize: `cover;`,
+                        backgroundPosition: `center;`,
+                        height:`400px;`,
+                        width:`100%;`
+                    }
+                }
                 href='/requisitos'
             >
                 <div className={styles.adMask}>
@@ -21,7 +31,19 @@ export const PrincipalAds = ()=>{
                     </span>
                 </div>
             </Link>
-            <div className={styles.adWrapper}>
+            <div
+                style={
+                    {
+                        background:`
+                        url('https://archivos.him.edu.mx/graficos/home/el-instituto.webp')
+                        no-repeat;`,
+                        backgroundSize: `cover;`,
+                        backgroundPosition: `top;`,
+                        height:`400px;`,
+                        width:`100%;`
+                    }
+                }
+            >
                 <div className={styles.adMask}>
                     <span className={styles.adTitle}>
                         El instituto y su historia
@@ -29,7 +51,17 @@ export const PrincipalAds = ()=>{
                 </div>
             </div>
             <Link
-                className={styles.adWrapper}
+                style={
+                    {
+                        background:`
+                        url('https://archivos.him.edu.mx/graficos/home/voluntariado.webp')
+                        no-repeat;`,
+                        backgroundSize: `cover;`,
+                        backgroundPosition: `top;`,
+                        height:`400px;`,
+                        width:`100%;`
+                    }
+                }
                 href='/voluntariado'
             >
                 <div className={styles.adMask}>
@@ -45,7 +77,19 @@ export const PrincipalAds = ()=>{
                     </span>
                 </div>
             </div>
-            <div className={styles.adWrapper}>
+            <div
+                style={
+                    {
+                        background:`
+                        url('https://archivos.him.edu.mx/graficos/home/legado-artistico.webp')
+                        no-repeat;`,
+                        backgroundSize: `cover;`,
+                        backgroundPosition: `top;`,
+                        height:`400px;`,
+                        width:`100%;`
+                    }
+                }
+            >
                 <div className={styles.adMask}>
                     <span className={styles.adTitle}>
                         Legado artístico
