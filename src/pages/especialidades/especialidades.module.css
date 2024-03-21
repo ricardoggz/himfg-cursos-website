@@ -1,0 +1,37 @@
+.expecialidadesWrapper{
+    display:flex;
+    flex-direction: column;
+    gap:1rem;
+    line-height: 2rem;
+    margin: 0 auto;
+    width:50%;
+}
+.especialidadesGrid{
+    display: grid;
+    gap:1rem;
+    grid-template-columns: repeat(2,1fr);
+}
+.especialidadesGrid li{
+    align-items: center;
+    background: url('https://archivos.him.edu.mx/graficos/especialidades/fondo-listado.png') no-repeat;
+    background-position: bottom;
+    background-size: contain;
+    color:var(--white-primary);
+    display:flex;
+    justify-content: center;
+    list-style: none;
+    padding:3rem;
+    text-align: center;
+}
+@media(min-width:240px) and (max-width:900px){
+    .especialidadesWrapper{
+        width:90%;
+    }
+    .especialidadesGrid{
+        grid-template-columns: 1fr;
+    }
+    .especialidadesGrid li{
+        background-position: center;
+        padding:4rem;
+    }
+}

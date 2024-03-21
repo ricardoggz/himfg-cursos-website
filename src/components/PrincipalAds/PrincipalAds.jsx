@@ -4,13 +4,26 @@ import styles from './principalads.module.css'
 export const PrincipalAds = ()=>{
     return (
         <section className={styles.principalAdsWrapper}>
-            <div className={styles.adWrapper}>
+            <Link
+                style={
+                    {
+                        background:`
+                        url('https://res.cloudinary.com/diuxbqmn5/image/upload/v1709148675/bpnsrl4anzx4siut8anr.webp')
+                        no-repeat;`,
+                        backgroundSize: `cover;`,
+                        backgroundPosition: `center;`,
+                        height:`400px;`,
+                        width:`100%;`
+                    }
+                }
+                href='/requisitos'
+            >
                 <div className={styles.adMask}>
                     <span className={styles.adTitle}>
                         Especialidades
                     </span>
                 </div>
-            </div>
+            </Link>
             <Link
                 style={
                     {
