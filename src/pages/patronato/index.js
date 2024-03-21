@@ -5,8 +5,8 @@ export default function Voluntariado(){
         <>
             <PageBanner
                 title='Patronato'
-                banner='https://archivos.him.edu.mx/graficos/voluntariado/BANNER.webp'
-                bannerResponsive='https://archivos.him.edu.mx/graficos/voluntariado/BANNER.webp'
+                banner='https://archivos.him.edu.mx/graficos/home/patronato.webp'
+                bannerResponsive='https://archivos.him.edu.mx/graficos/home/patronato.webp'
             />
             <Container>
                 <div className={styles.patronatoWrapper}>

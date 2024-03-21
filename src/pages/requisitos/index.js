@@ -5,8 +5,8 @@ export default function Voluntariado(){
         <>
             <PageBanner
                 title='Requisitos para ingresar al hospital'
-                banner='https://res.cloudinary.com/diuxbqmn5/image/upload/v1708969418/vlqtlfkcmrayfg7rmrsu.png'
-                bannerResponsive='https://res.cloudinary.com/diuxbqmn5/image/upload/v1708969418/vlqtlfkcmrayfg7rmrsu.png'
+                banner='https://archivos.him.edu.mx/graficos/home/requisitos.webp'
+                bannerResponsive='https://archivos.him.edu.mx/graficos/home/requisitos.webp'
             />
             <Container>
                 <div className={styles.requirementsWrapper}>

@@ -8,7 +8,7 @@ export const PrincipalAds = ()=>{
                 style={
                     {
                         background:`
-                        url('https://res.cloudinary.com/diuxbqmn5/image/upload/v1709148675/bpnsrl4anzx4siut8anr.webp')
+                        url('https://archivos.him.edu.mx/graficos/home/especialidades.webp')
                         no-repeat;`,
                         backgroundSize: `cover;`,
                         backgroundPosition: `center;`,
@@ -16,7 +16,7 @@ export const PrincipalAds = ()=>{
                         width:`100%;`
                     }
                 }
-                href='/requisitos'
+                href='/especialidades'
             >
                 <div className={styles.adMask}>
                     <span className={styles.adTitle}>
@@ -28,7 +28,7 @@ export const PrincipalAds = ()=>{
                 style={
                     {
                         background:`
-                        url('https://res.cloudinary.com/diuxbqmn5/image/upload/v1709148675/bpnsrl4anzx4siut8anr.webp')
+                        url('https://archivos.him.edu.mx/graficos/home/requisitos.webp')
                         no-repeat;`,
                         backgroundSize: `cover;`,
                         backgroundPosition: `center;`,
@@ -87,7 +87,7 @@ export const PrincipalAds = ()=>{
                 style={
                     {
                         background:`
-                        url('https://archivos.him.edu.mx/graficos/home/voluntariado.webp')
+                        url('https://archivos.him.edu.mx/graficos/home/patronato.webp')
                         no-repeat;`,
                         backgroundSize: `cover;`,
                         backgroundPosition: `top;`,
