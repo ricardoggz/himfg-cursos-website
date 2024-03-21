@@ -5,9 +5,54 @@
     margin: 0 auto;
     width:70%;
 }
-.adWrapper{
+.especialidadWrapper{
     background:
-    url('https://res.cloudinary.com/diuxbqmn5/image/upload/v1709148675/bpnsrl4anzx4siut8anr.webp')
+    url('https://archivos.him.edu.mx/graficos/home/especialidades.webp')
+    no-repeat;
+    background-size: cover;
+    background-position: center;
+    height:400px;
+    width:100%;
+}
+.requisitosWrapper{
+    background:
+    url('https://archivos.him.edu.mx/graficos/home/requisitos.webp')
+    no-repeat;
+    background-size: cover;
+    background-position: center;
+    height:400px;
+    width:100%;
+}
+.historiaWrapper{
+    background:
+    url('https://archivos.him.edu.mx/graficos/home/el-instituto.webp')
+    no-repeat;
+    background-size: cover;
+    background-position: center;
+    height:400px;
+    width:100%;
+}
+.voluntariadoWrapper{
+    background:
+    url('https://archivos.him.edu.mx/graficos/home/voluntariado.webp')
+    no-repeat;
+    background-size: cover;
+    background-position: center;
+    height:400px;
+    width:100%;
+}
+.patronatoWrapper{
+    background:
+    url('https://archivos.him.edu.mx/graficos/home/patronato.webp')
+    no-repeat;
+    background-size: cover;
+    background-position: center;
+    height:400px;
+    width:100%;
+}
+.legadoWrapper{
+    background:
+    url('https://archivos.him.edu.mx/graficos/home/legado-artistico.webp')
     no-repeat;
     background-size: cover;
     background-position: center;

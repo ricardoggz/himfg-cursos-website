@@ -32,6 +32,7 @@
     }
     .especialidadesGrid li{
         background-position: center;
-        padding:4rem;
+        background-size: fill;
+        padding:1rem;
     }
 }

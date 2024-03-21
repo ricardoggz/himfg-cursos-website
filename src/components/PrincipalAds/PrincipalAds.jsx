@@ -5,17 +5,7 @@ export const PrincipalAds = ()=>{
     return (
         <section className={styles.principalAdsWrapper}>
             <Link
-                style={
-                    {
-                        background:`
-                        url('https://archivos.him.edu.mx/graficos/home/especialidades.webp')
-                        no-repeat;`,
-                        backgroundSize: `cover;`,
-                        backgroundPosition: `center;`,
-                        height:`400px;`,
-                        width:`100%;`
-                    }
-                }
+                className={styles.especialidadWrapper}
                 href='/especialidades'
             >
                 <div className={styles.adMask}>
@@ -25,17 +15,7 @@ export const PrincipalAds = ()=>{
                 </div>
             </Link>
             <Link
-                style={
-                    {
-                        background:`
-                        url('https://archivos.him.edu.mx/graficos/home/requisitos.webp')
-                        no-repeat;`,
-                        backgroundSize: `cover;`,
-                        backgroundPosition: `center;`,
-                        height:`400px;`,
-                        width:`100%;`
-                    }
-                }
+                className={styles.requisitosWrapper}
                 href='/requisitos'
             >
                 <div className={styles.adMask}>
@@ -45,17 +25,7 @@ export const PrincipalAds = ()=>{
                 </div>
             </Link>
             <div
-                style={
-                    {
-                        background:`
-                        url('https://archivos.him.edu.mx/graficos/home/el-instituto.webp')
-                        no-repeat;`,
-                        backgroundSize: `cover;`,
-                        backgroundPosition: `top;`,
-                        height:`400px;`,
-                        width:`100%;`
-                    }
-                }
+                className={styles.historiaWrapper}
             >
                 <div className={styles.adMask}>
                     <span className={styles.adTitle}>
@@ -64,17 +34,7 @@ export const PrincipalAds = ()=>{
                 </div>
             </div>
             <Link
-                style={
-                    {
-                        background:`
-                        url('https://archivos.him.edu.mx/graficos/home/voluntariado.webp')
-                        no-repeat;`,
-                        backgroundSize: `cover;`,
-                        backgroundPosition: `top;`,
-                        height:`400px;`,
-                        width:`100%;`
-                    }
-                }
+                className={styles.voluntariadoWrapper}
                 href='/voluntariado'
             >
                 <div className={styles.adMask}>
@@ -84,17 +44,7 @@ export const PrincipalAds = ()=>{
                 </div>
             </Link>
             <Link
-                style={
-                    {
-                        background:`
-                        url('https://archivos.him.edu.mx/graficos/home/patronato.webp')
-                        no-repeat;`,
-                        backgroundSize: `cover;`,
-                        backgroundPosition: `top;`,
-                        height:`400px;`,
-                        width:`100%;`
-                    }
-                }
+                className={styles.patronatoWrapper}
                 href='/patronato'
             >
                 <div className={styles.adMask}>
@@ -104,17 +54,7 @@ export const PrincipalAds = ()=>{
                 </div>
             </Link>
             <div
-                style={
-                    {
-                        background:`
-                        url('https://archivos.him.edu.mx/graficos/home/legado-artistico.webp')
-                        no-repeat;`,
-                        backgroundSize: `cover;`,
-                        backgroundPosition: `top;`,
-                        height:`400px;`,
-                        width:`100%;`
-                    }
-                }
+                className={styles.legadoWrapper}
             >
                 <div className={styles.adMask}>
                     <span className={styles.adTitle}>
