@@ -250,8 +250,8 @@ function Menu() {
           >
             <SubMenu>
               <SubMenuItem
-              title="Servicio de Investigación Biomédica"
-              href='/investigacion'
+              title="Servicio de Investigación Clínica y Básica"
+              href='/direccion/servicio-de-investigacion-clinica-y-basica'
               />
               <SubMenuItem
               title="Unidad Habilitada de Apoyo al Predictamen (UHAP)"
