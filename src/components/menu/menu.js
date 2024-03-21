@@ -245,7 +245,7 @@ function Menu() {
           />
           <SubMenuItem
             title="Departamento de Ediciones Médicas"
-            href='/investigacion'
+            href='/direccion/departamento-de-ediciones-medicas'
           />
           <SubMenuItem
             title="Departamento de Evaluación de Medicamentos y Farmacovigilancia"

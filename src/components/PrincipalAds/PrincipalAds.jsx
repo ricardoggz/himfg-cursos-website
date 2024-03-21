@@ -70,13 +70,26 @@ export const PrincipalAds = ()=>{
                     </span>
                 </div>
             </Link>
-            <div className={styles.adWrapper}>
+            <Link
+                style={
+                    {
+                        background:`
+                        url('https://archivos.him.edu.mx/graficos/home/voluntariado.webp')
+                        no-repeat;`,
+                        backgroundSize: `cover;`,
+                        backgroundPosition: `top;`,
+                        height:`400px;`,
+                        width:`100%;`
+                    }
+                }
+                href='/patronato'
+            >
                 <div className={styles.adMask}>
                     <span className={styles.adTitle}>
                         Patronato
                     </span>
                 </div>
-            </div>
+            </Link>
             <div
                 style={
                     {
