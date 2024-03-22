@@ -29,7 +29,8 @@ const nextConfig = {
       '/test/[...id]' : { page: '/test/[...id]'},
       '/direccion/[...id]': { page : '/direccion/[...id]'},
       '/voluntariado' : { page: '/voluntariado'},
-      '/especialidades': {page: '/especialidades'}
+      '/especialidades': {page: '/especialidades'},
+      '/el-instituto-y-su-historia': {page: '/el-instituto-y-su-historia'}
     }
   },
   env:{

@@ -24,15 +24,16 @@ export const PrincipalAds = ()=>{
                     </span>
                 </div>
             </Link>
-            <div
+            <Link
                 className={styles.historiaWrapper}
+                href='/el-instituto-y-su-historia'
             >
                 <div className={styles.adMask}>
                     <span className={styles.adTitle}>
                         El instituto y su historia
                     </span>
                 </div>
-            </div>
+            </Link>
             <Link
                 className={styles.voluntariadoWrapper}
                 href='/voluntariado'
