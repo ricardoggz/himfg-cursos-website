@@ -6,6 +6,9 @@
     margin: 0 auto;
     width:50%;
 }
+.privacityWrapper a {
+    color:var(--golden-primary);
+}
 @media(min-width:240px) and (max-width:900px){
     .privacityWrapper{
         width:90%;
