@@ -14,7 +14,7 @@ const UserLogin = ()=>{
     const [inputData, onChange, onReset] = useOnChange()
     useEffect(()=>{
         if(user){
-            router.push('/ensenanza/offer')
+            router.push('/direccion/educacion-medica-continua')
         }
     },[])
     const handleLogin = async(evt)=>{

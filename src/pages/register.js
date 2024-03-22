@@ -10,7 +10,7 @@ const Register = ()=>{
     const { user }= useContext(UserContext)
     useEffect(()=>{
         if(user){
-            router.push('/ensenanza/offer')
+            router.push('/direccion/educacion-medica-continua')
         }
     },[])
     return (
