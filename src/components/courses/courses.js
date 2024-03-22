@@ -14,6 +14,7 @@ export const Courses = ()=>{
         url: `${process.env.BASE_URL_API}api/courses/all-courses`
     })
     let filteredCourses;
+    //let nextMonth = (selectedMonth.id) + 1
     if(data) filteredCourses = data.data.filter((course)=> course.month_id === selectedMonth.id)
     return (
         <section className={styles.coursesWrapper}>
@@ -31,7 +32,7 @@ export const Courses = ()=>{
                 <Title>Oferta educativa - {selectedMonth.name}</Title>
                 <GridContainer>
                 {
-                    filteredCourses.map((course)=>{
+                    data.data.map((course)=>{
                         return (
                             <Card
                                 key={course.course_id}
