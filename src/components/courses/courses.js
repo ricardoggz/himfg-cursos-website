@@ -14,7 +14,7 @@ export const Courses = ()=>{
         url: `${process.env.BASE_URL_API}api/courses/all-courses`
     })
     let filteredCourses;
-    if(data) filteredCourses = data.data.filter((course)=> course.month_id === 1)
+    if(data) filteredCourses = data.data.filter((course)=> course.month_id === selectedMonth.id)
     return (
         <section className={styles.coursesWrapper}>
                 {/*<ul className={`${styles.monthBar} flexContainer boxShadow`}>
@@ -28,14 +28,7 @@ export const Courses = ()=>{
                     </ul>*/}
             {!loading?
             <div id={`cursos-2023-${selectedMonth.name}`}>
-                <center>
-                    <Title className='title'>Oferta educativa</Title>
-                </center>
-                <center>
-                    <h3>(Febrero)</h3>
-                </center>
-                <br />
-                <br />
+                <Title>Oferta educativa - {selectedMonth.name}</Title>
                 <GridContainer>
                 {
                     filteredCourses.map((course)=>{
