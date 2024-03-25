@@ -1,23 +1,10 @@
-import { BiXCircle } from "react-icons/bi"
-import { MdArrowForwardIos, MdOutlineArrowBackIos } from "react-icons/md"
-import { useEffect, useState } from 'react'
-import axios from 'axios'
+import { useState } from 'react'
 import Link from 'next/link'
+import { MdArrowForwardIos, MdOutlineArrowBackIos } from "react-icons/md"
 import styles from './menu.module.css'
+import { departamentos } from './const'
 
 function Menu() {
-  const [links, setLinks] = useState(null)
-  const getLinks = async()=>{
-    try {
-      const links = await axios.get(`${process.env.BASE_URL_API}api/directions/all-directions`)
-      setLinks(links.data[0])
-    } catch (error) {
-      console.log(error)
-    }
-  }
-  useEffect(()=>{
-    getLinks()
-  },[])
   return (
     <div className={styles.menu}>
       {/*general*/}
@@ -630,30 +617,29 @@ function MenuMobile(){
               <span>Regresar</span>
             </button>
           </div>
-        <li>
-          <Link
-          href='/general'
-          onClick={open}
-          >
-            Dirección General
-          </Link>
-        </li>
-        <li>
-          <Link
-          href='/direccion/medica'
-          onClick={open}
-          >
-            Dirección Médica
-          </Link>
-        </li>
-        <li>
-          <Link
-            href='/direccion/medica'
-            onClick={open}
-          >
-            Dirección de Enseñanza y Desarrollo Académico
-          </Link>
-        </li>
+          <li>
+            <Link
+              href='/general'
+              onClick={open}
+              className={styles.isPrincipal}
+            >
+              Dirección General
+            </Link>
+          </li>
+          {
+            departamentos.map(({name, link, isPrincipal})=>(
+              <li>
+              <Link
+                href={`/direccion/${link}`}
+                className={`${!isPrincipal ? '' : styles.isPrincipal}`}
+                onClick={open}
+                key={link}
+              >
+                {name}
+              </Link>
+            </li>
+            ))
+          }
       </ul>
     </div>
   )
