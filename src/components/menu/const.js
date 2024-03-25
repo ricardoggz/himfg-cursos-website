@@ -3,7 +3,6 @@ export const departamentos = [
     {
         name: 'Dirección Médica',
         link: 'medica',
-        isPrincipal: true      
     },
     {
         name: 'Subdireccion de Pediatría Ambulatoria',
@@ -89,4 +88,40 @@ export const departamentos = [
         name: 'Departamento de Trasplantes',
         link: 'departamento-de-trasplantes'       
     },
+    {
+        name: 'Departamento de Ortopedia',
+        link: 'departamento-de-ortopedia'       
+    },
+    {
+        name: 'Departamento de Neurocirugía',
+        link: 'departamento-de-neurocirugia'       
+    },
+    {
+        name: 'Departamento de Urología',
+        link: 'departamento-de-urologia'       
+    },
+    {
+        name: 'Departamento de Cirugía Cardiovascular, Tórax y Endoscopía',
+        link: 'cirugia-cardiovascular-torax-y-endoscopia'       
+    },
+    {
+        name: 'Departamento de Anestesia y Algología',
+        link: 'anestesia-y-algologia'       
+    },
+    {
+        name: 'Departamento de Estomatología',
+        link: 'departamento-de-estomatologia'       
+    },
+    {
+        name: 'Subdireccion de Servicios Auxiliares de Diagnóstico',
+        link: 'servicios-auxiliares-de-diagnostico'       
+    },
+    {
+        name: 'Departamento de Imagenología',
+        link: 'departamento-de-imagenologia'       
+    },
+    {
+        name: 'Departamento de Laboratorio Clínico',
+        link: 'laboratorio-clinico'       
+    }
 ]
