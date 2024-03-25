@@ -1,0 +1,14 @@
+.educativeOfferWrapper{
+    align-items: center;
+    display:flex;
+    justify-content: center;
+}
+.educativeOfferWrapper figure{
+    width:100%;
+    height:50%;
+}
+.educativeOfferWrapper img{
+    height:100%;
+    object-fit: contain;
+    width:100%;
+}

@@ -10,7 +10,8 @@ import {
     Container,
     Courses,
     Staff,
-    PageBanner
+    PageBanner,
+    EducativeOffer
 } from "@/components"
 import Head from "next/head"
 
@@ -92,6 +93,14 @@ export default function Direction(){
                             page.page_url==='educacion-medica-continua' ?
                             <Container>
                                 <Courses/>
+                            </Container>
+                            :
+                            null
+                        }
+                        {
+                            page.page_url==='pre-y-posgrado' ?
+                            <Container>
+                                <EducativeOffer/>
                             </Container>
                             :
                             null
