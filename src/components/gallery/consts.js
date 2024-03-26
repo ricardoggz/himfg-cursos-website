@@ -60,8 +60,14 @@ export const images = [
         caption: "201H (gratisography.com)",
       },
       {
+        src: "https://archivos.him.edu.mx/graficos/legado-artistico/4.webp",
+        width: 1000,
+        height: 148,
+        caption: "201H (gratisography.com)",
+      },
+      {
         src: "https://archivos.him.edu.mx/graficos/legado-artistico/13.webp",
-        width: 350,
+        width: 370,
         height: 250,
         caption: "201H (gratisography.com)",
       },
@@ -72,9 +78,33 @@ export const images = [
         caption: "201H (gratisography.com)",
       },
       {
-        src: "https://archivos.him.edu.mx/graficos/legado-artistico/4.webp",
-        width: 1000,
-        height: 148,
+        src: "https://archivos.him.edu.mx/graficos/legado-artistico/59.webp",
+        width: 1100,
+        height: 250,
+        caption: "201H (gratisography.com)",
+      },
+      {
+        src: "https://archivos.him.edu.mx/graficos/legado-artistico/51.webp",
+        width: 400,
+        height: 250,
+        caption: "201H (gratisography.com)",
+      },
+      {
+        src: "https://archivos.him.edu.mx/graficos/legado-artistico/50.webp",
+        width: 400,
+        height: 250,
+        caption: "201H (gratisography.com)",
+      },
+      {
+        src: "https://archivos.him.edu.mx/graficos/legado-artistico/60.webp",
+        width: 500,
+        height: 250,
+        caption: "201H (gratisography.com)",
+      },
+      {
+        src: "https://archivos.him.edu.mx/graficos/legado-artistico/45.webp",
+        width: 300,
+        height: 200,
         caption: "201H (gratisography.com)",
       },
 ]
