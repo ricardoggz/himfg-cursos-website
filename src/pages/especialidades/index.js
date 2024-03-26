@@ -48,7 +48,7 @@ export default function Especialidades(){
                         {
                             especialidades.map((esp, i)=>(
                                 <li key={i}>
-                                    <span>{esp}</span>
+                                    {esp}
                                 </li>
                             ))
                         }
