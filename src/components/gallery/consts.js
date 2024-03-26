@@ -131,4 +131,22 @@ export const images = [
         height: 600,
         caption: "201H (gratisography.com)",
       },
+      {
+        src: "https://archivos.him.edu.mx/graficos/legado-artistico/21.webp",
+        width: 450,
+        height: 600,
+        caption: "201H (gratisography.com)",
+      },
+      {
+        src: "https://archivos.him.edu.mx/graficos/legado-artistico/39.webp",
+        width: 1100,
+        height: 200,
+        caption: "201H (gratisography.com)",
+      },
+      {
+        src: "https://archivos.him.edu.mx/graficos/legado-artistico/11.webp",
+        width: 100,
+        height: 150,
+        caption: "201H (gratisography.com)",
+      },
 ]
