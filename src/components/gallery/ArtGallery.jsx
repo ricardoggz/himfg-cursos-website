@@ -2,15 +2,23 @@ import { useState } from "react"
 import { images } from "./consts"
 import styles from './artgallery.module.css'
 import { Gallery } from "react-grid-gallery"
+import Swal from "sweetalert2"
 
 export const ArtGallery = ()=>{
     const [currentImage, setCurrentImage] = useState(0);
     const openLightbox = (index) => {
-        setCurrentImage(index);
-      };
-    
-      const closeLightbox = () => {
-        setCurrentImage(0);
+        const image = images[index];
+        Swal.fire({
+          title: image.caption,
+          imageUrl: image.src,
+          imageAlt: image.caption,
+          showCloseButton: true,
+          imageWidth:1500,
+          showClass: {
+            popup: 'animate__animated animate__zoomIn',
+          },
+          grow:'fullscreen'
+        });
       };
     return(
         <div className='flexContainer'>
@@ -18,13 +26,6 @@ export const ArtGallery = ()=>{
                 images={images} enableImageSelection={false}
                 onClick={openLightbox}
             />
-            {currentImage !== 0 && (
-                <div className="lightbox">
-                <button onClick={closeLightbox}>Cerrar</button>
-                <img src={images[currentImage].src} alt={images[currentImage].caption} />
-                <p>{images[currentImage].caption}</p>
-                </div>
-            )}
         </div>
     )
 }
