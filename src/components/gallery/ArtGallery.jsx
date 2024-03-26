@@ -12,8 +12,7 @@ export const ArtGallery = ()=>{
           title: image.caption,
           imageUrl: image.src,
           imageAlt: image.caption,
-          showCloseButton: true,
-          imageWidth:1500,
+          showCloseButton:true,
           showClass: {
             popup: 'animate__animated animate__zoomIn',
           },
