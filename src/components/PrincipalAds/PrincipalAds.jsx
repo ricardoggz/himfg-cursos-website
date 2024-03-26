@@ -54,15 +54,16 @@ export const PrincipalAds = ()=>{
                     </span>
                 </div>
             </Link>
-            <div
+            <Link
                 className={styles.legadoWrapper}
+                href='/legado-artistico'
             >
                 <div className={styles.adMask}>
                     <span className={styles.adTitle}>
                         Legado artístico
                     </span>
                 </div>
-            </div>
+            </Link>
         </section>
     )
 }

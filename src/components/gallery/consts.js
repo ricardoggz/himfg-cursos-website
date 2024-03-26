@@ -1,0 +1,80 @@
+export const images = [
+    {
+        src: "https://archivos.him.edu.mx/graficos/legado-artistico/5.webp",
+        width: 150,
+        height: 200,
+        caption: "Los niños pidiendo posada o la peregrinación - Diego Rivera",
+      },
+      {
+        src: "https://archivos.him.edu.mx/graficos/legado-artistico/1.webp",
+        width: 390,
+        height: 200,
+        caption: "Los niños pidiendo posada o la peregrinación - Diego Rivera",
+      },
+      {
+        src: "https://archivos.him.edu.mx/graficos/legado-artistico/3.webp",
+        width: 390,
+        height: 195,
+        caption: "315H (gratisography.com)",
+      },
+      {
+        src: "https://archivos.him.edu.mx/graficos/legado-artistico/43.webp",
+        width: 200,
+        height: 130,
+        caption: "201H (gratisography.com)",
+      },
+      {
+        src: "https://archivos.him.edu.mx/graficos/legado-artistico/12.webp",
+        width: 320,
+        height: 213,
+        caption: "201H (gratisography.com)",
+      },
+      {
+        src: "https://archivos.him.edu.mx/graficos/legado-artistico/9.webp",
+        width: 150,
+        height: 200,
+        caption: "201H (gratisography.com)",
+      },
+      {
+        src: "https://archivos.him.edu.mx/graficos/legado-artistico/17.webp",
+        width: 600,
+        height: 200,
+        caption: "201H (gratisography.com)",
+      },
+      {
+        src: "https://archivos.him.edu.mx/graficos/legado-artistico/18.webp",
+        width: 280,
+        height: 200,
+        caption: "201H (gratisography.com)",
+      },
+      {
+        src: "https://archivos.him.edu.mx/graficos/legado-artistico/14.webp",
+        width: 200,
+        height: 250,
+        caption: "201H (gratisography.com)",
+      },
+      {
+        src: "https://archivos.him.edu.mx/graficos/legado-artistico/19.webp",
+        width: 900,
+        height: 250,
+        caption: "201H (gratisography.com)",
+      },
+      {
+        src: "https://archivos.him.edu.mx/graficos/legado-artistico/13.webp",
+        width: 350,
+        height: 250,
+        caption: "201H (gratisography.com)",
+      },
+      {
+        src: "https://archivos.him.edu.mx/graficos/legado-artistico/16.webp",
+        width: 200,
+        height: 250,
+        caption: "201H (gratisography.com)",
+      },
+      {
+        src: "https://archivos.him.edu.mx/graficos/legado-artistico/4.webp",
+        width: 1000,
+        height: 148,
+        caption: "201H (gratisography.com)",
+      },
+]
