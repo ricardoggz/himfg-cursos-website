@@ -107,4 +107,28 @@ export const images = [
         height: 200,
         caption: "201H (gratisography.com)",
       },
+      {
+        src: "https://archivos.him.edu.mx/graficos/legado-artistico/2.webp",
+        width: 1000,
+        height: 400,
+        caption: "201H (gratisography.com)",
+      },
+      {
+        src: "https://archivos.him.edu.mx/graficos/legado-artistico/52.webp",
+        width: 500,
+        height: 600,
+        caption: "201H (gratisography.com)",
+      },
+      {
+        src: "https://archivos.him.edu.mx/graficos/legado-artistico/44.webp",
+        width: 1000,
+        height: 600,
+        caption: "201H (gratisography.com)",
+      },
+      {
+        src: "https://archivos.him.edu.mx/graficos/legado-artistico/46.webp",
+        width: 1000,
+        height: 600,
+        caption: "201H (gratisography.com)",
+      },
 ]
