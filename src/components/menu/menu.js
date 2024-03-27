@@ -152,10 +152,10 @@ function Menu() {
                 title="Departamento de Laboratorio Clínico"
                 href='/direccion/laboratorio-clinico'
               />
-              <SubMenuItem
+              {/*<SubMenuItem
                 title="Departamento de Patología Clínica y Experimental"
                 href='/medica'
-              />
+              />*/}
             </SubMenu>
           </SubMenuItemWithSubMenu>
           {/*Subdirección de atención integral al paciente*/}
@@ -170,7 +170,7 @@ function Menu() {
               />
               <SubMenuItem
                 title="Departamento de Trabajo Social"
-                href='/medica'
+                href='/direccion/departamento-de-trabajo-social'
               />
               <SubMenuItem
                 title="Departamento de Relaciones Públicas"
@@ -240,7 +240,7 @@ function Menu() {
               title="Servicio de Investigación Clínica y Básica"
               href='/direccion/servicio-de-investigacion-clinica-y-basica'
               />
-              <SubMenuItem
+              {/*<SubMenuItem
               title="Unidad Habilitada de Apoyo al Predictamen (UHAP)"
               href='/investigacion'
               />
@@ -291,7 +291,7 @@ function Menu() {
               <SubMenuItem
                 title='Servicio de Bioterio'
                 href='/investigacion'
-              />
+            />*/}
             </SubMenu>
           </SubMenuItemWithSubMenu>
           <SubMenuItem
@@ -307,7 +307,7 @@ function Menu() {
             href='/direccion/departamento-de-infrmacion-estrategica-en-investigacion'
           />
           {/*Departamento de Investigación Clínica*/}
-          <SubMenuItemWithSubMenu
+          {/*<SubMenuItemWithSubMenu
             title="Departamento de Investigación Clínica"
             href='/investigacion'
           >
@@ -369,7 +369,7 @@ function Menu() {
                 href='/investigacion'
               />
             </SubMenu>
-          </SubMenuItemWithSubMenu>
+          </SubMenuItemWithSubMenu>*/}
           
           </SubMenu>
           </SubMenuItemWithSubMenu>
