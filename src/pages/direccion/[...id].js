@@ -11,7 +11,8 @@ import {
     Courses,
     Staff,
     PageBanner,
-    EducativeOffer
+    EducativeOffer, 
+    Formats
 } from "@/components"
 import Head from "next/head"
 
@@ -90,7 +91,7 @@ export default function Direction(){
                             />
                         }
                         {
-                            page.page_url==='educacion-medica-continua' ?
+                            page.page_url==='educacion-medica-continua' || page.page_url==='educacion-medica-continua/'?
                             <Container>
                                 <Courses/>
                             </Container>
@@ -98,9 +99,17 @@ export default function Direction(){
                             null
                         }
                         {
-                            page.page_url==='pre-y-posgrado' ?
+                            page.page_url==='pre-y-posgrado' || page.page_url==='pre-y-posgrado/'?
                             <Container>
                                 <EducativeOffer/>
+                            </Container>
+                            :
+                            null
+                        }
+                        {
+                            page.page_url==='investigacion' || page.page_url==='investigacion/'?
+                            <Container>
+                                <Formats/>
                             </Container>
                             :
                             null
