@@ -109,7 +109,7 @@ const Video = (props)=>{
                 <button>Ingresar</button>
                 </Login>
                 {
-                    id.asPath === '/video/scp-2024/' ?
+                    id.asPath === '/video/scp-2024/' || id.asPath === '/video/scp-2024'?
                     <>
                         <center>
                         <br/>
@@ -126,7 +126,7 @@ const Video = (props)=>{
                         <br/>
                         <p className={styles.formMessage}>
                             <b>ATENTO AVISO</b> este registro será habilitado hasta las 11:00 am
-                            del 20 de marzo de 2024, razón por la cual te sugerimos hacer tu registro
+                            del 03 de marzo de 2024, razón por la cual te sugerimos hacer tu registro
                             con tiempo para que se te pueda enviar sin contratiempos tu clave de acceso.
                         </p>
                         </center>
@@ -168,7 +168,7 @@ const Video = (props)=>{
                     />
                     </div>
                     {
-                       id.asPath === '/video/scp-2024/' ?
+                       id.asPath === '/video/scp-2024/' || id.asPath === '/video/scp-2024'?
                        <center>
                         <br/>
                         <a
