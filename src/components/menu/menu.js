@@ -161,7 +161,7 @@ function Menu() {
           {/*Subdirección de atención integral al paciente*/}
           <SubMenuItemWithSubMenu
             title='Subdirección de Atención Integral al Paciente'
-            href='/medica'
+            href='/direccion/subdireccion-atencion-integral-al-paciente'
           >
             <SubMenu>
               <SubMenuItem
