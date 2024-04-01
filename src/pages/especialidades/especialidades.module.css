@@ -22,6 +22,9 @@
     text-align: center;
     width:100%;
 }
+.especialidadesGrid a {
+    color:var(--white-primary);
+}
 @media(min-width:240px) and (max-width:900px){
     .especialidadesGrid{
         grid-template-columns: 1fr;
