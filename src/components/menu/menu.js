@@ -192,7 +192,7 @@ function Menu() {
           >
           <SubMenu>
           <SubMenuItem
-            title="Departmamento de Educación de Pre y Posgrado"
+            title="Departamento de Educación de Pre y Posgrado"
             href='/direccion/pre-y-posgrado'
           />
           <SubMenuItem
