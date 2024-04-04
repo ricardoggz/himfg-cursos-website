@@ -35,7 +35,7 @@ const General = ()=>{
                     El 13 de enero del 2024 fui designado Director General del Hospital Infantil de México Federico Gómez por Junta de Gobierno de nuestro hospital. 
                 </p>
                 <p>
-                    Tengo el privilegio de haber sido Profesor de Pediatría Médica (pre grado) y Pediatría y de Medicina Crítica Pediátrica (pos grado) en los Programas de la Facultad de Medicina de la Universidad Nacional Autónoma de México. Igualmente, por decisión de mis pares, fui el Presidente Fundador de la Sección de Medicina Critica Pediátrica del Consejo Mexicano de Certificación en Pediatría A.C. 
+                    Tengo el privilegio de haber sido Profesor de Pediatría Médica (pre grado) y Pediatría y de Medicina Crítica Pediátrica (pos grado) en los Programas de la Facultad de Medicina de la Universidad Nacional Autónoma de México. Igualmente, por decisión de mis pares, fui el Presidente Fundador de la Sección de Medicina Crítica Pediátrica del Consejo Mexicano de Certificación en Pediatría A.C. 
                 </p>
                 <p>
                     He trabajado en muchos lados, pero el único que me ha enamorado es el “Infantil”, donde he colaborado por 35 años ya; durante este tiempo participé en el desarrollo, consolidación y éxito de nuestro servicio, “La Terapia”, que ya desde hace muchos años ha sido la mejor de México, reconocida en América Latina y el mundo. 

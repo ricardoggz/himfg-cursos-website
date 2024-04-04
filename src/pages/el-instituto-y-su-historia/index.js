@@ -21,8 +21,8 @@ export default function Instituto(){
                     </div>
                     <div>
                         <ul>
-                            <li>En los años 30's se gestó la pediatría organizada en el país. </li>
-                            <li>El Dr. Isidro Espinoza de los Reyes fue un visionario y lider de donde derivaron las sociedades Pediátricas. </li>
+                            <li>En los años 30 se gestó la pediatría organizada en el país. </li>
+                            <li>El Dr. Isidro Espinoza de los Reyes fue un visionario y líder de donde derivaron las sociedades Pediátricas. </li>
                             <li>Quienes lucharon por la construcción del Hospital para el Niño fueron: Cárdenas de la Vega, Torroella, Aguilar Pico y Federico Gómez.</li>
                             <li>Previamente solo se atendian en la Casa Cuna de Coyoacán. </li>
                         </ul>
@@ -47,7 +47,7 @@ export default function Instituto(){
                         <ul>
                             <li>En 1933 el presidente Gral. Abelardo Rodríguez ordena la construcción del Hospital del Niño.</li>
                             <li>El Arq. José Villagrán García hace el proyecto. </li>
-                            <li>Gustavo Bas, Salvador Zubirán, Manuel Ávila Camacho y Lázaro Cárdenas influyen notablemente en la construcción. </li>
+                            <li>Gustavo Baz, Salvador Zubirán, Manuel Ávila Camacho y Lázaro Cárdenas influyen notablemente en la construcción. </li>
                             <li>En 1935 de detiene y se reanuda en 1939.  </li>
                         </ul>
                     </div>
@@ -71,7 +71,7 @@ export default function Instituto(){
                         <ul>
                             <li>30 de abril de 1943, día del niño</li>
                             <li>Abelardo Rodríguez</li>
-                            <li>Dr. Gustavo Bas</li>
+                            <li>Dr. Gustavo Baz</li>
                             <li>Miguel Alemán Valdés </li>
                             <li>Dr. Federico Gómez Santos</li>
                         </ul>
@@ -121,7 +121,7 @@ export default function Instituto(){
                     <div>
                         <ul>
                             <li>Hospital Infantil de México 1943</li>
-                            <li>nstituto Nacional de Cardiología 1944</li>
+                            <li>Instituto Nacional de Cardiología 1944</li>
                             <li>Instituto Nacional de Nutrición 1946</li>
                             <li>Instituto Nacional de Cancerología 1946 </li>
                             <li>Instituto Nacional de Neurología 1952</li>
