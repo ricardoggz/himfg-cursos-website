@@ -45,6 +45,11 @@ export const Header =()=>{
                                 Iniciar sesión
                             </Link>
                         </li>
+                        <li>
+                            <Link href='/video/scp-2024' onClick={open}>
+                                Sesión Clínico Patológica
+                            </Link>
+                        </li>
                     </>
                     :
                     <>
@@ -56,6 +61,11 @@ export const Header =()=>{
                         <li>
                             <Link href='/profile' onClick={open}>
                                 Perfil
+                            </Link>
+                        </li>
+                        <li>
+                            <Link href='/video/scp-2024' onClick={open}>
+                                Sesión Clínico Patológica
                             </Link>
                         </li>
                         <li>
