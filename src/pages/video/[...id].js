@@ -10,7 +10,7 @@ import { UserContext } from "@/contexts"
 import { Container, GridContainer, Login } from '../../components'
 
 const Video = (props)=>{
-    useRouter()
+    const id = useRouter()
     const { user }= useContext(UserContext)
     const [count, setCount] = useState(1)
     const [degrees, setDegrees] = useState(null)
@@ -120,16 +120,44 @@ const Video = (props)=>{
             </h3>
             {
                 !password ?
-                <Login onSubmit={login}>
-                <label>Contraseña:</label>
-                <input
-                type='password'
-                required
-                onChange={onChange}
-                name='course_password'
-                />
-                <button>Ingresar</button>
-            </Login>
+                <>
+                    <Login onSubmit={login}>
+                    <label>Contraseña:</label>
+                    <input
+                    type='password'
+                    required
+                    onChange={onChange}
+                    name='course_password'
+                    />
+                    <button>Ingresar</button>
+                    </Login>
+                    {
+                    id.asPath === '/video/scp-2024/' || id.asPath === '/video/scp-2024'?
+                    <>
+                        <center>
+                        <br/>
+                        <a
+                            href='https://docs.google.com/forms/d/e/1FAIpQLSdQrVXZ6rNwvGHnsCsQubgJTsevrb9JFdzTjHOHSy7xWBiQww/viewform'
+                            className={styles.formLink}
+                            target='_blank'
+                        >
+                            Formulario de registro a la Sesión Clínico Patológica
+                        </a>
+                        </center>
+                        <br/>                    
+                        <center>
+                        <br/>
+                        <p className={styles.formMessage}>
+                            <b>ATENTO AVISO</b> este registro será habilitado hasta las 11:00 am
+                            del 08 de abril de 2024, razón por la cual te sugerimos hacer tu registro
+                            con tiempo para que se te pueda enviar sin contratiempos tu clave de acceso.
+                        </p>
+                        </center>
+                    </>
+                    :
+                    null
+                }
+                </>          
             :
             <>
             {
@@ -200,6 +228,23 @@ const Video = (props)=>{
                     </>
                 ))
             }
+            {
+                       id.asPath === '/video/scp-2024/' || id.asPath === '/video/scp-2024'?
+                       <center>
+                        <br/>
+                        <a
+                            href='https://scp.him.edu.mx/resumen-del-caso-clinico.pdf'
+                            className={styles.formLink}
+                            target='_blank'
+                        >
+                            Resumen del caso clínico
+                        </a>
+                        <br/>
+                        <br/>
+                        </center>
+                        :
+                        null
+                    }
             {
                 !course[0].course_zoom_video
                 ? null
