@@ -30,3 +30,6 @@
 .hemeroList p{
     text-align: justify;
 }
+.hemeroList figure{
+    width:auto;
+}
