@@ -16,6 +16,7 @@ import { Collections } from './Collections'
 import { Catalogue } from './Catalogue'
 import { Magazines } from './Magazines'
 import { DataBases } from './DataBases'
+import { InterestedLinks } from './InterestedLinks'
 
 export const HemeroOptions = ()=>{
     return (
@@ -82,13 +83,16 @@ export const HemeroOptions = ()=>{
                         <GoDatabase/>
                         <span>Bases de datos</span>
                     </button>
-                    <Link
+                    <button
                         className={styles.hemeroOption}
-                        href='/'
+                        onClick={()=>showHemeroOption({
+                            html: <InterestedLinks/>,
+                            className: 'hemeroList'
+                        })}
                     >
                         <HiLink/>
                         <span>Ligas de interés</span>
-                    </Link>
+                    </button>
                     <Link
                         className={styles.hemeroOption}
                         href='/'
