@@ -12,7 +12,8 @@ import {
     Staff,
     PageBanner,
     EducativeOffer, 
-    Formats
+    Formats,
+    HemeroOptions
 } from "@/components"
 import Head from "next/head"
 
@@ -110,6 +111,14 @@ export default function Direction(){
                             page.page_url==='investigacion' || page.page_url==='investigacion/'?
                             <Container>
                                 <Formats/>
+                            </Container>
+                            :
+                            null
+                        }
+                        {
+                            page.page_url==='hemerobiblioteca' || page.page_url==='hemerobiblioteca/'?
+                            <Container>
+                                <HemeroOptions/>
                             </Container>
                             :
                             null

@@ -138,7 +138,7 @@ function Formats(){
                         href='https://archivos.him.edu.mx/graficos/investigacion/formatos/17.doc'
                         target='_blank'
                     >
-                    Lineamientos respuesta a los dictamenes 
+                    Lineamientos respuesta a los dictámenes 
                     </a>
                 </li>
             </ul>

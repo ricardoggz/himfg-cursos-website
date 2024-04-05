@@ -232,7 +232,7 @@ function Menu() {
           />
             {/*Departamento de Investigación Biomédica*/}
           <SubMenuItemWithSubMenu
-            title="Departamento de Investigación Biomédica"
+            title="Departamento de Investigación Educativa"
             href='/direccion/investigacion-biomedica'
           >
             <SubMenu>

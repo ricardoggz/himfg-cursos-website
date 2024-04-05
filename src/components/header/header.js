@@ -12,12 +12,15 @@ export const Header =()=>{
         <>
             <header className={styles.headerWrapper}>
             <nav className={`${styles.headerNav} flexContainer`}>
-                <Link href='/'>
+                <a
+                    href='https://www.gob.mx/'
+                    target='_blank'
+                >
                     <img
                         src={'https://res.cloudinary.com/diuxbqmn5/image/upload/v1677008056/gob-logo_bmloho.webp'}
                         alt='Gobierno de México'
                     />
-                </Link>
+                </a>
                 <button className={styles.buttonMenu} onClick={open}>
                     Menú
                 </button>
