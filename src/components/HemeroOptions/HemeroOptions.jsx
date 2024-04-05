@@ -14,7 +14,8 @@ import { Rules } from './Rules'
 import { Services } from './Services'
 import { Collections } from './Collections'
 import { Catalogue } from './Catalogue'
-import { Magazines } from './Magazines';
+import { Magazines } from './Magazines'
+import { DataBases } from './DataBases'
 
 export const HemeroOptions = ()=>{
     return (
@@ -71,13 +72,16 @@ export const HemeroOptions = ()=>{
                         <IoBook/>
                         <span>Revistas en línea</span>
                     </button>
-                    <Link
+                    <button
                         className={styles.hemeroOption}
-                        href='/'
+                        onClick={()=>showHemeroOption({
+                            html: <DataBases/>,
+                            className: 'hemeroList'
+                        })}
                     >
                         <GoDatabase/>
                         <span>Bases de datos</span>
-                    </Link>
+                    </button>
                     <Link
                         className={styles.hemeroOption}
                         href='/'
