@@ -11,6 +11,7 @@ import { HiLink } from "react-icons/hi2"
 import { IoMdContact } from "react-icons/io"
 import { showHemeroOption } from './ModalOptions'
 import { Rules } from './Rules'
+import { Services } from './Services'
 
 export const HemeroOptions = ()=>{
     return (
@@ -27,13 +28,16 @@ export const HemeroOptions = ()=>{
                         <HiMiniClipboardDocumentList/>
                         <span>Reglamento</span>
                     </button>
-                    <Link
+                    <button
                         className={styles.hemeroOption}
-                        href='/'
+                        onClick={()=>showHemeroOption({
+                            html: <Services/>,
+                            className: 'hemeroList'
+                        })}
                     >
                         <MdOutlineMiscellaneousServices/>
                         <span>Servicios</span>
-                    </Link>
+                    </button>
                     <Link
                         className={styles.hemeroOption}
                         href='/'
