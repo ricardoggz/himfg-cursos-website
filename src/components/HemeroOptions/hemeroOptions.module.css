@@ -33,3 +33,9 @@
 .hemeroList figure{
     width:auto;
 }
+.hemeroListImage{
+    align-items: center;
+    display:flex;
+    gap:1rem;
+    text-decoration: none;
+}
