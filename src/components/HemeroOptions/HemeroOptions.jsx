@@ -12,6 +12,7 @@ import { IoMdContact } from "react-icons/io"
 import { showHemeroOption } from './ModalOptions'
 import { Rules } from './Rules'
 import { Services } from './Services'
+import { Collections } from './Collections';
 
 export const HemeroOptions = ()=>{
     return (
@@ -38,13 +39,16 @@ export const HemeroOptions = ()=>{
                         <MdOutlineMiscellaneousServices/>
                         <span>Servicios</span>
                     </button>
-                    <Link
+                    <button
                         className={styles.hemeroOption}
-                        href='/'
+                        onClick={()=>showHemeroOption({
+                            html: <Collections/>,
+                            className: 'hemeroList'
+                        })}
                     >
                         <BsCollectionFill/>
                         <span>Colecciones</span>
-                    </Link>
+                    </button>
                     <Link
                         className={styles.hemeroOption}
                         href='/'

@@ -21,7 +21,6 @@
 .hemeroList{
     display:flex;
     flex-direction: column;
-    font-family: 'Courier New', Courier, monospace;
     gap:1rem;
     padding:1rem;
 }
