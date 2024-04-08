@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 .hemeroOptionsGrid{
     display:grid;
     grid-template-columns: repeat(4, 1fr);
@@ -21,6 +23,7 @@
 .hemeroList{
     display:flex;
     flex-direction: column;
+    font-family: "Montserrat", sans-serif;
     gap:1rem;
     padding:1rem;
 }
