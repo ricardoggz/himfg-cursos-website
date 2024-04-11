@@ -6,7 +6,7 @@ import { FileListModal } from "./FileListModal"
 import { FaMoneyBillWave } from "react-icons/fa"
 import { BsFileEarmarkRuledFill } from "react-icons/bs"
 
-import { infoContable } from "./const"
+import { infoContable, infoPresupuestaria, infoProgramatica, infoNormas, infoInventario } from "./const"
 
 
 export const FileList = ()=>{
@@ -20,22 +20,22 @@ export const FileList = ()=>{
             <FileListModal
                 icon={<FaMoneyBillWave />}
                 title='Información Presupuestaria'
-                filelist={infoContable}
+                filelist={infoPresupuestaria}
             />
             <FileListModal
                 icon={<SiBookstack />}
                 title='Información Programática'
-                filelist={infoContable}
+                filelist={infoProgramatica}
             />
             <FileListModal
                 icon={<BsFileEarmarkRuledFill />}
                 title='Normas del título V de la LGCG'
-                filelist={infoContable}
+                filelist={infoNormas}
             />
             <FileListModal
                 icon={<MdOutlineChair />}
                 title='Inventario de bienes e inmuebles'
-                filelist={infoContable}
+                filelist={infoInventario}
             />
         </div>
     )
