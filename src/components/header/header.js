@@ -44,6 +44,11 @@ export const Header =()=>{
                             </a>
                         </li>
                         <li>
+                            <a href='http://himfg.com.mx/interna/p_datos/pdp.php' target='_blank'>
+                                Protección de datos personales
+                            </a>
+                        </li>
+                        <li>
                             <Link href='/userlogin' onClick={open}>
                                 Iniciar sesión
                             </Link>

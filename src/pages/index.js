@@ -4,7 +4,8 @@ import {
   Jumbotron,
   MenuOptions,
   PrincipalAds,
-  Privacity
+  Privacity,
+  Sipot
 } from '../components'
 
 export default function Home() {
@@ -25,6 +26,7 @@ export default function Home() {
       </Container>
       <Container>
         <Privacity />
+        <Sipot />
       </Container>
     </>
   )
