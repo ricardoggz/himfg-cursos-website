@@ -1,8 +1,21 @@
-import { Container, Page } from '../../components'
+import {
+    Container,
+    Page,
+    FileListModal
+} from '../../components'
+import { FaBook } from "react-icons/fa"
+import {
+    informeAutoevaluacion,
+    programaInstitucional,
+    informeAvanceResultados,
+    informeAvanceResultados2022
+} from './consts'
+import styles from '../../components/FileList/filelist.module.css'
 
 const General = ()=>{
     return (
-            <Page>
+            <>
+                <Page>
                 <center>
                     <h3>
                         Adrián Chávez López
@@ -47,6 +60,48 @@ const General = ()=>{
                     El objetivo del Proyecto es establecer un sistema de gestión hospitalaria horizontal, basado en procesos estandarizados y procedimientos específicos para cada área sustantiva del instituto, cuyas metas son garantizar: a) la atención, seguridad y satisfacción de los usuarios, b) el bienestar, seguridad y desarrollo del personal, c) la sustentabilidad social, administrativa y financiera del instituto, y d) la productividad institucional. 
                 </p>
             </Page>
+            <Container>
+            <div className={`flexContainer ${styles.fileListGrid}`}>
+                <FileListModal
+                    icon={<FaBook />}
+                    title='Plan quinquenal 2019-2024'
+                >
+                    <span>Plan quinquenal 2019-2024</span>
+                    <br/>
+                    <p>Analicé, desarrollé y afiné mi visión sobre el proyecto a cinco años. Está dirigido hacia ser un líder en la atención médica pediátrica con calidad y eficiencia, gestionar recursos financieros suficientes, promover la investigación, actualizar la enseñanza y mejorar en lo posibles al personal.</p>
+                    <br/>
+                    <p>Cuando pienso en el futuro, pienso en conducir a un hospital que cualquiera de nosotros buscaría para el cuidado de nuestra familia, es decir que: </p>
+                    <ul>
+                        <li>1. Mantener una excelente atención médica aun en tiempos de pandemia para que el paciente viva la mejor experiencia posible y se obtengan los mejores resultados clínicos. </li>
+                        <li>2. El personal que labora tenga la mayor satisfacción factible. </li>
+                        <li>3. Que se cuente con procesos eficientes en todas las áreas. </li>
+                        <li>4. Se tengan recursos económicos óptimos. </li>
+                        <li><a href='http://www.himfg.edu.mx/descargas/documentos/general/r_ptrabajo.pdf'>Plan de trabajo 2019-2024</a></li>
+                    </ul>
+                </FileListModal>
+                <FileListModal
+                    icon={<FaBook />}
+                    title='Informe de Autoevaluación del Director General del 1° de Enero al 30 de Junio de 2023'
+                    filelist={informeAutoevaluacion}
+                />
+                 <FileListModal
+                    icon={<FaBook />}
+                    title='Programa institucional HIMFG'
+                    filelist={programaInstitucional}
+                />
+                <FileListModal
+                    icon={<FaBook />}
+                    title='Informe de Avance y Resultados 2021'
+                    filelist={informeAvanceResultados}
+                />
+                <FileListModal
+                    icon={<FaBook />}
+                    title='Informe de Avance y Resultados 2022'
+                    filelist={informeAvanceResultados2022}
+                />
+            </div>
+            </Container>
+            </>
     )
 }
 

@@ -44,7 +44,7 @@ export default function Especialidades(){
             link: 'departamento-de-infectologia'
         },
         {
-            name: 'Psiquiatría Psicología y medicina de adolecentes',
+            name: 'Psiquiatría Psicología y medicina del adolescente',
             link: 'psiquiatria-y-medicina-del-adolescente'
         },
         {
@@ -100,7 +100,15 @@ export default function Especialidades(){
             link: 'cuidados-paleativos-y-calidad-de-vida'
         },
         {
-            name: 'Odontopediatría, Estomatología y Ortodoncia',
+            name: 'Odontopediatría',
+            link: 'departamento-de-estomatologia'
+        },
+        {
+            name: 'Ortodoncia',
+            link: 'departamento-de-estomatologia'
+        },
+        {
+            name: 'Cirugía maxilofacial',
             link: 'departamento-de-estomatologia'
         },
         {
