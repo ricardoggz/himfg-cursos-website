@@ -42,3 +42,7 @@ export const informeAvanceResultados2022 = [
         ]
     },
 ]
+
+export default function Consts(){
+    return (<></>)
+}
