@@ -8,8 +8,8 @@
 .hemeroOption{
     align-items: center;
     background: none;
-    border:1px solid var(--golden-primary);
-    color:var(--golden-primary);
+    border:1px solid var(--red-primary);
+    color:var(--red-primary);
     cursor:pointer;
     display:flex;
     flex-direction: column;
@@ -18,7 +18,7 @@
     text-decoration: none;
 }
 .hemeroOption svg{
-    font-size: 2rem;
+    font-size: 2.5rem;
 }
 .hemeroList{
     display:flex;
@@ -28,7 +28,8 @@
     padding:1rem;
 }
 .hemeroList span{
-    color:var(--golden-primary);
+    color:var(--red-primary);
+    font-size:1.1rem;
 }
 .hemeroList p{
     text-align: justify;
