@@ -8,3 +8,19 @@
 .inscriptionForm input{
     padding:0.5rem;
 }
+.inscriptionForm button{
+    border:none;
+    color:var(--white-primary);
+    padding:0.5rem;
+    width:100%;
+}
+.inscriptionButtons{
+    display: flex;
+    gap:0.5rem;
+}
+.buttonSubmit{
+    background:var(--green-primary);
+}
+.buttonReset{
+    background: var(--red-primary);
+}
