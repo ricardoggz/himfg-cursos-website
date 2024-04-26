@@ -24,3 +24,18 @@
 .buttonReset{
     background: var(--red-primary);
 }
+.privacity{
+    color: var(--blue-secondary);
+    cursor:pointer;
+}
+.ruleList{
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5rem;
+    display:flex;
+    flex-direction: column;
+    gap:1rem;
+    text-align: justify;
+}
+.ruleList span{
+    color:var(--golden-primary);
+}
