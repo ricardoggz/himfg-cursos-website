@@ -42,10 +42,7 @@ export default function PreGradeForm(){
         html: 
         <>
             <span>
-                HOSPITAL INFANTIL DE MÉXICO FEDERICO GÓMEZ
-                DIRECCIÓN DE ENSEÑANZA Y DESARROLLO ACADÉMICO
-                REGLAMENTO SERVICIO SOCIAL, ESTANCIAS Y MÉDICOS
-                INTERNOS DE PREGRADO
+                SON OBLIGACIONES DEL ALUMNO:
             </span>
             <br />
             <ul className={styles.ruleList}>
@@ -119,11 +116,119 @@ export default function PreGradeForm(){
                     por escrito a la Dirección de Enseñanza y Desarrollo Académico.
                 </li>
             </ul>
+            <br/>
+            <span>MEDICO INTERNO DE PREGADO:</span>
+            <br/>
+            <ul className={styles.ruleList}>
+                <li>
+                    1) No se proporcionarán prestaciones económicas, material didáctico, fotocopias, uniformes ni
+                    estacionamiento; la alimentación y el lugar de descanso se proporcionará únicamente durante las
+                    guardias. Cualquier falta al reglamento será causa de suspensión definitiva de su estancia en el
+                    hospital.
+                </li>
+                <li>
+                    2)Toda actividad clínica e intervención diagnóstica o terapéutica, así como la realización de notas o
+                    llenado de formatos del Expediente Clínico, deberá ser supervisada por un médico adscrito del HIMFG
+                    o un residente de esta institución de mayor jerarquía. Dichas intervenciones deberán ser consignadas
+                    en el expediente clínico con nombre completo y firma de ambas partes.
+                </li>
+                <li>
+                    3) Deberá portar la credencial otorgada por la Dirección de Enseñanza y Desarrollo Académico, en un
+                    lugar visible en todo momento, EN CASO CONTRARIO SE SUSPENDERA SU ESTANCIA EN ESTE
+                    HOSPITAL. No hay reposición de la credencial y en caso de pérdida, se deberá levantar un acta en el
+                    Ministerio Público y posterior a esto se procederá a entregar el documento de conclusión.
+                </li>
+                <li>
+                    4) Deberá conducirse con respeto y atención a todo el personal médico y no médico de la institución
+                    presentándose con zapatos deportivos tipo tenis; pijama quirúrgica y bata con el escudo de su
+                    Universidad y Facultad. Está prohibido el uso de playeras o sudaderas como parte del uniforme. Para
+                    ingresar a quirófano, deberán usar el uniforme quirúrgico otorgado por el área de quirófanos.
+                </li>
+                <li>
+                    5) Los médicos no podrán iniciar actividades clínicas asistenciales hasta realizar el curso de higiene de
+                    manos y medidas preventivas de infecciones nosocomiales realizado por el Departamento de
+                    Epidemiología Hospitalaria
+                </li>
+                <li>
+                    6) No se autoriza que el residente rotante extraiga o utilice información de algún paciente o un grupo
+                    de pacientes de este Instituto (para publicación, realizar carteles para congresos, etc.) a menos de que
+                    cuente con permiso por escrito del jefe del Departamento o subdirector de área correspondiente
+                </li>
+                <li>
+                    7) Se respetará el periodo vacacional asignado por la sede clínica de base, de acuerdo con el programa
+                    operativo y notificación a la Dirección de Enseñanza y Desarrollo Académico.
+                </li>
+                <li>
+                    8) Deberá de realizar el trámite de ingreso y finalización de la rotación de forma completa en la
+                    Dirección de Enseñanza y Desarrollo Académico. La evaluación final la llevará a cabo el profesor
+                    asignado para la supervisión del programa académico de los médicos internos y con el visto bueno de
+                    la Dirección de Enseñanza y Desarrollo Académico
+                </li>
+            </ul>
+            <br/>
+            <span>SANCIONES:</span>
+            <br/>
+            <ul className={styles.ruleList}>
+                <li>
+                    Es obligación de todo ALUMNO el cumplir estrictamente este Reglamento, de lo contrario se
+                    hará acreedor a las sanciones conducentes.
+                </li>
+                <li>
+                    Las sanciones por faltas en que incurra el alumno, dependiendo de la gravedad, pueden ir
+                    desde amonestaciones verbales, notas de demérito al expediente o incluso rescisión de la
+                    relación académica con suspensión de la actividad o estancia en el hospital.
+                </li>
+                <li>
+                    Son causa de baja inmediata sin responsabilidad para la Institución:
+                </li>
+                <li>
+                    a) La violación de las normas técnicas o administrativas propias de la unidad
+                    (consultar la Normateca Institucional en www.himfg.edu.mx que incluye políticas
+                    internas, guías de práctica clínica, manuales de procedimientos, etc.)
+                </li>
+                <li>
+                    b) Faltas a las normas éticas y al Código de Ética y Conducta de la Institución.
+                </li>
+                <li>
+                    c) Violar la confidencialidad de los pacientes o de la información contenida en
+                    el expediente clínico.
+                </li>
+                <li>
+                    d) Alteración o modificación del expediente clínico o cualquier documento
+                    propio de lainstitución.
+                </li>
+                <li>
+                    e) Ausencia injustificada de su área de trabajo durante el tiempo de labores.
+                </li>
+                <li>
+                    f) Falta de respeto a pacientes, familiares, superiores, compañeros o subordinados.
+                </li>
+                <li>
+                    g) Aceptar o solicitar remuneración o dádivas de pacientes o de terceras
+                    personas por su labor médica.
+                </li>
+                <li>
+                    h) Usar o introducir drogas y bebidas alcohólicas a las instalaciones. El Hospital
+                    Infantil de México es un área libre de humo de tabaco, el fumar dentro de sus
+                    instalaciones constituye un delito.
+                </li>
+                <li>
+                    i)Incumplir con las políticas institucionales denominadas “Protección y manejo
+                    por cualquier medio, íntegro y responsable de toda la información personal emanada
+                    del proceso de atención sanitaria al que se ven sujetos nuestros pacientes” y
+                    “Lineamientos normativos para regular el uso de las Tecnologías de la Información y de la Comunicación (TIC’s) durante la atención médica”
+                </li>
+                <li>
+                    En general, el incumplimiento o transgresión de cualquiera de las normas y obligaciones señaladas en el
+                    presente reglamento, puede llegar a ser causa de la cancelación de la actividad académica que realiza, sin
+                    responsabilidad para la Institución.
+                </li>
+            </ul>
         </>,
         showCloseButton:true,
         showConfirmButton:false,
         customClass:{
-            htmlContainer: styles.ruleList
+            htmlContainer: styles.htmlContainer
         },width:800
 
     })
