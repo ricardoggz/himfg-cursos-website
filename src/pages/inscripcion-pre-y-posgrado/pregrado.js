@@ -100,7 +100,7 @@ export default function PreGradeForm(){
                 </li>
                 <li>
                     11) Ningún alumno puede ser portavoz de informes a la prensa o de carácter oficial, sobre
-                    icos o científicos de la Institución.
+                    aspectosa dministrativos, técnicos o científicos de la Institución.
                 </li>
                 <li>
                     12) Está estrictamente prohibido aceptar o solicitar remuneración o dádivas de pacientes o de

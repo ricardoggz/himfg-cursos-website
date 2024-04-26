@@ -42,88 +42,87 @@ export default function PosGradeForm(){
         html: 
         <>
             <span>
-                HOSPITAL INFANTIL DE MÉXICO FEDERICO GÓMEZ
-                DIRECCIÓN DE ENSEÑANZA Y DESARROLLO ACADÉMICO
-                REGLAMENTO SERVICIO SOCIAL, ESTANCIAS Y MÉDICOS
-                INTERNOS DE PREGRADO
+                LINEAMIENTOS PARA MÉDICOS RESIDENTES EN ROTACIÓN
             </span>
             <br />
             <ul className={styles.ruleList}>
-                <li>1) Cumplir las actividades establecidas en el Servicio o Departamento asignado</li>
-                <li>2) Portar en todo momento su credencial en un lugar visible.</li>
                 <li>
-                    3) Cumplir debidamente las indicaciones de las personas designadas para impartir el
-                    adiestramiento o paradirigir el desarrollo de las actividades (tutores o encargados).
+                    1) Deberá cumplir con lo dispuesto en el Reglamento de Médicos Residentes de la Dirección de
+                    Enseñanza y Desarrollo Académico. No se proporcionarán prestaciones económicas, material
+                    didáctico, fotocopias, uniformes ni estacionamiento; la alimentación y el lugar de descanso se
+                    proporcionará únicamente durante las guardias. Cualquier falta al reglamento será causa de
+                    suspensión definitiva de su estancia en el hospital.
                 </li>
                 <li>
-                    4) Asistir a las actividades académico/asistenciales hospitalarias que se le indiquen, en
-                    los horarios establecidos y de acuerdo a las necesidades de la Institución, así como
-                    permanecer en la institución, durante el tiempo establecido por el servicio asignado.
+                    2) Toda actividad clínica e intervención diagnóstica o terapéutica, así como realización de notas o
+                    llenado de formatos del Expediente Clínico, deberá ser supervisada por un médico adscrito del
+                    HIMFG o un residente de esta institución de mayor o igual jerarquía. Dichas intervenciones
+                    deberán ser consignadas en el expediente clínico con nombre completo y firma de ambas
+                    partes.
                 </li>
                 <li>
-                    5) Dar cabal cumplimiento a los Códigos de Ética y de Conducta referidos en la página
-                    web del HIMFG,así como a este Reglamento.
+                    3) Deberá portar la credencial otorgada por la Dirección de Enseñanza y Desarrollo Académico,
+                    en un lugar visible en todo momento, EN CASO CONTRARIO SE SUSPENDERA SU ESTANCIA EN
+                    ESTE HOSPITAL. No hay reposición de la credencial y en caso de pérdida, se deberá levantar un
+                    acta en el Ministerio Público y posterior a esto se procederá a entregar el documento de
+                    conclusión.
                 </li>
                 <li>
-                    6) Cumplir con las políticas institucionales denominadas “Protección y manejo por
-                    cualquier medio, íntegro y responsable de toda la información personal emanada del
-                    proceso de atención sanitaria al que se ven sujetos nuestros pacientes” y “Lineamientos
-                    normativos para regular el uso de las Tecnologías de la Información y de la Comunicación
-                    (TIC’s) durante la atención médica”, en donde se manifiesta que la información recabada
-                    durante el proceso de atención médica deberá manejarse con total confidencialidad por
-                    los profesionales de la salud en todos sus niveles, por lo tanto, no podrán compartirse
-                    videos, imágenes o documentos emanados de dicho proceso de atención por ningún
-                    medio, ya sea escrito, electrónico o telefónico y por ningún tipo de red social (Facebook,
-                    Twitter, Instagram, TikTok o alguna otra).
+                    4) Deberá conducirse con respeto y atención a todo el personal médico y no médico de la
+                    institución presentándose con zapatos deportivos tipo tenis, azules, negros o color neutro;
+                    pijama quirúrgica azul, negra o de color neutro y bata con el escudo de su institución. Está
+                    prohibido el uso de playeras o sudaderas como parte del uniforme.
                 </li>
                 <li>
-                    7) Las constancias de actividades académicas de los alumnos (terminación o liberación)
-                    serán proporcionadas únicamente por la Dirección de Enseñanza y Desarrollo Académico,
-                    previa solicitud por escrito y por lo menos con una semana de anticipación, después de
-                    haber recibido la solicitud del Departamento o Servicio de Rotación.
+                    Para ingresar a quirófano, deberán usar el uniforme quirúrgico otorgado por el área de
+                    quirófanos.
                 </li>
                 <li>
-                    8) Deberá seguir las indicaciones de sus superiores en todo momento como parte de la
-                    estructura jerárquica del HIMFG
+                    Es OBLIGATORIO el uso de cubrebocas en todo momento dentro del hospital.
                 </li>
                 <li>
-                    9) Los alumnos están enterados de que una infección nosocomial incrementa
-                    importantemente el riesgo de mortalidad de los pacientes, costos hospitalarios y estancia
-                    hospitalaria. Por tal razón deberán de cumplir OBLIGATORIAMENTE CON LA HIGIENE DE MANOS antes y después del contacto con un paciente, su entorno o sus dispositivos y
-                    técnicas antisépticas en todo procedimiento que realicen. Así mismo todas las personas
-                    que tengan el cabello largo, deberán de traerlo RECOGIDO (actividades asistenciales con
-                    el paciente en área de hospitalización y consulta externa). Uso OBLIGATORIO de
-                    cubrebocas. El incumplimiento de lo anterior condicionará la suspensión inmediata de la
-                    estancia por el hospital, sin responsabilidad alguna para la institución.
+                    El cabello largo deberá ser recogido durante las actividades asistenciales con los
+                    pacientes.
                 </li>
                 <li>
-                    10) El alumno deberá notificar a su inmediato superior cuando requiera ausentarse de sus labores
-                    para asistir a una determinada actividad académica o de investigación o por cuestiones de salud
-                    justificando en todo momento su ausencia y de no ser así se dará de baja inmediatamente.
+                    Esta prohibido el uso de joyería y uñas largas con esmalte, gelish, acrílicos y otros
+                    productos que impidan el adecuado lavado de manos
                 </li>
                 <li>
-                    11) Ningún alumno puede ser portavoz de informes a la prensa o de carácter oficial, sobre
-                    icos o científicos de la Institución.
+                    5) Los médicos no podrán iniciar actividades clínicas asistenciales hasta realizar el curso de
+                    higiene de manos y medidas preventivas de infecciones nosocomiales realizado por el
+                    Departamento de Epidemiología Hospitalaria.
                 </li>
                 <li>
-                    12) Está estrictamente prohibido aceptar o solicitar remuneración o dádivas de pacientes o de
-                    acerlo es causa inmediata de baja.
+                    6) No deberá de dar informes sobre diagnóstico, pronóstico o estado actual de los pacientes, a
+                    menos que sea realizado bajo supervisión de un médico adscrito del HIMFG o médico
+                    residente de esta institución que sea de mayor jerarquía.
                 </li>
                 <li>
-                    13) Está prohibido el uso o introducción de drogas y bebidas alcohólicas a las instalaciones. El
-                    Hospital Infantil de México es un área libre de humo de tabaco, el fumar dentro de sus
-                    instalaciones constituye un delito. En caso de sorprenderlo se sancionará de acuerdo a la ley.
+                    7) No se autoriza que el residente rotante extraiga o utilice información de algún paciente o un
+                    grupo de pacientes de este Instituto (para publicación, realizar carteles para congresos, etc.) a
+                    menos de que cuente con permiso por escrito del Jefe del Departamento o Subdirector de
+                    área correspondiente
                 </li>
                 <li>
-                    14) En caso de renuncia -independientemente del motivo- deberá siempre notificarse
-                    por escrito a la Dirección de Enseñanza y Desarrollo Académico.
+                    8) No se autoriza tomar vacaciones durante el periodo de la rotación, ni se autorizarán permisos
+                    extraordinarios que no sean avalados por escrito en forma oficial por las autoridades de
+                    enseñanza de la institución de procedencia
+                </li>
+                <li>
+                    9) Deberá de realizar el trámite de ingreso y finalización de la rotación de forma completa en la
+                    Dirección de Enseñanza y Desarrollo Académico. La evaluación final la llevará a cabo el
+                    profesor del servicio receptor con el visto bueno de la Dirección de Enseñanza y Desarrollo
+                    Académico en el formato oficial de evaluación; se elaborará el oficio de conclusión y éste junto
+                    con el formato oficial de evaluación será entregado a cambio de la credencial de
+                    identificación.
                 </li>
             </ul>
         </>,
         showCloseButton:true,
         showConfirmButton:false,
         customClass:{
-            htmlContainer: styles.ruleList
+            htmlContainer: styles.htmlContainer
         },width:800
 
     })
