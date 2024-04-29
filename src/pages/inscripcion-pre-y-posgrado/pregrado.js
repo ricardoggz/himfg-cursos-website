@@ -10,18 +10,23 @@ export default function PreGradeForm(){
     const [file, setFile] = useState(null)
     const [inputData, onChange, onReset] = useOnChange()
     const handleFileChange=(evt)=>{
-        setFile(evt.target.files[0])
+        setFile({
+            ...file,
+            [evt.target.name]: evt.target.files[0]
+        })
     }
-    const handleSubmit = async()=>{
+    const handleSubmit = async(evt)=>{
+        evt.preventDefault()
         try {
             const data ={
-
+                ...inputData,
             }
             const response = await axios.post(
                 'https://archivos.him.edu.mx/inscripciones-pre-grado/upload.php',
                 data
             )
             console.log(response)
+            console.log(data)
         } catch (error) {
             console.log(error)
         }
@@ -240,7 +245,7 @@ export default function PreGradeForm(){
                 onSubmit={handleSubmit}
             >
                 <label>
-                    <input type='checkbox' required/>
+                    <input type='checkbox' onChange={onChange} value='ACEPTA' name='reglamento' required/>
                     Acepto el
                     <span
                     onClick={privacityAd}
@@ -250,67 +255,67 @@ export default function PreGradeForm(){
                     <span className={styles.privacity} onClick={rules}> reglamento</span>
                 </label>
                 <label>Servicio o departamento receptor:</label>
-                <input type='text' name='department_name' onChange={onChange}/>
+                <input type='text' name='departamento_receptor' onChange={onChange} required/>
                 <label>Fecha de inicio:</label>
-                <input type='date' name='start_date' onChange={onChange}/>
+                <input type='date' name='fecha_inicio' onChange={onChange} required/>
                 <label>Fecha de término:</label>
-                <input type='date' name='finish_date'/>
+                <input type='date' name='fecha_final' onChange={onChange} required/>
                 <label>Nombre:</label>
-                <input type='text' name='student_name'/>
+                <input type='text' name='estudiante_nombre' onChange={onChange} required/>
                 <label>Edad:</label>
-                <input type='number' name='finish_date'/>
+                <input type='number' name='estudiante_edad' onChange={onChange} required/>
                 <label>Sexo:</label>
-                <select name='student_gender'>
-                    <option>Masculino</option>
-                    <option>Femenino</option>
+                <select name='estudiante_genero' onChange={onChange}>
+                    <option onChange={onChange}>Masculino</option>
+                    <option onChange={onChange}>Femenino</option>
                 </select>
                 <label>Estado civil:</label>
-                <input type='text' name='student_status'/>
+                <input type='text' name='estudiante_estado_civi' onChange={onChange} required/>
                 <label>Fecha de nacimiento:</label>
-                <input type='date' name='student_birthday'/>
+                <input type='date' name='estudiante_fecha_nacimiento' onChange={onChange} required/>
                 <label>Lugar de nacimiento:</label>
-                <input type='text' name='student_origin'/>
+                <input type='text' name='estudiante_lugar_nacimiento' onChange={onChange} required/>
                 <label>Idiomas que habla:</label>
-                <input type='text' name='student_languages'/>
+                <input type='text' name='estudiante_idiomas' onChange={onChange} required/>
                 <label>Domicilio permanente:</label>
-                <input type='text' name='student_languages'/>
+                <input type='text' name='estudiante_domicilio' onChange={onChange} required/>
                 <label>Código postal:</label>
-                <input type='text' name='student_languages'/>
+                <input type='text' name='estudiante_codigo_postal' onChange={onChange} required/>
                 <label>Alcaldía / municipio:</label>
-                <input type='text' name='student_languages'/>
+                <input type='text' name='estudiante_alcaldia' onChange={onChange} required/>
                 <label>Ciudad:</label>
-                <input type='text' name='student_languages'/>
+                <input type='text' name='estudiante_ciudad' onChange={onChange} required/>
                 <label>País:</label>
-                <input type='text' name='student_languages'/>
+                <input type='text' name='estudiante_pais' onChange={onChange} required/>
                 <label>Teléfono particular:</label>
-                <input type='number' name='student_languages'/>
+                <input type='number' name='estudiante_telefono_particular' onChange={onChange} required/>
                 <label>Teléfono celular:</label>
-                <input type='number' name='student_languages'/>
+                <input type='number' name='estudiante_telefono_casa' onChange={onChange} required/>
                 <label>Correo electrónico:</label>
-                <input type='email' name='student_languages'/>
+                <input type='email' name='estudiante_email' onChange={onChange} required/>
                 <label>Escuela de procedencia:</label>
-                <input type='text' name='student_languages'/>
+                <input type='text' name='estudiante_escuela' onChange={onChange} required/>
                 <label>Carrera:</label>
-                <input type='text' name='student_languages'/>
+                <input type='text' name='estudiante_carrera' onChange={onChange} required/>
                 <label>Promedio de calificaciones del ultimo grado escolar:</label>
-                <input type='text' name='student_languages'/>
+                <input type='text' name='estudiante_promedio' onChange={onChange} required/>
                 <label>Número de contacto de escuela:</label>
-                <input type='text' name='student_languages'/>
+                <input type='text' name='estudiante_contacto_escuela' onChange={onChange} required/>
                 <label>Fotografía tamaño infantil / blanco y negro y / o color:</label>
-                <input type='file' name='student_languages' onChange={handleFileChange}/>
+                <input type='file' name='estudiante_fotografia' onChange={handleFileChange} required/>
                 <label>Calificaciones con sello de la escuela:</label>
-                <input type='file' name='student_languages' onChange={handleFileChange}/>
+                <input type='file' name='estudiante_calificaciones' onChange={handleFileChange} required/>
                 <label>Certificado médico reciente (Sector Salud):</label>
-                <input type='file' name='student_languages' onChange={handleFileChange}/>
+                <input type='file' name='estudiante_certificado_medico' onChange={handleFileChange} required/>
                 <label>Oficio de envío de la institución solicitando llevar a cabo su Servicio Social, Práctica, Estancia, Tesis, dirigido a la Dirección de Enseñanza y Desarrollo Académico:</label>
-                <input type='file' name='student_languages' onChange={handleFileChange}/>
+                <input type='file' name='estudiante_oficio_solicitacion' onChange={handleFileChange} required/>
                 <label>Oficio de aceptación por el área de la institución solicitando llevar a cabo su Servicio Social, Práctica, Estancia, Tesis, dirigido a la Dirección de Enseñanza y Desarrollo Académico</label>
-                <input type='file' name='student_languages' onChange={handleFileChange}/>
+                <input type='file' name='estudiante_oficio_aceptacion' onChange={handleFileChange} required/>
                 <label>Nombre completo de aceptación:</label>
-                <input type='text' name='student_languages'/>
+                <input type='text' name='estudiante_nombre_aceptacion' onChange={onChange} required/>
                 <div className={styles.inscriptionButtons}>
                     <button className={styles.buttonSubmit}>Enviar datos</button>
-                    <button className={styles.buttonReset}>Borrar datos</button>
+                    <button type='reset' className={styles.buttonReset}>Borrar datos</button>
                 </div>
                 <label>*EL HOSPITAL INFANTIL DE MÉXICO FEDERICO GÓMEZ NO OTORGA NINGÚN TIPO DE BECA, ALIMENTACIÓN, ESTACIONAMIENTO, NI RESIDENCIA PARA ESTOS ESTUDIOS*</label>
             </form>

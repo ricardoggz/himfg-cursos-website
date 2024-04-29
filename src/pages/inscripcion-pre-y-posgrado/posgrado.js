@@ -134,7 +134,7 @@ export default function PosGradeForm(){
                 onSubmit={handleSubmit}
             >
                 <label>
-                    <input type='checkbox' required/>
+                    <input type='checkbox' name='reglamento' required value='ACEPTO' onChange={onChange}/>
                     Acepto el
                     <span
                     onClick={privacityAd}
@@ -144,39 +144,39 @@ export default function PosGradeForm(){
                     <span className={styles.privacity} onClick={rules}> reglamento</span>
                 </label>
                 <label>Fecha</label>
-                <input type='date' name='start_date' onChange={onChange}/>
+                <input type='date' name='start_date' onChange={onChange} required/>
                 <label>Fotografía</label>
-                <input type='file' name='start_date' onChange={onChange}/>
+                <input type='file' name='start_date' onChange={onChange} required/>
                 <label>Nombre</label>
-                <input type='text' name='start_date' onChange={onChange}/>
+                <input type='text' name='start_date' onChange={onChange} required/>
                 <label>Nacionalidad</label>
-                <input type='text' name='start_date' onChange={onChange}/>
+                <input type='text' name='start_date' onChange={onChange} required/>
                 <label>Fecha de nacimiento</label>
-                <input type='date' name='start_date' onChange={onChange}/>
+                <input type='date' name='start_date' onChange={onChange} required/>
                 <label>Especialidad</label>
-                <input type='text' name='start_date' onChange={onChange}/>
+                <input type='text' name='start_date' onChange={onChange} required/>
                 <label>Grado</label>
-                <input type='text' name='start_date' onChange={onChange}/>
+                <input type='text' name='start_date' onChange={onChange} required/>
                 <label>Institución de procedencia</label>
-                <input type='text' name='start_date' onChange={onChange}/>
+                <input type='text' name='start_date' onChange={onChange} required/>
                 <label>Teléfono y extensión de la Jefatura de Enseñanza de Procedencia</label>
-                <input type='text' name='start_date' onChange={onChange}/>
+                <input type='text' name='start_date' onChange={onChange} required/>
                 <label>Periódo de rotación (fecha de inicio)</label>
-                <input type='date' name='start_date' onChange={onChange}/>
+                <input type='date' name='start_date' onChange={onChange} required/>
                 <label>Periódo de rotación (fecha de termino)</label>
-                <input type='date' name='start_date' onChange={onChange}/>
+                <input type='date' name='start_date' onChange={onChange} required/>
                 <label>Servicio al que va rotar</label>
-                <input type='text' name='start_date' onChange={onChange}/>
+                <input type='text' name='start_date' onChange={onChange} required/>
                 <label>Teléfono celular</label>
-                <input type='number' name='start_date' onChange={onChange}/>
+                <input type='number' name='start_date' onChange={onChange} required/>
                 <label>Teléfono local</label>
-                <input type='number' name='start_date' onChange={onChange}/>
+                <input type='number' name='start_date' onChange={onChange} required/>
                 <label>Domicilio permanente</label>
-                <input type='text' name='start_date' onChange={onChange}/>
+                <input type='text' name='start_date' onChange={onChange} required/>
                 <label>Correo electrónico</label>
-                <input type='email' name='start_date' onChange={onChange}/>
+                <input type='email' name='start_date' onChange={onChange} required/>
                 <label>Nombre y teléfono de algún familiar (contacto de emergencia)</label>
-                <input type='text' name='start_date' onChange={onChange}/>
+                <input type='text' name='start_date' onChange={onChange} required/>
                 <div className={styles.inscriptionButtons}>
                     <button className={styles.buttonSubmit}>Enviar datos</button>
                     <button className={styles.buttonReset}>Borrar datos</button>
