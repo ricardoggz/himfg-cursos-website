@@ -9,6 +9,7 @@ import withReactContent from "sweetalert2-react-content"
 export default function PreGradeForm(){
     const [file, setFile] = useState(null)
     const [inputData, onChange, onReset] = useOnChange()
+    const [isLoading, setIsLoading] = useState(false);
     const handleFileChange=(evt)=>{
         setFile({
             ...file,
@@ -17,16 +18,56 @@ export default function PreGradeForm(){
     }
     const handleSubmit = async(evt)=>{
         evt.preventDefault()
+        setIsLoading(true)
         try {
-            const data ={
-                ...inputData,
-            }
+            const formData = new FormData();
+            formData.append('reglamento', inputData.reglamento);
+            formData.append('departamento_receptor', inputData.departamento_receptor);
+            formData.append('fecha_inicio', inputData.fecha_inicio);
+            formData.append('fecha_final', inputData.fecha_final);
+            formData.append('estudiante_nombre', inputData.estudiante_nombre);
+            formData.append('estudiante_edad', inputData.estudiante_edad);
+            formData.append('estudiante_genero', inputData.estudiante_genero);
+            formData.append('estudiante_estado_civil', inputData.estudiante_estado_civil);
+            formData.append('estudiante_fecha_nacimiento', inputData.estudiante_fecha_nacimiento);
+            formData.append('estudiante_lugar_nacimiento', inputData.estudiante_lugar_nacimiento);
+            formData.append('estudiante_idiomas', inputData.estudiante_idiomas);
+            formData.append('estudiante_domicilio', inputData.estudiante_domicilio);
+            formData.append('estudiante_codigo_postal', inputData.estudiante_codigo_postal);
+            formData.append('estudiante_alcaldia', inputData.estudiante_alcaldia);
+            formData.append('estudiante_ciudad', inputData.estudiante_ciudad);
+            formData.append('estudiante_pais', inputData.estudiante_pais);
+            formData.append('estudiante_telefono_particular', inputData.estudiante_telefono_particular);
+            formData.append('estudiante_telefono_casa', inputData.estudiante_telefono_casa);
+            formData.append('estudiante_email', inputData.estudiante_email);
+            formData.append('estudiante_escuela', inputData.estudiante_escuela);
+            formData.append('estudiante_carrera', inputData.estudiante_carrera);
+            formData.append('estudiante_promedio', inputData.estudiante_promedio);
+            formData.append('estudiante_contacto_escuela', inputData.estudiante_contacto_escuela);
+            formData.append('estudiante_fotografia', file.estudiante_fotografia);
+            formData.append('estudiante_calificaciones', file.estudiante_calificaciones);
+            formData.append('estudiante_certificado_medico', file.estudiante_certificado_medico);
+            formData.append('estudiante_oficio_solicitacion', file.estudiante_oficio_solicitacion);
+            formData.append('estudiante_oficio_aceptacion', file.estudiante_oficio_aceptacion);
+            formData.append('estudiante_nombre_aceptacion', inputData.estudiante_nombre_aceptacion);
+
             const response = await axios.post(
                 'https://archivos.him.edu.mx/inscripciones-pre-grado/upload.php',
-                data
+                formData,
+                {
+                    headers: {
+                        'Content-Type': 'multipart/form-data'
+                    }
+                }
             )
+            if(response.status===200){
+                setIsLoading(false)
+                Swal.fire({
+                    title:'Registro realizado con éxito'
+                })
+            }
             console.log(response)
-            console.log(data)
+            console.log(formData)
         } catch (error) {
             console.log(error)
         }
@@ -270,7 +311,7 @@ export default function PreGradeForm(){
                     <option onChange={onChange}>Femenino</option>
                 </select>
                 <label>Estado civil:</label>
-                <input type='text' name='estudiante_estado_civi' onChange={onChange} required/>
+                <input type='text' name='estudiante_estado_civil' onChange={onChange} required/>
                 <label>Fecha de nacimiento:</label>
                 <input type='date' name='estudiante_fecha_nacimiento' onChange={onChange} required/>
                 <label>Lugar de nacimiento:</label>
@@ -318,6 +359,7 @@ export default function PreGradeForm(){
                     <button type='reset' className={styles.buttonReset}>Borrar datos</button>
                 </div>
                 <label>*EL HOSPITAL INFANTIL DE MÉXICO FEDERICO GÓMEZ NO OTORGA NINGÚN TIPO DE BECA, ALIMENTACIÓN, ESTACIONAMIENTO, NI RESIDENCIA PARA ESTOS ESTUDIOS*</label>
+                {!isLoading ? null : <span>Cargando, por favor espere...</span>}
             </form>
         </Container>
     )
