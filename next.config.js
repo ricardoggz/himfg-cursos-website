@@ -30,7 +30,8 @@ const nextConfig = {
       '/direccion/[...id]': { page : '/direccion/[...id]'},
       '/voluntariado' : { page: '/voluntariado'},
       '/especialidades': {page: '/especialidades'},
-      '/el-instituto-y-su-historia': {page: '/el-instituto-y-su-historia'}
+      '/el-instituto-y-su-historia': {page: '/el-instituto-y-su-historia'},
+      '/inscripcion-pre-y-posgrado/pregrado' : {page: '/inscripcion-pre-y-posgrado/pregrado'}
     }
   },
   env:{
