@@ -16,11 +16,8 @@ export const Jumbotron =()=>{
             autoplaySpeed: 3000,
         }
         const images = [
-            'https://archivos.him.edu.mx/carrusel-1.png',
-            'https://archivos.him.edu.mx/Carrusel_01-okjpg.jpg',
-            'https://archivos.him.edu.mx/Carrusel-02-ok2.jpg',
-            /*'https://framework-gb.cdn.gob.mx/landing/img/clanding2.png',
-            'https://framework-gb.cdn.gob.mx/landing/img/clanding3.png'*/
+            'https://archivos.him.edu.mx/banner-1.png',
+            'https://archivos.him.edu.mx/banner-2.png',
         ]
           return (
             <Slider {...settings}>
