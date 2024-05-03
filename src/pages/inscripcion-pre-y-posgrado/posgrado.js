@@ -9,19 +9,53 @@ import withReactContent from "sweetalert2-react-content"
 export default function PosGradeForm(){
     const [file, setFile] = useState(null)
     const [inputData, onChange, onReset] = useOnChange()
+    const [isLoading, setIsLoading] = useState(false);
     const handleFileChange=(evt)=>{
-        setFile(evt.target.files[0])
+        setFile({
+            [evt.target.name]:evt.target.files[0]
+        })
     }
-    const handleSubmit = async()=>{
+    const handleSubmit = async(evt)=>{
+        evt.preventDefault()
+        setIsLoading(true)
         try {
-            const data ={
+            const formData = new FormData();
+            formData.append('reglamento', inputData.reglamento);
+            formData.append('fecha_registro', inputData.fecha_registro);
+            formData.append('estudiante_fotografia', file.estudiante_fotografia);
+            formData.append('estudiante_nombre', inputData.estudiante_nombre);
+            formData.append('estudiante_nacionalidad', inputData.estudiante_nacionalidad);
+            formData.append('estudiante_fecha_nacimiento', inputData.estudiante_fecha_nacimiento);
+            formData.append('estudiante_especialidad', inputData.estudiante_especialidad);
+            formData.append('estudiante_grado', inputData.estudiante_grado);
+            formData.append('estudiante_institucion_procedencia', inputData.estudiante_institucion_procedencia);
+            formData.append('telefono_jefatura_procedente', inputData.telefono_jefatura_procedente);
+            formData.append('fecha_inicio_periodo', inputData.fecha_inicio_periodo);
+            formData.append('fecha_termino_periodo', inputData.fecha_termino_periodo);
+            formData.append('estudiante_servicio', inputData.estudiante_servicio);
+            formData.append('estudiante_telefono_celular', inputData.estudiante_telefono_celular);
+            formData.append('estudiante_telefono_fijo', inputData.estudiante_telefono_fijo);
+            formData.append('estudiante_domicilio', inputData.estudiante_domicilio);
+            formData.append('estudiante_correo', inputData.estudiante_correo);
+            formData.append('estudiante_telefono_familiar', inputData.estudiante_telefono_familiar);
 
-            }
             const response = await axios.post(
-                'https://archivos.him.edu.mx/inscripciones-pre-grado/upload.php',
-                data
+                'https://archivos.him.edu.mx/inscripciones-pos-grado/upload.php',
+                formData,
+                {
+                    headers: {
+                        'Content-Type': 'multipart/form-data'
+                    }
+                }
             )
+            if(response.status===200){
+                setIsLoading(false)
+                Swal.fire({
+                    title:'Registro realizado con éxito'
+                })
+            }
             console.log(response)
+            console.log(formData)
         } catch (error) {
             console.log(error)
         }
@@ -144,43 +178,44 @@ export default function PosGradeForm(){
                     <span className={styles.privacity} onClick={rules}> reglamento</span>
                 </label>
                 <label>Fecha</label>
-                <input type='date' name='start_date' onChange={onChange} required/>
+                <input type='date' name='fecha_registro' onChange={onChange} required/>
                 <label>Fotografía</label>
-                <input type='file' name='start_date' onChange={onChange} required/>
+                <input type='file' name='estudiante_fotografia' onChange={handleFileChange} required/>
                 <label>Nombre</label>
-                <input type='text' name='start_date' onChange={onChange} required/>
+                <input type='text' name='estudiante_nombre' onChange={onChange} required/>
                 <label>Nacionalidad</label>
-                <input type='text' name='start_date' onChange={onChange} required/>
+                <input type='text' name='estudiante_nacionalidad' onChange={onChange} required/>
                 <label>Fecha de nacimiento</label>
-                <input type='date' name='start_date' onChange={onChange} required/>
+                <input type='date' name='estudiante_fecha_nacimiento' onChange={onChange} required/>
                 <label>Especialidad</label>
-                <input type='text' name='start_date' onChange={onChange} required/>
+                <input type='text' name='estudiante_especialidad' onChange={onChange} required/>
                 <label>Grado</label>
-                <input type='text' name='start_date' onChange={onChange} required/>
+                <input type='text' name='estudiante_grado' onChange={onChange} required/>
                 <label>Institución de procedencia</label>
-                <input type='text' name='start_date' onChange={onChange} required/>
+                <input type='text' name='estudiante_institucion_procedencia' onChange={onChange} required/>
                 <label>Teléfono y extensión de la Jefatura de Enseñanza de Procedencia</label>
-                <input type='text' name='start_date' onChange={onChange} required/>
+                <input type='text' name='telefono_jefatura_procedente' onChange={onChange} required/>
                 <label>Periódo de rotación (fecha de inicio)</label>
-                <input type='date' name='start_date' onChange={onChange} required/>
+                <input type='date' name='fecha_inicio_periodo' onChange={onChange} required/>
                 <label>Periódo de rotación (fecha de termino)</label>
-                <input type='date' name='start_date' onChange={onChange} required/>
+                <input type='date' name='fecha_termino_periodo' onChange={onChange} required/>
                 <label>Servicio al que va rotar</label>
-                <input type='text' name='start_date' onChange={onChange} required/>
+                <input type='text' name='estudiante_servicio' onChange={onChange} required/>
                 <label>Teléfono celular</label>
-                <input type='number' name='start_date' onChange={onChange} required/>
+                <input type='number' name='estudiante_telefono_celular' onChange={onChange} required/>
                 <label>Teléfono local</label>
-                <input type='number' name='start_date' onChange={onChange} required/>
+                <input type='number' name='estudiante_telefono_fijo' onChange={onChange} required/>
                 <label>Domicilio permanente</label>
-                <input type='text' name='start_date' onChange={onChange} required/>
+                <input type='text' name='estudiante_domicilio' onChange={onChange} required/>
                 <label>Correo electrónico</label>
-                <input type='email' name='start_date' onChange={onChange} required/>
+                <input type='email' name='estudiante_correo' onChange={onChange} required/>
                 <label>Nombre y teléfono de algún familiar (contacto de emergencia)</label>
-                <input type='text' name='start_date' onChange={onChange} required/>
+                <input type='text' name='estudiante_telefono_familiar' onChange={onChange} required/>
                 <div className={styles.inscriptionButtons}>
                     <button className={styles.buttonSubmit}>Enviar datos</button>
                     <button className={styles.buttonReset}>Borrar datos</button>
                 </div>
+                {!isLoading ? null : <span>Cargando, por favor espere...</span>}
             </form>
         </Container>
     )
