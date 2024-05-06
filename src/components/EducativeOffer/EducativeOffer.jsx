@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import styles from './educativeoffer.module.css'
 
 export const EducativeOffer = ()=>{
@@ -8,23 +9,32 @@ export const EducativeOffer = ()=>{
             </figure>
             <div className={`flexContainer ${styles.adsWrapper}`}>
                 <div>
-                    <span className={styles.adTitle}>
+                    <Link
+                        className={styles.adTitle}
+                        href='/inscripcion-pre-y-posgrado/pregrado'
+                    >
                         Pre grado
-                    </span>
+                    </Link>
                     <ul className={styles.adList}>
-                        <li>Opción 1</li>
-                        <li>Opción 1</li>
-                        <li>Opción 1</li>
-                        <li>Opción 1</li>
+                        
                     </ul>
                 </div>
                 <div>
-                <span className={styles.adTitle}>Pos grado</span>
+                    <Link
+                        className={styles.adTitle}
+                        href='inscripcion-pre-y-posgrado/posgrado'
+                    >
+                        Pos grado
+                    </Link>
                 <ul className={styles.adList}>
-                        <li>Opción 1</li>
-                        <li>Opción 1</li>
-                        <li>Opción 1</li>
-                        <li>Opción 1</li>
+                        <li>
+                            <a
+                                href='https://archivos.him.edu.mx/inscripciones-pos-grado/reglamento_residentes.pdf'
+                                target='_blank'
+                            >
+                                Reglamento para residentes
+                            </a>
+                        </li>
                 </ul>
                 </div>
             </div>            
