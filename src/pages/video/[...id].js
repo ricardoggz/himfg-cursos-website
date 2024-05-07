@@ -149,7 +149,7 @@ const Video = (props)=>{
                         <br/>
                         <p className={styles.formMessage}>
                             <b>ATENTO AVISO</b> este registro será habilitado hasta las 11:00 am
-                            del 08 de abril de 2024, razón por la cual te sugerimos hacer tu registro
+                            del 08 de mayo de 2024, razón por la cual te sugerimos hacer tu registro
                             con tiempo para que se te pueda enviar sin contratiempos tu clave de acceso.
                         </p>
                         </center>
