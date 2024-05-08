@@ -16,6 +16,7 @@ export const Jumbotron =()=>{
             autoplaySpeed: 3000,
         }
         const images = [
+            'https://archivos.him.edu.mx/banner-3.png',
             'https://archivos.him.edu.mx/banner-1.png',
             'https://archivos.him.edu.mx/banner-2.png',
         ]
