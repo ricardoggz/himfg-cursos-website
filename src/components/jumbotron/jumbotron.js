@@ -16,9 +16,22 @@ export const Jumbotron =()=>{
             autoplaySpeed: 3000,
         }
         const images = [
-            'https://archivos.him.edu.mx/banner-3.jpg',
-            'https://archivos.him.edu.mx/banner-1.png',
-            'https://archivos.him.edu.mx/banner-2.png',
+            {
+                url: 'https://archivos.him.edu.mx/banner-3.jpg',
+                link:'/'
+            },
+            {
+                url: 'https://archivos.him.edu.mx/banner-4.jpg',
+                link:'https://archivos.him.edu.mx/reunion-anual.jpg'
+            },
+            {
+                url:'https://archivos.him.edu.mx/banner-1.png',
+                link:'/'
+            },
+            {
+                url:'https://archivos.him.edu.mx/banner-2.png',
+                link:'/'
+            }
         ]
           return (
             <Slider {...settings}>
@@ -28,11 +41,13 @@ export const Jumbotron =()=>{
                         key={index}
                         className={styles.jumbotronWrapper}
                         >
-                            <img
-                            src={image}
-                            alt={`Imagen`}
-                            className={styles.jumbotronImage}
-                            />
+                            <a href={`${image.link}`}>
+                                <img
+                                    src={image.url}
+                                    alt={`Imagen`}
+                                    className={styles.jumbotronImage}
+                                />
+                            </a>
                         </div>
                     ))
                 }
