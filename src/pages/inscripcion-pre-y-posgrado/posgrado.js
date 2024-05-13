@@ -160,6 +160,40 @@ export default function PosGradeForm(){
         },width:800
 
     })
+    const documentation = ()=> withReactContent(Swal).fire({
+        html: 
+        <>
+            <span>
+                ¿Qué documentos tengo que entregar?
+            </span>
+            <br />
+            <ul className={styles.ruleList}>
+                <li>1) Una fotografía tamaño infantil (puede ser a color o blanco y negro)</li>
+                <li>
+                    <a
+                        href='https://www.ilovepdf.com/es'
+                        target='_blank'
+                    >
+                            ILove PDF
+                    </a>
+                </li>
+                <li>
+                    <a
+                        href='https://www.ilovepdf.com/es'
+                        target='_blank'
+                    >
+                            Online PDF editor
+                    </a>
+                </li>
+            </ul>
+        </>,
+        showCloseButton:true,
+        showConfirmButton:false,
+        customClass:{
+            htmlContainer: styles.htmlContainer
+        },width:800
+
+    })
     return (
         <Container>
             <Title>Cédula identificación del Residente Rotante - datos del médico rotante</Title>
@@ -178,6 +212,12 @@ export default function PosGradeForm(){
                     <span className={styles.privacity} onClick={rules}> reglamento</span>
                 </label>
                 <label>Fecha</label>
+                <label
+                className={styles.privacity}ç
+                onClick={documentation}
+                >
+                    Para tu documentación considera estos puntos (click aquí)
+                </label>
                 <input type='date' name='fecha_registro' onChange={onChange} required/>
                 <label>Fotografía</label>
                 <input type='file' name='estudiante_fotografia' onChange={handleFileChange} required/>

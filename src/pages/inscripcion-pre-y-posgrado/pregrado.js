@@ -278,6 +278,56 @@ export default function PreGradeForm(){
         },width:800
 
     })
+    const documentation = ()=> withReactContent(Swal).fire({
+        html: 
+        <>
+            <span>
+                ¿Qué documentos tengo que entregar?
+            </span>
+            <br />
+            <ul className={styles.ruleList}>
+                <li>1) Una fotografía tamaño infantil (puede ser a color o blanco y negro)</li>
+                <li>2) Constancia de estudios; es necesario que esté sellada por la institución académica.</li>
+                <li>
+                    3) Certificado médico (Únicamente sector salud será válido, ninguna dependencia de carácter privado será autorizado).
+                </li>
+                <li>
+                    4) Oficio o carta de presentación emitido por la institución escolar para llevar a cabo el proceso de servicio social.
+                </li>
+                <li>
+                    5) Oficio de aceptación dirigido a la DAE.
+                </li>
+                <li>
+                    Nota: Es muy importante que cada uno de tus documentos se encuentren comprimidos (máximo 1MB)
+                </li>
+                <li>
+                    Te recomendamos utilizar alguna de las siguientes opciones para comprimir tus documentos:
+                </li>
+                <li>
+                    <a
+                        href='https://www.ilovepdf.com/es'
+                        target='_blank'
+                    >
+                            ILove PDF
+                    </a>
+                </li>
+                <li>
+                    <a
+                        href='https://www.ilovepdf.com/es'
+                        target='_blank'
+                    >
+                            Online PDF editor
+                    </a>
+                </li>
+            </ul>
+        </>,
+        showCloseButton:true,
+        showConfirmButton:false,
+        customClass:{
+            htmlContainer: styles.htmlContainer
+        },width:800
+
+    })
     return (
         <Container>
             <Title>Servicio social, prácticas, estancias, tesis e internado de pregrado</Title>
@@ -341,6 +391,12 @@ export default function PreGradeForm(){
                 <label>Promedio de calificaciones del ultimo grado escolar:</label>
                 <input type='text' name='estudiante_promedio' onChange={onChange} required/>
                 <label>Número de contacto de escuela:</label>
+                <label
+                className={styles.privacity}ç
+                onClick={documentation}
+                >
+                    Para tu documentación considera estos puntos (click aquí)
+                </label>
                 <input type='text' name='estudiante_contacto_escuela' onChange={onChange} required/>
                 <label>Fotografía tamaño infantil / blanco y negro y / o color:</label>
                 <input type='file' name='estudiante_fotografia' onChange={handleFileChange} required/>
