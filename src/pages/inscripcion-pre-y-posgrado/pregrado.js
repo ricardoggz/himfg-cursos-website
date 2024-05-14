@@ -391,25 +391,21 @@ export default function PreGradeForm(){
                 <label>Promedio de calificaciones del ultimo grado escolar:</label>
                 <input type='text' name='estudiante_promedio' onChange={onChange} required/>
                 <label>Número de contacto de escuela:</label>
+                <input type='text' name='estudiante_contacto_escuela' onChange={onChange} required/>
                 <label
                 className={styles.privacity}ç
                 onClick={documentation}
                 >
                     Para tu documentación considera estos puntos (click aquí)
                 </label>
-                <input type='text' name='estudiante_contacto_escuela' onChange={onChange} required/>
-                <label>Fotografía tamaño infantil / blanco y negro y / o color:</label>
                 <input type='file' name='estudiante_fotografia' onChange={handleFileChange} required/>
-                <label>Calificaciones con sello de la escuela:</label>
-                <input type='file' name='estudiante_calificaciones' onChange={handleFileChange} required/>
-                <label>Certificado médico reciente (Sector Salud):</label>
-                <input type='file' name='estudiante_certificado_medico' onChange={handleFileChange} required/>
-                <label>Oficio de envío de la institución solicitando llevar a cabo su Servicio Social, Práctica, Estancia, Tesis, dirigido a la Dirección de Enseñanza y Desarrollo Académico:</label>
-                <input type='file' name='estudiante_oficio_solicitacion' onChange={handleFileChange} required/>
-                <label>Oficio de aceptación por el área de la institución solicitando llevar a cabo su Servicio Social, Práctica, Estancia, Tesis, dirigido a la Dirección de Enseñanza y Desarrollo Académico</label>
-                <input type='file' name='estudiante_oficio_aceptacion' onChange={handleFileChange} required/>
                 <label>Nombre completo de aceptación:</label>
                 <input type='text' name='estudiante_nombre_aceptacion' onChange={onChange} required/>
+                <label>Informes:</label>
+                <label>CARMEN JACQUELINE OLAZAGASTI</label>
+                <label>Coordinación De Rotaciones</label>
+                <label>himfgrotaciones@gmail.com</label>
+                <label>Tel. 01(55)5 228-99-17 ext. 2344</label>
                 <div className={styles.inscriptionButtons}>
                     <button className={styles.buttonSubmit}>Enviar datos</button>
                     <button type='reset' className={styles.buttonReset}>Borrar datos</button>

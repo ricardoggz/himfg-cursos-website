@@ -196,7 +196,7 @@ export default function PosGradeForm(){
     })
     return (
         <Container>
-            <Title>Cédula identificación del Residente Rotante - datos del médico rotante</Title>
+            <Title>Cédula identificación del Residente Rotante</Title>
             <form
                 className={`flexContainer ${styles.inscriptionForm}`}
                 onSubmit={handleSubmit}
@@ -251,6 +251,11 @@ export default function PosGradeForm(){
                 <input type='email' name='estudiante_correo' onChange={onChange} required/>
                 <label>Nombre y teléfono de algún familiar (contacto de emergencia)</label>
                 <input type='text' name='estudiante_telefono_familiar' onChange={onChange} required/>
+                <label>Informes:</label>
+                <label>CARMEN JACQUELINE OLAZAGASTI</label>
+                <label>Coordinación De Rotaciones</label>
+                <label>himfgrotaciones@gmail.com</label>
+                <label>Tel. 01(55)5 228-99-17 ext. 2344</label>
                 <div className={styles.inscriptionButtons}>
                     <button className={styles.buttonSubmit}>Enviar datos</button>
                     <button className={styles.buttonReset}>Borrar datos</button>
