@@ -34,7 +34,7 @@ export const EducativeOffer = ()=>{
                         </li>
                         <li>
                         <Link
-                        href='/inscripcion-pre-y-posgrado/posgrado'
+                        href='/inscripcion-pre-y-posgrado/internos'
                         >
                             Registro para médicos internos de pregrado
                         </Link>

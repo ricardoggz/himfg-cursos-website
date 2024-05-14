@@ -32,7 +32,8 @@ const nextConfig = {
       '/especialidades': {page: '/especialidades'},
       '/el-instituto-y-su-historia': {page: '/el-instituto-y-su-historia'},
       '/inscripcion-pre-y-posgrado/pregrado' : {page: '/inscripcion-pre-y-posgrado/pregrado'},
-      '/inscripcion-pre-y-posgrado/posgrado' : {page: '/inscripcion-pre-y-posgrado/posgrado'}
+      '/inscripcion-pre-y-posgrado/posgrado' : {page: '/inscripcion-pre-y-posgrado/posgrado'},
+      '/inscripcion-pre-y-posgrado/posgrado' : {page: '/inscripcion-pre-y-posgrado/internos'}
     }
   },
   env:{
