@@ -53,6 +53,7 @@ export default function Internos(){
                 Swal.fire({
                     title:'Registro realizado con éxito'
                 })
+                router.push('/direccion/pre-y-posgrado')
             }
             console.log(response)
             console.log(formData)
@@ -179,7 +180,7 @@ export default function Internos(){
                 </li>
                 <li>
                     <a
-                        href='https://www.ilovepdf.com/es'
+                        href='https://rb.gy/ieobpc'
                         target='_blank'
                     >
                             Online PDF editor
@@ -211,13 +212,13 @@ export default function Internos(){
                     y
                     <span className={styles.privacity} onClick={rules}> reglamento</span>
                 </label>
-                <label>Fecha</label>
                 <label
                 className={styles.privacity}ç
                 onClick={documentation}
                 >
                     Para tu documentación considera estos puntos (click aquí)
                 </label>
+                <label>Fecha</label>
                 <input type='date' name='fecha_registro' onChange={onChange} required/>
                 <label>Fotografía</label>
                 <input type='file' name='estudiante_fotografia' onChange={handleFileChange} required/>

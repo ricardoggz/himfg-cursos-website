@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useRouter } from 'next/router'
 import axios from 'axios'
 import { useOnChange } from '@/hooks'
 import styles from './styles.module.css'
@@ -7,6 +8,7 @@ import Swal from "sweetalert2"
 import withReactContent from "sweetalert2-react-content"
 
 export default function PreGradeForm(){
+    const router = useRouter()
     const [file, setFile] = useState(null)
     const [inputData, onChange, onReset] = useOnChange()
     const [isLoading, setIsLoading] = useState(false);
@@ -65,9 +67,8 @@ export default function PreGradeForm(){
                 Swal.fire({
                     title:'Registro realizado con éxito'
                 })
+                router.push('/direccion/pre-y-posgrado')
             }
-            console.log(response)
-            console.log(formData)
         } catch (error) {
             console.log(error)
         }
@@ -313,7 +314,7 @@ export default function PreGradeForm(){
                 </li>
                 <li>
                     <a
-                        href='https://www.ilovepdf.com/es'
+                        href='https://rb.gy/ieobpc'
                         target='_blank'
                     >
                             Online PDF editor
@@ -401,11 +402,12 @@ export default function PreGradeForm(){
                 <input type='file' name='estudiante_fotografia' onChange={handleFileChange} required/>
                 <label>Nombre completo de aceptación:</label>
                 <input type='text' name='estudiante_nombre_aceptacion' onChange={onChange} required/>
-                <label>Informes:</label>
-                <label>CARMEN JACQUELINE OLAZAGASTI</label>
+                <label>Si tienes alguna duda, ponte en contacto con:</label>
+                <label>Margarita Ayala</label>
                 <label>Coordinación De Rotaciones</label>
-                <label>himfgrotaciones@gmail.com</label>
-                <label>Tel. 01(55)5 228-99-17 ext. 2344</label>
+                <label>Pregrado</label>
+                <label>sersohimfg@gmail.com</label>
+                <label>Tel. 01(55)5228-99-17 ext. 2344</label>
                 <div className={styles.inscriptionButtons}>
                     <button className={styles.buttonSubmit}>Enviar datos</button>
                     <button type='reset' className={styles.buttonReset}>Borrar datos</button>

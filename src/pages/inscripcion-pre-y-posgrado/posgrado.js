@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useRouter } from 'next/router'
 import axios from 'axios'
 import { useOnChange } from '@/hooks'
 import styles from './styles.module.css'
@@ -7,6 +8,7 @@ import Swal from "sweetalert2"
 import withReactContent from "sweetalert2-react-content"
 
 export default function PosGradeForm(){
+    const router = useRouter()
     const [file, setFile] = useState(null)
     const [inputData, onChange, onReset] = useOnChange()
     const [isLoading, setIsLoading] = useState(false);
@@ -53,6 +55,7 @@ export default function PosGradeForm(){
                 Swal.fire({
                     title:'Registro realizado con éxito'
                 })
+                router.push('/direccion/pre-y-posgrado')
             }
             console.log(response)
             console.log(formData)
@@ -179,7 +182,7 @@ export default function PosGradeForm(){
                 </li>
                 <li>
                     <a
-                        href='https://www.ilovepdf.com/es'
+                        href='https://rb.gy/ieobpc'
                         target='_blank'
                     >
                             Online PDF editor
@@ -211,13 +214,13 @@ export default function PosGradeForm(){
                     y
                     <span className={styles.privacity} onClick={rules}> reglamento</span>
                 </label>
-                <label>Fecha</label>
                 <label
                 className={styles.privacity}ç
                 onClick={documentation}
                 >
                     Para tu documentación considera estos puntos (click aquí)
                 </label>
+                <label>Fecha</label>
                 <input type='date' name='fecha_registro' onChange={onChange} required/>
                 <label>Fotografía</label>
                 <input type='file' name='estudiante_fotografia' onChange={handleFileChange} required/>
