@@ -43,3 +43,15 @@
     gap:1rem;
     text-decoration: none;
 }
+.fileLink{
+    display:flex;
+    justify-content: center;
+    width:70%;
+    margin:0 auto;
+    padding:4rem 0;
+}
+.fileLink a {
+    background: var(--red-primary);
+    color:var(--white-primary);
+    padding:1rem;
+}

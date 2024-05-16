@@ -105,6 +105,14 @@ export const HemeroOptions = ()=>{
                         <span>Contacto</span>
                     </button>
                 </div>
+                    <div className={styles.fileLink}>
+                        <a
+                            href="http://himfg.com.mx/interna/dirplaneacion/oarchivos.php"
+                            target='_blank'
+                        >
+                            Coordinación general de archivos
+                        </a>
+                    </div>
         </Container>
     )
 }
