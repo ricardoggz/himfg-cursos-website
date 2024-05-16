@@ -268,7 +268,11 @@ export default function PosGradeForm(){
                 <label>Informes:</label>
                 <label>CARMEN JACQUELINE OLAZAGASTI</label>
                 <label>Coordinación De Rotaciones</label>
-                <label> <MdOutlineMailOutline /> himfgrotaciones@gmail.com</label>
+                <label>
+                    <b>
+                    <MdOutlineMailOutline /> himfgrotaciones@gmail.com
+                    </b>
+                </label>
                 <label>Tel. 01(55)5 228-99-17 ext. 2344</label>
                 <div className={styles.inscriptionButtons}>
                     <button className={styles.buttonSubmit}>Enviar datos</button>

@@ -418,7 +418,9 @@ export default function PreGradeForm(){
                 <label>Margarita Ayala</label>
                 <label>Coordinación De Rotaciones</label>
                 <label>
-                    <MdOutlineMailOutline /> sersohimfg@gmail.com
+                    <b>
+                        <MdOutlineMailOutline /> sersohimfg@gmail.com
+                    </b>
                 </label>
                 <label>Tel. 01(55)5228-99-17 ext. 2344</label>
                 <div className={styles.inscriptionButtons}>
