@@ -247,7 +247,7 @@ export default function PosGradeForm(){
                 <input type='text' name='estudiante_grado' onChange={onChange} required/>
                 <label>Institución de procedencia</label>
                 <input type='text' name='estudiante_institucion_procedencia' onChange={onChange} required/>
-                <label>Teléfono y extensión de la Jefatura de Enseñanza de Procedencia</label>
+                <label>Teléfono y extensión de la Jefatura de Enseñanza de procedencia</label>
                 <input type='text' name='telefono_jefatura_procedente' onChange={onChange} required/>
                 <label>Periódo de rotación (fecha de inicio)</label>
                 <input type='date' name='fecha_inicio_periodo' onChange={onChange} required/>
