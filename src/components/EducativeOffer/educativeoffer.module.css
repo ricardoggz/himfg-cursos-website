@@ -45,6 +45,9 @@
     border-bottom:1px solid #000;
     padding:1rem;
 }
+.registerTitle{
+    color:var(--red-primary);
+}
 @media (min-width:240px) and (max-width:900px){
     .adsWrapper{
         flex-direction: column;

@@ -6,6 +6,7 @@ import styles from './styles.module.css'
 import { Container, Title } from "@/components"
 import Swal from "sweetalert2"
 import withReactContent from "sweetalert2-react-content"
+import { MdOutlineMailOutline } from "react-icons/md";
 
 export default function PreGradeForm(){
     const router = useRouter()
@@ -336,15 +337,25 @@ export default function PreGradeForm(){
                 className={`flexContainer ${styles.inscriptionForm}`}
                 onSubmit={handleSubmit}
             >
-                <label>
-                    <input type='checkbox' onChange={onChange} value='ACEPTA' name='reglamento' required/>
-                    Acepto el
-                    <span
-                    onClick={privacityAd}
-                    className={styles.privacity}
-                    > aviso de privacidad </span>
-                    y
-                    <span className={styles.privacity} onClick={rules}> reglamento</span>
+                <label className={styles.privacityTitle}>
+                    <input
+                        type='checkbox'
+                        onChange={onChange}
+                        value='ACEPTA'
+                        name='reglamento'
+                        required
+                        className={styles.privacityCheck}
+                    />
+                    &nbsp;Acepto el&nbsp;
+                    <a
+                        href='http://himfg.com.mx/interna/p_datos/avisopriv.php'
+                        target='_blank'
+                        className={styles.privacity}
+                    >
+                    aviso de privacidad
+                    </a>
+                    &nbsp;y&nbsp;
+                    <span className={styles.privacity} onClick={rules}>reglamento</span>
                 </label>
                 <label>Servicio o departamento receptor:</label>
                 <input type='text' name='departamento_receptor' onChange={onChange} required/>
@@ -394,19 +405,21 @@ export default function PreGradeForm(){
                 <label>Número de contacto de escuela:</label>
                 <input type='text' name='estudiante_contacto_escuela' onChange={onChange} required/>
                 <label
-                className={styles.privacity}ç
+                className={styles.privacityTitle}
                 onClick={documentation}
                 >
                     Para tu documentación considera estos puntos (click aquí)
                 </label>
+                <label>Documentos en pdf</label>
                 <input type='file' name='estudiante_fotografia' onChange={handleFileChange} required/>
                 <label>Nombre completo de aceptación:</label>
                 <input type='text' name='estudiante_nombre_aceptacion' onChange={onChange} required/>
-                <label>Si tienes alguna duda, ponte en contacto con:</label>
+                <label>Informes:</label>
                 <label>Margarita Ayala</label>
                 <label>Coordinación De Rotaciones</label>
-                <label>Pregrado</label>
-                <label>sersohimfg@gmail.com</label>
+                <label>
+                    <MdOutlineMailOutline /> sersohimfg@gmail.com
+                </label>
                 <label>Tel. 01(55)5228-99-17 ext. 2344</label>
                 <div className={styles.inscriptionButtons}>
                     <button className={styles.buttonSubmit}>Enviar datos</button>

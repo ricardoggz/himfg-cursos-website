@@ -8,14 +8,9 @@ export const EducativeOffer = ()=>{
             <figure>
                 <img src='https://archivos.him.edu.mx/graficos/ensenanza/pre-y-posgrado/oferta-academica.png'/>    
             </figure>
-            <h2>
+            <h2 className={styles.registerTitle}>
                 Proceso de registro
             </h2>
-            <h2>Estancias, servicio social, prácticas sociales</h2>
-            <h2>
-                Médicos internos de pregrado
-            </h2>
-            <h2>Médicos residentes rotantes</h2>
             <div className={`flexContainer ${styles.adsWrapper}`}>
                 <div>
                     <Link
@@ -29,14 +24,14 @@ export const EducativeOffer = ()=>{
                         <Link
                         href='/inscripcion-pre-y-posgrado/pregrado'
                         >
-                            Registro de estancias, tesis, servicio social, practicas profesionales
+                            Estancias, tesis, servicio social, practicas profesionales
                         </Link>
                         </li>
                         <li>
                         <Link
                         href='/inscripcion-pre-y-posgrado/internos'
                         >
-                            Registro para médicos internos de pregrado
+                            Médicos internos de pregrado
                         </Link>
                         </li>
                         <li>
@@ -61,7 +56,7 @@ export const EducativeOffer = ()=>{
                             <Link
                                 href='/inscripcion-pre-y-posgrado/posgrado'
                             >
-                                Registro de médicos rotantes
+                                Médicos rotantes
                             </Link>
                         </li>
                         <li>

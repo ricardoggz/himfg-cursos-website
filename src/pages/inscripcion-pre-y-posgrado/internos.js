@@ -5,6 +5,7 @@ import styles from './styles.module.css'
 import { Container, Title } from "@/components"
 import Swal from "sweetalert2"
 import withReactContent from "sweetalert2-react-content"
+import { MdOutlineMailOutline } from "react-icons/md"
 
 export default function Internos(){
     const [file, setFile] = useState(null)
@@ -202,25 +203,35 @@ export default function Internos(){
                 className={`flexContainer ${styles.inscriptionForm}`}
                 onSubmit={handleSubmit}
             >
-                <label>
-                    <input type='checkbox' name='reglamento' required value='ACEPTO' onChange={onChange}/>
-                    Acepto el
-                    <span
-                    onClick={privacityAd}
-                    className={styles.privacity}
-                    > aviso de privacidad </span>
-                    y
-                    <span className={styles.privacity} onClick={rules}> reglamento</span>
+                <label className={styles.privacityTitle}>
+                    <input
+                        type='checkbox'
+                        onChange={onChange}
+                        value='ACEPTA'
+                        name='reglamento'
+                        required
+                        className={styles.privacityCheck}
+                    />
+                    &nbsp;Acepto el&nbsp;
+                    <a
+                        href='http://himfg.com.mx/interna/p_datos/avisopriv.php'
+                        target='_blank'
+                        className={styles.privacity}
+                    >
+                    aviso de privacidad
+                    </a>
+                    &nbsp;y&nbsp;
+                    <span className={styles.privacity} onClick={rules}>reglamento</span>
                 </label>
+                <label>Fecha</label>
+                <input type='date' name='fecha_registro' onChange={onChange} required/>
                 <label
-                className={styles.privacity}ç
+                className={styles.privacityTitle}
                 onClick={documentation}
                 >
                     Para tu documentación considera estos puntos (click aquí)
                 </label>
-                <label>Fecha</label>
-                <input type='date' name='fecha_registro' onChange={onChange} required/>
-                <label>Fotografía</label>
+                <label>Documentos en pdf</label>
                 <input type='file' name='estudiante_fotografia' onChange={handleFileChange} required/>
                 <label>Nombre</label>
                 <input type='text' name='estudiante_nombre' onChange={onChange} required/>
@@ -255,7 +266,9 @@ export default function Internos(){
                 <label>Informes:</label>
                 <label>CARMEN JACQUELINE OLAZAGASTI</label>
                 <label>Coordinación De Rotaciones</label>
-                <label>himfgrotaciones@gmail.com</label>
+                <label>
+                    <MdOutlineMailOutline /> himfgrotaciones@gmail.com
+                    </label>
                 <label>Tel. 01(55)5 228-99-17 ext. 2344</label>
                 <div className={styles.inscriptionButtons}>
                     <button className={styles.buttonSubmit}>Enviar datos</button>
