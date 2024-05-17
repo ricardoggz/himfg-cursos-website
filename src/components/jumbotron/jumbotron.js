@@ -17,21 +17,13 @@ export const Jumbotron =()=>{
         }
         const images = [
             {
-                url: 'https://archivos.him.edu.mx/banner-3.jpg',
+                url: 'https://archivos.him.edu.mx/banner-3.webp',
                 link:'/'
             },
             {
                 url: 'https://archivos.him.edu.mx/banner-4.jpg',
                 link:'https://archivos.him.edu.mx/reunion-anual.jpg'
             },
-            {
-                url:'https://archivos.him.edu.mx/banner-1.png',
-                link:'/'
-            },
-            {
-                url:'https://archivos.him.edu.mx/banner-2.png',
-                link:'/'
-            }
         ]
           return (
             <Slider {...settings}>
