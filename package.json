@@ -23,6 +23,7 @@
     "react-icons": "^4.8.0",
     "react-lazy-load-image-component": "^1.6.0",
     "react-slick": "^0.29.0",
+    "react-step-wizard": "^5.3.11",
     "slick-carousel": "^1.8.1",
     "sweetalert2": "^11.7.2",
     "sweetalert2-react-content": "^5.0.7",

@@ -15,7 +15,8 @@ import {
     Formats,
     HemeroOptions,
     FileList,
-    Lititations
+    Lititations,
+    Convocatorias
 } from "@/components"
 import Head from "next/head"
 
@@ -112,6 +113,7 @@ export default function Direction(){
                         {
                             page.page_url==='investigacion' || page.page_url==='investigacion/'?
                             <Container>
+                                <Convocatorias/>
                                 <Formats/>
                             </Container>
                             :

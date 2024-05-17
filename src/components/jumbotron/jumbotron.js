@@ -17,12 +17,24 @@ export const Jumbotron =()=>{
         }
         const images = [
             {
-                url: 'https://archivos.him.edu.mx/banner-3.webp',
+                url: 'https://archivos.him.edu.mx/Calor-01.webp',
                 link:'/'
             },
             {
-                url: 'https://archivos.him.edu.mx/banner-4.jpg',
+                url:'https://archivos.him.edu.mx/Calor2-01.webp',
+                link:'/'
+            },
+            {
+                url:'https://archivos.him.edu.mx/banner-6.webp',
+                link:'https://archivos.him.edu.mx/resultados-fondos-fet-2025.pdf'
+            },
+            {
+                url: 'https://archivos.him.edu.mx/banner-4.webp',
                 link:'https://archivos.him.edu.mx/reunion-anual.jpg'
+            },
+            {
+                url: 'https://archivos.him.edu.mx/banner-5.png',
+                link:'/'
             },
         ]
           return (
