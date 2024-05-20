@@ -13,7 +13,11 @@ export default function Convocatoria(){
                 </Link>
             </li>
             <li>Convocatoria PDF</li>
-            <li>Registro en línea</li>
+            <li>
+                <Link href='/convocatoria/registro'>
+                    Registro en línea
+                </Link>
+            </li>
             <li>Flujograma</li>
             <li>Descargas</li>
             <li>Preguntas frecuentes</li>
