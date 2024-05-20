@@ -3,6 +3,22 @@ import { useState } from 'react'
 import styles from './styles.module.css'
 import { Container, Title } from "@/components"
 
+const Avisos = ()=>{
+  return(
+    <>
+      <Title>Avisos</Title>
+      <div className={`flexContainer ${styles.avisosWrapper}`}>
+        <p>El Hospital Infantil de México Federico Gómez (HIMFG) a través la Subdirección de Enseñanza, es la responsable del tratamiento de los datos personales que nos proporcione.</p>
+        <p>Sus datos personales serán utilizados para participar en el Proceso de Selección de Aspirantes a Residencias Médicas; control, registro de evaluaciones y elaboración de constancias de estudios; llevar a cabo los trámites de Beca y Titulación del alumno; identificar voluntarios para el padrón de intérpretes dentro del Hospital Infantil de México Federico Gómez, y, sólo en caso de situación de contingencia o de urgencia para reporte a los familiares. La difusión de los datos generados se llevará a cabo con fines estadísticos, en el caso de transferencia de datos a otros Institutos u Hospitales de Salud, o cualquier otra autoridad competente, no será necesario el consentimiento expreso.</p>
+        <p>La difusión de los datos generados se llevará a cabo con fines académicos y estadísticos y podrán ser transferidos de manera interna al Departamento de Selección, Contratación y Desarrollo de Capital Humano y externa a la Universidad Nacional Autónoma de México (UNAM) y a la Dirección General de Calidad y Educación en Salud, en las que no será necesario el consentimiento expreso.</p>
+        <p>Para conocer requisitos y plazos relacionados con el proceso de selección, puede acudir a la oficina de la Subdirección de Enseñanza, ubicada en el segundo piso del Edificio “Arturo Mundet”, enviar correo electrónico a apacheco@himfg.edu.mx o al teléfono 52289917 extensión 9098, con el Dr. Aarón Pacheco Ríos.</p>
+        <p>Para manifestar su negativa al tratamiento de sus datos personales, puede entregar escrito libre en la Unidad de Transparencia ubicada en la puerta 2 de este Instituto, de lunes a viernes en un horario de 9:00 a 14.00 hrs. o al correo transparencia@himfg.edu.mx.</p>
+        <p>Usted podrá consultar el aviso de privacidad integral en la siguiente dirección electrónica: Para leerlo siga este vínculo.</p>
+        <p>Fecha de la última actualización de este aviso de privacidad 26/junio/2018</p>
+      </div>
+    </>
+  )
+}
 const Instrucciones = ({})=>{
   return (
     <>
@@ -409,11 +425,32 @@ const Formulario = ()=>{
 const Registro = () => {
   const [step, setStep] = useState(1)
   const [selectedOption, setSelectedOption] = useState(null)
-  if(step === 1){
+  if(step===1){
+    return(
+      <Container>
+        <Avisos/>
+        <div className={`flexContainer ${styles.continousWrapper}`}>
+          <button
+            onClick={()=> setStep(step + 1)}
+            className={styles.registerButton}
+          >
+            Continuar
+          </button>
+        </div>
+      </Container>
+    )
+  }
+  if(step === 2){
     return (
       <Container>
       <Instrucciones />
       <div className={`flexContainer ${styles.continousWrapper}`}>
+        <button
+          onClick={()=> setStep(step - 1)}
+          className={styles.registerButton}
+        >
+          Regresar
+        </button>
         <button
           onClick={()=> setStep(step + 1)}
           className={styles.registerButton}
@@ -425,7 +462,7 @@ const Registro = () => {
       
     )
   }
-  if(step===2){
+  if(step===3){
     return (
       <Container>
         <Formulario/>
