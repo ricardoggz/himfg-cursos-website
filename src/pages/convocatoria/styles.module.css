@@ -53,7 +53,8 @@
     padding:1rem;
 }
 .registerForm{
-    border:1px solid #00000031;
+    border:1px solid #00000030;
+    background: var(--white-primary);
     display: flex;
     flex-direction: column;
     gap:1rem;

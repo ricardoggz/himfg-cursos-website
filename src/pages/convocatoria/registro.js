@@ -1,5 +1,9 @@
 import styles from './styles.module.css'
-import { Container, Title } from "@/components";
+import { Container, Title } from "@/components"
+
+const Especialidades = ()=>{
+  
+}
 const Registro = () => {
   return (
     <Container>
