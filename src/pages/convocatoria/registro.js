@@ -1,14 +1,77 @@
+'use client'
+import { useState } from 'react'
 import styles from './styles.module.css'
 import { Container, Title } from "@/components"
 
-const Especialidades = ()=>{
-  
+const Especialidades = ({})=>{
+  //const [selectedOption, setSelectedOption] = useState(null)
+  return (
+    <div>
+      <form>
+        <label>Comenzar registro:</label>
+        <select>
+          <option>Pediatría y Genética</option>
+          <option>Especialidades Pediátricas</option>
+          <option>Curso de Posgrado de Alta Especialidad</option>
+          <option>Nutrición Clínica Pediátrica</option>
+          <option>Ortodoncia, Odontopediatría</option>
+        </select>
+      </form>
+    </div>
+  )
 }
 const Registro = () => {
+  const [selectedOption, setSelectedOption] = useState(null)
   return (
     <Container>
         <Title>Registro</Title>
-        <form className={styles.registerForm}>
+        <div className={styles.selectedOption}>
+            <form>
+              <label>Comenzar registro:</label>
+              <select>
+                <option
+                    onClick={()=>setSelectedOption(null)}
+                  >
+                    Seleccionar
+                  </option>
+                <option
+                  value='Pediatría y genetica'
+                  onClick={()=>setSelectedOption('pediatria y genetica')}
+                >
+                  Pediatría y Genética
+                </option>
+                <option
+                value='especialidades pediatricas'
+                onClick={()=>setSelectedOption('especialidades pediatricas')}
+                >
+                  Especialidades Pediátricas
+                </option>
+                <option
+                value='alta especialidad'
+                onClick={()=>setSelectedOption('alta especialidad')}
+                >
+                  Curso de Posgrado de Alta Especialidad
+                </option>
+                <option
+                  value='nutricion clinica pediatrica'
+                  onClick={()=>setSelectedOption('nutricion clinica pediatrica')}
+                >
+                  Nutrición Clínica Pediátrica
+                </option>
+                <option
+                  value='ortodoncia odontopediatria'
+                  onClick={()=>setSelectedOption('ortodoncia odontopediatria')}
+                >
+                  Ortodoncia, Odontopediatría
+                </option>
+              </select>
+            </form>
+        </div>
+        {
+          !selectedOption ?
+            null
+          :
+          <form className={styles.registerForm}>
           <label className={styles.registerTitle}>Datos personales</label>
             <div>
             <input type='checkbox' />
@@ -213,17 +276,46 @@ const Registro = () => {
                 <input type='number'/>
               </div>
             </div>
-            <label className={styles.registerTitle}>Datos del ENARM (examen Nacional de Residencias Médicas)</label>
-            <div className={styles.registerModule}>
-              <div>
-                <label>Lugar obtenido en el Examen Nacional de Residencias Medicas</label>
-                <input type='text'/>
-              </div>
-              <div>
-                <label>Fecha de aprobación con el siguiente formato de fecha: dd/mm/aaaa</label>
-                <input type='date'/>
-              </div>
-            </div>
+              {
+                selectedOption && selectedOption === 'pediatria y genetica' ?
+                <>
+                  <label className={styles.registerTitle}>Datos del ENARM (examen Nacional de Residencias Médicas)</label>
+                  <div className={styles.registerModule}>
+                    <div>
+                      <label>
+                        Folio del Examen Nacional de Residencias Médicas
+                      </label>
+                      <input type='text'/>
+                    </div>
+                    <div>
+                      <label>
+                        Numero de veces que lo ha presentado
+                      </label>
+                      <input type='number'/>
+                    </div>
+                  </div>
+                </>
+                :
+                null
+              }
+              {
+                selectedOption && selectedOption === 'especialidades pediatricas' || selectedOption === 'alta especialidad'?
+                <>
+                  <label className={styles.registerTitle}>Datos del ENARM (examen Nacional de Residencias Médicas)</label>
+                  <div className={styles.registerModule}>
+                    <div>
+                      <label>Lugar obtenido en el Examen Nacional de Residencias Medicas</label>
+                      <input type='text'/>
+                    </div>
+                    <div>
+                      <label>Fecha de aprobación</label>
+                      <input type='date'/>
+                    </div>
+                  </div>
+                </>
+              :
+              null
+              }
             <label className={styles.registerTitle}>Información Adicional</label>
             <div className={styles.registerModule}>
               <div>
@@ -231,61 +323,69 @@ const Registro = () => {
               <input type='text'/>
               </div>
             </div>
-            <label className={styles.registerTitle}>Datos de la especialidad de requisito</label>
-            <div className={styles.registerModule}>
-              <div>
-                <label>Nombre de especialidad o requisito</label>
-                <input type='text'/>
-              </div>
-              <div>
-                <label>Cédula profesional</label>
-                <input type='text'/>
-              </div>
-              <div>
-                <label>Hospital donde la realizó</label>
-                <input type='text'/>
-              </div>
-              <div>
-                <label>Ciudad</label>
-                <input type='text'/>
-              </div>
-              <div>
-                <label>País</label>
-                <input type='text'/>
-              </div>
-              <div>
-                <label>Universidad que reconoce la especialidad</label>
-                <input type='text'/>
-              </div>
-              <div>
-                <label>Año en que inició</label>
-                <input type='date'/>
-              </div>
-              <div>
-                <label>Año en que terminó</label>
-                <input type='date'/>
-              </div>
-              <div>
-                <label>Promedio de la especialidad (0-10)</label>
-                <input type='number'/>
-              </div>
-              <div>
-                <label>Lugar obtenido en su generación</label>
-                <input type='text'/>
-              </div>
-            </div>
-            <label className={styles.registerTitle}>CONSEJO DE CERTIFICACIÓN DE LA ESPECIALIDAD</label>
-            <div className={styles.registerModule}>
-              <div>
-                <label>Folio</label>
-                <input type='text'/>
-              </div>
-              <div>
-                <label>Fechas de vigencia</label>
-                <input type='date'/>
-              </div>
-            </div>
-        </form>
+            {
+              selectedOption && selectedOption === 'especialidades pediatricas' || selectedOption === 'alta especialidad'?
+              <>
+                <label className={styles.registerTitle}>Datos de la especialidad de requisito</label>
+                <div className={styles.registerModule}>
+                <div>
+                  <label>Nombre de especialidad o requisito</label>
+                  <input type='text'/>
+                </div>
+                <div>
+                  <label>Cédula profesional</label>
+                  <input type='text'/>
+                </div>
+                <div>
+                  <label>Hospital donde la realizó</label>
+                  <input type='text'/>
+                </div>
+                <div>
+                  <label>Ciudad</label>
+                  <input type='text'/>
+                </div>
+                <div>
+                  <label>País</label>
+                  <input type='text'/>
+                </div>
+                <div>
+                  <label>Universidad que reconoce la especialidad</label>
+                  <input type='text'/>
+                </div>
+                <div>
+                  <label>Año en que inició</label>
+                  <input type='date'/>
+                </div>
+                <div>
+                  <label>Año en que terminó</label>
+                  <input type='date'/>
+                </div>
+                <div>
+                  <label>Promedio de la especialidad (0-10)</label>
+                  <input type='number'/>
+                </div>
+                <div>
+                  <label>Lugar obtenido en su generación</label>
+                  <input type='text'/>
+                </div>
+                </div>
+                <label className={styles.registerTitle}>CONSEJO DE CERTIFICACIÓN DE LA ESPECIALIDAD</label>
+                  <div className={styles.registerModule}>
+                    <div>
+                      <label>Folio</label>
+                      <input type='text'/>
+                    </div>
+                    <div>
+                      <label>Fechas de vigencia</label>
+                      <input type='date'/>
+                    </div>
+                  </div>
+              </>
+              :
+              null
+            }
+          </form>
+        }
     </Container>
   )
 }
