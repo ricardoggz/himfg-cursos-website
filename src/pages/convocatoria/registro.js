@@ -384,6 +384,11 @@ const Registro = () => {
               :
               null
             }
+            <div className={styles.registerModule}>
+              <button className={styles.registerButton}>
+                Continuar
+              </button>
+            </div>
           </form>
         }
     </Container>
