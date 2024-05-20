@@ -3,27 +3,39 @@ import { useState } from 'react'
 import styles from './styles.module.css'
 import { Container, Title } from "@/components"
 
-const Especialidades = ({})=>{
-  //const [selectedOption, setSelectedOption] = useState(null)
+const Instrucciones = ({})=>{
   return (
-    <div>
-      <form>
-        <label>Comenzar registro:</label>
-        <select>
-          <option>Pediatría y Genética</option>
-          <option>Especialidades Pediátricas</option>
-          <option>Curso de Posgrado de Alta Especialidad</option>
-          <option>Nutrición Clínica Pediátrica</option>
-          <option>Ortodoncia, Odontopediatría</option>
-        </select>
-      </form>
-    </div>
+    <>
+      <Title>Instrucciones</Title>
+      <div className={`flexContainer ${styles.avisosWrapper}`}>
+        <p>
+          Para participar en el proceso de selección a las residencias de pediatría, genética, especialidades pediátricas y nutrición clínica pediátrica deberá completar el siguiente formulario, cuyo tiempo para responderlo se ha estimado entre 15 y 20 minutos (no tiene límite de tiempo para responderlo). Requiere además tener a la mano los siguientes documentos:
+        </p>
+        <ul>
+          <li>Certificado universitario de estudios con promedio general</li>
+          <li>CURP</li>
+          <li>RFC</li>
+          <li>Acta de nacimiento</li>
+          <li>Datos de un familiar cercano (nombre, domicilio, teléfono, etc.)</li>
+          <li>Folio de registro al Examen Nacional de Aspirantes a Residencias Médicas (ENARM)</li>
+          <li>Datos sobre la especialidad pediátrica: institución sede, institución universitaria que la avala y promedio</li>
+        </ul>
+        <p>Deberá escribir su nombre completo tal como aparece en su acta de nacimiento, con mayúsculas, minúsculas y acentos.</p>
+        <p>Se requiere llenar todas las casillas, no deje nada en blanco, si en alguna casilla la información requerida no existe o no aplica (por ejemplo: en el domicilio no existe número interior), escriba la palabra OMITIDO. No esta permitido el signo ( ' ) apóstrofo. Si lo utiliza el servidor rechazará su solicitud de ingreso.</p>
+        <p>Al terminar el llenado del formulario, verificar la información e imprimir el comprobante de registro en línea.</p>
+        <p>Una vez concluido su registro en línea deberá descargar el documento “Currículum Vitae” que deberá llenar, imprimir y anexar a su documentación.</p>
+        <p>No olvide que para quedar formalmente inscrito en el proceso de selección deberá entregar en la Dirección de Enseñanza y Desarrollo Académico del Hospital Infantil de México Federico Gómez, el comprobante de registro en línea, el formato requisitado de currículum vitae, la documentación requerida en la convocatoria 2023 y el pago correspondiente.</p>
+        <p>Usted podrá realizar su registro en línea a la hora que le sea posible. Si requiere asistencia técnica podrá obtenerla de lunes a viernes de 8:00 a 14:00 h.</p>
+        <p>Para continuar debe leer el Aviso de Privacidad.</p>
+        <p>Por último le sugerimos consultar la ultima versión de la convocatoria 2023 para enterarse de cambios o adecuaciones, también consulte el apartado "Avisos Importantes" que se encuentra el el menú superior.</p>
+      </div>
+    </>
   )
 }
-const Registro = () => {
+const Formulario = ()=>{
   const [selectedOption, setSelectedOption] = useState(null)
   return (
-    <Container>
+    <>
         <Title>Registro</Title>
         <div className={styles.selectedOption}>
             <form>
@@ -391,8 +403,43 @@ const Registro = () => {
             </div>
           </form>
         }
-    </Container>
+    </>
   )
+}
+const Registro = () => {
+  const [step, setStep] = useState(1)
+  const [selectedOption, setSelectedOption] = useState(null)
+  if(step === 1){
+    return (
+      <Container>
+      <Instrucciones />
+      <div className={`flexContainer ${styles.continousWrapper}`}>
+        <button
+          onClick={()=> setStep(step + 1)}
+          className={styles.registerButton}
+        >
+          Continuar
+        </button>
+      </div>
+      </Container>
+      
+    )
+  }
+  if(step===2){
+    return (
+      <Container>
+        <Formulario/>
+        <div className={`flexContainer ${styles.continousWrapper}`}>
+        <button
+          onClick={()=> setStep(step - 1)}
+          className={styles.registerButton}
+        >
+          Regresar
+        </button>
+        </div>
+      </Container>
+    )
+  }
 }
 
 export default Registro
