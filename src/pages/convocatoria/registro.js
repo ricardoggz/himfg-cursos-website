@@ -1,5 +1,6 @@
 'use client'
 import { useState } from 'react'
+import Link from 'next/link'
 import styles from './styles.module.css'
 import { Container, Title } from "@/components"
 
@@ -427,9 +428,81 @@ const Registro = () => {
   const [selectedOption, setSelectedOption] = useState(null)
   if(step===1){
     return(
-      <Container>
-        <Avisos/>
+      <>
+        <nav className={styles.menu}>
+        <ul className={styles.menuList}>
+            <li>
+              <Link href='/convocatoria'>
+                Inicio
+              </Link>
+            </li>
+            <li>
+                <Link href='/convocatoria/avisos'>
+                    Avisos
+                </Link>
+            </li>
+            <li>Convocatoria PDF</li>
+            <li>
+                <Link href='/convocatoria/registro'>
+                    Registro en línea
+                </Link>
+            </li>
+            <li>Flujograma</li>
+            <li>Descargas</li>
+            <li>Preguntas frecuentes</li>
+            <li>Informes</li>
+        </ul>
+        </nav>
+        <Container>
+          <Avisos/>
+          <div className={`flexContainer ${styles.continousWrapper}`}>
+            <button
+              onClick={()=> setStep(step + 1)}
+              className={styles.registerButton}
+            >
+              Continuar
+            </button>
+          </div>
+        </Container>
+      </>
+    )
+  }
+  if(step === 2){
+    return (
+      <>
+        <nav className={styles.menu}>
+        <ul className={styles.menuList}>
+            <li>
+                <Link href='/convocatoria'>
+                  Inicio
+                </Link>
+            </li>
+            <li>
+                <Link href='/convocatoria/avisos'>
+                    Avisos
+                </Link>
+            </li>
+            <li>Convocatoria PDF</li>
+            <li>
+                <Link href='/convocatoria/registro'>
+                    Registro en línea
+                </Link>
+            </li>
+            <li>Flujograma</li>
+            <li>Descargas</li>
+            <li>Preguntas frecuentes</li>
+            <li>Informes</li>
+        </ul>
+        </nav>
+        <Container>
+        <Instrucciones />
         <div className={`flexContainer ${styles.continousWrapper}`}>
+          <button
+            onClick={()=> setStep(step - 1)}
+            className={styles.registerButton}
+          >
+            Regresar
+          </button>
           <button
             onClick={()=> setStep(step + 1)}
             className={styles.registerButton}
@@ -438,33 +511,38 @@ const Registro = () => {
           </button>
         </div>
       </Container>
-    )
-  }
-  if(step === 2){
-    return (
-      <Container>
-      <Instrucciones />
-      <div className={`flexContainer ${styles.continousWrapper}`}>
-        <button
-          onClick={()=> setStep(step - 1)}
-          className={styles.registerButton}
-        >
-          Regresar
-        </button>
-        <button
-          onClick={()=> setStep(step + 1)}
-          className={styles.registerButton}
-        >
-          Continuar
-        </button>
-      </div>
-      </Container>
+      </>
       
     )
   }
   if(step===3){
     return (
-      <Container>
+      <>
+        <nav className={styles.menu}>
+        <ul className={styles.menuList}>
+            <li>
+              <Link href='/convocatoria'>
+                  Inicio
+              </Link>
+            </li>
+            <li>
+                <Link href='/convocatoria/avisos'>
+                    Avisos
+                </Link>
+            </li>
+            <li>Convocatoria PDF</li>
+            <li>
+                <Link href='/convocatoria/registro'>
+                    Registro en línea
+                </Link>
+            </li>
+            <li>Flujograma</li>
+            <li>Descargas</li>
+            <li>Preguntas frecuentes</li>
+            <li>Informes</li>
+        </ul>
+        </nav>
+        <Container>
         <Formulario/>
         <div className={`flexContainer ${styles.continousWrapper}`}>
         <button
@@ -475,6 +553,7 @@ const Registro = () => {
         </button>
         </div>
       </Container>
+      </>
     )
   }
 }
