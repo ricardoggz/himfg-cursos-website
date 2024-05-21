@@ -74,9 +74,11 @@ const Formulario = ()=>{
       Payment.startPayment({
         Params: xOBJ,
         onClosed: function (res) {
+          localStorage.removeItem('cyperData')
           console.log(res);
         },
         onError: function (res) {
+          localStorage.removeItem('cyperData')
           console.log(res);
         },
         onSucces: async function(res){
@@ -105,6 +107,7 @@ const Formulario = ()=>{
           }
         },
         onCancel: function(res){
+          localStorage.removeItem('cyperData')
           console.log(res)
         }
       })
