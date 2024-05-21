@@ -81,7 +81,7 @@ const Formulario = ()=>{
           localStorage.removeItem('cyperData')
           console.log(res);
         },
-        onSucces: async function(res){
+        onSuccess: async function(res){
           let cypherMessage
           let cyperMessageToObject
           if(res.data){
@@ -101,7 +101,7 @@ const Formulario = ()=>{
           if(cyperMessageToObject !== undefined && cyperMessageToObject.resultadoPayw === 'A'){
             console.log('Pago completo')
             generarPDF({
-              student: inputData.nombre,
+              student: inputData,
               reference: paymentData.ControlNumber
             })
           }
