@@ -79,7 +79,7 @@ export const PaymentForm = () => {
   const getCypherData = async(data)=>{
     try {
       const resp = await axios.post(
-        'http://carolinamagos-001-site1.anytempurl.com/aes/decrypt',
+        'https://carolinamagos-001-site1.anytempurl.com/aes/decrypt',
         data
       )
       return resp.data
