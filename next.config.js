@@ -33,7 +33,10 @@ const nextConfig = {
       '/el-instituto-y-su-historia': {page: '/el-instituto-y-su-historia'},
       '/inscripcion-pre-y-posgrado/pregrado' : {page: '/inscripcion-pre-y-posgrado/pregrado'},
       '/inscripcion-pre-y-posgrado/posgrado' : {page: '/inscripcion-pre-y-posgrado/posgrado'},
-      '/inscripcion-pre-y-posgrado/posgrado' : {page: '/inscripcion-pre-y-posgrado/internos'}
+      '/inscripcion-pre-y-posgrado/posgrado' : {page: '/inscripcion-pre-y-posgrado/internos'},
+      '/convocatoria' : {page: '/convocatoria'},
+      '/convocatoria/registro' : {page: '/convocatoria/registro'},
+      '/convocatoria/avisos' : {page: '/convocatoria/avisos'}
     }
   },
   env:{
