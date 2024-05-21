@@ -8,6 +8,8 @@ import { Container, Title } from "@/components"
 import { cypherData, dataToObject } from '../../components/paymentForm/cyperData'
 import { data, cerKey } from '@/components/paymentForm/consts'
 import { reference } from '@/components/paymentForm/reference'
+import { generarPDF } from './generarPDF'
+import { useOnChange } from '@/hooks'
 
 const Avisos = ()=>{
   return(
@@ -57,8 +59,14 @@ const Instrucciones = ({})=>{
 const Formulario = ()=>{
   const [selectedOption, setSelectedOption] = useState(null)
   const [paymentData, setPaymentData] = useState(null)
+  const [inputData, onChange, onReset] = useOnChange()
+
   const handleSubmit = (evt)=>{
     evt.preventDefault()
+    /*generarPDF({
+      student: inputData,
+      reference: paymentData.ControlNumber
+    })*/
     if(Payment){
       Payment.setEnv('pro')
       let xOBJ
@@ -71,7 +79,7 @@ const Formulario = ()=>{
         onError: function (res) {
           console.log(res);
         },
-        onSucces: async function(){
+        onSucces: async function(res){
           let cypherMessage
           let cyperMessageToObject
           if(res.data){
@@ -87,6 +95,13 @@ const Formulario = ()=>{
             console.log(cypherMessage)
             cyperMessageToObject = JSON.parse(cypherMessage.plainText)
             console.log('Objeto a evaluar', cyperMessageToObject)
+          }
+          if(cyperMessageToObject !== undefined && cyperMessageToObject.resultadoPayw === 'A'){
+            console.log('Pago completo')
+            generarPDF({
+              student: inputData.nombre,
+              reference: paymentData.ControlNumber
+            })
           }
         },
         onCancel: function(res){
@@ -176,7 +191,12 @@ const Formulario = ()=>{
           <form className={styles.registerForm}  onSubmit={handleSubmit}>
           <label className={styles.registerTitle}>Datos personales</label>
             <div>
-            <input type='checkbox' required/>
+            <input
+              type='checkbox'
+              required
+              value='ACEPTO'
+              onChange={onChange}
+            />
             <label>
               &nbsp;Consiento y autorizo que mis datos personales sean tratados conforme a lo previsto en el aviso de privacidad, el cual he leido (marque la casilla a la izquierda).
             </label>
@@ -185,9 +205,23 @@ const Formulario = ()=>{
             {
               selectedOption && selectedOption === 'pediatria y genetica' ?
               <select>
-                <option>Seleccione</option>
-                <option>Pediatría</option>
-                <option>Genética médica</option>
+                <option>
+                  Seleccione
+                </option>
+                <option
+                  onChange={onChange}
+                  name='opcion_seleccionada'
+                  value='Pediatría'
+                >
+                  Pediatría
+                </option>
+                <option
+                  onChange={onChange}
+                  name='opcion_seleccionada'
+                  value='Genetica médica'
+                >
+                  Genética médica
+                </option>
               </select>
               :
               null
@@ -224,23 +258,52 @@ const Formulario = ()=>{
             <div className={styles.registerModule}>
               <div>
                 <label>Nombre completo</label>
-                <input type='text' required/>
+                <input
+                  type='text'
+                  required
+                  onChange={onChange}
+                  name='nombre'
+                />
               </div>
               <div>
                 <label>Nacionalidad</label>
-                <input type='text' required/>
+                <input
+                  type='text'
+                  onChange={onChange}
+                  name='nacionalidad'
+                  required
+                />
               </div>
               <div>
                 <label>Sexo</label>
                 <select>
-                  <option>Seleccione</option>
-                  <option>Masculino</option>
-                  <option>Femenino</option>
+                  <option>
+                    Seleccione
+                  </option>
+                  <option
+                    onChange={onChange}
+                    name='genero'
+                    value='Masculino'
+                  >
+                    Masculino
+                  </option>
+                  <option
+                    onChange={onChange}
+                    name='genero'
+                    value='Femenino'
+                  >
+                    Femenino
+                  </option>
                 </select>
               </div>
               <div>
                 <label>Teléfono</label>
-                <input type='number' required/>
+                <input
+                  type='number'
+                  required
+                  onChange={onChange}
+                  name='numero_telefonico'
+                />
               </div>
               <div>
                 <label>Correo electrónico</label>
