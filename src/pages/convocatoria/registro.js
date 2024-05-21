@@ -173,7 +173,7 @@ const Formulario = ()=>{
           !selectedOption ?
             null
           :
-          <form className={styles.registerForm}>
+          <form className={styles.registerForm}  onSubmit={handleSubmit}>
           <label className={styles.registerTitle}>Datos personales</label>
             <div>
             <input type='checkbox' required/>
@@ -182,12 +182,45 @@ const Formulario = ()=>{
             </label>
             </div>
             <label>Seleccione la Especialidad a la que desea ingresar:</label>
-            <select>
-              <option>Seleccione</option>
-              <option>Opción 1</option>
-              <option>Opción 1</option>
-              <option>Opción 1</option>
-            </select>
+            {
+              selectedOption && selectedOption === 'pediatria y genetica' ?
+              <select>
+                <option>Seleccione</option>
+                <option>Pediatría</option>
+                <option>Genética médica</option>
+              </select>
+              :
+              null
+            }
+            {
+              selectedOption && selectedOption === 'especialidades pediatricas' ?
+              <select>
+                <option>Seleccione</option>
+                <option>ALERGIA E INMUNOLOGÍA PEDIÁTRICA</option>
+                <option>ANESTESIOLOGÍA PEDIÁTRICA</option>
+                <option>CARDIOLOGÍA PEDIÁTRICA</option>
+                <option>CIRUGÍA CARDIOTORÁCICA PEDIÁTRICA</option>
+                <option>CIRUGÍA PEDIÁTRICA</option>
+                <option>DERMATOLOGÍA PEDIÁTRICA</option>
+                <option>ENDOCRINOLOGÍA PEDIÁTRICA</option>
+                <option>GASTROENTEROLOGÍA Y NUTRICIÓN PEDIÁTRICA</option>
+                <option>HEMATOLOGÍA PEDIÁTRICA</option>
+                <option>INFECTOLOGÍA</option>
+                <option>MEDICINA CRÍTICA PEDIÁTRICA</option>
+                <option>NEFROLOGÍA PEDIÁTRICA</option>
+                <option>NEONATOLOGÍA</option>
+                <option>NEUMOLOGÍA PEDIÁTRICA</option>
+                <option>NEUROCIRUGÍA PEDIÁTRICA</option>
+                <option>NEUROLOGÍA PEDIÁTRICA</option>
+                <option>ONCOLOGÍA PEDIÁTRICA</option>
+                <option>OTTORINOLARINGOLOGÍA PEDIÁTRICA</option>
+                <option>PATOLOGÍA PEDIÁTRICA</option>
+                <option>REUMATOLOGÍA PEDIÁTRICA</option>
+                <option>URGENCIAS PEDIÁTRICAS</option>
+              </select>
+              :
+              null
+            }
             <div className={styles.registerModule}>
               <div>
                 <label>Nombre completo</label>
@@ -489,7 +522,6 @@ const Formulario = ()=>{
             <div className={styles.registerModule}>
               <button
               className={styles.registerButton}
-              onClick={handleSubmit}
               >
                 Continuar
               </button>
