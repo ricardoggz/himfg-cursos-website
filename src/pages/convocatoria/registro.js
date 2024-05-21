@@ -1,8 +1,13 @@
 'use client'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import Script from 'next/script'
+import Head from 'next/head'
 import Link from 'next/link'
 import styles from './styles.module.css'
 import { Container, Title } from "@/components"
+import { cypherData, dataToObject } from '../../components/paymentForm/cyperData'
+import { data, cerKey } from '@/components/paymentForm/consts'
+import { reference } from '@/components/paymentForm/reference'
 
 const Avisos = ()=>{
   return(
@@ -51,9 +56,77 @@ const Instrucciones = ({})=>{
 }
 const Formulario = ()=>{
   const [selectedOption, setSelectedOption] = useState(null)
+  const [paymentData, setPaymentData] = useState(null)
+  const handleSubmit = (evt)=>{
+    evt.preventDefault()
+    if(Payment){
+      Payment.setEnv('pro')
+      let xOBJ
+      xOBJ = cypherData(paymentData, cerKey)
+      Payment.startPayment({
+        Params: xOBJ,
+        onClosed: function (res) {
+          console.log(res);
+        },
+        onError: function (res) {
+          console.log(res);
+        },
+        onSucces: async function(){
+          let cypherMessage
+          let cyperMessageToObject
+          if(res.data){
+            let datatoValue = {
+              vi: dataToObject.vi,
+              salt: dataToObject.salt,
+              passPhrase: dataToObject.passPhrase,
+              cypherData: res.data
+            }
+            cypherMessage = await getCypherData(datatoValue)
+          }
+          if(cypherMessage !== undefined){
+            console.log(cypherMessage)
+            cyperMessageToObject = JSON.parse(cypherMessage.plainText)
+            console.log('Objeto a evaluar', cyperMessageToObject)
+          }
+        },
+        onCancel: function(res){
+          console.log(res)
+        }
+      })
+    }
+  }
+  useEffect(()=>{
+    setTimeout(() => {
+      Payment.setEnv("pro")
+    }, 1000)
+    setPaymentData({
+      ...data,
+      Amount: `1.00`,
+      ControlNumber: `${reference(24)}`
+    })
+  },[])
+  const getCypherData = async(data)=>{
+    try {
+      const resp = await axios.post(
+        'https://carolinamagos-001-site1.anytempurl.com/aes/decrypt',
+        data
+      )
+      return resp.data
+    } catch (error) {
+      console.log(error)
+    }
+  }
   return (
     <>
         <Title>Registro</Title>
+        <Script
+          src='https://multicobros.banorte.com/orquestador/lightbox/checkoutV2.js'
+          strategy="beforeInteractive"
+        />
+        <Script
+          src='https://multicobros.banorte.com/orquestador/resources/js/jquery-3.3.1.js'
+          strategy="beforeInteractive"
+        />
         <div className={styles.selectedOption}>
             <form>
               <label>Comenzar registro:</label>
@@ -414,7 +487,10 @@ const Formulario = ()=>{
               null
             }
             <div className={styles.registerModule}>
-              <button className={styles.registerButton}>
+              <button
+              className={styles.registerButton}
+              onClick={handleSubmit}
+              >
                 Continuar
               </button>
             </div>
@@ -429,6 +505,17 @@ const Registro = () => {
   if(step===1){
     return(
       <>
+        <Head>
+          <title>Registro - convocatoria</title>
+        </Head>
+        <Script
+          src='https://multicobros.banorte.com/orquestador/lightbox/checkoutV2.js'
+          strategy="beforeInteractive"
+        />
+        <Script
+          src='https://multicobros.banorte.com/orquestador/resources/js/jquery-3.3.1.js'
+          strategy="beforeInteractive"
+        />
         <nav className={styles.menu}>
         <ul className={styles.menuList}>
             <li>
@@ -470,6 +557,17 @@ const Registro = () => {
   if(step === 2){
     return (
       <>
+        <Head>
+          <title>Registro - convocatoria</title>
+        </Head>
+        <Script
+          src='https://multicobros.banorte.com/orquestador/lightbox/checkoutV2.js'
+          strategy="beforeInteractive"
+        />
+        <Script
+          src='https://multicobros.banorte.com/orquestador/resources/js/jquery-3.3.1.js'
+          strategy="beforeInteractive"
+        />
         <nav className={styles.menu}>
         <ul className={styles.menuList}>
             <li>
@@ -518,6 +616,17 @@ const Registro = () => {
   if(step===3){
     return (
       <>
+        <Head>
+          <title>Registro - convocatoria</title>
+        </Head>
+        <Script
+          src='https://multicobros.banorte.com/orquestador/lightbox/checkoutV2.js'
+          strategy="beforeInteractive"
+        />
+        <Script
+          src='https://multicobros.banorte.com/orquestador/resources/js/jquery-3.3.1.js'
+          strategy="beforeInteractive"
+        />
         <nav className={styles.menu}>
         <ul className={styles.menuList}>
             <li>
