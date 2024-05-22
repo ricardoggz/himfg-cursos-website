@@ -346,16 +346,15 @@ export default function PreGradeForm(){
                         required
                         className={styles.privacityCheck}
                     />
-                    &nbsp;Acepto el&nbsp;
+                   
                     <a
                         href='http://himfg.com.mx/interna/p_datos/avisopriv.php'
                         target='_blank'
                         className={styles.privacity}
                     >
-                    aviso de privacidad
+                    Acepto el aviso de privacidad
                     </a>
-                    &nbsp;y&nbsp;
-                    <span className={styles.privacity} onClick={rules}>reglamento</span>
+                    <span className={styles.privacity} onClick={rules}>&nbsp;y reglamento</span>
                 </label>
                 <label>Servicio o departamento receptor:</label>
                 <input type='text' name='departamento_receptor' onChange={onChange} required/>
@@ -400,7 +399,7 @@ export default function PreGradeForm(){
                 <input type='text' name='estudiante_escuela' onChange={onChange} required/>
                 <label>Carrera:</label>
                 <input type='text' name='estudiante_carrera' onChange={onChange} required/>
-                <label>Promedio de calificaciones del ultimo grado escolar:</label>
+                <label>Promedio de calificaciones del último grado escolar:</label>
                 <input type='text' name='estudiante_promedio' onChange={onChange} required/>
                 <label>Número de contacto de escuela:</label>
                 <input type='text' name='estudiante_contacto_escuela' onChange={onChange} required/>
@@ -416,7 +415,7 @@ export default function PreGradeForm(){
                 <input type='text' name='estudiante_nombre_aceptacion' onChange={onChange} required/>
                 <label>Informes:</label>
                 <label>Margarita Ayala</label>
-                <label>Coordinación De Rotaciones</label>
+                <label>Coordinación de Rotaciones</label>
                 <label>
                     <b>
                         <MdOutlineMailOutline /> sersohimfg@gmail.com

@@ -249,9 +249,9 @@ export default function PosGradeForm(){
                 <input type='text' name='estudiante_institucion_procedencia' onChange={onChange} required/>
                 <label>Teléfono y extensión de la Jefatura de Enseñanza de procedencia</label>
                 <input type='text' name='telefono_jefatura_procedente' onChange={onChange} required/>
-                <label>Periódo de rotación (fecha de inicio)</label>
+                <label>Período de rotación (fecha de inicio)</label>
                 <input type='date' name='fecha_inicio_periodo' onChange={onChange} required/>
-                <label>Periódo de rotación (fecha de termino)</label>
+                <label>Período de rotación (fecha de término)</label>
                 <input type='date' name='fecha_termino_periodo' onChange={onChange} required/>
                 <label>Servicio al que va a rotar</label>
                 <input type='text' name='estudiante_servicio' onChange={onChange} required/>
@@ -266,8 +266,8 @@ export default function PosGradeForm(){
                 <label>Nombre y teléfono de algún familiar (contacto de emergencia)</label>
                 <input type='text' name='estudiante_telefono_familiar' onChange={onChange} required/>
                 <label>Informes:</label>
-                <label>CARMEN JACQUELINE OLAZAGASTI</label>
-                <label>Coordinación De Rotaciones</label>
+                <label>Carmen Jacqueline Olazagasti</label>
+                <label>Coordinación de Rotaciones</label>
                 <label>
                     <b>
                     <MdOutlineMailOutline /> himfgrotaciones@gmail.com

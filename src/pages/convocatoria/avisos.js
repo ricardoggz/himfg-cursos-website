@@ -17,7 +17,14 @@ export default function Avisos(){
                             Avisos
                         </Link>
                     </li>
-                    <li>Convocatoria PDF</li>
+                    <li>
+                        <a
+                            href='https://archivos.him.edu.mx/graficos/ensenanza/pre-y-posgrado/convocatoria/CONVOCATORIA_2024.pdf '
+                            target='_blank'
+                        >
+                            Convocatoria PDF
+                        </a>
+                    </li>
                     <li>Registro en línea</li>
                     <li>Flujograma</li>
                     <li>Descargas</li>
@@ -26,14 +33,24 @@ export default function Avisos(){
                 </ul>
             </nav>
             <Container>
-                <Title>CONVOCATORIA PARA ASPIRANTES A CURSOS DE ESPECIALIZACIÓN 2024 - Avisos</Title>
+                <center><h3 className={styles.avisoTitle}>Avisos</h3></center>
+                <br/>
+                <Title>CONVOCATORIA PARA ASPIRANTES A CURSOS DE ESPECIALIZACIÓN 2024</Title>
                 <div className={`flexContainer ${styles.adsWrapper}`}>
-                    <a href='/'>
-                        ACEPTADOS CURSO UNIVERSITARIO DE ESPECIALIZACIÓN EN PEDIATRÍA Y GENÉTICA MÉDICA Ver aquí. 
-                    </a>
-                    <a href='/'>
-                        ACEPTADOS CURSOS UNIVERSITARIOS DE ESPECIALIZACIÓN Y PAEM 2024 Ver aquí. 
-                    </a>
+                    <div>
+                        <span className={styles.adTitle}>Aceptados</span>
+                        <span>
+                            CURSO UNIVERSITARIO DE ESPECIALIZACIÓN EN PEDIATRÍA Y GENÉTICA MÉDICA
+                        </span>
+                        <a href='/'>Ver aquí</a>
+                    </div>
+                    <div>
+                        <span className={styles.adTitle}>Aceptados</span>
+                        <span>
+                        CURSOS UNIVERSITARIOS DE ESPECIALIZACIÓN Y PAEM 2024
+                        </span>
+                        <a href='/'>Ver aquí</a>
+                    </div>
                 </div>
             </Container>
         </>

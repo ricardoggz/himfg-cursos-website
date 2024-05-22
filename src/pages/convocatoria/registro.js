@@ -14,7 +14,7 @@ import { useOnChange } from '@/hooks'
 const Avisos = ()=>{
   return(
     <>
-      <Title>Avisos</Title>
+      <Title>Aviso Importante</Title>
       <div className={`flexContainer ${styles.avisosWrapper}`}>
         <p>El Hospital Infantil de México Federico Gómez (HIMFG) a través la Subdirección de Enseñanza, es la responsable del tratamiento de los datos personales que nos proporcione.</p>
         <p>Sus datos personales serán utilizados para participar en el Proceso de Selección de Aspirantes a Residencias Médicas; control, registro de evaluaciones y elaboración de constancias de estudios; llevar a cabo los trámites de Beca y Titulación del alumno; identificar voluntarios para el padrón de intérpretes dentro del Hospital Infantil de México Federico Gómez, y, sólo en caso de situación de contingencia o de urgencia para reporte a los familiares. La difusión de los datos generados se llevará a cabo con fines estadísticos, en el caso de transferencia de datos a otros Institutos u Hospitales de Salud, o cualquier otra autoridad competente, no será necesario el consentimiento expreso.</p>
@@ -84,6 +84,7 @@ const Formulario = ()=>{
         onSuccess: async function(res){
           let cypherMessage
           let cyperMessageToObject
+          console.log(res)
           if(res.data){
             let datatoValue = {
               vi: dataToObject.vi,
@@ -105,6 +106,10 @@ const Formulario = ()=>{
               reference: paymentData.ControlNumber
             })
           }
+          generarPDF({
+            student: inputData,
+            reference: paymentData.ControlNumber
+          })
         },
         onCancel: function(res){
           localStorage.removeItem('cyperData')
@@ -136,7 +141,7 @@ const Formulario = ()=>{
   }
   return (
     <>
-        <Title>Registro</Title>
+        <h3 className={styles.registroTitle}>Registro</h3>
         <Script
           src='https://multicobros.banorte.com/orquestador/lightbox/checkoutV2.js'
           strategy="beforeInteractive"
@@ -146,7 +151,33 @@ const Formulario = ()=>{
           strategy="beforeInteractive"
         />
         <div className={styles.selectedOption}>
-            <form>
+          <button
+            onClick={()=>setSelectedOption('pediatria y genetica')}
+          >
+            Pediatría y Genética
+          </button>
+          <button
+            onClick={()=>setSelectedOption('especialidades pediatricas')}
+          >
+            Especialidades Pediátricas
+          </button>
+          <button
+            onClick={()=>setSelectedOption('alta especialidad')}
+          >
+            Curso de Posgrado de Alta Especialidad
+          </button>
+          <button
+            onClick={()=>setSelectedOption('nutricion clinica pediatrica')}
+          >
+            Nutrición Clínica Pediátrica
+          </button>
+          <button
+            onClick={()=>setSelectedOption('ortodoncia odontopediatria')}
+          >
+            Ortodoncia y Odontopediatría
+          </button>
+            {/*
+              <form>
               <label>Comenzar registro:</label>
               <select>
                 <option
@@ -185,7 +216,8 @@ const Formulario = ()=>{
                   Ortodoncia, Odontopediatría
                 </option>
               </select>
-            </form>
+              </form>
+            */}
         </div>
         {
           !selectedOption ?
@@ -201,7 +233,7 @@ const Formulario = ()=>{
               onChange={onChange}
             />
             <label>
-              &nbsp;Consiento y autorizo que mis datos personales sean tratados conforme a lo previsto en el aviso de privacidad, el cual he leido (marque la casilla a la izquierda).
+              &nbsp;Consiento y autorizo que mis datos personales sean tratados conforme a lo previsto en el Aviso de Privacidad, el cual he leído (marque la casilla a la izquierda).
             </label>
             </div>
             <label>Seleccione la Especialidad a la que desea ingresar:</label>
@@ -321,7 +353,7 @@ const Formulario = ()=>{
                 <input type='text' required/>
               </div>
               <div>
-                <label>Número de pasaporte(extranjeros)</label>
+                <label>Número de pasaporte (extranjeros)</label>
                 <input type='text'/>
               </div>
             </div>
@@ -426,7 +458,7 @@ const Formulario = ()=>{
                 <input type='text' required/>
               </div>
               <div>
-                <label>teléfono fijo</label>
+                <label>Teléfono fijo</label>
                 <input type='number' required/>
               </div>
               <div>
@@ -469,7 +501,7 @@ const Formulario = ()=>{
                 <input type='number' required/>
               </div>
               <div>
-                <label>Fecha de exámen profesional</label>
+                <label>Fecha de examen profesional</label>
                 <input type='date' required/>
               </div>
               <div>
@@ -480,7 +512,7 @@ const Formulario = ()=>{
               {
                 selectedOption && selectedOption === 'pediatria y genetica' ?
                 <>
-                  <label className={styles.registerTitle}>Datos del ENARM (examen Nacional de Residencias Médicas)</label>
+                  <label className={styles.registerTitle}>Datos del ENARM (Examen Nacional de Residencias Médicas)</label>
                   <div className={styles.registerModule}>
                     <div>
                       <label>
@@ -490,7 +522,7 @@ const Formulario = ()=>{
                     </div>
                     <div>
                       <label>
-                        Numero de veces que lo ha presentado
+                        Número de veces que lo ha presentado
                       </label>
                       <input type='number' required/>
                     </div>
@@ -502,7 +534,7 @@ const Formulario = ()=>{
               {
                 selectedOption && selectedOption === 'especialidades pediatricas' || selectedOption === 'alta especialidad'?
                 <>
-                  <label className={styles.registerTitle}>Datos del ENARM (examen Nacional de Residencias Médicas)</label>
+                  <label className={styles.registerTitle}>Datos del ENARM (Examen Nacional de Residencias Médicas)</label>
                   <div className={styles.registerModule}>
                     <div>
                       <label>Lugar obtenido en el Examen Nacional de Residencias Medicas</label>
@@ -520,7 +552,7 @@ const Formulario = ()=>{
             <label className={styles.registerTitle}>Información Adicional</label>
             <div className={styles.registerModule}>
               <div>
-              <label>Si habla alguna lengua indígena, indique cual</label>
+              <label>Si habla alguna lengua indígena, indique cuál</label>
               <input type='text' required/>
               </div>
             </div>
@@ -570,7 +602,7 @@ const Formulario = ()=>{
                   <input type='text' required/>
                 </div>
                 </div>
-                <label className={styles.registerTitle}>CONSEJO DE CERTIFICACIÓN DE LA ESPECIALIDAD</label>
+                <label className={styles.registerTitle}>Consejo de Certificación de la Especialidad</label>
                   <div className={styles.registerModule}>
                     <div>
                       <label>Folio</label>
@@ -626,7 +658,14 @@ const Registro = () => {
                     Avisos
                 </Link>
             </li>
-            <li>Convocatoria PDF</li>
+            <li>
+                <a
+                href='https://archivos.him.edu.mx/graficos/ensenanza/pre-y-posgrado/convocatoria/CONVOCATORIA_2024.pdf '
+                target='_blank'
+                >
+                    Convocatoria PDF
+                </a>
+            </li>
             <li>
                 <Link href='/convocatoria/registro'>
                     Registro en línea
@@ -678,7 +717,14 @@ const Registro = () => {
                     Avisos
                 </Link>
             </li>
-            <li>Convocatoria PDF</li>
+            <li>
+                <a
+                href='https://archivos.him.edu.mx/graficos/ensenanza/pre-y-posgrado/convocatoria/CONVOCATORIA_2024.pdf '
+                target='_blank'
+                >
+                    Convocatoria PDF
+                </a>
+            </li>
             <li>
                 <Link href='/convocatoria/registro'>
                     Registro en línea
@@ -737,7 +783,14 @@ const Registro = () => {
                     Avisos
                 </Link>
             </li>
-            <li>Convocatoria PDF</li>
+            <li>
+                <a
+                href='https://archivos.him.edu.mx/graficos/ensenanza/pre-y-posgrado/convocatoria/CONVOCATORIA_2024.pdf '
+                target='_blank'
+                >
+                    Convocatoria PDF
+                </a>
+            </li>
             <li>
                 <Link href='/convocatoria/registro'>
                     Registro en línea

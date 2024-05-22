@@ -12,7 +12,14 @@ export default function Convocatoria(){
                     Avisos
                 </Link>
             </li>
-            <li>Convocatoria PDF</li>
+            <li>
+                <a
+                href='https://archivos.him.edu.mx/graficos/ensenanza/pre-y-posgrado/convocatoria/CONVOCATORIA_2024.pdf '
+                target='_blank'
+                >
+                    Convocatoria PDF
+                </a>
+            </li>
             <li>
                 <Link href='/convocatoria/registro'>
                     Registro en línea
@@ -28,7 +35,10 @@ export default function Convocatoria(){
             <figure>
                 <img src='https://archivos.him.edu.mx/graficos/convocatoria/foto-2024.jpg'/>
             </figure>
-            <Title>CONVOCATORIA PARA ASPIRANTES A CURSOS DE ESPECIALIZACIÓN 2024 - Bienvenida</Title>
+            <Title>CONVOCATORIA PARA ASPIRANTES A CURSOS DE ESPECIALIZACIÓN 2024</Title>
+            <center><h1>BIENVENIDA</h1></center>
+            <br/>
+            <br/>
             <div className={styles.textWrapper}>
                 <p>
                     El Instituto Nacional de Salud Hospital Infantil de México Federico Gómez (INSHIMFG) -fundado en 1943- fue el primer Instituto Nacional de Salud en México y desde entonces se ha mantenido a la vanguardia nacional e internacional de la atención, formación e investigación pediátrica. 

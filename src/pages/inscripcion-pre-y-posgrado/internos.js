@@ -264,8 +264,8 @@ export default function Internos(){
                 <label>Nombre y teléfono de algún familiar (contacto de emergencia)</label>
                 <input type='text' name='estudiante_telefono_familiar' onChange={onChange} required/>
                 <label>Informes:</label>
-                <label>CARMEN JACQUELINE OLAZAGASTI</label>
-                <label>Coordinación De Rotaciones</label>
+                <label>Carmen Jacqueline Olazagasti</label>
+                <label>Coordinación de Rotaciones</label>
                 <label>
                     <b>
                         <MdOutlineMailOutline /> himfgrotaciones@gmail.com

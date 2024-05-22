@@ -11,6 +11,14 @@ export const EducativeOffer = ()=>{
             <h2 className={styles.registerTitle}>
                 Proceso de registro
             </h2>
+                <div className={styles.convocatoriaWrapper}>
+                    <Link
+                        className={styles.adTitle}
+                        href='/convocatoria'
+                    >
+                        Convocatoria
+                    </Link>
+                </div>
             <div className={`flexContainer ${styles.adsWrapper}`}>
                 <div>
                     <Link
@@ -24,7 +32,7 @@ export const EducativeOffer = ()=>{
                         <Link
                         href='/inscripcion-pre-y-posgrado/pregrado'
                         >
-                            Estancias, tesis, servicio social, practicas profesionales
+                            Estancias, tesis, servicio social, prácticas profesionales
                         </Link>
                         </li>
                         <li>
