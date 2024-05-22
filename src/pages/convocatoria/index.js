@@ -25,7 +25,14 @@ export default function Convocatoria(){
                     Registro en línea
                 </Link>
             </li>
-            <li>Flujograma</li>
+            <li>
+                <a
+                href='https://archivos.him.edu.mx/graficos/ensenanza/pre-y-posgrado/convocatoria/FLUJOGRAMA.pdf'
+                target='_blank'
+                >
+                    Flujograma
+                </a>
+            </li>
             <li>Descargas</li>
             <li>Preguntas frecuentes</li>
             <li>Informes</li>

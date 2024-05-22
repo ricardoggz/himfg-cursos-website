@@ -667,7 +667,7 @@ const Registro = () => {
             </li>
             <li>
                 <a
-                href='https://archivos.him.edu.mx/graficos/ensenanza/pre-y-posgrado/convocatoria/CONVOCATORIA_2024.pdf '
+                href='https://archivos.him.edu.mx/graficos/ensenanza/pre-y-posgrado/convocatoria/CONVOCATORIA_2024.pdf'
                 target='_blank'
                 >
                     Convocatoria PDF
@@ -678,7 +678,14 @@ const Registro = () => {
                     Registro en línea
                 </Link>
             </li>
-            <li>Flujograma</li>
+            <li>
+                <a
+                  href='https://archivos.him.edu.mx/graficos/ensenanza/pre-y-posgrado/convocatoria/FLUJOGRAMA.pdf'
+                  target='_blank'
+                >
+                  Flujograma
+                </a>
+              </li>
             <li>Descargas</li>
             <li>Preguntas frecuentes</li>
             <li>Informes</li>
@@ -737,7 +744,14 @@ const Registro = () => {
                     Registro en línea
                 </Link>
             </li>
-            <li>Flujograma</li>
+            <li>
+                <a
+                  href='https://archivos.him.edu.mx/graficos/ensenanza/pre-y-posgrado/convocatoria/FLUJOGRAMA.pdf'
+                  target='_blank'
+                >
+                  Flujograma
+                </a>
+            </li>
             <li>Descargas</li>
             <li>Preguntas frecuentes</li>
             <li>Informes</li>
@@ -803,7 +817,14 @@ const Registro = () => {
                     Registro en línea
                 </Link>
             </li>
-            <li>Flujograma</li>
+            <li>
+                <a
+                  href='https://archivos.him.edu.mx/graficos/ensenanza/pre-y-posgrado/convocatoria/FLUJOGRAMA.pdf'
+                  target='_blank'
+                >
+                  Flujograma
+                </a>
+            </li>
             <li>Descargas</li>
             <li>Preguntas frecuentes</li>
             <li>Informes</li>
