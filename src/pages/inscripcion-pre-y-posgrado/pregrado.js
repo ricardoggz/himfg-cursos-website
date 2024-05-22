@@ -332,7 +332,7 @@ export default function PreGradeForm(){
     })
     return (
         <Container>
-            <Title>Servicio social, prácticas, estancias, tesis e internado de pregrado</Title>
+            <Title>Servicio social, prácticas, estancias y tesis</Title>
             <form
                 className={`flexContainer ${styles.inscriptionForm}`}
                 onSubmit={handleSubmit}
