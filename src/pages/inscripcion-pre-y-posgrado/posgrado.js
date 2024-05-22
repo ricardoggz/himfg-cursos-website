@@ -233,7 +233,7 @@ export default function PosGradeForm(){
                 >
                     Para tu documentación considera estos puntos (click aquí)
                 </label>
-                <label>Documentos en pdf</label>
+                <label>Documentos adjuntos en un solo archivo pdf (Máximo 2MB)</label>
                 <input type='file' name='estudiante_fotografia' onChange={handleFileChange} required/>
                 <label>Nombre</label>
                 <input type='text' name='estudiante_nombre' onChange={onChange} required/>

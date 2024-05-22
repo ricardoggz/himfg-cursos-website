@@ -67,14 +67,6 @@ export const EducativeOffer = ()=>{
                         </li>
                         <li>
                             <a
-                                href='https://archivos.him.edu.mx/inscripciones-pos-grado/reglamento_residentes.pdf'
-                                target='_blank'
-                            >
-                                Reglamento para residentes
-                            </a>
-                        </li>
-                        <li>
-                            <a
                                 href='https://archivos.him.edu.mx/inscripciones-pos-grado/reglamento_rotantes.pdf'
                                 target='_blank'
                             >
@@ -87,6 +79,14 @@ export const EducativeOffer = ()=>{
                                 target='_blank'
                             >
                                 Lineamientos para rotación clínica en el HIMFG
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href='https://archivos.him.edu.mx/inscripciones-pos-grado/reglamento_residentes.pdf'
+                                target='_blank'
+                            >
+                                Reglamento para residentes
                             </a>
                         </li>
                 </ul>
