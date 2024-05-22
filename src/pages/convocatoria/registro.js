@@ -329,6 +329,13 @@ const Formulario = ()=>{
                   >
                     Femenino
                   </option>
+                  <option
+                    onChange={onChange}
+                    name='genero'
+                    value='Femenino'
+                  >
+                    No binario
+                  </option>
                 </select>
               </div>
               <div>
@@ -384,7 +391,7 @@ const Formulario = ()=>{
               </div>
               <div>
                 <label>Número o letra interior</label>
-                <input type='text' required/>
+                <input type='text'/>
               </div>
               <div>
                 <label>Colonia</label>
