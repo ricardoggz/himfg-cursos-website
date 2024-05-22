@@ -264,14 +264,14 @@ export default function Internos(){
                 <label>Nombre y teléfono de algún familiar (contacto de emergencia)</label>
                 <input type='text' name='estudiante_telefono_familiar' onChange={onChange} required/>
                 <label>Informes:</label>
-                <label>Carmen Jacqueline Olazagasti</label>
+                <label>Margarita Ayala</label>
                 <label>Coordinación de Rotaciones</label>
                 <label>
                     <b>
-                        <MdOutlineMailOutline /> himfgrotaciones@gmail.com
+                        <MdOutlineMailOutline /> sersohimfg@gmail.com
                     </b>
                 </label>
-                <label>Tel. 01(55)5 228-99-17 ext. 2344</label>
+                <label>Tel. 01(55)5228-99-17 ext. 2344</label>
                 <div className={styles.inscriptionButtons}>
                     <button className={styles.buttonSubmit}>Enviar datos</button>
                     <button className={styles.buttonReset}>Borrar datos</button>

@@ -33,6 +33,7 @@
     padding:2.5rem;
     text-align: center;
     width:100%;
+    text-decoration: none;
 }
 .adList{
     display: flex;
