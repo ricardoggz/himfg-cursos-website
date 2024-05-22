@@ -426,7 +426,7 @@ export default function PreGradeForm(){
                     <button className={styles.buttonSubmit}>Enviar datos</button>
                     <button type='reset' className={styles.buttonReset}>Borrar datos</button>
                 </div>
-                <label>*EL HOSPITAL INFANTIL DE MÉXICO FEDERICO GÓMEZ NO OTORGA NINGÚN TIPO DE BECA, ALIMENTACIÓN, ESTACIONAMIENTO, NI RESIDENCIA PARA ESTOS ESTUDIOS*</label>
+                <label>*EL HOSPITAL INFANTIL DE MÉXICO FEDERICO GÓMEZ NO OTORGA NINGÚN TIPO DE BECA NI ESTACIONAMIENTO*</label>
                 {!isLoading ? null : <span>Cargando, por favor espere...</span>}
             </form>
         </Container>
