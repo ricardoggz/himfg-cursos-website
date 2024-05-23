@@ -625,7 +625,7 @@ const Formulario = ()=>{
               null
             }
             <label className={styles.registerTitle}>Forma de pago</label>
-            <div className={styles.registerModule}>
+            {/*<div className={styles.registerModule}>
               <div className={styles.selectWrapper}>
                 <input
                 type='radio'
@@ -644,27 +644,32 @@ const Formulario = ()=>{
                 />
                 <label>Ventanilla</label>
               </div>
-            </div>
+            </div>*/}
             <div className={styles.registerModule}>
+                <button
+                  className={styles.registerButton}
+                  >
+                    Envíar
+                </button>
               {
-                paymentMethod && paymentMethod === 'online'?
+                /*paymentMethod && paymentMethod === 'online'?
                 <button
                   className={styles.registerButton}
                   >
                     Pago en ínea
                 </button>
                 :
-                null
+                null*/
               }
               {
-                paymentMethod && paymentMethod === 'offline'?
+                /*paymentMethod && paymentMethod === 'offline'?
                 <button
                   className={styles.registerButton}
                   >
                     Generar acuse para pago en ventanilla
                 </button>
                 :
-                null
+                null*/
               }
             </div>
           </form>
