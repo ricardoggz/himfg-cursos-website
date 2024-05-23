@@ -62,7 +62,7 @@ const Formulario = ()=>{
   const [selectedOption, setSelectedOption] = useState(null)
   const [paymentData, setPaymentData] = useState(null)
   const [inputData, onChange, onReset] = useOnChange()
-  const getCypherData = async(data)=>{
+  /*const getCypherData = async(data)=>{
     try {
       const resp = await axios.post(
         'https://carolinamagos-001-site1.anytempurl.com/aes/decrypt',
@@ -72,8 +72,8 @@ const Formulario = ()=>{
     } catch (error) {
       console.log(error)
     }
-  }
-  const handleSubmit = (evt)=>{
+  }*/
+  /*const handleSubmit = (evt)=>{
     evt.preventDefault()
     if(Payment && paymentMethod==='online'){
       Payment.setEnv('pro')
@@ -138,7 +138,14 @@ const Formulario = ()=>{
       Amount: `1.00`,
       ControlNumber: `${reference(24)}`
     })
-  },[])
+  },[])*/
+  const handleSubmit = (evt)=>{
+    evt.preventDefault()
+    generarPDF({
+      student: inputData,
+      reference: paymentData.ControlNumber
+    })
+  }
   return (
     <>
         <h3 className={styles.registroTitle}>Registro</h3>
