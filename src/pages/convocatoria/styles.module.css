@@ -167,9 +167,23 @@
     text-align: center;
     padding-bottom:3rem;
 }
+.selectWrapper{
+    border:1px solid #0000002a;
+    display:flex;
+    gap:0.5rem;
+    flex-direction: column;
+    justify-content: center;
+}
+.selectWrapper label{
+    text-align: center;
+    width:100%;
+}
 @media(min-width:240px) and (max-width:900px){
     .selectedOption{
         flex-direction: column;
+    }
+    .registerModule{
+        grid-template-columns: 1fr;
     }
     .menuList{
         flex-direction: column;

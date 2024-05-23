@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import Script from 'next/script'
 import Head from 'next/head'
 import Link from 'next/link'
+import axios from 'axios'
 import styles from './styles.module.css'
 import { Container, Title } from "@/components"
 import { cypherData, dataToObject } from '../../components/paymentForm/cyperData'
@@ -57,17 +58,24 @@ const Instrucciones = ({})=>{
   )
 }
 const Formulario = ()=>{
+  const [paymentMethod, setPaymentMethod] = useState(null)
   const [selectedOption, setSelectedOption] = useState(null)
   const [paymentData, setPaymentData] = useState(null)
   const [inputData, onChange, onReset] = useOnChange()
-
+  const getCypherData = async(data)=>{
+    try {
+      const resp = await axios.post(
+        'https://carolinamagos-001-site1.anytempurl.com/aes/decrypt',
+        data
+      )
+      return resp.data
+    } catch (error) {
+      console.log(error)
+    }
+  }
   const handleSubmit = (evt)=>{
     evt.preventDefault()
-    /*generarPDF({
-      student: inputData,
-      reference: paymentData.ControlNumber
-    })*/
-    if(Payment){
+    if(Payment && paymentMethod==='online'){
       Payment.setEnv('pro')
       let xOBJ
       xOBJ = cypherData(paymentData, cerKey)
@@ -117,6 +125,9 @@ const Formulario = ()=>{
         }
       })
     }
+    if(paymentMethod==='offline'){
+      console.log('Pago en ventanilla')
+    }
   }
   useEffect(()=>{
     setTimeout(() => {
@@ -128,17 +139,6 @@ const Formulario = ()=>{
       ControlNumber: `${reference(24)}`
     })
   },[])
-  const getCypherData = async(data)=>{
-    try {
-      const resp = await axios.post(
-        'https://carolinamagos-001-site1.anytempurl.com/aes/decrypt',
-        data
-      )
-      return resp.data
-    } catch (error) {
-      console.log(error)
-    }
-  }
   return (
     <>
         <h3 className={styles.registroTitle}>Registro</h3>
@@ -223,7 +223,7 @@ const Formulario = ()=>{
           !selectedOption ?
             null
           :
-          <form className={styles.registerForm}  onSubmit={handleSubmit}>
+          <form className={styles.registerForm} onSubmit={handleSubmit}>
           <label className={styles.registerTitle}>Datos personales</label>
             <div>
             <input
@@ -624,12 +624,48 @@ const Formulario = ()=>{
               :
               null
             }
+            <label className={styles.registerTitle}>Forma de pago</label>
             <div className={styles.registerModule}>
-              <button
-              className={styles.registerButton}
-              >
-                Continuar
-              </button>
+              <div className={styles.selectWrapper}>
+                <input
+                type='radio'
+                required
+                onChange={()=>setPaymentMethod('online')}
+                name='metodo_pago'
+                />
+                <label>En línea</label>
+              </div>
+              <div className={styles.selectWrapper}>
+                <input
+                type='radio'
+                required
+                onChange={()=>setPaymentMethod('offline')}
+                name='metodo_pago'
+                />
+                <label>Ventanilla</label>
+              </div>
+            </div>
+            <div className={styles.registerModule}>
+              {
+                paymentMethod && paymentMethod === 'online'?
+                <button
+                  className={styles.registerButton}
+                  >
+                    Pago en ínea
+                </button>
+                :
+                null
+              }
+              {
+                paymentMethod && paymentMethod === 'offline'?
+                <button
+                  className={styles.registerButton}
+                  >
+                    Generar acuse para pago en ventanilla
+                </button>
+                :
+                null
+              }
             </div>
           </form>
         }
