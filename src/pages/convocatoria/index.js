@@ -33,7 +33,11 @@ export default function Convocatoria(){
                     Flujograma
                 </a>
             </li>
-            <li>Descargas</li>
+            <li>
+                <Link href='/convocatoria/descargas'>
+                    Descargas
+                </Link>
+            </li>
             <li>Preguntas frecuentes</li>
             <li>Informes</li>
         </ul>

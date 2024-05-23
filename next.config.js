@@ -36,7 +36,8 @@ const nextConfig = {
       '/inscripcion-pre-y-posgrado/internos' : {page: '/inscripcion-pre-y-posgrado/internos'},
       '/convocatoria' : {page: '/convocatoria'},
       '/convocatoria/registro' : {page: '/convocatoria/registro'},
-      '/convocatoria/avisos' : {page: '/convocatoria/avisos'}
+      '/convocatoria/avisos' : {page: '/convocatoria/avisos'},
+      '/convocatoria/descargas' : {page: '/convocatoria/descargas'}
     }
   },
   env:{
