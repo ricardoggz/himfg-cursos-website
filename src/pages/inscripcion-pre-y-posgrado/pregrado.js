@@ -300,7 +300,7 @@ export default function PreGradeForm(){
                     5) Oficio de aceptación dirigido a la DAE.
                 </li>
                 <li>
-                    Nota: Es muy importante que cada uno de tus documentos se encuentren comprimidos (máximo 1MB)
+                    Nota: Es muy importante que cada uno de tus documentos se encuentren comprimidos (máximo 2MB)
                 </li>
                 <li>
                     Te recomendamos utilizar alguna de las siguientes opciones para comprimir tus documentos:

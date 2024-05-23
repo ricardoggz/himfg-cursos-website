@@ -171,6 +171,22 @@ export default function Internos(){
             <br />
             <ul className={styles.ruleList}>
                 <li>1) Una fotografía tamaño infantil (puede ser a color o blanco y negro)</li>
+                <li>2) Carta de aceptación</li>
+                <li>
+                    3) Carta de presentación de la CD
+                </li>
+                <li>
+                    4) Esquema de vacunación
+                </li>
+                <li>
+                    5) Carátula de gastos médicos mayores (solo extranjeros)
+                </li>
+                <li>
+                    Nota: Es muy importante que cada uno de tus documentos se encuentren comprimidos (máximo 2MB)
+                </li>
+                <li>
+                    Te recomendamos utilizar alguna de las siguientes opciones para comprimir tus documentos:
+                </li>
                 <li>
                     <a
                         href='https://www.ilovepdf.com/es'
@@ -212,19 +228,63 @@ export default function Internos(){
                         required
                         className={styles.privacityCheck}
                     />
-                    &nbsp;Acepto el&nbsp;
+                   
                     <a
                         href='http://himfg.com.mx/interna/p_datos/avisopriv.php'
                         target='_blank'
                         className={styles.privacity}
                     >
-                    aviso de privacidad
+                    Acepto el aviso de privacidad
                     </a>
-                    &nbsp;y&nbsp;
-                    <span className={styles.privacity} onClick={rules}>reglamento</span>
+                    <span className={styles.privacity} onClick={rules}>&nbsp;y reglamento</span>
                 </label>
-                <label>Fecha</label>
-                <input type='date' name='fecha_registro' onChange={onChange} required/>
+                <label>Servicio o departamento receptor:</label>
+                <input type='text' name='departamento_receptor' onChange={onChange} required/>
+                <label>Fecha de inicio:</label>
+                <input type='date' name='fecha_inicio' onChange={onChange} required/>
+                <label>Fecha de término:</label>
+                <input type='date' name='fecha_final' onChange={onChange} required/>
+                <label>Nombre:</label>
+                <input type='text' name='estudiante_nombre' onChange={onChange} required/>
+                <label>Edad:</label>
+                <input type='number' name='estudiante_edad' onChange={onChange} required/>
+                <label>Sexo:</label>
+                <select name='estudiante_genero' onChange={onChange}>
+                    <option onChange={onChange}>Masculino</option>
+                    <option onChange={onChange}>Femenino</option>
+                </select>
+                <label>Estado civil:</label>
+                <input type='text' name='estudiante_estado_civil' onChange={onChange} required/>
+                <label>Fecha de nacimiento:</label>
+                <input type='date' name='estudiante_fecha_nacimiento' onChange={onChange} required/>
+                <label>Lugar de nacimiento:</label>
+                <input type='text' name='estudiante_lugar_nacimiento' onChange={onChange} required/>
+                <label>Idiomas que habla:</label>
+                <input type='text' name='estudiante_idiomas' onChange={onChange} required/>
+                <label>Domicilio permanente:</label>
+                <input type='text' name='estudiante_domicilio' onChange={onChange} required/>
+                <label>Código postal:</label>
+                <input type='text' name='estudiante_codigo_postal' onChange={onChange} required/>
+                <label>Alcaldía / municipio:</label>
+                <input type='text' name='estudiante_alcaldia' onChange={onChange} required/>
+                <label>Ciudad:</label>
+                <input type='text' name='estudiante_ciudad' onChange={onChange} required/>
+                <label>País:</label>
+                <input type='text' name='estudiante_pais' onChange={onChange} required/>
+                <label>Teléfono particular:</label>
+                <input type='number' name='estudiante_telefono_particular' onChange={onChange} required/>
+                <label>Teléfono celular:</label>
+                <input type='number' name='estudiante_telefono_casa' onChange={onChange} required/>
+                <label>Correo electrónico:</label>
+                <input type='email' name='estudiante_email' onChange={onChange} required/>
+                <label>Escuela de procedencia:</label>
+                <input type='text' name='estudiante_escuela' onChange={onChange} required/>
+                <label>Carrera:</label>
+                <input type='text' name='estudiante_carrera' onChange={onChange} required/>
+                <label>Promedio de calificaciones del último grado escolar:</label>
+                <input type='text' name='estudiante_promedio' onChange={onChange} required/>
+                <label>Número de contacto de escuela:</label>
+                <input type='text' name='estudiante_contacto_escuela' onChange={onChange} required/>
                 <label
                 className={styles.privacityTitle}
                 onClick={documentation}
@@ -233,36 +293,8 @@ export default function Internos(){
                 </label>
                 <label>Documentos adjuntos en un solo archivo pdf (Máximo 2MB)</label>
                 <input type='file' name='estudiante_fotografia' onChange={handleFileChange} required/>
-                <label>Nombre</label>
-                <input type='text' name='estudiante_nombre' onChange={onChange} required/>
-                <label>Nacionalidad</label>
-                <input type='text' name='estudiante_nacionalidad' onChange={onChange} required/>
-                <label>Fecha de nacimiento</label>
-                <input type='date' name='estudiante_fecha_nacimiento' onChange={onChange} required/>
-                <label>Especialidad</label>
-                <input type='text' name='estudiante_especialidad' onChange={onChange} required/>
-                <label>Grado</label>
-                <input type='text' name='estudiante_grado' onChange={onChange} required/>
-                <label>Institución de procedencia</label>
-                <input type='text' name='estudiante_institucion_procedencia' onChange={onChange} required/>
-                <label>Teléfono y extensión de la Jefatura de Enseñanza de Procedencia</label>
-                <input type='text' name='telefono_jefatura_procedente' onChange={onChange} required/>
-                <label>Periódo de rotación (fecha de inicio)</label>
-                <input type='date' name='fecha_inicio_periodo' onChange={onChange} required/>
-                <label>Periódo de rotación (fecha de termino)</label>
-                <input type='date' name='fecha_termino_periodo' onChange={onChange} required/>
-                <label>Servicio al que va rotar</label>
-                <input type='text' name='estudiante_servicio' onChange={onChange} required/>
-                <label>Teléfono celular</label>
-                <input type='number' name='estudiante_telefono_celular' onChange={onChange} required/>
-                <label>Teléfono local</label>
-                <input type='number' name='estudiante_telefono_fijo' onChange={onChange} required/>
-                <label>Domicilio permanente</label>
-                <input type='text' name='estudiante_domicilio' onChange={onChange} required/>
-                <label>Correo electrónico</label>
-                <input type='email' name='estudiante_correo' onChange={onChange} required/>
-                <label>Nombre y teléfono de algún familiar (contacto de emergencia)</label>
-                <input type='text' name='estudiante_telefono_familiar' onChange={onChange} required/>
+                <label>Nombre completo de aceptación:</label>
+                <input type='text' name='estudiante_nombre_aceptacion' onChange={onChange} required/>
                 <label>Informes:</label>
                 <label>Margarita Ayala</label>
                 <label>Coordinación de Rotaciones</label>
@@ -274,8 +306,9 @@ export default function Internos(){
                 <label>Tel. 01(55)5228-99-17 ext. 2344</label>
                 <div className={styles.inscriptionButtons}>
                     <button className={styles.buttonSubmit}>Enviar datos</button>
-                    <button className={styles.buttonReset}>Borrar datos</button>
+                    <button type='reset' className={styles.buttonReset}>Borrar datos</button>
                 </div>
+                <label>*EL HOSPITAL INFANTIL DE MÉXICO FEDERICO GÓMEZ NO OTORGA NINGÚN TIPO DE BECA NI ESTACIONAMIENTO*</label>
                 {!isLoading ? null : <span>Cargando, por favor espere...</span>}
             </form>
         </Container>
