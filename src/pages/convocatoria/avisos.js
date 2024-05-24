@@ -38,9 +38,21 @@ export default function Avisos(){
                             Flujograma
                         </a>
                     </li>
-                    <li>Descargas</li>
-                    <li>Preguntas frecuentes</li>
-                    <li>Informes</li>
+                    <li>
+                        <Link href='/convocatoria/descargas'>
+                            Descargas
+                        </Link>
+                    </li>
+                    <li>
+                        <Link href='/convocatoria/preguntas-frecuentes'>
+                            Frecuentes preguntas
+                        </Link>
+                    </li>
+                    <li>
+                        <Link href='/convocatoria/informes'>
+                            Informes
+                        </Link>
+                    </li>
                 </ul>
             </nav>
             <Container>

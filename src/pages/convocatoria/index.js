@@ -43,7 +43,11 @@ export default function Convocatoria(){
                     Frecuentes preguntas
                 </Link>
             </li>
-            <li>Informes</li>
+            <li>
+                <Link href='/convocatoria/informes'>
+                    Informes
+                </Link>
+            </li>
         </ul>
         </nav>
         <section className={styles.photoWrapper}>
