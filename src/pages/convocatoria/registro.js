@@ -734,9 +734,21 @@ const Registro = () => {
                   Flujograma
                 </a>
               </li>
-            <li>Descargas</li>
-            <li>Preguntas frecuentes</li>
-            <li>Informes</li>
+              <li>
+                <Link href='/convocatoria/descargas'>
+                    Descargas
+                </Link>
+              </li>
+              <li>
+                <Link href='/convocatoria/preguntas-frecuentes'>
+                    Preguntas frecuentes
+                </Link>
+              </li>
+              <li>
+                <Link href='/convocatoria/informes'>
+                    Informes
+                </Link>
+              </li>
         </ul>
         </nav>
         <Container>
@@ -800,9 +812,21 @@ const Registro = () => {
                   Flujograma
                 </a>
             </li>
-            <li>Descargas</li>
-            <li>Preguntas frecuentes</li>
-            <li>Informes</li>
+            <li>
+                <Link href='/convocatoria/descargas'>
+                    Descargas
+                </Link>
+            </li>
+            <li>
+                <Link href='/convocatoria/preguntas-frecuentes'>
+                    Preguntas frecuentes
+                </Link>
+              </li>
+              <li>
+                <Link href='/convocatoria/informes'>
+                    Informes
+                </Link>
+              </li>
         </ul>
         </nav>
         <Container>
@@ -873,9 +897,21 @@ const Registro = () => {
                   Flujograma
                 </a>
             </li>
-            <li>Descargas</li>
-            <li>Preguntas frecuentes</li>
-            <li>Informes</li>
+            <li>
+                <Link href='/convocatoria/descargas'>
+                    Descargas
+                </Link>
+            </li>
+            <li>
+                <Link href='/convocatoria/preguntas-frecuentes'>
+                    Preguntas frecuentes
+                </Link>
+            </li>
+            <li>
+                <Link href='/convocatoria/informes'>
+                    Informes
+                </Link>
+            </li>
         </ul>
         </nav>
         <Container>

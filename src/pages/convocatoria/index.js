@@ -38,7 +38,11 @@ export default function Convocatoria(){
                     Descargas
                 </Link>
             </li>
-            <li>Preguntas frecuentes</li>
+            <li>
+                <Link href='/convocatoria/preguntas-frecuentes'>
+                    Frecuentes preguntas
+                </Link>
+            </li>
             <li>Informes</li>
         </ul>
         </nav>

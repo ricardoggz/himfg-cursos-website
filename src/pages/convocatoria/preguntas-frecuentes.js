@@ -43,8 +43,16 @@ export default function PreguntasFrecuentes(){
                             Descargas
                         </Link>
                     </li>
-                    <li>Preguntas frecuentes</li>
-                    <li>Informes</li>
+                    <li>
+                        <Link href='/convocatoria/preguntas-frecuentes'>
+                            Preguntas frecuentes
+                        </Link>
+                    </li>
+                    <li>
+                        <Link href='/convocatoria/informes'>
+                            Informes
+                        </Link>
+                    </li>
                 </ul>
             </nav>
             <Container>
