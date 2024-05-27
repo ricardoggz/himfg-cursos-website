@@ -64,7 +64,7 @@ export default function Descargas(){
                         </a>
                     </li>
                     <li>
-                        <a href='https://archivos.him.edu.mx/graficos/convocatoria/CURRICULUM_VITAE_PLANTILLA.docx'>
+                        <a href='https://archivos.him.edu.mx/graficos/convocatoria/CURRICULUM_VITAE_PLANTILLA.doc'>
                             Formato currículum (descargar)
                         </a>
                     </li>

@@ -173,12 +173,22 @@ export default function PosGradeForm(){
             <br />
             <ul className={styles.ruleList}>
                 <li>1) Una fotografía tamaño infantil (puede ser a color o blanco y negro)</li>
+                <li>2) Carta de aceptación HIMFG</li>
+                <li>3) Carta de presentación Hospital SEDE</li>
+                <li>Esquema de vacunación completo (COVID, Hepatitis B, Sarampión)</li>
+                <li>Carátula de gastos médicos mayores con covertura internacional vigente (solo extranjeros)</li>
+                <li>
+                    Nota: Es muy importante que cada uno de tus documentos se encuentren comprimidos (máximo 2MB)
+                </li>
+                <li>
+                    Te recomendamos utilizar alguna de las siguientes opciones para comprimir tus documentos:
+                </li>
                 <li>
                     <a
                         href='https://www.ilovepdf.com/es'
                         target='_blank'
                     >
-                            ILove PDF
+                            Opción 1
                     </a>
                 </li>
                 <li>
@@ -186,7 +196,7 @@ export default function PosGradeForm(){
                         href='https://rb.gy/ieobpc'
                         target='_blank'
                     >
-                            Online PDF editor
+                            Opción 2
                     </a>
                 </li>
             </ul>
@@ -231,12 +241,18 @@ export default function PosGradeForm(){
                 className={styles.privacityTitle}
                 onClick={documentation}
                 >
-                    Para tu documentación considera estos puntos (click aquí)
+                    Revisa la documentación que debes cargar (da click aquí)
                 </label>
-                <label>Documentos adjuntos en un solo archivo pdf (Máximo 2MB)</label>
+                <label>Deberás cargar en un solo archivo todos tus documentos (Máximo 2MB)</label>
                 <input type='file' name='estudiante_fotografia' onChange={handleFileChange} required/>
                 <label>Nombre</label>
                 <input type='text' name='estudiante_nombre' onChange={onChange} required/>
+                <label>Sexo:</label>
+                <select name='estudiante_genero' onChange={onChange}>
+                    <option onChange={onChange}>Masculino</option>
+                    <option onChange={onChange}>Femenino</option>
+                    <option onChange={onChange}>No binario</option>
+                </select>
                 <label>Nacionalidad</label>
                 <input type='text' name='estudiante_nacionalidad' onChange={onChange} required/>
                 <label>Fecha de nacimiento</label>
@@ -278,6 +294,7 @@ export default function PosGradeForm(){
                     <button className={styles.buttonSubmit}>Enviar datos</button>
                     <button className={styles.buttonReset}>Borrar datos</button>
                 </div>
+                <label>*EL HOSPITAL INFANTIL DE MÉXICO FEDERICO GÓMEZ NO OTORGA NINGÚN TIPO DE BECA NI ESTACIONAMIENTO*</label>
                 {!isLoading ? null : <span>Cargando, por favor espere...</span>}
             </form>
         </Container>

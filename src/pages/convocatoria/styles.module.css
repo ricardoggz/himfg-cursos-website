@@ -187,10 +187,13 @@
     font-size:1.5rem;
 }
 .fileList a {
-    background: #95a5a6;
-    color:var(--white-primary);
+    color:var(--black-primary);
     font-style: italic;
     padding:0.5rem;
+    text-decoration: none;
+}
+.fileList a:hover{
+    text-decoration: underline;
 }
 @media(min-width:240px) and (max-width:900px){
     .selectedOption{

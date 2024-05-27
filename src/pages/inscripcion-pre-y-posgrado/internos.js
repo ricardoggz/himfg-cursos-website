@@ -171,16 +171,7 @@ export default function Internos(){
             <br />
             <ul className={styles.ruleList}>
                 <li>1) Una fotografía tamaño infantil (puede ser a color o blanco y negro)</li>
-                <li>2) Carta de aceptación</li>
-                <li>
-                    3) Carta de presentación de la CD
-                </li>
-                <li>
-                    4) Esquema de vacunación
-                </li>
-                <li>
-                    5) Carátula de gastos médicos mayores (solo extranjeros)
-                </li>
+                <li>2) Cartilla de vacunación COVID</li>
                 <li>
                     Nota: Es muy importante que cada uno de tus documentos se encuentren comprimidos (máximo 2MB)
                 </li>
@@ -192,7 +183,7 @@ export default function Internos(){
                         href='https://www.ilovepdf.com/es'
                         target='_blank'
                     >
-                            ILove PDF
+                            Opción 1
                     </a>
                 </li>
                 <li>
@@ -200,7 +191,7 @@ export default function Internos(){
                         href='https://rb.gy/ieobpc'
                         target='_blank'
                     >
-                            Online PDF editor
+                            Opción 2
                     </a>
                 </li>
             </ul>
@@ -234,7 +225,7 @@ export default function Internos(){
                         target='_blank'
                         className={styles.privacity}
                     >
-                    Acepto el aviso de privacidad
+                    &nbsp;Acepto el aviso de privacidad
                     </a>
                     <span className={styles.privacity} onClick={rules}>&nbsp;y reglamento</span>
                 </label>
@@ -252,6 +243,7 @@ export default function Internos(){
                 <select name='estudiante_genero' onChange={onChange}>
                     <option onChange={onChange}>Masculino</option>
                     <option onChange={onChange}>Femenino</option>
+                    <option onChange={onChange}>No binario</option>
                 </select>
                 <label>Estado civil:</label>
                 <input type='text' name='estudiante_estado_civil' onChange={onChange} required/>
@@ -289,9 +281,9 @@ export default function Internos(){
                 className={styles.privacityTitle}
                 onClick={documentation}
                 >
-                    Para tu documentación considera estos puntos (click aquí)
+                    Revisa la documentación que debes cargar (da click aquí)
                 </label>
-                <label>Documentos adjuntos en un solo archivo pdf (Máximo 2MB)</label>
+                <label>Deberás cargar en un solo archivo todos tus documentos (Máximo 2MB)</label>
                 <input type='file' name='estudiante_fotografia' onChange={handleFileChange} required/>
                 <label>Nombre completo de aceptación:</label>
                 <input type='text' name='estudiante_nombre_aceptacion' onChange={onChange} required/>

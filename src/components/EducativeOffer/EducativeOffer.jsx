@@ -16,13 +16,13 @@ export const EducativeOffer = ()=>{
                         className={styles.adTitle}
                         href='/convocatoria'
                     >
-                        Convocatoria para proceso de selección
+                        <span>Residencias médicas 2024-2025</span>
                     </Link>
                 </div>
             <div className={`flexContainer ${styles.adsWrapper}`}>
                 <div>
                     <span
-                        className={styles.adTitle}
+                        className={styles.adSubtitle}
                     >
                         Pregrado
                     </span>
@@ -53,7 +53,7 @@ export const EducativeOffer = ()=>{
                 </div>
                 <div>
                     <span
-                        className={styles.adTitle}
+                        className={styles.adSubtitle}
                     >
                         Posgrado
                     </span>

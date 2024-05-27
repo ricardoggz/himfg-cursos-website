@@ -31,7 +31,7 @@ const Avisos = ()=>{
 const Instrucciones = ({})=>{
   return (
     <>
-      <Title>Instrucciones</Title>
+      <Title>Instrucciones - Cursos de posgrado de alta especialidad</Title>
       <div className={`flexContainer ${styles.avisosWrapper}`}>
         <p>
           Para participar en el proceso de selección a las residencias de pediatría, genética, especialidades pediátricas, estomatología, ortodoncia y nutrición clínica pediátrica deberá completar el siguiente formulario, cuyo tiempo para responderlo se ha estimado entre 15 y 20 minutos (no tiene límite de tiempo para responderlo). Requiere además tener a la mano los siguientes documentos:
@@ -50,7 +50,7 @@ const Instrucciones = ({})=>{
         <p>Al terminar el llenado del formulario, verificar la información e imprimir el comprobante de registro en línea.</p>
         <p>Una vez concluido su registro en línea deberá descargar el documento “Currículum Vitae” que deberá llenar, imprimir y anexar a su documentación.</p>
         <p>No olvide que para quedar formalmente inscrito en el proceso de selección deberá entregar en la Dirección de Enseñanza y Desarrollo Académico del Hospital Infantil de México Federico Gómez, el comprobante de registro en línea, el formato requisitado de currículum vitae, la documentación requerida en la convocatoria 2024 y el pago correspondiente.</p>
-        <p>Usted podrá realizar su registro en línea a la hora que le sea posible. Si requiere asistencia técnica podrá obtenerla de lunes a viernes de 8:00 a 14:00 hrs.</p>
+        <p>Usted podrá realizar su registro en línea a la hora que le sea posible. Si requiere asistencia técnica podrá obtenerla de lunes a viernes de 8:00 a 14:00 horas en el teléfono <b>5552-9917 ext. 2344</b> con <b>Juana García Chávez</b></p>
         <p>Para continuar debe leer el y aceptar el Aviso de Privacidad.</p>
         <p>Por último le sugerimos consultar la ultima versión de la convocatoria 2024 para enterarse de cambios o adecuaciones, también consulte el apartado "Avisos Importantes" que se encuentra el el menú superior.</p>
       </div>

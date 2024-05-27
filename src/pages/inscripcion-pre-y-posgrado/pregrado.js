@@ -310,7 +310,7 @@ export default function PreGradeForm(){
                         href='https://www.ilovepdf.com/es'
                         target='_blank'
                     >
-                            ILove PDF
+                            Opción 1
                     </a>
                 </li>
                 <li>
@@ -318,7 +318,7 @@ export default function PreGradeForm(){
                         href='https://rb.gy/ieobpc'
                         target='_blank'
                     >
-                            Online PDF editor
+                            Opción 2
                     </a>
                 </li>
             </ul>
@@ -352,7 +352,7 @@ export default function PreGradeForm(){
                         target='_blank'
                         className={styles.privacity}
                     >
-                    Acepto el aviso de privacidad
+                    &nbsp;Acepto el aviso de privacidad
                     </a>
                     <span className={styles.privacity} onClick={rules}>&nbsp;y reglamento</span>
                 </label>
@@ -370,6 +370,7 @@ export default function PreGradeForm(){
                 <select name='estudiante_genero' onChange={onChange}>
                     <option onChange={onChange}>Masculino</option>
                     <option onChange={onChange}>Femenino</option>
+                    <option onChange={onChange}>No binario</option>
                 </select>
                 <label>Estado civil:</label>
                 <input type='text' name='estudiante_estado_civil' onChange={onChange} required/>
@@ -407,9 +408,9 @@ export default function PreGradeForm(){
                 className={styles.privacityTitle}
                 onClick={documentation}
                 >
-                    Para tu documentación considera estos puntos (click aquí)
+                    Revisa la documentación que debes cargar (da click aquí)
                 </label>
-                <label>Documentos adjuntos en un solo archivo pdf (Máximo 2MB)</label>
+                <label>Deberás cargar en un solo archivo todos tus documentos (Máximo 2MB)</label>
                 <input type='file' name='estudiante_fotografia' onChange={handleFileChange} required/>
                 <label>Nombre completo de aceptación:</label>
                 <input type='text' name='estudiante_nombre_aceptacion' onChange={onChange} required/>

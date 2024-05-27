@@ -16,7 +16,7 @@
 .adsWrapper{
     display:flex;
     gap:1rem;
-    padding-top:5rem;
+    padding-top:2.5rem;
     width:100%;
 }
 .adsWrapper div{
@@ -25,15 +25,26 @@
     width:100%;
 }
 .adTitle{
+    align-items: center;
     background: url('https://archivos.him.edu.mx/graficos/especialidades/fondo-listado.png') no-repeat;
     background-size: contain;
     background-position: center;
     color:#fff;
+    display: flex;
     font-size: 1.5rem;
-    padding:2.5rem;
+    padding:3rem;
     text-align: center;
     width:100%;
+    justify-content: center;
     text-decoration: none;
+}
+.adTitle span{
+    padding-bottom:1rem;
+}
+.adSubtitle{
+    color:#95a5a6;
+    font-size: 2.5rem;
+    text-align: center;
 }
 .adList{
     display: flex;
@@ -56,7 +67,7 @@
 .registerTitle{
     color:var(--red-primary);
     font-size: 4rem;
-    padding-bottom:4rem;
+    padding-bottom:2rem;
 }
 .convocatoriaWrapper{
     display:flex;
