@@ -59,7 +59,10 @@ export default function Avisos(){
                 <center><h3 className={styles.avisoTitle}>Avisos</h3></center>
                 <br/>
                 <Title>CONVOCATORIA PARA ASPIRANTES A CURSOS DE ESPECIALIZACIÓN 2024</Title>
-                <div className={`flexContainer ${styles.adsWrapper}`}>
+
+                <center>Información no disponible</center>
+                {
+                    /*<div className={`flexContainer ${styles.adsWrapper}`}>
                     <div>
                         <span className={styles.adTitle}>Aceptados</span>
                         <span>
@@ -74,7 +77,8 @@ export default function Avisos(){
                         </span>
                         <a href='/'>Ver aquí</a>
                     </div>
-                </div>
+                    </div>*/
+                }
             </Container>
         </>
     )
