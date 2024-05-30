@@ -37,7 +37,9 @@ const nextConfig = {
       '/convocatoria' : {page: '/convocatoria'},
       //'/convocatoria/registro' : {page: '/convocatoria/registro'},
       '/convocatoria/avisos' : {page: '/convocatoria/avisos'},
-      '/convocatoria/descargas' : {page: '/convocatoria/descargas'}
+      '/convocatoria/descargas' : {page: '/convocatoria/descargas'},
+      '/convocatoria/preguntas-frecuentes' : {page: '/convocatoria/preguntas-frecuentes'},
+      '/convocatoria/informes' : {page: '/convocatoria/informes'},
     }
   },
   env:{
