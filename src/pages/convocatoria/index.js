@@ -21,9 +21,9 @@ export default function Convocatoria(){
                 </a>
             </li>
             <li>
-                <Link href='/convocatoria/registro'>
+                <a href='http://ense.himfg.edu.mx/convocatoria/proceso_registro.html'>
                     Registro en línea
-                </Link>
+                </a>
             </li>
             <li>
                 <a

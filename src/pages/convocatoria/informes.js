@@ -39,9 +39,9 @@ export default function Informes(){
                         </a>
                     </li>
                     <li>
-                        <Link href='/convocatoria/descargas'>
-                            Descargas
-                        </Link>
+                        <a href='http://ense.himfg.edu.mx/convocatoria/proceso_registro.html'>
+                            Registro en línea
+                        </a>
                     </li>
                     <li>
                         <Link href='/convocatoria/preguntas-frecuentes'>
