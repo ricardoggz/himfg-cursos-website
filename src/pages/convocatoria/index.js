@@ -12,14 +12,6 @@ export default function Convocatoria(){
                     Avisos
                 </Link>
             </li>
-            <li>
-                <a
-                href='https://archivos.him.edu.mx/graficos/ensenanza/pre-y-posgrado/convocatoria/CONVOCATORIA_2024.pdf '
-                target='_blank'
-                >
-                    Convocatoria PDF
-                </a>
-            </li>
             {/*<li>
                 <a
                     href='https://archivos.him.edu.mx/graficos/ensenanza/pre-y-posgrado/convocatoria/CONVOCATORIA_2024.pdf '
