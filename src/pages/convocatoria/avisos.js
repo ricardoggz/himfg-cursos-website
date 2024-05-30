@@ -5,7 +5,7 @@ import { Container, Title } from "@/components"
 export default function Avisos(){
     const adStyle={
         color:'red',
-        fontSize:'1.5rem'
+        fontSize:'1.3rem'
     }
     return (
         <>
@@ -66,7 +66,7 @@ export default function Avisos(){
 
                 <center>
                     <h2 style={adStyle}>
-                        El registro se llevará a cabo el primero de Junio de 2024
+                        El registro en línea solo se podrá realizar a partir del 1° de Julio de 2024
                     </h2>
                 </center>
                 {
