@@ -54,7 +54,7 @@ export default function Convocatoria(){
             <figure>
                 <img src='https://archivos.him.edu.mx/graficos/convocatoria/foto-2024.jpg'/>
             </figure>
-            <Title>CONVOCATORIA PARA ASPIRANTES A CURSOS DE ESPECIALIZACIÓN 2024</Title>
+            <Title>CONVOCATORIA PARA ASPIRANTES A CURSOS DE ESPECIALIZACIÓN 2025</Title>
             <center><h1>BIENVENIDA</h1></center>
             <br/>
             <br/>

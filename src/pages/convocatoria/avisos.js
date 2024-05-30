@@ -3,6 +3,10 @@ import styles from './styles.module.css'
 import { Container, Title } from "@/components"
 
 export default function Avisos(){
+    const adStyle={
+        color:'red',
+        fontSize:'1.5rem'
+    }
     return (
         <>
             <nav className={styles.menu}>
@@ -58,9 +62,13 @@ export default function Avisos(){
             <Container>
                 <center><h3 className={styles.avisoTitle}>Avisos</h3></center>
                 <br/>
-                <Title>CONVOCATORIA PARA ASPIRANTES A CURSOS DE ESPECIALIZACIÓN 2024</Title>
+                <Title>CONVOCATORIA PARA ASPIRANTES A CURSOS DE ESPECIALIZACIÓN 2025</Title>
 
-                <center>Información no disponible</center>
+                <center>
+                    <h2 style={adStyle}>
+                        El registro se llevará a cabo el primero de Junio de 2024
+                    </h2>
+                </center>
                 {
                     /*<div className={`flexContainer ${styles.adsWrapper}`}>
                     <div>
