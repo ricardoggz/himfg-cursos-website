@@ -59,13 +59,25 @@ export default function Descargas(){
                 <Title>Descargas disponibles</Title>
                 <ol className={`flexContainer ${styles.fileList}`}>
                     <li>
-                        <a href='https://archivos.him.edu.mx/graficos/convocatoria/curriculum.docx'>
+                        <a
+                            href='https://archivos.him.edu.mx/graficos/convocatoria/carta_seleccion.pdf'
+                            target='_blank'
+                        >
                             Carta de selección (descargar)
                         </a>
                     </li>
                     <li>
-                        <a href='https://archivos.him.edu.mx/graficos/convocatoria/CURRICULUM_VITAE_PLANTILLA.doc'>
+                        <a
+                            href='https://archivos.him.edu.mx/graficos/convocatoria/curriculum_formato.pdf'
+                        >
                             Formato currículum (descargar)
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href='https://archivos.him.edu.mx/graficos/convocatoria/convenio.pdf'
+                        >
+                            Convenio (descargar)
                         </a>
                     </li>
                 </ol>
