@@ -39,6 +39,11 @@ export default function Informes(){
                         </a>
                     </li>
                     <li>
+                        <Link href='/convocatoria/descargas'>
+                            Descargas
+                        </Link>
+                    </li>
+                    <li>
                         <Link href='/convocatoria/preguntas-frecuentes'>
                             Preguntas frecuentes
                         </Link>
@@ -57,7 +62,7 @@ export default function Informes(){
                         <p>La Dirección de Enseñanza y Desarrollo Académico del HIMFG, se encuentra ubicada en el segundo piso del Edificio "Arturo Mundet", La ubicación del Hospital la encontrará en la parte inferior de esta página.</p>
                     </div>
                     <div>
-                        <p>Diana Aidée Guerrero: Subdirectora de Enseñanza y responsable del proceso</p>
+                        <p>Diana Aideé Guerrero: Subdirectora de Enseñanza y responsable del proceso</p>
                         <p>subense@himfg.edu.mx</p>
                     </div>
                     <div>
@@ -78,7 +83,7 @@ export default function Informes(){
                     </div>
                     <div>
                         <p>Verónica Quevedo Salero: Logística, portal de internet y registro en línea.</p>
-                        <p>veronicaqs@gmail.com</p>
+                        <p>vronicaqs@gmail.com</p>
                     </div>
                     <div>
                         <p>Nicolás Hernández Hdez.: Logística, portal de internet y registro en línea.</p>
