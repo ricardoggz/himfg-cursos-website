@@ -17,6 +17,10 @@ export const Jumbotron =()=>{
         }
         const images = [
             {
+                url: 'https://archivos.him.edu.mx/BannerResidentes-1.webp',
+                link:'/'
+            },
+            /*{
                 url: 'https://archivos.him.edu.mx/Calor-01.webp',
                 link:'/'
             },
@@ -35,7 +39,7 @@ export const Jumbotron =()=>{
             {
                 url: 'https://archivos.him.edu.mx/banner-5.png',
                 link:'/'
-            },
+            },*/
         ]
           return (
             <Slider {...settings}>

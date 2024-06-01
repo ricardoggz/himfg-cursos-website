@@ -33,11 +33,11 @@ export const Header =()=>{
                                 Inicio
                             </Link>
                         </li>
-                        <li>
+                        {/*<li>
                             <Link href='/register' onClick={open}>
                                 Registro
                             </Link>
-                        </li>
+                        </li>*/}
                         <li>
                             <a href='http://himfg.com.mx/interna/transparencia/transparencia.php' target='_blank'>
                                 Transparencia
@@ -48,11 +48,11 @@ export const Header =()=>{
                                 Protección de datos personales
                             </a>
                         </li>
-                        <li>
+                        {/*<li>
                             <Link href='/userlogin' onClick={open}>
                                 Iniciar sesión
                             </Link>
-                        </li>
+                        </li>*/}
                         <li>
                             <Link href='/video/scp-2024' onClick={open}>
                                 Sesión Clínico Patológica

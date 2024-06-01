@@ -21,14 +21,14 @@ export default function Avisos(){
                             Avisos
                         </Link>
                     </li>
-                    {/*<li>
+                    <li>
                         <a
-                            href='https://archivos.him.edu.mx/graficos/ensenanza/pre-y-posgrado/convocatoria/CONVOCATORIA_2024.pdf '
+                            href='https://archivos.him.edu.mx/graficos/ensenanza/pre-y-posgrado/convocatoria/CONVOCATORIA_2024.pdf'
                             target='_blank'
                         >
                             Convocatoria PDF
                         </a>
-                    </li>*/}
+                    </li>
                     {/*<li>
                         <a href='http://ense.himfg.edu.mx/convocatoria/proceso_registro.html'>
                             Registro en línea
