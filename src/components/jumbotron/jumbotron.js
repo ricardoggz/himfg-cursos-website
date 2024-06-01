@@ -18,7 +18,7 @@ export const Jumbotron =()=>{
         const images = [
             {
                 url: 'https://archivos.him.edu.mx/BannerResidentes-1.webp',
-                link:'/'
+                link:'http://himfg.com.mx/convocatoria/'
             },
             /*{
                 url: 'https://archivos.him.edu.mx/Calor-01.webp',
