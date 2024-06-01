@@ -19,12 +19,12 @@ export default function Descargas(){
                     </li>
                     <li>
                         <a
-                            href='https://archivos.him.edu.mx/graficos/ensenanza/pre-y-posgrado/convocatoria/CONVOCATORIA_2024.pdf'
+                            href='http://himfg.com.mx/archivos/CONVOCATORIA_2024.pdf'
                             target='_blank'
                         >
-                            Convocatoria PDF
+                         Convocatoria PDF
                         </a>
-                    </li>
+                     </li>
                     {/*<li>
                         <a href='http://ense.himfg.edu.mx/convocatoria/proceso_registro.html'>
                             Registro en línea
@@ -32,7 +32,7 @@ export default function Descargas(){
                     </li>*/}
                     <li>
                         <a
-                        href='https://archivos.him.edu.mx/graficos/ensenanza/pre-y-posgrado/convocatoria/FLUJOGRAMA.pdf'
+                        href='http://himfg.com.mx/archivos/FLUJOGRAMA.pdf'
                         target='_blank'
                         >
                             Flujograma
@@ -45,7 +45,7 @@ export default function Descargas(){
                     </li>
                     <li>
                         <Link href='/convocatoria/preguntas-frecuentes'>
-                            Frecuentes preguntas
+                            Preguntas frecuentes
                         </Link>
                     </li>
                     <li>
@@ -60,7 +60,7 @@ export default function Descargas(){
                 <ol className={`flexContainer ${styles.fileList}`}>
                     <li>
                         <a
-                            href='https://archivos.him.edu.mx/graficos/convocatoria/carta_seleccion.pdf'
+                            href='http://himfg.com.mx/archivos/carta_seleccion.pdf'
                             target='_blank'
                         >
                             Carta de selección (descargar)
@@ -68,14 +68,16 @@ export default function Descargas(){
                     </li>
                     <li>
                         <a
-                            href='https://archivos.him.edu.mx/graficos/convocatoria/curriculum_formato.pdf'
+                            href='http://himfg.com.mx/archivos/curriculum_formato.pdf'
+                            target='_blank'
                         >
                             Formato currículum (descargar)
                         </a>
                     </li>
                     <li>
                         <a
-                            href='https://archivos.him.edu.mx/graficos/convocatoria/convenio.pdf'
+                            href='http://himfg.com.mx/archivos/convenio.pdf'
+                            target='_blank'
                         >
                             Convenio (descargar)
                         </a>

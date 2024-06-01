@@ -19,7 +19,7 @@ export default function Informes(){
                     </li>
                     <li>
                         <a
-                            href='https://archivos.him.edu.mx/graficos/ensenanza/pre-y-posgrado/convocatoria/CONVOCATORIA_2024.pdf'
+                            href='http://himfg.com.mx/archivos/CONVOCATORIA_2024.pdf'
                             target='_blank'
                         >
                             Convocatoria PDF
@@ -32,7 +32,7 @@ export default function Informes(){
                     </li>*/}
                     <li>
                         <a
-                        href='https://archivos.him.edu.mx/graficos/ensenanza/pre-y-posgrado/convocatoria/FLUJOGRAMA.pdf'
+                        href='http://himfg.com.mx/archivos/FLUJOGRAMA.pdf'
                         target='_blank'
                         >
                             Flujograma
