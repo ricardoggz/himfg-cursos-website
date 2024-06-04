@@ -66,7 +66,7 @@ export default function Avisos(){
 
                 <center>
                     <h2 style={adStyle}>
-                        El registro en línea solo se podrá realizar a partir del 1° de Julio de 2024
+                        El registro en línea solo se podrá realizar a partir del 15 de Junio de 2024
                     </h2>
                 </center>
                 {
