@@ -12,11 +12,14 @@
     width:100%;
 }
 .especialidadesGrid li{
-    border:1px solid var(--golden-primary);
+    align-items: center;
     background: url('https://archivos.him.edu.mx/graficos/especialidades/fondo-listado.png') no-repeat;
-    background-position: bottom;
+    background-position: center;
     background-size: contain;
+    border-radius: 30px;
     color:var(--white-primary);
+    display:flex;
+    justify-content: center;
     list-style: none;
     padding:3rem;
     text-align: center;
@@ -30,7 +33,6 @@
         grid-template-columns: 1fr;
     }
     .especialidadesGrid li{
-        border-radius: 30px;
         background-position: top;
         background-size: cover;
         padding:1.5rem;

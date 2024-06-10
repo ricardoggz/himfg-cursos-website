@@ -5,139 +5,139 @@ export default function Especialidades(){
     const especialidades = [
         {
             name: 'Alergia e Inmunología',
-            link: '/'
+            link: '/especialidades'
         },
         {
             name: 'Audiología y Foniatria',
-            link:'departamento-de-audiologia-y-foniatria'
+            link:'direccion/departamento-de-audiologia-y-foniatria'
         },
         {
             name: 'Cardiología',
-            link: 'departamento-de-cardiologia'
+            link: 'direccion/departamento-de-cardiologia'
         },
         {
             name: 'C.E.D.I.',
-            link:'/'
+            link:'/especialidades'
         },
         {
             name: 'Dermatología',
-            link:'/'
+            link:'/especialidades'
         },
         {
             name: 'Endocrinología',
-            link:'departamento-de-endocrinologia'
+            link:'direccion/departamento-de-endocrinologia'
         },
         {
             name: 'Gastroenterología y Nutrición',
-            link:'gastroenterologia-y-nutricion'
+            link:'direccion/gastroenterologia-y-nutricion'
         },
         {
             name:  'Genética',
-            link:  'genetica-y-genomica'
+            link:  'direccion/genetica-y-genomica'
         },
         {
             name: 'Hematología',
-            link: 'departamento-de-hemato-oncologia'
+            link: 'direccion/departamento-de-hemato-oncologia'
         },
         {
             name: 'Infectología',
-            link: 'departamento-de-infectologia'
+            link: 'direccion/departamento-de-infectologia'
         },
         {
             name: 'Psiquiatría Psicología y medicina del adolescente',
-            link: 'psiquiatria-y-medicina-del-adolescente'
+            link: 'direccion/psiquiatria-y-medicina-del-adolescente'
         },
         {
             name: 'Nefrología',
-            link: 'departamento-de-nefrologia'
+            link: 'direccion/departamento-de-nefrologia'
         },
         {
             name: 'Neonatología',
-            link: 'departamento-de-neonatologia'
+            link: 'direccion/departamento-de-neonatologia'
         },
         {
             name: 'Neumología',
-            link: '/'
+            link: '/especialidades'
         },
         {
             name: 'Neurología',
-            link: 'departamento-de-neurologia'
+            link: 'direccion/departamento-de-neurologia'
         },
         {
             name: 'Oncología',
-            link: 'departamento-de-hemato-oncologia'
+            link: 'direccion/departamento-de-hemato-oncologia'
         },
         {
             name: 'Rehabilitación',
-            link: 'departamento-de-rehabilitacion'
+            link: 'direccion/departamento-de-rehabilitacion'
         },
         {
             name: 'CLINDI',
-            link: '/'
+            link: '/especialidades'
         },
         {
             name: 'Cirugía de Tórax',
-            link: 'cirugia-cardiovascular-torax-y-endoscopia'
+            link: 'direccion/cirugia-cardiovascular-torax-y-endoscopia'
         },
         {
             name: 'Cirugía Anorrectal',
-            link: '/'
+            link: '/especialidades'
         },
         {
             name:  'Cirugía Cardiovascular',
-            link: 'cirugia-cardiovascular-torax-y-endoscopia'
+            link: 'direccion/cirugia-cardiovascular-torax-y-endoscopia'
         },
         {
             name: 'Cirugía General',
-            link: '/'
+            link: '/especialidades'
         },
         {
             name: 'Cirugía Plástica',
-            link:'/'
+            link:'/especialidades'
         },
         {
             name: 'Cuidados Paliativos',
-            link: 'cuidados-paleativos-y-calidad-de-vida'
+            link: 'direccion/cuidados-paleativos-y-calidad-de-vida'
         },
         {
             name: 'Odontopediatría',
-            link: 'departamento-de-estomatologia'
+            link: 'direccion/departamento-de-estomatologia'
         },
         {
             name: 'Ortodoncia',
-            link: 'departamento-de-estomatologia'
+            link: 'direccion/departamento-de-estomatologia'
         },
         {
             name: 'Cirugía maxilofacial',
-            link: 'departamento-de-estomatologia'
+            link: 'direccion/departamento-de-estomatologia'
         },
         {
             name: 'Neurocirugía',
-            link: 'departamento-de-neurocirugia'
+            link: 'direccion/departamento-de-neurocirugia'
         },
         {
             name: 'Oftalmología',
-            link: '/'
+            link: '/especialidades'
         },
         {
             name: 'Ortopedia',
-            link: 'departamento-de-ortopedia'
+            link: 'direccion/departamento-de-ortopedia'
         },
         {
             name: 'Otorrinolaringología',
-            link: '/'
+            link: '/especialidades'
         },
         {
             name: 'Urología',
-            link: 'departamento-de-urologia'
+            link: 'direccion/departamento-de-urologia'
         },
         {
             name: 'Medicina del Dolor y Anestesia',
-            link: 'anestesia-y-algologia'
+            link: 'direccion/anestesia-y-algologia'
         },
         {
             name: 'Pediatría del Desarrollo',
-            link : '/'
+            link : '/especialidades'
         }
     ]
     return (
@@ -153,7 +153,7 @@ export default function Especialidades(){
                         {
                             especialidades.map((esp, i)=>(
                                 <li key={i}>
-                                    <Link href={`direccion/${esp.link}`}>
+                                    <Link href={`${esp.link}`}>
                                         {esp.name}
                                     </Link>
                                 </li>
