@@ -25,11 +25,11 @@ export default function Descargas(){
                          Convocatoria PDF
                         </a>
                      </li>
-                    {/*<li>
+                    <li>
                         <a href='http://ense.himfg.edu.mx/convocatoria/proceso_registro.html'>
                             Registro en línea
                         </a>
-                    </li>*/}
+                    </li>
                     <li>
                         <a
                         href='http://himfg.com.mx/archivos/FLUJOGRAMA.pdf'
