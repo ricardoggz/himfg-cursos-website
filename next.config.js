@@ -40,6 +40,7 @@ const nextConfig = {
       '/convocatoria/descargas' : {page: '/convocatoria/descargas'},
       '/convocatoria/preguntas-frecuentes' : {page: '/convocatoria/preguntas-frecuentes'},
       '/convocatoria/informes' : {page: '/convocatoria/informes'},
+      '/dano-cero' : {page: '/dano-cero'},
     }
   },
   env:{

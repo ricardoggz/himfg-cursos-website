@@ -58,6 +58,11 @@ export const Header =()=>{
                                 Sesión Clínico Patológica
                             </Link>
                         </li>
+                        <li>
+                            <Link href='/dano-cero' onClick={open}>
+                                Daño cero
+                            </Link>
+                        </li>
                     </>
                     :
                     <>
