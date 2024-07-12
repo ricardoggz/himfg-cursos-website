@@ -63,7 +63,7 @@ export default function Descargas(){
                             href='http://himfg.com.mx/archivos/carta_seleccion.pdf'
                             target='_blank'
                         >
-                            Carta de selección (descargar)
+                            Carta de selección en formato .pdf (descargar)
                         </a>
                     </li>
                     <li>
@@ -71,7 +71,15 @@ export default function Descargas(){
                             href='http://himfg.com.mx/archivos/curriculum_formato.pdf'
                             target='_blank'
                         >
-                            Formato currículum (descargar)
+                            Formato currículum en formato .pdf (descargar)
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href='http://himfg.com.mx/archivos/curriculum.docx'
+                            target='_blank'
+                        >
+                            Formato currículum en formato .docx (descargar)
                         </a>
                     </li>
                     <li>
@@ -79,7 +87,7 @@ export default function Descargas(){
                             href='http://himfg.com.mx/archivos/convenio.pdf'
                             target='_blank'
                         >
-                            Convenio (descargar)
+                            Convenio en formato .pdf (descargar)
                         </a>
                     </li>
                 </ol>
