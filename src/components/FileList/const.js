@@ -1,5 +1,66 @@
 export const infoContable = [
     {
+        title: 2024,
+        content:[
+            {
+                link: 'https://archivos.him.edu.mx/graficos/administracion/subdireccion-recursos-financieros/informacion-contable/2024/2024-1.pdf',
+                title:'Estados analítico y otros pasivos'
+            },
+            {
+                link: 'https://archivos.him.edu.mx/graficos/administracion/subdireccion-recursos-financieros/informacion-contable/2024/2024-2.pdf',
+                title: 'Estado analítico del activo'
+            },
+            {
+                link: 'https://archivos.him.edu.mx/graficos/administracion/subdireccion-recursos-financieros/informacion-contable/2024/2024-3.pdf',
+                title: 'Estado de actividades'
+            },
+            {
+                link: 'https://archivos.him.edu.mx/graficos/administracion/subdireccion-recursos-financieros/informacion-contable/2024/2024-4.pdf',
+                title: 'Estados de cambios de ubicación financiera'
+            },
+            {
+                link: 'https://archivos.him.edu.mx/graficos/administracion/subdireccion-recursos-financieros/informacion-contable/2024/2024-5.pdf',
+                title: 'Estados de cambios de flujos de efectivo'
+            },
+            {
+                link: 'https://archivos.him.edu.mx/graficos/administracion/subdireccion-recursos-financieros/informacion-contable/2024/2024-6.pdf',
+                title: 'Estados de situación financiera'
+            },
+            {
+                link: 'https://archivos.him.edu.mx/graficos/administracion/subdireccion-recursos-financieros/informacion-contable/2024/2024-7.pdf',
+                title: 'Estados de variación de hacienda pública'
+            },
+            {
+                link: 'https://archivos.him.edu.mx/graficos/administracion/subdireccion-recursos-financieros/informacion-contable/2024/2024-8.pdf',
+                title:'Estados analítico y otros pasivos 2do trimestre'
+            },
+            {
+                link: 'https://archivos.him.edu.mx/graficos/administracion/subdireccion-recursos-financieros/informacion-contable/2024/2024-9.pdf',
+                title: 'Estado analítico del activo 2do trimestre'
+            },
+            {
+                link: 'https://archivos.him.edu.mx/graficos/administracion/subdireccion-recursos-financieros/informacion-contable/2024/2024-10.pdf',
+                title: 'Estado de actividades 2do trimestre'
+            },
+            {
+                link: 'https://archivos.him.edu.mx/graficos/administracion/subdireccion-recursos-financieros/informacion-contable/2024/2024-11.pdf',
+                title: 'Estados de cambios de ubicación financiera 2do trimestre'
+            },
+            {
+                link: 'https://archivos.him.edu.mx/graficos/administracion/subdireccion-recursos-financieros/informacion-contable/2024/2024-12.pdf',
+                title: 'Estados de cambios de flujos de efectivo 2do trimestre'
+            },
+            {
+                link: 'https://archivos.him.edu.mx/graficos/administracion/subdireccion-recursos-financieros/informacion-contable/2024/2024-13.pdf',
+                title: 'Estados de situación financiera 2do trimestre'
+            },
+            {
+                link: 'https://archivos.him.edu.mx/graficos/administracion/subdireccion-recursos-financieros/informacion-contable/2024/2024-14.pdf',
+                title: 'Estados de variación de hacienda pública 2do trimestre'
+            }
+        ]
+    },
+    {
         title: 2023,
         content:[
             {
