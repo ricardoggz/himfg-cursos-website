@@ -20,26 +20,10 @@ export const Jumbotron =()=>{
                 url: 'https://archivos.him.edu.mx/BannerResidentes-1.webp',
                 link:'http://himfg.com.mx/convocatoria/'
             },
-            /*{
-                url: 'https://archivos.him.edu.mx/Calor-01.webp',
-                link:'/'
-            },
             {
-                url:'https://archivos.him.edu.mx/Calor2-01.webp',
-                link:'/'
+                url: 'https://archivos.him.edu.mx/2do-banner.jpeg',
+                link:'https://archivos.him.edu.mx/Recomendaciones_Atencion_Oportuna_NNA_Discapacida_JULIO_24.pdf'
             },
-            {
-                url:'https://archivos.him.edu.mx/banner-6.webp',
-                link:'https://archivos.him.edu.mx/resultados-fondos-fet-2025.pdf'
-            },
-            {
-                url: 'https://archivos.him.edu.mx/banner-4.webp',
-                link:'https://archivos.him.edu.mx/reunion-anual.jpg'
-            },
-            {
-                url: 'https://archivos.him.edu.mx/banner-5.png',
-                link:'/'
-            },*/
         ]
           return (
             <Slider {...settings}>
