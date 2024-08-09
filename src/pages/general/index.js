@@ -8,7 +8,8 @@ import {
     informeAutoevaluacion,
     programaInstitucional,
     informeAvanceResultados,
-    informeAvanceResultados2022
+    informeAvanceResultados2022,
+    informeAvanceResultados2023_4
 } from './consts'
 import styles from '../../components/FileList/filelist.module.css'
 
@@ -98,6 +99,11 @@ const General = ()=>{
                     icon={<FaBook />}
                     title='Informe de Avance y Resultados 2022'
                     filelist={informeAvanceResultados2022}
+                />
+                <FileListModal
+                    icon={<FaBook />}
+                    title='Informe de Avance y Resultados 2023 - 2024'
+                    filelist={informeAvanceResultados2023_4}
                 />
             </div>
             </Container>

@@ -42,6 +42,17 @@ export const informeAvanceResultados2022 = [
         ]
     },
 ]
+export const informeAvanceResultados2023_4 = [
+    {
+        title: 'Informe de Avance y Resultados 2023 - 2024',
+        content:[
+            {
+                link: 'http://www.himfg.edu.mx/descargas/documentos/general/HIMFG_Informe_Avance_Resultados_2024.pdf',
+                title:'Descargar documento'
+            },
+        ]
+    },
+]
 
 export default function Consts(){
     return (<></>)
