@@ -64,7 +64,7 @@ export const Magazines = ()=>{
                 <span> Pediatric Cardiology</span>
             </a>
             <a
-                href='http://187.237.57.42/bmhim/consulta.html'
+                href='http://187.141.21.244/bmhim/consulta.html'
                 terget='_blank'
                 className={styles.hemeroListImage}
             >
