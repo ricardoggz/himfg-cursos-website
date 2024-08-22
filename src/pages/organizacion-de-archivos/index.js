@@ -406,6 +406,74 @@ export default function FilesOrganization(){
                     link:'descargas/documentos/ensenanza/hemerobiblioteca/OrganiArchivos/Formato_DCAI.xlsx"'
                 }
             ]
+        },
+        {
+            id:11,
+            title:'Normatividad en materia de archivos',
+            files:[
+                {
+                   file:'1. Guía para la Elaboración de Versiones Públicas',
+                   link:'descargas/documentos/ensenanza/hemerobiblioteca/OrganiArchivos/Guia_Versiones_Publicas.pdf'
+                },
+                {
+                    file:'2. Instructivo para el tramité de baja documental de archivos del Gobierno Federal',
+                    link:'descargas/documentos/orarchivos/InstructivoBajasDocumentales_24082012.pdf'
+                },
+                {
+                    file:'3. Instructivo Guía Simple de Archivos',
+                    link:'descargas/documentos/transparencia/transpinfo/instructivo_guia__simple_archivos.pdf'
+                },
+                {
+                    file:'4. Ley Federal de Archivos',
+                    link:'descargas/documentos/ensenanza/hemerobiblioteca/OrganiArchivos/hemero/LeyFederalArchivos.pdf'
+                },
+                {
+                    file:'5. Ley Federal de Transparencia y Acceso a la Información Pública Gubernamental',
+                    link:'descargas/documentos/ensenanza/hemerobiblioteca/OrganiArchivos/hemero/LeyFederalTransparenciaAccesoInformacionPublicaGuber.pdf'
+                },
+                {
+                    file:'6. Ley Federal de Protección de Datos Personales en Posesión de los Particulares',
+                    link:'descargas/documentos/ensenanza/hemerobiblioteca/OrganiArchivos/LFPDPPP2010.pdf'
+                },
+                {
+                    file:'7. Ley General de Transparencia y Acceso a la Información Pública',
+                    link:'descargas/documentos/ensenanza/hemerobiblioteca/OrganiArchivos/hemero/LGTAIP2015-05.pdf'
+                },
+                {
+                    file:'8. Lineamientos Generales para la Organización y Conservación de los Archivos de las Dependencias y Entidades de la Administración Pública Federal',
+                    link:'descargas/documentos/ensenanza/hemerobiblioteca/OrganiArchivos/hemero/LineaGeneOrgConserArchDependEntidadesAdministracionPublicaFederal.pdf'
+                },
+                {
+                    file:'9. Manual Administrativo de Aplicación General en Materia de Recursos Materiales y Servicios Generales en materia de Archivos',
+                    link:'descargas/documentos/ensenanza/hemerobiblioteca/OrganiArchivos/hemero/ManuaSFParchivos1.pdf'
+                },
+                {
+                    file:'10. Reglamento de la ley Federal de Archivos',
+                    link:'descargas/documentos/ensenanza/hemerobiblioteca/OrganiArchivos/hemero/Reg_LFA_2015.pdf'
+                },
+                {
+                    file:'11. Lineamientos técnicos generales para la publicación, homologación y estandarización de la información de las obligaciones establecidas en el título quinto y en la fracción IV del artículo 31 de la Ley General de Transparencia y Acceso a la Información Pública',
+                    link:'descargas/documentos/ensenanza/hemerobiblioteca/OrganiArchivos/hemero/Lineamientos_obligaciones_transparencia.pdf'
+                },
+                {
+                    file:'12. DECRETO por el que se abroga la LEY Federal de Transparencia y Acceso a la Información Pública Gubernamental y se expide la Ley Federal de Transparencia y Acceso a la Información Pública. DOF: 09/05/2016',
+                    link:'descargas/documentos/ensenanza/hemerobiblioteca/OrganiArchivos/hemero/LeyFederalArchivos2016.pdf'
+                },
+                {
+                    file:'13. Ley General de Archivos Comentada 2024',
+                    link:'descargas/documentos/ensenanza/hemerobiblioteca/OrganiArchivos/hemero/LeyFederalArchivos2024.pdf'
+                }
+            ]
+        },
+        {
+            id:12,
+            title:'Bibliografía en materia de archivos',
+            files:[
+                {
+                   file:'El Documento Electrónico en la Sociedad de la Información',
+                   link:'descargas/documentos/planeacion/Documentoelectronico.pdf'
+                },
+            ]
         }
     ]
     return (
