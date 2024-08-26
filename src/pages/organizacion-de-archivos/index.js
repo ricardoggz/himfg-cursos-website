@@ -196,7 +196,7 @@ export default function FilesOrganization(){
                 {
                     file:'Guía Simple de Archivos 2014',
                     link:'descargas/documentos/ensenanza/hemerobiblioteca/OrganiArchivos/GuiaSimpleArchivos2014.pdf'
-                }
+                },
             ]
         },
         {
@@ -369,6 +369,10 @@ export default function FilesOrganization(){
             id:10,
             title:'Formatos',
             files:[
+                {
+                    file:'Formato de inventario documental 2024',
+                    link:'descargas/documentos/ensenanza/hemerobiblioteca/OrganiArchivos/formato-inventario.doc'
+                 },
                 {
                    file:'Portada de expediente 2024',
                    link:'descargas/documentos/ensenanza/hemerobiblioteca/OrganiArchivos/Portada_de_expediente_2024.xls'

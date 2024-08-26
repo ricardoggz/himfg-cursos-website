@@ -77,7 +77,7 @@ const General = ()=>{
                         <li>2. El personal que labora tenga la mayor satisfacción factible. </li>
                         <li>3. Que se cuente con procesos eficientes en todas las áreas. </li>
                         <li>4. Se tengan recursos económicos óptimos. </li>
-                        <li><a href='http://www.himfg.edu.mx/descargas/documentos/general/r_ptrabajo.pdf'>Plan de trabajo 2019-2024</a></li>
+                        <li><a href='http://www.himfg.com.mx/descargas/documentos/general/r_ptrabajo.pdf'>Plan de trabajo 2019-2024</a></li>
                     </ul>
                 </FileListModal>
                 <FileListModal
