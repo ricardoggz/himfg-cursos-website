@@ -91,6 +91,7 @@
     .menu {
       display:none;
       flex-direction: column;
+      overflow-y: scroll;
     }
     .menuMobileWrapper{
       display: flex;
@@ -123,6 +124,7 @@
       list-style:none;
       transition: 500ms all ease-in-out;
       z-index: 100;
+      overflow-y: scroll;
     }
     .menuMobileList li{
       display: flex;

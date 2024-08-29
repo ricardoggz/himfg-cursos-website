@@ -303,7 +303,7 @@ function Menu() {
             href='/direccion/departamento-auxiliar-de-proyectos-de-investigacion'
           />
           <SubMenuItem
-            title="Departamento de Información Estatrégica en Investigación"
+            title="Departamento de Información Estratégica en Investigación"
             href='/direccion/departamento-de-infrmacion-estrategica-en-investigacion'
           />
           {/*Departamento de Investigación Clínica*/}
