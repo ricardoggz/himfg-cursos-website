@@ -22,6 +22,23 @@ export const Lititations = ()=>{
                     </li>
                 </ul>
             </FileListModal>
+            <FileListModal
+                icon={<FaBook />}
+                title='Lineamientos Generales para la regulación de los procedimientos de rendición de cuentas de Administración Pública Federal'
+            >
+                <span>Lineamientos Generales para la regulación de los procedimientos de rendición de cuentas de Administración Pública Federal</span>
+                <br/>
+                <ul>
+                    <li>
+                        <a
+                            href='https://himfg.edu.mx/administracion/LINEAMIENTOS_GENERALES_ADMINISTRACION_PUBLICA_FEDERAL.pdf'
+                            target='_blank'
+                        >
+                            Consultar Lineamientos
+                        </a>
+                    </li>
+                </ul>
+            </FileListModal>
         </div>
     )
 }
