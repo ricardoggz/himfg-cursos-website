@@ -16,7 +16,8 @@ import {
     HemeroOptions,
     FileList,
     Lititations,
-    Convocatorias
+    Convocatorias,
+    Anuarios
 } from "@/components"
 import Head from "next/head"
 
@@ -107,6 +108,14 @@ export default function Direction(){
                             <Container>
                                 <EducativeOffer/>
                             </Container>
+                            :
+                            null
+                        }
+                        {
+                            page.page_url==='bioestadistica-y-archivo-clinico' || page.page_url==='bioestadistica-y-archivo-clinico/'?
+                            <>
+                                <Anuarios />
+                            </>
                             :
                             null
                         }

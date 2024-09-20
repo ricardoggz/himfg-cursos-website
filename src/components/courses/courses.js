@@ -32,7 +32,7 @@ export const Courses = ()=>{
                 <Title>Oferta educativa - {selectedMonth.name}</Title>
                 <GridContainer>
                 {
-                    data.data.map((course)=>{
+                    filteredCourses.map((course)=>{
                         return (
                             <Card
                                 key={course.course_id}

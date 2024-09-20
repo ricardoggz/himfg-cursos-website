@@ -79,7 +79,7 @@ export const PaymentForm = () => {
   const getCypherData = async(data)=>{
     try {
       const resp = await axios.post(
-        'https://carolinamagos-001-site1.anytempurl.com/aes/decrypt',
+        'https://himfgcyper-001-site1.ltempurl.com/aes/decrypt',
         data
       )
       return resp.data
@@ -138,6 +138,7 @@ export const PaymentForm = () => {
             console.log(cypherMessage)
             cyperMessageToObject = JSON.parse(cypherMessage.plainText)
             console.log('Objeto a evaluar', cyperMessageToObject)
+            console.log(cyperMessageToObject.resultadoPayw)
           }
             if(cyperMessageToObject !== undefined && cyperMessageToObject.resultadoPayw === 'A'){
               if(formData!==null){
@@ -182,7 +183,7 @@ export const PaymentForm = () => {
                 student: user,
                 reference: paymentData.ControlNumber
               })
-              router.push('/ensenanza/offer')
+              router.push('/direccion/ensenanza')
             }
         },
         onCancel: function (res) {
@@ -325,7 +326,7 @@ export const PaymentForm = () => {
       })
     }
     await updateMaxRange()
-    router.push('/ensenanza/offer')
+    router.push('/direccion/ensenanza')
   }
   const handleImageChange =(evt)=>{
     const newFileName = randomFileName()
