@@ -53,7 +53,17 @@ export const informeAvanceResultados2023_4 = [
         ]
     },
 ]
-
+export const planAnual = [
+    {
+        title: 'Plan Anual de Trabajo 2024',
+        content:[
+            {
+                link: 'https://www.himfg.edu.mx/general/PAT_2024_HIMFG.pdf',
+                title:'Descargar documento'
+            },
+        ]
+    },
+]
 export default function Consts(){
     return (<></>)
 }

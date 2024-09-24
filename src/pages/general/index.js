@@ -9,7 +9,8 @@ import {
     programaInstitucional,
     informeAvanceResultados,
     informeAvanceResultados2022,
-    informeAvanceResultados2023_4
+    informeAvanceResultados2023_4,
+    planAnual
 } from './consts'
 import styles from '../../components/FileList/filelist.module.css'
 
@@ -65,9 +66,14 @@ const General = ()=>{
             <div className={`flexContainer ${styles.fileListGrid}`}>
                 <FileListModal
                     icon={<FaBook />}
-                    title='Plan quinquenal 2019-2024'
+                    title='Programa institucional HIMFG'
+                    filelist={programaInstitucional}
+                />
+                <FileListModal
+                    icon={<FaBook />}
+                    title='Plan quinquenal 2024-2028'
                 >
-                    <span>Plan quinquenal 2019-2024</span>
+                    <span>Plan quinquenal 2024-2028</span>
                     <br/>
                     <p>Analicé, desarrollé y afiné mi visión sobre el proyecto a cinco años. Está dirigido hacia ser un líder en la atención médica pediátrica con calidad y eficiencia, gestionar recursos financieros suficientes, promover la investigación, actualizar la enseñanza y mejorar en lo posibles al personal.</p>
                     <br/>
@@ -77,19 +83,14 @@ const General = ()=>{
                         <li>2. El personal que labora tenga la mayor satisfacción factible. </li>
                         <li>3. Que se cuente con procesos eficientes en todas las áreas. </li>
                         <li>4. Se tengan recursos económicos óptimos. </li>
-                        <li><a href='http://www.himfg.com.mx/descargas/documentos/general/r_ptrabajo.pdf'>Plan de trabajo 2019-2024</a></li>
+                        <li><a href='https://www.himfg.edu.mx/general/PPTChavez.pdf'>Descargar documento</a></li>
                     </ul>
                 </FileListModal>
                 <FileListModal
                     icon={<FaBook />}
-                    title='Informe de Autoevaluación del Director General del 1° de Enero al 30 de Junio de 2023'
-                    filelist={informeAutoevaluacion}
-                />
-                 <FileListModal
-                    icon={<FaBook />}
-                    title='Programa institucional HIMFG'
-                    filelist={programaInstitucional}
-                />
+                    title='Plan Anual de Trabajo 2024'
+                    filelist={planAnual}
+                />                
                 <FileListModal
                     icon={<FaBook />}
                     title='Informe de Avance y Resultados 2021'

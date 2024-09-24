@@ -82,17 +82,21 @@
 }
 .texts{
     display:flex;
+    flex-direction: column;
     gap:1rem;
+    justify-content: center;
     width:40%;
     margin: 0 auto;
 }
 .texts figure{
-    margin-top:11rem;
+    display:flex;
     width:100%;
     height:100%;
+    justify-content: center;
+    padding-top:5rem;
 }
 .texts img{
-    width:100%;
+    width:30%;
     height:100%;
 }
 .text{
@@ -100,7 +104,7 @@
     flex-direction: column;
     gap:1rem;
     text-align: justify;
-    padding: 7rem 0;
+    padding: 1rem 0;
     margin: 0 auto;
     max-width: 100%;
 }
