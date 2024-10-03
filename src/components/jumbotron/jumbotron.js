@@ -17,12 +17,12 @@ export const Jumbotron =()=>{
         }
         const images = [
             {
-                url: 'https://archivos.him.edu.mx/BannerResidentes-1.webp',
-                link:'https://himfg.edu.mx/convocatoria/'
+                url:'https://himfg.edu.mx/archivos/banners/banner-1.webp',
+                link:'https://himfg.edu.mx/archivos/documentos/comunicados/comunicado-1.pdf'
             },
             {
-                url: 'https://archivos.him.edu.mx/2do-banner.jpeg',
-                link:'https://archivos.him.edu.mx/Recomendaciones_Atencion_Oportuna_NNA_Discapacida_JULIO_24.pdf'
+                url:'https://archivos.him.edu.mx/Banner_Mesa_de_trabajo_1.webp',
+                link:'https://archivos.him.edu.mx/ENTREVISTAS_2024-2025_SUBS-BUENO.pdf'
             },
         ]
           return (

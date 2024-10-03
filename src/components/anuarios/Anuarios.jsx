@@ -5,6 +5,14 @@ function Anuarios(){
     return (
         <Container>
             <ul className={styles.privacityWrapper}>
+            <li>
+                    <a
+                        href='https://himfg.edu.mx/descargas/documentos/ANUARIOS/2023.pdf'
+                        target='_blank'
+                    >
+                        Anuario del HIMFG 2023
+                    </a>
+                </li>
                 <li>
                     <a
                         href='https://himfg.edu.mx/descargas/documentos/ANUARIOS/2022.pdf'
@@ -27,6 +35,14 @@ function Anuarios(){
                         target='_blank'
                     >
                         Anuario del HIMFG 2020
+                    </a>
+                </li>
+                <li>
+                    <a
+                        href='https://himfg.edu.mx/descargas/documentos/ANUARIOS/2019.pdf'
+                        target='_blank'
+                    >
+                        Anuario del HIMFG 2019
                     </a>
                 </li>
                 <li>
@@ -63,6 +79,22 @@ function Anuarios(){
                 </li>
                 <li>
                     <a
+                        href='https://himfg.edu.mx/descargas/documentos/ANUARIOS/2014.pdf'
+                        target='_blank'
+                    >
+                        Anuario del HIMFG 2014
+                    </a>
+                </li>
+                <li>
+                    <a
+                        href='https://himfg.edu.mx/descargas/documentos/ANUARIOS/2013.pdf'
+                        target='_blank'
+                    >
+                        Anuario del HIMFG 2013
+                    </a>
+                </li>
+                <li>
+                    <a
                         href='https://himfg.edu.mx/descargas/documentos/ANUARIOS/2012.pdf'
                         target='_blank'
                     >
@@ -83,6 +115,14 @@ function Anuarios(){
                         target='_blank'
                     >
                         Anuario del HIMFG 2010
+                    </a>
+                </li>
+                <li>
+                    <a
+                        href='https://himfg.edu.mx/descargas/documentos/ANUARIOS/2009.pdf'
+                        target='_blank'
+                    >
+                        Anuario del HIMFG 2009
                     </a>
                 </li>
                 <li>
