@@ -17,16 +17,16 @@ export const Jumbotron =()=>{
         }
         const images = [
             {
+                url:'https://himfg.edu.mx/archivos/banners/banner-3.jpg',
+                link:'/'
+            },
+            {
                 url:'https://himfg.edu.mx/archivos/banners/banner-2.webp',
                 link:'/'
             },
             {
                 url:'https://himfg.edu.mx/archivos/banners/banner-1.webp',
                 link:'https://himfg.edu.mx/archivos/documentos/comunicados/comunicado-1.pdf'
-            },
-            {
-                url:'https://archivos.him.edu.mx/Banner_Mesa_de_trabajo_1.webp',
-                link:'https://archivos.him.edu.mx/ENTREVISTAS_2024-2025_SUBS-BUENO.pdf'
             },
         ]
           return (

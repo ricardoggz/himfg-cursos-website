@@ -18,7 +18,7 @@ export const Courses = ()=>{
     if(data) filteredCourses = data.data.filter((course)=> course.month_id === selectedMonth.id)
     return (
         <section className={styles.coursesWrapper}>
-                {/*<ul className={`${styles.monthBar} flexContainer boxShadow`}>
+                {<ul className={`${styles.monthBar} flexContainer boxShadow`}>
                     {months.map((month)=>(
                         <li key={month.id} onClick={()=> setSelectedMonth(month)}>
                             <a href={`#cursos-2023-${selectedMonth.name}`}>
@@ -26,7 +26,7 @@ export const Courses = ()=>{
                             </a>
                         </li>
                     ))}
-                    </ul>*/}
+                    </ul>}
             {!loading?
             <div id={`cursos-2023-${selectedMonth.name}`}>
                 <Title>Oferta educativa - {selectedMonth.name}</Title>
