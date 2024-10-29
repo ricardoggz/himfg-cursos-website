@@ -1,11 +1,71 @@
-import styles from './hemerooptions.module.css'
+import styles from './hemeroOptions.module.css'
 
 export const Magazines = ()=>{
     return (
         <div className={styles.hemeroList}>
             <a
-                href='https://www.journals.elsevier.com/the-journal-of-pediatrics'
-                terget='_blank'
+                href='http://himfg.edu.mx/hemerobiblioteca/revistas-digitales/Pediatric_Neurology.pdf'
+                target='_blank'
+                className={styles.hemeroListImage}
+            >
+                <figure>
+                    <img src='https://ars.els-cdn.com/content/image/S08878994.gif'/>
+                </figure>
+                <span>Pediatric Neurology</span>
+            </a>
+            <a
+                href='http://himfg.edu.mx/hemerobiblioteca/revistas-digitales/Pediatric_Dermatology.pdf'
+                target='_blank'
+                className={styles.hemeroListImage}
+            >
+                <figure>
+                    <img src='https://onlinelibrary.wiley.com/cms/asset/8bf8890c-a576-4cfc-974e-e11a3ab4a5b7/pde.v41.5.cover.gif'/>
+                </figure>
+                <span>Pediatric Dermatology</span>
+            </a>
+            <a
+                href='http://himfg.edu.mx/hemerobiblioteca/revistas-digitales/Pediatric_Dentristy.pdf'
+                target='_blank'
+                className={styles.hemeroListImage}
+            >
+                <figure>
+                    <img src='https://www.ingentaconnect.com/images/journal-logos/aapd/pd.gif'/>
+                </figure>
+                <span>Pediatric Denistry</span>
+            </a>
+            <a
+                href='http://himfg.edu.mx/hemerobiblioteca/revistas-digitales/Pediatric_Cardiology.pdf'
+                target='_blank'
+                className={styles.hemeroListImage}
+            >
+                <figure>
+                    <img src='https://media.springernature.com/w88/springer-static/cover-hires/journal/246?as=webp'/>
+                </figure>
+                <span>Pediatric Cardiology</span>
+            </a>
+            <a
+                href='http://himfg.edu.mx/hemerobiblioteca/revistas-digitales/Pediatric_Anesthesia.pdf'
+                target='_blank'
+                className={styles.hemeroListImage}
+            >
+                <figure>
+                    <img src='https://www.med.unc.edu/anesthesiology/wp-content/uploads/sites/470/2023/03/Pg.-10-Suchar-study-e1680020526990-300x300.png'/>
+                </figure>
+                <span>Pediatric Anesthesia</span>
+            </a>
+            <a
+                href='http://himfg.edu.mx/hemerobiblioteca/revistas-digitales/AMERICAN_JOURNAL_OF_ORTHODONTICS_&_DENTOFACIAL_ORTHOPEDICS.pdf'
+                target='_blank'
+                className={styles.hemeroListImage}
+            >
+                <figure>
+                    <img src='https://ars.els-cdn.com/content/image/S08895406.gif'/>
+                </figure>
+                <span>AMERICAN JOURNAL OF ORTHODONTICS & DENTOFACIAL ORTHOPEDICS</span>
+            </a>
+            <a
+                href='http://himfg.edu.mx/hemerobiblioteca/revistas-digitales/THE_JOURNAL_OF_PEDIATRICS.pdf'
+                target='_blank'
                 className={styles.hemeroListImage}
             >
                 <figure>
@@ -14,8 +74,18 @@ export const Magazines = ()=>{
                 <span>The Journal of Pediatrics</span>
             </a>
             <a
+                href='http://himfg.edu.mx/hemerobiblioteca/revistas-digitales/Journal_of_Pediatric_Surgery.pdf'
+                target='_blank'
+                className={styles.hemeroListImage}
+            >
+                <figure>
+                    <img src='https://ars.els-cdn.com/content/image/X00223468.jpg'/>
+                </figure>
+                <span>The Journal of Pediatric Surgey</span>
+            </a>
+            <a
                 href='https://www.sciencedirect.com/journal/disease-a-month'
-                terget='_blank'
+                target='_blank'
                 className={styles.hemeroListImage}
             >
                 <figure>
@@ -25,7 +95,7 @@ export const Magazines = ()=>{
             </a>
             <a
                 href='https://www.pediatric.theclinics.com/current'
-                terget='_blank'
+                target='_blank'
                 className={styles.hemeroListImage}
             >
                 <figure>
@@ -35,7 +105,7 @@ export const Magazines = ()=>{
             </a>
             <a
                 href='https://jamanetwork.com/journals/jamapediatrics/issue/165/7'
-                terget='_blank'
+                target='_blank'
                 className={styles.hemeroListImage}
             >
                 <figure>
@@ -44,8 +114,8 @@ export const Magazines = ()=>{
                 <span> Archives of Pediatrics & Adolescent Medicine</span>
             </a>
             <a
-                href='https://journals.lww.com/co-pediatrics/pages/currenttoc.aspx'
-                terget='_blank'
+                href='http://himfg.edu.mx/hemerobiblioteca/revistas-digitales/Current_Opinion_in_Pediatric.pdf'
+                target='_blank'
                 className={styles.hemeroListImage}
             >
                 <figure>
@@ -54,18 +124,8 @@ export const Magazines = ()=>{
                 <span>Current Opinion in Pediatrics </span>
             </a>
             <a
-                href='https://www.springer.com/journal/246'
-                terget='_blank'
-                className={styles.hemeroListImage}
-            >
-                <figure>
-                    <img src='https://archivos.him.edu.mx/graficos/ensenanza/hemerobiblioteca/pedicar.png'/>
-                </figure>
-                <span> Pediatric Cardiology</span>
-            </a>
-            <a
                 href='http://187.141.21.244/bmhim/consulta.html'
-                terget='_blank'
+                target='_blank'
                 className={styles.hemeroListImage}
             >
                 <figure>
@@ -75,7 +135,7 @@ export const Magazines = ()=>{
             </a>
             <a
                 href='https://pedsinreview.aappublications.org/content/38/10?current-issue=y'
-                terget='_blank'
+                target='_blank'
                 className={styles.hemeroListImage}
             >
                 <figure>
@@ -85,7 +145,7 @@ export const Magazines = ()=>{
             </a>
             <a
                 href='https://onlinelibrary.wiley.com/journal/16512227'
-                terget='_blank'
+                target='_blank'
                 className={styles.hemeroListImage}
             >
                 <figure>
@@ -95,7 +155,7 @@ export const Magazines = ()=>{
             </a>
             <a
                 href='https://www.ovid.com/product-details.320.html'
-                terget='_blank'
+                target='_blank'
                 className={styles.hemeroListImage}
             >
                 <figure>
@@ -104,8 +164,8 @@ export const Magazines = ()=>{
                 <span>Archives of Disease in Childhood</span>
             </a>
             <a
-                href='https://journals.lww.com/pidj/pages/default.aspx'
-                terget='_blank'
+                href='http://himfg.edu.mx/hemerobiblioteca/revistas-digitales/Pediatric_Infecius_Disease_Journal.pdf'
+                target='_blank'
                 className={styles.hemeroListImage}
             >
                 <figure>
@@ -115,7 +175,7 @@ export const Magazines = ()=>{
             </a>
             <a
                 href='https://link.springer.com/journal/431'
-                terget='_blank'
+                target='_blank'
                 className={styles.hemeroListImage}
             >
                 <figure>
@@ -125,7 +185,7 @@ export const Magazines = ()=>{
             </a>
             <a
                 href='https://onlinelibrary.wiley.com/journal/1442200x'
-                terget='_blank'
+                target='_blank'
                 className={styles.hemeroListImage}
             >
                 <figure>
@@ -135,7 +195,7 @@ export const Magazines = ()=>{
             </a>
             <a
                 href='https://pediatrics.aappublications.org/content/140/4?current-issue=y'
-                terget='_blank'
+                target='_blank'
                 className={styles.hemeroListImage}
             >
                 <figure>
@@ -145,7 +205,7 @@ export const Magazines = ()=>{
             </a>
             <a
                 href='https://www.elsevier.com/books/year-book-of-pediatrics-2017/cabana/978-0-323-48035-2'
-                terget='_blank'
+                target='_blank'
                 className={styles.hemeroListImage}
             >
                 <figure>

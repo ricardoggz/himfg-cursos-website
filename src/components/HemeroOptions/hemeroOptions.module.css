@@ -43,6 +43,9 @@
     gap:1rem;
     text-decoration: none;
 }
+.hemeroListImage img{
+    width:6rem;
+}
 .fileLink{
     display:flex;
     justify-content: center;

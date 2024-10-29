@@ -74,6 +74,18 @@ export default function FilesOrganization() {
             title: 'Inventario documental',
             files: [
                 {
+                    file: 'Inventario Documental primer trimestre 2024',
+                    link: 'descargas/documentos/ensenanza/hemerobiblioteca/OrganiArchivos/Inventario_Documental_Primer_Trimestre_2024.pdf'
+                },
+                {
+                    file: 'Inventario Documental segundo trimestre 2024',
+                    link: 'descargas/documentos/ensenanza/hemerobiblioteca/OrganiArchivos/Inventario_Documental_Segundo_Trimestre_2024.pdf'
+                },
+                {
+                    file: 'Inventario Documental tercer trimestre 2024',
+                    link: 'descargas/documentos/ensenanza/hemerobiblioteca/OrganiArchivos/Inventario_Documental_Tercer_Trimestre_2024.pdf'
+                },
+                {
                     file: 'Inventario documental 2023',
                     link: 'descargas/documentos/ensenanza/hemerobiblioteca/OrganiArchivos/INVENTARIO_DOCUMENTAL_2023.pdf'
                 },
@@ -112,7 +124,7 @@ export default function FilesOrganization() {
                 {
                     file: 'Inventario General por Expediente 2014',
                     link: 'descargas/documentos/ensenanza/hemerobiblioteca/OrganiArchivos/INVENTARIOGENERALPOREXPEDIENTE2014.pdf'
-                }
+                },
             ]
         },
         {
