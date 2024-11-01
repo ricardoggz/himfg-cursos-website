@@ -148,7 +148,10 @@ const Video = (props)=>{
                         <center>
                         <br/>
                         <p className={styles.formMessage}>
-                            <b>ATENTO AVISO</b> este 6 de Noviembre no se llevará a cabo la Sesión Clínica Patológica
+                            <b style={{color: 'red', fontSize: '1.5rem'}}>ATENTO AVISO</b>
+                            <br />
+                            <br />
+                            <p>Este 6 de Noviembre no se llevará a cabo la Sesión Clínica Patológica</p> 
                         </p>
                         </center>
                     </>
