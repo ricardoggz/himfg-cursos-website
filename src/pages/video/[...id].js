@@ -148,9 +148,7 @@ const Video = (props)=>{
                         <center>
                         <br/>
                         <p className={styles.formMessage}>
-                            <b>ATENTO AVISO</b> este registro será habilitado hasta las 11:00 am
-                            del 15 de mayo de 2024, razón por la cual te sugerimos hacer tu registro
-                            con tiempo para que se te pueda enviar sin contratiempos tu clave de acceso.
+                            <b>ATENTO AVISO</b> este 6 de Noviembre no se llevará a cabo la Sesión Clínica Patológica
                         </p>
                         </center>
                     </>
