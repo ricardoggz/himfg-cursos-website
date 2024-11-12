@@ -17,6 +17,10 @@ export const Jumbotron =()=>{
         }
         const images = [
             {
+                url:'https://himfg.edu.mx/archivos/banners/banner-5.webp',
+                link:'/'
+            },
+            {
                 url:'https://himfg.edu.mx/archivos/banners/banner-4.webp',
                 link:'/'
             },

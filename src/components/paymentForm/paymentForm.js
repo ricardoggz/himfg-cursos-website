@@ -79,7 +79,7 @@ export const PaymentForm = () => {
   const getCypherData = async(data)=>{
     try {
       const resp = await axios.post(
-        'https://himfgcyper-001-site1.ltempurl.com/aes/decrypt',
+        'https://cemesatelhimfg-001-site1.ptempurl.com/aes/decrypt',
         data
       )
       return resp.data
