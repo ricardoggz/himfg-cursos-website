@@ -125,10 +125,9 @@ const Video = (props)=>{
                         <center>
                         <br/>
                         <p className={styles.formMessage}>
-                            <b style={{color: 'red', fontSize: '1.5rem'}}>ATENTO AVISO</b>
-                            <br />
-                            <br />
-                            <p>Este 6 de Noviembre no se llevará a cabo la Sesión Clínica Patológica</p> 
+                        <b>ATENTO AVISO</b> este registro será habilitado hasta las 11:00 am
+                            del 16 de Octubre del 2024, razón por la cual te sugerimos hacer tu registro
+                            con tiempo para que se te pueda enviar sin contratiempos tu clave de acceso.
                         </p>
                         </center>
                     </>
