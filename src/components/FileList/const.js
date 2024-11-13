@@ -3,6 +3,47 @@ export const infoContable = [
         title: 2024,
         content:[
             {
+                link: 'https://himfg.edu.mx/archivos/recursos-financieros/2024/informacion-contable/1.pdf',
+                title:'Estado de Actividades septiembre 2024'
+            },
+            {
+                link: 'https://himfg.edu.mx/archivos/recursos-financieros/2024/informacion-contable/2.pdf',
+                title: 'Estado de Situación Financiera septiembre 2024'
+            },
+            {
+                link: 'https://himfg.edu.mx/archivos/recursos-financieros/2024/informacion-contable/3.pdf',
+                title: 'Estado de Variación en la Hacienda Pública septiembre 2024'
+            },
+            {
+                link: 'https://himfg.edu.mx/archivos/recursos-financieros/2024/informacion-contable/4.pdf',
+                title: 'Estado de Cambios en la Situación Financiera septiembre 2024'
+            },
+            {
+                link: 'https://himfg.edu.mx/archivos/recursos-financieros/2024/informacion-contable/5.pdf',
+                title: 'Estado de Flujos de Efectivo septiembre 2024'
+            },
+            {
+                link: 'https://himfg.edu.mx/archivos/recursos-financieros/2024/informacion-contable/6.pdf',
+                title: 'Estado Analítico del Activo septiembre 2024'
+            },
+            {
+                link: 'https://himfg.edu.mx/archivos/recursos-financieros/2024/informacion-contable/7.pdf',
+                title: 'Estado Analítico de la Deuda y Otros Pasivos septiembre 2024'
+            },
+            {
+                link: 'https://himfg.edu.mx/archivos/recursos-financieros/2024/informacion-contable/8.pdf',
+                title:'Informe sobre Pasivos Contingentes septiembre 2024'
+            },
+            {
+                link: 'https://himfg.edu.mx/archivos/recursos-financieros/2024/informacion-contable/9.pdf',
+                title: 'Notas a los Estados Financieros septiembre 2024'
+            },
+        ]
+    },
+    {
+        title: 2024,
+        content:[
+            {
                 link: 'https://archivos.him.edu.mx/graficos/administracion/subdireccion-recursos-financieros/informacion-contable/2024/2024-1.pdf',
                 title:'Estados analítico y otros pasivos'
             },
@@ -447,6 +488,19 @@ export const infoNormas = [
 ]
 
 export const infoInventario= [
+    {
+        title: '2024 - Bienes Muebles e Inmuebles',
+        content:[
+            {
+                link: 'https://himfg.edu.mx/archivos/recursos-financieros/2024/bienes-inmuebles-2da-parte2024.pdf',
+                title: 'LISTA DE INVENTARIOS DE BIENES MUEBLES SEPTIEMBRE 2024'
+            },
+            {
+                link: 'https://himfg.edu.mx/archivos/recursos-financieros/2024/bienes-inmuebles-1era-parte2024.pdf',
+                title: 'LISTA DE INVENTARIOS DE BIENES INMUEBLES SEPTIEMBRE DE 2024'
+            },
+        ]
+    },
     {
         title: '2023 - Bienes Muebles',
         content:[
