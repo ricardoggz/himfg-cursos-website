@@ -17,16 +17,8 @@ export const Jumbotron =()=>{
         }
         const images = [
             {
-                url:'https://himfg.edu.mx/archivos/banners/banner-5.webp',
-                link:'/'
-            },
-            {
-                url:'https://himfg.edu.mx/archivos/banners/banner-4.webp',
-                link:'/'
-            },
-            {
-                url:'https://himfg.edu.mx/archivos/banners/banner-3.jpg',
-                link:'/'
+                url:'https://himfg.edu.mx/archivos/banners/banner-6.jpg',
+                link:'https://himfg.edu.mx/archivos/documentos/comunicados/resultado-aspirantes.pdf'
             },
             {
                 url:'https://himfg.edu.mx/archivos/banners/banner-2.webp',
