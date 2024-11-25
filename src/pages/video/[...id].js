@@ -137,7 +137,7 @@ const Video = (props)=>{
                         <center>
                         <br/>
                         <a
-                            href='https://docs.google.com/forms/d/e/1FAIpQLSdQrVXZ6rNwvGHnsCsQubgJTsevrb9JFdzTjHOHSy7xWBiQww/viewform'
+                            href='https://forms.gle/SBfHiqLYUiWY4F976'
                             className={styles.formLink}
                             target='_blank'
                         >
