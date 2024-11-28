@@ -363,12 +363,19 @@ export const PaymentForm = () => {
               <span>
                 Precio: 
                 <span className={styles.coursePrice}>
-                   {
-                    user.student_role === 'PERSONAL_HIMFG' || user.student_role === 'ESTUDIANTE'
+                {
+                    user.student_role === 'ESTUDIANTE'
                     ?
-                    `Gratuito`
+                    `$${course.course_student_price} mxn`
                     :
-                    `$${course.course_price} mxn`
+                    null
+                   }
+                   {
+                    user.student_role === 'PERSONAL_HIMFG'
+                    ?
+                    `$${course.course_employee_price} mxn`
+                    :
+                    null
                    }
                    {
                     user.student_role === 'EXTERNO'

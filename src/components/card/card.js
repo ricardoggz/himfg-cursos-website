@@ -32,15 +32,30 @@ const Card = ({course})=>{
             <span>Termina: {formatDate(course.course_finish_date)}</span>
             { !course.course_price ? null : 
               <>
-                <span>
-                    Costo para externos al HIMFG: ${course.course_price}mxn
-                </span>
-                <span>
-                    Gratuito para personal del HIMFG y estudiantes
-                </span>
+                {
+                    !course.course_price ? null
+                    :
+                    <span>
+                        Costo para externos al HIMFG: ${course.course_price}mxn
+                    </span>
+                }
+                {
+                    !course.course_student_price ? null
+                    :
+                    <span>
+                        Costo para estudiantes: ${course.course_student_price}mxn
+                    </span>
+                }
+                {
+                    !course.course_employee_price ? null
+                    :
+                    <span>
+                        Costo para personal del HIMFG: ${course.course_employee_price}mxn
+                    </span>
+                }
               </>
             }
-            { course.course_price === 0 ? 
+            { course.course_price === 0 ?
               <>
                 <span>
                     Gratuito
