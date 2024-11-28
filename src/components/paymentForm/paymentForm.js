@@ -105,7 +105,7 @@ export const PaymentForm = () => {
     setTimeout(()=>{
       console.log(dataToObject)
     },1000)
-    if (Payment && user.student_role === 'EXTERNO') {
+    if (Payment && user/*.student_role === 'EXTERNO'*/) {
       Payment.setEnv("pro");
       let xOBJ;
       xOBJ = cypherData(paymentData, cerKey);
@@ -371,11 +371,11 @@ export const PaymentForm = () => {
                     `$${course.course_price} mxn`
                    }
                    {
-                    /*user.student_role === 'EXTERNO'
+                    user.student_role === 'EXTERNO'
                     ?
                     `$${course.course_price} mxn`
                     :
-                    null*/
+                    null
                    }
                 </span>
               </span>
@@ -405,28 +405,28 @@ export const PaymentForm = () => {
                 }
               </form>
               {
-                user.student_role === 'ESTUDIANTE' && course.course_price !== 0
+                user.student_role === 'ESTUDIANTE' && course.course_student_price == 0
                 ?
-                <button onClick={startFreePayment}>Mandar documentación a revisión</button>
+                <button onClick={startFreePayment}>Inscripción Gratuita</button>
                 :
                 null
               }
               {
-                user.student_role === 'ESTUDIANTE' && course.course_price == 0
+                user.student_role === 'ESTUDIANTE' && course.course_student_price !== 0
                 ?
-                <button onClick={startFreePayment}>Inscripción gratuita</button>
+                <button onClick={startPayment}>Inscripción gratuita</button>
                 :
                 null
               }
               {
-                user.student_role === 'PERSONAL_HIMFG' && course.course_price !== 0
+                user.student_role === 'PERSONAL_HIMFG' && course.course_employee_price !== 0
                 ?
-                <button onClick={startFreePayment}>Mandar documentación a revisión</button>
+                <button onClick={startPayment}>Pagar</button>
                 :
                 null
               }
               {
-                (user.student_role === 'PERSONAL_HIMFG') && course.course_price === 0
+                (user.student_role === 'PERSONAL_HIMFG') && course.course_employee_price === 0
                 ?
                 <button onClick={startFreePayment}>Inscripción gratuita</button>
                 :
