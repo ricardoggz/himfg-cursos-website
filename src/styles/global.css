@@ -30,8 +30,8 @@ body{
 /*UI flex-container*/
 .flexContainer{
   margin: 0 auto;
-  max-width:1200px;
-  width:80%;
+  max-width:1400px;
+  width:95%;
 }
 /*UI box-shadow*/
 .boxShadow{

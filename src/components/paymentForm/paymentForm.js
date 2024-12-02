@@ -178,11 +178,23 @@ export const PaymentForm = () => {
                 })
               }
               await updateMaxRange()
-              generatePDF({
-                course: course,
-                student: user,
-                reference: paymentData.ControlNumber
-              })
+              if(user.student_role !== 'EXTERNO'){
+                Swal.fire({
+                  title: "Documentación enviada a revisión",
+                  text:`Una vez revisada, se te hará llegar la confirmación de acceso al email: ${user.student_email}`,
+                  icon: "success",
+                  showCloseButton: true,
+                  showConfirmButton: false,
+                  position: "center",
+                })
+              }
+              if(user.student_role==='EXTERNO'){
+                generatePDF({
+                  course: course,
+                  student: user,
+                  reference: paymentData.ControlNumber
+                })
+              }
               router.push('/direccion/ensenanza')
             }
         },
@@ -215,7 +227,7 @@ export const PaymentForm = () => {
       })
       Swal.fire({
         title: "Documentación enviada a revisión",
-        text:'Una vez revisada, se te hará llegar la confirmación de acceso al curso via email',
+        text:`Una vez revisada, se te hará llegar la confirmación de acceso al email: ${user.student_email}`,
         icon: "success",
         showCloseButton: true,
         showConfirmButton: false,
@@ -421,7 +433,7 @@ export const PaymentForm = () => {
               {
                 user.student_role === 'ESTUDIANTE' && course.course_student_price !== 0
                 ?
-                <button onClick={startPayment}>Inscripción gratuita</button>
+                <button onClick={startPayment}>Pagar</button>
                 :
                 null
               }

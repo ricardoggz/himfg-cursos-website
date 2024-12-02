@@ -63,6 +63,11 @@ export const Header =()=>{
                                 Daño cero
                             </Link>
                         </li>
+                        <li>
+                            <Link href='/direccion/educacion-medica-continua' onClick={open}>
+                               Oferta Académica
+                            </Link>
+                        </li>
                     </>
                     :
                     <>
@@ -85,6 +90,11 @@ export const Header =()=>{
                             <a href='http://himfg.com.mx/interna/transparencia/transparencia.php' target='_blank'>
                                 Transparencia
                             </a>
+                        </li>
+                        <li>
+                            <Link href='/direccion/educacion-medica-continua' onClick={open}>
+                               Oferta Académica
+                            </Link>
                         </li>
                         <li>
                             <button onClick={logout}>Cerrar sesión</button>
