@@ -105,7 +105,6 @@ export const RegisterForm = ({path})=>{
                 name='student_name'
                 required
                 onChange={handleChange}
-                className={`${styles.toUpperCase}`}
             />
             <label className={styles.labelTitle}>
                 Edad:
@@ -498,7 +497,7 @@ export const RegisterForm = ({path})=>{
                 !course ? null
                 :
                 <span className={styles.message}>
-                    Una vez concluido su registro se descargará un PDF con tus datos de acceso. Te recomendamos guardarlo
+                    Una vez concluido su registro se te enviará un correo electrónico con tus datos de acceso. Te recomendamos guardarlo para futuros cursos
                 </span>
             }
             <div className={styles.formButtons}>
