@@ -38,7 +38,7 @@ export const PaymentForm = () => {
     setIsModalOpen(!isModalOpen)
     return localStorage.getItem('cyperData')
   }
-  console.log('fuera de onSuccess', dataToObject)
+  
   useEffect(()=>{
     if (typeof window !== 'undefined') {
       setModality(getItem('modality'))
@@ -96,6 +96,24 @@ export const PaymentForm = () => {
       })
       return resp
       
+    } catch (error) {
+      console.log(error)
+    }
+  }
+  const sendEmail = async()=>{
+    try {
+      const resp = await axios.post(`${process.env.BASE_URL_API}api/emails/send-email`,{
+        course_name: course.course_name,
+        course_start_date: course.course_start_date,
+        course_finish_date: course.course_finish_date,
+        course_place: course.course_place,
+        course_url: course.course_url,
+        course_password:course.course_password,
+        student_email: user.student_email,
+        student_password: user.student_password,
+        payment_reference: paymentData.ControlNumber
+      })
+      console.log(resp.data.message)
     } catch (error) {
       console.log(error)
     }
@@ -180,20 +198,29 @@ export const PaymentForm = () => {
               await updateMaxRange()
               if(user.student_role !== 'EXTERNO'){
                 Swal.fire({
-                  title: "Documentación enviada a revisión",
-                  text:`Una vez revisada, se te hará llegar la confirmación de acceso al email: ${user.student_email}`,
-                  icon: "success",
+                  title: "Pago exitoso - Documentación en revisión",
+                  text:`Su documentación ha sido mandada, una vez revisada, se te harán llegar los datos de de acceso a la siguiente dirección de correo: ${user.student_email}`,
+                  icon: "warning",
                   showCloseButton: true,
                   showConfirmButton: false,
                   position: "center",
                 })
               }
               if(user.student_role==='EXTERNO'){
-                generatePDF({
+                await sendEmail()
+                Swal.fire({
+                  title: "Pago exitoso",
+                  text:`Se han envíado los datos de acceso a la siguiente dirección de correo: ${user.student_email}`,
+                  icon: "success",
+                  showCloseButton: true,
+                  showConfirmButton: false,
+                  position: "center",
+                })
+                /*generatePDF({
                   course: course,
                   student: user,
                   reference: paymentData.ControlNumber
-                })
+                })*/
               }
               router.push('/direccion/ensenanza')
             }
