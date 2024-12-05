@@ -56,19 +56,19 @@ export const PaymentForm = () => {
     if(course && user && user.student_role === 'PERSONAL_HIMFG'){
       setPaymentData({
         ...data,
-        Amount: `1.00`,
+        Amount: `${course.course_employee_price}.00`,
         ControlNumber: `${reference(course.course_id)}`
       })
     }else if(course && user && user.student_role === 'ESTUDIANTE'){
       setPaymentData({
         ...data,
-        Amount: `1.00`,
+        Amount: `${course.course_student_price}.00`,
         ControlNumber: `${reference(course.course_id)}`
       })
     }else if(course && user && user.student_role === 'EXTERNO'){
       setPaymentData({
         ...data,
-        Amount: `1.00`,
+        Amount: `${course.course_price}.00`,
         ControlNumber: `${reference(course.course_id)}`
       })
     }
@@ -199,7 +199,10 @@ export const PaymentForm = () => {
               if(user.student_role !== 'EXTERNO'){
                 Swal.fire({
                   title: "Pago exitoso - Documentación en revisión",
-                  text:`Su documentación ha sido mandada, una vez revisada, se te harán llegar los datos de de acceso a la siguiente dirección de correo: ${user.student_email}`,
+                  text:`Su documentación ha sido mandada,
+                  una vez revisada, se te harán llegar los datos de de acceso a
+                  la siguiente dirección de correo: ${user.student_email}, favor de revisar
+                  su bandeja de entrada, spam o correo no deseado`,
                   icon: "warning",
                   showCloseButton: true,
                   showConfirmButton: false,
@@ -210,7 +213,9 @@ export const PaymentForm = () => {
                 await sendEmail()
                 Swal.fire({
                   title: "Pago exitoso",
-                  text:`Se han envíado los datos de acceso a la siguiente dirección de correo: ${user.student_email}`,
+                  text:`Se han envíado los datos de de acceso a la siguiente dirección de correo: ${user.student_email}, favor de revisar
+                  su bandeja de entrada, spam o correo no deseado
+                  `,
                   icon: "success",
                   showCloseButton: true,
                   showConfirmButton: false,

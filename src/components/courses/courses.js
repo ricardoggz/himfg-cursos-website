@@ -21,14 +21,14 @@ export const Courses = ()=>{
                 {<ul className={`${styles.monthBar} flexContainer boxShadow`}>
                     {months.map((month)=>(
                         <li key={month.id} onClick={()=> setSelectedMonth(month)}>
-                            <a href={`#cursos-2023-${selectedMonth.name}`}>
+                            <a href={`#cursos-2025`}>
                                 {month.name}
                             </a>
                         </li>
                     ))}
                     </ul>}
             {!loading?
-            <div id={`cursos-2023-${selectedMonth.name}`}>
+            <div id={`cursos-2025`}>
                 <Title>Oferta educativa - {selectedMonth.name}</Title>
                 <GridContainer>
                 {

@@ -25,6 +25,16 @@ export const PrincipalAds = ()=>{
                 </div>
             </Link>
             <Link
+                className={styles.ofertaWrapper}
+                href='/direccion/educacion-medica-continua'
+            >
+                <div className={styles.adMask}>
+                    <span className={styles.adTitle}>
+                        Oferta académica
+                    </span>
+                </div>
+            </Link>
+            <Link
                 className={styles.historiaWrapper}
                 href='/el-instituto-y-su-historia'
             >

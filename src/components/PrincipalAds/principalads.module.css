@@ -65,6 +65,16 @@
     text-decoration: none;
     width:100%;
 }
+.ofertaWrapper{
+    background:
+    url('https://archivos.him.edu.mx/graficos/home/oferta-academica.webp')
+    no-repeat;
+    background-size: cover;
+    background-position: center;
+    height:400px;
+    text-decoration: none;
+    width:100%;
+}
 .adMask{
     align-items: flex-end;
     background: rgb(36,0,16);

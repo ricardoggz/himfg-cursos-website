@@ -7,7 +7,9 @@ export const PageBanner = ({
   children,
   banner,
   bannerResponsive,
-  textLeft
+  textLeft,
+  bannerLink,
+  bannerLinkTitle
 }) => {
     const pageBanner=css`
       background:url(${banner});
@@ -70,6 +72,10 @@ export const PageBanner = ({
         display:none;
       }
       `
+      const pageBannerTitle= css`
+        color: var(--white-primary);
+        font-size:1.8rem;
+      `
     return (
       <>
         <section
@@ -83,9 +89,16 @@ export const PageBanner = ({
               className={pageTitleBanner}
             >
               <h1>{title}</h1>
-              {/*<p className={pageBannerText}>
-                {children}
-              </p>*/}
+              {
+                !bannerLink ? null
+                :
+                <a
+                  href={bannerLink}
+                  className={pageBannerTitle}
+                >
+                    {bannerLinkTitle}
+                </a>
+              }
             </div>
           </div>
         </section>

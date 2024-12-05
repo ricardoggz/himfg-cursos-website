@@ -72,14 +72,28 @@ export default function Direction(){
                                 href='https://res.cloudinary.com/diuxbqmn5/image/upload/v1677114497/himfg-logo_ewzx59.webp'
                                 sizes="any" />
                         </Head>
-                        <PageBanner
-                        title={page.page_title}
-                        banner={page.page_banner_image}
-                        bannerResponsive={page.banner_image_responsive}
-                        textLeft={!page.page_left_text ? false : true}
-                        >
-                        <p>{page.page_banner_content}</p>
-                        </PageBanner>
+                        {
+                           page.page_url==='educacion-medica-continua' || page.page_url==='educacion-medica-continua/'?
+                           <PageBanner
+                            title={page.page_title}
+                            banner={page.page_banner_image}
+                            bannerResponsive={page.banner_image_responsive}
+                            textLeft={!page.page_left_text ? false : true}
+                            bannerLink='#cursos-2025'
+                            bannerLinkTitle='Revisa nuestra oferta académica'
+                           >
+                            <p>{page.page_banner_content}</p>
+                           </PageBanner>
+                           :
+                           <PageBanner
+                            title={page.page_title}
+                            banner={page.page_banner_image}
+                            bannerResponsive={page.banner_image_responsive}
+                            textLeft={!page.page_left_text ? false : true}
+                            >
+                                <p>{page.page_banner_content}</p>
+                            </PageBanner>
+                        }
                         <TextsPage
                             firstText={page.page_first_content}
                             secondText={page.page_second_content}
