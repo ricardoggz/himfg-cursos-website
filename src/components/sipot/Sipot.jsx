@@ -8,7 +8,7 @@ export const Sipot= ()=>{
                         href='https://www.plataformadetransparencia.org.mx/'
                         target='_blank'
                     >
-                        <img src='https://archivos.him.edu.mx/graficos/SIPOT/bsipot.png' />
+                        <img src='https://himfg.edu.mx/archivos/graficos/SIPOT/bsipot.png' />
                     </a>
             </figure>
             <figure>
@@ -16,7 +16,7 @@ export const Sipot= ()=>{
                     href='https://consultapublicamx.plataformadetransparencia.org.mx/vut-web/?idSujetoObigadoParametro=154&idEntidadParametro=33&idSectorParametro=21'
                     target='_blank'
                 >
-                    <img src='https://archivos.him.edu.mx/graficos/SIPOT/sipot2.png' />
+                    <img src='https://himfg.edu.mx/archivos/graficos/SIPOT/sipot2.png' />
                 </a>
             </figure>
         </div>

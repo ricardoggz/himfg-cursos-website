@@ -14,7 +14,7 @@ export const Convocatorias = ()=>{
                 <ul>
                     <li>
                         <a
-                            href='https://archivos.him.edu.mx/graficos/investigacion/Convocatoria_Financiamiento_Protocolos_con_FF_2025.pdf'
+                            href='https://himfg.edu.mx/archivos/graficos/investigacion/Convocatoria_Financiamiento_Protocolos_con_FF_2025.pdf'
                             target='_blank'
                         >
                             Convocatoria para financiar proyectos de investigación para la salud con fondos federales 2025
@@ -22,7 +22,7 @@ export const Convocatorias = ()=>{
                     </li>
                     <li>
                         <a
-                            href='https://archivos.him.edu.mx/graficos/investigacion/Convocatoria_para_Financiar_Proyectos_de_Investigación_para_la_Salud_con_Fondos_Federales_2025.pdf'
+                            href='https://himfg.edu.mx/archivos/graficos/investigacion/Convocatoria_para_Financiar_Proyectos_de_Investigación_para_la_Salud_con_Fondos_Federales_2025.pdf'
                             target='_blank'
                         >
                             Resultados de la Convocatoria para financiar proyectos de investigación para la salud con fondos federales 2025

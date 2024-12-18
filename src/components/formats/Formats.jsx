@@ -7,7 +7,7 @@ function Formats(){
             <ul className={styles.privacityWrapper}>
                 <li>
                     <a
-                        href='https://archivos.him.edu.mx/graficos/investigacion/formatos/1.pdf'
+                        href='https://himfg.edu.mx/archivos/graficos/investigacion/formatos/1.pdf'
                         target='_blank'
                     >
                         Calendarios Comité Revisores 2024
@@ -15,7 +15,7 @@ function Formats(){
                 </li>
                 <li>
                     <a
-                        href='https://archivos.him.edu.mx/graficos/investigacion/formatos/2.pdf'
+                        href='https://himfg.edu.mx/archivos/graficos/investigacion/formatos/2.pdf'
                         target='_blank'
                     >
                     Guía de Sometimiento Protocolos de Investigación_Industria Farmaceutica  
@@ -23,7 +23,7 @@ function Formats(){
                 </li>
                 <li>
                     <a
-                        href='https://archivos.him.edu.mx/graficos/investigacion/formatos/3.pdf'
+                        href='https://himfg.edu.mx/archivos/graficos/investigacion/formatos/3.pdf'
                         target='_blank'
                     >
                     Guía de Sometimiento de Proyectos de Investigación FONDOS FEDERALES y varios  
@@ -31,7 +31,7 @@ function Formats(){
                 </li>
                 <li>
                     <a
-                        href='https://archivos.him.edu.mx/graficos/investigacion/formatos/4.pdf'
+                        href='https://himfg.edu.mx/archivos/graficos/investigacion/formatos/4.pdf'
                         target='_blank'
                     >
                     Guía de Sometimiento ENMIENDA a Proyectos de Inv.  
@@ -39,7 +39,7 @@ function Formats(){
                 </li>
                 <li>
                     <a
-                        href='https://archivos.him.edu.mx/graficos/investigacion/formatos/5.doc'
+                        href='https://himfg.edu.mx/archivos/graficos/investigacion/formatos/5.doc'
                         target='_blank'
                     >
                     Formato de Solicitud Evaluación Proyectos  
@@ -47,7 +47,7 @@ function Formats(){
                 </li>
                 <li>
                     <a
-                        href='https://archivos.him.edu.mx/graficos/investigacion/formatos/6.doc'
+                        href='https://himfg.edu.mx/archivos/graficos/investigacion/formatos/6.doc'
                         target='_blank'
                     >
                     Formato de Cronograma de actividades  
@@ -55,7 +55,7 @@ function Formats(){
                 </li>
                 <li>
                     <a
-                        href='https://archivos.him.edu.mx/graficos/investigacion/formatos/7.doc'
+                        href='https://himfg.edu.mx/archivos/graficos/investigacion/formatos/7.doc'
                         target='_blank'
                     >
                     Formato del Comité de Ética en Investigación 
@@ -63,7 +63,7 @@ function Formats(){
                 </li>
                 <li>
                     <a
-                        href='https://archivos.him.edu.mx/graficos/investigacion/formatos/8.doc'
+                        href='https://himfg.edu.mx/archivos/graficos/investigacion/formatos/8.doc'
                         target='_blank'
                     >
                     Formato de Comite de Bioseguridad  
@@ -71,7 +71,7 @@ function Formats(){
                 </li>
                 <li>
                     <a
-                        href='https://archivos.him.edu.mx/graficos/investigacion/formatos/9.pdf'
+                        href='https://himfg.edu.mx/archivos/graficos/investigacion/formatos/9.pdf'
                         target='_blank'
                     >
                    Instructivo de llenado de formato de bioseguridad 
@@ -79,7 +79,7 @@ function Formats(){
                 </li>
                 <li>
                     <a
-                        href='https://archivos.him.edu.mx/graficos/investigacion/formatos/10.doc'
+                        href='https://himfg.edu.mx/archivos/graficos/investigacion/formatos/10.doc'
                         target='_blank'
                     >
                     Formato PE-04 Industria Farmaceutica  
@@ -87,7 +87,7 @@ function Formats(){
                 </li>
                 <li>
                     <a
-                        href='https://archivos.him.edu.mx/graficos/investigacion/formatos/11.doc'
+                        href='https://himfg.edu.mx/archivos/graficos/investigacion/formatos/11.doc'
                         target='_blank'
                     >
                     Formato PE-04 Fondos Federales 
@@ -95,7 +95,7 @@ function Formats(){
                 </li>
                 <li>
                     <a
-                        href='https://archivos.him.edu.mx/graficos/investigacion/formatos/12.doc'
+                        href='https://himfg.edu.mx/archivos/graficos/investigacion/formatos/12.doc'
                         target='_blank'
                     >
                    Formato PE-04 CONACyT 
@@ -103,7 +103,7 @@ function Formats(){
                 </li>
                 <li>
                     <a
-                        href='https://archivos.him.edu.mx/graficos/investigacion/formatos/13.doc'
+                        href='https://himfg.edu.mx/archivos/graficos/investigacion/formatos/13.doc'
                         target='_blank'
                     >
                     Formato PE-04 Donativos 
@@ -111,7 +111,7 @@ function Formats(){
                 </li>
                 <li>
                     <a
-                        href='https://archivos.him.edu.mx/graficos/investigacion/formatos/14.doc'
+                        href='https://himfg.edu.mx/archivos/graficos/investigacion/formatos/14.doc'
                         target='_blank'
                     >
                     Carta Actividades a realizar en HIMFG  
@@ -119,7 +119,7 @@ function Formats(){
                 </li>
                 <li>
                     <a
-                        href='https://archivos.him.edu.mx/graficos/investigacion/formatos/15.doc'
+                        href='https://himfg.edu.mx/archivos/graficos/investigacion/formatos/15.doc'
                         target='_blank'
                     >
                     Formato de declaración de NO conflicto de interés 
@@ -127,7 +127,7 @@ function Formats(){
                 </li>
                 <li>
                     <a
-                        href='https://archivos.him.edu.mx/graficos/investigacion/formatos/16.doc'
+                        href='https://himfg.edu.mx/archivos/graficos/investigacion/formatos/16.doc'
                         target='_blank'
                     >
                     CARTA COMPROMISO DEL INVESTIGADOR PROTOCOLOS APROBADOS 
@@ -135,7 +135,7 @@ function Formats(){
                 </li>
                 <li>
                     <a
-                        href='https://archivos.him.edu.mx/graficos/investigacion/formatos/17.doc'
+                        href='https://himfg.edu.mx/archivos/graficos/investigacion/formatos/17.doc'
                         target='_blank'
                     >
                     Lineamientos respuesta a los dictámenes 

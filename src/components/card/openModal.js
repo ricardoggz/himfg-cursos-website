@@ -37,8 +37,8 @@ export const openModal = ({course})=>{
                 </span>
                 :
                 <Link
-                  href={`/video/[...id]`}
-                  as ={`/video/${course.course_url}`}
+                  href={`/cursos2025/[...id]`}
+                  as ={`/cursos2025/${course.course_url}`}
                   className={cardButton}
                 >
                   Ingresar al curso

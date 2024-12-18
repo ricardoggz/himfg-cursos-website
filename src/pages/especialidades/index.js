@@ -144,8 +144,8 @@ export default function Especialidades(){
         <>
             <PageBanner
                 title='Especialidades'
-                banner='https://archivos.him.edu.mx/graficos/home/especialidades.webp'
-                bannerResponsive='https://archivos.him.edu.mx/graficos/home/especialidades.webp'
+                banner='https://himfg.edu.mx/archivos/graficos/home/especialidades.webp'
+                bannerResponsive='https://himfg.edu.mx/archivos/graficos/home/especialidades.webp'
             />
             <Container>
                 <div className={styles.expecialidadesWrapper}>

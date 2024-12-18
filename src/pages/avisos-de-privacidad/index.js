@@ -7,7 +7,7 @@ export default function PrivacityPage(){
             <ul className={styles.privacityWrapper}>
                 <li>
                     <a
-                        href='https://archivos.him.edu.mx/graficos/avisos-de-privacidad/1.pdf'
+                        href='https://himfg.edu.mx/archivos/graficos/avisos-de-privacidad/1.pdf'
                         target='_blank'
                     >
                     Avisos de Privacidad Integral del Expediente Clínico 
@@ -15,7 +15,7 @@ export default function PrivacityPage(){
                 </li>
                 <li>
                     <a
-                        href='https://archivos.him.edu.mx/graficos/avisos-de-privacidad/2.pdf'
+                        href='https://himfg.edu.mx/archivos/graficos/avisos-de-privacidad/2.pdf'
                         target='_blank'
                     >
                     Avisos de Privacidad Integral de los Procesos de Recursos Humanos  
@@ -23,7 +23,7 @@ export default function PrivacityPage(){
                 </li>
                 <li>
                     <a
-                        href='https://archivos.him.edu.mx/graficos/avisos-de-privacidad/3.pdf'
+                        href='https://himfg.edu.mx/archivos/graficos/avisos-de-privacidad/3.pdf'
                         target='_blank'
                     >
                     Avisos de Privacidad Integral Expediente Social 
@@ -31,7 +31,7 @@ export default function PrivacityPage(){
                 </li>
                 <li>
                     <a
-                        href='https://archivos.him.edu.mx/graficos/avisos-de-privacidad/4.pdf'
+                        href='https://himfg.edu.mx/archivos/graficos/avisos-de-privacidad/4.pdf'
                         target='_blank'
                     >
                     Avisos de privacidad integral del Sistema de Investigadores 
@@ -39,7 +39,7 @@ export default function PrivacityPage(){
                 </li>
                 <li>
                     <a
-                        href='https://archivos.him.edu.mx/graficos/avisos-de-privacidad/5.pdf'
+                        href='https://himfg.edu.mx/archivos/graficos/avisos-de-privacidad/5.pdf'
                         target='_blank'
                     >
                     Avisos de Privacidad Integral del Servicio de Banco de Sangre y Medicina Transfusional 
@@ -47,7 +47,7 @@ export default function PrivacityPage(){
                 </li>
                 <li>
                     <a
-                        href='https://archivos.him.edu.mx/graficos/avisos-de-privacidad/6.pdf'
+                        href='https://himfg.edu.mx/archivos/graficos/avisos-de-privacidad/6.pdf'
                         target='_blank'
                     >
                     Avisos de Privacidad Integral del Registro y evaluación de Residentes 
@@ -55,7 +55,7 @@ export default function PrivacityPage(){
                 </li>
                 <li>
                     <a
-                        href='https://archivos.him.edu.mx/graficos/avisos-de-privacidad/7.pdf'
+                        href='https://himfg.edu.mx/archivos/graficos/avisos-de-privacidad/7.pdf'
                         target='_blank'
                     >
                     Aviso de Privacidad Integral para acceso a información y Derechos ARCO 
@@ -63,7 +63,7 @@ export default function PrivacityPage(){
                 </li>
                 <li>
                     <a
-                        href='https://archivos.him.edu.mx/graficos/avisos-de-privacidad/8.pdf'
+                        href='https://himfg.edu.mx/archivos/graficos/avisos-de-privacidad/8.pdf'
                         target='_blank'
                     >
                     Aviso de Privacidad Integral para el Acceso al Comedor Institucional 
@@ -71,7 +71,7 @@ export default function PrivacityPage(){
                 </li>
                 <li>
                     <a
-                        href='https://archivos.him.edu.mx/graficos/avisos-de-privacidad/9.pdf'
+                        href='https://himfg.edu.mx/archivos/graficos/avisos-de-privacidad/9.pdf'
                         target='_blank'
                     >
                     Aviso de Privacidad Integral para el Uso de Estacionamiento en el HIMFG  
@@ -79,7 +79,7 @@ export default function PrivacityPage(){
                 </li>
                 <li>
                     <a
-                        href='https://archivos.him.edu.mx/graficos/avisos-de-privacidad/10.pdf'
+                        href='https://himfg.edu.mx/archivos/graficos/avisos-de-privacidad/10.pdf'
                         target='_blank'
                     >
                     Aviso de privacidad Integral para la Encuesta de Satisfacción del Usuario. Egreso Hospitalario y Consulta Externa. 
@@ -87,7 +87,7 @@ export default function PrivacityPage(){
                 </li>
                 <li>
                     <a
-                        href='https://archivos.him.edu.mx/graficos/avisos-de-privacidad/11.pdf'
+                        href='https://himfg.edu.mx/archivos/graficos/avisos-de-privacidad/11.pdf'
                         target='_blank'
                     >
                     Aviso de Privacidad Integral para el Buzón de Quejas, Sugerencias y Felicitaciones

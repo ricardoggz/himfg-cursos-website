@@ -21,14 +21,14 @@ export const principal = {
 }
 export const doctors = [
     {
-        image: 'https://archivos.him.edu.mx/graficos/direccion-medica.png',
+        image: 'https://himfg.edu.mx/archivos.himfg.edu.mx/graficos/direccion-medica.png',
         name: 'Víctor Olivar López',
         description: 'Dirección Médica',
         icon:icon_5,
         link:'/direccion/medica'
     },
     {
-        image: 'https://archivos.him.edu.mx/graficos/direccion-ensenanza.png',
+        image: 'https://himfg.edu.mx/archivos.himfg.edu.mx/graficos/direccion-ensenanza.png',
         name: 'Claudia Gutiérrez Camacho',
         description: 'Dirección de Enseñanza y Desarrollo Académico',
         icon:icon_2,

@@ -244,102 +244,17 @@ export const PaymentForm = () => {
     }
   }
   const startFreePayment = async()=>{
-    if(user.student_role === 'PERSONAL_HIMFG' && course.course_price !== 0){
-      addPayment({
-        data:{
-          course_id: course.course_id,
-          student_id: user.student_id,
-          payment_successfull: 1,
-          payment_amount: 0,
-          payment_reference: paymentData.ControlNumber,
-          payment_invoice: "SIN_FACTURACION",
-          payment_date: fechaFormateada,
-          payment_modality: modality
-        }
-      })
+    if(user.student_role !== 'EXTERNO'){
       Swal.fire({
-        title: "Documentación enviada a revisión",
-        text:`Una vez revisada, se te hará llegar la confirmación de acceso al email: ${user.student_email}`,
-        icon: "success",
+        title: "Registro exitoso - Documentación en revisión",
+        text:`Su documentación ha sido mandada,
+        una vez revisada, se te harán llegar los datos de de acceso a
+        la siguiente dirección de correo: ${user.student_email}, favor de revisar
+        su bandeja de entrada, spam o correo no deseado`,
+        icon: "warning",
         showCloseButton: true,
         showConfirmButton: false,
         position: "center",
-      })
-    }
-    if((user.student_role === 'PERSONAL_HIMFG') && course.course_price === 0){
-      addPayment({
-        data:{
-          course_id: course.course_id,
-          student_id: user.student_id,
-          payment_successfull: 1,
-          payment_amount: 0.00,
-          payment_reference: paymentData.ControlNumber,
-          payment_invoice: "SIN_FACTURACION",
-          payment_date: fechaFormateada,
-          payment_modality: modality
-        }
-      })
-      Swal.fire({
-        title: "Inscripción exitosa",
-        text:'Se descargará un PDF con los datos del curso',
-        icon: "success",
-        showCloseButton: true,
-        showConfirmButton: false,
-        position: "center",
-      })
-      generatePDF({
-        course: course,
-        student: user,
-        reference: paymentData.ControlNumber
-      })
-    }
-    if(user.student_role === 'ESTUDIANTE' && course.course_price !== 0){
-      addPayment({
-        data:{
-          course_id: course.course_id,
-          student_id: user.student_id,
-          payment_successfull: 1,
-          payment_amount: 0,
-          payment_reference: paymentData.ControlNumber,
-          payment_invoice: "SIN_FACTURACION",
-          payment_date: fechaFormateada,
-          payment_modality: modality
-        }
-      })
-      Swal.fire({
-        title: "Documentación enviada a revisión",
-        text:'Una vez revisada, se te hará llegar la confirmación de acceso al curso via email',
-        icon: "success",
-        showCloseButton: true,
-        showConfirmButton: false,
-        position: "center",
-      })
-    }
-    if((user.student_role === 'ESTUDIANTE') && course.course_price === 0){
-      addPayment({
-        data:{
-          course_id: course.course_id,
-          student_id: user.student_id,
-          payment_successfull: 1,
-          payment_amount: 0.00,
-          payment_reference: paymentData.ControlNumber,
-          payment_invoice: "SIN_FACTURACION",
-          payment_date: fechaFormateada,
-          payment_modality: modality
-        }
-      })
-      Swal.fire({
-        title: "Inscripción exitosa",
-        text:'Se descargará un PDF con los datos del curso',
-        icon: "success",
-        showCloseButton: true,
-        showConfirmButton: false,
-        position: "center",
-      })
-      generatePDF({
-        course: course,
-        student: user,
-        reference: paymentData.ControlNumber
       })
     }
     if(user.student_role === 'EXTERNO'){
@@ -356,18 +271,20 @@ export const PaymentForm = () => {
         }
       })
       Swal.fire({
-        title: "Inscripción exitosa",
-        text:'Se descargará un PDF con los datos del curso',
+        title: "Registro exitoso",
+        text:`Se han envíado los datos de de acceso a la siguiente dirección de correo: ${user.student_email}, favor de revisar
+        su bandeja de entrada, spam o correo no deseado`,
         icon: "success",
         showCloseButton: true,
         showConfirmButton: false,
         position: "center",
       })
-      generatePDF({
+      await sendEmail()
+      /*generatePDF({
         course: course,
         student: user,
         reference: paymentData.ControlNumber
-      })
+      })*/
     }
     await updateMaxRange()
     router.push('/direccion/ensenanza')
@@ -432,7 +349,7 @@ export const PaymentForm = () => {
               </span>
               <form className={styles.invoiceSelectedForm}>
                 {
-                  user.student_role === 'EXTERNO' && course.course_price !== 0?
+                  course.course_price !== 0?
                   <div>
                     <input type='checkbox' onChange={()=>setIsSelected(!isSelected)}/>
                     <label>Facturación</label>
