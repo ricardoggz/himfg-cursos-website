@@ -14,7 +14,7 @@ export const Lititations = ()=>{
                 <ul>
                     <li>
                         <a
-                            href='http://himfg.com.mx/interna/diradminist/licitaciones.php'
+                            href='https://himfg.edu.mx/descargas/documentos/licitaciones/nac/CONVOCATORIA_2025_ABARROTES_Y_AGUA_PURIFICADA_DE_GARAFON.pdf'
                             target='_blank'
                         >
                             Consultar licitaciones
