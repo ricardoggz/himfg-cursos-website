@@ -21,10 +21,6 @@ export const Jumbotron =()=>{
                 link:'/'
             },
             {
-                url:'https://himfg.edu.mx/archivos/banners/banner-1.jpg',
-                link:'https://himfg.edu.mx/archivos/documentos/comunicados/resultados-residentes.pdf'
-            },
-            {
                 url:'https://himfg.edu.mx/archivos/banners/banner-2.webp',
                 link:'/'
             },
