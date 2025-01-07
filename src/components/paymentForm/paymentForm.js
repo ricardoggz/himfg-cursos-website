@@ -258,18 +258,6 @@ export const PaymentForm = () => {
       })
     }
     if(user.student_role === 'EXTERNO'){
-      addPayment({
-        data:{
-          course_id: course.course_id,
-          student_id: user.student_id,
-          payment_successfull: 1,
-          payment_amount: 0.00,
-          payment_reference: paymentData.ControlNumber,
-          payment_invoice: "SIN_FACTURACION",
-          payment_date: fechaFormateada,
-          payment_modality: modality
-        }
-      })
       Swal.fire({
         title: "Registro exitoso",
         text:`Se han envíado los datos de de acceso a la siguiente dirección de correo: ${user.student_email}, favor de revisar
@@ -286,6 +274,18 @@ export const PaymentForm = () => {
         reference: paymentData.ControlNumber
       })*/
     }
+    addPayment({
+      data:{
+        course_id: course.course_id,
+        student_id: user.student_id,
+        payment_successfull: 1,
+        payment_amount: 0.00,
+        payment_reference: paymentData.ControlNumber,
+        payment_invoice: "SIN_FACTURACION",
+        payment_date: fechaFormateada,
+        payment_modality: modality
+      }
+    })
     await updateMaxRange()
     router.push('/direccion/ensenanza')
   }
