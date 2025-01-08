@@ -65,17 +65,14 @@ export const RegisterForm = ({path})=>{
             )
             if(response.status === 200){
                 login(formData)
-                Swal.fire({
+                /*Swal.fire({
                     icon: 'success',
                     title: 'Registro exitoso',
                     showCloseButton: true,
                     showConfirmButton: false
-                })
+                })*/
                 if(course){
                     router.push('/payment')
-                }
-                if(!course){
-                    router.push('/userlogin')
                 }
             }
         } catch (error) {

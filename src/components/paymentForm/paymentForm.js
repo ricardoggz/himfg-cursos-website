@@ -247,10 +247,10 @@ export const PaymentForm = () => {
     if(user.student_role !== 'EXTERNO'){
       Swal.fire({
         title: "Registro exitoso - Documentación en revisión",
-        text:`Su documentación ha sido mandada,
-        una vez revisada, se te harán llegar los datos de de acceso a
-        la siguiente dirección de correo: ${user.student_email}, favor de revisar
-        su bandeja de entrada, spam o correo no deseado`,
+        text:`Su documentación ha sido enviada,
+        una vez revisada, se le harán llegar los datos de acceso a
+        la siguiente dirección de correo: ${user.student_email}.
+        Favor de revisar su bandeja de entrada, spam o correo no deseado.`,
         icon: "warning",
         showCloseButton: true,
         showConfirmButton: false,
@@ -260,7 +260,7 @@ export const PaymentForm = () => {
     if(user.student_role === 'EXTERNO'){
       Swal.fire({
         title: "Registro exitoso",
-        text:`Se han envíado los datos de de acceso a la siguiente dirección de correo: ${user.student_email}, favor de revisar
+        text:`Se han enviado los datos de de acceso a la siguiente dirección de correo: ${user.student_email}, favor de revisar
         su bandeja de entrada, spam o correo no deseado`,
         icon: "success",
         showCloseButton: true,

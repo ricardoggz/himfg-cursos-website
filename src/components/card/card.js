@@ -151,7 +151,7 @@ const Card = ({course})=>{
                             return login(course)
                         }}
                     >
-                        Gratuito
+                        Inscripción
                     </Link>
                     :
                     null
@@ -175,7 +175,7 @@ const Card = ({course})=>{
                             return login(course)
                         }}
                     >
-                        Gratuito
+                        Inscripción
                     </Link>
                     :
                     null
