@@ -76,6 +76,12 @@ export const PaymentForm = () => {
       Payment.setEnv("pro")
     }, 1000)
   },[])
+
+  useEffect(()=>{
+    if(course && course.course_price===0 && user && paymentData){
+      startFreePayment()
+    }
+  },[paymentData])
   const getCypherData = async(data)=>{
     try {
       const resp = await axios.post(
