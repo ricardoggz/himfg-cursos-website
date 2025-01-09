@@ -305,7 +305,12 @@ export const PaymentForm = () => {
   }
   return (
     <>
-      <div className={`${styles.paymentWrapper} flexContainer`}>
+      {
+        course && course.course_price === 0 ?
+        null
+        :
+        <>
+          <div className={`${styles.paymentWrapper} flexContainer`}>
         <div className={`${styles.paymentDetails} boxShadow`}>
           <h3>Detalles de la compra</h3>
           {!course ? null : (
@@ -438,6 +443,8 @@ export const PaymentForm = () => {
           />
         </figure>
       </div>
+        </>
+      }
     </>
   );
 };
