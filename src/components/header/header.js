@@ -54,7 +54,7 @@ export const Header =()=>{
                             </Link>
                         </li>*/}
                         <li>
-                            <Link href='/video/scp-2024' onClick={open}>
+                            <Link href='/cursos2025/scp-2025' onClick={open}>
                                 Sesión Clínico Patológica
                             </Link>
                         </li>

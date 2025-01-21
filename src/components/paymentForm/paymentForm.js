@@ -85,7 +85,7 @@ export const PaymentForm = () => {
   const getCypherData = async(data)=>{
     try {
       const resp = await axios.post(
-        'https://cemesatelhimfg-001-site1.ptempurl.com/aes/decrypt',
+        'https://cemesatelcyper-001-site1.mtempurl.com/aes/decrypt',
         data
       )
       return resp.data
@@ -204,9 +204,9 @@ export const PaymentForm = () => {
               await updateMaxRange()
               if(user.student_role !== 'EXTERNO'){
                 Swal.fire({
-                  title: "Pago exitoso - Documentación en revisión",
+                  title: "Registro en proceso - Documentación en revisión",
                   text:`Su documentación ha sido mandada,
-                  una vez revisada, se te harán llegar los datos de de acceso a
+                  una vez revisada, se le harán llegar los datos de de acceso a
                   la siguiente dirección de correo: ${user.student_email}, favor de revisar
                   su bandeja de entrada, spam o correo no deseado`,
                   icon: "warning",
@@ -252,7 +252,7 @@ export const PaymentForm = () => {
   const startFreePayment = async()=>{
     if(user.student_role !== 'EXTERNO'){
       Swal.fire({
-        title: "Registro exitoso - Documentación en revisión",
+        title: "Registro en proceso - Documentación en revisión",
         text:`Su documentación ha sido enviada,
         una vez revisada, se le harán llegar los datos de acceso a
         la siguiente dirección de correo: ${user.student_email}.
