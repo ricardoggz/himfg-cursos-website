@@ -19,8 +19,18 @@ export const RegisterForm = ({path})=>{
     const [isSelected, setIsSelected] = useState(false)
     const [formData, setFormData] = useState({
         student_id: Math.floor((Math.random() * 450000) + 450000),
-        student_license: "",
-        student_license_part_2: ""
+        student_name: undefined,
+        student_grade: undefined,
+        student_institution: undefined,
+        student_email: undefined,
+        student_password: undefined,
+        student_age: undefined,
+        student_graduated: undefined,
+        student_nationality: undefined,
+        student_license: undefined,
+        student_state: undefined,
+        student_phone: undefined,
+        student_role: undefined,
     })
     const [image, setImage] = useState(null)
     const handleChange = (evt)=>{
@@ -59,27 +69,49 @@ export const RegisterForm = ({path})=>{
     }
     const onSubmit = async(evt) =>{
         evt.preventDefault()
-        try {
-            const response = await axios.post(
-                `${process.env.BASE_URL_API}api/auth/create-user`, formData          
+        if(
+            (
+                !formData.student_name ||
+                !formData.student_grade ||
+                !formData.student_institution ||
+                !formData.student_email ||
+                !formData.student_password ||
+                !formData.student_age ||
+                !formData.student_graduated ||
+                !formData.student_nationality ||
+                !formData.student_license ||
+                !formData.student_state ||
+                !formData.student_phone ||
+                !formData.student_role
             )
-            if(response.status === 200){
-                login(formData)
-                /*Swal.fire({
-                    icon: 'success',
-                    title: 'Registro exitoso',
-                    showCloseButton: true,
-                    showConfirmButton: false
-                })*/
-                if(course){
-                    router.push('/payment')
+        ){
+            Swal.fire({
+                title: 'Complete los campos requeridos',
+                icon: 'warning'
+            })
+        }else{
+            try {
+                const response = await axios.post(
+                    `${process.env.BASE_URL_API}api/auth/create-user`, formData          
+                )
+                if(response.status === 200){
+                    login(formData)
+                    /*Swal.fire({
+                        icon: 'success',
+                        title: 'Registro exitoso',
+                        showCloseButton: true,
+                        showConfirmButton: false
+                    })*/
+                    if(course){
+                        router.push('/payment')
+                    }
                 }
+                evt.target.reset()
+                onReset()
+            } catch (error) {
+                throw new Error(error)
             }
-        } catch (error) {
-            throw new Error(error)
         }
-        evt.target.reset()
-        onReset()
     }
     if(course && course.modality_id === 1){
         setItem('modality', 'presencial')
@@ -98,9 +130,8 @@ export const RegisterForm = ({path})=>{
                 Nombre como aparecerá en su constancia:
             </label>
             <input 
-                ype='text'
+                type='text'
                 name='student_name'
-                required
                 onChange={handleChange}
             />
             <label className={styles.labelTitle}>
@@ -110,14 +141,12 @@ export const RegisterForm = ({path})=>{
                 type='number'
                 name='student_age'
                 onChange={handleChange}
-                required
             />
             <label className={styles.labelTitle}>
                 Nacionalidad:
             </label>
             <input
                 type='text'
-                required
                 onChange={handleChange}
                 name='student_nationality'
             />
@@ -128,7 +157,6 @@ export const RegisterForm = ({path})=>{
                 name='student_state'
                 onChange={handleChange}
                 type='text'
-                required
             />
             <label className={styles.labelTitle}>
                 Perfil profesional:
@@ -140,9 +168,7 @@ export const RegisterForm = ({path})=>{
                         type='radio'
                         value='PERSONAL_HIMFG'
                         name='student_role'
-                        onChange={handleChange}
-                        required
-                        
+                        onChange={handleChange}                        
                     />
                     {
                         formData.student_role && formData.student_role === 'PERSONAL_HIMFG' ?
@@ -184,9 +210,7 @@ export const RegisterForm = ({path})=>{
                         type='radio'
                         value='ESTUDIANTE'
                         name='student_role'
-                        onChange={handleChange}
-                        required
-                        
+                        onChange={handleChange}                        
                     />
                 </div>
                 <div>
@@ -195,9 +219,7 @@ export const RegisterForm = ({path})=>{
                         type='radio'
                         value='EXTERNO'
                         name='student_role'
-                        onChange={handleChange}
-                        required
-                        
+                        onChange={handleChange}                        
                     />
                     {
                         formData.student_role && formData.student_role === 'EXTERNO' ?
@@ -279,13 +301,14 @@ export const RegisterForm = ({path})=>{
                                 type='file'
                                 name='student_license'
                                 onChange={handleimageChange}
-                                required
+                                accept='image/png, image/jpeg'
                                 id='file'/>
                                 <input
                                 type='file'
                                 name='student_license_part_2'
                                 onChange={handleSecondImageChange}
                                 required
+                                accept='image/png, image/jpeg'
                                 id='file'/>
                             </>
                             :
@@ -298,13 +321,14 @@ export const RegisterForm = ({path})=>{
                                 type='file'
                                 name='student_license'
                                 onChange={handleimageChange}
-                                required
+                                accept='image/png, image/jpeg'
                                 id='file'/>
                                 <input
                                 type='file'
                                 name='student_license_part_2'
                                 onChange={handleSecondImageChange}
                                 required
+                                accept='image/png, image/jpeg'
                                 id='file'/>
                             </>
                             :
@@ -317,7 +341,7 @@ export const RegisterForm = ({path})=>{
                                 type='file'
                                 name='student_license'
                                 onChange={handleimageChange}
-                                required
+                                accept='image/png, image/jpeg'
                                 id='file'/>
                             </>
                             :
@@ -406,7 +430,6 @@ export const RegisterForm = ({path})=>{
             </label>
             <input
                 type='number'
-                required
                 name='student_phone'
                 onChange={handleChange}
             />
@@ -415,7 +438,6 @@ export const RegisterForm = ({path})=>{
             </label>
             <input
                 type='email'
-                required
                 name='student_email'
                 onChange={handleChange}
             />
@@ -424,7 +446,6 @@ export const RegisterForm = ({path})=>{
             </label>
             <input
                 type='password'
-                required
                 name='student_password'
                 onChange={handleChange}
             />

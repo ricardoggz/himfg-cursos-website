@@ -14,7 +14,7 @@ import { reference } from "./reference"
 import { addPayment } from "@/services"
 import { generatePDF } from "./generatePDF"
 import { uploadFile, updateTaxData, uploadTaxCard } from '@/services'
-import { setItem, getItem, removeItem } from "@/helpers"
+import { setItem, getItem, removeItem, formatDate } from "@/helpers"
 
 export const PaymentForm = () => {
   const [fileName, setFileName] = useState('')
@@ -110,8 +110,8 @@ export const PaymentForm = () => {
     try {
       const resp = await axios.post(`${process.env.BASE_URL_API}api/emails/send-email`,{
         course_name: course.course_name,
-        course_start_date: course.course_start_date,
-        course_finish_date: course.course_finish_date,
+        course_start_date: formatDate(course.course_start_date),
+        course_finish_date: formatDate(course.course_finish_date),
         course_place: course.course_place,
         course_url: course.course_url,
         course_password:course.course_password,
