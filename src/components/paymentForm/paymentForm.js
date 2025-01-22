@@ -56,19 +56,19 @@ export const PaymentForm = () => {
     if(course && user && user.student_role === 'PERSONAL_HIMFG'){
       setPaymentData({
         ...data,
-        Amount: `1.00`,
+        Amount: `${course.course_employee_price}.00`,
         ControlNumber: `${reference(course.course_id)}`
       })
     }else if(course && user && user.student_role === 'ESTUDIANTE'){
       setPaymentData({
         ...data,
-        Amount: `1.00`,
+        Amount: `${course.course_student_price}.00`,
         ControlNumber: `${reference(course.course_id)}`
       })
     }else if(course && user && user.student_role === 'EXTERNO'){
       setPaymentData({
         ...data,
-        Amount: `1.00`,
+        Amount: `${course.course_price}.00`,
         ControlNumber: `${reference(course.course_id)}`
       })
     }
