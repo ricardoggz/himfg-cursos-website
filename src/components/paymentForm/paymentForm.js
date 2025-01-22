@@ -56,19 +56,19 @@ export const PaymentForm = () => {
     if(course && user && user.student_role === 'PERSONAL_HIMFG'){
       setPaymentData({
         ...data,
-        Amount: `${course.course_employee_price}.00`,
+        Amount: `1.00`,
         ControlNumber: `${reference(course.course_id)}`
       })
     }else if(course && user && user.student_role === 'ESTUDIANTE'){
       setPaymentData({
         ...data,
-        Amount: `${course.course_student_price}.00`,
+        Amount: `1.00`,
         ControlNumber: `${reference(course.course_id)}`
       })
     }else if(course && user && user.student_role === 'EXTERNO'){
       setPaymentData({
         ...data,
-        Amount: `${course.course_price}.00`,
+        Amount: `1.00`,
         ControlNumber: `${reference(course.course_id)}`
       })
     }
@@ -216,13 +216,14 @@ export const PaymentForm = () => {
                 })
               }
               if(user.student_role==='EXTERNO'){
-                await sendEmail()
+                //await sendEmail()
                 Swal.fire({
-                  title: "Pago exitoso",
-                  text:`Se han envíado los datos de de acceso a la siguiente dirección de correo: ${user.student_email}, favor de revisar
-                  su bandeja de entrada, spam o correo no deseado
-                  `,
-                  icon: "success",
+                  title: "Registro en proceso - Documentación en revisión",
+                  text:`Su documentación ha sido mandada,
+                  una vez revisada, se le harán llegar los datos de de acceso a
+                  la siguiente dirección de correo: ${user.student_email}, favor de revisar
+                  su bandeja de entrada, spam o correo no deseado`,
+                  icon: "warning",
                   showCloseButton: true,
                   showConfirmButton: false,
                   position: "center",
@@ -265,15 +266,16 @@ export const PaymentForm = () => {
     }
     if(user.student_role === 'EXTERNO'){
       Swal.fire({
-        title: "Registro exitoso",
-        text:`Se han enviado los datos de de acceso a la siguiente dirección de correo: ${user.student_email}, favor de revisar
-        su bandeja de entrada, spam o correo no deseado`,
-        icon: "success",
+        title: "Registro en proceso - Documentación en revisión",
+        text:`Su documentación ha sido enviada,
+        una vez revisada, se le harán llegar los datos de acceso a
+        la siguiente dirección de correo: ${user.student_email}.
+        Favor de revisar su bandeja de entrada, spam o correo no deseado.`,
+        icon: "warning",
         showCloseButton: true,
         showConfirmButton: false,
         position: "center",
       })
-      await sendEmail()
       /*generatePDF({
         course: course,
         student: user,
@@ -300,7 +302,7 @@ export const PaymentForm = () => {
     setFileName(newFileName)
     setFormData({
       [evt.target.name]: evt.target.files[0],
-      student_tax_data:`https://archivos.him.edu.mx/constancias-cursos/${newFileName}`
+      student_tax_data:`https://himfg.edu.mx/archivos/documentacion-alumnos/constancias-fiscales/${newFileName}`
     })
   }
   return (
@@ -376,6 +378,7 @@ export const PaymentForm = () => {
                     type='file'
                     required
                     name='pdfFile'
+                    accept="application/pdf"
                     onChange={handleImageChange}
                     />
                   </>

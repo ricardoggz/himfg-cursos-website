@@ -86,7 +86,7 @@ export const RegisterForm = ({path})=>{
             )
         ){
             Swal.fire({
-                title: 'Complete los campos requeridos',
+                title: 'Complete los campos requeridos o revise sus archivos seleccionados (JPG, .PNG, .PDF y máximo 1MB)',
                 icon: 'warning'
             })
         }else{
@@ -272,7 +272,7 @@ export const RegisterForm = ({path})=>{
                            {
                             formData.student_role === 'PERSONAL_HIMFG' ?
                             <>
-                                Inserte una fotografía de su credencial vigente de personal del Hospital Infantil de México por ambos lados (en archivo .JPG y 1MB como máximo)
+                                Inserte una fotografía de su credencial vigente de personal del Hospital Infantil de México por ambos lados (en archivo .JPG, .PNG , .PDFy 1MB como máximo)
                             </>
                             :
                             null
@@ -280,7 +280,7 @@ export const RegisterForm = ({path})=>{
                            {
                             formData.student_role === 'ESTUDIANTE' ?
                             <>
-                                Inserte una fotografía de su credencial vigente de estudiante por ambos lados (en archivo .JPG y 1MB como máximo)
+                                Inserte una fotografía de su credencial vigente de estudiante por ambos lados (en archivo .JPG, .PNG, .PDF y 1MB como máximo)
                             </>
                             :
                             null
@@ -288,7 +288,7 @@ export const RegisterForm = ({path})=>{
                            {
                             formData.student_role === 'EXTERNO' ?
                             <>
-                                Inserte una fotografía de su cédula profesional (en archivo .JPG y 1MB como máximo)
+                                Inserte una fotografía de su cédula profesional (en archivo .JPG, .PNG, .PDF y 1MB como máximo)
                             </>
                             :
                             null
@@ -301,14 +301,12 @@ export const RegisterForm = ({path})=>{
                                 type='file'
                                 name='student_license'
                                 onChange={handleimageChange}
-                                accept='image/png, image/jpeg'
                                 id='file'/>
                                 <input
                                 type='file'
                                 name='student_license_part_2'
                                 onChange={handleSecondImageChange}
                                 required
-                                accept='image/png, image/jpeg'
                                 id='file'/>
                             </>
                             :
@@ -321,14 +319,12 @@ export const RegisterForm = ({path})=>{
                                 type='file'
                                 name='student_license'
                                 onChange={handleimageChange}
-                                accept='image/png, image/jpeg'
                                 id='file'/>
                                 <input
                                 type='file'
                                 name='student_license_part_2'
                                 onChange={handleSecondImageChange}
                                 required
-                                accept='image/png, image/jpeg'
                                 id='file'/>
                             </>
                             :
@@ -341,7 +337,6 @@ export const RegisterForm = ({path})=>{
                                 type='file'
                                 name='student_license'
                                 onChange={handleimageChange}
-                                accept='image/png, image/jpeg'
                                 id='file'/>
                             </>
                             :
@@ -487,6 +482,7 @@ export const RegisterForm = ({path})=>{
                                 type='radio'
                                 value='presencial'
                                 name='modality'
+                                required
                                 onChange={
                                     ()=> setItem('modality', 'presencial')
                                 }
@@ -501,6 +497,7 @@ export const RegisterForm = ({path})=>{
                                 type='radio'
                                 value='en_linea'
                                 name='modality'
+                                required
                                 onChange={                                
                                     ()=> setItem('modality', 'en_linea')
                                 }

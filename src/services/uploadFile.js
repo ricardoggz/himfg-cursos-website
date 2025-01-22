@@ -1,5 +1,5 @@
 import axios from "axios";
-export const uploadFile = async({file})=>{
+/*export const uploadFile = async({file})=>{
   try {
     const formData = new FormData();
     formData.append('file', file);
@@ -14,4 +14,36 @@ export const uploadFile = async({file})=>{
   } catch (error) {
     console.log(error)
   }
-}
+}*/
+  export const uploadFile= async({file})=>{
+    const formData = new FormData()
+    formData.append('file', file)
+    try {
+      const response = await axios.post(
+        'https://himfg.edu.mx/archivos/documentacion-alumnos/upload-file.php',
+        formData,
+        {
+            headers: {
+            'Content-Type': 'multipart/form-data',
+            },
+        })
+      if(response.status===200){
+      return response.data.fileUrl
+      }else{
+        Swal.fire({
+            icon:'error',
+            title:'Error al cargar elrchivo, intente nuevamente',
+            showCloseButton:true,
+            showConfirmButton:false
+        })
+      }
+    } catch (error) {
+      console.log(error)
+      Swal.fire({
+        icon:'error',
+        title:'Error al cargar elrchivo, intente nuevamente',
+        showCloseButton:true,
+        showConfirmButton:false
+    })
+    }
+  }
