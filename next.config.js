@@ -42,7 +42,7 @@ const nextConfig = {
       '/convocatoria/informes' : {page: '/convocatoria/informes'},
       '/dano-cero' : {page: '/dano-cero'},
       '/organizacion-de-archivos' : {page: '/organizacion-de-archivos'},
-      'sesion-clinico-patologica': {page: '/sesion-clinico-patologica'}
+      '/sesion-clinico-patologica': {page: '/sesion-clinico-patologica'}
     }
   },
   env:{
