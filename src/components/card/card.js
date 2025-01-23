@@ -65,6 +65,22 @@ const Card = ({course})=>{
               null
             }
             {
+                course.modality_id === 1 ?
+                <span>
+                    Modalidad: presencial
+                </span>
+                :
+                null
+            }
+            {
+                course.modality_id === 2 ?
+                <span>
+                    Modalidad: en línea
+                </span>
+                :
+                null
+            }
+            {
                 course.modality_id === 3 && course.course_max_range ?
                 <span>Cupo límite: {course.course_max_range} personas (presencial), en línea cupo ilimitado</span>
                 :
