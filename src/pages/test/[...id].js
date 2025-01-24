@@ -218,7 +218,7 @@ export default function Test(){
 export const getStaticPaths = async()=>{
     const response = await fetch(`${process.env.BASE_URL_API}api/courses/all-courses`)
     const json = await response.json()
-    const paths = json.filter((course)=>course.course_vimeo_folder)
+    const paths = json.filter((course)=>course.course_url)
     .map((course)=>{
         return{
             params:{
