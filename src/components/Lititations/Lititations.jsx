@@ -44,6 +44,23 @@ export const Lititations = ()=>{
                     </li>
                 </ul>
             </FileListModal>
+            <FileListModal
+                icon={<FaBook />}
+                title='Programas anuales de adquisiciones, arrendamientos y servicios'
+            >
+                <span>Programas anuales</span>
+                <br/>
+                <ul>
+                    <li>
+                        <a
+                            href='https://docs.google.com/spreadsheets/d/1GSaEe1hNr3039U5VyAEnXT42e1N_c5qS/edit?usp=sharing&ouid=106634988259917360936&rtpof=true&sd=true'
+                            target="_blank"
+                        >
+                            2025
+                        </a>
+                    </li>
+                </ul>
+            </FileListModal>
         </div>
     )
 }

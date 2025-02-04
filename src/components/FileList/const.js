@@ -489,6 +489,19 @@ export const infoNormas = [
 
 export const infoInventario= [
     {
+        title: '2025 - Bienes Muebles e Inmuebles',
+        content:[
+            {
+                link: 'https://himfg.edu.mx/archivos/recursos-financieros/2025/Programa-Anual-de-Disposicion-Final-de-los-Bienes-Muebles-ejercicio-2025.pdf',
+                title: 'Programa Anual de Disposición Final de los Bienes Muebles, ejercicio 2025'
+            },
+            {
+                link: 'https://himfg.edu.mx/archivos/recursos-financieros/2025/Programa-Anual-Modificado-de-Disposicion-Final-de-los-Bienes-Muebles-ejercicio-2024.pdf',
+                title: 'Programa Anual Modificado correspondiente al ejercico 2024'
+            },
+        ]
+    },
+    {
         title: '2024 - Bienes Muebles e Inmuebles',
         content:[
             {
