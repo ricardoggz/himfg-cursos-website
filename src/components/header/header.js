@@ -77,11 +77,6 @@ export const Header =()=>{
                             </Link>
                         </li>
                         <li>
-                            <Link href='/profile' onClick={open}>
-                                Perfil
-                            </Link>
-                        </li>
-                        <li>
                             <Link href='/video/scp-2024' onClick={open}>
                                 Sesión Clínico Patológica
                             </Link>
@@ -94,6 +89,11 @@ export const Header =()=>{
                         <li>
                             <Link href='/direccion/educacion-medica-continua' onClick={open}>
                                Oferta Académica
+                            </Link>
+                        </li>
+                        <li>
+                            <Link href='/profile' onClick={open}>
+                                Perfil
                             </Link>
                         </li>
                         <li>

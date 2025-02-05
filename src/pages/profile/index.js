@@ -131,21 +131,12 @@ const Profile = ()=>{
                                             onChange={handleChange}
                                             />
                                             <label>Lugar de procedencia:</label>
-                                            <select
-                                                name='student_state'
-                                                onChange={handleChange}
-                                            >
-                                                {
-                                                    states.map((state)=>(
-                                                    <option
-                                                        defaultValue={user.student_state}                                                        
-                                                        key={state}
-                                                    >
-                                                        {state}
-                                                    </option>
-                                                    ))
-                                                }
-                                            </select>
+                                            <input
+                                            type='text'
+                                            defaultValue={user.student_state}
+                                            name='student_state'
+                                            onChange={handleChange}
+                                            />
                                             <label>Perfil profesional:</label>
                                             <input
                                             type='text'
@@ -176,7 +167,7 @@ const Profile = ()=>{
                                             />
                                             <label>Contraseña:</label>
                                             <input
-                                            type='password'
+                                            type='text'
                                             defaultValue={user.student_password}
                                             name='student_password'
                                             onChange={handleChange}
