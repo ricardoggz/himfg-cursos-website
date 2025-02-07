@@ -1,15 +1,9 @@
 import { useState } from 'react'
-import Link from 'next/link'
-import 'animate.css'
-import Swal from 'sweetalert2'
-import withReactContent from 'sweetalert2-react-content'
 import { months } from './consts'
-import styles from './courses.module.css'
-import { Loader, Title, GridContainer } from '../../components'
-import Card from '../../components/card/card'
 import { useFetch } from '../../hooks'
-
-const CardModal = withReactContent(Swal)
+import styles from './courses.module.css'
+import Card from '../../components/card/card'
+import { Loader, Title, GridContainer } from '../../components'
 
 export const Courses = ()=>{
     const [selectedMonth, setSelectedMonth]= useState(months[new Date().getMonth()])
@@ -38,42 +32,7 @@ export const Courses = ()=>{
                         return (
                             <Card
                                 key={course.course_id}
-                                image={course.course_image}
-                                title={course.course_name}
-                                showModal={()=> showModal(
-                                    <Card
-                                        key={course.course_id}
-                                        image={course.course_image}
-                                        title={course.course_name}
-                                        startDate={course.course_start_date}
-                                        finishDate={course.course_finish_date}
-                                    >
-                                        {
-                                        !course.course_pdf ?
-                                        <></>
-                                        :
-                                        <>
-                                        <a
-                                            href={course.course_pdf}
-                                            target={'_blank'}
-                                        >
-                                            Ver programa
-                                        </a>
-                                        </>
-                                        }
-                                        {
-                                        !course.course_vimeo_folder?
-                                        <></>
-                                        :
-                                        <Link
-                                            href={`/video/[...id]`}
-                                            as ={`/video/${course.course_url}`}
-                                        >
-                                            Ingresar
-                                        </Link>
-                                        }
-                                    </Card>
-                                )}
+                                course={course}
                             />
                         )
                     })
@@ -83,20 +42,4 @@ export const Courses = ()=>{
             :<Loader message='Cargando oferta académica'/>}
             </section>   
     )
-}
-
-const showModal = (content)=>{
-    CardModal.fire({
-        html:content,
-        width: 400,
-        heightAuto:true,
-        showCloseButton:true,
-        showConfirmButton:false,
-        showClass: {
-            popup: 'animate__animated animate__fadeIn'
-          },
-          hideClass: {
-            popup: 'animate__animated animate__fadeOut'
-          }
-    })
 }
