@@ -1,10 +1,19 @@
 import axios from 'axios'
-import { useOnChange } from '../../hooks'
+import { useState } from 'react'
 import styles from './form.module.css'
+import { useOnChange } from '../../hooks'
 
-export const RegisterForm = ()=>{
-    const [inputData, onChange, onReset] = useOnChange()
-    const onSubmit = async(evt) =>{
+export const RegisterForm = () => {
+    const [onReset] = useOnChange()
+    const [inputData, setInputData] = useState(null)
+    const [isSelected, setIsSelected] = useState(false)
+    const onChange=(evt)=>{
+        setInputData({
+            ...inputData,
+            [evt.target.name]: evt.target.value
+        })
+    }
+    const onSubmit = async (evt) => {
         evt.preventDefault()
         try {
             await axios.post(
@@ -19,133 +28,60 @@ export const RegisterForm = ()=>{
     }
     return (
         <form className={`flexContainer ${styles.formWrapper}`} onSubmit={onSubmit}>
-            <label>Nombre completo empezando por apellidos:</label>
-            <input type='text' name='student_name' required onChange={onChange}/>
-            <label>¿Cuál es su título profesional?:</label>
+            <label>Nombre completo:</label>
+            <input type='text' name='student_name' required onChange={onChange} />
+            <label>Edad:</label>
+            <input
+                type='number'
+                name='student_age'
+                onChange={onChange}
+                required
+            />
+            <label>Nacionalidad:</label>
+            <input
+                type='text'
+                required
+                onChange={onChange}
+                name='student_nationality'
+            />
+            <label>Lugar de residencia:</label>
+            <input
+                type='text'
+                required
+                name='student_work_position'
+                onChange={onChange}
+            />
+            <label>¿Cuál es su perfil profesional?:</label>
             <div className={styles.formRatioInputs}>
-                <div>
-                    <label>MÉDICO</label>
+                <div className={inputData && inputData.student_grade === 'ESTUDIANTE' ? styles.formFieldSelected : ''}>
+                    <label>Estudiante</label>
                     <input
                         type='radio'
-                        value='MÉDICO'
+                        value='ESTUDIANTE'
                         name='student_grade'
                         onChange={onChange}
                         required
                     />
                 </div>
-                <div>
-                    <label>PASANTE</label>
+                <div className={inputData && inputData.student_grade === 'PERSONAL_HIMFG' ? styles.formFieldSelected : ''}>
+                    <label>Personal del HIMFG</label>
                     <input
                         type='radio'
-                        value='PASANTE'
+                        value='PERSONAL_HIMFG'
                         name='student_grade'
                         onChange={onChange}
                         required
                     />
                 </div>
-                <div>
-                    <label>EST. MED.</label>
+                <div className={inputData && inputData.student_grade === 'EXTERNO' ? styles.formFieldSelected : ''}>
+                    <label>Externo</label>
                     <input
                         type='radio'
-                        value='EST. MED.'
+                        value='EXTERNO'
                         name='student_grade'
                         onChange={onChange}
                         required
                     />
-                </div>
-                <div>
-                    <label>LIC. ENF.</label>
-                    <input
-                        type='radio'
-                        value='LIC. ENF.'
-                        name='student_grade'
-                        onChange={onChange}
-                        required
-                    />
-                </div>
-                <div>
-                    <label>ENF. ESP.</label>
-                    <input
-                        type='radio'
-                        value='ENF. ESP.'
-                        name='student_grade'
-                        onChange={onChange}
-                        required                        
-                    />
-                </div>
-                <div>
-                    <label>EST. ENF.</label>
-                    <input
-                        type='radio'
-                        value='EST. ENF.'
-                        name='student_grade'
-                        onChange={onChange}
-                        required
-                    />
-                </div>
-                <div>
-                    <label>QUÍMICO</label>
-                    <input
-                        type='radio'
-                        value='QUÍMICO'
-                        name='student_grade'
-                        onChange={onChange}
-                        required
-                    />
-                </div>
-                <div>
-                    <label>BIÓLOGO</label>
-                    <input
-                        type='radio'
-                        value='BIÓLOGO'
-                        name='student_grade'
-                        onChange={onChange}
-                        required
-                    />
-                </div>
-                <div>
-                    <label>M. En C.</label>
-                    <input
-                        type='radio'
-                        value='M. EN C.'
-                        name='student_grade'
-                        onChange={onChange}
-                        required
-                    />
-                </div>
-                <div>
-                    <label>PSICÓLOGO</label>
-                    <input
-                        type='radio'
-                        value='PSICÓLOGO'
-                        name='student_grade'
-                        onChange={onChange}
-                        required
-                    />
-                </div>
-                <div>
-                    <label>PEDAGOGO</label>
-                    <input
-                        type='radio'
-                        value='PEDAGOGO'
-                        name='student_grade'
-                        onChange={onChange}
-                        required
-                    />
-                </div>
-                <div>
-                    <label>TRABAJADOR SOCIAL</label>
-                    <input
-                        type='radio'
-                        value='TRABAJADOR SOCIAL'
-                        name='student_grade'
-                        onChange={onChange}
-                        required
-                    />
-                </div>
-                <div>
-                    <label>Otro (especifique):</label>
-                    <input type='text' name='student_grade' onChange={onChange}/>
                 </div>
             </div>
             <label>Institución de procedencia:</label>
@@ -202,16 +138,9 @@ export const RegisterForm = ()=>{
                 </div>
                 <div>
                     <label>Otro (especifique):</label>
-                    <input type='text' name='student_institution' onChange={onChange}/>
+                    <input type='text' name='student_institution' onChange={onChange} />
                 </div>
             </div>
-            <label>Cargo:</label>
-            <input
-                type='text'
-                required
-                name='student_work_position'
-                onChange={onChange}
-            />
             <label>Teléfono:</label>
             <input
                 type='number'
@@ -219,19 +148,19 @@ export const RegisterForm = ()=>{
                 name='student_phone'
                 onChange={onChange}
             />
-            <label>Correo electrónico:</label>
+            <label>Correo electrónico para acceso a la plataforma y donde se enviará su constancia:</label>
             <input
                 type='email'
                 required
                 name='student_email'
                 onChange={onChange}
             />
-            <label>Edad:</label>
+            <label>Genere una contraseña para ingresar a la plataforma:</label>
             <input
-                type='number'
-                name='student_age'
-                onChange={onChange}
+                type='email'
                 required
+                name='student_email'
+                onChange={onChange}
             />
             <label>Eres egresado de algún programa del HIMFG:</label>
             <div className={styles.formRatioInputs}>
@@ -256,19 +185,13 @@ export const RegisterForm = ()=>{
                     />
                 </div>
             </div>
-            <label>Nacionalidad:</label>
-            <input
-                type='text'
-                required
-                onChange={onChange}
-                name='student_nationality'
-            />
+
             <div className={styles.formButtons}>
                 <button className={styles.buttonSuccess}>Enviar</button>
                 <button
-                className={styles.buttonDanger}
-                type='reset'
-                onClick={onReset}
+                    className={styles.buttonDanger}
+                    type='reset'
+                    onClick={onReset}
                 >
                     Cancelar
                 </button>

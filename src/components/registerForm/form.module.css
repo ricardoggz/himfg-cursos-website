@@ -86,6 +86,10 @@
 .toUpperCase{
     text-transform: uppercase;
 }
+.formFieldSelected{
+    background: var(--green-primary);
+    color:var(--white-primary);
+}
 @media (min-width:240px) and (max-width:880px){
     .formRatioInputs{
         grid-template-columns: 1fr;
