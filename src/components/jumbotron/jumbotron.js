@@ -17,6 +17,14 @@ export const Jumbotron =()=>{
         }
         const images = [
             {
+                url:'https://himfg.edu.mx/archivos/banners/CYTOTRON.webp',
+                link:'/'
+            },
+            {
+                url:'https://himfg.edu.mx/archivos/banners/CYTOTRON-02.webp',
+                link:'/galeria'
+            },
+            {
                 url:'https://himfg.edu.mx/archivos/banners/banner-2.jpeg',
                 link:'https://himfg.edu.mx/archivos/documentos/comunicados/aceptados-2025-2026.pdf'
             },

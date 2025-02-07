@@ -71,18 +71,18 @@ export const RegisterForm = ({path})=>{
         evt.preventDefault()
         if(
             (
-                !formData.student_name ||
+                /*!formData.student_name ||
                 !formData.student_grade ||
                 !formData.student_institution ||
                 !formData.student_email ||
                 !formData.student_password ||
                 !formData.student_age ||
                 !formData.student_graduated ||
-                !formData.student_nationality ||
-                !formData.student_license ||
-                !formData.student_state ||
+                !formData.student_nationality ||*/
+                !formData.student_license
+                /*!formData.student_state ||
                 !formData.student_phone ||
-                !formData.student_role
+                !formData.student_role*/
             )
         ){
             Swal.fire({
@@ -133,6 +133,7 @@ export const RegisterForm = ({path})=>{
                 type='text'
                 name='student_name'
                 onChange={handleChange}
+                required
             />
             <label className={styles.labelTitle}>
                 Edad:
@@ -141,6 +142,7 @@ export const RegisterForm = ({path})=>{
                 type='number'
                 name='student_age'
                 onChange={handleChange}
+                required
             />
             <label className={styles.labelTitle}>
                 Nacionalidad:
@@ -149,6 +151,7 @@ export const RegisterForm = ({path})=>{
                 type='text'
                 onChange={handleChange}
                 name='student_nationality'
+                required
             />
             <label className={styles.labelTitle}>
                 Lugar de residencia:
@@ -157,6 +160,7 @@ export const RegisterForm = ({path})=>{
                 name='student_state'
                 onChange={handleChange}
                 type='text'
+                required
             />
             <label className={styles.labelTitle}>
                 Perfil profesional:
@@ -168,14 +172,15 @@ export const RegisterForm = ({path})=>{
                         type='radio'
                         value='PERSONAL_HIMFG'
                         name='student_role'
-                        onChange={handleChange}                        
+                        onChange={handleChange}
+                        required                        
                     />
                     {
                         formData.student_role && formData.student_role === 'PERSONAL_HIMFG' ?
                         <div>
                             {
                                 !isSelected ? 
-                                    <select onChange={handleChange} name='student_grade'>
+                                    <select onChange={handleChange} name='student_grade' required>
                                     <option value=''>Seleccionar</option>
                                     <option value='Médico'>Médico</option>
                                     <option value='Enfermero(a)'>
@@ -210,7 +215,8 @@ export const RegisterForm = ({path})=>{
                         type='radio'
                         value='ESTUDIANTE'
                         name='student_role'
-                        onChange={handleChange}                        
+                        onChange={handleChange}
+                        required                      
                     />
                 </div>
                 <div>
@@ -219,14 +225,15 @@ export const RegisterForm = ({path})=>{
                         type='radio'
                         value='EXTERNO'
                         name='student_role'
-                        onChange={handleChange}                        
+                        onChange={handleChange}
+                        required                        
                     />
                     {
                         formData.student_role && formData.student_role === 'EXTERNO' ?
                         <div>
                             {
                                 !isSelected ? 
-                                    <select onChange={handleChange} name='student_grade'>
+                                    <select onChange={handleChange} name='student_grade' required>
                                     <option value=''>Seleccionar</option>
                                     <option value='Médico'>Médico</option>
                                     <option value='Enfermero(a)'>
@@ -301,13 +308,16 @@ export const RegisterForm = ({path})=>{
                                 type='file'
                                 name='student_license'
                                 onChange={handleimageChange}
-                                id='file'/>
+                                id='file'
+                                required
+                                />
                                 <input
                                 type='file'
                                 name='student_license_part_2'
                                 onChange={handleSecondImageChange}
                                 required
-                                id='file'/>
+                                id='file'
+                                />
                             </>
                             :
                             null
@@ -319,7 +329,9 @@ export const RegisterForm = ({path})=>{
                                 type='file'
                                 name='student_license'
                                 onChange={handleimageChange}
-                                id='file'/>
+                                id='file'
+                                required
+                                />
                                 <input
                                 type='file'
                                 name='student_license_part_2'
@@ -337,7 +349,9 @@ export const RegisterForm = ({path})=>{
                                 type='file'
                                 name='student_license'
                                 onChange={handleimageChange}
-                                id='file'/>
+                                id='file'
+                                required
+                                />
                             </>
                             :
                             null
@@ -376,7 +390,8 @@ export const RegisterForm = ({path})=>{
                         type='radio'
                         value='IMSS'
                         name='student_institution'
-                        onChange={handleChange} 
+                        onChange={handleChange}
+                        required
                     />
                 </div>
                 <div>
@@ -385,7 +400,8 @@ export const RegisterForm = ({path})=>{
                         type='radio'
                         value='SSA'
                         name='student_institution'
-                        onChange={handleChange}                        
+                        onChange={handleChange}
+                        required                       
                     />
                 </div>
                 <div>
@@ -395,6 +411,7 @@ export const RegisterForm = ({path})=>{
                         value='ISSSTE'
                         name='student_institution'
                         onChange={handleChange}
+                        required
                     />
                 </div>
                 <div>
@@ -404,6 +421,7 @@ export const RegisterForm = ({path})=>{
                         value='GDF'
                         name='student_institution'
                         onChange={handleChange}
+                        required
                     />
                 </div>
                 <div>
@@ -413,6 +431,7 @@ export const RegisterForm = ({path})=>{
                         value='HIMFG'
                         name='student_institution'
                         onChange={handleChange}
+                        required
                     />
                 </div>
                 <div>
@@ -427,6 +446,7 @@ export const RegisterForm = ({path})=>{
                 type='number'
                 name='student_phone'
                 onChange={handleChange}
+                required
             />
             <label className={styles.labelTitle}>
                 Correo electrónico para acceder a la plataforma y para enviar su constancia:
@@ -435,6 +455,7 @@ export const RegisterForm = ({path})=>{
                 type='email'
                 name='student_email'
                 onChange={handleChange}
+                required
             />
             <label className={styles.labelTitle}>
                 Genere una contraseña para ingresar a la plataforma:
@@ -443,6 +464,7 @@ export const RegisterForm = ({path})=>{
                 type='password'
                 name='student_password'
                 onChange={handleChange}
+                required
             />
             <label className={styles.labelTitle}>
                 Es usted egresado de algún programa del HIMFG:
@@ -455,6 +477,7 @@ export const RegisterForm = ({path})=>{
                         value='SÍ'
                         name='student_graduated'
                         onChange={handleChange}
+                        required
                     />
                 </div>
                 <div>
@@ -464,6 +487,7 @@ export const RegisterForm = ({path})=>{
                         value='NO'
                         name='student_graduated'
                         onChange={handleChange}
+                        required
                     />
                 </div>
             </div>
