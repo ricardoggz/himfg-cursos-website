@@ -21,6 +21,9 @@
     width:8rem;
 }
 .headerNavList{
+    display:flex;
+    gap:1rem;
+    justify-content: space-between;
     list-style: none;
 }
 .headerNavList a{

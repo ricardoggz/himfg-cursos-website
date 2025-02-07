@@ -1,7 +1,5 @@
-import Image from 'next'
 import Link from 'next/link'
 import styles from './header.module.css'
-import gob_logo from '../../assets/gob-logo.svg'
 
 export const Header =()=>{
     return (
@@ -16,8 +14,13 @@ export const Header =()=>{
                 </Link>
                 <ul className={styles.headerNavList}>
                     <li>
-                        <Link href='/video/scp-2024'>
-                            Sesión Clínico Patológica
+                        <Link href='/registro'>
+                            Registro
+                        </Link>
+                    </li>
+                    <li>
+                        <Link href='/'>
+                            Iniciar sesión
                         </Link>
                     </li>
                 </ul>
