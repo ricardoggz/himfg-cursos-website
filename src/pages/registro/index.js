@@ -11,7 +11,7 @@ const Register = ()=>{
                 <link rel="icon" href="https://res.cloudinary.com/diuxbqmn5/image/upload/v1677114497/himfg-logo_ewzx59.webp" />
             </Head>
             <Container>
-                <Title>Inscripción en línea</Title>
+                <Title>Registro</Title>
                 <RegisterForm />
             </Container>
         </>

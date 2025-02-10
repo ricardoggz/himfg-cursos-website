@@ -1,3 +1,5 @@
+'use client'
+import { useEffect } from 'react'
 import Head from 'next/head'
 import {
   Courses,
@@ -7,6 +9,11 @@ import {
 } from '../components'
 
 export default function Home() {
+  useEffect(()=>{
+    if(window){
+      localStorage.clear()
+    }
+  },[])
   return (
     <>
       <Head>

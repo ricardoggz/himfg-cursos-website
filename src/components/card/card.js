@@ -13,6 +13,9 @@ const Card = ({ course }) => {
         lastDate.setMinutes(lastDate.getMinutes() + lastDate.getTimezoneOffset())
         return lastDate.toLocaleDateString('es-MX', optionDate)
     }
+    const addCourse = ()=>{
+        return localStorage.setItem('course', JSON.stringify(course))
+    }
     return (
         <article className={`${styles.cardWrapper} boxShadow`}>
             <figure className={styles.cardImage}>
@@ -63,8 +66,15 @@ const Card = ({ course }) => {
                 !course.course_price && course.course_price !==0 ? null
                 :
                 <li>
-                    <span>Costo:</span><span className={styles.cardPrice}> ${course.course_price} mxn</span>
+                    <span>Precio regular:</span><span className={styles.cardPrice}> ${course.course_price} mxn</span>
                 </li>
+                }
+                {
+                    !course.course_student_price ? null
+                    :
+                    <li>
+                        <span>50% de descuento para estudiantes y personal del HIMFG</span>
+                    </li>
                 }
                 {
                 course.course_price && course.course_price ===0 ?
@@ -83,7 +93,11 @@ const Card = ({ course }) => {
                 </button>
                 {
                     !course.course_price ? null :
-                        <Link href='/' onClick={showModal} className={styles.cardButton}>
+                        <Link
+                        href='/registro'
+                        className={styles.cardButton}
+                        onClick={addCourse}
+                        >
                             Inscripción
                         </Link>
                 }

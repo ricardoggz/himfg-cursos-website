@@ -90,6 +90,10 @@
     background: var(--green-primary);
     color:var(--white-primary);
 }
+.formCourseTitle{
+    font-size:1.2rem;
+    text-align:center;
+}
 @media (min-width:240px) and (max-width:880px){
     .formRatioInputs{
         grid-template-columns: 1fr;
