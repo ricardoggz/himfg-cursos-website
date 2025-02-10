@@ -499,6 +499,10 @@ export const infoInventario= [
                 link: 'https://himfg.edu.mx/archivos/recursos-financieros/2025/Programa-Anual-Modificado-de-Disposicion-Final-de-los-Bienes-Muebles-ejercicio-2024.pdf',
                 title: 'Programa Anual Modificado correspondiente al ejercico 2024'
             },
+            {
+                link: 'https://himfg.edu.mx/archivos/recursos-financieros/2025/bienes-inmuebles-2025.pdf',
+                title: 'Libro de Inventario de Bienes Muebles 2025'
+            },
         ]
     },
     {
