@@ -71,18 +71,18 @@ export const RegisterForm = ({path})=>{
         evt.preventDefault()
         if(
             (
-                /*!formData.student_name ||
+                !formData.student_name ||
                 !formData.student_grade ||
                 !formData.student_institution ||
                 !formData.student_email ||
                 !formData.student_password ||
                 !formData.student_age ||
                 !formData.student_graduated ||
-                !formData.student_nationality ||*/
-                !formData.student_license
-                /*!formData.student_state ||
+                !formData.student_nationality ||
+                !formData.student_license ||
+                !formData.student_state ||
                 !formData.student_phone ||
-                !formData.student_role*/
+                !formData.student_role
             )
         ){
             Swal.fire({
@@ -119,6 +119,19 @@ export const RegisterForm = ({path})=>{
     if(course && course.modality_id === 2){
         setItem('modality', 'en_linea')
     }
+    useEffect(()=>{
+        if(formData.student_role === 'ESTUDIANTE'){
+            setFormData({
+                ...formData,
+                student_grade: 'ESTUDIANTE'
+            })
+        }else{
+            setFormData({
+                ...formData,
+                student_grade: undefined
+            })
+        }
+    },[formData.student_role])
     return (
         <>
             <div className={styles.anchorLogin}>

@@ -50,9 +50,6 @@ export const PaymentForm = () => {
     if(course && course.course_max_range){
       setRange(course.course_max_range - 1)
     }
-    if(!course){
-      router.push('/ensenanza/offer')
-    }
     if(course && user && user.student_role === 'PERSONAL_HIMFG'){
       setPaymentData({
         ...data,
@@ -82,6 +79,14 @@ export const PaymentForm = () => {
       startFreePayment()
     }
   },[paymentData])
+
+  useEffect(()=>{
+    if(!course){
+      setTimeout(()=>{
+        router.push('/direccion/educacion-medica-continua')
+      },3000)
+    }
+  },[])
   const getCypherData = async(data)=>{
     try {
       const resp = await axios.post(
