@@ -137,7 +137,7 @@ export default function Direction(){
                             page.page_url==='investigacion' || page.page_url==='investigacion/'?
                             <Container>
                                 <Convocatorias/>
-                                <Formats/>
+                                {/*<Formats/>*/}
                             </Container>
                             :
                             null
