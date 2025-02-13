@@ -92,7 +92,7 @@ const Card = ({ course }) => {
                     {!course.course_pdf ? 'Programa no disponible' : 'Ver programa'}
                 </button>
                 {
-                    !course.course_price ? null :
+                    !course.course_able? null :
                         <Link
                         href='/registro'
                         className={styles.cardButton}

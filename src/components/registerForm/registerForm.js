@@ -1,15 +1,16 @@
 'use client'
 import axios from 'axios'
-import Router from 'next/router'
+import {useRouter} from 'next/router'
 import styles from './form.module.css'
-import { uploadFile, cypherDat, startPayment } from '@/services'
-import { useOnChange } from '../../hooks'
 import { useState, useEffect } from 'react'
+import { uploadFile, startPayment } from '@/services'
 
 export const RegisterForm = () => {
+    const router = useRouter()
     const [course, setCourse] = useState(null)
-    const [onReset] = useOnChange()
-    const [inputData, setInputData] = useState(null)
+    const [inputData, setInputData] = useState({
+        student_id: Math.floor((Math.random() * 450000) + 450000)
+    })
     const onChange = async (evt) => {
         if (evt.target.files?.length) {
             const resp = await uploadFile({ file: evt.target.files[0] });
@@ -26,20 +27,22 @@ export const RegisterForm = () => {
     };
     const onSubmit = async (evt) => {
         evt.preventDefault()
+        //localStorage.setItem('user', inputData)
         try {
             const response = await axios.post(
                 `${process.env.BASE_URL_API}api/auth/create-user`,
                 inputData
             )
-            console.log(response)
+            if(response.status===200 && response.data.affectedRows===1){
+                await startPayment({
+                    routerFunction : ()=> router.push('/')
+                })
+                setInputData(null)
+                evt.target.reset()
+            }
         } catch (error) {
-            throw new Error(error)
+            console.log(error)
         }
-        evt.target.reset()
-        onReset()
-    }
-    const payment = async () => {
-        await startPayment()
     }
     useEffect(() => {
         if (window) {
@@ -48,11 +51,11 @@ export const RegisterForm = () => {
     }, [])
     return (
         <>
-            <button onClick={payment}>Pago</button>
             <form className={`flexContainer ${styles.formWrapper}`} onSubmit={onSubmit}>
                 {
-                    !course ? null :
-                        <label className={styles.formCourseTitle}>Curso: {course.course_name}</label>
+                    !course ? null
+                    :
+                    <label className={styles.formCourseTitle}>Curso: {course.course_name}</label>
                 }
                 <label>Nombre completo:</label>
                 <input

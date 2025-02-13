@@ -2,22 +2,22 @@ import axios from "axios";
 
 let dataToObject;
 export const data = {
-    MerchantID:"8878254",
-    User:"prueba8878254",
-    Password:"C0M53him$%",
-    Mode:"PRD",
-    TerminalID:"88782541",
-    CustomerRef1:"",
-    CustomerRef2:"",
-    CustomerRef3:"",
-    CustomerRef4:"",
-    CustomerRef5:"",
-    MerchantName:"HIMFG CURSOS",
-    MerchantCity:"CIUDAD DE MEXICO CDMX",
-    Language:"ES",
-  };
-  
-  export const cerKey = `
+    merchantId: "8878254",
+    name: "prueba8878254",
+    password: "C0M53him$%",
+    mode: "AUT",
+    terminalId: "88782541",
+    customerRef1: "",
+    customerRef2: "",
+    customerRef3: "",
+    customerRef4: "",
+    customerRef5: "",
+    merchantName: "HIMFG CURSOS",
+    merchantCity: "CIUDAD DE MEXICO CDMX",
+    lang: "ES",
+};
+
+export const cerKey = `
   MIIGVjCCBT6gAwIBAgITFwABIQr95dc29zzr2wABAAEhCjANBgkqhkiG9w0BAQsF
   ADB5MQswCQYDVQQGEwJNWDEZMBcGCgmSJomT8ixkARkWCWdmYmFub3J0ZTEeMBwG
   A1UEChMVU2VndXJpZGFkIGluZm9ybWF0aWNhMS8wLQYDVQQDEyZHcnVwbyBGaW5h
@@ -53,30 +53,26 @@ export const data = {
   HOy6X/HdoNInKp2c3fS9GB60seJdN1lTYnQredpTONgyWI2Jmj2Dvm0J1naqELWr
   R0kU3Vi/bm4o3QHjXDJFWesJ+YD8i6FNsqZmF1jI/0do07qIIoBHM4li
   `
-async function cypherData(p, key) {
-    try {
-        const paramsE = {
-            merchantId: "8878254",
-            name: "prueba8878254",
-            password: "C0M53him$%",
-            mode: "PRD",
-            terminalId: "88782541",
-            amount:'1.00',
-            controlNumber:'123456',
-            customerRef1: "",
-            customerRef2: "",
-            customerRef3: "",
-            customerRef4: "",
-            customerRef5: "",
-            merchantName: "HIMFG CURSOS",
-            merchantCity: "CIUDAD DE MEXICO CDMX",
-            language: "ES",
-        };
+export const reference = (id) => {
+    const baseString = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    let random = `HIMFGCURSOS${id}`;
+    for (let i = 0; i < 10; i++) {
+        random += baseString.charAt(Math.random() * baseString.length);
+    }
+    return random;
+}
 
+async function cypherData({ amount, controlNumber }) {
+    try {
         const { data: ret } = await axios.post(
             "https://cemesatelcyper-001-site1.mtempurl.com/aes/cifradoconllave",
             {
-                base64: window.btoa(JSON.stringify(paramsE)),
+                base64: window.btoa(JSON.stringify({
+                    ...data,
+                    amount,
+                    controlNumber
+
+                })),
                 pubKeyStrCert: cerKey
             },
             {
@@ -85,7 +81,7 @@ async function cypherData(p, key) {
                 },
             }
         );
-
+        console.log(ret)
         if (ret.code === "200") {
             dataToObject = ret
             localStorage.setItem("cyperData", JSON.stringify(ret.data[0]));
@@ -99,33 +95,77 @@ async function cypherData(p, key) {
         return null;
     }
 }
+
 const getCypherData = async (data) => {
     try {
-        const resp = await axios.post(
+        const response = await axios.post(
             'https://cemesatelcyper-001-site1.mtempurl.com/aes/decrypt',
-            data
-        )
-        console.log(resp)
-        return resp.data
+            data,
+            {
+                headers: {
+                    "Content-Type": "application/json; charset=utf-8",
+                    "Accept": "/*"
+                }
+            }
+        );
+        if(response.status===200){
+            return JSON.parse(response.data.plainText)
+        }
+        else{
+            return null
+        }
+        //return response.data;
     } catch (error) {
-        console.log('error')
+        if (error.response) {
+            // Error de respuesta del servidor
+            console.error(`Error ${error.response.status}:`, error.response.data);
+        } else if (error.request) {
+            // La solicitud se hizo, pero no hubo respuesta
+            console.error("No hubo respuesta del servidor", error.request);
+        } else {
+            // Algo salió mal en la configuración de la solicitud
+            console.error("Error en la configuración de la solicitud", error.message);
+        }
+
+        return { success: false, error: error.message };
     }
-}
-const startPayment = async() => {
-    if (Payment) {
+};
+
+const startPayment = async ({
+    routerFunction,
+
+}) => {
+    const course = JSON.parse(localStorage.getItem('course'))
+    if (Payment && course && course.course_price!==0) {
         Payment.setEnv("pro");
         let xOBJ;
-        xOBJ = await cypherData();
+        xOBJ = await cypherData({
+            amount: `1.00`,
+            controlNumber: `${reference(course.course_id)}`
+        });
         Payment.startPayment({
             Params: xOBJ,
             onClosed: function (res) {
-                console.log('closed',res);
+                console.log('closed', res);
             },
             onError: function (res) {
                 console.log('error', res);
             },
             onSuccess: async function (res) {
-                console.log('success', res)
+                if (res.data) {
+                    let datatoValue = {
+                        vi: dataToObject.vi,
+                        salt: dataToObject.salt,
+                        passPhrase: dataToObject.passPhrase,
+                        cypherData: res.data
+                    }
+                    const cypherMessage = await getCypherData(datatoValue)
+                    if(cypherMessage && cypherMessage.resultadoPayw==='A' && routerFunction){
+                        alert(cypherMessage.resultadoPayw)
+                        routerFunction()
+                    }
+                    console.log('cypherData', cypherMessage)
+                }
             },
             onCancel: function (res) {
                 console.log('cancel', res)
