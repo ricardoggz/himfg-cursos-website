@@ -1,0 +1,13 @@
+.checkWrapper{
+    align-items: center;
+    display:flex;
+    flex-direction: column;
+    gap:1rem;
+    height:60vh;
+    justify-content: start;
+    line-height: 2.5rem;
+}
+.checkWrapper svg{
+    color:#16a085;
+    font-size: 3rem;
+}

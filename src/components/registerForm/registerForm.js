@@ -35,8 +35,9 @@ export const RegisterForm = () => {
             )
             if(response.status===200 && response.data.affectedRows===1){
                 await startPayment({
-                    routerFunction : ()=> router.push('/')
+                    routerFunction : ()=> router.push('/pago-exitoso')
                 })
+                localStorage.setItem('user', JSON.stringify(inputData))
                 setInputData(null)
                 evt.target.reset()
             }
@@ -55,7 +56,7 @@ export const RegisterForm = () => {
                 {
                     !course ? null
                     :
-                    <label className={styles.formCourseTitle}>Curso: {course.course_name}</label>
+                    <label className={styles.formCourseTitle}>Curso: {course.course_name}, costo: ${course.course_price}</label>
                 }
                 <label>Nombre completo:</label>
                 <input

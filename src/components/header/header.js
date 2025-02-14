@@ -14,13 +14,8 @@ export const Header =()=>{
                 </Link>
                 <ul className={styles.headerNavList}>
                     <li>
-                        <Link href='/registro'>
-                            Registro
-                        </Link>
-                    </li>
-                    <li>
                         <Link href='/'>
-                            Iniciar sesión
+                            Inicio
                         </Link>
                     </li>
                 </ul>
