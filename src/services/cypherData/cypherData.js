@@ -108,10 +108,10 @@ const getCypherData = async (data) => {
                 }
             }
         );
-        if(response.status===200){
+        if (response.status === 200) {
             return JSON.parse(response.data.plainText)
         }
-        else{
+        else {
             return null
         }
         //return response.data;
@@ -133,10 +133,10 @@ const getCypherData = async (data) => {
 
 const startPayment = async ({
     routerFunction,
-
+    setLoaderFunction
 }) => {
     const course = JSON.parse(localStorage.getItem('course'))
-    if (Payment && course && course.course_price!==0) {
+    if (Payment && course && course.course_price !== 0) {
         Payment.setEnv("pro");
         let xOBJ;
         xOBJ = await cypherData({
@@ -146,9 +146,11 @@ const startPayment = async ({
         Payment.startPayment({
             Params: xOBJ,
             onClosed: function (res) {
+                setLoaderFunction()
                 console.log('closed', res);
             },
             onError: function (res) {
+                setLoaderFunction()
                 console.log('error', res);
             },
             onSuccess: async function (res) {
@@ -160,14 +162,14 @@ const startPayment = async ({
                         cypherData: res.data
                     }
                     const cypherMessage = await getCypherData(datatoValue)
-                    if(cypherMessage && cypherMessage.resultadoPayw==='A' && routerFunction){
-                        alert(cypherMessage.resultadoPayw)
+                    if (cypherMessage && cypherMessage.resultadoPayw === 'A' && routerFunction) {
                         routerFunction()
                     }
                     console.log('cypherData', cypherMessage)
                 }
             },
             onCancel: function (res) {
+                setLoaderFunction()
                 console.log('cancel', res)
             },
         });
