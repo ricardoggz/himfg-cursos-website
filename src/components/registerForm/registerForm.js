@@ -5,7 +5,7 @@ import { useRouter } from 'next/router'
 import styles from './form.module.css'
 import { Loader } from '../loader/loader'
 import { useState, useEffect } from 'react'
-import { uploadFile, startPayment } from '@/services'
+import { uploadFile, startPayment, addPayment, reference } from '@/services'
 
 export const RegisterForm = () => {
     const router = useRouter()
@@ -38,10 +38,46 @@ export const RegisterForm = () => {
                 inputData
             )
             if (response.status === 200 && response.data.affectedRows === 1) {
-                await startPayment({
-                    routerFunction: () => router.push('/pago-exitoso'),
-                    setLoaderFunction: () => setIsLoading(false)
-                })
+                const controlNumber = reference(course.course_id)
+                if (inputData.student_role === 'EXTERNO' && course.course_price !== 0) {
+                    await startPayment({
+                        routerFunction: () => router.push('/registro-exitoso'),
+                        setLoaderFunction: () => setIsLoading(false),
+                        controlNumber: controlNumber,
+                        user: inputData
+                    })
+                }
+                if (inputData.student_role === 'ESTUDIANTE' && course.course_price !== 0) {
+                    await startPayment({
+                        routerFunction: () => router.push('/registro-exitoso'),
+                        setLoaderFunction: () => setIsLoading(false),
+                        controlNumber: controlNumber,
+                        user: inputData
+                    })
+                }
+                if (inputData.student_role === 'PERSONAL_HIMFG' && course.course_price !== 0) {
+                    await startPayment({
+                        routerFunction: () => router.push('/registro-exitoso'),
+                        setLoaderFunction: () => setIsLoading(false),
+                        controlNumber: controlNumber,
+                        user: inputData
+                    })
+                }
+                if (course.course_price === 0) {
+                    router.push('/registro-exitoso')
+                    await addPayment({
+                        data: {
+                            course_id: course.course_id,
+                            student_id: inputData.student_id,
+                            payment_successfull: 1,
+                            payment_amount: 1.00,
+                            payment_reference: controlNumber,
+                            payment_invoice: "SIN_FACTURACION",
+                            payment_date: new Date().toISOString().slice(0, 19).replace('T', ' '),
+                            payment_modality: 'en_linea'
+                        }
+                    })
+                }
                 localStorage.setItem('user', JSON.stringify(inputData))
             }
         } catch (error) {

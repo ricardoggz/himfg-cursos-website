@@ -1,4 +1,5 @@
-import axios from "axios";
+import axios from "axios"
+import { addPayment } from "../addPayment/addPayment"
 
 let dataToObject;
 export const data = {
@@ -133,7 +134,10 @@ const getCypherData = async (data) => {
 
 const startPayment = async ({
     routerFunction,
-    setLoaderFunction
+    setLoaderFunction,
+    amount,
+    controlNumber,
+    user
 }) => {
     const course = JSON.parse(localStorage.getItem('course'))
     if (Payment && course && course.course_price !== 0) {
@@ -141,7 +145,7 @@ const startPayment = async ({
         let xOBJ;
         xOBJ = await cypherData({
             amount: `1.00`,
-            controlNumber: `${reference(course.course_id)}`
+            controlNumber: controlNumber
         });
         Payment.startPayment({
             Params: xOBJ,
@@ -164,6 +168,18 @@ const startPayment = async ({
                     const cypherMessage = await getCypherData(datatoValue)
                     if (cypherMessage && cypherMessage.resultadoPayw === 'A' && routerFunction) {
                         routerFunction()
+                        await addPayment({
+                            data: {
+                                course_id: course.course_id,
+                                student_id: user.student_id,
+                                payment_successfull: 1,
+                                payment_amount: 1.00,
+                                payment_reference: controlNumber,
+                                payment_invoice: "SIN_FACTURACION",
+                                payment_date: new Date().toISOString().slice(0, 19).replace('T', ' '),
+                                payment_modality: 'En línea'
+                            }
+                        })
                     }
                     console.log('cypherData', cypherMessage)
                 }
