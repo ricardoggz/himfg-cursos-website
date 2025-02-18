@@ -175,11 +175,12 @@ export const RegisterForm = () => {
                             inputData && inputData.student_role === 'EXTERNO' || inputData && inputData.student_role === 'PERSONAL_HIMFG' ?
                                 <>
                                     <label>Describa su perfil profesional:</label>
-                                    <input
-                                        type='text'
-                                        placeholder='Ejemplo: Médico'
+                                    <input                                                                               
                                         name='student_grade'
                                         onChange={onChange}
+                                        placeholder='Ejemplo: Médico'
+                                        required
+                                        type='text'
                                     />
                                 </>
                                 :
@@ -193,15 +194,17 @@ export const RegisterForm = () => {
                                     </label>
                                     <label>1era parte</label>
                                     <input
-                                        type='file'
                                         name='student_license'
                                         onChange={onChange}
+                                        required
+                                        type='file'
                                     />
                                     <label>2da parte</label>
                                     <input
-                                        type='file'
                                         name='student_license_part_2'
                                         onChange={onChange}
+                                        required
+                                        type='file'
                                     />
                                 </>
                                 :
@@ -214,16 +217,26 @@ export const RegisterForm = () => {
                                         Adjunte una fotografía de su cédula profesional vigente:
                                     </label>
                                     <input
-                                        type='file'
                                         name='student_license'
                                         onChange={onChange}
+                                        required
+                                        type='file'
                                     />
                                 </>
                                 :
                                 null
                         }
                         <label>Institución de procedencia:</label>
-                        <div className={styles.formRatioInputs}>
+                        <input
+                            name='student_institution'
+                            onChange={onChange}
+                            placeholder='Ejemplo: HIMFG'
+                            required
+                            type='text'
+                        />
+                        {
+                            /*
+                                <div className={styles.formRatioInputs}>
                             <div>
                                 <label>IMSS</label>
                                 <input
@@ -279,6 +292,8 @@ export const RegisterForm = () => {
                                 <input type='text' name='student_institution' onChange={onChange} />
                             </div>
                         </div>
+                            */
+                        }
                         <label>Teléfono:</label>
                         <input
                             name='student_phone'
