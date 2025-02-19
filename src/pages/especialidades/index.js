@@ -16,10 +16,6 @@ export default function Especialidades(){
             link: 'direccion/departamento-de-cardiologia'
         },
         {
-            name: 'C.E.D.I.',
-            link:'/especialidades'
-        },
-        {
             name: 'Dermatología',
             link:'/especialidades'
         },

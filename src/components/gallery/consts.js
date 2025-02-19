@@ -105,7 +105,7 @@ export const images = [
         src: "https://himfg.edu.mx/archivos/graficos/legado-artistico/45.webp",
         width: 300,
         height: 200,
-        caption: "El harca del Nóe - Krytzia Dabdoub de MIvielle y Sofia Minivielle Dabdoub",
+        caption: "El arca del Noé - Krytzia Dabdoub de MIvielle y Sofia Minivielle Dabdoub",
       },
       {
         src: "https://himfg.edu.mx/archivos/graficos/legado-artistico/2.webp",
@@ -207,7 +207,7 @@ export const images = [
         src: "https://himfg.edu.mx/archivos/graficos/legado-artistico/53.webp",
         width: 500,
         height: 600,
-        caption: "Himno al Hospital Infaltil de México Letra de Samuel Maynez Champion, Música de Coral Mesina",
+        caption: "Himno al Hospital Infantil de México Letra de Samuel Maynez Champion, Música de Coral Mesina",
       },
       {
         src: "https://himfg.edu.mx/archivos/graficos/legado-artistico/22.webp",

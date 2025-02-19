@@ -132,6 +132,7 @@ export default function Instituto(){
                             <li>Instituto Nacional de Salud Pública 1987</li>
                             <li>Instituto Nacional de Medicina Genómica 2004</li>
                             <li>Instituto Nacional de Rehabilitación 2005</li>
+                            <li>Instituto Nacional de Geriatría, 2007 </li>
                         </ul>
                     </div>
                 </div>
