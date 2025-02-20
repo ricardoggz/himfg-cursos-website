@@ -12,7 +12,9 @@ export const RegisterForm = () => {
     const [isLoading, setIsLoading] = useState(false)
     const [course, setCourse] = useState(null)
     const [inputData, setInputData] = useState({
-        student_id: Math.floor((Math.random() * 450000) + 450000)
+        student_id: Math.floor((Math.random() * 450000) + 450000),
+        student_grade:'ESTUDIANTE',
+        student_license_part_2: undefined
     })
     const onChange = async (evt) => {
         if (evt.target.files?.length) {
@@ -138,7 +140,7 @@ export const RegisterForm = () => {
                             required
                             type='text'
                         />
-                        <label>¿Cuál es su perfil profesional?:</label>
+                        <label>Perfil profesional:</label>
                         <div className={styles.formRatioInputs}>
                             <div className={inputData && inputData.student_role === 'ESTUDIANTE' ? styles.formFieldSelected : ''}>
                                 <label>Estudiante</label>
@@ -175,7 +177,7 @@ export const RegisterForm = () => {
                             inputData && inputData.student_role === 'EXTERNO' || inputData && inputData.student_role === 'PERSONAL_HIMFG' ?
                                 <>
                                     <label>Describa su perfil profesional:</label>
-                                    <input                                                                               
+                                    <input
                                         name='student_grade'
                                         onChange={onChange}
                                         placeholder='Ejemplo: Médico'
@@ -302,7 +304,7 @@ export const RegisterForm = () => {
                             required
                             type='number'
                         />
-                        <label>Correo electrónico para acceso a la plataforma y donde se enviará su constancia:</label>
+                        <label>Correo electrónico donde se enviará su constancia:</label>
                         <input
                             name='student_email'
                             onChange={onChange}
@@ -310,7 +312,9 @@ export const RegisterForm = () => {
                             required
                             type='email'
                         />
-                        <label>Genere una contraseña para ingresar a la plataforma:</label>
+                        {
+                            /*
+                                <label>Genere una contraseña para ingresar a la plataforma:</label>
                         <input
                             name='student_password'
                             onChange={onChange}
@@ -318,7 +322,11 @@ export const RegisterForm = () => {
                             required
                             type='password'
                         />
-                        <label>Eres egresado de algún programa del HIMFG:</label>
+                            */
+                        }
+                        {
+                            /*
+                                <label>¿Es egresado de algún programa del HIMFG:?</label>
                         <div className={styles.formRatioInputs}>
                             <div>
                                 <label>SÍ</label>
@@ -340,7 +348,39 @@ export const RegisterForm = () => {
                                     required
                                 />
                             </div>
-                        </div>
+                        </div>  
+                            */
+                        }
+                        {
+                            course && course.modality_id === 3 ?
+                                <>
+                                    <label>Forma en la que tomará el curso:</label>
+                                    <div className={styles.formRatioInputs}>
+                                        <div>
+                                            <label>En línea</label>
+                                            <input
+                                                type='radio'
+                                                value='en_linea'
+                                                name='modality'
+                                                onChange={()=> localStorage.setItem('modality', 'en_linea')}
+                                                required
+                                            />
+                                        </div>
+                                        <div>
+                                            <label>Presencial</label>
+                                            <input
+                                                type='radio'
+                                                value='presencial'
+                                                name='modality'
+                                                onChange={()=> localStorage.setItem('modality', 'presencial')}
+                                                required
+                                            />
+                                        </div>
+                                    </div>
+                                </>
+                                :
+                                null
+                        }
                         <div className={styles.formButtons}>
                             <button className={styles.buttonSuccess}>Registrar</button>
                             {
