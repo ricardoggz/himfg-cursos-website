@@ -1,7 +1,8 @@
 import {
     Container,
     Page,
-    FileListModal
+    FileListModal,
+    Staff
 } from '../../components'
 import { FaBook } from "react-icons/fa"
 import {
@@ -10,7 +11,8 @@ import {
     informeAvanceResultados,
     informeAvanceResultados2022,
     informeAvanceResultados2023_4,
-    planAnual
+    planAnual,
+    list
 } from './consts'
 import styles from '../../components/FileList/filelist.module.css'
 
@@ -108,6 +110,7 @@ const General = ()=>{
                 />
             </div>
             </Container>
+            <Staff list={list}/>
             </>
     )
 }
