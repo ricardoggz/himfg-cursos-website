@@ -1,15 +1,15 @@
 import Link from 'next/link'
 import styles from './especialidades.module.css'
 import { Container, PageBanner } from "@/components"
-export default function Especialidades(){
+export default function Especialidades() {
     const especialidades = [
         {
             name: 'Alergia e Inmunología',
-            link: '/especialidades'
+            link: 'direccion/alergia-e-inmunologia-clinica'
         },
         {
             name: 'Audiología y Foniatria',
-            link:'direccion/departamento-de-audiologia-y-foniatria'
+            link: 'direccion/departamento-de-audiologia-y-foniatria'
         },
         {
             name: 'Cardiología',
@@ -17,23 +17,23 @@ export default function Especialidades(){
         },
         {
             name: 'Dermatología',
-            link:'/especialidades'
+            link: 'direccion/departamento-de-dermatologia'
         },
         {
             name: 'Endocrinología',
-            link:'direccion/departamento-de-endocrinologia'
+            link: 'direccion/departamento-de-endocrinologia'
         },
         {
             name: 'Gastroenterología y Nutrición',
-            link:'direccion/gastroenterologia-y-nutricion'
+            link: 'direccion/gastroenterologia-y-nutricion'
         },
         {
-            name:  'Genética',
-            link:  'direccion/genetica-y-genomica'
+            name: 'Genética',
+            link: 'direccion/genetica-y-genomica'
         },
         {
             name: 'Hematología',
-            link: 'direccion/departamento-de-hemato-oncologia'
+            link: 'direccion/departamento-de-hematologia'
         },
         {
             name: 'Infectología',
@@ -53,7 +53,7 @@ export default function Especialidades(){
         },
         {
             name: 'Neumología',
-            link: '/especialidades'
+            link: 'direccion/departamento-de-neumologia'
         },
         {
             name: 'Neurología',
@@ -69,7 +69,7 @@ export default function Especialidades(){
         },
         {
             name: 'CLINDI',
-            link: '/especialidades'
+            link: 'direccion/clindi'
         },
         {
             name: 'Cirugía de Tórax',
@@ -77,19 +77,19 @@ export default function Especialidades(){
         },
         {
             name: 'Cirugía Anorrectal',
-            link: '/especialidades'
+            link: 'direccion/clinica-colorrectal'
         },
         {
-            name:  'Cirugía Cardiovascular',
-            link: 'direccion/cirugia-cardiovascular-torax-y-endoscopia'
+            name: 'Cirugía Cardiovascular',
+            link: 'direccion/cirugia-cardiovascular'
         },
         {
             name: 'Cirugía General',
-            link: '/especialidades'
+            link: 'direccion/cirugia-general'
         },
         {
             name: 'Cirugía Plástica',
-            link:'/especialidades'
+            link: 'direccion/cirugia-plastica'
         },
         {
             name: 'Cuidados Paliativos',
@@ -101,11 +101,11 @@ export default function Especialidades(){
         },
         {
             name: 'Ortodoncia',
-            link: 'direccion/departamento-de-estomatologia'
+            link: 'direccion/departamento-de-ortodoncia'
         },
         {
             name: 'Cirugía maxilofacial',
-            link: 'direccion/departamento-de-estomatologia'
+            link: 'direccion/cirugia-maxilofacial'
         },
         {
             name: 'Neurocirugía',
@@ -113,7 +113,7 @@ export default function Especialidades(){
         },
         {
             name: 'Oftalmología',
-            link: '/especialidades'
+            link: 'direccion/oftalmologia'
         },
         {
             name: 'Ortopedia',
@@ -121,7 +121,7 @@ export default function Especialidades(){
         },
         {
             name: 'Otorrinolaringología',
-            link: '/especialidades'
+            link: 'direccion/otorrinolaringologia'
         },
         {
             name: 'Urología',
@@ -133,7 +133,7 @@ export default function Especialidades(){
         },
         {
             name: 'Pediatría del Desarrollo',
-            link : '/especialidades'
+            link: 'direccion/pediatria-del-desarrollo'
         }
     ]
     return (
@@ -147,7 +147,7 @@ export default function Especialidades(){
                 <div className={styles.expecialidadesWrapper}>
                     <ul className={styles.especialidadesGrid}>
                         {
-                            especialidades.map((esp, i)=>(
+                            especialidades.map((esp, i) => (
                                 <li key={i}>
                                     <Link href={`${esp.link}`}>
                                         {esp.name}
