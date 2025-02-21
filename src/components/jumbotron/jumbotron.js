@@ -21,6 +21,10 @@ export const Jumbotron =()=>{
                 link:'/'
             },
             {
+                url: 'https://himfg.edu.mx/archivos/banners/BANNER-1.1.webp',
+                link:'/'
+            },
+            {
                 url:'https://himfg.edu.mx/archivos/banners/CYTOTRON-02.webp',
                 link:'/galeria'
             },
