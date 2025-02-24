@@ -28,13 +28,13 @@
     background:var(--white-secondary);
     display:flex;
     justify-content: center;
-    height:300px;
+    height:200px;
     width:100%;
 }
 .cardImage img{
-    height:100%;
+    height:auto;
     object-fit:contain;
-    object-position: center;
+    object-position:center;
     width:100%;
 }
 .cardList{

@@ -19,7 +19,7 @@ const Card = ({ course }) => {
     return (
         <article className={`${styles.cardWrapper} boxShadow`}>
             <figure className={styles.cardImage}>
-                <Image
+                <img
                     src={
                         !course.course_image ?
                             'https://res.cloudinary.com/diuxbqmn5/image/upload/v1677114497/himfg-logo_ewzx59.webp'
@@ -28,9 +28,6 @@ const Card = ({ course }) => {
                     }
                     loading='lazy'
                     alt='No se pudo cargar la imágen'
-                    width={1000}
-                    height={150}
-                    quality
                 />
             </figure>
             <span className={styles.courseTitle}>
