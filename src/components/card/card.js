@@ -85,7 +85,7 @@ const Card = ({ course }) => {
                 }
                 {
                     course.course_max_range && course.modality_id !==3 ?
-                    <li>Cupo máximo: {course.course_max_range} plazas</li>
+                    <li>Cupo máximo: {course.course_max_range} personas</li>
                     :
                     null
                 }
