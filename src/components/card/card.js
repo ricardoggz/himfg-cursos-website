@@ -40,9 +40,10 @@ const Card = ({ course }) => {
                 <li>Inicia: {formatDate(course.course_start_date)}</li>
                 <li>Termina: {formatDate(course.course_finish_date)}</li>
                 {
-                    !course.course_max_range ? null
-                    :
+                    course.course_max_range && course.modality_id === 3 ?
                     <li>{course.course_max_range} cupos presenciales, en línea ilimitado</li>
+                    :
+                    null
                 }
                 {
                     course.modality_id === 1 ?
@@ -81,6 +82,12 @@ const Card = ({ course }) => {
                 <li className={styles.cardPrice}>Gratuito</li>
                 :
                 null
+                }
+                {
+                    course.course_max_range && course.modality_id !==3 ?
+                    <li>Cupo máximo: {course.course_max_range} plazas</li>
+                    :
+                    null
                 }
             </ul>
 
