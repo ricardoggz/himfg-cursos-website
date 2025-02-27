@@ -170,16 +170,31 @@ const Video = (props)=>{
                     className={`${styles.liveVideo} flexContainer boxShadow`}
                     key={course_id}
                     >
-                    <iframe
-                    src={`https://vimeo.com/event/${course_live_video}/embed`}
-                    frameBorder='0'
-                    allow="
-                    autoplay;
-                    fullscreen;
-                    picture-in-picture
-                    "
-                    allowFullScreen
-                    />
+                        {
+                            course[0].course_url !== 'atencion-piscologica-paciente-hospitalizado' ?
+                            <iframe
+                            src={`https://vimeo.com/event/${course_live_video}/embed`}
+                            frameBorder='0'
+                            allow="
+                            autoplay;
+                            fullscreen;
+                            picture-in-picture
+                            "
+                            allowFullScreen
+                            />
+                            :
+                            <iframe
+                            src='https://player.vimeo.com/video/1060559697'
+                            frameBorder='0'
+                            allow="
+                            autoplay;
+                            fullscreen;
+                            picture-in-picture
+                            "
+                            allowFullScreen
+                            />
+                        }
+                    
                     <iframe
                     src={`https://vimeo.com/event/${course_live_video}/chat`}
                     frameBorder='0'
