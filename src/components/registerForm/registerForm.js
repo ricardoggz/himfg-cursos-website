@@ -108,6 +108,7 @@ export const RegisterForm = () => {
                         }
                         <label>Nombre completo:</label>
                         <input
+                            autoComplete='off'
                             name='student_name'
                             onChange={onChange}
                             placeholder='Ejemplo: Juan Pérez'
@@ -116,6 +117,7 @@ export const RegisterForm = () => {
                         />
                         <label>Edad:</label>
                         <input
+                            autoComplete='off'
                             name='student_age'
                             onChange={onChange}
                             placeholder='Ejemplo: 30'
@@ -126,6 +128,7 @@ export const RegisterForm = () => {
                         />
                         <label>Nacionalidad:</label>
                         <input
+                            autoComplete='off'
                             name='student_nationality'
                             onChange={onChange}
                             placeholder='Ejemplo: Mexicana'
@@ -134,6 +137,7 @@ export const RegisterForm = () => {
                         />
                         <label>Lugar de residencia:</label>
                         <input
+                            autoComplete='off'
                             name='student_state'
                             onChange={onChange}
                             placeholder='Ejemplo: Ciudad de México'
@@ -174,10 +178,11 @@ export const RegisterForm = () => {
                             </div>
                         </div>
                         {
-                            inputData && inputData.student_role === 'EXTERNO' || inputData && inputData.student_role === 'PERSONAL_HIMFG' ?
+                            inputData && inputData.student_role === 'EXTERNO' || inputData && inputData.student_role === 'PERSONAL_HIMFG' && inputData && inputData.student_role === 'ESTUDIANTE' ?
                                 <>
                                     <label>Describa su perfil profesional:</label>
                                     <input
+                                        autoComplete='off'
                                         name='student_grade'
                                         onChange={onChange}
                                         placeholder='Ejemplo: Médico'
@@ -230,74 +235,16 @@ export const RegisterForm = () => {
                         }
                         <label>Institución de procedencia:</label>
                         <input
+                            autoComplete='off'
                             name='student_institution'
                             onChange={onChange}
                             placeholder='Ejemplo: HIMFG'
                             required
                             type='text'
                         />
-                        {
-                            /*
-                                <div className={styles.formRatioInputs}>
-                            <div>
-                                <label>IMSS</label>
-                                <input
-                                    type='radio'
-                                    value='IMSS'
-                                    name='student_institution'
-                                    onChange={onChange}
-                                    required
-                                />
-                            </div>
-                            <div>
-                                <label>SSA</label>
-                                <input
-                                    type='radio'
-                                    value='SSA'
-                                    name='student_institution'
-                                    onChange={onChange}
-                                    required
-                                />
-                            </div>
-                            <div>
-                                <label>ISSSTE</label>
-                                <input
-                                    type='radio'
-                                    value='ISSSTE'
-                                    name='student_institution'
-                                    onChange={onChange}
-                                    required
-                                />
-                            </div>
-                            <div>
-                                <label>GDF</label>
-                                <input
-                                    type='radio'
-                                    value='GDF'
-                                    name='student_institution'
-                                    onChange={onChange}
-                                    required
-                                />
-                            </div>
-                            <div>
-                                <label>HIMFG</label>
-                                <input
-                                    type='radio'
-                                    value='HIMFG'
-                                    name='student_institution'
-                                    onChange={onChange}
-                                    required
-                                />
-                            </div>
-                            <div>
-                                <label>Otro (especifique):</label>
-                                <input type='text' name='student_institution' onChange={onChange} />
-                            </div>
-                        </div>
-                            */
-                        }
                         <label>Teléfono:</label>
                         <input
+                            autoComplete='off'
                             name='student_phone'
                             onChange={onChange}
                             placeholder='Ejemplo: 123456'
@@ -306,6 +253,7 @@ export const RegisterForm = () => {
                         />
                         <label>Correo electrónico donde se enviará su constancia:</label>
                         <input
+                            autoComplete='off'
                             name='student_email'
                             onChange={onChange}
                             placeholder='Ejemplo: correo@correo.com'
