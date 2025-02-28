@@ -138,9 +138,18 @@ const startPayment = async ({
     setLoaderFunction,
     amount,
     controlNumber,
-    user
+    user,
+    modalityId,
+    invoice
 }) => {
     const course = JSON.parse(localStorage.getItem('course'))
+    let modality
+    if(course && course.modality_id===1){
+        modality = 'presencial'
+    }
+    if(course && course.modality_id===2){
+        modality = 'en_linea'
+    }
     if (Payment && course && course.course_price !== 0) {
         Payment.setEnv("pro");
         let xOBJ;
@@ -176,13 +185,12 @@ const startPayment = async ({
                                 payment_successfull: 1,
                                 payment_amount: 1.00,
                                 payment_reference: controlNumber,
-                                payment_invoice: "SIN_FACTURACION",
+                                payment_invoice: invoice,
                                 payment_date: new Date().toISOString().slice(0, 19).replace('T', ' '),
-                                payment_modality: 'En línea'
+                                payment_modality: !modalityId ? modality : modalityId
                             }
                         })
                     }
-                    console.log('cypherData', cypherMessage)
                 }
             },
             onCancel: function (res) {

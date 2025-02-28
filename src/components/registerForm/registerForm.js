@@ -13,7 +13,7 @@ export const RegisterForm = () => {
     const [course, setCourse] = useState(null)
     const [inputData, setInputData] = useState({
         student_id: Math.floor((Math.random() * 450000) + 450000),
-        student_grade:'ESTUDIANTE',
+        student_grade: 'ESTUDIANTE',
         student_license_part_2: undefined
     })
     const onChange = async (evt) => {
@@ -46,7 +46,9 @@ export const RegisterForm = () => {
                         routerFunction: () => router.push('/registro-exitoso'),
                         setLoaderFunction: () => setIsLoading(false),
                         controlNumber: controlNumber,
-                        user: inputData
+                        user: inputData,
+                        invoice: inputData.payment_invoice,
+                        modalityId: !inputData.modality ? null : inputData.modality
                     })
                 }
                 if (inputData.student_role === 'ESTUDIANTE' && course.course_price !== 0) {
@@ -54,7 +56,9 @@ export const RegisterForm = () => {
                         routerFunction: () => router.push('/registro-exitoso'),
                         setLoaderFunction: () => setIsLoading(false),
                         controlNumber: controlNumber,
-                        user: inputData
+                        user: inputData,
+                        invoice: inputData.payment_invoice,
+                        modalityId: !inputData.modality ? null : inputData.modality
                     })
                 }
                 if (inputData.student_role === 'PERSONAL_HIMFG' && course.course_price !== 0) {
@@ -62,7 +66,10 @@ export const RegisterForm = () => {
                         routerFunction: () => router.push('/registro-exitoso'),
                         setLoaderFunction: () => setIsLoading(false),
                         controlNumber: controlNumber,
-                        user: inputData
+                        user: inputData,
+                        invoice: inputData.payment_invoice,
+                        modalityId: !inputData.modality ? null : inputData.modality
+
                     })
                 }
                 if (course.course_price === 0) {
@@ -83,6 +90,7 @@ export const RegisterForm = () => {
                 localStorage.setItem('user', JSON.stringify(inputData))
             }
         } catch (error) {
+            console.log(error)
             setIsLoading(false)
             return Swal.fire({
                 title: 'Ha ocurrido un problema al contactar con el servidor',
@@ -261,45 +269,6 @@ export const RegisterForm = () => {
                             type='email'
                         />
                         {
-                            /*
-                                <label>Genere una contraseña para ingresar a la plataforma:</label>
-                        <input
-                            name='student_password'
-                            onChange={onChange}
-                            placeholder='Ejemplo: contraseña123'
-                            required
-                            type='password'
-                        />
-                            */
-                        }
-                        {
-                            /*
-                                <label>¿Es egresado de algún programa del HIMFG:?</label>
-                        <div className={styles.formRatioInputs}>
-                            <div>
-                                <label>SÍ</label>
-                                <input
-                                    type='radio'
-                                    value='SÍ'
-                                    name='student_graduated'
-                                    onChange={onChange}
-                                    required
-                                />
-                            </div>
-                            <div>
-                                <label>NO</label>
-                                <input
-                                    type='radio'
-                                    value='NO'
-                                    name='student_graduated'
-                                    onChange={onChange}
-                                    required
-                                />
-                            </div>
-                        </div>  
-                            */
-                        }
-                        {
                             course && course.modality_id === 3 ?
                                 <>
                                     <label>Forma en la que tomará el curso:</label>
@@ -310,7 +279,7 @@ export const RegisterForm = () => {
                                                 type='radio'
                                                 value='en_linea'
                                                 name='modality'
-                                                onChange={()=> localStorage.setItem('modality', 'en_linea')}
+                                                onChange={onChange}
                                                 required
                                             />
                                         </div>
@@ -320,11 +289,55 @@ export const RegisterForm = () => {
                                                 type='radio'
                                                 value='presencial'
                                                 name='modality'
-                                                onChange={()=> localStorage.setItem('modality', 'presencial')}
+                                                onChange={onChange}
                                                 required
                                             />
                                         </div>
                                     </div>
+                                </>
+                                :
+                                null
+                        }
+                        {
+                            course && course.course_price !== 0 ?
+                                <>
+                                    <label>¿Desea facturar el curso?</label>
+                                    <div className={styles.formRatioInputs}>
+                                        <div>
+                                            <label>Sí</label>
+                                            <input
+                                                type='radio'
+                                                value='FACTURACION'
+                                                name='payment_invoice'
+                                                onChange={onChange}
+                                                required
+                                            />
+                                        </div>
+                                        <div>
+                                            <label>No</label>
+                                            <input
+                                                type='radio'
+                                                value='SIN_FACTURACION'
+                                                name='payment_invoice'
+                                                onChange={onChange}
+                                                required
+                                            />
+                                        </div>
+                                    </div>
+                                </>
+                                :
+                                null
+                        }
+                        {
+                            inputData.payment_invoice === "FACTURACION" ?
+                                <>
+                                    <label>Adjunte en formato PDF su constancia de situación fiscal</label>
+                                    <input
+                                        name='student_tax_data'
+                                        onChange={onChange}
+                                        required
+                                        type='file'
+                                    />
                                 </>
                                 :
                                 null
