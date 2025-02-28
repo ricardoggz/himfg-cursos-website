@@ -31,7 +31,7 @@ export default function(){
                     <div>
                         <p>
                             Su documentación será validada por el Departamento de Educación Médica Continua,
-                            le recomendamos estar atento a la bandeja de entrada, correo no deseado o spam y busque el siguiente remitente: lcruz@himfg.edu.mx
+                            le recomendamos estar atento a la bandeja de entrada, correo no deseado o spam y busque el siguiente remitente: cemesatel@himfg.edu.mx
                         </p>
                         <Link href='/'>Volver al inicio</Link>
                     </div>
