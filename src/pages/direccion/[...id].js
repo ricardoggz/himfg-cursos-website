@@ -79,7 +79,7 @@ export default function Direction(){
                             banner={page.page_banner_image}
                             bannerResponsive={page.banner_image_responsive}
                             textLeft={!page.page_left_text ? false : true}
-                            bannerLink='#cursos-2025'
+                            bannerLink='https://oferta-academica.himfg.edu.mx/'
                             bannerLinkTitle='Revisa nuestra oferta académica'
                            >
                             <p>{page.page_banner_content}</p>
@@ -110,12 +110,12 @@ export default function Direction(){
                             />
                         }
                         {
-                            page.page_url==='educacion-medica-continua' || page.page_url==='educacion-medica-continua/'?
+                            /*page.page_url==='educacion-medica-continua' || page.page_url==='educacion-medica-continua/'?
                             <Container>
                                 <Courses/>
                             </Container>
                             :
-                            null
+                            null*/
                         }
                         {
                             page.page_url==='pre-y-posgrado' || page.page_url==='pre-y-posgrado/'?
