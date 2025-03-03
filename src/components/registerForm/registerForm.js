@@ -48,7 +48,8 @@ export const RegisterForm = () => {
                         controlNumber: controlNumber,
                         user: inputData,
                         invoice: inputData.payment_invoice,
-                        modalityId: !inputData.modality ? null : inputData.modality
+                        modalityId: !inputData.modality ? null : inputData.modality,
+                        amount: course.course_price
                     })
                 }
                 if (inputData.student_role === 'ESTUDIANTE' && course.course_price !== 0) {
@@ -58,7 +59,8 @@ export const RegisterForm = () => {
                         controlNumber: controlNumber,
                         user: inputData,
                         invoice: inputData.payment_invoice,
-                        modalityId: !inputData.modality ? null : inputData.modality
+                        modalityId: !inputData.modality ? null : inputData.modality,
+                        amount: course.course_student_price
                     })
                 }
                 if (inputData.student_role === 'PERSONAL_HIMFG' && course.course_price !== 0) {
@@ -68,8 +70,8 @@ export const RegisterForm = () => {
                         controlNumber: controlNumber,
                         user: inputData,
                         invoice: inputData.payment_invoice,
-                        modalityId: !inputData.modality ? null : inputData.modality
-
+                        modalityId: !inputData.modality ? null : inputData.modality,
+                        amount: course.course_employee_price
                     })
                 }
                 if (course.course_price === 0) {

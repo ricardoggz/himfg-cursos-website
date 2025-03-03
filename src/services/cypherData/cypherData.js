@@ -6,7 +6,7 @@ export const data = {
     merchantId: "8878254",
     name: "prueba8878254",
     password: "C0M53him$%",
-    mode: "AUT",
+    mode: "PRD",
     terminalId: "88782541",
     customerRef1: "",
     customerRef2: "",
@@ -154,7 +154,7 @@ const startPayment = async ({
         Payment.setEnv("pro");
         let xOBJ;
         xOBJ = await cypherData({
-            amount: `1.00`,
+            amount: `${amount}.00`,
             controlNumber: controlNumber
         });
         Payment.startPayment({
@@ -176,6 +176,10 @@ const startPayment = async ({
                         cypherData: res.data
                     }
                     const cypherMessage = await getCypherData(datatoValue)
+                    if(cypherMessage && cypherMessage.resultadoPayw !== 'A'){
+                        console.log(cypherMessage)
+                        setLoaderFunction()
+                    }
                     if (cypherMessage && cypherMessage.resultadoPayw === 'A' && routerFunction) {
                         routerFunction()
                         await addPayment({
