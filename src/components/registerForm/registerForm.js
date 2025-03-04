@@ -18,11 +18,19 @@ export const RegisterForm = () => {
     })
     const onChange = async (evt) => {
         if (evt.target.files?.length) {
-            const resp = await uploadFile({ file: evt.target.files[0] });
-            setInputData({
-                ...inputData,
-                [evt.target.name]: resp
-            });
+            if (evt.target.files[0].type !== 'application/pdf' && evt.target.files[0].size > 2 * 1024 * 1024) {
+                return Swal.fire({
+                    title: 'El archivo debe ser de tipo PDF y pesar menos de 2MB',
+                    icon: 'error'
+                })
+            }
+            else {
+                const resp = await uploadFile({ file: evt.target.files[0] });
+                setInputData({
+                    ...inputData,
+                    [evt.target.name]: resp
+                });
+            }
         } else {
             setInputData({
                 ...inputData,
@@ -81,7 +89,7 @@ export const RegisterForm = () => {
                             course_id: course.course_id,
                             student_id: inputData.student_id,
                             payment_successfull: 1,
-                            payment_amount: 1.00,
+                            payment_amount: 0,
                             payment_reference: controlNumber,
                             payment_invoice: "SIN_FACTURACION",
                             payment_date: new Date().toISOString().slice(0, 19).replace('T', ' '),
@@ -207,10 +215,11 @@ export const RegisterForm = () => {
                             inputData && inputData.student_role === 'ESTUDIANTE' || inputData && inputData.student_role === 'PERSONAL_HIMFG' ?
                                 <>
                                     <label>
-                                        Adjunte una fotografía de su credencial vigente por ambos lados:
+                                        Adjunte un archivo .pdf que contenga la fotografía de su credencial vigente por ambos lados:
                                     </label>
                                     <label>1era parte</label>
                                     <input
+                                        accept='.pdf'
                                         name='student_license'
                                         onChange={onChange}
                                         required
@@ -218,6 +227,7 @@ export const RegisterForm = () => {
                                     />
                                     <label>2da parte</label>
                                     <input
+                                        accept='.pdf'
                                         name='student_license_part_2'
                                         onChange={onChange}
                                         required
@@ -231,9 +241,10 @@ export const RegisterForm = () => {
                             inputData && inputData.student_role === 'EXTERNO' ?
                                 <>
                                     <label>
-                                        Adjunte una fotografía de su cédula profesional vigente:
+                                        Adjunte una archivo .pdf que contenga su cédula profesional vigente:
                                     </label>
                                     <input
+                                        accept='.pdf'
                                         name='student_license'
                                         onChange={onChange}
                                         required

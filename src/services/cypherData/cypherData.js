@@ -187,7 +187,7 @@ const startPayment = async ({
                                 course_id: course.course_id,
                                 student_id: user.student_id,
                                 payment_successfull: 1,
-                                payment_amount: 1.00,
+                                payment_amount: amount,
                                 payment_reference: controlNumber,
                                 payment_invoice: invoice,
                                 payment_date: new Date().toISOString().slice(0, 19).replace('T', ' '),
