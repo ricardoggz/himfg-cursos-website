@@ -14,7 +14,7 @@ export const Convocatorias = ()=>{
                 <ul>
                     <li>
                         <a
-                            href='https://himfg.edu.mx/archivos/graficos/investigacion/Convocatoria_Financiamiento_Protocolos_con_FF_2025.pdf'
+                            href='https://himfg.edu.mx/archivos/graficos/investigacion/convocatoria-financiamiento.pdf'
                             target='_blank'
                         >
                             Convocatoria para financiar proyectos de investigación para la salud con fondos federales 2025
