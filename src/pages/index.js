@@ -4,6 +4,7 @@ import {
   Container,
   Jumbotron,
   MenuOptions,
+  Mision,
   PrincipalAds,
   Privacity,
   Sipot
@@ -26,6 +27,7 @@ export default function Home() {
       <Container>
         <PrincipalAds />
       </Container>
+      <Mision />
       <Container>
         <Privacity />
         <Sipot />

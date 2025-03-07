@@ -175,7 +175,7 @@ export default function FilesOrganization() {
             files: [
                 {
                     file: 'Guía de archivo documental 2024',
-                    link:'https://himfg.edu.mx/hemerobiblioteca/guia-de-archivo-documental/Guia-de-archivo-documental-2024.pdf'
+                    link: 'https://himfg.edu.mx/hemerobiblioteca/guia-de-archivo-documental/Guia-de-archivo-documental-2024.pdf'
                 },
                 {
                     file: 'Guía de archivo documental 2023',
@@ -468,6 +468,21 @@ export default function FilesOrganization() {
             <div className={`flexContainer boxShadow ${styles.fileWrapper}`}>
                 <ul className={styles.fileList}>
                     <li className={styles.fileTitle}>Formatos</li>
+                    <li>
+                        <a href={`https://www.himfg.edu.mx/hemerobiblioteca/formato-relacion-simple-2025.doc`} download target='_blank'>
+                            Formato de relación simple de documentación de comprobación administrativa inmediata 2025
+                        </a>
+                    </li>
+                    <li>
+                        <a href={`https://www.himfg.edu.mx/hemerobiblioteca/formato-guia-de-archivo-documental-2025.doc`} download target='_blank'>
+                            Formato Guia de archivo documental 2025
+                        </a>
+                    </li>
+                    <li>
+                        <a href={`https://www.himfg.edu.mx/hemerobiblioteca/formato-inventario-documental-2025.doc`} download target='_blank'>
+                            Formato e Instructivo de Inventario documental trimestral 2025
+                        </a>
+                    </li>
                     <li>
                         <a href={`https://www.himfg.edu.mx/hemerobiblioteca/formato-inventario.doc`} download target='_blank'>
                             Formato de inventario documental trimestral 2024

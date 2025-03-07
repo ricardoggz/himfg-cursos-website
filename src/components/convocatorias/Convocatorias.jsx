@@ -17,7 +17,7 @@ export const Convocatorias = ()=>{
                             href='https://himfg.edu.mx/archivos/graficos/investigacion/convocatoria-financiamiento.pdf'
                             target='_blank'
                         >
-                            Convocatoria para financiar proyectos de investigación para la salud con fondos federales 2025
+                            Convocatoria para financiar proyectos de investigación para la salud con fondos federales 2026
                         </a>
                     </li>
                     <li>

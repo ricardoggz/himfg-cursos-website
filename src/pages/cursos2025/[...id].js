@@ -300,6 +300,20 @@ const Video = (props) => {
                                                     null
                                             }
                                             {
+                                                course[0].course_url === 'estomatologia-conceptos-actuales' ?
+                                                    
+                                                        <a
+                                                            href='https://docs.google.com/forms/d/e/1FAIpQLSdNHHgC4jfRwfJzfoF8G2L8lqZf6SGBXxN1GWyyNH6U1hv1kA/viewform'
+                                                            target="_blank"
+                                                            style={{fontSize: '2rem'}}
+                                                        >
+                                                            Evaluación
+                                                        </a>
+                                                    
+                                                    :
+                                                    null
+                                            }
+                                            {
                                                 course[0].test_id && user ?
                                                     <Link
                                                         href={`/test/[...id]`}
