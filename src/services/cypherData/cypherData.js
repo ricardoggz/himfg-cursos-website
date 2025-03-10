@@ -67,7 +67,7 @@ export const reference = (id) => {
 async function cypherData({ amount, controlNumber }) {
     try {
         const { data: ret } = await axios.post(
-            "https://cemesatelcyper-001-site1.mtempurl.com/aes/cifradoconllave",
+            "https://cemesatelcyper-001-site1.qtempurl.com/aes/cifradoconllave",
             {
                 base64: window.btoa(JSON.stringify({
                     ...data,
@@ -101,7 +101,7 @@ async function cypherData({ amount, controlNumber }) {
 const getCypherData = async (data) => {
     try {
         const response = await axios.post(
-            'https://cemesatelcyper-001-site1.mtempurl.com/aes/decrypt',
+            'https://cemesatelcyper-001-site1.qtempurl.com/aes/decrypt',
             data,
             {
                 headers: {
