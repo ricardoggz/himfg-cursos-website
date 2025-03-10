@@ -176,10 +176,10 @@ const Video = (props) => {
                                                             src={`https://vimeo.com/event/${course_live_video}/embed`}
                                                             frameBorder='0'
                                                             allow="
-                            autoplay;
-                            fullscreen;
-                            picture-in-picture
-                            "
+                                                            autoplay;
+                                                            fullscreen;
+                                                            picture-in-picture
+                                                            "
                                                             allowFullScreen
                                                         />
                                                         :
@@ -187,10 +187,10 @@ const Video = (props) => {
                                                             src='https://player.vimeo.com/video/1061030550'
                                                             frameBorder='0'
                                                             allow="
-                            autoplay;
-                            fullscreen;
-                            picture-in-picture
-                            "
+                                                            autoplay;
+                                                            fullscreen;
+                                                            picture-in-picture
+                                                            "
                                                             allowFullScreen
                                                         />
                                                 }
@@ -264,16 +264,29 @@ const Video = (props) => {
                                 !course[0].course_zoom_video
                                     ? null
                                     :
-                                    <div className={`${styles.liveVideoZoom} flexContainer`}>
-                                        <a
-                                            href={course[0].course_zoom_video}
-                                            target='_blank'
+                                    <>
+                                        <div
+                                            className={`${styles.liveVideo} flexContainer boxShadow`}
                                         >
-                                            Enlace de Zoom
-                                        </a>
-                                        <span>{`ID de reunión: ${course[0].course_zoom_id}`}</span>
-                                        <span>{`Código de acceso: ${course[0].course_zoom_password}`}</span>
-                                    </div>
+                                        <iframe
+                                            src={`https://zoom.us/wc/${course[0].course_zoom_id}/join?pwd=${course[0].course_zoom_password}`}
+                                            frameBorder='0'
+                                            allow="microphone; camera;"
+                                            allowFullScreen
+                                            style={{padding: '20px', height:'800px'}}
+                                        />
+                                        <div className={`${styles.liveVideoZoom} flexContainer`}>
+                                            <a
+                                                href={course[0].course_zoom_video}
+                                                target='_blank'
+                                            >
+                                                Enlace de Zoom
+                                            </a>
+                                            <span>{`ID de reunión: ${course[0].course_zoom_id}`}</span>
+                                            <span>{`Código de acceso: ${course[0].course_zoom_password}`}</span>
+                                        </div>
+                                        </div>
+                                    </>
                             }
                             {
                                 !vimeoData
@@ -287,29 +300,29 @@ const Video = (props) => {
                                         <div className={`flexContainer ${styles.testLink}`}>
                                             {
                                                 course[0].course_url === 'atencion-piscologica-paciente-hospitalizado' ?
-                                                    
-                                                        <a
-                                                            href='https://docs.google.com/forms/d/e/1FAIpQLSeATSyQuhZLt-kGZ4Lq_BcvCEb0dp3xAyrw-L_SI2iLCoSE0Q/viewform'
-                                                            target="_blank"
-                                                            style={{fontSize: '2rem'}}
-                                                        >
-                                                            Evaluación
-                                                        </a>
-                                                    
+
+                                                    <a
+                                                        href='https://docs.google.com/forms/d/e/1FAIpQLSeATSyQuhZLt-kGZ4Lq_BcvCEb0dp3xAyrw-L_SI2iLCoSE0Q/viewform'
+                                                        target="_blank"
+                                                        style={{ fontSize: '2rem' }}
+                                                    >
+                                                        Evaluación
+                                                    </a>
+
                                                     :
                                                     null
                                             }
                                             {
                                                 course[0].course_url === 'estomatologia-conceptos-actuales' ?
-                                                    
-                                                        <a
-                                                            href='https://docs.google.com/forms/d/e/1FAIpQLSdNHHgC4jfRwfJzfoF8G2L8lqZf6SGBXxN1GWyyNH6U1hv1kA/viewform'
-                                                            target="_blank"
-                                                            style={{fontSize: '2rem'}}
-                                                        >
-                                                            Evaluación
-                                                        </a>
-                                                    
+
+                                                    <a
+                                                        href='https://docs.google.com/forms/d/e/1FAIpQLSdNHHgC4jfRwfJzfoF8G2L8lqZf6SGBXxN1GWyyNH6U1hv1kA/viewform'
+                                                        target="_blank"
+                                                        style={{ fontSize: '2rem' }}
+                                                    >
+                                                        Evaluación
+                                                    </a>
+
                                                     :
                                                     null
                                             }

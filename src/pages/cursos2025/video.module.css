@@ -28,6 +28,12 @@
     padding:1rem;
     width:100%;
 }
+.liveVideoZoom{
+    align-items: center;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+}
 .liveVideo iframe {
     height:400px;
     width:100%;
