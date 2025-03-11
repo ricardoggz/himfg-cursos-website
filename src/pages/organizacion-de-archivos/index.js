@@ -224,6 +224,10 @@ export default function FilesOrganization() {
             title: 'Sistema institucional de archivos',
             files: [
                 {
+                    file: 'Responsables del Sistema Institucional de Archivos 2025',
+                    link: 'http://www.himfg.com.mx/descargas/documentos/ensenanza/hemerobiblioteca/OrganiArchivos/responsables-del-sistema-institucional-de-archivos-2025.docx'
+                },
+                {
                     file: 'Responsables del Sistema Institucional de Archivos 2024',
                     link: 'http://www.himfg.com.mx/descargas/documentos/ensenanza/hemerobiblioteca/OrganiArchivos/Sistema_Institucional_Archivos_2024.pdf'
                 },
@@ -468,6 +472,11 @@ export default function FilesOrganization() {
             <div className={`flexContainer boxShadow ${styles.fileWrapper}`}>
                 <ul className={styles.fileList}>
                     <li className={styles.fileTitle}>Formatos</li>
+                    <li>
+                        <a href={`https://www.himfg.edu.mx/hemerobiblioteca/formato-portada-de-expediente-2025.xls`} download target='_blank'>
+                            Portada de expediente 2025
+                        </a>
+                    </li>
                     <li>
                         <a href={`https://www.himfg.edu.mx/hemerobiblioteca/formato-relacion-simple-2025.doc`} download target='_blank'>
                             Formato de relación simple de documentación de comprobación administrativa inmediata 2025
