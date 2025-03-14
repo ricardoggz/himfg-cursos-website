@@ -32,7 +32,7 @@ export const Footer = ()=>{
                 <div>
                     <li>Teléfono:</li>
                     <li>
-                        5228 9917
+                        55 52 28 99 17
                     </li>
                 </div>
             </ul>

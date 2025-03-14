@@ -50,6 +50,7 @@ export const RegisterForm = () => {
             if (response.status === 200 && response.data.affectedRows === 1) {
                 const controlNumber = reference(course.course_id)
                 if (inputData.student_role === 'EXTERNO' && course.course_price !== 0) {
+                    localStorage.setItem('reference', controlNumber)
                     await startPayment({
                         routerFunction: () => router.push('/registro-exitoso'),
                         setLoaderFunction: () => setIsLoading(false),
@@ -61,6 +62,7 @@ export const RegisterForm = () => {
                     })
                 }
                 if (inputData.student_role === 'ESTUDIANTE' && course.course_price !== 0) {
+                    localStorage.setItem('reference', controlNumber)
                     await startPayment({
                         routerFunction: () => router.push('/registro-exitoso'),
                         setLoaderFunction: () => setIsLoading(false),
@@ -72,6 +74,7 @@ export const RegisterForm = () => {
                     })
                 }
                 if (inputData.student_role === 'PERSONAL_HIMFG' && course.course_price !== 0) {
+                    localStorage.setItem('reference', controlNumber)
                     await startPayment({
                         routerFunction: () => router.push('/registro-exitoso'),
                         setLoaderFunction: () => setIsLoading(false),

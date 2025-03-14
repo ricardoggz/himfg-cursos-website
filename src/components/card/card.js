@@ -7,13 +7,14 @@ import 'animate.css'
 import withReactContent from 'sweetalert2-react-content'
 
 const Card = ({ course }) => {
+    console.log(course)
     const formatDate = (initDate) => {
         const optionDate = { day: "2-digit", month: 'long', year: 'numeric' }
         let lastDate = new Date(initDate)
         lastDate.setMinutes(lastDate.getMinutes() + lastDate.getTimezoneOffset())
         return lastDate.toLocaleDateString('es-MX', optionDate)
     }
-    const addCourse = ()=>{
+    const addCourse = () => {
         return localStorage.setItem('course', JSON.stringify(course))
     }
     return (
@@ -31,60 +32,61 @@ const Card = ({ course }) => {
                 />
             </figure>
             <span className={styles.courseTitle}>
-                    <span>{course.course_name}</span>
-            </span>       
+                <span>{course.course_name}</span>
+            </span>
             <ul className={styles.cardList}>
                 <li>Inicia: {formatDate(course.course_start_date)}</li>
                 <li>Termina: {formatDate(course.course_finish_date)}</li>
                 {
                     course.course_max_range && course.modality_id === 3 ?
-                    <li>{course.course_max_range} cupos presenciales, en línea ilimitado</li>
-                    :
-                    null
+                        <li>{course.course_max_range} cupos presenciales, en línea ilimitado</li>
+                        :
+                        null
                 }
                 {
                     course.modality_id === 1 ?
-                    <li>Modalidad: presencial</li>
-                    :
-                    null
+                        <li>Modalidad: presencial</li>
+                        :
+                        null
                 }
                 {
                     course.modality_id === 2 ?
-                    <li>Modalidad: en línea</li>
-                    :
-                    null
+                        <li>Modalidad: en línea</li>
+                        :
+                        null
                 }
                 {
                     course.modality_id === 3 ?
-                    <li>Modalidad: híbrida</li>
-                    :
-                    null
+                        <li>Modalidad: híbrida</li>
+                        :
+                        null
                 }
                 {
-                !course.course_price && course.course_price !==0 ? null
-                :
-                <li>
-                    <span>Precio regular:</span><span className={styles.cardPrice}> ${course.course_price} mxn</span>
-                </li>
+                    course.course_price && course.course_price !== 0 ?
+                        <li>
+                            <span>Precio regular:</span><span className={styles.cardPrice}> ${course.course_price} mxn</span>
+                        </li>
+                        :
+                        null
                 }
                 {
                     !course.course_student_price ? null
-                    :
-                    <li>
-                        <span>50% de descuento para estudiantes y personal del HIMFG</span>
-                    </li>
+                        :
+                        <li>
+                            <span>50% de descuento para estudiantes y personal del HIMFG</span>
+                        </li>
                 }
                 {
-                course.course_price && course.course_price ===0 ?
-                <li className={styles.cardPrice}>Gratuito</li>
-                :
-                null
+                    course.course_price === 0 ?
+                        <li className={styles.cardPrice}>Gratuito</li>
+                        :
+                        null
                 }
                 {
-                    course.course_max_range && course.modality_id !==3 ?
-                    <li>Cupo máximo: {course.course_max_range} personas</li>
-                    :
-                    null
+                    course.course_max_range && course.modality_id !== 3 ?
+                        <li>Cupo máximo: {course.course_max_range} personas</li>
+                        :
+                        null
                 }
             </ul>
 
@@ -96,11 +98,11 @@ const Card = ({ course }) => {
                     {!course.course_pdf ? 'Programa no disponible' : 'Ver programa'}
                 </button>
                 {
-                    !course.course_able? null :
+                    !course.course_able ? null :
                         <Link
-                        href='/registro'
-                        className={styles.cardButton}
-                        onClick={addCourse}
+                            href='/registro'
+                            className={styles.cardButton}
+                            onClick={addCourse}
                         >
                             Inscripción
                         </Link>
