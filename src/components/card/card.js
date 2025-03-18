@@ -100,7 +100,7 @@ const Card = ({ course }) => {
                 {
                     !course.course_able ? null :
                         <Link
-                            href='/registro'
+                            href='/consideraciones-de-pago'
                             className={styles.cardButton}
                             onClick={addCourse}
                         >

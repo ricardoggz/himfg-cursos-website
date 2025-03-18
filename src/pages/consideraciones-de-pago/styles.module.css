@@ -1,0 +1,21 @@
+.considerationWrapper{
+    display: grid;
+    gap:1.5rem;
+    grid-template-columns: repeat(1,fr);
+}
+.considerationWrapper ul{
+    display: grid;
+    grid-template-columns: 1fr;
+    line-height: 2.5rem;
+    list-style: none;
+    text-align: justify;
+}
+.considerationTitle{
+    font-weight:700;
+    font-style:italic;
+}
+.considerationLink{
+    color:var(--blue-primary);
+    font-weight:700;
+    font-size:1.5rem;
+}
