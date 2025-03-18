@@ -61,7 +61,7 @@ export const RegisterForm = () => {
                         amount: course.course_price
                     })
                 }
-                if (inputData.student_role === 'ESTUDIANTE' && course.course_price !== 0) {
+                if (inputData.student_role === 'ESTUDIANTE' && course.course_student_price !== 0) {
                     localStorage.setItem('reference', controlNumber)
                     await startPayment({
                         routerFunction: () => router.push('/registro-exitoso'),
@@ -73,7 +73,7 @@ export const RegisterForm = () => {
                         amount: course.course_student_price
                     })
                 }
-                if (inputData.student_role === 'PERSONAL_HIMFG' && course.course_price !== 0) {
+                if (inputData.student_role === 'PERSONAL_HIMFG' && course.course_employee_price !== 0) {
                     localStorage.setItem('reference', controlNumber)
                     await startPayment({
                         routerFunction: () => router.push('/registro-exitoso'),
@@ -85,7 +85,40 @@ export const RegisterForm = () => {
                         amount: course.course_employee_price
                     })
                 }
-                if (course.course_price === 0) {
+                if (inputData.student_role === 'EXTERNO' && course.course_price === 0) {
+                    localStorage.setItem('reference', controlNumber)
+                    router.push('/registro-exitoso')
+                    await addPayment({
+                        data: {
+                            course_id: course.course_id,
+                            student_id: inputData.student_id,
+                            payment_successfull: 1,
+                            payment_amount: 0,
+                            payment_reference: controlNumber,
+                            payment_invoice: "SIN_FACTURACION",
+                            payment_date: new Date().toISOString().slice(0, 19).replace('T', ' '),
+                            payment_modality: 'en_linea'
+                        }
+                    })
+                }
+                if (inputData.student_role === 'ESTUDIANTE' && course.course_student_price === 0) {
+                    localStorage.setItem('reference', controlNumber)
+                    router.push('/registro-exitoso')
+                    await addPayment({
+                        data: {
+                            course_id: course.course_id,
+                            student_id: inputData.student_id,
+                            payment_successfull: 1,
+                            payment_amount: 0,
+                            payment_reference: controlNumber,
+                            payment_invoice: "SIN_FACTURACION",
+                            payment_date: new Date().toISOString().slice(0, 19).replace('T', ' '),
+                            payment_modality: 'en_linea'
+                        }
+                    })
+                }
+                if (inputData.student_role === 'PERSONAL_HIMFG' && course.course_employee_price === 0) {
+                    localStorage.setItem('reference', controlNumber)
                     router.push('/registro-exitoso')
                     await addPayment({
                         data: {
