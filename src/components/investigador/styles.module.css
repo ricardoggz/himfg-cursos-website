@@ -1,0 +1,74 @@
+.investigadorWrapper {
+    background: url('https://himfg.edu.mx/fotos-investigadores/bg-page-banner.jpg');
+    background-size: cover;
+    align-items: center;
+    display: flex;
+    justify-content: start;
+    padding: 3rem 0;
+}
+
+.investigadorImagen {
+    width: 50%;
+}
+
+.investigadorImagen img {
+    border-radius: 50%;
+    -webkit-box-shadow: 13px -1px 5px -3px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 13px -1px 5px -3px rgba(0, 0, 0, 0.75);
+    box-shadow: 13px -1px 5px -3px rgba(0, 0, 0, 0.75);
+    width: 100%;
+}
+
+.investigadorNombre {
+    background: url('https://himfg.edu.mx/fotos-investigadores/bg-nombre.png');
+    background-position-x: right;
+    background-size: cover;
+    color: var(--white-primary);
+    font-size: 2rem;
+    padding: 3rem;
+    width: 100%;
+}
+
+.investigadorTitulos {
+    align-items: center;
+    display: flex;
+}
+
+.investigadorLink {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.investigadorTextos {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.investigadorTextos div {
+    display: flex;
+    justify-content: start;
+}
+
+.investigadorTextos a {
+    color: var(--white-primary);
+    font-size: 1.5rem;
+    margin: 0 3rem;
+}
+
+@media (min-width:240px) and (max-width:900px) {
+    .investigadorTitulos {
+        flex-direction: column;
+    }
+
+    .investigadorNombre {
+        font-size: 1.5rem;
+        padding: 1.5rem;
+    }
+
+    .investigadorLink a {
+        font-size: 1rem;
+        margin: 0 1.5rem;
+    }
+}
