@@ -1,4 +1,5 @@
 import styles from './styles.module.css'
+import { showCurriculum } from './Curriculum'
 
 export const Investigador = () => {
     return (
@@ -14,7 +15,7 @@ export const Investigador = () => {
                         <p>Esteban Benjamín Gonzáles Molina</p>
                     </div>
                     <div className={styles.investigadorLink}>
-                        <a href='#'>Ver Síntesis curricular</a>
+                        <button onClick={showCurriculum}>Ver síntesis curricular</button>
                     </div>
                 </div>
             </div>
