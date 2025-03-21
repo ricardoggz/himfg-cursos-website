@@ -1,10 +1,12 @@
 .investigadorWrapper {
     background: url('https://himfg.edu.mx/fotos-investigadores/bg-page-banner.jpg');
     background-size: cover;
+    border-radius:9px;
     align-items: center;
     display: flex;
     justify-content: start;
     padding: 3rem 0;
+    width:100%;
 }
 
 .investigadorImagen {
@@ -24,14 +26,14 @@
     background-position-x: right;
     background-size: cover;
     color: var(--white-primary);
-    font-size: 2rem;
-    padding: 3rem;
+    padding:1rem;
     width: 100%;
 }
 
 .investigadorTitulos {
     align-items: center;
     display: flex;
+    gap:1rem;
 }
 
 .investigadorLink {
@@ -50,8 +52,6 @@
     border:1px solid var(--white-primary);
     background: none;
     color: var(--white-primary);
-    font-size: 1.5rem;
-    margin: 0 3rem;
     padding:0.5rem;
 }
 
@@ -62,7 +62,7 @@
     display:flex;
     flex-direction: column;
     font-family:'Montserrat', sans-serif;
-    padding: 8rem 0;
+    padding: 6rem 0;
 }
 .sintesisTextos{
     display:flex;
