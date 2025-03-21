@@ -12,7 +12,7 @@ export const Investigador = () => {
                 </figure>
                 <div className={styles.investigadorTextos}>
                     <div className={styles.investigadorNombre}>
-                        <p>Esteban Benjamín Gonzáles Molina</p>
+                        <p>DR. ERNESTO CALDERÓN JAIMES</p>
                     </div>
                     <div className={styles.investigadorLink}>
                         <button onClick={showCurriculum}>Ver síntesis curricular</button>
