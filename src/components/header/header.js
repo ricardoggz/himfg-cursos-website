@@ -18,6 +18,11 @@ export const Header =()=>{
                             Inicio
                         </Link>
                     </li>
+                    <li>
+                        <a href='https://oferta-academica.himfg.edu.mx/programa-anual/programa-anual.pdf' target='_blank'>
+                            Oferta académica anual
+                        </a>
+                    </li>
                 </ul>
             </nav>
             </header>

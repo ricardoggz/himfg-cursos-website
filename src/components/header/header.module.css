@@ -30,3 +30,9 @@
     color:var(--white-primary);
     text-decoration: none;
 }
+@media (min-width:240px) and (max-width:900px){
+    .headerNav{
+        flex-direction: column;
+        justify-content: center;
+    }
+}
