@@ -327,6 +327,20 @@ const Video = (props) => {
                                                     null
                                             }
                                             {
+                                                course[0].course_url === 'seguridad-medicamentos-pediatria' ?
+
+                                                    <a
+                                                        href='https://docs.google.com/forms/d/e/1FAIpQLScziH0nxvO1PHV-vyakT0q7dZug7y7FGbucPw5pnhc5rw7-eA/viewform'
+                                                        target="_blank"
+                                                        style={{ fontSize: '2rem' }}
+                                                    >
+                                                        Evaluación
+                                                    </a>
+
+                                                    :
+                                                    null
+                                            }
+                                            {
                                                 course[0].test_id && user ?
                                                     <Link
                                                         href={`/test/[...id]`}

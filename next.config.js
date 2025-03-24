@@ -43,7 +43,8 @@ const nextConfig = {
       '/dano-cero' : {page: '/dano-cero'},
       '/organizacion-de-archivos' : {page: '/organizacion-de-archivos'},
       '/sesion-clinico-patologica': {page: '/sesion-clinico-patologica'},
-      '/galeria': {page: '/galeria'}
+      '/galeria': {page: '/galeria'},
+      '/investigadores/[id]' : { page: '/investigadores/[id]'},
     }
   },
   env:{
