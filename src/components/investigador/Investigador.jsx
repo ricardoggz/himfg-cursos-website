@@ -1,21 +1,29 @@
 import styles from './styles.module.css'
 import { showCurriculum } from './Curriculum'
 
-export const Investigador = () => {
+export const Investigador = ({ investigador }) => {
     return (
         <section className={styles.investigadorWrapper}>
             <div className={`flexContainer ${styles.investigadorTitulos}`}>
-                <figure className={styles.investigadorImagen}>
-                    <img
-                        src='https://himfg.edu.mx/fotos-investigadores/dr-nuevo-2.png'
-                    />
-                </figure>
+                {
+                    !investigador || !investigador.investigador_imagen ?
+                        null :
+                        <figure className={styles.investigadorImagen}>
+                            <img
+                                src={investigador.investigador_imagen}
+                                alt={investigador.investigador_nombre}
+                            />
+                        </figure>
+                }
                 <div className={styles.investigadorTextos}>
-                    <div className={styles.investigadorNombre}>
-                        <p>DR. ERNESTO CALDERÓN JAIMES</p>
-                    </div>
+                    {
+                        !investigador || !investigador.investigador_nombre? null :
+                            <div className={styles.investigadorNombre}>
+                                <p>{investigador.investigador_nombre}</p>
+                            </div>
+                    }
                     <div className={styles.investigadorLink}>
-                        <button onClick={showCurriculum}>Ver síntesis curricular</button>
+                        <button onClick={() => showCurriculum({ investigador })}>Ver síntesis curricular</button>
                     </div>
                 </div>
             </div>

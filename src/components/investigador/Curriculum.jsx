@@ -5,9 +5,9 @@ import withReactContent from "sweetalert2-react-content"
 
 const Alert = withReactContent(Swal)
 
-export const showCurriculum = () => {
+export const showCurriculum = ({ investigador }) => {
     return Alert.fire({
-        html: <Curriculum />,
+        html: <Curriculum investigador={investigador} />,
         customClass: {
             container: styles.curriculumWrapper
         },
@@ -16,19 +16,23 @@ export const showCurriculum = () => {
         width: '80%',
     })
 }
-const Curriculum = () => {
+const Curriculum = ({ investigador }) => {
     return (
         <section className={styles.curriculumWrapper}>
-            <Title>DR. ERNESTO CALDERÓN JAIMES</Title>
+            <Title>{!investigador ? '' : investigador.nombre}</Title>
             <div className={`${styles.sintesisWrapper} flexContainer`}>
-                <div className={styles.sintesisTextos}>
-                    <div>
-                        <iframe
-                            src='https://drive.google.com/file/d/1Naft4XNtRRR5HCmQkyRa_cnfvedcd6Et/preview'
-                            frameBorder='0'
-                        />
-                    </div>
-                </div>
+                {
+                    !investigador ?
+                        null :
+                        <div className={styles.sintesisTextos}>
+                            <div>
+                                <iframe
+                                    src={investigador.investigador_sintesis}
+                                    frameBorder='0'
+                                />
+                            </div>
+                        </div>
+                }
             </div>
         </section>
     )
