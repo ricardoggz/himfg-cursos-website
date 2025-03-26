@@ -3,28 +3,56 @@ export const infoContable = [
         title: 2024,
         content:[
             {
+                link: 'https://himfg.edu.mx/archivos/recursos-financieros/2024/informacion-contable/ESTADO-DE-ACTIVIDADES-DICIEMBRE-2024.pdf',
+                title:'Estado de Actividades Diciembre 2024'
+            },
+            {
                 link: 'https://himfg.edu.mx/archivos/recursos-financieros/2024/informacion-contable/1.pdf',
                 title:'Estado de Actividades septiembre 2024'
+            },
+            {
+                link: 'https://himfg.edu.mx/archivos/recursos-financieros/2024/informacion-contable/ESTADO-DE-SITUACION-FINANCIERA-DICIEMBRE-2024.pdf',
+                title: 'Estado de Situación Financiera Diciembre 2024'
             },
             {
                 link: 'https://himfg.edu.mx/archivos/recursos-financieros/2024/informacion-contable/2.pdf',
                 title: 'Estado de Situación Financiera septiembre 2024'
             },
             {
+                link: 'https://himfg.edu.mx/archivos/recursos-financieros/2024/informacion-contable/ESTADO-DE-VARIACION-EN-LA-HACIENDA-PUBLICA-DICIEMBRE-2024.pdf',
+                title: 'Estado de Variación en la Hacienda Pública Diciembre 2024'
+            },
+            {
                 link: 'https://himfg.edu.mx/archivos/recursos-financieros/2024/informacion-contable/3.pdf',
                 title: 'Estado de Variación en la Hacienda Pública septiembre 2024'
+            },
+            {
+                link: 'https://himfg.edu.mx/archivos/recursos-financieros/2024/informacion-contable/ESTADO-DE-CAMBIOS-EN-LA-SITUACION-FINANCIERA-DICIEMBRE-2024.pdf',
+                title: 'Estado de Cambios en la Situación Financiera Dciembre 2024'
             },
             {
                 link: 'https://himfg.edu.mx/archivos/recursos-financieros/2024/informacion-contable/4.pdf',
                 title: 'Estado de Cambios en la Situación Financiera septiembre 2024'
             },
             {
+                link: 'https://himfg.edu.mx/archivos/recursos-financieros/2024/informacion-contable/ESTADO-FLUJOS-DE-EFECTIVO-DICMEBRE-2024.pdf',
+                title: 'Estado de Flujos de Efectivo Diciembre 2024'
+            },
+            {
                 link: 'https://himfg.edu.mx/archivos/recursos-financieros/2024/informacion-contable/5.pdf',
                 title: 'Estado de Flujos de Efectivo septiembre 2024'
             },
             {
+                link: 'https://himfg.edu.mx/archivos/recursos-financieros/2024/informacion-contable/ESTADO-ANALITICO-DEL-ACTIVO-DICIEMBRE-2024.pdf',
+                title: 'Estado Analítico del Activo Diciembre 2024'
+            },
+            {
                 link: 'https://himfg.edu.mx/archivos/recursos-financieros/2024/informacion-contable/6.pdf',
                 title: 'Estado Analítico del Activo septiembre 2024'
+            },
+            {
+                link: 'https://himfg.edu.mx/archivos/recursos-financieros/2024/informacion-contable/ESTADO-ANALITICO-DE-LA-DEUDA-Y-OTROS-PASIVOS-DICMEBRE-2024.pdf',
+                title: 'Estado Analítico de la Deuda y Otros Pasivos Diciembre 2024'
             },
             {
                 link: 'https://himfg.edu.mx/archivos/recursos-financieros/2024/informacion-contable/7.pdf',
@@ -33,6 +61,10 @@ export const infoContable = [
             {
                 link: 'https://himfg.edu.mx/archivos/recursos-financieros/2024/informacion-contable/8.pdf',
                 title:'Informe sobre Pasivos Contingentes septiembre 2024'
+            },
+            {
+                link: 'https://himfg.edu.mx/archivos/recursos-financieros/2024/informacion-contable/NOTAS-A-LOS-ESTADOS-FINANCIEROS-DICIEMBRE-2024.pdf',
+                title: 'Notas a los Estados Financieros Diciembre 2024'
             },
             {
                 link: 'https://himfg.edu.mx/archivos/recursos-financieros/2024/informacion-contable/9.pdf',
