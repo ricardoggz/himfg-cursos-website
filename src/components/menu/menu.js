@@ -244,11 +244,12 @@ function Menu() {
               title="Unidad Habilitada de Apoyo al Predictamen (UHAP)"
               href='/investigacion'
               />
+              */}
               <SubMenuItem
               title="Unidad de Investigación en Enfermedades Oncológicas"
-              href='/investigacion'
+              href='/investigadores/3'
               />
-              <SubMenuItem
+              {/*<SubMenuItem
                 title="Unidad de Investigación en Virología y Cáncer"
                 href='/investigacion'
               />
@@ -264,10 +265,13 @@ function Menu() {
                 title='Laboratorio de Investigación en Biología del Desarrollo y Teratogénesis Experimental'
                 href='/investigacion'
               />
+              */}
+              
               <SubMenuItem
                 title='Laboratorio de Investigación en Patología Experimental'
-                href='/investigacion'
+                href='/investigadores/9'
               />
+              {/*
               <SubMenuItem
                 title='Laboratorio de Investigación en Genómica, Genética y Bioinformática'
                 href='/investigacion'
@@ -279,12 +283,16 @@ function Menu() {
               <SubMenuItem
                 title='Laboratorio de Investigación en Farmacología'
                 href='/investigacion'
-              />
+              />*/}
               <SubMenuItem
                 title='Laboratorio de Investigación en Neurociencias'
-                href='/investigacion'
+                href='/investigadores/10'
               />
               <SubMenuItem
+                title='Laboratorio de Investigación en Obesidad y Asma'
+                href='/investigadores/7'
+              />
+              {/*<SubMenuItem
                 title='Biobanco de Investigación en Células Leucémicas'
                 href='/investigacion'
               />

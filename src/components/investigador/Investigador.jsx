@@ -6,11 +6,11 @@ export const Investigador = ({ investigador }) => {
         <section className={styles.investigadorWrapper}>
             <div className={`flexContainer ${styles.investigadorTitulos}`}>
                 {
-                    !investigador || !investigador.investigador_imagen ?
+                    !investigador || !investigador.investigador_foto ?
                         null :
                         <figure className={styles.investigadorImagen}>
                             <img
-                                src={investigador.investigador_imagen}
+                                src={investigador.investigador_foto}
                                 alt={investigador.investigador_nombre}
                             />
                         </figure>

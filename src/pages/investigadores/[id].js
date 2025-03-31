@@ -5,11 +5,12 @@ import { Container, GridContainer, Title, Investigador } from "@/components";
 export default function () {
     const router = useRouter()
     const [loading, data] = useFetch({
-        url: `${process.env.BASE_URL_API}api/directions/all-investigators`
+        url: `${process.env.BASE_URL_API}api/directions/all-investigators/${router.query.id}`
     })
+    console.log(router)
     return (
         <Container>
-            <Title>{!data || !data.data ? null : data.data[0].laboratorio_nombre}</Title>
+            <Title>{!data || !data.data ? null : `${data.data[0].laboratorio_nombre} - Investigadores`}</Title>
             {
                 !data && loading ? null :
                     <GridContainer>
