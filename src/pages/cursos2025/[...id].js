@@ -341,6 +341,20 @@ const Video = (props) => {
                                                     null
                                             }
                                             {
+                                                course[0].course_url === 'temas-psicologia-infantil-adolescencia' ?
+
+                                                    <a
+                                                        href='https://docs.google.com/forms/d/e/1FAIpQLSdZTwa18HKsorQtM3BFUx_LYkozr-R4gEFL9HjqBhjiVmkC4A/viewform'
+                                                        target="_blank"
+                                                        style={{ fontSize: '2rem' }}
+                                                    >
+                                                        Evaluación
+                                                    </a>
+
+                                                    :
+                                                    null
+                                            }
+                                            {
                                                 course[0].test_id && user ?
                                                     <Link
                                                         href={`/test/[...id]`}
