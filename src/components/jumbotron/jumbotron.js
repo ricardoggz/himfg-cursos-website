@@ -17,6 +17,10 @@ export const Jumbotron =()=>{
         }
         const images = [
             {
+                url:'https://himfg.edu.mx/archivos/banners/banner-principal.webp',
+                link:'https://himfg.edu.mx/archivos/documentos/comunicados/reunion-anual-investigadores.pdf'
+            },
+            {
                 url:'https://himfg.edu.mx/archivos/banners/CYTOTRON.webp',
                 link:'/'
             },
