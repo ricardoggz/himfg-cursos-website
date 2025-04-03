@@ -248,7 +248,7 @@ const Video = (props) => {
                                     <center>
                                         <br />
                                         <a
-                                            href='https://scp.him.edu.mx/resumen-del-caso-clinico.pdf'
+                                            href='https://himfg.edu.mx/sesion-clinico-patologica/resumen-del-caso-clinico-actualizado.pdf'
                                             className={styles.formLink}
                                             target='_blank'
                                         >
@@ -355,14 +355,13 @@ const Video = (props) => {
                                                     null
                                             }
                                             {
-                                                course[0].test_id && user ?
-                                                    <Link
-                                                        href={`/test/[...id]`}
-                                                        as={`/test/${course[0].course_id}`}
+                                                course[0].test_link ?
+                                                    <a
+                                                        href={`${course[0].test_link}`}
                                                         target="_blank"
                                                     >
                                                         Evaluación
-                                                    </Link>
+                                                    </a>
                                                     :
                                                     null
                                             }
