@@ -232,7 +232,7 @@ export const RegisterForm = () => {
                             </div>
                         </div>
                         {
-                            inputData && inputData.student_role === 'EXTERNO' || inputData && inputData.student_role === 'PERSONAL_HIMFG' && inputData && inputData.student_role === 'ESTUDIANTE' ?
+                            inputData && inputData.student_role === 'EXTERNO' || inputData && inputData.student_role === 'PERSONAL_HIMFG' || inputData && inputData.student_role === 'ESTUDIANTE' ?
                                 <>
                                     <label>Describa su perfil profesional:</label>
                                     <input
