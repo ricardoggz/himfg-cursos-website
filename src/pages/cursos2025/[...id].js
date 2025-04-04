@@ -268,13 +268,6 @@ const Video = (props) => {
                                         <div
                                             className={`${styles.liveVideo} flexContainer boxShadow`}
                                         >
-                                        <iframe
-                                            src={`https://zoom.us/wc/${course[0].course_zoom_id}/join?pwd=${course[0].course_zoom_password}`}
-                                            frameBorder='0'
-                                            allow="microphone; camera;"
-                                            allowFullScreen
-                                            style={{padding: '20px', height:'800px'}}
-                                        />
                                         <div className={`${styles.liveVideoZoom} flexContainer`}>
                                             <a
                                                 href={course[0].course_zoom_video}
