@@ -6,7 +6,7 @@ export const EducativeOffer = ()=>{
     return (
         <div className={styles.educativeOfferWrapper}>
             <figure>
-                <img src='https://archivos.him.edu.mx/graficos/ensenanza/pre-y-posgrado/oferta-academica.png'/>    
+                <img src='https://himfg.edu.mx/archivos/graficos/ensenanza/pre-y-posgrado/oferta-academica.png'/>    
             </figure>
             <h2 className={styles.registerTitle}>
                 Proceso de registro
