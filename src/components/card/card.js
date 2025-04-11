@@ -70,10 +70,10 @@ const Card = ({ course }) => {
                         null
                 }
                 {
-                    !course.course_student_price ? null
+                    !course.course_aditionals ? null
                         :
                         <li>
-                            <span>50% de descuento para estudiantes y personal del HIMFG</span>
+                            <span>{course.course_aditionals}</span>
                         </li>
                 }
                 {
