@@ -251,6 +251,51 @@ export const infoContable = [
 
 export const infoPresupuestaria = [
     {
+        title: 2024,
+        content:[
+            {
+                link: 'https://himfg.edu.mx/archivos/recursos-financieros/2024/informacion-contable/info-presupuestaria/Egresos-de-Flujos-de-Efectivo-diciembre-2024.pdf',
+                title: 'Egresos de Flujos de Efectivo diciembre 2024'
+            },
+            {
+                link: 'https://himfg.edu.mx/archivos/recursos-financieros/2024/informacion-contable/info-presupuestaria/Estado-Analitico-de-Ingresos-diciembre-2024.pdf',
+                title: 'Estado Analítico de Ingresos Diciembre 2024'
+            },
+            {
+                link: 'https://himfg.edu.mx/archivos/recursos-financieros/2024/informacion-contable/info-presupuestaria/3.pdf',
+                title: 'Estado Analítico del Ejercicio del Presupuesto de Egresos en Clasificación Administrativa (Armonizado) diciembre 2024'
+            },
+            {
+                link: 'https://himfg.edu.mx/archivos/recursos-financieros/2024/informacion-contable/info-presupuestaria/4.pdf',
+                title: 'Estado Analítico del Ejercicio del Presupuesto de Egresos en Clasificación Administrativa diciembre 2024'
+            },
+            {
+                link: 'https://himfg.edu.mx/archivos/recursos-financieros/2024/informacion-contable/info-presupuestaria/5.pdf',
+                title: 'Estado Analítico del Ejercicio del Presupuesto de Egresos en Clasificación Económica (Armonizado) diciembre 2024'
+            },
+            {
+                link: 'https://himfg.edu.mx/archivos/recursos-financieros/2024/informacion-contable/info-presupuestaria/6.pdf',
+                title: 'Estado Analítico del Ejercicio del Presupuesto de Egresos en Clasificación Económica y por Objeto del Gasto (Armonizado) diciembre 2024'
+            },
+            {
+                link: 'https://himfg.edu.mx/archivos/recursos-financieros/2024/informacion-contable/info-presupuestaria/7.pdf',
+                title: 'Estado Analítico del Ejercicio del Presupuesto de Egresos en Clasificación Económica y por Objeto del Gasto diciembre 2024'
+            },
+            {
+                link: 'https://himfg.edu.mx/archivos/recursos-financieros/2024/informacion-contable/info-presupuestaria/8.pdf',
+                title: 'Estado Analítico del Ejercicio del Presupuesto de Egresos en Clasificación Funcional Programática diciembre 2024'
+            },
+            {
+                link: 'https://himfg.edu.mx/archivos/recursos-financieros/2024/informacion-contable/info-presupuestaria/9.pdf',
+                title: 'Ingresos de Flujos de Efectivo diciembre 2024'
+            },
+            {
+                link: 'https://himfg.edu.mx/archivos/recursos-financieros/2024/informacion-contable/info-presupuestaria/10.pdf',
+                title: 'Notas a los estados Presupuestales diciembre 2024'
+            },
+        ]
+    },
+    {
         title: 2020,
         content:[
             {
@@ -379,6 +424,19 @@ export const infoPresupuestaria = [
 ]
 
 export const infoProgramatica = [
+    {
+        title: 2024,
+        content:[
+            {
+                link: 'https://himfg.edu.mx/archivos/recursos-financieros/2024/informacion-contable/info-programatica/1.pdf',
+                title: 'Gasto por Categoía Programática (Armonizado) diciembre 2024'
+            },
+            {
+                link: 'https://himfg.edu.mx/archivos/recursos-financieros/2024/informacion-contable/info-programatica/2.pdf',
+                title: 'Gasto por Categoría Programática diciembre 2024'
+            },
+        ]
+    },
     {
         title: 2020,
         content:[

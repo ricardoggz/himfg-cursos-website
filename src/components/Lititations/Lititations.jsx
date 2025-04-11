@@ -13,17 +13,14 @@ export const Lititations = ()=>{
                 <br/>
                 <ul>
                     {
-                        /*<li>
+                        <li>
                             <a
-                                href='https://himfg.edu.mx/descargas/documentos/licitaciones/nac/CONVOCATORIA_2025_ABARROTES_Y_AGUA_PURIFICADA_DE_GARAFON.pdf'
+                                href='https://himfg.edu.mx/descargas/documentos/licitaciones/bases/bases-imprenta.pdf'
                                 target='_blank'
                             >
-                                Abarrotes, Percederos y Agua purificada en garrafón de 20 litros 2025
+                                BASES DE LA INVITACIÓN A CUANDO MENOS TRES PERSONAS ELECTRONICA NACIONAL - MATERIALES Y ÚTILES DE IMPRESIÓN Y REPRODUCCIÓN PARA EL EJERCICIO 2025
                             </a>
-                            <br/>
-                            <br />
-                            <p>Cualquier comentario o aclaración al proyecto enviarla al correo: adq_generales@himfg.edu.mx</p>
-                        </li>*/
+                        </li>
                     }
                 </ul>
             </FileListModal>
