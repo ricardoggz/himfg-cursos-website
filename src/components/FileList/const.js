@@ -3,6 +3,15 @@ export const infoContable = [
         title: 2024,
         content:[
             {
+                link: 'https://himfg.edu.mx/archivos/recursos-financieros/2025/informacion-contable/situacion_financiera_marzo_previo_2025.pdf',
+                title:'Estado de situación financiera marzo previo 2025'
+            },
+        ]
+    },
+    {
+        title: 2024,
+        content:[
+            {
                 link: 'https://himfg.edu.mx/archivos/recursos-financieros/2024/informacion-contable/ESTADO-DE-ACTIVIDADES-DICIEMBRE-2024.pdf',
                 title:'Estado de Actividades Diciembre 2024'
             },

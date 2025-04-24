@@ -1,6 +1,12 @@
 .textsWrapper{
     width:100%;
 }
+.directionWrapper{
+    display:flex;
+}
+.directionOptions{
+    width:100%;
+}
 .texts{
     align-items: center;
     display:flex;
@@ -9,6 +15,9 @@
     width:100%;
     margin: 0 auto;
     padding-top:2rem;
+}
+.textsBackground{
+    background: var(--white-secondary);
 }
 .texts div {
     width:100%;

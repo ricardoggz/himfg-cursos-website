@@ -106,28 +106,30 @@ export default function Direction() {
                                                     />
                                                 */
                                             }
-                                            <Container>
-                                                <Title>{page.page_title}</Title>
+                                            <>
+                                                {/*<Title>{page.page_title}</Title>*/}
                                                 {
-                                                    !page.page_titular ? null
+                                                    /*!page.page_titular ? null
                                                         :
                                                         <PagePortrait
                                                             image={page.page_titular_photo}
                                                             titular={page.page_titular}
                                                             titularGrade={page.page_titular_grade}
                                                         />
+                                                        */
                                                 }
                                                 {
 
-                                                    <TextsPage
-                                                        firstText={page.page_first_content}
-                                                        secondText={page.page_second_content}
-                                                        firstImage={page.page_first_image}
-                                                        secondImage={page.page_second_image}
-                                                    />
+                                                    /*<TextsPage
+                                                        page={page}
+                                                    />*/
 
                                                 }
-                                            </Container>
+                                                <TextsPage
+                                                    page={page}
+                                                />
+                                            </>
+
                                             {
                                                 /*page.page_url==='educacion-medica-continua' || page.page_url==='educacion-medica-continua/'?
                                                 <Container>

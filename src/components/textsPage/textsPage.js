@@ -1,34 +1,38 @@
-import { LazyLoadImage } from 'react-lazy-load-image-component'
-import 'react-lazy-load-image-component/src/effects/blur.css'
+import Link from 'next/link'
+import { Title } from '../title/title'
 import styles from './textsPage.module.css'
+import { PagePortrait } from '../pagePortrait/pagePortrait'
 
-export const TextsPage = ({
-    firstText,
-    secondText,
-    firstImage,
-    secondImage
-}) => {
+export const TextsPage = ({ page }) => {
     return (
-        <section className={styles.textsWrapper}>
-            <div className={`${styles.texts} flexContainer`}>
+        <section className={styles.directionWrapper}>
+            <div className={`${styles.texts} ${styles.textsBackground}`}>
+                <Title>{page.page_title}</Title>
+                <PagePortrait
+                    image={page.page_titular_photo}
+                    titular={page.page_titular}
+                    titularGrade={page.page_titular_grade}
+                />
                 <div className={styles.text}>
                     <p>
-                        {firstText}
+                        {page.page_first_content}
                     </p>
                     <p>
-                        {secondText}
+                        {page.page_second_content}
                     </p>
                 </div>
-                <div className={`${styles.text_image}`}>
-                    <img
-                        src={firstImage}
-                        loading='lazy'
-                    />
-                    <img
-                        src={secondImage}
-                        loading='lazy'
-                    />
-                </div>
+                {
+                    /*<div className={`${styles.text_image}`}>
+                        <img
+                            src={page.page_first_image}
+                            loading='lazy'
+                        />
+                        <img
+                            src={page.page_second_image}
+                            loading='lazy'
+                        />
+                    </div>*/
+                }
             </div>
         </section>
     )
