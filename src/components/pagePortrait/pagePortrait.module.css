@@ -60,11 +60,6 @@
         align-items: center;
         padding:2.5rem 0;
     }
-    .pagePortraitContent img{
-        height:100%;
-        object-fit: cover;
-        width: 100%;
-    }
 }
 @media (min-width:1025px) and (max-width:1600px){
     .pagePortraitContent div{
