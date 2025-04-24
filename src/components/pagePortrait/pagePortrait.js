@@ -7,13 +7,10 @@ export const PagePortrait=({image, titular, titularGrade})=>{
         <section className={styles.pagePortraitWrapper}>
             <div className={styles.pagePortraitContent}>
             <figure>
-                <LazyLoadImage 
+                <img 
                 src={image}
                 alt={titular}
-                effect='blur'
                 loading='lazy'
-                width={'100%'}
-                height={'100%'}
                 />
             </figure>
             <div>

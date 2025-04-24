@@ -7,42 +7,26 @@ export const TextsPage = ({
     secondText,
     firstImage,
     secondImage
-})=>{
+}) => {
     return (
         <section className={styles.textsWrapper}>
-            <div className={styles.texts}>
-                <div className={styles.text_image}>
-                    <LazyLoadImage
-                        src={firstImage}
-                        effect='blur'
-                        loading='lazy'
-                        width={'100%'}
-                        height={'100%'}
-                    />
-                </div>
+            <div className={`${styles.texts} flexContainer`}>
                 <div className={styles.text}>
-                  <div>
-                  <p>
-                    {firstText}
-                  </p>
-                  </div>
-                </div>
-            </div>
-            <div className={styles.texts}>
-                <div className={styles.text}>
-                    <div>
+                    <p>
+                        {firstText}
+                    </p>
                     <p>
                         {secondText}
                     </p>
-                    </div>
                 </div>
-                <div className={styles.text_image}>
-                    <LazyLoadImage
-                        src={secondImage}
-                        effect='blur'
+                <div className={`${styles.text_image}`}>
+                    <img
+                        src={firstImage}
                         loading='lazy'
-                        width={'100%'}
-                        height={'100%'}
+                    />
+                    <img
+                        src={secondImage}
+                        loading='lazy'
                     />
                 </div>
             </div>

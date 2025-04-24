@@ -4,8 +4,11 @@
 .texts{
     align-items: center;
     display:flex;
+    flex-direction: column;
+    gap:2rem;
     width:100%;
     margin: 0 auto;
+    padding-top:2rem;
 }
 .texts div {
     width:100%;
@@ -27,12 +30,14 @@
     margin:0 auto;
     padding:1.5rem;
     text-align:justify;
-    width:70%;
 }
 .text div{
     width:100%;
 }
 .text_image{
+    display:grid;
+    gap:1rem;
+    grid-template-columns: repeat(2, 1fr);
     width:100%;
     height: 100%;
 }
@@ -45,40 +50,11 @@
     display:none;
 }
 @media (min-width:240px) and (max-width:1024px){
-    .displayNone{
-        display:none;
-    }
-    .text{
+    .text_image{
         grid-template-columns: 1fr;
-    }
-    .texts{
-        flex-direction: column-reverse;
-    }
-    .text p{
-        width:100%;
-        text-align: justify;
-        line-height: 2rem;
-    }
-    .texts img{
-        padding-bottom:1rem;
     }
 }
 
 @media (min-width:1200px) and (max-width:1400px){
-    .texts{
-        flex-direction: column;
-    }
-    .text{
-        padding: 2rem;
-    }
-    .text p{
-        width:100%;
-        margin: 0 auto;
-        text-align: justify;
-    }
-    .text_image img{
-        width:100%;
-        height:100%;
-        object-fit: cover;
-    }
+    
 }
