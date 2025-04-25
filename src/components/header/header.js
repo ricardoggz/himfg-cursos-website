@@ -3,6 +3,7 @@ import styles from './header.module.css'
 import { FaBars } from "react-icons/fa6";
 import { useState, useContext } from 'react'
 import { UserContext } from '../../contexts'
+import { Submenu } from './submenu';
 
 export const Header = () => {
     const { user, logout } = useContext(UserContext)
@@ -105,19 +106,16 @@ export const Header = () => {
                 </nav>
             </header>
             <div className={`${styles.imageContainer} flexContainer`}>
-                <div>
-                    <span>Menú</span>
-                    <FaBars />
-                </div>
-                <div>
+                <Submenu />
+                <div className={styles.imageContainerItem}>
                     <img
                         src={'https://res.cloudinary.com/diuxbqmn5/image/upload/v1677008422/secretaria-salud_tqz45u.webp'}
                         alt='Gobierno de México'
                         className={styles.imgSecretary}
                     />
                 </div>
-                <div className={styles.headerIconNav}>
-                    <span>Hospital Infantil de México Federico Gómez</span>
+                <div className={`${styles.headerIconNav} ${styles.imageContainerItem}`}>
+                    <p>Hospital Infantil de México Federico Gómez</p>
                     <img
                         src={'https://res.cloudinary.com/diuxbqmn5/image/upload/v1677114497/himfg-logo_ewzx59.webp'}
                         alt='HIMFG'

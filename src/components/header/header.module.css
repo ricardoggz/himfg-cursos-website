@@ -40,7 +40,7 @@
     padding:1rem 0;
     font-family: Arial, Helvetica, sans-serif;
 }
-.imageContainer div{
+.imageContainerItem{
     align-items: center;
     display: flex;
     gap:0.5rem;

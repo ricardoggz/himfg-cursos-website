@@ -10,9 +10,9 @@ export default function () {
     })
     return (
         <Container>
-            <Title>{!data || !data.data ? null : `${data.data[0].laboratorio_nombre} - Investigadores`}</Title>
+            <Title>{/*!data || !data.data ? null : `${data.data[0].laboratorio_nombre} - Investigadores`*/}</Title>
             {
-                !data && loading ? null :
+                /*!data && loading ? null :
                     <GridContainer>
                         {
                             !data ? null :
@@ -23,12 +23,12 @@ export default function () {
                                     />
                                 ))
                         }
-                    </GridContainer>
+                    </GridContainer>*/
             }
         </Container>
     )
 }
-export const getStaticPaths = async () => {
+/*export const getStaticPaths = async () => {
     const response = await axios.get(`${process.env.BASE_URL_API}api/directions/all-investigators`)
     const json = response.data
     const paths = json.filter((e) => e.laboratorio_id)
@@ -56,4 +56,4 @@ export const getStaticProps = async ({ params }) => {
             id
         }
     }
-}
+}*/

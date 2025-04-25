@@ -5,12 +5,10 @@ import styles from './textsPage.module.css'
 import { PagePortrait } from '../pagePortrait/pagePortrait'
 
 export const TextsPage = ({ page }) => {
-    const [list, setList] = useState(null)
-    useEffect(() => {
-        if (page.page_staff && page.tipo_departamento === 2) {
-            setList(JSON.parse(page.page_staff))
-        }
-    }, [])
+    if (!page || typeof page.tipo_departamento === 'undefined') {
+        return null; // O podés retornar algo más visible como <p>Cargando...</p>
+    }
+
     return (
         <section className={`${page.tipo_departamento !== 2 ? styles.textsWrapper : styles.directionWrapper}`}>
             <div className={`${styles.texts} ${page.tipo_departamento !== 2 ? 'flexContainer' : styles.textsBackground}`}>
@@ -29,7 +27,6 @@ export const TextsPage = ({ page }) => {
                     </p>
                 </div>
                 {
-
                     page.tipo_departamento !== 2 ?
                         <div className={`${styles.text_image}`}>
                             <img
@@ -46,19 +43,17 @@ export const TextsPage = ({ page }) => {
                 }
             </div>
             {
-                page.tipo_departamento !== 2 ?
+                !page.page_staff ?
                     null :
                     <div className={styles.directionOptions}>
                         {
-                            list && list.map((item, i) => (
-                                <>
-                                    <Link
-                                        href={`${item.link}`}
-                                        key={i}
-                                    >
-                                        {item.name}
-                                    </Link>
-                                </>
+                            JSON.parse(page.page_staff).map((item, i) => (
+                                <Link
+                                    href={`/${item.link}`}
+                                    key={i}
+                                >
+                                    {item.name}
+                                </Link>
                             ))
                         }
                     </div>
