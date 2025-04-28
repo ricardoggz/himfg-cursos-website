@@ -65,9 +65,9 @@ export const Header = () => {
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link href='/direccion/educacion-medica-continua' onClick={open}>
+                                        <a href='https://oferta-academica.himfg.edu.mx/' onClick={open}>
                                             Oferta Académica
-                                        </Link>
+                                        </a>
                                     </li>
                                 </>
                                 :
@@ -88,9 +88,9 @@ export const Header = () => {
                                         </a>
                                     </li>
                                     <li>
-                                        <Link href='/direccion/educacion-medica-continua' onClick={open}>
+                                        <a href='https://oferta-academica.himfg.edu.mx/' onClick={open}>
                                             Oferta Académica
-                                        </Link>
+                                        </a>
                                     </li>
                                     <li>
                                         <Link href='/profile' onClick={open}>

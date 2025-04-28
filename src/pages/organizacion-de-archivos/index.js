@@ -74,6 +74,10 @@ export default function FilesOrganization() {
             title: 'Inventario documental',
             files: [
                 {
+                    file: 'Inventario Documental primer trimestre 2025',
+                    link: 'https://himfg.edu.mx/hemerobiblioteca/inventario-documental/Inventario_documental_primer_trimestre-2025-1.pdf'
+                },
+                {
                     file: 'Inventario Documental primer trimestre 2024',
                     link: 'http://www.himfg.com.mx/descargas/documentos/ensenanza/hemerobiblioteca/OrganiArchivos/Inventario_Documental_Primer_Trimestre_2024.pdf'
                 },
