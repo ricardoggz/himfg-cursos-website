@@ -34,11 +34,11 @@ export const Header = () => {
                                             Inicio
                                         </Link>
                                     </li>
-                                    {/*<li>
-                            <Link href='/register' onClick={open}>
-                                Registro
-                            </Link>
-                        </li>*/}
+                                    <li>
+                                        <Link href='/requisitos' onClick={open}>
+                                            Consulta de primera vez
+                                        </Link>
+                                    </li>
                                     <li>
                                         <a href='http://himfg.com.mx/interna/transparencia/transparencia.php' target='_blank'>
                                             Transparencia
