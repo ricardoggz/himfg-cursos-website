@@ -17,6 +17,14 @@ export const Jumbotron =()=>{
         }
         const images = [
             {
+                url:'https://himfg.edu.mx/archivos/banners/2.webp',
+                link:'/'
+            },
+            {
+                url:'https://himfg.edu.mx/archivos/banners/1.webp',
+                link:'/'
+            },
+            {
                 url:'https://himfg.edu.mx/archivos/banners/banner-principal.webp',
                 link:'https://himfg.edu.mx/archivos/documentos/comunicados/reunion-anual-investigadores.pdf'
             },
@@ -31,18 +39,6 @@ export const Jumbotron =()=>{
             {
                 url:'https://himfg.edu.mx/archivos/banners/CYTOTRON-02.webp',
                 link:'/galeria'
-            },
-            {
-                url:'https://himfg.edu.mx/archivos/banners/banner-2.jpeg',
-                link:'https://himfg.edu.mx/archivos/documentos/comunicados/aceptados-2025-2026.pdf'
-            },
-            {
-                url:'https://himfg.edu.mx/archivos/banners/banner-8.webp',
-                link:'/'
-            },
-            {
-                url:'https://himfg.edu.mx/archivos/banners/banner-2.webp',
-                link:'/'
             },
             {
                 url:'https://himfg.edu.mx/archivos/banners/banner-1.webp',
