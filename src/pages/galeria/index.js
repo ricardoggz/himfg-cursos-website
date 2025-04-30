@@ -6,37 +6,37 @@ import "react-image-gallery/styles/css/image-gallery.css"
 export default function Galeria() {
     const images = [
         {
-            original: "https://himfg.edu.mx/galeria/1.jpg",
-            thumbnail: "https://himfg.edu.mx/galeria/1.jpg",
+            original: "https://himfg.edu.mx/galeria/1.JPG",
+            thumbnail: "https://himfg.edu.mx/galeria/1.JPG",
         },
         {
-            original: "https://himfg.edu.mx/galeria/2.jpg",
-            thumbnail: "https://himfg.edu.mx/galeria/2.jpg",
+            original: "https://himfg.edu.mx/galeria/2.JPG",
+            thumbnail: "https://himfg.edu.mx/galeria/2.JPG",
         },
         {
-            original: "https://himfg.edu.mx/galeria/3.jpg",
-            thumbnail: "https://himfg.edu.mx/galeria/3.jpg",
+            original: "https://himfg.edu.mx/galeria/3.JPG",
+            thumbnail: "https://himfg.edu.mx/galeria/3.JPG",
         },
         {
-            original: "https://himfg.edu.mx/galeria/5.jpg",
-            thumbnail: "https://himfg.edu.mx/galeria/5.jpg",
+            original: "https://himfg.edu.mx/galeria/5.JPG",
+            thumbnail: "https://himfg.edu.mx/galeria/5.JPG",
         },
         {
-            original: "https://himfg.edu.mx/galeria/6.jpg",
-            thumbnail: "https://himfg.edu.mx/galeria/6.jpg",
+            original: "https://himfg.edu.mx/galeria/6.JPG",
+            thumbnail: "https://himfg.edu.mx/galeria/6.JPG",
         },
         {
-            original: "https://himfg.edu.mx/galeria/7.jpg",
-            thumbnail: "https://himfg.edu.mx/galeria/7.jpg",
+            original: "https://himfg.edu.mx/galeria/7.JPG",
+            thumbnail: "https://himfg.edu.mx/galeria/7.JPG",
         },
         {
-            original: "https://himfg.edu.mx/galeria/8.jpg",
-            thumbnail: "https://himfg.edu.mx/galeria/8.jpg",
+            original: "https://himfg.edu.mx/galeria/8.JPG",
+            thumbnail: "https://himfg.edu.mx/galeria/8.JPG",
         },
     ]
     return (
         <section className={styles.galleryContainer}>
-            <Title>Inicia Curso de Pre - Residencia 2025</Title>
+            <Title>Chiquitúnel de la CIENCIA</Title>
             <ImageGallery
                 items={images}
                 showThumbnails
