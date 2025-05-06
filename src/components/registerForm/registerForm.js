@@ -152,6 +152,9 @@ export const RegisterForm = () => {
     }, [])
     return (
         <>
+            <div className={styles.formMessage}>
+                <span>Este trámite solo puede realizarse en un equipo de cómputo</span>
+            </div>
             {
                 !isLoading ?
                     <form className={`flexContainer ${styles.formWrapper}`} onSubmit={onSubmit}>

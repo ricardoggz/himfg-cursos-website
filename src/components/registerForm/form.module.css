@@ -94,11 +94,26 @@
     font-size:1.2rem;
     text-align:center;
 }
+.formMessage{
+    display:none;
+}
 @media (min-width:240px) and (max-width:880px){
     .formRatioInputs{
         grid-template-columns: 1fr;
     }
     .formButtons{
         flex-direction: column;
+    }
+    .formWrapper{
+        display:none;
+    }
+    .formMessage{
+        display: flex;
+        justify-content: center;
+    }
+    .formMessage span{
+        color:var(--red-primary);
+        font-weight: 600;
+        text-align: center;
     }
 }
