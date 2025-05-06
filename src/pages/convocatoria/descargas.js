@@ -2,7 +2,7 @@ import Link from 'next/link'
 import styles from './styles.module.css'
 import { Title, Container } from '@/components'
 
-export default function Descargas(){
+export default function Descargas() {
     return (
         <>
             <nav className={styles.menu}>
@@ -22,9 +22,9 @@ export default function Descargas(){
                             href='http://himfg.com.mx/archivos/CONVOCATORIA_2024.pdf'
                             target='_blank'
                         >
-                         Convocatoria PDF
+                            Convocatoria PDF
                         </a>
-                     </li>
+                    </li>
                     <li>
                         <a href='http://ense.himfg.edu.mx/convocatoria/proceso_registro.html'>
                             Registro en línea
@@ -32,8 +32,8 @@ export default function Descargas(){
                     </li>
                     <li>
                         <a
-                        href='http://himfg.com.mx/archivos/FLUJOGRAMA.pdf'
-                        target='_blank'
+                            href='http://himfg.com.mx/archivos/FLUJOGRAMA.pdf'
+                            target='_blank'
                         >
                             Flujograma
                         </a>

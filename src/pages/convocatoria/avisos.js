@@ -10,7 +10,7 @@ export default function Avisos(){
     return (
         <>
             <nav className={styles.menu}>
-                <ul className={styles.menuList}>
+            <ul className={styles.menuList}>
                     <li>
                         <Link href='/convocatoria'>
                             Inicio

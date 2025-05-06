@@ -2,7 +2,7 @@ import Link from 'next/link'
 import styles from './styles.module.css'
 import { Title, Container } from '@/components'
 
-export default function Informes(){
+export default function Informes() {
     return (
         <>
             <nav className={styles.menu}>
@@ -32,8 +32,8 @@ export default function Informes(){
                     </li>
                     <li>
                         <a
-                        href='http://himfg.com.mx/archivos/FLUJOGRAMA.pdf'
-                        target='_blank'
+                            href='http://himfg.com.mx/archivos/FLUJOGRAMA.pdf'
+                            target='_blank'
                         >
                             Flujograma
                         </a>
@@ -110,15 +110,15 @@ export default function Informes(){
                         <p>Portal del proceso: http://www.himfg.com.mx/convocatoria</p>
                     </div>
                     <div>
-                    <h3
-                        style={{
-                            fontSize:'1.6rem'
-                        }}
-                    >
-                        Ubicación:
-                    </h3>
-                    <br/>
-                    <iframe width="100%" height="325" frameBorder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=es-419&amp;geocode=&amp;q=Hospital+Infantil+de+M%C3%A9xico+Federico+G%C3%B3mez,+Doctores,+Cuauht%C3%A9moc,+Ciudad+de+M%C3%A9xico,+M%C3%A9xico&amp;aq=1&amp;oq=hospital+in&amp;sll=37.0625,-95.677068&amp;sspn=53.564699,93.076172&amp;ie=UTF8&amp;hq=Hospital+Infantil+de+M%C3%A9xico+Federico+G%C3%B3mez,&amp;hnear=Doctores,+Cuauht%C3%A9moc,+Ciudad+de+M%C3%A9xico,+Distrito+Federal,+M%C3%A9xico&amp;t=m&amp;ll=19.411223,-99.151237&amp;spn=0.01474,0.006295&amp;output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=es-419&amp;geocode=&amp;q=Hospital+Infantil+de+M%C3%A9xico+Federico+G%C3%B3mez,+Doctores,+Cuauht%C3%A9moc,+Ciudad+de+M%C3%A9xico,+M%C3%A9xico&amp;aq=1&amp;oq=hospital+in&amp;sll=37.0625,-95.677068&amp;sspn=53.564699,93.076172&amp;ie=UTF8&amp;hq=Hospital+Infantil+de+M%C3%A9xico+Federico+G%C3%B3mez,&amp;hnear=Doctores,+Cuauht%C3%A9moc,+Ciudad+de+M%C3%A9xico,+Distrito+Federal,+M%C3%A9xico&amp;t=m&amp;ll=19.411223,-99.151237&amp;spn=0.01474,0.006295" style={{marginRight: '0'}}>Ver mapa más grande</a></small>
+                        <h3
+                            style={{
+                                fontSize: '1.6rem'
+                            }}
+                        >
+                            Ubicación:
+                        </h3>
+                        <br />
+                        <iframe width="100%" height="325" frameBorder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=es-419&amp;geocode=&amp;q=Hospital+Infantil+de+M%C3%A9xico+Federico+G%C3%B3mez,+Doctores,+Cuauht%C3%A9moc,+Ciudad+de+M%C3%A9xico,+M%C3%A9xico&amp;aq=1&amp;oq=hospital+in&amp;sll=37.0625,-95.677068&amp;sspn=53.564699,93.076172&amp;ie=UTF8&amp;hq=Hospital+Infantil+de+M%C3%A9xico+Federico+G%C3%B3mez,&amp;hnear=Doctores,+Cuauht%C3%A9moc,+Ciudad+de+M%C3%A9xico,+Distrito+Federal,+M%C3%A9xico&amp;t=m&amp;ll=19.411223,-99.151237&amp;spn=0.01474,0.006295&amp;output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=es-419&amp;geocode=&amp;q=Hospital+Infantil+de+M%C3%A9xico+Federico+G%C3%B3mez,+Doctores,+Cuauht%C3%A9moc,+Ciudad+de+M%C3%A9xico,+M%C3%A9xico&amp;aq=1&amp;oq=hospital+in&amp;sll=37.0625,-95.677068&amp;sspn=53.564699,93.076172&amp;ie=UTF8&amp;hq=Hospital+Infantil+de+M%C3%A9xico+Federico+G%C3%B3mez,&amp;hnear=Doctores,+Cuauht%C3%A9moc,+Ciudad+de+M%C3%A9xico,+Distrito+Federal,+M%C3%A9xico&amp;t=m&amp;ll=19.411223,-99.151237&amp;spn=0.01474,0.006295" style={{ marginRight: '0' }}>Ver mapa más grande</a></small>
                     </div>
                 </div>
             </Container>

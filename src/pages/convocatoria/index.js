@@ -14,20 +14,20 @@ export default function Convocatoria(){
             </li>
             <li>
                 <a
-                    href='http://himfg.com.mx/archivos/CONVOCATORIA_2024.pdf'
+                    href='https://himfg.edu.mx/convocatoria/CONVOCATORIA_2024.pdf'
                     target='_blank'
                 >
                     Convocatoria PDF
                 </a>
             </li>
             <li>
-                <a href='http://ense.himfg.edu.mx/convocatoria/proceso_registro.html'>
+                <Link href='/convocatoria/registro'>
                     Registro en línea
-                </a>
+                </Link>
             </li>
             <li>
                 <a
-                    href='http://himfg.com.mx/archivos/FLUJOGRAMA.pdf'
+                    href='https://himfg.edu.mx/convocatoria/flujograma.pdf'
                     target='_blank'
                 >
                     Flujograma
@@ -52,7 +52,7 @@ export default function Convocatoria(){
         </nav>
         <section className={styles.photoWrapper}>
             <figure>
-                <img src='https://archivos.him.edu.mx/graficos/convocatoria/foto-2024.jpg'/>
+                <img src='https://himfg.edu.mx/convocatoria/convocatoria24.jpg'/>
             </figure>
             <Title>CONVOCATORIA PARA ASPIRANTES A CURSOS DE ESPECIALIZACIÓN 2025</Title>
             <center><h1>BIENVENIDA</h1></center>

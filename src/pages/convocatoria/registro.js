@@ -12,8 +12,8 @@ import { reference } from '@/components/paymentForm/reference'
 import { generarPDF } from './generarPDF'
 import { useOnChange } from '@/hooks'
 
-const Avisos = ()=>{
-  return(
+const Avisos = () => {
+  return (
     <>
       <Title>Aviso Importante</Title>
       <div className={`flexContainer ${styles.avisosWrapper}`}>
@@ -28,7 +28,7 @@ const Avisos = ()=>{
     </>
   )
 }
-const Instrucciones = ({})=>{
+const Instrucciones = ({ }) => {
   return (
     <>
       <Title>Instrucciones - Cursos de posgrado de alta especialidad</Title>
@@ -57,7 +57,7 @@ const Instrucciones = ({})=>{
     </>
   )
 }
-const Formulario = ()=>{
+const Formulario = () => {
   const [paymentMethod, setPaymentMethod] = useState(null)
   const [selectedOption, setSelectedOption] = useState(null)
   const [paymentData, setPaymentData] = useState(null)
@@ -139,7 +139,7 @@ const Formulario = ()=>{
       ControlNumber: `${reference(24)}`
     })
   },[])*/
-  const handleSubmit = (evt)=>{
+  const handleSubmit = (evt) => {
     evt.preventDefault()
     generarPDF({
       student: inputData,
@@ -148,42 +148,42 @@ const Formulario = ()=>{
   }
   return (
     <>
-        <h3 className={styles.registroTitle}>Registro</h3>
-        <Script
-          src='https://multicobros.banorte.com/orquestador/lightbox/checkoutV2.js'
-          strategy="beforeInteractive"
-        />
-        <Script
-          src='https://multicobros.banorte.com/orquestador/resources/js/jquery-3.3.1.js'
-          strategy="beforeInteractive"
-        />
-        <div className={styles.selectedOption}>
-          <button
-            onClick={()=>setSelectedOption('pediatria y genetica')}
-          >
-            Pediatría y Genética
-          </button>
-          <button
-            onClick={()=>setSelectedOption('especialidades pediatricas')}
-          >
-            Especialidades Pediátricas
-          </button>
-          <button
-            onClick={()=>setSelectedOption('alta especialidad')}
-          >
-            Curso de Posgrado de Alta Especialidad
-          </button>
-          <button
-            onClick={()=>setSelectedOption('nutricion clinica pediatrica')}
-          >
-            Nutrición Clínica Pediátrica
-          </button>
-          <button
-            onClick={()=>setSelectedOption('ortodoncia odontopediatria')}
-          >
-            Ortodoncia y Odontopediatría
-          </button>
-            {/*
+      <h3 className={styles.registroTitle}>Registro</h3>
+      <Script
+        src='https://multicobros.banorte.com/orquestador/lightbox/checkoutV2.js'
+        strategy="beforeInteractive"
+      />
+      <Script
+        src='https://multicobros.banorte.com/orquestador/resources/js/jquery-3.3.1.js'
+        strategy="beforeInteractive"
+      />
+      <div className={styles.selectedOption}>
+        <button
+          onClick={() => setSelectedOption('pediatria y genetica')}
+        >
+          Pediatría y Genética
+        </button>
+        <button
+          onClick={() => setSelectedOption('especialidades pediatricas')}
+        >
+          Especialidades Pediátricas
+        </button>
+        <button
+          onClick={() => setSelectedOption('alta especialidad')}
+        >
+          Curso de Posgrado de Alta Especialidad
+        </button>
+        <button
+          onClick={() => setSelectedOption('nutricion clinica pediatrica')}
+        >
+          Nutrición Clínica Pediátrica
+        </button>
+        <button
+          onClick={() => setSelectedOption('ortodoncia odontopediatria')}
+        >
+          Ortodoncia y Odontopediatría
+        </button>
+        {/*
               <form>
               <label>Comenzar registro:</label>
               <select>
@@ -225,77 +225,77 @@ const Formulario = ()=>{
               </select>
               </form>
             */}
-        </div>
-        {
-          !selectedOption ?
-            null
+      </div>
+      {
+        !selectedOption ?
+          null
           :
           <form className={styles.registerForm} onSubmit={handleSubmit}>
-          <label className={styles.registerTitle}>Datos personales</label>
+            <label className={styles.registerTitle}>Datos personales</label>
             <div>
-            <input
-              type='checkbox'
-              required
-              value='ACEPTO'
-              onChange={onChange}
-            />
-            <label>
-              &nbsp;Consiento y autorizo que mis datos personales sean tratados conforme a lo previsto en el Aviso de Privacidad, el cual he leído (marque la casilla a la izquierda).
-            </label>
+              <input
+                type='checkbox'
+                required
+                value='ACEPTO'
+                onChange={onChange}
+              />
+              <label>
+                &nbsp;Consiento y autorizo que mis datos personales sean tratados conforme a lo previsto en el Aviso de Privacidad, el cual he leído (marque la casilla a la izquierda).
+              </label>
             </div>
             <label>Seleccione la Especialidad a la que desea ingresar:</label>
             {
               selectedOption && selectedOption === 'pediatria y genetica' ?
-              <select>
-                <option>
-                  Seleccione
-                </option>
-                <option
-                  onChange={onChange}
-                  name='opcion_seleccionada'
-                  value='Pediatría'
-                >
-                  Pediatría
-                </option>
-                <option
-                  onChange={onChange}
-                  name='opcion_seleccionada'
-                  value='Genetica médica'
-                >
-                  Genética médica
-                </option>
-              </select>
-              :
-              null
+                <select>
+                  <option>
+                    Seleccione
+                  </option>
+                  <option
+                    onChange={onChange}
+                    name='opcion_seleccionada'
+                    value='Pediatría'
+                  >
+                    Pediatría
+                  </option>
+                  <option
+                    onChange={onChange}
+                    name='opcion_seleccionada'
+                    value='Genetica médica'
+                  >
+                    Genética médica
+                  </option>
+                </select>
+                :
+                null
             }
             {
               selectedOption && selectedOption === 'especialidades pediatricas' ?
-              <select>
-                <option>Seleccione</option>
-                <option>ALERGIA E INMUNOLOGÍA PEDIÁTRICA</option>
-                <option>ANESTESIOLOGÍA PEDIÁTRICA</option>
-                <option>CARDIOLOGÍA PEDIÁTRICA</option>
-                <option>CIRUGÍA CARDIOTORÁCICA PEDIÁTRICA</option>
-                <option>CIRUGÍA PEDIÁTRICA</option>
-                <option>DERMATOLOGÍA PEDIÁTRICA</option>
-                <option>ENDOCRINOLOGÍA PEDIÁTRICA</option>
-                <option>GASTROENTEROLOGÍA Y NUTRICIÓN PEDIÁTRICA</option>
-                <option>HEMATOLOGÍA PEDIÁTRICA</option>
-                <option>INFECTOLOGÍA</option>
-                <option>MEDICINA CRÍTICA PEDIÁTRICA</option>
-                <option>NEFROLOGÍA PEDIÁTRICA</option>
-                <option>NEONATOLOGÍA</option>
-                <option>NEUMOLOGÍA PEDIÁTRICA</option>
-                <option>NEUROCIRUGÍA PEDIÁTRICA</option>
-                <option>NEUROLOGÍA PEDIÁTRICA</option>
-                <option>ONCOLOGÍA PEDIÁTRICA</option>
-                <option>OTTORINOLARINGOLOGÍA PEDIÁTRICA</option>
-                <option>PATOLOGÍA PEDIÁTRICA</option>
-                <option>REUMATOLOGÍA PEDIÁTRICA</option>
-                <option>URGENCIAS PEDIÁTRICAS</option>
-              </select>
-              :
-              null
+                <select>
+                  <option>Seleccione</option>
+                  <option>ALERGIA E INMUNOLOGÍA PEDIÁTRICA</option>
+                  <option>ANESTESIOLOGÍA PEDIÁTRICA</option>
+                  <option>CARDIOLOGÍA PEDIÁTRICA</option>
+                  <option>CIRUGÍA CARDIOTORÁCICA PEDIÁTRICA</option>
+                  <option>CIRUGÍA PEDIÁTRICA</option>
+                  <option>DERMATOLOGÍA PEDIÁTRICA</option>
+                  <option>ENDOCRINOLOGÍA PEDIÁTRICA</option>
+                  <option>GASTROENTEROLOGÍA Y NUTRICIÓN PEDIÁTRICA</option>
+                  <option>HEMATOLOGÍA PEDIÁTRICA</option>
+                  <option>INFECTOLOGÍA</option>
+                  <option>MEDICINA CRÍTICA PEDIÁTRICA</option>
+                  <option>NEFROLOGÍA PEDIÁTRICA</option>
+                  <option>NEONATOLOGÍA</option>
+                  <option>NEUMOLOGÍA PEDIÁTRICA</option>
+                  <option>NEUROCIRUGÍA PEDIÁTRICA</option>
+                  <option>NEUROLOGÍA PEDIÁTRICA</option>
+                  <option>ONCOLOGÍA PEDIÁTRICA</option>
+                  <option>OTTORINOLARINGOLOGÍA PEDIÁTRICA</option>
+                  <option>PATOLOGÍA PEDIÁTRICA</option>
+                  <option>REUMATOLOGÍA PEDIÁTRICA</option>
+                  <option>URGENCIAS PEDIÁTRICAS</option>
+                </select>
+                :
+                null
             }
             <div className={styles.registerModule}>
               <div>
@@ -356,175 +356,175 @@ const Formulario = ()=>{
               </div>
               <div>
                 <label>Correo electrónico</label>
-                <input type='email' required/>
+                <input type='email' required />
               </div>
               <div>
                 <label>RFC</label>
-                <input type='text' required/>
+                <input type='text' required />
               </div>
               <div>
                 <label>CURP</label>
-                <input type='text' required/>
+                <input type='text' required />
               </div>
               <div>
                 <label>Número de pasaporte (extranjeros)</label>
-                <input type='text'/>
+                <input type='text' />
               </div>
             </div>
             <label className={styles.registerTitle}>Lugar y fecha de nacimiento</label>
             <div className={styles.registerModule}>
               <div>
                 <label>Fecha de nacimiento</label>
-                <input type='date' required/>
+                <input type='date' required />
               </div>
               <div>
                 <label>Estado de nacimiento</label>
-                <input type='text' required/>
+                <input type='text' required />
               </div>
               <div>
                 <label>Ciudad</label>
-                <input type='text' required/>
+                <input type='text' required />
               </div>
               <div>
                 <label>País</label>
-                <input type='text' required/>
+                <input type='text' required />
               </div>
             </div>
             <label className={styles.registerTitle}>Domicilio</label>
             <div className={styles.registerModule}>
               <div>
                 <label>Calle y número exterior</label>
-                <input type='text' required/>
+                <input type='text' required />
               </div>
               <div>
                 <label>Número o letra interior</label>
-                <input type='text'/>
+                <input type='text' />
               </div>
               <div>
                 <label>Colonia</label>
-                <input type='text' required/>
+                <input type='text' required />
               </div>
               <div>
                 <label>Alcaldía o municipio</label>
-                <input type='text' required/>
+                <input type='text' required />
               </div>
               <div>
                 <label>Ciudad</label>
-                <input type='text' required/>
+                <input type='text' required />
               </div>
               <div>
                 <label>Estado</label>
-                <input type='text' required/>
+                <input type='text' required />
               </div>
               <div>
                 <label>País</label>
-                <input type='text' required/>
+                <input type='text' required />
               </div>
               <div>
                 <label>Código postal</label>
-                <input type='text' required/>
+                <input type='text' required />
               </div>
               <div>
                 <label>Teléfono fijo</label>
-                <input type='number' required/>
+                <input type='number' required />
               </div>
             </div>
             <label className={styles.registerTitle}>Datos personales de un familiar cercano</label>
             <div className={styles.registerModule}>
               <div>
                 <label>Nombre completo</label>
-                <input type='text' required/>
+                <input type='text' required />
               </div>
               <div>
                 <label>Parentesco</label>
-                <input type='text' required/>
+                <input type='text' required />
               </div>
               <div>
                 <label>Ciudad donde reside</label>
-                <input type='text' required/>
+                <input type='text' required />
               </div>
               <div>
                 <label>Estado donde reside</label>
-                <input type='text' required/>
+                <input type='text' required />
               </div>
               <div>
                 <label>Calle y número exterior</label>
-                <input type='text' required/>
+                <input type='text' required />
               </div>
               <div>
                 <label>Número interior</label>
-                <input type='text' required/>
+                <input type='text' required />
               </div>
               <div>
                 <label>Colonia</label>
-                <input type='text' required/>
+                <input type='text' required />
               </div>
               <div>
                 <label>Alcaldía y municipio</label>
-                <input type='text' required/>
+                <input type='text' required />
               </div>
               <div>
                 <label>Código postal</label>
-                <input type='text' required/>
+                <input type='text' required />
               </div>
               <div>
                 <label>País</label>
-                <input type='text' required/>
+                <input type='text' required />
               </div>
               <div>
                 <label>Teléfono fijo</label>
-                <input type='number' required/>
+                <input type='number' required />
               </div>
               <div>
                 <label>Teléfono celular</label>
-                <input type='text' required/>
+                <input type='text' required />
               </div>
               <div>
                 <label>Correo electrónico</label>
-                <input type='email' required/>
+                <input type='email' required />
               </div>
             </div>
             <label className={styles.registerTitle}>Datos académicos</label>
             <div className={styles.registerModule}>
               <div>
                 <label>Licenciatura en</label>
-                <input type='text' required/>
+                <input type='text' required />
               </div>
               <div>
                 <label>Nombre de la universidad</label>
-                <input type='text' required/>
+                <input type='text' required />
               </div>
               <div>
                 <label>Facultad o escuela</label>
-                <input type='text' required/>
+                <input type='text' required />
               </div>
               <div>
                 <label>Año de inicio</label>
-                <input type='number' required/>
+                <input type='number' required />
               </div>
               <div>
                 <label>Año de término</label>
-                <input type='number' required/>
+                <input type='number' required />
               </div>
               <div>
                 <label>Promedio</label>
-                <input type='text' required/>
+                <input type='text' required />
               </div>
               <div>
                 <label>Lugar en su generación</label>
-                <input type='number' required/>
+                <input type='number' required />
               </div>
               <div>
                 <label>Fecha de examen profesional</label>
-                <input type='date' required/>
+                <input type='date' required />
               </div>
               <div>
                 <label>Número de cédula profesional</label>
-                <input type='number' required/>
+                <input type='number' required />
               </div>
             </div>
-              {
-                selectedOption && selectedOption === 'pediatria y genetica' ?
+            {
+              selectedOption && selectedOption === 'pediatria y genetica' ?
                 <>
                   <label className={styles.registerTitle}>Datos del ENARM (Examen Nacional de Residencias Médicas)</label>
                   <div className={styles.registerModule}>
@@ -532,106 +532,105 @@ const Formulario = ()=>{
                       <label>
                         Folio del Examen Nacional de Residencias Médicas
                       </label>
-                      <input type='text' required/>
+                      <input type='text' required />
                     </div>
                     <div>
                       <label>
                         Número de veces que lo ha presentado
                       </label>
-                      <input type='number' required/>
+                      <input type='number' required />
                     </div>
                   </div>
                 </>
                 :
                 null
-              }
-              {
-                selectedOption && selectedOption === 'especialidades pediatricas' || selectedOption === 'alta especialidad'?
+            }
+            {
+              selectedOption && selectedOption === 'especialidades pediatricas' || selectedOption === 'alta especialidad' ?
                 <>
                   <label className={styles.registerTitle}>Datos del ENARM (Examen Nacional de Residencias Médicas)</label>
                   <div className={styles.registerModule}>
                     <div>
                       <label>Lugar obtenido en el Examen Nacional de Residencias Medicas</label>
-                      <input type='text' required/>
+                      <input type='text' required />
                     </div>
                     <div>
                       <label>Fecha de aprobación</label>
-                      <input type='date' required/>
+                      <input type='date' required />
                     </div>
                   </div>
                 </>
-              :
-              null
-              }
+                :
+                null
+            }
             <label className={styles.registerTitle}>Información Adicional</label>
             <div className={styles.registerModule}>
               <div>
-              <label>Si habla alguna lengua indígena, indique cuál</label>
-              <input type='text' required/>
+                <label>Si habla alguna lengua indígena, indique cuál</label>
+                <input type='text' required />
               </div>
             </div>
             {
-              selectedOption && selectedOption === 'especialidades pediatricas' || selectedOption === 'alta especialidad'?
-              <>
-                <label className={styles.registerTitle}>Datos de la especialidad de requisito</label>
-                <div className={styles.registerModule}>
-                <div>
-                  <label>Nombre de especialidad o requisito</label>
-                  <input type='text' required/>
-                </div>
-                <div>
-                  <label>Cédula profesional</label>
-                  <input type='text' required/>
-                </div>
-                <div>
-                  <label>Hospital donde la realizó</label>
-                  <input type='text' required/>
-                </div>
-                <div>
-                  <label>Ciudad</label>
-                  <input type='text' required/>
-                </div>
-                <div>
-                  <label>País</label>
-                  <input type='text' required/>
-                </div>
-                <div>
-                  <label>Universidad que reconoce la especialidad</label>
-                  <input type='text' required/>
-                </div>
-                <div>
-                  <label>Año en que inició</label>
-                  <input type='date' required/>
-                </div>
-                <div>
-                  <label>Año en que terminó</label>
-                  <input type='date' required/>
-                </div>
-                <div>
-                  <label>Promedio de la especialidad (0-10)</label>
-                  <input type='number' required/>
-                </div>
-                <div>
-                  <label>Lugar obtenido en su generación</label>
-                  <input type='text' required/>
-                </div>
-                </div>
-                <label className={styles.registerTitle}>Consejo de Certificación de la Especialidad</label>
+              selectedOption && selectedOption === 'especialidades pediatricas' || selectedOption === 'alta especialidad' ?
+                <>
+                  <label className={styles.registerTitle}>Datos de la especialidad de requisito</label>
+                  <div className={styles.registerModule}>
+                    <div>
+                      <label>Nombre de especialidad o requisito</label>
+                      <input type='text' required />
+                    </div>
+                    <div>
+                      <label>Cédula profesional</label>
+                      <input type='text' required />
+                    </div>
+                    <div>
+                      <label>Hospital donde la realizó</label>
+                      <input type='text' required />
+                    </div>
+                    <div>
+                      <label>Ciudad</label>
+                      <input type='text' required />
+                    </div>
+                    <div>
+                      <label>País</label>
+                      <input type='text' required />
+                    </div>
+                    <div>
+                      <label>Universidad que reconoce la especialidad</label>
+                      <input type='text' required />
+                    </div>
+                    <div>
+                      <label>Año en que inició</label>
+                      <input type='date' required />
+                    </div>
+                    <div>
+                      <label>Año en que terminó</label>
+                      <input type='date' required />
+                    </div>
+                    <div>
+                      <label>Promedio de la especialidad (0-10)</label>
+                      <input type='number' required />
+                    </div>
+                    <div>
+                      <label>Lugar obtenido en su generación</label>
+                      <input type='text' required />
+                    </div>
+                  </div>
+                  <label className={styles.registerTitle}>Consejo de Certificación de la Especialidad</label>
                   <div className={styles.registerModule}>
                     <div>
                       <label>Folio</label>
-                      <input type='text' required/>
+                      <input type='text' required />
                     </div>
                     <div>
                       <label>Fechas de vigencia</label>
-                      <input type='date' required/>
+                      <input type='date' required />
                     </div>
                   </div>
-              </>
-              :
-              null
+                </>
+                :
+                null
             }
-            <label className={styles.registerTitle}>Forma de pago</label>
             {/*<div className={styles.registerModule}>
               <div className={styles.selectWrapper}>
                 <input
@@ -653,11 +652,11 @@ const Formulario = ()=>{
               </div>
             </div>*/}
             <div className={styles.registerModule}>
-                <button
-                  className={styles.registerButton}
-                  >
-                    Envíar
-                </button>
+              <button
+                className={styles.registerButton}
+              >
+                Envíar
+              </button>
               {
                 /*paymentMethod && paymentMethod === 'online'?
                 <button
@@ -680,15 +679,15 @@ const Formulario = ()=>{
               }
             </div>
           </form>
-        }
+      }
     </>
   )
 }
 const Registro = () => {
   const [step, setStep] = useState(1)
   const [selectedOption, setSelectedOption] = useState(null)
-  if(step===1){
-    return(
+  if (step === 1) {
+    return (
       <>
         <Head>
           <title>Registro - convocatoria</title>
@@ -702,60 +701,60 @@ const Registro = () => {
           strategy="beforeInteractive"
         />
         <nav className={styles.menu}>
-        <ul className={styles.menuList}>
+          <ul className={styles.menuList}>
             <li>
               <Link href='/convocatoria'>
                 Inicio
               </Link>
             </li>
             <li>
-                <Link href='/convocatoria/avisos'>
-                    Avisos
-                </Link>
+              <Link href='/convocatoria/avisos'>
+                Avisos
+              </Link>
             </li>
             <li>
-                <a
+              <a
                 href='https://archivos.him.edu.mx/graficos/ensenanza/pre-y-posgrado/convocatoria/CONVOCATORIA_2024.pdf'
                 target='_blank'
-                >
-                    Convocatoria PDF
-                </a>
+              >
+                Convocatoria PDF
+              </a>
             </li>
             <li>
-                <Link href='/convocatoria/registro'>
-                    Registro en línea
-                </Link>
+              <Link href='/convocatoria/registro'>
+                Registro en línea
+              </Link>
             </li>
             <li>
-                <a
-                  href='https://archivos.him.edu.mx/graficos/ensenanza/pre-y-posgrado/convocatoria/FLUJOGRAMA.pdf'
-                  target='_blank'
-                >
-                  Flujograma
-                </a>
-              </li>
-              <li>
-                <Link href='/convocatoria/descargas'>
-                    Descargas
-                </Link>
-              </li>
-              <li>
-                <Link href='/convocatoria/preguntas-frecuentes'>
-                    Preguntas frecuentes
-                </Link>
-              </li>
-              <li>
-                <Link href='/convocatoria/informes'>
-                    Informes
-                </Link>
-              </li>
-        </ul>
+              <a
+                href='https://archivos.him.edu.mx/graficos/ensenanza/pre-y-posgrado/convocatoria/FLUJOGRAMA.pdf'
+                target='_blank'
+              >
+                Flujograma
+              </a>
+            </li>
+            <li>
+              <Link href='/convocatoria/descargas'>
+                Descargas
+              </Link>
+            </li>
+            <li>
+              <Link href='/convocatoria/preguntas-frecuentes'>
+                Preguntas frecuentes
+              </Link>
+            </li>
+            <li>
+              <Link href='/convocatoria/informes'>
+                Informes
+              </Link>
+            </li>
+          </ul>
         </nav>
         <Container>
-          <Avisos/>
+          <Avisos />
           <div className={`flexContainer ${styles.continousWrapper}`}>
             <button
-              onClick={()=> setStep(step + 1)}
+              onClick={() => setStep(step + 1)}
               className={styles.registerButton}
             >
               Continuar
@@ -765,7 +764,7 @@ const Registro = () => {
       </>
     )
   }
-  if(step === 2){
+  if (step === 2) {
     return (
       <>
         <Head>
@@ -780,151 +779,146 @@ const Registro = () => {
           strategy="beforeInteractive"
         />
         <nav className={styles.menu}>
-        <ul className={styles.menuList}>
-            <li>
-                <Link href='/convocatoria'>
-                  Inicio
-                </Link>
-            </li>
-            <li>
-                <Link href='/convocatoria/avisos'>
-                    Avisos
-                </Link>
-            </li>
-            <li>
-                <a
-                href='https://archivos.him.edu.mx/graficos/ensenanza/pre-y-posgrado/convocatoria/CONVOCATORIA_2024.pdf '
-                target='_blank'
-                >
-                    Convocatoria PDF
-                </a>
-            </li>
-            <li>
-                <Link href='/convocatoria/registro'>
-                    Registro en línea
-                </Link>
-            </li>
-            <li>
-                <a
-                  href='https://archivos.him.edu.mx/graficos/ensenanza/pre-y-posgrado/convocatoria/FLUJOGRAMA.pdf'
-                  target='_blank'
-                >
-                  Flujograma
-                </a>
-            </li>
-            <li>
-                <Link href='/convocatoria/descargas'>
-                    Descargas
-                </Link>
-            </li>
-            <li>
-                <Link href='/convocatoria/preguntas-frecuentes'>
-                    Preguntas frecuentes
-                </Link>
-              </li>
-              <li>
-                <Link href='/convocatoria/informes'>
-                    Informes
-                </Link>
-              </li>
-        </ul>
-        </nav>
-        <Container>
-        <Instrucciones />
-        <div className={`flexContainer ${styles.continousWrapper}`}>
-          <button
-            onClick={()=> setStep(step - 1)}
-            className={styles.registerButton}
-          >
-            Regresar
-          </button>
-          <button
-            onClick={()=> setStep(step + 1)}
-            className={styles.registerButton}
-          >
-            Continuar
-          </button>
-        </div>
-      </Container>
-      </>
-      
-    )
-  }
-  if(step===3){
-    return (
-      <>
-        <Head>
-          <title>Registro - convocatoria</title>
-        </Head>
-        <Script
-          src='https://multicobros.banorte.com/orquestador/lightbox/checkoutV2.js'
-          strategy="beforeInteractive"
-        />
-        <Script
-          src='https://multicobros.banorte.com/orquestador/resources/js/jquery-3.3.1.js'
-          strategy="beforeInteractive"
-        />
-        <nav className={styles.menu}>
-        <ul className={styles.menuList}>
+          <ul className={styles.menuList}>
             <li>
               <Link href='/convocatoria'>
-                  Inicio
+                Inicio
               </Link>
             </li>
             <li>
-                <Link href='/convocatoria/avisos'>
-                    Avisos
-                </Link>
+              <Link href='/convocatoria/avisos'>
+                Avisos
+              </Link>
             </li>
             <li>
-                <a
+              <a
                 href='https://archivos.him.edu.mx/graficos/ensenanza/pre-y-posgrado/convocatoria/CONVOCATORIA_2024.pdf '
                 target='_blank'
-                >
-                    Convocatoria PDF
-                </a>
+              >
+                Convocatoria PDF
+              </a>
             </li>
             <li>
-                <Link href='/convocatoria/registro'>
-                    Registro en línea
-                </Link>
+              <Link href='/convocatoria/registro'>
+                Registro en línea
+              </Link>
             </li>
             <li>
-                <a
-                  href='https://archivos.him.edu.mx/graficos/ensenanza/pre-y-posgrado/convocatoria/FLUJOGRAMA.pdf'
-                  target='_blank'
-                >
-                  Flujograma
-                </a>
+              <a
+                href='https://archivos.him.edu.mx/graficos/ensenanza/pre-y-posgrado/convocatoria/FLUJOGRAMA.pdf'
+                target='_blank'
+              >
+                Flujograma
+              </a>
             </li>
             <li>
-                <Link href='/convocatoria/descargas'>
-                    Descargas
-                </Link>
+              <Link href='/convocatoria/descargas'>
+                Descargas
+              </Link>
             </li>
             <li>
-                <Link href='/convocatoria/preguntas-frecuentes'>
-                    Preguntas frecuentes
-                </Link>
+              <Link href='/convocatoria/preguntas-frecuentes'>
+                Preguntas frecuentes
+              </Link>
             </li>
             <li>
-                <Link href='/convocatoria/informes'>
-                    Informes
-                </Link>
+              <Link href='/convocatoria/informes'>
+                Informes
+              </Link>
             </li>
-        </ul>
+          </ul>
         </nav>
         <Container>
-        <Formulario/>
-        <div className={`flexContainer ${styles.continousWrapper}`}>
-        <button
-          onClick={()=> setStep(step - 1)}
-          className={styles.registerButton}
-        >
-          Regresar
-        </button>
-        </div>
-      </Container>
+          <Instrucciones />
+          <div className={`flexContainer ${styles.continousWrapper}`}>
+            <button
+              onClick={() => setStep(step - 1)}
+              className={styles.registerButton}
+            >
+              Regresar
+            </button>
+            <button
+              onClick={() => setStep(step + 1)}
+              className={styles.registerButton}
+            >
+              Continuar
+            </button>
+          </div>
+        </Container>
+      </>
+
+    )
+  }
+  if (step === 3) {
+    return (
+      <>
+        <Head>
+          <title>Registro - convocatoria</title>
+        </Head>
+        <Script
+          src='https://multicobros.banorte.com/orquestador/lightbox/checkoutV2.js'
+          strategy="beforeInteractive"
+        />
+        <Script
+          src='https://multicobros.banorte.com/orquestador/resources/js/jquery-3.3.1.js'
+          strategy="beforeInteractive"
+        />
+        <nav className={styles.menu}>
+          <ul className={styles.menuList}>
+            <li>
+              <Link href='/convocatoria/avisos'>
+                Avisos
+              </Link>
+            </li>
+            <li>
+              <a
+                href='https://himfg.edu.mx/convocatoria/CONVOCATORIA_2024.pdf'
+                target='_blank'
+              >
+                Convocatoria PDF
+              </a>
+            </li>
+            <li>
+              <Link href='/convocatoria/registro'>
+                Registro en línea
+              </Link>
+            </li>
+            <li>
+              <a
+                href='https://himfg.edu.mx/convocatoria/flujograma.pdf'
+                target='_blank'
+              >
+                Flujograma
+              </a>
+            </li>
+            <li>
+              <Link href='/convocatoria/descargas'>
+                Descargas
+              </Link>
+            </li>
+            <li>
+              <Link href='/convocatoria/preguntas-frecuentes'>
+                Preguntas frecuentes
+              </Link>
+            </li>
+            <li>
+              <Link href='/convocatoria/informes'>
+                Informes
+              </Link>
+            </li>
+          </ul>
+        </nav>
+        <Container>
+          <Formulario />
+          <div className={`flexContainer ${styles.continousWrapper}`}>
+            <button
+              onClick={() => setStep(step - 1)}
+              className={styles.registerButton}
+            >
+              Regresar
+            </button>
+          </div>
+        </Container>
       </>
     )
   }

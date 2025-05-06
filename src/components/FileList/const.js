@@ -1,6 +1,6 @@
 export const infoContable = [
     {
-        title: 2024,
+        title: 2025,
         content:[
             {
                 link: 'https://himfg.edu.mx/archivos/recursos-financieros/2025/informacion-contable/situacion_financiera_marzo_previo_2025.pdf',

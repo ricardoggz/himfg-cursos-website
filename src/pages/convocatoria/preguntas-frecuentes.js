@@ -2,7 +2,7 @@ import Link from 'next/link'
 import styles from './styles.module.css'
 import { Title, Container } from '@/components'
 
-export default function PreguntasFrecuentes(){
+export default function PreguntasFrecuentes() {
     return (
         <>
             <nav className={styles.menu}>
@@ -32,8 +32,8 @@ export default function PreguntasFrecuentes(){
                     </li>
                     <li>
                         <a
-                        href='http://himfg.com.mx/archivos/FLUJOGRAMA.pdf'
-                        target='_blank'
+                            href='http://himfg.com.mx/archivos/FLUJOGRAMA.pdf'
+                            target='_blank'
                         >
                             Flujograma
                         </a>

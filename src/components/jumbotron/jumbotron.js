@@ -17,6 +17,10 @@ export const Jumbotron =()=>{
         }
         const images = [
             {
+                url:'https://himfg.edu.mx/archivos/banners/dia-del-nino.webp',
+                link:'/dia-del-nino'
+            },
+            {
                 url:'https://himfg.edu.mx/archivos/banners/2.webp',
                 link:'/galeria'
             },

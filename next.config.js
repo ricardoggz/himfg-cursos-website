@@ -44,7 +44,8 @@ const nextConfig = {
       '/organizacion-de-archivos' : {page: '/organizacion-de-archivos'},
       '/sesion-clinico-patologica': {page: '/sesion-clinico-patologica'},
       '/galeria': {page: '/galeria'},
-      //'/investigadores/[id]' : { page: '/investigadores/[id]'},
+      '/dia-del-nino' : {page: '/dia-del-nino'},
+      //'/investigadores/[id]' : { page: '/nvestigadores/[id]'},
     }
   },
   env:{
