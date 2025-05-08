@@ -233,7 +233,7 @@ const Video = (props)=>{
                        <center>
                         <br/>
                         <a
-                            href='https://himfg.edu.mx/sesion-clinico-patologica/resumen-del-caso-clinico-actualizado.pdf'
+                            href='https://himfg.edu.mx/sesion-clinico-patologica/resumen-del-caso-clinico.pdf'
                             className={styles.formLink}
                             target='_blank'
                         >
