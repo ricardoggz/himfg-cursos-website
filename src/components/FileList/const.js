@@ -260,6 +260,51 @@ export const infoContable = [
 
 export const infoPresupuestaria = [
     {
+        title: 2025,
+        content:[
+            {
+                link:'https://himfg.edu.mx/archivos/recursos-financieros/2025/ESTADO_ANALITICO_DE_INGRESOS_DE_MARZO_2025.pdf',
+                title:'Estado Analítico de Ingresos de marzo de 2025'
+            },
+            {
+                link:'https://himfg.edu.mx/archivos/recursos-financieros/2025/INGRESOS_DE_FLUJO_DE_EFECTIVO_DE_MARZO_2025.pdf',
+                title:'Ingresos de Flujo de Efectivo de marzo de 2025'
+            },
+            {
+                link:'https://himfg.edu.mx/archivos/recursos-financieros/2025/EGRESOS_DE_FLUJO_DE_EFECTIVO_DE_MARZO_2025.pdf',
+                title:'Egresos de Flujos de Efectivo de marzo de 2025',
+            },
+            {
+                link:'https://himfg.edu.mx/archivos/recursos-financieros/2025/ESTADO_ANALITICO_DEL_EJERCICIO_DEL_PRESUPUESTO_DE_EGRESOS_EN_CLASIFICACION_ADMINISTRATIVA_DE_MARZO_2025.pdf',
+                title:'Estado Analítico del Ejercicio del Presupuesto de Egresos en Clasificación Administrativa de marzo de 2025',
+            },
+            {
+                link:'https://himfg.edu.mx/archivos/recursos-financieros/2025/ESTADO_ANALITICO_DEL_EJERCICIO_DEL_PRESUPUESTO_DE_EGRESOS_EN_CLASIFICACION_ADMINISTRATIVA_(ARMONIZADO)_DE_MARZO_2025.pdf',
+                title:'Estado Analítico del Ejercicio del Presupuesto de Egresos en Clasificación Administrativa (Armonizado) de marzo de 2025',
+            },
+            {
+                link:'https://himfg.edu.mx/archivos/recursos-financieros/2025/ESTADO_ANALITICO_DEL_EJERCICIO_DEL_PRESUPUESTO_DE_EGRESOS_EN_CLASIFICACION_ECONOMICA_Y_POR_OBJETO_DEL_GASTO_DE_MARZO_2025.pdf',
+                title:'Estado Analítico del Ejercicio del Presupuesto de Egresos en Clasificación Económica y por Objeto del Gasto de marzo de 2025',
+            },
+            {
+                link:'https://himfg.edu.mx/archivos/recursos-financieros/2025/ESTADO_ANALITICO_DEL_EJERCICIO_DEL_PRESUPUESTO_DE_EGRESOS_EN_CLASIFICACION_ECONOMICA_Y_POR_OBJETO_DEL_GASTO_(ARMONIZADO)_DE_MARZO_2025.pdf',
+                title:'Estado Analítico del Ejercicio del Presupuesto de Egresos en Clasificación Económica y por Objeto del Gasto (Armonizado) de marzo de 2025',
+            },
+            {
+                link:'https://himfg.edu.mx/archivos/recursos-financieros/2025/ESTADO_ANALITICO_DEL_EJERCICIO_DEL_PRESUPUESTO_DE_EGRESOS_EN_CLASIFICACION_ECONOMICA_(ARMONIZADO)_DE_MARZO_2025.pdf',
+                title:'Estado Analítico del Ejercicio del Presupuesto de Egresos en Clasificación Económica (Armonizado) de marzo de 2025',
+            },
+            {
+                link:'https://himfg.edu.mx/archivos/recursos-financieros/2025/ESTADO_ANALITICO_DEL_EJERCICIO_DEL_PRESUPUESTO_DE_EGRESOS_EN_CLASIFICACION_FUNCIONAL_(ARMONIZADO)_DE_MARZO_2025.pdf',
+                title:'Estado Analítico del Ejercicio del Presupuesto de Egresos en Clasificación Funcional (Armonizado) de marzo de 2025',
+            },
+            {
+                link:'https://himfg.edu.mx/archivos/recursos-financieros/2025/ESTADO_ANALITICO_DEL_EJERCICIO_DEL_PRESUPUESTO_DE_EGRESOS_EN_CLASIFICACION_FUNCIONAL-PROGRAMATICA_DE_MARZO_2025.pdf',
+                title:'Estado Analítico del Ejercicio del Presupuesto de Egresos en Clasificación Funcional-Programática de marzo de 2025',
+            },
+        ]
+    },
+    {
         title: 2024,
         content:[
             {
@@ -433,6 +478,19 @@ export const infoPresupuestaria = [
 ]
 
 export const infoProgramatica = [
+    {
+        title: 2025,
+        content:[
+            {
+                link: 'https://himfg.edu.mx/archivos/recursos-financieros/2025/GASTO_POR_CATEGORIA_PROGRAMATICA_DE_MARZO_2025.pdf',
+                title: 'Gasto por Categoría Programática de marzo de 2025'
+            },
+            {
+                link: 'https://himfg.edu.mx/archivos/recursos-financieros/2025/GASTO_POR_CATEGORIA_PROGRAMATICA_(ARMONIZADO)_DE_MARZO_2025.pdf',
+                title: 'Gasto por Categoría Programática (Armonizado) de marzo de 2025'
+            },
+        ]
+    },
     {
         title: 2024,
         content:[
