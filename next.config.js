@@ -45,6 +45,7 @@ const nextConfig = {
       '/sesion-clinico-patologica': {page: '/sesion-clinico-patologica'},
       '/galeria': {page: '/galeria'},
       '/dia-del-nino' : {page: '/dia-del-nino'},
+      '/donacion' : {page: '/donacion'},
       //'/investigadores/[id]' : { page: '/nvestigadores/[id]'},
     }
   },
