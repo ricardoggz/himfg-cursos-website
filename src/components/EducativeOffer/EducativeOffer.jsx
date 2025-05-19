@@ -43,10 +43,10 @@ export const EducativeOffer = ()=>{
                         </li>
                         <li>
                         <a
-                            href='https://archivos.him.edu.mx/inscripciones-pos-grado/reglamento_pregrado.pdf'
+                            href='https://himfg.edu.mx/inscripcion-pre-y-posgrado/reglamento/reglamento-pasantes-y-MIP.pdf'
                             target='_blank'
                         >
-                                Reglamento pregrado
+                                Reglamento pregrado y médicos internos de pregrado
                             </a>
                         </li>
                     </ul>
@@ -67,15 +67,15 @@ export const EducativeOffer = ()=>{
                         </li>
                         <li>
                             <a
-                                href='https://archivos.him.edu.mx/inscripciones-pos-grado/reglamento_rotantes.pdf'
+                                href='https://himfg.edu.mx/inscripcion-pre-y-posgrado/reglamento/reglamento-rotantes-2025.pdf'
                                 target='_blank'
                             >
-                                Reglamento para residentes rotantes
+                                Reglamento para médicos residentes en rotación
                             </a>
                         </li>
                         <li>
                             <a
-                                href='https://archivos.him.edu.mx/inscripciones-pos-grado/lineamientos-rotaciones.pdf'
+                                href='https://himfg.edu.mx/inscripcion-pre-y-posgrado/reglamento/lineamientos.pdf'
                                 target='_blank'
                             >
                                 Lineamientos para rotación clínica en el HIMFG
@@ -83,10 +83,10 @@ export const EducativeOffer = ()=>{
                         </li>
                         <li>
                             <a
-                                href='https://archivos.him.edu.mx/inscripciones-pos-grado/reglamento_residentes.pdf'
+                                href='https://himfg.edu.mx/inscripcion-pre-y-posgrado/reglamento/reglamento-residentes-2025_final.pdf'
                                 target='_blank'
                             >
-                                Reglamento para residentes
+                                Reglamento de médicos residentes
                             </a>
                         </li>
                 </ul>
