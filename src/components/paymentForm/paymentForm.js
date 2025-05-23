@@ -15,7 +15,7 @@ export const PaymentForm = () => {
   const [paymentData, setPaymentData] = useState(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
   const router = useRouter()
-  const onChange = (evt)=>{
+  const onChange = (evt) => {
     setPaymentData({
       ...data,
       [evt.target.name]: `${evt.target.value}.00`,
@@ -104,11 +104,31 @@ export const PaymentForm = () => {
   return (
     <>
       <div className={`${styles.paymentWrapper}`}>
-        <GeneratePDF />
         <div>
           <form className={`${styles.paymentForm} boxShadow borderRadius`} onSubmit={startPayment}>
-            <label>Inserte la cantidad a pagar:</label>
-            <input type='number' name='Amount' required onChange={onChange}/>
+            <div className={`${styles.paymentImage} borderRadius`}>
+              <img src='https://www.canchammx.com//packages/cancham/images/logo.png'/>
+            </div>
+            <label>
+              <a href='https://himfg.edu.mx/archivos/tesoreria/formato-de-donacion.docx'>
+                Descargue el formato de donación
+              </a>
+            </label>
+            <label>Nombre:</label>
+            <input type='text' name='donativo_carta_motivo'/>
+            <label>Ingrese su formato de donación firmado:</label>
+            <input type='file' name='donativo_carta_motivo'/>
+            <label>Inserte la cantidad a donar:</label>
+            <input type='number' name='Amount' required onChange={onChange} />
+            <label>¿Requiere factura?</label>
+            <div>
+              <label>Sí</label>
+              <input type='radio' name='donativo_factura'/>
+            </div>
+            <div>
+              <label>No</label>
+              <input type='radio' name='donativo_factura'/>
+            </div>
             <button className={styles.paymentButton}>
               <img src='https://himfg.edu.mx/archivos/graficos/banorte/BANORTE.jpg' />
               <span>Donar</span>
