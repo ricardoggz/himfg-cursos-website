@@ -9,6 +9,7 @@ import visa from "../../assets/visaLogo.png"
 import styles from "./paymentForm.module.css"
 import mastercard from "../../assets/mastercard.png"
 import { cypherData, dataToObject } from "./cyperData"
+import { GeneratePDF } from "./generatePDF"
 
 export const PaymentForm = () => {
   const [paymentData, setPaymentData] = useState(null)
@@ -103,6 +104,7 @@ export const PaymentForm = () => {
   return (
     <>
       <div className={`${styles.paymentWrapper}`}>
+        <GeneratePDF />
         <div>
           <form className={`${styles.paymentForm} boxShadow borderRadius`} onSubmit={startPayment}>
             <label>Inserte la cantidad a pagar:</label>

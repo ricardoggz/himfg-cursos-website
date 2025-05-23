@@ -1,87 +1,103 @@
-import jsPDF from 'jspdf'
-import { formatDate } from '@/helpers';
-export const generatePDF = ({course, student, reference}) => {
-    const doc = new jsPDF()
-    doc.setFontSize(30)
-    doc.setFont("helvetica", "bold")
-    doc.text('Inscripción exitosa', 60, 30)
-    doc.setFontSize(14)
-    doc.setTextColor('#2f3542')
-    doc.setFont("helvetica", "bold")
-    doc.text('Felicidades, se ha inscrito correctamente al curso:', 10, 50)
-    doc.setFont('helvetica', 'italic')
-    doc.text(`${course.course_name}`, 10, 60)
-    doc.setFont("helvetica", "bold")
-    doc.text('Inicia:', 10, 75)
-    doc.setFont('helvetica', 'italic')
-    doc.text(`${formatDate(course.course_start_date)}`, 10, 85)
-    doc.setFont("helvetica", "bold")
-    doc.text('Termina:', 10, 100)
-    doc.setFont('helvetica', 'italic')
-    doc.text(`${formatDate(course.course_finish_date)}`, 10, 110)
-    if(course.course_url && course.course_password){
-        doc.setFont("helvetica", "bold")
-        doc.text('Contraseña de acceso al curso:',10, 125)
-        doc.setFont('helvetica', 'italic')
-        doc.text(`${course.course_password}`,10, 135)
-        doc.setFont("helvetica", "bold")
-        doc.text('Liga activa:',10, 150)
-        doc.setFont('helvetica', 'italic')
-        doc.setTextColor('#1e90ff')
-        doc.textWithLink(
-        `https://him.edu.mx/video/${course.course_url}/`
-        , 10, 160,
-        {url: `https://him.edu.mx/video/${course.course_url}/`}
-        )
-        doc.setTextColor('#2f3542')
-        doc.setFont("helvetica", "bold")
-        doc.text('SEDE:',10, 175)
-        doc.setFont("helvetica", "italic")
-        doc.text(`${course.course_place}`,10, 185)
-        doc.setFont("helvetica", "bold")
-        doc.text('Sus datos de acceso a la plataforma:', 10, 200)
-        doc.setFont('helvetica', 'italic')
-        doc.text(`Correo: ${student.student_email}`, 10, 210)
-        doc.text(`Contraseña: ${student.student_password}`, 10, 220)
+'use client';
+import { PDFDocument } from 'pdf-lib';
+import React, { useRef, useState } from 'react';
+import SignatureCanvas from 'react-signature-canvas';
+
+const samplePDF = '/carta-motivo.pdf';
+
+export const GeneratePDF = () => {
+  const sigRef = useRef(null);
+  const [pdfBlobUrl, setPdfBlobUrl] = useState(null);
+  const [isSigning, setIsSigning] = useState(false);
+  const [hasSigned, setHasSigned] = useState(false);
+
+  const handleFirma = async () => {
+    if (!sigRef.current || sigRef.current.isEmpty()) {
+      alert('Por favor, firma antes de continuar.');
+      return;
     }
-    if(course.modality_id === 1){
-        doc.setFont("helvetica", "bold")
-        doc.setTextColor('#2f3542')
-        doc.text('Este curso solo se impartirá de manera presencial',10, 125)
-        doc.setFont("helvetica", "bold")
-        doc.text('SEDE:',10, 140)
-        doc.setFont("helvetica", "italic")
-        doc.text(`${course.course_place}`,10, 150)
-        doc.setFont("helvetica", "bold")
-        doc.text('Sus datos de acceso a la plataforma:', 10, 165)
-        doc.setFont('helvetica', 'italic')
-        doc.text(`Correo: ${student.student_email}`, 10, 175)
-        doc.text(`Contraseña: ${student.student_password}`, 10, 185)
+
+    try {
+      setIsSigning(true);
+      const existingPdfBytes = await fetch(samplePDF).then((res) => res.arrayBuffer());
+      const pdfDoc = await PDFDocument.load(existingPdfBytes);
+
+      const signatureDataUrl = sigRef.current.getTrimmedCanvas().toDataURL('image/png');
+      const signatureImageBytes = await fetch(signatureDataUrl).then((res) => res.arrayBuffer());
+      const signatureImage = await pdfDoc.embedPng(signatureImageBytes);
+
+      const page = pdfDoc.getPages()[0];
+      page.drawImage(signatureImage, {
+        x: 50,
+        y: 100,
+        width: 200,
+        height: 80,
+      });
+
+      const pdfBytes = await pdfDoc.save();
+      const blob = new Blob([pdfBytes], { type: 'application/pdf' });
+      const url = URL.createObjectURL(blob);
+
+      setPdfBlobUrl(url);
+      setHasSigned(true);
+    } catch (error) {
+      console.error('Error firmando el PDF:', error);
+      alert('Hubo un problema al firmar el PDF.');
+    } finally {
+      setIsSigning(false);
     }
-    if(course.modality_id === 2){
-        doc.setFont("helvetica", "bold")
-        doc.setTextColor('#2f3542')
-        doc.text('Este curso solo se impartirá de manera online',10, 125)
-        doc.setFont("helvetica", "bold")
-        doc.text('SEDE:',10, 140)
-        doc.setFont("helvetica", "italic")
-        doc.text(`${course.course_place}`,10, 150)
-        doc.setFont("helvetica", "bold")
-        doc.text('Sus datos de acceso a la plataforma:', 10, 165)
-        doc.setFont('helvetica', 'italic')
-        doc.text(`Correo: ${student.student_email}`, 10, 175)
-        doc.text(`Contraseña: ${student.student_password}`, 10, 185)
-    }
-    /*doc.setTextColor('#2f3542')
-    doc.setFont("helvetica", "bold")
-    doc.text(`Correo de contacto para solicitar su constancia y emitir su factura:`,10, 175)
-    doc.setFont('helvetica', 'italic')
-    doc.text('cursoshimfg@gmail.com', 10, 185)*/
-    if(reference){
-        doc.setFont("helvetica", "bold")
-        doc.text('Referencia', 10, 235)
-        doc.setFont('helvetica', 'italic')
-        doc.text(`${reference}`, 10, 245)
-    }
-    doc.save(`${course.course_name}-datos-acceso.pdf`)
   };
+
+  const clearSignature = () => {
+    sigRef.current.clear();
+    setHasSigned(false);
+    setPdfBlobUrl(null);
+  };
+
+  return (
+    <div style={{ padding: 20, maxWidth: 800, margin: 'auto' }}>
+      <h2 style={{ marginBottom: 20 }}>Firma el PDF</h2>
+
+      <div style={{ border: '1px solid #ccc', marginBottom: 20 }}>
+        <iframe
+          src={pdfBlobUrl || samplePDF}
+          width="100%"
+          height="600"
+          title="PDF para firmar"
+        />
+      </div>
+
+      <h4>Dibuja tu firma aquí:</h4>
+      <SignatureCanvas
+        ref={sigRef}
+        penColor="black"
+        canvasProps={{
+          width: 400,
+          height: 150,
+          style: { border: '1px solid #000', marginBottom: 10 },
+        }}
+      />
+
+      <div style={{ display: 'flex', gap: 10 }}>
+        <button onClick={handleFirma} disabled={isSigning}>
+          {isSigning ? 'Firmando...' : 'Firmar PDF'}
+        </button>
+        <button onClick={clearSignature}>Borrar firma</button>
+      </div>
+
+      {hasSigned && pdfBlobUrl && (
+        <div style={{ marginTop: 20 }}>
+          <h4>PDF firmado:</h4>
+          <a
+            href={pdfBlobUrl}
+            download="firmado.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Descargar PDF firmado
+          </a>
+        </div>
+      )}
+    </div>
+  );
+};

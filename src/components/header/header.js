@@ -69,11 +69,6 @@ export const Header = () => {
                                             Oferta Académica
                                         </a>
                                     </li>
-                                    <li>
-                                        <Link href='/donacion' onClick={open}>
-                                            ¿Quieres donar?
-                                        </Link>
-                                    </li>
                                 </>
                                 :
                                 <>
