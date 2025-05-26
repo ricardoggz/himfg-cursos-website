@@ -49,7 +49,7 @@ export const PaymentForm = () => {
   const getCypherData = async (data) => {
     try {
       const resp = await axios.post(
-        'https://cemesatelcyper-001-site1.mtempurl.com/aes/decrypt',
+        'https://cemesatelcyper-001-site1.qtempurl.com/aes/decrypt',
         data
       );
       return resp.data;
@@ -58,8 +58,7 @@ export const PaymentForm = () => {
     }
   };
 
-  const sendToServer = async (evt) => {
-    evt.preventDefault();
+  const sendToServer = async () => {
     try {
       const formData = new FormData();
       formData.append("Amount", paymentData.Amount);
@@ -115,7 +114,7 @@ export const PaymentForm = () => {
           }
 
           if (cyperMessageToObject?.resultadoPayw === 'A') {
-            await sendToServer(); // ⬅️ Aquí se envían los datos
+            await sendToServer();
             Swal.fire({
               title: "Su donación ha sido procesada con éxito",
               text: `Gracias por su apoyo`,
@@ -143,7 +142,7 @@ export const PaymentForm = () => {
   return (
     <>
       <div className={styles.paymentWrapper}>
-        <form className={`${styles.paymentForm} boxShadow borderRadius`} onSubmit={sendToServer}>
+        <form className={`${styles.paymentForm} boxShadow borderRadius`} onSubmit={startPayment}>
           <div className={`${styles.paymentImage} borderRadius`}>
             <img src='https://www.canchammx.com//packages/cancham/images/logo.png' />
           </div>
