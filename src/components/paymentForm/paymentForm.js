@@ -12,72 +12,110 @@ import { cypherData, dataToObject } from "./cyperData"
 import { GeneratePDF } from "./generatePDF"
 
 export const PaymentForm = () => {
-  const [paymentData, setPaymentData] = useState(null)
-  const [isModalOpen, setIsModalOpen] = useState(false)
-  const router = useRouter()
+  const [paymentData, setPaymentData] = useState({
+    ...data,
+    ControlNumber: reference(456),
+  });
+  const [file, setFile] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const router = useRouter();
+
   const onChange = (evt) => {
-    setPaymentData({
-      ...data,
-      [evt.target.name]: `${evt.target.value}.00`,
-      ControlNumber: reference(456),
-    })
-  }
+    const { name, value, type, files } = evt.target;
+
+    if (type === "file") {
+      setFile(files[0]);
+    } else {
+      setPaymentData((prev) => ({
+        ...prev,
+        [name]: name === "Amount" ? parseFloat(value).toFixed(2) : value,
+        ControlNumber: reference(456),
+      }));
+    }
+  };
+
+
   const showModal = () => {
-    setIsModalOpen(!isModalOpen)
-    return localStorage.getItem('cyperData')
-  }
+    setIsModalOpen(!isModalOpen);
+    return localStorage.getItem('cyperData');
+  };
+
   useEffect(() => {
     setTimeout(() => {
-      Payment.setEnv("pro")
-    }, 1000)
-  }, [])
+      Payment.setEnv("pro");
+    }, 1000);
+  }, []);
+
   const getCypherData = async (data) => {
     try {
       const resp = await axios.post(
         'https://cemesatelcyper-001-site1.mtempurl.com/aes/decrypt',
         data
-      )
-      return resp.data
+      );
+      return resp.data;
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
-  }
+  };
+
+  const sendToServer = async (evt) => {
+    evt.preventDefault();
+    try {
+      const formData = new FormData();
+      formData.append("Amount", paymentData.Amount);
+      formData.append("donativo_nombre", paymentData.donativo_nombre);
+      formData.append("donativo_carta_motivo", file);
+      console.log(formData)
+      const response = await axios.post(
+        "https://himfg.edu.mx/server/controllers/donations/addDonation/index.php",
+        formData,
+        
+      );
+      console.log("Respuesta servidor:", response.data);
+    } catch (err) {
+      console.error("Error enviando los datos:", err);
+    }
+  };
+
   const startPayment = (evt) => {
-    evt.preventDefault()
-    showModal()
+    evt.preventDefault();
+    showModal();
     if (Payment) {
       Payment.setEnv("pro");
-      let xOBJ;
-      xOBJ = cypherData(paymentData, cerKey);
+      const xOBJ = cypherData(paymentData, cerKey);
+
       Payment.startPayment({
         Params: xOBJ,
         onClosed: function (res) {
-          localStorage.removeItem('cyperData')
+          localStorage.removeItem('cyperData');
           console.log(res);
         },
         onError: function (res) {
-          localStorage.removeItem('cyperData')
+          localStorage.removeItem('cyperData');
           console.log(res);
         },
         onSuccess: async function (res) {
-          let cypherMessage
-          let cyperMessageToObject
+          let cypherMessage;
+          let cyperMessageToObject;
+
           if (res.data) {
             let datatoValue = {
               vi: dataToObject.vi,
               salt: dataToObject.salt,
               passPhrase: dataToObject.passPhrase,
               cypherData: res.data
-            }
-            cypherMessage = await getCypherData(datatoValue)
+            };
+            cypherMessage = await getCypherData(datatoValue);
           }
-          if (cypherMessage !== undefined) {
-            console.log(cypherMessage)
-            cyperMessageToObject = JSON.parse(cypherMessage.plainText)
-            console.log('Objeto a evaluar', cyperMessageToObject)
-            console.log(cyperMessageToObject.resultadoPayw)
+
+          if (cypherMessage) {
+            cyperMessageToObject = JSON.parse(cypherMessage.plainText);
+            console.log('Objeto a evaluar', cyperMessageToObject);
+            console.log(cyperMessageToObject.resultadoPayw);
           }
-          if (cyperMessageToObject !== undefined && cyperMessageToObject.resultadoPayw === 'A') {
+
+          if (cyperMessageToObject?.resultadoPayw === 'A') {
+            await sendToServer(); // ⬅️ Aquí se envían los datos
             Swal.fire({
               title: "Su donación ha sido procesada con éxito",
               text: `Gracias por su apoyo`,
@@ -89,7 +127,7 @@ export const PaymentForm = () => {
           }
         },
         onCancel: function (res) {
-          localStorage.removeItem('cyperData')
+          localStorage.removeItem('cyperData');
           Swal.fire({
             title: "Operación cancelada",
             icon: "error",
@@ -100,55 +138,49 @@ export const PaymentForm = () => {
         },
       });
     }
-  }
+  };
+
   return (
     <>
-      <div className={`${styles.paymentWrapper}`}>
-        <div>
-          <form className={`${styles.paymentForm} boxShadow borderRadius`} onSubmit={startPayment}>
-            <div className={`${styles.paymentImage} borderRadius`}>
-              <img src='https://www.canchammx.com//packages/cancham/images/logo.png'/>
-            </div>
-            <label>
-              <a href='https://himfg.edu.mx/archivos/tesoreria/formato-de-donacion.docx'>
-                Descargue el formato de donación
-              </a>
-            </label>
-            <label>Nombre:</label>
-            <input type='text' name='donativo_carta_motivo'/>
-            <label>Ingrese su formato de donación firmado:</label>
-            <input type='file' name='donativo_carta_motivo'/>
-            <label>Inserte la cantidad a donar:</label>
-            <input type='number' name='Amount' required onChange={onChange} />
-            <label>¿Requiere factura?</label>
-            <div>
-              <label>Sí</label>
-              <input type='radio' name='donativo_factura'/>
-            </div>
-            <div>
-              <label>No</label>
-              <input type='radio' name='donativo_factura'/>
-            </div>
-            <button className={styles.paymentButton}>
-              <img src='https://himfg.edu.mx/archivos/graficos/banorte/BANORTE.jpg' />
-              <span>Donar</span>
-            </button>
-          </form>
-        </div>
+      <div className={styles.paymentWrapper}>
+        <form className={`${styles.paymentForm} boxShadow borderRadius`} onSubmit={sendToServer}>
+          <div className={`${styles.paymentImage} borderRadius`}>
+            <img src='https://www.canchammx.com//packages/cancham/images/logo.png' />
+          </div>
+          <label>
+            <a href='https://himfg.edu.mx/archivos/tesoreria/formato-de-donacion.docx'>
+              Descargue el formato de donación
+            </a>
+          </label>
+          <label>Nombre:</label>
+          <input type='text' name='donativo_nombre' onChange={onChange} required />
+
+          <label>Ingrese su formato de donación firmado:</label>
+          <input type='file' name='donativo_carta_motivo' onChange={onChange} required />
+
+          <label>Inserte la cantidad a donar:</label>
+          <input type='number' name='Amount' required onChange={onChange} />
+
+          {/*<label>¿Requiere factura?</label>
+          <div>
+            <label>Sí</label>
+            <input type='radio' name='donativo_factura' value='sí' onChange={onChange} />
+          </div>
+          <div>
+            <label>No</label>
+            <input type='radio' name='donativo_factura' value='no' onChange={onChange} />
+          </div>*/}
+
+          <button className={styles.paymentButton}>
+            <img src='https://himfg.edu.mx/archivos/graficos/banorte/BANORTE.jpg' />
+            <span>Donar</span>
+          </button>
+        </form>
       </div>
+
       <div className={`${styles.debitCards} flexContainer`}>
-        <figure>
-          <Image
-            src={visa}
-            alt='VISA'
-          />
-        </figure>
-        <figure>
-          <Image
-            src={mastercard}
-            alt='Mastercard'
-          />
-        </figure>
+        <figure><Image src={visa} alt='VISA' /></figure>
+        <figure><Image src={mastercard} alt='Mastercard' /></figure>
       </div>
     </>
   );

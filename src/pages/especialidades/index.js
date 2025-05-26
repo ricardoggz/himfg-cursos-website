@@ -4,6 +4,10 @@ import { Container, PageBanner } from "@/components"
 export default function Especialidades() {
     const especialidades = [
         {
+            name: 'Reumatolgía',
+            link: 'direccion/departamento-de-medicina-interna'
+        },
+        {
             name: 'Alergia e Inmunología',
             link: 'direccion/alergia-e-inmunologia-clinica'
         },
