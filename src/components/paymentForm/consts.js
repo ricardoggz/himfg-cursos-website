@@ -2,7 +2,7 @@ export const data = {
   MerchantID:"8878254",
   User:"prueba8878254",
   Password:"C0M53him$%",
-  Mode:"AUT",
+  Mode:"PRD",
   TerminalID:"88782541",
   CustomerRef1:"",
   CustomerRef2:"",
