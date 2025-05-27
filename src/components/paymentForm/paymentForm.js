@@ -9,22 +9,27 @@ import visa from "../../assets/visaLogo.png"
 import styles from "./paymentForm.module.css"
 import mastercard from "../../assets/mastercard.png"
 import { cypherData, dataToObject } from "./cyperData"
-import { GeneratePDF } from "./generatePDF"
 
 export const PaymentForm = () => {
+  const [invoice, setInvoice] = useState(false);
+  const [files, setFiles] = useState({
+    donativo_facturacion: null,
+    donativo_carta_motivo: null
+  });
   const [paymentData, setPaymentData] = useState({
     ...data,
     ControlNumber: reference(456),
   });
-  const [file, setFile] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const router = useRouter();
 
   const onChange = (evt) => {
-    const { name, value, type, files } = evt.target;
+    const { name, type, files: fileList, value } = evt.target;
 
     if (type === "file") {
-      setFile(files[0]);
+      setFiles((prev) => ({
+        ...prev,
+        [name]: fileList[0]
+      }));
     } else {
       setPaymentData((prev) => ({
         ...prev,
@@ -33,7 +38,6 @@ export const PaymentForm = () => {
       }));
     }
   };
-
 
   const showModal = () => {
     setIsModalOpen(!isModalOpen);
@@ -63,12 +67,12 @@ export const PaymentForm = () => {
       const formData = new FormData();
       formData.append("Amount", paymentData.Amount);
       formData.append("donativo_nombre", paymentData.donativo_nombre);
-      formData.append("donativo_carta_motivo", file);
+      formData.append("donativo_carta_motivo", files.donativo_carta_motivo);
       console.log(formData)
       const response = await axios.post(
         "https://himfg.edu.mx/server/controllers/donations/addDonation/index.php",
         formData,
-        
+
       );
       console.log("Respuesta servidor:", response.data);
     } catch (err) {
@@ -160,16 +164,21 @@ export const PaymentForm = () => {
           <label>Inserte la cantidad a donar:</label>
           <input type='number' name='Amount' required onChange={onChange} />
 
-          {/*<label>¿Requiere factura?</label>
+          <label>¿Requiere factura?</label>
           <div>
             <label>Sí</label>
-            <input type='radio' name='donativo_factura' value='sí' onChange={onChange} />
+            <input type='radio' name='donativo_factura' value='sí' onChange={() => setInvoice(true)} />
           </div>
           <div>
             <label>No</label>
-            <input type='radio' name='donativo_factura' value='no' onChange={onChange} />
-          </div>*/}
-
+            <input type='radio' name='donativo_factura' value='no' onChange={() => setInvoice(false)} />
+          </div>
+          {invoice && (
+            <>
+              <label>Ingrese su constancia de situación fiscal en formato PDF:</label>
+              <input type='file' name='donativo_faturacion' onChange={onChange} required />
+            </>
+          )}
           <button className={styles.paymentButton}>
             <img src='https://himfg.edu.mx/archivos/graficos/banorte/BANORTE.jpg' />
             <span>Donar</span>
