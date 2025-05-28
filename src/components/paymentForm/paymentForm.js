@@ -2,7 +2,6 @@ import axios from "axios"
 import Image from "next/image"
 import Swal from "sweetalert2"
 import { reference } from "./reference"
-import { useRouter } from "next/router"
 import { data, cerKey } from "./consts"
 import { useEffect, useState } from "react"
 import visa from "../../assets/visaLogo.png"
@@ -62,12 +61,16 @@ export const PaymentForm = () => {
     }
   };
 
-  const sendToServer = async () => {
+  const sendToServer = async (evt) => {
+    evt.preventDefault()
     try {
       const formData = new FormData();
       formData.append("Amount", paymentData.Amount);
       formData.append("donativo_nombre", paymentData.donativo_nombre);
       formData.append("donativo_carta_motivo", files.donativo_carta_motivo);
+      if (files.donativo_facturacion) {
+        formData.append("donativo_facturacion", files.donativo_facturacion);
+      }
       console.log(formData)
       const response = await axios.post(
         "https://himfg.edu.mx/server/controllers/donations/addDonation/index.php",
@@ -176,7 +179,7 @@ export const PaymentForm = () => {
           {invoice && (
             <>
               <label>Ingrese su constancia de situación fiscal en formato PDF:</label>
-              <input type='file' name='donativo_faturacion' onChange={onChange} required />
+              <input type='file' name='donativo_facturacion' onChange={onChange} required />
             </>
           )}
           <button className={styles.paymentButton}>
