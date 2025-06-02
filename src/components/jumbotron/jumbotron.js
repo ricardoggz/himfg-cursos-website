@@ -17,20 +17,12 @@ export const Jumbotron =()=>{
         }
         const images = [
             {
-                url:'https://himfg.edu.mx/archivos/banners/declara-net.jpeg',
-                link:'https://www.youtube.com/watch?v=bIEgOvVFNA4'
-            },
-            {
-                url:'https://himfg.edu.mx/archivos/banners/dia-del-nino.webp',
-                link:'/dia-del-nino'
-            },
-            {
-                url:'https://himfg.edu.mx/archivos/banners/2.webp',
+                url:'https://himfg.edu.mx/archivos/banners/banner-primero.webp',
                 link:'/galeria'
             },
             {
-                url: 'https://himfg.edu.mx/archivos/banners/BANNER-1.1.webp',
-                link:'/'
+                url:'https://himfg.edu.mx/archivos/banners/banner-segundo.webp',
+                link:'https://ense.himfg.edu.mx/convocatoria/documentos/convocatoria.pdf'
             },
         ]
           return (

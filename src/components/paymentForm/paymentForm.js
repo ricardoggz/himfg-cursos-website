@@ -61,8 +61,7 @@ export const PaymentForm = () => {
     }
   };
 
-  const sendToServer = async (evt) => {
-    evt.preventDefault()
+  const sendToServer = async () => {
     try {
       const formData = new FormData();
       formData.append("Amount", paymentData.Amount);
